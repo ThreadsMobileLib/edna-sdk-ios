@@ -1,0 +1,26 @@
+/* 
+  SQPhotoPickeLocalize.strings
+  PhotoTest
+
+  Created by Sequenia on 28/06/16.
+  Copyright © 2016 Sequenia. All rights reserved.
+*/
+"access_denied" = "Нет доступа";
+"unlock_photos_access" = "Разблокируйте доступ к фотографиям в настройках приложения, чтобы продолжить";
+"cannt_take_photo" = "Не могу сфотографировать";
+"camera_not_found" = "На Вашем устройстве не найдена камера";
+
+"my_photos" = "Мои фотографии";
+"pick_photo" = "Сделать снимок";
+"i_cloud_photos" = "iCloud";
+"send_photos" = "Отправить";
+"cancel_pick" = "Отмена";
+
+"photo" = "фото";
+
+"albums" = "Альбомы";
+
+"limit_reached" = "Лимит достигнут!";
+"limit_desc" = "Вы можете загрузить не более ";
+
+"album_not_found" = "Выбранный альбом на найден";
