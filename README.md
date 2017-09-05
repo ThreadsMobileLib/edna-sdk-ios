@@ -1,4 +1,4 @@
-# threads-sdk-ios-releases
-Threads iOS sdk release libraries and demo project
+# Threads iOS SDK
+Threads iOS sdk libraries and demo project
 
 [Integration Guide](../../wiki/Integration-Guide)
