@@ -112,6 +112,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor* incomingQuoteFilesizeColor;
 @property (strong, nonatomic, readwrite) UIColor* incomingFileIconTintColor;
 @property (strong, nonatomic, readwrite) UIColor* incomingFileIconBgColor;
+@property (nonatomic, assign, readwrite) CGFloat commonMessageAvatarSize;
+@property (nonatomic, assign, readwrite) CGFloat systemMessageAvatarSize;
 
 #pragma mark - Outgoing message
 

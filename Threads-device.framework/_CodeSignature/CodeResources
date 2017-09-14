@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/THRAttributes.h</key>
 		<data>
-		fgX6f/E3kBKZVouLtI1j+YSz0O8=
+		IHL7+XupmFDfmDEq3z1bj0NEyaA=
 		</data>
 		<key>Headers/THRCompatibility.h</key>
 		<data>
@@ -14,19 +14,19 @@
 		</data>
 		<key>Headers/Threads.h</key>
 		<data>
-		Sg1t2vY7EY8JhH/dL2Xy3E6E9kY=
+		ApMUNJ+P+P8wCOKDgQzcBK0GG1c=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		aQvQolfbS0XmrL7xlBkOPJwe02c=
+		ImNLuHr3qWmpNgHqUIJbyKIAje4=
 		</data>
 		<key>JSQFileMessageView.nib</key>
 		<data>
-		mA043CSlDOHh/TEH3e1vdsMkj1o=
+		3oebkr6ztJde3eivIoWZioFoNcA=
 		</data>
 		<key>JSQLinkMessagesView.nib</key>
 		<data>
-		/rYuulX0nLxJomSVZiE9II1Wr7o=
+		ucqDN78urdgHPo/VN6q+J5Up/7w=
 		</data>
 		<key>JSQMessagesAssets.bundle/Base.lproj/JSQMessages.strings</key>
 		<dict>
@@ -347,35 +347,35 @@
 		</dict>
 		<key>JSQMessagesCollectionViewCellIncoming.nib</key>
 		<data>
-		8tJ8feQG1cArKAztND0GcK1ltb8=
+		AHQ3Town8/a3cu+WgyHHP5Hky+U=
 		</data>
 		<key>JSQMessagesCollectionViewCellOutgoing.nib</key>
 		<data>
-		Y/P5Pn/AlK/K570Lo7MUdeObsOY=
+		IRHFmb01SX4blauIGwLi0X4mluA=
 		</data>
 		<key>JSQMessagesLoadEarlierHeaderView.nib</key>
 		<data>
-		U2Eq1NqLje+cehKh3oT+mz4QNMg=
+		H4cWjcyI4NRJx7Ri0CeBNB5EEWw=
 		</data>
 		<key>JSQMessagesToolbarContentView.nib</key>
 		<data>
-		Ih+KoE7qpIxkEnAFyXVZyY1hw94=
+		9A9I6RjPOzmEDv+vLo9KA/U9Pfs=
 		</data>
 		<key>JSQMessagesTypingIndicatorFooterView.nib</key>
 		<data>
-		cRo2WuY3G7ErNUuoUJGh1fk0xcQ=
+		6QRxeM1zZsxskYc2O9oJrFOQEVE=
 		</data>
 		<key>JSQMessagesViewController.nib</key>
 		<data>
-		eRHQiWJD7aqgBkq1RUIb8FJNUBM=
+		6sop69CsZQAtvTTOEFR/SRDIfZk=
 		</data>
 		<key>JSQQuotedMessageView.nib</key>
 		<data>
-		wlk9bsm6s0hehIJ6z4Uj7dUKo0Q=
+		9jegXv5FugVrFM/4bLHIFQRnJ6Q=
 		</data>
 		<key>JSQSystemMessageView.nib</key>
 		<data>
-		0HDc7spEmfYr9C5qYQKqr5cX3do=
+		OUsP/rod8f06uKDmnj2POBkiXlk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -383,19 +383,19 @@
 		</data>
 		<key>SQActionCell.nib</key>
 		<data>
-		Y2CgjT12ByYU3n8gdPqbolDQjs4=
+		Hhyx9VDCBbuf3JMHRDNXE2qoXcc=
 		</data>
 		<key>SQAlbumCell.nib</key>
 		<data>
-		+rJ2SLXQT82fax3BSMrozCXGPBo=
+		Vn02rrUFswEZ8J+cNpxEmnljTQU=
 		</data>
 		<key>SQPhotoPreviewCell.nib</key>
 		<data>
-		mWXCWQk/iDXw7waKNHFveoHdYW8=
+		RuI3KJZXr4Y+oJMtQvVM5tsxWNI=
 		</data>
 		<key>SQPreviewCell.nib</key>
 		<data>
-		4xJUvz4hen5379Rw3m6tcDN8p7A=
+		aObEWmxXwcWtiIknk/27FPn04nk=
 		</data>
 		<key>Search Button@2x.png</key>
 		<data>
@@ -411,63 +411,63 @@
 		</data>
 		<key>Storyboard.storyboardc/NxW-zV-oIE-view-Vlp-j5-ZVQ.nib</key>
 		<data>
-		7cc80mTT6MVHDzpsKrnU5irfMcc=
+		C5sHLhsaSnidfU6BlKCPafoFJUM=
 		</data>
 		<key>Storyboard.storyboardc/THRSView.nib</key>
 		<data>
-		1MgxhEpkiS9BOh2ANT7uWfnQZC0=
+		CxQZDY9mmhaV4nHBwHnNivQlgbw=
 		</data>
 		<key>Storyboard.storyboardc/THRSearchViewController.nib</key>
 		<data>
-		TZggajJypSAzm1C+WsTfvFdDbmA=
+		WAp62pkWBd/ZzyAl8dnAWChW+E4=
 		</data>
 		<key>Storyboard.storyboardc/THRSpecialistViewController.nib</key>
 		<data>
-		SGezJFv/fbMcBaUHhjZeTQBhmO0=
+		AIF1gvKhOLVY+SnFMi0Flza1NbA=
 		</data>
 		<key>Storyboard.storyboardc/lYC-ZO-Jel-view-1dm-jL-Hsj.nib</key>
 		<data>
-		/s+0UCvPqnvVT1ghGUeHhJP++xQ=
+		6L2i+mZ34SMMED7OPt4ZsQE5wQE=
 		</data>
 		<key>THRBubbleSurvey.nib</key>
 		<data>
-		DeNfTMaVlGHXru+jxzpRaiL043Y=
+		74TABXKnk3el/bBMpbcRjTz0UpE=
 		</data>
 		<key>THRChartAlertView.nib</key>
 		<data>
-		UUtN6e8nUn9K9RnxItzIzDu4niA=
+		2jUKfciIyQPZt0Zrm8NWO2+n0Bs=
 		</data>
 		<key>THRChatPlaceholder.nib</key>
 		<data>
-		5EauebXq7sEfOnlnDU6b61ljq1E=
+		r246B1EwTY3tWaExUdvpF+AhXO0=
 		</data>
 		<key>THRScaleSurveyView.nib</key>
 		<data>
-		t7KUN2ZDOTBUfkOOlMqNFJoIqHg=
+		OGwhozzRaQ1kiOrsBw3rSk3baB4=
 		</data>
 		<key>THRSearchButtonCell.nib</key>
 		<data>
-		vZPhLU4zFUBsSQHWyJkbye8lG2k=
+		gkeflERrk7EIdgy3s0yw/0KCGGs=
 		</data>
 		<key>THRSearchCell.nib</key>
 		<data>
-		6H+I/j7aPakRlUnE1rONw6AN1os=
+		uoDnknVq7yKH7hkTWNYL0jUI8YI=
 		</data>
 		<key>THRSearchingForSpecialistIndicatorFooterView.nib</key>
 		<data>
-		AfAm7LqTz9PEausaDe4udxdyEgk=
+		y1RlmtJPtpNgwXHaeYvzu/zqXbA=
 		</data>
 		<key>THRSimpleSurveyView.nib</key>
 		<data>
-		ySBUvYwlBWg8Q6BalSBmHCKIpuk=
+		n9j5U7PwJUdVcr6FVw035DFARBs=
 		</data>
 		<key>THRTitleView.nib</key>
 		<data>
-		tw5HMV6F1SRxyVpR/K06I8fgPDM=
+		BiZ9OCWbYGZma7eLRq3Cr/fxOSw=
 		</data>
 		<key>THRUnreadedCounterView.nib</key>
 		<data>
-		LXuNDAfAa/rWGSnkfO/cj1X4dZc=
+		sL8DsnSGdnO3DmrFA4Tc3ihBZtg=
 		</data>
 		<key>back_button@2x.png</key>
 		<data>
@@ -712,11 +712,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fgX6f/E3kBKZVouLtI1j+YSz0O8=
+			IHL7+XupmFDfmDEq3z1bj0NEyaA=
 			</data>
 			<key>hash2</key>
 			<data>
-			xl14fZkLDMjowhT7ATrEbfR3zGgO34U/0vf8i0xBgik=
+			mHXCD3QJ+bzNCvmdeY5xAx9Qfqh7zHEX0ajSR76CCEE=
 			</data>
 		</dict>
 		<key>Headers/THRCompatibility.h</key>
@@ -734,33 +734,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Sg1t2vY7EY8JhH/dL2Xy3E6E9kY=
+			ApMUNJ+P+P8wCOKDgQzcBK0GG1c=
 			</data>
 			<key>hash2</key>
 			<data>
-			EAu/VoI+J24xXmcHO0aB+wZGlBcrRDAQByUEAv47ipM=
+			hvR5vaxBRdja/zbqWTcL4i7bxI/SHaDb6tS26wc1Dlw=
 			</data>
 		</dict>
 		<key>JSQFileMessageView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mA043CSlDOHh/TEH3e1vdsMkj1o=
+			3oebkr6ztJde3eivIoWZioFoNcA=
 			</data>
 			<key>hash2</key>
 			<data>
-			2O3Hz0wuPe5lbZf6Xrn6WdU/5BWIuKDH5czNId/gsNk=
+			OuUB2wCn1ZYL94Ah8vIdPtaeR/PXSQzR/PJl7EUbOZ8=
 			</data>
 		</dict>
 		<key>JSQLinkMessagesView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/rYuulX0nLxJomSVZiE9II1Wr7o=
+			ucqDN78urdgHPo/VN6q+J5Up/7w=
 			</data>
 			<key>hash2</key>
 			<data>
-			qe0euxMGNaTLGlZrjxWnbp9tbnyzI7VRyvgyEv06uWo=
+			bqaXhhVvj7uSTX9YETDKz6BMtV+4xAe++j7im0WGqUA=
 			</data>
 		</dict>
 		<key>JSQMessagesAssets.bundle/Base.lproj/JSQMessages.strings</key>
@@ -1345,88 +1345,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8tJ8feQG1cArKAztND0GcK1ltb8=
+			AHQ3Town8/a3cu+WgyHHP5Hky+U=
 			</data>
 			<key>hash2</key>
 			<data>
-			pPtI6k5OCggeOXSirU/K7p/FQtWJCDShuKlG2w09EMQ=
+			/UQpF7vwiFwzGZjSS+oHZkNCJnOa23u/YYgTvpIwoT0=
 			</data>
 		</dict>
 		<key>JSQMessagesCollectionViewCellOutgoing.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Y/P5Pn/AlK/K570Lo7MUdeObsOY=
+			IRHFmb01SX4blauIGwLi0X4mluA=
 			</data>
 			<key>hash2</key>
 			<data>
-			key5Lqv/T7QU+oOdscjZNw48gemGsZHWzkQaAzMDb9A=
+			pB6Cp/qkAhx/CRhkpBzO5P64453bY4OBBZEUc3QVzMw=
 			</data>
 		</dict>
 		<key>JSQMessagesLoadEarlierHeaderView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			U2Eq1NqLje+cehKh3oT+mz4QNMg=
+			H4cWjcyI4NRJx7Ri0CeBNB5EEWw=
 			</data>
 			<key>hash2</key>
 			<data>
-			VMUdoS4QTRVxbhigMVCBZI2zLW8keYqdPHHezNYgu2k=
+			1FWXpwYA7Yzf2M/cq/XGsRWnX9XcBezFZl70IS5PkSM=
 			</data>
 		</dict>
 		<key>JSQMessagesToolbarContentView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ih+KoE7qpIxkEnAFyXVZyY1hw94=
+			9A9I6RjPOzmEDv+vLo9KA/U9Pfs=
 			</data>
 			<key>hash2</key>
 			<data>
-			BYhJ4JTdcQRTBObKbDSUvnaoAEc/B5a43jJWgK3fcDs=
+			WXuc4gpdLFLQKudq0pj8j3iWyCyhaKoGuXjFa0swn1Y=
 			</data>
 		</dict>
 		<key>JSQMessagesTypingIndicatorFooterView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cRo2WuY3G7ErNUuoUJGh1fk0xcQ=
+			6QRxeM1zZsxskYc2O9oJrFOQEVE=
 			</data>
 			<key>hash2</key>
 			<data>
-			rA7WdK6sLOYOwctTJ07c2H1SFABJnR+JMFj4K4xSvt0=
+			Lwfp+BXAA6fe5Eam1OEis3VEBki7bBmP6lz5lvsTyUs=
 			</data>
 		</dict>
 		<key>JSQMessagesViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eRHQiWJD7aqgBkq1RUIb8FJNUBM=
+			6sop69CsZQAtvTTOEFR/SRDIfZk=
 			</data>
 			<key>hash2</key>
 			<data>
-			JcJFZMZvJyYXGfyqS5v5WQ8D4BBEPb09kabRYdz7ies=
+			G1cWYiHt0zOaeNqmuViFgk6LopVjeWW+fRRrXL4Kksc=
 			</data>
 		</dict>
 		<key>JSQQuotedMessageView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wlk9bsm6s0hehIJ6z4Uj7dUKo0Q=
+			9jegXv5FugVrFM/4bLHIFQRnJ6Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			4YjTU2GJWY/1U2PzQA17ToVx2Thp6X74/KSYCLzU9rc=
+			4R0yC3nw7tQ1L4eYRBCZsO+tws4mygC0BByjUY4PFuU=
 			</data>
 		</dict>
 		<key>JSQSystemMessageView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0HDc7spEmfYr9C5qYQKqr5cX3do=
+			OUsP/rod8f06uKDmnj2POBkiXlk=
 			</data>
 			<key>hash2</key>
 			<data>
-			KbpW6bkYbDVo7FNusoRNksumMpYT6fOlm/5DsCUhydE=
+			pcPd9TMlE841dF9kcLPIeoZzfbRTS8z0cbEsEFM9J+0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1444,44 +1444,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y2CgjT12ByYU3n8gdPqbolDQjs4=
+			Hhyx9VDCBbuf3JMHRDNXE2qoXcc=
 			</data>
 			<key>hash2</key>
 			<data>
-			zq4vIu0+EdU7e4LqYcwLf5QMQqvdZO+0Nj5lOJBYXlA=
+			oG4nzTXPTGs1xFN9hC1GY1a43iL1WKrm9DqfPnbXUaI=
 			</data>
 		</dict>
 		<key>SQAlbumCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+rJ2SLXQT82fax3BSMrozCXGPBo=
+			Vn02rrUFswEZ8J+cNpxEmnljTQU=
 			</data>
 			<key>hash2</key>
 			<data>
-			/HRryStEsmo8Yb+aL0Bmk2WPmMP1ynLwqFyDCL0gjcw=
+			/2KjKrrgVFDIrqlON+xZRrseoZint6vdBdw/CCzUjg0=
 			</data>
 		</dict>
 		<key>SQPhotoPreviewCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mWXCWQk/iDXw7waKNHFveoHdYW8=
+			RuI3KJZXr4Y+oJMtQvVM5tsxWNI=
 			</data>
 			<key>hash2</key>
 			<data>
-			VXewvLYbvuz0kWgKdkAzYZ94Cgrdr8wqaLMD7XMKBA4=
+			JvYByxYtRvvVKf6ol1cS8fW70ug7PLu/JcPJC6MSMpQ=
 			</data>
 		</dict>
 		<key>SQPreviewCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4xJUvz4hen5379Rw3m6tcDN8p7A=
+			aObEWmxXwcWtiIknk/27FPn04nk=
 			</data>
 			<key>hash2</key>
 			<data>
-			RW3pRFaoE8gEpM2VzscUjoIor70lLwqSMqXnstAr+Os=
+			VUXCWNgHycTWNYdTpPilhLWyMf5lXWf+9DwKv7RZcCY=
 			</data>
 		</dict>
 		<key>Search Button@2x.png</key>
@@ -1521,165 +1521,165 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7cc80mTT6MVHDzpsKrnU5irfMcc=
+			C5sHLhsaSnidfU6BlKCPafoFJUM=
 			</data>
 			<key>hash2</key>
 			<data>
-			TfTp90mYKnQsaFMAQYGoWo33m8pSGvg6W4Xiv9ZkNuk=
+			ScvcS0SZmKbHzDhT6moJXapUcRaG+RUmIZMSjG/EVew=
 			</data>
 		</dict>
 		<key>Storyboard.storyboardc/THRSView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1MgxhEpkiS9BOh2ANT7uWfnQZC0=
+			CxQZDY9mmhaV4nHBwHnNivQlgbw=
 			</data>
 			<key>hash2</key>
 			<data>
-			VQRF8aeJzNeKVJm6f7G9yzpAtiSAzClORofcZqxYVa0=
+			IJDF1o427rQrrocyk4mG0Z8INm2jMd2oJuTqVx40Ekw=
 			</data>
 		</dict>
 		<key>Storyboard.storyboardc/THRSearchViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TZggajJypSAzm1C+WsTfvFdDbmA=
+			WAp62pkWBd/ZzyAl8dnAWChW+E4=
 			</data>
 			<key>hash2</key>
 			<data>
-			BykxRo7Kif0/TMI4BDPkStRHGACo6nbRANodYcJVHbQ=
+			CtQHmSHttQCpif+CQ/h6zd6zuv5a5ZAOHHaJYtRej3U=
 			</data>
 		</dict>
 		<key>Storyboard.storyboardc/THRSpecialistViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SGezJFv/fbMcBaUHhjZeTQBhmO0=
+			AIF1gvKhOLVY+SnFMi0Flza1NbA=
 			</data>
 			<key>hash2</key>
 			<data>
-			lVxco28TIXsYTo+i6NWphfAnW4DbV7LvJPo4IFEsK5A=
+			e6zDmsaCTo6vED6t115Cv9b3fottWVI1EVqcY1iRzd8=
 			</data>
 		</dict>
 		<key>Storyboard.storyboardc/lYC-ZO-Jel-view-1dm-jL-Hsj.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/s+0UCvPqnvVT1ghGUeHhJP++xQ=
+			6L2i+mZ34SMMED7OPt4ZsQE5wQE=
 			</data>
 			<key>hash2</key>
 			<data>
-			yZ07AwauoYphBb4HEHTlbjcx7WG9MJt6Cp6WMO+haBI=
+			Ppi8ev9IB84wrcYp0maUcRAb4uwHQGqcGhnWsbUmTiA=
 			</data>
 		</dict>
 		<key>THRBubbleSurvey.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DeNfTMaVlGHXru+jxzpRaiL043Y=
+			74TABXKnk3el/bBMpbcRjTz0UpE=
 			</data>
 			<key>hash2</key>
 			<data>
-			cI7KFzqoubJ2xqAu/lL4XZBSER5k6J4XGYU08Xbz8tA=
+			lERTyb+2PU5CfVjby4g6SPuTRt7iLpYKdCbbdL5D2K0=
 			</data>
 		</dict>
 		<key>THRChartAlertView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UUtN6e8nUn9K9RnxItzIzDu4niA=
+			2jUKfciIyQPZt0Zrm8NWO2+n0Bs=
 			</data>
 			<key>hash2</key>
 			<data>
-			sdU7AMn0l9jjL3vK46tu//c0pZXdIn1fL5JZ+tVTLr0=
+			gPcEhqdlZTEt1nv3lyA/SsgpXQmRSUmY7bQTU+CgtaE=
 			</data>
 		</dict>
 		<key>THRChatPlaceholder.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5EauebXq7sEfOnlnDU6b61ljq1E=
+			r246B1EwTY3tWaExUdvpF+AhXO0=
 			</data>
 			<key>hash2</key>
 			<data>
-			OhPy0wNKwp3krj0ORRSx+1ARiMQ7ocbPPlJZ7Oo9vPA=
+			AiV2Q4xgRyVZ2tCwCK+FLb1TsLNzBQefiHn51VkZaiw=
 			</data>
 		</dict>
 		<key>THRScaleSurveyView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			t7KUN2ZDOTBUfkOOlMqNFJoIqHg=
+			OGwhozzRaQ1kiOrsBw3rSk3baB4=
 			</data>
 			<key>hash2</key>
 			<data>
-			QCtreK4ptN+CTqQmjlJXAXm5efSr1vBBiVYRrnwwY8k=
+			6G/HevtDIJoD9+aU7SnOICg4/PAyBj7ERAHCxrpXZZg=
 			</data>
 		</dict>
 		<key>THRSearchButtonCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vZPhLU4zFUBsSQHWyJkbye8lG2k=
+			gkeflERrk7EIdgy3s0yw/0KCGGs=
 			</data>
 			<key>hash2</key>
 			<data>
-			JD4TLB5wz9PdaMfVLmh6tc2kaOPp7loIEsvSAAwLYmU=
+			fbjFj4bx9puaCBBDnGvXFhgYNLU8k/4RfZYwnDoGDQg=
 			</data>
 		</dict>
 		<key>THRSearchCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6H+I/j7aPakRlUnE1rONw6AN1os=
+			uoDnknVq7yKH7hkTWNYL0jUI8YI=
 			</data>
 			<key>hash2</key>
 			<data>
-			nMDkMZenTwqbHwLBiBOapov1mNG8tyLB4qmGd17dEVk=
+			1RAE0ePfzyFoADYAH5gzUObxxofn0jdOLgKzwPlN4Ss=
 			</data>
 		</dict>
 		<key>THRSearchingForSpecialistIndicatorFooterView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AfAm7LqTz9PEausaDe4udxdyEgk=
+			y1RlmtJPtpNgwXHaeYvzu/zqXbA=
 			</data>
 			<key>hash2</key>
 			<data>
-			9ZZsc8ntAefGp2EfpW1DIgwU000o1+HNqvxUkxptewI=
+			rSgb+tS7WY7/9CE0EQxQrxnmFEExr7cXbV6/XeQkGuk=
 			</data>
 		</dict>
 		<key>THRSimpleSurveyView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ySBUvYwlBWg8Q6BalSBmHCKIpuk=
+			n9j5U7PwJUdVcr6FVw035DFARBs=
 			</data>
 			<key>hash2</key>
 			<data>
-			BA5cr/MlRIhH97mPMAUp/Ck0Fdugy/4aWpyH4hplHGw=
+			AvuYJxvV1+CeMnAmMuIGrNPF60os3fqxMruGlgs6Y00=
 			</data>
 		</dict>
 		<key>THRTitleView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tw5HMV6F1SRxyVpR/K06I8fgPDM=
+			BiZ9OCWbYGZma7eLRq3Cr/fxOSw=
 			</data>
 			<key>hash2</key>
 			<data>
-			Zt1pTjhDz+uZXTEJkPqwFh5+vkpIQZBepz09IRMVgOg=
+			0hkuExHuCNkQqXFjznU4UjAhTNy2TZUe3QAs4tJORyg=
 			</data>
 		</dict>
 		<key>THRUnreadedCounterView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LXuNDAfAa/rWGSnkfO/cj1X4dZc=
+			sL8DsnSGdnO3DmrFA4Tc3ihBZtg=
 			</data>
 			<key>hash2</key>
 			<data>
-			7IqXQ4gDMONYqH7BPfUJrVipAVW5btts2FrbJM5TN+0=
+			T6ETLrwwETpy3cZ4PdvbE0bIP5yuEtle6GMBFEC3hks=
 			</data>
 		</dict>
 		<key>back_button@2x.png</key>

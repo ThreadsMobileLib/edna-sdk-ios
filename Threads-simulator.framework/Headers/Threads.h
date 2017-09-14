@@ -50,6 +50,11 @@ typedef enum : NSUInteger {
 @property NSString *clientName;
 
 /*!
+ * Custom data
+ */
+@property NSString *data;
+
+/*!
  * Boolean parameneter, which enable or disable Google Analytics
  */
 @property BOOL analyticsEnabled;
@@ -103,6 +108,13 @@ typedef enum : NSUInteger {
  * @param clientName: must be set
  */
 + (void) setClientName: (NSString *) clientName;
+
+/*!
+ * Setting custom data to be sent in client_info system message
+ *
+ * @param data
+ */
++ (void) setData: (NSString *) data;
 
 /*!
  * Setting enable Analytics.
