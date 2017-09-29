@@ -1,6 +1,0 @@
-framework module Threads {
-  umbrella header "Threads.h"
-
-  export *
-  module * { export * }
-}

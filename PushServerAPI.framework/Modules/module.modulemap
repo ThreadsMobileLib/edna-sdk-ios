@@ -1,5 +1,5 @@
 framework module PushServerAPI {
-  umbrella header "PushServerAPI.h"
+  umbrella header "PushServerAPI-umbrella.h"
 
   export *
   module * { export * }
@@ -7,4 +7,5 @@ framework module PushServerAPI {
 
 module PushServerAPI.Swift {
     header "PushServerAPI-Swift.h"
+    requires objc
 }
