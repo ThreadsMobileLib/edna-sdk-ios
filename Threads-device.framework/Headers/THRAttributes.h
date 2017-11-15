@@ -34,7 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIFont* navigationBarSubtitleFont;
 
 #pragma mark - Placeholder
-
 @property (strong, nonatomic, readwrite) UIColor* backgroundColor;
 @property (strong, nonatomic, readwrite) UIImage* placeholderImage;
 @property (strong, nonatomic, readwrite) UIColor* placeholderTitleColor;
@@ -42,8 +41,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIFont* placeholderTitleFont;
 @property (strong, nonatomic, readwrite) UIFont* placeholderSubtitleFont;
 
-#pragma mark - Toolbar
+#pragma mark - Chat state
+@property (strong, nonatomic, readwrite) NSString* chatStateNotConnectedTitle;
+@property (strong, nonatomic, readwrite) NSString* chatStateReadyTitle;
 
+#pragma mark - Toolbar
 @property (strong, nonatomic, readwrite) UIColor *toolbarTintColor;
 
 @property (strong, nonatomic, readwrite) UIColor *attachButtonColor;
@@ -62,7 +64,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor* toolbarQuotedMessageColor;
 
 #pragma mark - Waiting for specialist
-
 @property (nonatomic, assign, readwrite) BOOL showWaitingForSpecialistProgress;
 @property (strong, nonatomic, readwrite) UIColor *waitingSpecialistSpinnerColor;
 @property (strong, nonatomic, readwrite) UIColor *waitingSpecialistBgColor;
@@ -83,6 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIImage* messageBubbleFilledMaskImage;
 @property (strong, nonatomic, readwrite) UIImage* messageBubbleStrokedMaskImage;
 @property (strong, nonatomic, readwrite) UIColor *emptyImageColor;
+@property (strong, nonatomic, readwrite) UIColor* messageStatusTintColor;
 
 #pragma mark - System messages
 @property (strong, nonatomic, readwrite) UIFont* specialisConnectTitleFont;
@@ -98,8 +100,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor *scheduleAlertColor;
 @property (strong, nonatomic, readwrite) UIFont  *scheduleAlertFont;
 
-#pragma mark - Incoming message
+#pragma mark - Scroll down button
+@property (strong, nonatomic, readwrite) UIImage *scrollToBottomImage;
+@property (strong, nonatomic, readwrite) UIColor *scrollToBottomBadgeColor;
+@property (strong, nonatomic, readwrite) UIColor *scrollToBottomBadgeTextColor;
 
+#pragma mark - Incoming message
 @property (strong, nonatomic, readwrite) UIColor* incomingBubbleColor;
 @property (strong, nonatomic, readwrite) UIColor* incomingBubbleTextColor;
 
@@ -116,7 +122,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readwrite) CGFloat systemMessageAvatarSize;
 
 #pragma mark - Outgoing message
-
 @property (strong, nonatomic, readwrite) UIColor* failedBubbleColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingBubbleColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingBubbleTextColor;
@@ -159,7 +164,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIFont* searchMessageDateTextFont;
 
 #pragma mark - Photopicker
-
 @property (nonatomic, strong) UIColor *photoPickerToolbarTintColor;
 @property (nonatomic, strong) UIFont *photoPickerToolbarButtonFont;
 
@@ -170,8 +174,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIFont *photoPickerSheetTextFont;
 
 #pragma mark - Survey
-#pragma mark - Specialist Info
 
+#pragma mark - Specialist Info
 @property (nonatomic, strong) UIColor *starRatingColorEnabled;
 @property (nonatomic, strong) UIColor *likeRatingColorEnabled;
 @property (nonatomic, strong) UIColor *starRatingColorDisabled;
@@ -193,12 +197,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL canShowDebugScreen;
 
 #pragma mark - DataStore
-
 @property (nonatomic, strong) NSDictionary <NSString *, NSString *> *customHTTPHeadersForDataStore;
 @property (nonatomic, strong) NSNumber *historyLoadingCount;
 
 #pragma mark - Request Close Thread Survey
-
 @property (strong, nonatomic, readwrite) NSString* closeThreadSurveyText;
 @property (strong, nonatomic, readwrite) NSString* closeThreadSurveyAnswerClose;
 @property (strong, nonatomic, readwrite) NSString* closeThreadSurveyAnswerContinue;

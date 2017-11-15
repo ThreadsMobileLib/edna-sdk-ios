@@ -169,6 +169,16 @@ typedef enum : NSUInteger {
 + (void) dismissFromCurrentView;
 
 /*!
+ * Logout current clientId
+ */
++ (void) logout;
+
+/*!
+ * Logout specific clientId
+ */
++ (void) logout: (NSString*) clientId;
+
+/*!
  * Clearing local cache of images
  */
 + (void) clearCachedFiles;
