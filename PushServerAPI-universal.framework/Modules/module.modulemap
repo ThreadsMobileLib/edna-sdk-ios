@@ -1,5 +1,5 @@
 framework module PushServerAPI {
-  umbrella header "PushServerAPI-umbrella.h"
+  umbrella header "PushServerAPI.h"
 
   export *
   module * { export * }

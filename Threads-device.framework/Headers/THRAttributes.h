@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface THRAttributes : NSObject
 
 #pragma mark - General
+@property (nonatomic, assign) BOOL canShowDebugScreen;
 
 /**
  *  Works properly for non view controller based status bar appearance
@@ -84,7 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIImage* messageBubbleFilledMaskImage;
 @property (strong, nonatomic, readwrite) UIImage* messageBubbleStrokedMaskImage;
 @property (strong, nonatomic, readwrite) UIColor *emptyImageColor;
-@property (strong, nonatomic, readwrite) UIColor* messageStatusTintColor;
+@property (strong, nonatomic, readwrite) UIColor* timeAndStatusBackgroundColor;
 
 #pragma mark - System messages
 @property (strong, nonatomic, readwrite) UIFont* specialisConnectTitleFont;
@@ -106,8 +107,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor *scrollToBottomBadgeTextColor;
 
 #pragma mark - Incoming message
+@property (assign, nonatomic, readwrite) BOOL incomingBubbleStroked;
 @property (strong, nonatomic, readwrite) UIColor* incomingBubbleColor;
 @property (strong, nonatomic, readwrite) UIColor* incomingBubbleTextColor;
+@property (strong, nonatomic, readwrite) UIColor* incomingTimeColor;
 
 @property (assign, nonatomic, readwrite) BOOL showIncomingAvatar;
 
@@ -118,13 +121,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor* incomingQuoteFilesizeColor;
 @property (strong, nonatomic, readwrite) UIColor* incomingFileIconTintColor;
 @property (strong, nonatomic, readwrite) UIColor* incomingFileIconBgColor;
+@property (strong, nonatomic, readwrite) UIColor* incomingMediaTimeColor;
 @property (nonatomic, assign, readwrite) CGFloat commonMessageAvatarSize;
 @property (nonatomic, assign, readwrite) CGFloat systemMessageAvatarSize;
 
 #pragma mark - Outgoing message
+@property (assign, nonatomic, readwrite) BOOL failedBubbleStroked;
 @property (strong, nonatomic, readwrite) UIColor* failedBubbleColor;
+
+@property (assign, nonatomic, readwrite) BOOL outgoingBubbleStroked;
 @property (strong, nonatomic, readwrite) UIColor* outgoingBubbleColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingBubbleTextColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingTimeColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingPendingStatusColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingDeliveredStatusColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingReadStatusColor;
 @property (assign, nonatomic, readonly) BOOL showOutgoingAvatar;
 @property (strong, nonatomic, readwrite) UIImage* avatarPlaceholderImage;
 
@@ -133,6 +144,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor* outgoingQuoteMessageColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingQuoteTimeColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingQuoteFilesizeColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingMediaTimeColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingMediaPendingStatusColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingMediaDeliveredStatusColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingMediaReadStatusColor;
 
 #pragma mark - Search controller
 @property (strong, nonatomic, readwrite) UIColor* searchScopeBarTintColor;
@@ -154,7 +169,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor* searchMessageTextColor;
 @property (strong, nonatomic, readwrite) UIColor* searchMessageDateTextColor;
 @property (strong, nonatomic, readwrite) UIColor* searchMessageFileTextColor;
-@property (strong, nonatomic, readwrite) UIColor* searchMessageStatusTintColor;
 @property (strong, nonatomic, readwrite) UIColor* searchMessageMatchTextColor;
 
 @property (strong, nonatomic, readwrite) UIFont* searchMessageAuthorTextFont;
@@ -173,19 +187,23 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *photoPickerSheetTextColor;
 @property (nonatomic, strong) UIFont *photoPickerSheetTextFont;
 
-#pragma mark - Survey
-
 #pragma mark - Specialist Info
+@property (nonatomic, assign) BOOL canShowSpecialistInfo;
+
+#pragma mark - Survey
 @property (nonatomic, strong) UIColor *starRatingColorEnabled;
 @property (nonatomic, strong) UIColor *likeRatingColorEnabled;
 @property (nonatomic, strong) UIColor *starRatingColorDisabled;
 @property (nonatomic, strong) UIColor *likeRatingColorDisabled;
 @property (nonatomic, strong) UIColor *starRatingColorCompleted;
 @property (nonatomic, strong) UIColor *likeRatingColorCompleted;
-@property (nonatomic, assign) BOOL canShowSpecialistInfo;
 
 @property (nonatomic, strong) UIColor *likeLabelOnStarColor;
 @property (nonatomic, strong) UIColor *likeLabelUnderStarColor;
+@property (nonatomic, strong) UIColor* surveyTextColor;
+@property (nonatomic, strong) UIFont *surveyTextFont;
+@property (nonatomic, strong) UIColor* surveyCompletionColor;
+@property (nonatomic, strong) UIFont *surveyCompletionFont;
 
 @property (nonatomic, strong) UIImage *iconStarRatingEmty;
 @property (nonatomic, strong) UIImage *iconStarRatingFull;
@@ -194,16 +212,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImage *iconLikeFull;
 @property (nonatomic, strong) UIImage *iconDislikeFull;
 
-@property (nonatomic, assign) BOOL canShowDebugScreen;
-
-#pragma mark - DataStore
-@property (nonatomic, strong) NSDictionary <NSString *, NSString *> *customHTTPHeadersForDataStore;
-@property (nonatomic, strong) NSNumber *historyLoadingCount;
-
 #pragma mark - Request Close Thread Survey
 @property (strong, nonatomic, readwrite) NSString* closeThreadSurveyText;
 @property (strong, nonatomic, readwrite) NSString* closeThreadSurveyAnswerClose;
 @property (strong, nonatomic, readwrite) NSString* closeThreadSurveyAnswerContinue;
+
+#pragma mark - DataStore
+@property (nonatomic, strong) NSDictionary <NSString *, NSString *> *customHTTPHeadersForDataStore;
+@property (nonatomic, strong) NSNumber *historyLoadingCount;
 
 + (instancetype) defaultAttributes;
 
