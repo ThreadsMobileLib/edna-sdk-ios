@@ -1,0 +1,7 @@
+platform :ios, "8.0"
+
+target 'ThreadsApp' do
+    project 'ThreadsApp.xcodeproj'
+    workspace 'Threads.xcworkspace'
+    pod 'MMDrawerController', '~> 0.5.7'
+end

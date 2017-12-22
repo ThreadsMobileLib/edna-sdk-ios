@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  ThreadsApp
+
+  Created by sequenia on 23/08/16.
+  Copyright © 2016 Sequenia. All rights reserved.
+*/
+"input_login_alert" = "Login is not entered";
+
+"show_chat_title" = "Show chat";
+"chat_fragment_title" = "(as fragment)";
+"chat_full_controller_title" = "(as full controller)";
+"login_placeholder" = "Login";
+"name_placeholder" = "Name";
+"password_placeholder" = "Password";
+"survey_thanks" = "Thanks for vote";
+
+"unreaded_messages" = "Unreaded messages:";
+"unreaded_messages_test" = "Unreaded test";
