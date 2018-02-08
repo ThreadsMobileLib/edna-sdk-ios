@@ -199,6 +199,10 @@ typedef enum : NSUInteger {
  */
 + (void) hideToolbarAnimated:(BOOL)animated;
 
++ (void) showKeyboard;
+
++ (void) hideKeyboard;
+
 /*!
  * Set inset for messages collection
  */
