@@ -34,6 +34,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIFont* navigationBarTitleFont;
 @property (strong, nonatomic, readwrite) UIFont* navigationBarSubtitleFont;
 
+#pragma mark - Navigation animations
+@property (nonatomic, assign, readwrite) BOOL shouldAnimateShowNavigation;
+@property (nonatomic, assign, readwrite) BOOL shouldAnimatePopNavigation;
+
 #pragma mark - Placeholder
 @property (strong, nonatomic, readwrite) UIColor* backgroundColor;
 @property (strong, nonatomic, readwrite) UIImage* placeholderImage;
@@ -186,6 +190,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIColor *photoPickerSheetTextColor;
 @property (nonatomic, strong) UIFont *photoPickerSheetTextFont;
+
+#pragma mark - FileViewer
+@property (nonatomic, strong) UIColor *fileViewerTitleColor;
+@property (nonatomic, strong) UIColor *fileViewerNavBarBackgroundColor;
+@property (nonatomic, strong) UIColor *fileViewerNavBarTintColor;
+@property (nonatomic, strong) UIColor *fileViewerBackgroundColor;
+@property (nonatomic, strong) UIFont *fileViewerTitleFont;
 
 #pragma mark - Specialist Info
 @property (nonatomic, assign) BOOL canShowSpecialistInfo;

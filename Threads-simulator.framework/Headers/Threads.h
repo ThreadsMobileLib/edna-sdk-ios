@@ -156,6 +156,8 @@ typedef enum : NSUInteger {
  */
 + (void) show;
 
++ (void) showAnimated: (BOOL) animated;
+
 /*!
  * Show Threads as fragment
  */
