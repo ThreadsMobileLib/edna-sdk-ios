@@ -3,7 +3,7 @@
 //  ThreadsApp
 //
 //  Created by Brooma Service on 31/10/2017.
-//  Copyright © 2017 Sequenia. All rights reserved.
+//  Copyright © 2017 Brooma Service. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

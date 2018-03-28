@@ -3,7 +3,7 @@
 //  ThreadsApp
 //
 //  Created by Nikolay Kagala on 31/05/16.
-//  Copyright © 2016 Sequenia. All rights reserved.
+//  Copyright © 2016 Brooma Service. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -35,8 +35,9 @@
     } else {
         [[UIApplication sharedApplication] registerForRemoteNotifications];
     }
-        
-    [PushServerAPI setPUSH_API_LOG_ENABLE: YES];
+    
+    [Threads setDebugLoggingEnabled: YES];
+    [PushServerAPI setPUSH_API_LOG_ENABLE: NO];
     [PushServerAPI showNetworkActivity: YES];
     [[PushServerAPI default] setOnPushMessagesReceived:^(NSArray<PushNotificationMessage *> *messages) {
         for(PushNotificationMessage *message in messages) {

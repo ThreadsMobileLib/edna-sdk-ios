@@ -60,6 +60,11 @@ typedef enum : NSUInteger {
 @property BOOL analyticsEnabled;
 
 /*!
+ * Debug logging enabling paramter
+ */
+@property BOOL debugLogggingEnabled;
+
+/*!
  * It is title that will be show in the empty screen of chat
  */
 @property NSString *helloTitle;
@@ -120,6 +125,8 @@ typedef enum : NSUInteger {
  * Setting enable Analytics.
  */
 + (void) setAnalyticsEnabled: (BOOL) enabled;
+
++ (void) setDebugLoggingEnabled: (BOOL) enabled;
 
 /*!
  * Setting hello title.

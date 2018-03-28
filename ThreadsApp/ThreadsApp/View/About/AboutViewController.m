@@ -2,8 +2,8 @@
 //  AboutViewController.m
 //  ThreadsApp
 //
-//  Created by sequenia on 18/04/17.
-//  Copyright © 2017 Sequenia. All rights reserved.
+//  Created by Brooma Service on 18/04/17.
+//  Copyright © 2017 Brooma Service. All rights reserved.
 //
 
 #import "AboutViewController.h"

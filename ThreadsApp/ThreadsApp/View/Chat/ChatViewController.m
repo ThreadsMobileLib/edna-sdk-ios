@@ -3,7 +3,7 @@
 //  ThreadsApp
 //
 //  Created by Nikolay Kagala on 31/05/16.
-//  Copyright © 2016 Sequenia. All rights reserved.
+//  Copyright © 2016 Brooma Service. All rights reserved.
 //
 
 #import "ChatViewController.h"
@@ -112,6 +112,10 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         self.attributes.navigationBarVisible = YES;
         self.attributes.canShowDebugScreen = self.canShowDebugScreen;
         self.attributes.historyLoadingCount = @(25);
+        self.attributes.incomingBubbleColor = [UIColor colorWithRed:53.f/255.f green:152.f/255.f blue:220.f/255.f alpha:1.f];
+        self.attributes.incomingBubbleStroked = YES;
+        self.attributes.shouldAnimateShowNavigation = NO;
+        self.attributes.shouldAnimatePopNavigation = NO;
     } else {
         self.attributes = [THRAttributes defaultAttributes];
         self.attributes.refreshColor = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
@@ -191,6 +195,9 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         self.attributes.photoPickerToolbarButtonFont = [UIFont fontWithName:@"Lato-Regular" size:17.f];
         self.attributes.photoPickerSheetTextColor = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
         self.attributes.photoPickerSheetTextFont = [UIFont fontWithName:@"Lato-Regular" size:17.f];
+        self.attributes.fileViewerNavBarBackgroundColor = self.attributes.navigationBarBackgroundColor;
+        self.attributes.fileViewerTitleFont = self.attributes.navigationBarTitleFont;
+        self.attributes.fileViewerNavBarTintColor = self.attributes.navigationBarTintColor;
         self.attributes.sendButtonFont = [UIFont fontWithName:@"Lato-Regular" size:17.f];
         self.attributes.messageBubbleFilledMaskImage = [UIImage imageNamed:@"rect_bubble_filled"];
         self.attributes.messageBubbleStrokedMaskImage = [UIImage imageNamed:@"rect_bubble_stroked"];
