@@ -18,15 +18,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		92+Rel7/7X1iPVGDH05q+6vTpIU=
+		pBVjXXlzB6mkhaTysteAQAAfqLo=
 		</data>
 		<key>JSQFileMessageView.nib</key>
 		<data>
-		5PtH+u24+wtccEvfphUyGjwJ9oA=
+		4htpWCT5XDxoL0SHkqqYqMem1oQ=
 		</data>
 		<key>JSQLinkMessagesView.nib</key>
 		<data>
-		DR4bDW0eLSKcEHsr6gc6ovTbXpY=
+		doTgU1xtBxCeL9CFK7hpsYVKuYQ=
 		</data>
 		<key>JSQMessagesAssets.bundle/Base.lproj/JSQMessages.strings</key>
 		<dict>
@@ -347,35 +347,35 @@
 		</dict>
 		<key>JSQMessagesCollectionViewCellIncoming.nib</key>
 		<data>
-		IsHbUjh4P1lj8b7z0HGYO+rRKe0=
+		Cg11tKTb52NZlTPtzDP7jc238cc=
 		</data>
 		<key>JSQMessagesCollectionViewCellOutgoing.nib</key>
 		<data>
-		5emHLWRbf5iFOZHGgpmeG8vpQ4s=
+		G+jngVIBKx3omV5fvwb7O2P0NvM=
 		</data>
 		<key>JSQMessagesLoadEarlierHeaderView.nib</key>
 		<data>
-		pxmdEK+0U+h/bBGX336D0Xbm36A=
+		XWzTd4tbkVO9gygYoDU/718wwng=
 		</data>
 		<key>JSQMessagesToolbarContentView.nib</key>
 		<data>
-		ezlXhESvzEoxnm+oYBmYEh0viVI=
+		jv+G6mgmNuMl7yE+crSSCcVCj3k=
 		</data>
 		<key>JSQMessagesTypingIndicatorFooterView.nib</key>
 		<data>
-		pYxR4l41gV0rHH/2oD7JQjOOV18=
+		gV2J0zoV0AKZERSh28tMB/Qs1yY=
 		</data>
 		<key>JSQMessagesViewController.nib</key>
 		<data>
-		2GUwZkrIzEq0YZvPCOX3EVmiJaU=
+		5tGeC4PlwEyJbGNgC6wwXqPJ7HM=
 		</data>
 		<key>JSQQuotedMessageView.nib</key>
 		<data>
-		wILtdyaDNNoIX2UUQ4MPUjysPJc=
+		hNtA+3HLQ4NTBW2tv6MwRTj9F4Q=
 		</data>
 		<key>JSQSystemMessageView.nib</key>
 		<data>
-		5yd79qdEwvlcu2KfGMtsxmPaW8Q=
+		K5Q6lwuL+DKr8X52RMLWX/9wIRM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -383,19 +383,19 @@
 		</data>
 		<key>SQActionCell.nib</key>
 		<data>
-		0B7vhIY/FqRB3S/Jjoyct3NPzq4=
+		011GFTPg4xe3TH8szjpHssrsTrc=
 		</data>
 		<key>SQAlbumCell.nib</key>
 		<data>
-		aAyMHEqt4JouPdjuBqDZsuEQcFE=
+		LV9Kw127c5fZCxWfPIAe5b7erGI=
 		</data>
 		<key>SQPhotoPreviewCell.nib</key>
 		<data>
-		x+Nx+MDL/d38srbFs8CaeKFEI9s=
+		YQeWYLo2MaIOdNkKMxNBqhLXA7k=
 		</data>
 		<key>SQPreviewCell.nib</key>
 		<data>
-		c8U4GFD4NTLDUzD3w/QS1lXw2tY=
+		ue0IYdwgpsdRYq5hmmZh+z81d3A=
 		</data>
 		<key>Search Button@2x.png</key>
 		<data>
@@ -753,22 +753,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5PtH+u24+wtccEvfphUyGjwJ9oA=
+			4htpWCT5XDxoL0SHkqqYqMem1oQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			gyABp9MC1IT98MXgYkFa9P0WKx/xTIlE+++ZTiVH7Y0=
+			h097OtV4OUrXJbGIfRQSqZShwVp6Af33LseIM1SJ8lw=
 			</data>
 		</dict>
 		<key>JSQLinkMessagesView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DR4bDW0eLSKcEHsr6gc6ovTbXpY=
+			doTgU1xtBxCeL9CFK7hpsYVKuYQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Kz5EWQULa7rWGpVTKXjx5smJJJlwTV7253v7EwynuMc=
+			1sCjQIJMVxhOnTy4+J5dywagSFTi2eJ7dgMKLnfNNaU=
 			</data>
 		</dict>
 		<key>JSQMessagesAssets.bundle/Base.lproj/JSQMessages.strings</key>
@@ -1353,88 +1353,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IsHbUjh4P1lj8b7z0HGYO+rRKe0=
+			Cg11tKTb52NZlTPtzDP7jc238cc=
 			</data>
 			<key>hash2</key>
 			<data>
-			7TbZKU/V8R/6F9btM8P/y8P2rVLiWy+3bJvnP/cKuuo=
+			ixRoJk8JtnEhNxuM8K+/uOOjjIYmUQNSvYo0WbQzy4I=
 			</data>
 		</dict>
 		<key>JSQMessagesCollectionViewCellOutgoing.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5emHLWRbf5iFOZHGgpmeG8vpQ4s=
+			G+jngVIBKx3omV5fvwb7O2P0NvM=
 			</data>
 			<key>hash2</key>
 			<data>
-			9oyQIlAd9FBKL5iu3gPGW9tr6R6Ms8fT92CvkRp+OOk=
+			y0S8y/UDh+OrTD6sVED3J4N+FLzkKn4AKatX687h5YE=
 			</data>
 		</dict>
 		<key>JSQMessagesLoadEarlierHeaderView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pxmdEK+0U+h/bBGX336D0Xbm36A=
+			XWzTd4tbkVO9gygYoDU/718wwng=
 			</data>
 			<key>hash2</key>
 			<data>
-			XW0ubKKXbUf3+nIO17E40kXYeR8UHmQmUdYR9h9QqSo=
+			Kd5U4iAiPk+BxpczrZ5hIpLzss/fAMIJNafwH+62k9I=
 			</data>
 		</dict>
 		<key>JSQMessagesToolbarContentView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ezlXhESvzEoxnm+oYBmYEh0viVI=
+			jv+G6mgmNuMl7yE+crSSCcVCj3k=
 			</data>
 			<key>hash2</key>
 			<data>
-			eSA7JTdsEwc0cydsC5FS0Nt1chFxGsGtZcQqllKDfvs=
+			8CCK4CbJYqLWRgMqolM5f5MYi4f+DNEU3BWj55h0QNA=
 			</data>
 		</dict>
 		<key>JSQMessagesTypingIndicatorFooterView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pYxR4l41gV0rHH/2oD7JQjOOV18=
+			gV2J0zoV0AKZERSh28tMB/Qs1yY=
 			</data>
 			<key>hash2</key>
 			<data>
-			hLzI5CcTmif97RdkOWuScIG0aP51hwW/DJglD1S/c/w=
+			/wXqzRvY7NE8sMatPSAKa33/LopeaYyTqGPQT6tkJ6I=
 			</data>
 		</dict>
 		<key>JSQMessagesViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2GUwZkrIzEq0YZvPCOX3EVmiJaU=
+			5tGeC4PlwEyJbGNgC6wwXqPJ7HM=
 			</data>
 			<key>hash2</key>
 			<data>
-			8nQtbntwDLftV64Fu3SYrebZtPC1H/lm2GdACUzT0zs=
+			FvvOhQW3fLoaqMRsJMYUiO7jCNTkbOQTaVfOVYpgOSI=
 			</data>
 		</dict>
 		<key>JSQQuotedMessageView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wILtdyaDNNoIX2UUQ4MPUjysPJc=
+			hNtA+3HLQ4NTBW2tv6MwRTj9F4Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			Umhi10R3TC/tkqITVZmVvv0f8xwsTYNVcjHWkx6pgJs=
+			M0e4GqMkn3lR3g9uIQ9oUP/H/I4SjkkF+QLgaLaM4W4=
 			</data>
 		</dict>
 		<key>JSQSystemMessageView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5yd79qdEwvlcu2KfGMtsxmPaW8Q=
+			K5Q6lwuL+DKr8X52RMLWX/9wIRM=
 			</data>
 			<key>hash2</key>
 			<data>
-			b5LJevq1ZXEk4IWQgz4iIbBWA35oHc1JdRY1v8fNTOo=
+			hMccujs7C2xDB8ajV52V5EATqyij4vcjXFsypl2F/is=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1452,44 +1452,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0B7vhIY/FqRB3S/Jjoyct3NPzq4=
+			011GFTPg4xe3TH8szjpHssrsTrc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Nxs5MoqUH72IHX6lBh2EhjhPJa9FbhKhiqbo9Lu6fUU=
+			xeJQGWm2x3gm3KPYR9t9sSdRTerC8PoIAFw5wZVV0bM=
 			</data>
 		</dict>
 		<key>SQAlbumCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			aAyMHEqt4JouPdjuBqDZsuEQcFE=
+			LV9Kw127c5fZCxWfPIAe5b7erGI=
 			</data>
 			<key>hash2</key>
 			<data>
-			F8pFe1oxUxyJLzVur2qpXyPfiS/u/dkqknTnl0YFl3c=
+			YIgx4kcJgNXT63+U1udLiXDeC8IogT3S5ydMYViFhRc=
 			</data>
 		</dict>
 		<key>SQPhotoPreviewCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x+Nx+MDL/d38srbFs8CaeKFEI9s=
+			YQeWYLo2MaIOdNkKMxNBqhLXA7k=
 			</data>
 			<key>hash2</key>
 			<data>
-			J3vZ/vC8l+VvwNikCcojIiUy3VslMI3kOEkO2pC3fl8=
+			CRn/8SHXuv+hPq9mU7NnPhCkqd3eKdUmjtgx3ierWsM=
 			</data>
 		</dict>
 		<key>SQPreviewCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c8U4GFD4NTLDUzD3w/QS1lXw2tY=
+			ue0IYdwgpsdRYq5hmmZh+z81d3A=
 			</data>
 			<key>hash2</key>
 			<data>
-			8WBR/R8m17Mt8g6KZhrK3OOcyz7VlkmdUWXIsW1EbpY=
+			SPknZVpJPAppP4NLgo0KL8b3usWY4cFWVW3ZA1GwUso=
 			</data>
 		</dict>
 		<key>Search Button@2x.png</key>
