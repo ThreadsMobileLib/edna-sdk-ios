@@ -13,7 +13,6 @@
 "login_placeholder" = "Логин";
 "name_placeholder" = "Имя";
 "password_placeholder" = "Пароль";
-"survey_thanks" = "Спасибо за вашу оценку";
 
 "unreaded_messages" = "Непрочитанных сообщений:";
 "unreaded_messages_test" = "Тест непрочитанных сообщений";
