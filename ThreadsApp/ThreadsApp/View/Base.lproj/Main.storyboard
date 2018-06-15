@@ -23,17 +23,18 @@
                     <connections>
                         <segue destination="VWq-g2-FSb" kind="relationship" relationship="viewControllers" id="xZW-4j-bM7"/>
                         <segue destination="hi1-jh-PrH" kind="relationship" relationship="viewControllers" id="DcL-74-anI"/>
+                        <segue destination="rLQ-SF-cDn" kind="relationship" relationship="viewControllers" id="6vt-Tw-BQO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrX-UY-VV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-519" y="-388"/>
         </scene>
-        <!--Item-->
+        <!--Unread-->
         <scene sceneID="AvD-RV-YOu">
             <objects>
                 <navigationController id="hi1-jh-PrH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VJ7-cW-1Vt"/>
+                    <tabBarItem key="tabBarItem" title="Unread" id="VJ7-cW-1Vt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hdD-xl-Ejo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -44,7 +45,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wum-Ki-B2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-519" y="322"/>
+            <point key="canvasLocation" x="-519" y="421"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="4P9-cz-3Ft">
@@ -89,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2z-7P-ibd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-519.20000000000005" y="998.95052473763121"/>
+            <point key="canvasLocation" x="-519" y="1119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R68-YB-5o8">
@@ -105,7 +106,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5qZ-H4-h4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-519" y="1677"/>
+            <point key="canvasLocation" x="242" y="-388"/>
         </scene>
         <!--Drawer View Controller-->
         <scene sceneID="x1v-iI-0yr">
@@ -136,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hmd-kb-VLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="281" y="1677"/>
+            <point key="canvasLocation" x="953" y="-388"/>
         </scene>
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
@@ -431,13 +432,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="240.80000000000001" y="322.48875562218893"/>
+            <point key="canvasLocation" x="-1188" y="1119"/>
         </scene>
-        <!--Item-->
+        <!--Client Controller-->
         <scene sceneID="rNa-aX-UiK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VWq-g2-FSb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RP2-3S-9J2"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VWq-g2-FSb" userLabel="Client Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Client" id="RP2-3S-9J2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lU2-nA-HCN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -450,7 +451,58 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CqJ-fS-Xmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="242" y="-388"/>
+            <point key="canvasLocation" x="-1188" y="421"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="lY3-Vp-oGp">
+            <objects>
+                <navigationController id="rLQ-SF-cDn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chat" id="ZdI-gI-J8H"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gjn-Ya-KDj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PwM-9z-5Nf" kind="relationship" relationship="rootViewController" id="5Kg-R3-mhX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMp-84-HhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="421"/>
+        </scene>
+        <!--Chat Fragment View Controller-->
+        <scene sceneID="dZI-QF-x2f">
+            <objects>
+                <viewController id="PwM-9z-5Nf" customClass="ChatFragmentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uDH-bK-oFm"/>
+                        <viewControllerLayoutGuide type="bottom" id="aUs-JV-X4d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BzI-59-l9J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohu-iI-2rw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ohu-iI-2rw" firstAttribute="top" secondItem="uDH-bK-oFm" secondAttribute="bottom" id="5Ea-nw-JVb"/>
+                            <constraint firstItem="aUs-JV-X4d" firstAttribute="top" secondItem="ohu-iI-2rw" secondAttribute="bottom" id="AwF-cF-6Ns"/>
+                            <constraint firstItem="ohu-iI-2rw" firstAttribute="leading" secondItem="BzI-59-l9J" secondAttribute="leading" id="OUu-xA-nlU"/>
+                            <constraint firstAttribute="trailing" secondItem="ohu-iI-2rw" secondAttribute="trailing" id="kdH-2l-97s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CBz-Iw-G9c"/>
+                    <connections>
+                        <outlet property="chatContainer" destination="ohu-iI-2rw" id="5ht-Ib-npZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGF-Fl-lzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="1119"/>
         </scene>
     </scenes>
 </document>

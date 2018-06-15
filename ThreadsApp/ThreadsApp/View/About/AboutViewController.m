@@ -20,7 +20,19 @@
     [super viewDidLoad];
     self.navigationItem.title = NSLocalizedString(@"unreaded_messages_test", nil);
     self.titleLabel.text = NSLocalizedString(@"unreaded_messages", nil);
-    self.counterLabel.text = @"0";
+    [self updateCouterLabel];
+}
+
+- (void)setCounterValue:(NSInteger)counterValue {
+    _counterValue = counterValue;
+    [self updateCouterLabel];
+
+}
+
+- (void) updateCouterLabel {
+    if (self.counterLabel) {
+        self.counterLabel.text = [NSString stringWithFormat: @"%ld", self.counterValue];
+    }
 }
 
 @end

@@ -54,6 +54,7 @@
 		AAB161751F330CF60036B18E /* rect_bubble_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 80FFB11D1E83BB7400C03798 /* rect_bubble_filled.png */; };
 		AAB161761F330CF60036B18E /* placeholder_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8065E88C1E8E5D66005301A6 /* placeholder_image@3x.png */; };
 		AAB161881F330D110036B18E /* ThreadsApp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAB161871F330D110036B18E /* ThreadsApp-Info.plist */; };
+		AAC55BB320D38EC200AC71BD /* ChatFragmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC55BB220D38EC200AC71BD /* ChatFragmentViewController.m */; };
 		AADDF7CF1FA3440D00716CAD /* ClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AADDF7CE1FA3440D00716CAD /* ClientCell.m */; };
 		AADDF7D61FA348AE00716CAD /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = AADDF7D51FA348AE00716CAD /* Client.m */; };
 		AADDF7DE1FA8697300716CAD /* TAStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = AADDF7DD1FA8697300716CAD /* TAStorage.m */; };
@@ -140,6 +141,8 @@
 		AA9028461F73AE2D0094F99D /* scroll_down_button_brs@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll_down_button_brs@3x.png"; sourceTree = "<group>"; };
 		AAB161851F330CF60036B18E /* ThreadsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB161871F330D110036B18E /* ThreadsApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ThreadsApp-Info.plist"; sourceTree = "<group>"; };
+		AAC55BB120D38EC200AC71BD /* ChatFragmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFragmentViewController.h; sourceTree = "<group>"; };
+		AAC55BB220D38EC200AC71BD /* ChatFragmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFragmentViewController.m; sourceTree = "<group>"; };
 		AADDF7CD1FA3440D00716CAD /* ClientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientCell.h; sourceTree = "<group>"; };
 		AADDF7CE1FA3440D00716CAD /* ClientCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientCell.m; sourceTree = "<group>"; };
 		AADDF7D41FA348AE00716CAD /* Client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				75EA42A11F172AD100EBB1DC /* Cells */,
+				AAC55BB120D38EC200AC71BD /* ChatFragmentViewController.h */,
+				AAC55BB220D38EC200AC71BD /* ChatFragmentViewController.m */,
 				8047105A1CFD94120088FB8E /* ChatViewController.h */,
 				8047105B1CFD94120088FB8E /* ChatViewController.m */,
 				AADDF7D41FA348AE00716CAD /* Client.h */,
@@ -577,6 +582,7 @@
 				AAB1614C1F330CF60036B18E /* AppDelegate.m in Sources */,
 				AADDF7DE1FA8697300716CAD /* TAStorage.m in Sources */,
 				AAB1614D1F330CF60036B18E /* SwitchCell.m in Sources */,
+				AAC55BB320D38EC200AC71BD /* ChatFragmentViewController.m in Sources */,
 				AAB1614E1F330CF60036B18E /* DrawerViewController.m in Sources */,
 				AAB1614F1F330CF60036B18E /* SelectCell.m in Sources */,
 			);

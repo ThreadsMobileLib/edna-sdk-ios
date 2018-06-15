@@ -23,8 +23,10 @@
 #import "Client.h"
 #import "TAStorage.h"
 #import <PushServerAPI/PushServerAPI-Swift.h>
+#import "ChatFragmentViewController.h"
 
-@interface ChatViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate,
+@interface ChatViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource,
+UICollectionViewDelegate, UITabBarControllerDelegate,
 TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -55,6 +57,8 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
     [self configureDrawer];
     [self configureClientsPager];
     [self configureTableView];
+    
+    [self.tabBarController setDelegate:self];
     
     self.design = THRDesignDefault;
     self.canShowDebugScreen = NO;
@@ -254,19 +258,33 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         NSLog(@"%@", error);
         if (state) {
             if (type == CellTypeToFragmentChat) {
-                [Threads showInView: self.chatContainer
-                   parentController: self
-                      bottomSpacing: self.tabBarController.tabBar.frame.size.height];
-                [self.view bringSubviewToFront:self.chatContainer];
+                
+                if (button == nil) {
+                    ChatFragmentViewController* fragmentController = (ChatFragmentViewController*) self.tabBarController.viewControllers[2].childViewControllers.firstObject;
+                    
+                    [Threads showInView: fragmentController.chatContainer
+                       parentController: fragmentController
+                          bottomSpacing: self.tabBarController.tabBar.frame.size.height];
+                
+                } else {
+                    [Threads showInView: self.chatContainer
+                       parentController: self
+                          bottomSpacing: self.tabBarController.tabBar.frame.size.height];
+                    [self.view bringSubviewToFront:self.chatContainer];
+                }
+                
             } else {
                 [Threads show];
             }
             [[Threads threads] setUnreadedMessagesCountChanged:^(NSInteger messagesCount) {
-                UINavigationController *navController = self.tabBarController.viewControllers.lastObject;
+                UINavigationController *navController = self.tabBarController.viewControllers[1];
                 AboutViewController *emp = navController.viewControllers.firstObject;
-                emp.counterLabel.text = [NSString stringWithFormat:@"%ld", (long)messagesCount];
-                NSString *badge = (messagesCount > 0) ? emp.counterLabel.text : nil;
-                [self.tabBarController.tabBar.items.lastObject setBadgeValue: badge];
+                [emp setCounterValue: messagesCount];
+                NSString *badge = (messagesCount > 0) ? [NSString stringWithFormat:@"%ld", (long)messagesCount] : nil;
+                
+                if (self.tabBarController.selectedIndex != 2) {
+                    [self.tabBarController.tabBar.items[2] setBadgeValue: badge];
+                }
             }];
         }
         else {
@@ -280,6 +298,16 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
+}
+
+- (BOOL) tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    if ([viewController.childViewControllers.firstObject isKindOfClass: [ChatFragmentViewController class]]) {
+        [self showChat:nil type:CellTypeToFragmentChat];
+    }
+    
+    return YES;
+    
 }
 
 #pragma mark - Input

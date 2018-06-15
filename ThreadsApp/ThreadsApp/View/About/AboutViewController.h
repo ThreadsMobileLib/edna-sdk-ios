@@ -14,4 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *counterLabel;
 
+@property (nonatomic) NSInteger counterValue;
+
 @end

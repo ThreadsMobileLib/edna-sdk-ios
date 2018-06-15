@@ -88,6 +88,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic, readwrite) UIImage* messageBubbleFilledMaskImage;
 @property (strong, nonatomic, readwrite) UIImage* messageBubbleStrokedMaskImage;
+
+/**
+ *  Right value sets margin to the avatar image
+ *  Left value sets margin on the side opposite the avatar image
+ */
+@property (assign, nonatomic) UIEdgeInsets messageBubbleTextViewFrameInsets;
+@property (assign, nonatomic) UIEdgeInsets messageBubbleTextViewTextContainerInsets;
+@property (assign, nonatomic) CGFloat messageBubbleOppositeMargin;
+
 @property (strong, nonatomic, readwrite) UIColor *emptyImageColor;
 @property (strong, nonatomic, readwrite) UIColor* timeAndStatusBackgroundColor;
 
@@ -148,6 +157,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor* outgoingQuoteMessageColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingQuoteTimeColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingQuoteFilesizeColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingFileIconTintColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingFileIconBgColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingMediaTimeColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingMediaPendingStatusColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingMediaDeliveredStatusColor;
