@@ -26,7 +26,7 @@
 #import "ChatFragmentViewController.h"
 
 @interface ChatViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource,
-UICollectionViewDelegate, UITabBarControllerDelegate,
+UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate,
 TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -212,6 +212,24 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         self.attributes.scheduleAlertFont = [UIFont fontWithName:@"Lato-Semibold" size:17.f];
         self.attributes.scheduleAlertColor = [UIColor colorWithRed:51.f/255.f green:51.f/255.f blue:51.f/255.f alpha:1.f];
         self.attributes.scrollToBottomImage = [UIImage imageNamed:@"scroll_down_button_brs"];
+        
+        self.attributes.surveyTextFont = [UIFont fontWithName:@"Lato-Regular" size:17.f];
+        self.attributes.surveyTextColor = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
+        self.attributes.surveyCompletionFont = [UIFont fontWithName:@"Lato-Regular" size:17.f];
+        self.attributes.surveyCompletionColor = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
+        self.attributes.iconLikeFull = [[UIImage imageNamed:@"ic_like_filled"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.attributes.iconLikeEmpty  = [[UIImage imageNamed:@"ic_like_stroked"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.attributes.iconDislikeFull  = [[UIImage imageNamed:@"ic_dislike_filled"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.attributes.iconDislikeEmpty  = [[UIImage imageNamed:@"ic_dislike_stroked"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.attributes.iconStarRatingFull  = [[UIImage imageNamed:@"ic_heart_filled"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.attributes.iconStarRatingEmty = [[UIImage imageNamed:@"ic_heart_stroked"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.attributes.likeRatingColorEnabled = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
+        self.attributes.likeRatingColorDisabled = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
+        self.attributes.starRatingColorEnabled = [UIColor redColor];
+        self.attributes.starRatingColorDisabled = [UIColor redColor];
+        self.attributes.likeRatingColorCompleted = [UIColor yellowColor];
+        self.attributes.starRatingColorCompleted = [UIColor redColor];
+        
         self.attributes.showWaitingForSpecialistProgress = NO;
         self.attributes.canShowSpecialistInfo = NO;
         self.attributes.showWaitingForSpecialistProgress = NO;
@@ -231,6 +249,7 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
             
             [Threads setClientId:client.clientId];
             [Threads setClientName:client.name];
+            [Threads setAppMarker: client.appMarker];
             
             [self configureThreads];
             [self registerAndShow: button type: type];
@@ -328,6 +347,12 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         clientNameInput = textField;
     }];
     
+    __block UITextField* appMarkerInput = nil;
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"App Marker (optional)";
+        appMarkerInput = textField;
+    }];
+    
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //Cancel
     }]];
@@ -335,8 +360,9 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
     [alert addAction:[UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSString* newClientId = clientIdInput.text;
         NSString* newClientName = clientNameInput.text;
+        NSString* newAppMarker = appMarkerInput.text;
         if (newClientId.length > 0) {
-            [self addClient: [Client clientWithId:newClientId name:newClientName]];
+            [self addClient: [Client clientWithId:newClientId name:newClientName appMarker:newAppMarker]];
         }
     }]];
     
@@ -496,6 +522,12 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
 }
 
 //Clients Collection Pager
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGRect screen = [UIScreen mainScreen].bounds;
+    return CGSizeMake(screen.size.width - 10, 134);
+}
+
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     ClientCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier: [ClientCell getReuseIdentifier] forIndexPath:indexPath];
@@ -539,6 +571,45 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         return [((ClientCell*) firstVisibleCell) getClient];
     } else {
         return nil;
+    }
+}
+
+- (void) appLaunchedWithNotification: (NSDictionary*) notification {
+    
+    if ([Threads isThreadsOriginPush: notification]) {
+        NSString* appMarker = [Threads getAppMarkerFromPush: notification];
+        
+        //Starting the apropriate chat for received appMarker
+        if (appMarker.length > 0) {
+            if (self.clients == nil) {
+                self.clients = [[TAStorage sharedInstance] getClients];
+            }
+            
+            Client* pushClient = nil;
+            for (Client* client in self.clients) {
+                if ([appMarker isEqualToString:client.appMarker]) {
+                    pushClient = client;
+                }
+            }
+            
+            if (pushClient != nil) {
+                //Reconfigure for chat that should be opened
+                
+                if ([appMarker hasSuffix:@"CRG"]) {
+                    self.design = THRDesignBRS;
+                } else {
+                    self.design = THRDesignDefault;
+                }
+                
+                [self configureThreads];
+                [Threads setClientId: pushClient.clientId];
+                [Threads setClientName: pushClient.name];
+                [Threads setAppMarker:  pushClient.appMarker];
+                
+                [self.tabBarController setSelectedIndex:2];
+                [self registerAndShow: nil type: CellTypeToFragmentChat];
+            }
+        }
     }
 }
 

@@ -21,6 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *clientId;
 @property (weak, nonatomic) IBOutlet UILabel *clientName;
+@property (weak, nonatomic) IBOutlet UILabel *appMarker;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
 @property (nonatomic) Client* client;

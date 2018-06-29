@@ -10,12 +10,14 @@
 #import <PushServerAPI/PushServerAPI-Swift.h>
 #import <Threads/Threads.h>
 
+#import "ChatViewController.h"
 #import <MMDrawerController.h>
 #import <MMDrawerController/MMDrawerVisualState.h>
 
 @interface AppDelegate ()
     
 @property (nonatomic,strong) MMDrawerController * drawerController;
+@property (nonatomic,strong) UITabBarController * tabBarController;
 
 @end
 
@@ -53,10 +55,10 @@
     }];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle bundleForClass:[self class]]];
-    UIViewController *centerController = [storyboard instantiateViewControllerWithIdentifier:@"CenterController"];
+    self.tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"CenterController"];
     UIViewController *drawerController = [storyboard instantiateViewControllerWithIdentifier:@"DrawerController"];
     
-    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:centerController rightDrawerViewController:drawerController];
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:self.tabBarController rightDrawerViewController:drawerController];
     [self.drawerController setShowsShadow:NO];
     [self.drawerController setRestorationIdentifier:@"MMDrawer"];
     [self.drawerController setMaximumRightDrawerWidth:200.0];
@@ -72,6 +74,7 @@
     }];
     
     [self.window setRootViewController:self.drawerController];
+    
     return YES;
 }
 
@@ -126,6 +129,16 @@
         NSLog(@"Short Push not accepted by chat");
     }
     
+}
+
+- (void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    
+    //Check if app was launched from notification tap
+    if ([response.actionIdentifier isEqualToString: UNNotificationDefaultActionIdentifier]) {
+        NSDictionary* pusDict = response.notification.request.content.userInfo;
+        ChatViewController* chatViewController = (ChatViewController*) ((UITabBarController*) self.tabBarController).viewControllers[0].childViewControllers.firstObject;
+        [chatViewController appLaunchedWithNotification: pusDict];
+    }
 }
 
 @end

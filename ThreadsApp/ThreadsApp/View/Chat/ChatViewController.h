@@ -20,4 +20,6 @@
 
 - (IBAction) changeBottomSpacing: (id) sender;
 
+- (void) appLaunchedWithNotification: (NSDictionary*) notification;
+
 @end

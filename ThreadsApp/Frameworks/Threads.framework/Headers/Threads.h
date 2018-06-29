@@ -54,6 +54,8 @@ typedef enum : NSUInteger {
  */
 @property NSString *data;
 
+@property NSString* appMarker;
+
 /*!
  * Boolean parameneter, which enable or disable Google Analytics
  */
@@ -107,6 +109,8 @@ typedef enum : NSUInteger {
  */
 + (void) setClientId: (NSString *) clientId;
 
++ (void) setAppMarker: (NSString*) appMarker;
+
 /*!
  * Setting client name for showing user's name on MFMS servers.
  *
@@ -151,7 +155,7 @@ typedef enum : NSUInteger {
 /*!
  * Return attributes of chat
  */
-- (THRAttributes *) getAttributes;
++ (THRAttributes *) getAttributes;
 
 /*!
  *  Registering clients with clientId on MFMS's servers.
@@ -227,6 +231,10 @@ typedef enum : NSUInteger {
  * Full push message receiver
  */
 + (THRMessageRecieveState) didReceiveFullPush: (PushNotificationMessage *) message;
+
++ (BOOL) isThreadsOriginPush: (NSDictionary*) pushDict;
+
++ (NSString*) getAppMarkerFromPush: (NSDictionary*) pushDict;
 
 /*!
  * Return boolean value which tells about visibility of Threads

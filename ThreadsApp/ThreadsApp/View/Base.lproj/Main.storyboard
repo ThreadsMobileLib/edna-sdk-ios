@@ -190,7 +190,7 @@
                                                             </connections>
                                                         </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wj6-3t-ETh">
-                                                            <rect key="frame" x="15" y="41.5" width="335" height="52"/>
+                                                            <rect key="frame" x="15" y="25.5" width="335" height="83"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="123456" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npL-KW-yam" userLabel="ClientId">
                                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="21.5"/>
@@ -204,15 +204,24 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qct-VD-WHm">
+                                                                    <rect key="frame" x="0.0" y="62" width="335" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="Xeq-Fg-ddF" firstAttribute="trailing" secondItem="wj6-3t-ETh" secondAttribute="trailing" id="1Cg-cQ-h69"/>
+                                                                <constraint firstItem="qct-VD-WHm" firstAttribute="top" secondItem="Xeq-Fg-ddF" secondAttribute="bottom" constant="10" id="1IO-AM-kgb"/>
+                                                                <constraint firstAttribute="bottom" secondItem="qct-VD-WHm" secondAttribute="bottom" id="4ED-xf-9XG"/>
                                                                 <constraint firstItem="npL-KW-yam" firstAttribute="leading" secondItem="wj6-3t-ETh" secondAttribute="leading" id="8Ot-vj-big"/>
                                                                 <constraint firstItem="npL-KW-yam" firstAttribute="trailing" secondItem="wj6-3t-ETh" secondAttribute="trailing" id="Axa-eG-IWk"/>
                                                                 <constraint firstItem="npL-KW-yam" firstAttribute="top" secondItem="wj6-3t-ETh" secondAttribute="top" id="FuP-Ii-cJp"/>
                                                                 <constraint firstItem="Xeq-Fg-ddF" firstAttribute="leading" secondItem="wj6-3t-ETh" secondAttribute="leading" id="M5n-OZ-a8J"/>
                                                                 <constraint firstItem="Xeq-Fg-ddF" firstAttribute="top" secondItem="npL-KW-yam" secondAttribute="bottom" constant="10" id="O01-pP-pIz"/>
-                                                                <constraint firstItem="Xeq-Fg-ddF" firstAttribute="bottom" secondItem="wj6-3t-ETh" secondAttribute="bottom" id="TrA-SQ-EqX"/>
+                                                                <constraint firstItem="qct-VD-WHm" firstAttribute="leading" secondItem="wj6-3t-ETh" secondAttribute="leading" id="UqV-ON-KkT"/>
+                                                                <constraint firstAttribute="trailing" secondItem="qct-VD-WHm" secondAttribute="trailing" id="bSI-20-R3V"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -220,9 +229,11 @@
                                                 <color key="backgroundColor" red="0.87843137250000003" green="0.8862745098" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="Evl-sh-Onj" firstAttribute="trailing" secondItem="df9-9X-vJ5" secondAttribute="trailing" constant="-10" id="52f-jl-RHu"/>
+                                                    <constraint firstItem="wj6-3t-ETh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="df9-9X-vJ5" secondAttribute="top" constant="25" id="5pB-sf-SoV"/>
                                                     <constraint firstItem="Evl-sh-Onj" firstAttribute="top" secondItem="df9-9X-vJ5" secondAttribute="top" constant="10" id="6Oa-Ys-4tb"/>
                                                     <constraint firstItem="wj6-3t-ETh" firstAttribute="trailing" secondItem="df9-9X-vJ5" secondAttribute="trailing" constant="-15" id="beV-6R-v8r"/>
                                                     <constraint firstItem="wj6-3t-ETh" firstAttribute="centerY" secondItem="df9-9X-vJ5" secondAttribute="centerY" id="f16-Vb-9iW"/>
+                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wj6-3t-ETh" secondAttribute="bottom" constant="10" id="lel-n6-EBA"/>
                                                     <constraint firstItem="wj6-3t-ETh" firstAttribute="leading" secondItem="df9-9X-vJ5" secondAttribute="leading" constant="15" id="qEg-Aw-J5k"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -231,6 +242,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <outlet property="appMarker" destination="qct-VD-WHm" id="PMz-4r-qnl"/>
                                                     <outlet property="clientId" destination="npL-KW-yam" id="VsS-6L-4Kl"/>
                                                     <outlet property="clientName" destination="Xeq-Fg-ddF" id="sfm-uW-Kx2"/>
                                                     <outlet property="logoutButton" destination="Evl-sh-Onj" id="uhf-cT-0x3"/>
