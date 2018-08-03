@@ -1,7 +1,9 @@
 platform :ios, "8.0"
+use_frameworks!
 
 target 'ThreadsApp' do
     project 'ThreadsApp.xcodeproj'
     workspace 'Threads.xcworkspace'
     pod 'MMDrawerController', '~> 0.5.7'
+    pod 'URLEmbeddedView'
 end

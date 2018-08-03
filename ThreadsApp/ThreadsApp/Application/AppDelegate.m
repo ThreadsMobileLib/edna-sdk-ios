@@ -11,7 +11,7 @@
 #import <Threads/Threads.h>
 
 #import "ChatViewController.h"
-#import <MMDrawerController.h>
+#import <MMDrawerController/MMDrawerController.h>
 #import <MMDrawerController/MMDrawerVisualState.h>
 
 @interface AppDelegate ()
