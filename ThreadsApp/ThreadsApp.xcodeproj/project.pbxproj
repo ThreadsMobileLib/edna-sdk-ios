@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5CF8A87DBC807BDA0A171206 /* libPods-ThreadsApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22458912BFF7BA838BD2AE68 /* libPods-ThreadsApp.a */; };
+		432E7C6CF49FCFCDD75C2396 /* Pods_ThreadsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED19A64D6B2F53B6EE5C19F /* Pods_ThreadsApp.framework */; };
 		AA54DA241F7107F500B10AA8 /* PushServerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803B76221EC5BD6D0007B2C0 /* PushServerAPI.framework */; };
 		AA54DA251F7107F500B10AA8 /* PushServerAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 803B76221EC5BD6D0007B2C0 /* PushServerAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA54DA271F71084200B10AA8 /* Threads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D587041D0D3386007E2AC8 /* Threads.framework */; };
@@ -89,7 +89,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		22458912BFF7BA838BD2AE68 /* libPods-ThreadsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThreadsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		573A39A59B36826B2FD2314D /* Pods-ThreadsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreadsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThreadsApp/Pods-ThreadsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		75EA429A1F162DC600EBB1DC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		75EA429B1F162DC600EBB1DC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -175,6 +174,7 @@
 		AADDF7DD1FA8697300716CAD /* TAStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAStorage.m; sourceTree = "<group>"; };
 		AAF7632E1FE3B2C2008D04DC /* DictUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictUtils.h; sourceTree = "<group>"; };
 		AAF7632F1FE3B2C2008D04DC /* DictUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictUtils.m; sourceTree = "<group>"; };
+		BED19A64D6B2F53B6EE5C19F /* Pods_ThreadsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreadsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +184,7 @@
 			files = (
 				AA54DA241F7107F500B10AA8 /* PushServerAPI.framework in Frameworks */,
 				AA54DA271F71084200B10AA8 /* Threads.framework in Frameworks */,
-				5CF8A87DBC807BDA0A171206 /* libPods-ThreadsApp.a in Frameworks */,
+				432E7C6CF49FCFCDD75C2396 /* Pods_ThreadsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +334,7 @@
 				75EA429B1F162DC600EBB1DC /* Fabric.framework */,
 				80D587041D0D3386007E2AC8 /* Threads.framework */,
 				804710731CFD95DA0088FB8E /* PushServerAPI */,
-				22458912BFF7BA838BD2AE68 /* libPods-ThreadsApp.a */,
+				BED19A64D6B2F53B6EE5C19F /* Pods_ThreadsApp.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -463,7 +463,6 @@
 				AAB1615B1F330CF60036B18E /* Resources */,
 				AAB161771F330CF60036B18E /* Embed Frameworks */,
 				626BA991564AF5EE4FF1F875 /* [CP] Embed Pods Frameworks */,
-				FAEEDBFE91B787B8B18C140F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -567,9 +566,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ThreadsApp/Pods-ThreadsApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/URLEmbeddedView/URLEmbeddedView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URLEmbeddedView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -592,21 +596,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FAEEDBFE91B787B8B18C140F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ThreadsApp/Pods-ThreadsApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -715,6 +704,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -757,6 +747,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -790,7 +781,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThreadsApp/Application/ThreadsApp - Polarbear-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.2;
 			};
 			name = Debug;
 		};
@@ -821,7 +811,6 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThreadsApp/Application/ThreadsApp - Polarbear-Bridging-Header.h";
-				SWIFT_VERSION = 3.2;
 			};
 			name = Release;
 		};

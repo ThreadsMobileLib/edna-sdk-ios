@@ -142,8 +142,10 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         self.attributes.waitingSpecialistSpinnerColor = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
         self.attributes.outgoingBubbleColor = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
         self.attributes.outgoingBubbleTextColor = [UIColor whiteColor];
+        self.attributes.outgoingBubbleLinkColor = [UIColor blueColor];
         self.attributes.failedBubbleColor = [UIColor colorWithRed:244.f/255.f green:67.f/255.f blue:54.f/255.f alpha:1.f];
         self.attributes.incomingBubbleTextColor = [UIColor colorWithRed:51.f/255.f green:51.f/255.f blue:51.f/255.f alpha:1.f];
+        self.attributes.incomingBubbleLinkColor = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
         self.attributes.bubbleMessageFont = [UIFont fontWithName:@"Lato-Regular" size:17.f];
         self.attributes.bubbleTimeFont = [UIFont fontWithName:@"Lato-Regular" size:12.f];
         self.attributes.failedMessageFont = [UIFont fontWithName:@"Lato-Semibold" size:12.f];

@@ -123,6 +123,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic, readwrite) BOOL incomingBubbleStroked;
 @property (strong, nonatomic, readwrite) UIColor* incomingBubbleColor;
 @property (strong, nonatomic, readwrite) UIColor* incomingBubbleTextColor;
+@property (strong, nonatomic, readwrite) UIColor* incomingBubbleLinkColor;
 @property (strong, nonatomic, readwrite) UIColor* incomingTimeColor;
 
 @property (assign, nonatomic, readwrite) BOOL showIncomingAvatar;
@@ -145,6 +146,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic, readwrite) BOOL outgoingBubbleStroked;
 @property (strong, nonatomic, readwrite) UIColor* outgoingBubbleColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingBubbleTextColor;
+@property (strong, nonatomic, readwrite) UIColor* outgoingBubbleLinkColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingTimeColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingPendingStatusColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingDeliveredStatusColor;
