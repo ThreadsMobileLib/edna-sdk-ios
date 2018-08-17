@@ -1,7 +1,7 @@
 # Threads iOS SDK
 Threads iOS sdk libraries and demo project
 
-[Integration Guide](../../wiki/Threads-iOS-SDK)
+[Documentation and Guides](../../wiki)
 
 Contacts:  
 https://threads.im  
