@@ -172,6 +172,7 @@ typedef enum : NSUInteger {
 /*!
  * Show Threads as fragment
  */
+
 + (void) showInView: (UIView *) view
    parentController: (UIViewController *) parentController
       bottomSpacing: (CGFloat) spacing;

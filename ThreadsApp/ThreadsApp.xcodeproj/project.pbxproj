@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F9D9A687D50D94F2D6DE90E /* Pods_ThreadsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1F74A606416031B4A13889 /* Pods_ThreadsApp.framework */; };
+		AA28974B214A383100B196BF /* ChatInStackController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA28974A214A383100B196BF /* ChatInStackController.m */; };
 		AA54DA241F7107F500B10AA8 /* PushServerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803B76221EC5BD6D0007B2C0 /* PushServerAPI.framework */; };
 		AA54DA251F7107F500B10AA8 /* PushServerAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 803B76221EC5BD6D0007B2C0 /* PushServerAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA54DA271F71084200B10AA8 /* Threads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D587041D0D3386007E2AC8 /* Threads.framework */; };
@@ -148,6 +149,8 @@
 		80FFB11C1E83BB7400C03798 /* rect_bubble_filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rect_bubble_filled@2x.png"; sourceTree = "<group>"; };
 		80FFB11D1E83BB7400C03798 /* rect_bubble_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rect_bubble_filled.png; sourceTree = "<group>"; };
 		95B5BD7D3E65C44F5D9E3BC8 /* Pods-ThreadsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreadsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThreadsApp/Pods-ThreadsApp.release.xcconfig"; sourceTree = "<group>"; };
+		AA289749214A383000B196BF /* ChatInStackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInStackController.h; sourceTree = "<group>"; };
+		AA28974A214A383100B196BF /* ChatInStackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInStackController.m; sourceTree = "<group>"; };
 		AA7EA81C1F3B484700D2F60A /* libPods-Threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Threads.a"; path = "../../../../Library/Developer/Xcode/DerivedData/Threads-gftmplayupomsadcvnyrhhfjtplr/Build/Products/Debug-iphoneos/libPods-Threads.a"; sourceTree = "<group>"; };
 		AA8827EB20E6599500241516 /* ic_dislike_stroked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_dislike_stroked@2x.png"; sourceTree = "<group>"; };
 		AA8827EC20E6599600241516 /* ic_dislike_stroked@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_dislike_stroked@3x.png"; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				75EA42A11F172AD100EBB1DC /* Cells */,
 				AAC55BB120D38EC200AC71BD /* ChatFragmentViewController.h */,
 				AAC55BB220D38EC200AC71BD /* ChatFragmentViewController.m */,
+				AA289749214A383000B196BF /* ChatInStackController.h */,
+				AA28974A214A383100B196BF /* ChatInStackController.m */,
 				8047105A1CFD94120088FB8E /* ChatViewController.h */,
 				8047105B1CFD94120088FB8E /* ChatViewController.m */,
 				AADDF7D41FA348AE00716CAD /* Client.h */,
@@ -620,6 +625,7 @@
 				AADDF7DE1FA8697300716CAD /* TAStorage.m in Sources */,
 				AAB1614D1F330CF60036B18E /* SwitchCell.m in Sources */,
 				AAC55BB320D38EC200AC71BD /* ChatFragmentViewController.m in Sources */,
+				AA28974B214A383100B196BF /* ChatInStackController.m in Sources */,
 				AAB1614E1F330CF60036B18E /* DrawerViewController.m in Sources */,
 				AAB1614F1F330CF60036B18E /* SelectCell.m in Sources */,
 			);

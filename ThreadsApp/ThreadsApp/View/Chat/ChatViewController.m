@@ -295,6 +295,8 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
                     [self.view bringSubviewToFront:self.chatContainer];
                 }
                 
+            } else if (type == CellTypeToOtherChats) {
+                [self performSegueWithIdentifier:@"showChatInStack" sender: self];
             } else {
                 [Threads show];
             }
@@ -435,6 +437,8 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
             return [self labelCell: indexPath type: type];
         }
         case CellTypeToFragmentChat:
+            //fallthrough
+        case CellTypeToOtherChats:
             //fallthrough
         case CellTypeToFullChat: {
             return [self buttonCell: indexPath type: type];

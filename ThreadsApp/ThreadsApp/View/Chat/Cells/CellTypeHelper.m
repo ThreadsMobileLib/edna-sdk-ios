@@ -26,6 +26,8 @@
         return [NSString stringWithFormat: @"%@ %@",
                 NSLocalizedString(@"show_chat_title", nil),
                 NSLocalizedString(@"chat_full_controller_title", nil)];
+    } else if (type == CellTypeToOtherChats) {
+        return @"Other Chat Integrations";
     } else {
         return @"unknown type";
     }

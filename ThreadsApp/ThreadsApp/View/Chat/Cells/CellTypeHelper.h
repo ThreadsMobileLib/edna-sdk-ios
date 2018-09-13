@@ -14,6 +14,7 @@ typedef enum : NSUInteger {
     CellTypeDebugMode,
     CellTypeToFragmentChat,
     CellTypeToFullChat,
+    CellTypeToOtherChats,
     CellTypeCount
 } CellType;
 
