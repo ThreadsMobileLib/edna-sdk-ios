@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		6F9D9A687D50D94F2D6DE90E /* Pods_ThreadsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1F74A606416031B4A13889 /* Pods_ThreadsApp.framework */; };
 		AA28974B214A383100B196BF /* ChatInStackController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA28974A214A383100B196BF /* ChatInStackController.m */; };
-		AA54DA241F7107F500B10AA8 /* PushServerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803B76221EC5BD6D0007B2C0 /* PushServerAPI.framework */; };
-		AA54DA251F7107F500B10AA8 /* PushServerAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 803B76221EC5BD6D0007B2C0 /* PushServerAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA54DA271F71084200B10AA8 /* Threads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D587041D0D3386007E2AC8 /* Threads.framework */; };
 		AA54DA281F71084200B10AA8 /* Threads.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80D587041D0D3386007E2AC8 /* Threads.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA8827EF20E6599600241516 /* ic_dislike_stroked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8827EB20E6599500241516 /* ic_dislike_stroked@2x.png */; };
@@ -71,6 +69,8 @@
 		AADDF7CF1FA3440D00716CAD /* ClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AADDF7CE1FA3440D00716CAD /* ClientCell.m */; };
 		AADDF7D61FA348AE00716CAD /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = AADDF7D51FA348AE00716CAD /* Client.m */; };
 		AADDF7DE1FA8697300716CAD /* TAStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = AADDF7DD1FA8697300716CAD /* TAStorage.m */; };
+		AADEDEFA218C26E500225D6B /* MFMSPushLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADEDEF9218C26E400225D6B /* MFMSPushLite.framework */; };
+		AADEDEFB218C26E500225D6B /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AADEDEF9218C26E400225D6B /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAF763301FE3B2C2008D04DC /* DictUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF7632F1FE3B2C2008D04DC /* DictUtils.m */; };
 /* End PBXBuildFile section */
 
@@ -81,8 +81,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AA54DA251F7107F500B10AA8 /* PushServerAPI.framework in Embed Frameworks */,
 				AA54DA281F71084200B10AA8 /* Threads.framework in Embed Frameworks */,
+				AADEDEFB218C26E500225D6B /* MFMSPushLite.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +176,8 @@
 		AADDF7D51FA348AE00716CAD /* Client.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
 		AADDF7DC1FA8697300716CAD /* TAStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAStorage.h; sourceTree = "<group>"; };
 		AADDF7DD1FA8697300716CAD /* TAStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAStorage.m; sourceTree = "<group>"; };
+		AADEDEF8218C25C500225D6B /* ThreadsApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ThreadsApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		AADEDEF9218C26E400225D6B /* MFMSPushLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MFMSPushLite.framework; sourceTree = "<group>"; };
 		AAF7632E1FE3B2C2008D04DC /* DictUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictUtils.h; sourceTree = "<group>"; };
 		AAF7632F1FE3B2C2008D04DC /* DictUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,7 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA54DA241F7107F500B10AA8 /* PushServerAPI.framework in Frameworks */,
+				AADEDEFA218C26E500225D6B /* MFMSPushLite.framework in Frameworks */,
 				AA54DA271F71084200B10AA8 /* Threads.framework in Frameworks */,
 				6F9D9A687D50D94F2D6DE90E /* Pods_ThreadsApp.framework in Frameworks */,
 			);
@@ -325,6 +327,7 @@
 		804710541CFD94120088FB8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AADEDEF8218C25C500225D6B /* ThreadsApp-Bridging-Header.h */,
 				AAB161871F330D110036B18E /* ThreadsApp-Info.plist */,
 				804710551CFD94120088FB8E /* main.m */,
 			);
@@ -334,6 +337,7 @@
 		8047106B1CFD94310088FB8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AADEDEF9218C26E400225D6B /* MFMSPushLite.framework */,
 				AA7EA81C1F3B484700D2F60A /* libPods-Threads.a */,
 				75EA429A1F162DC600EBB1DC /* Crashlytics.framework */,
 				75EA429B1F162DC600EBB1DC /* Fabric.framework */,

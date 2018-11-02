@@ -7,17 +7,18 @@
 //
 
 #import "AppDelegate.h"
-#import <PushServerAPI/PushServerAPI-Swift.h>
+#import <MFMSPushLite/MFMSPushLite.h>
 #import <Threads/Threads.h>
 
 #import "ChatViewController.h"
 #import <MMDrawerController/MMDrawerController.h>
 #import <MMDrawerController/MMDrawerVisualState.h>
 
-@interface AppDelegate ()
-    
+@interface AppDelegate () <MFMSPushLiteDelegate>
+
 @property (nonatomic,strong) MMDrawerController * drawerController;
 @property (nonatomic,strong) UITabBarController * tabBarController;
+@property MFMSPushLite* pushAPI;
 
 @end
 
@@ -43,16 +44,10 @@
     [Threads setDebugLoggingEnabled: YES];
     [PushServerAPI setPUSH_API_LOG_ENABLE: NO];
     [PushServerAPI showNetworkActivity: YES];
-    [[PushServerAPI default] setOnPushMessagesReceived:^(NSArray<PushNotificationMessage *> *messages) {
-        for(PushNotificationMessage *message in messages) {
-            THRMessageRecieveState state = [Threads didReceiveFullPush: message];
-            if(state == THRMessageRecieveStateAccepted) {
-                NSLog(@"Full Push accepted by chat");
-            } else {
-                NSLog(@"Full Push not accepted by chat");
-            }
-        }
-    }];
+    
+    self.pushAPI = [[MFMSPushLite alloc] initWithDelegate:self];
+    self.pushAPI.autoRegisterForNotification = false;
+    [self.pushAPI start];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle bundleForClass:[self class]]];
     self.tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"CenterController"];
@@ -78,17 +73,44 @@
     return YES;
 }
 
+- (BOOL)isProductionWithPushApi:(MFMSPushLite * _Nonnull)pushApi {
+    return [AppDelegate isProduction];
+}
+
+- (id<PushServerApiConfigDataSource>)configWithPushApi:(MFMSPushLite *)pushApi {
+    PushServerApiConfig* config = [PushServerApiConfig new];
+    return config;
+}
+
+-(void)onPushMessagesReceivedWithPushApi:(MFMSPushLite *)PushApi messages:(NSArray<PushNotificationMessage *> *)messages{
+    for(PushNotificationMessage *message in messages) {
+        THRMessageRecieveState state = [Threads didReceiveFullPush: message];
+        if(state == THRMessageRecieveStateAccepted) {
+            NSLog(@"Full Push accepted by chat");
+        } else {
+            NSLog(@"Full Push not accepted by chat");
+        }
+    }
+}
+
+-(void)onErrorWithPushApi:(MFMSPushLite *)PushApi error:(NSString *)error{
+    NSLog(@"MFMSPushLite Error: %@", error);
+}
+ 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [[PushServerAPI default] didRegisterForRemoteNotificationsWithDeviceToken: deviceToken];
+    [self.pushAPI.appDelegate didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-    [application registerForRemoteNotifications];
-    [[PushServerAPI default] didRegisterUserNotificationSettings: notificationSettings];
+    [self.pushAPI.appDelegate didRegisterUserNotificationSettings:notificationSettings];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    [self.pushAPI.appDelegate didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [[PushServerAPI default] didReceiveRemoteNotification: userInfo];
+    [self.pushAPI.appDelegate didReceiveRemoteNotification:userInfo];
     
     THRMessageRecieveState state = [Threads didReceiveShortPush: userInfo handler: nil];
     if(state == THRMessageRecieveStateAccepted) {
@@ -99,8 +121,7 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    [[PushServerAPI default] didReceiveRemoteNotification: userInfo
-                                   fetchCompletionHandler: completionHandler];
+    [self.pushAPI.appDelegate didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
     
     THRMessageRecieveState state = [Threads didReceiveShortPush: userInfo handler: completionHandler];
     if(state == THRMessageRecieveStateAccepted) {
@@ -115,7 +136,7 @@
     
     NSDictionary * userInfo = notification.request.content.userInfo;
     
-    [[PushServerAPI default] didReceiveRemoteNotification:userInfo fetchCompletionHandler:^(UIBackgroundFetchResult result) {
+    [self.pushAPI.appDelegate didReceiveRemoteNotification:userInfo fetchCompletionHandler:^(UIBackgroundFetchResult result) {
         completionHandler(UNNotificationPresentationOptionNone);
     }];
     
@@ -139,6 +160,13 @@
         ChatViewController* chatViewController = (ChatViewController*) ((UITabBarController*) self.tabBarController).viewControllers[0].childViewControllers.firstObject;
         [chatViewController appLaunchedWithNotification: pusDict];
     }
+}
+
++ (BOOL) isProduction {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+    NSDictionary *infoPlistDict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    NSDictionary *psConfig = [infoPlistDict objectForKey:@"PS_API_CONFIG"];
+    return [[psConfig objectForKey:@"PS_IS_PRODUCTION_SERVER"] boolValue];
 }
 
 @end

@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.40.2</string>
+	<string>2.43.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -49,27 +49,14 @@
 	<string>Used for attaching images</string>
 	<key>PS_API_CONFIG</key>
 	<dict>
-		<key>PS_ALLOW_SEND_DISABLE_STATUS</key>
-		<false/>
 		<key>PS_CLIENTID_IS_ENCRYPTED</key>
 		<false/>
 		<key>PS_FILE_UPLOAD_URL</key>
 		<string>YOUR_DATASTORE_URL</string>
 		<key>PS_HISTORY_URL</key>
 		<string>YOUR_HISTORY_URL</string>
-		<key>PS_NEED_AUTOMATICALLY_GENERATE_DEVICE_UID</key>
+		<key>PS_IS_PRODUCTION_SERVER</key>
 		<true/>
-		<key>PS_PRIMARY_URL</key>
-		<string>YOUR_MAIN_SERVER_KEY</string>
-		<key>PS_PROVIDER_UID</key>
-		<string>YOUR_PROVIDER_UID</string>
-		<key>PS_URLS</key>
-		<dict>
-			<key>YOUR_MAIN_SERVER_KEY</key>
-			<string>YOUR_MAIN_SERVER_URL</string>
-		</dict>
-		<key>PUSH_MESSAGE_TYPE</key>
-		<string>threads</string>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>

@@ -12,6 +12,7 @@
 
 #import <Threads/Threads.h>
 #import "AboutViewController.h"
+//#import <ThreadsApp-Swift.h>
 
 #import "CellTypeHelper.h"
 #import "TextCell.h"
@@ -22,7 +23,7 @@
 #import "ClientCell.h"
 #import "Client.h"
 #import "TAStorage.h"
-#import <PushServerAPI/PushServerAPI-Swift.h>
+#import <MFMSPushLite/MFMSPushLite.h>
 #import "ChatFragmentViewController.h"
 
 @interface ChatViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource,
@@ -300,16 +301,8 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
             } else {
                 [Threads show];
             }
-            [[Threads threads] setUnreadedMessagesCountChanged:^(NSInteger messagesCount) {
-                UINavigationController *navController = self.tabBarController.viewControllers[1];
-                AboutViewController *emp = navController.viewControllers.firstObject;
-                [emp setCounterValue: messagesCount];
-                NSString *badge = (messagesCount > 0) ? [NSString stringWithFormat:@"%ld", (long)messagesCount] : nil;
-                
-                if (self.tabBarController.selectedIndex != 2) {
-                    [self.tabBarController.tabBar.items[2] setBadgeValue: badge];
-                }
-            }];
+            
+            [self configureUnreadCounter];
         }
         else {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Registration failed. Retry?" message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -322,6 +315,22 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
+}
+
+- (void) configureUnreadCounter {
+    [[Threads threads] setUnreadedMessagesCountChanged:^(NSInteger messagesCount) {
+        UINavigationController *navController = self.tabBarController.viewControllers[1];
+        AboutViewController *emp = navController.viewControllers.firstObject;
+        [emp setCounterValue: messagesCount];
+        NSString *badge = (messagesCount > 0) ? [NSString stringWithFormat:@"%ld", (long)messagesCount] : nil;
+
+        if (self.tabBarController.selectedIndex != 2) {
+            [self.tabBarController.tabBar.items[2] setBadgeValue: badge];
+        }
+    }];
+    
+    //For testing Swift integration:
+//    CounterListener* listener = [[CounterListener alloc] init];
 }
 
 - (BOOL) tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {

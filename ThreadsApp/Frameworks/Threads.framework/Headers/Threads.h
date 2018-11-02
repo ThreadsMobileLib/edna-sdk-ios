@@ -94,7 +94,7 @@ typedef enum : NSUInteger {
 /*!
  * Returns Threads singletone
  */
-+ (instancetype) threads;
++ (instancetype) threads NS_SWIFT_NAME(threads());
 
 /*!
  * @param attributes: set if you need customization
