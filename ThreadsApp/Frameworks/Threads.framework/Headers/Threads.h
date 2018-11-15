@@ -96,6 +96,12 @@ typedef enum : NSUInteger {
  */
 + (instancetype) threads NS_SWIFT_NAME(threads());
 
++ (void) setClienIdEncrypted: (BOOL) isEncrypted;
+
++ (void) setHistoryUrl: (NSString*) historyUrl;
+
++ (void) setFileUploadUrl: (NSString*) fileUploadUrl;
+
 /*!
  * @param attributes: set if you need customization
  */

@@ -64,7 +64,7 @@
 		AAB161741F330CF60036B18E /* lato-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8098E2CB1E813D2E00B3C696 /* lato-medium.ttf */; };
 		AAB161751F330CF60036B18E /* rect_bubble_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 80FFB11D1E83BB7400C03798 /* rect_bubble_filled.png */; };
 		AAB161761F330CF60036B18E /* placeholder_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8065E88C1E8E5D66005301A6 /* placeholder_image@3x.png */; };
-		AAB161881F330D110036B18E /* ThreadsApp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAB161871F330D110036B18E /* ThreadsApp-Info.plist */; };
+		AAB161881F330D110036B18E /* ThreadsApp-Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAB161871F330D110036B18E /* ThreadsApp-Sample.plist */; };
 		AAC55BB320D38EC200AC71BD /* ChatFragmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC55BB220D38EC200AC71BD /* ChatFragmentViewController.m */; };
 		AADDF7CF1FA3440D00716CAD /* ClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AADDF7CE1FA3440D00716CAD /* ClientCell.m */; };
 		AADDF7D61FA348AE00716CAD /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = AADDF7D51FA348AE00716CAD /* Client.m */; };
@@ -167,7 +167,7 @@
 		AA9028451F73AE2D0094F99D /* scroll_down_button_brs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll_down_button_brs@2x.png"; sourceTree = "<group>"; };
 		AA9028461F73AE2D0094F99D /* scroll_down_button_brs@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll_down_button_brs@3x.png"; sourceTree = "<group>"; };
 		AAB161851F330CF60036B18E /* ThreadsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAB161871F330D110036B18E /* ThreadsApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ThreadsApp-Info.plist"; sourceTree = "<group>"; };
+		AAB161871F330D110036B18E /* ThreadsApp-Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ThreadsApp-Sample.plist"; sourceTree = "<group>"; };
 		AAC55BB120D38EC200AC71BD /* ChatFragmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFragmentViewController.h; sourceTree = "<group>"; };
 		AAC55BB220D38EC200AC71BD /* ChatFragmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFragmentViewController.m; sourceTree = "<group>"; };
 		AADDF7CD1FA3440D00716CAD /* ClientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientCell.h; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				AADEDEF8218C25C500225D6B /* ThreadsApp-Bridging-Header.h */,
-				AAB161871F330D110036B18E /* ThreadsApp-Info.plist */,
+				AAB161871F330D110036B18E /* ThreadsApp-Sample.plist */,
 				804710551CFD94120088FB8E /* main.m */,
 			);
 			path = "Supporting Files";
@@ -533,7 +533,7 @@
 				AAB161601F330CF60036B18E /* lato-light.ttf in Resources */,
 				AA88280120E659A800241516 /* ic_heart_filled@2x.png in Resources */,
 				AAB161611F330CF60036B18E /* ic_checkmark@2x.png in Resources */,
-				AAB161881F330D110036B18E /* ThreadsApp-Info.plist in Resources */,
+				AAB161881F330D110036B18E /* ThreadsApp-Sample.plist in Resources */,
 				AA8827FE20E659A800241516 /* ic_heart_stroked@3x.png in Resources */,
 				AAB161621F330CF60036B18E /* Assets.xcassets in Resources */,
 				AAB161631F330CF60036B18E /* rect_bubble_filled@3x.png in Resources */,
@@ -781,7 +781,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ThreadsApp/Supporting Files/ThreadsApp-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ThreadsApp/Supporting Files/ThreadsApp-Sample.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
@@ -812,7 +812,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ThreadsApp/Supporting Files/ThreadsApp-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ThreadsApp/Supporting Files/ThreadsApp-Sample.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
