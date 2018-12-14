@@ -149,7 +149,6 @@
     } else {
         NSLog(@"Short Push not accepted by chat");
     }
-    
 }
 
 - (void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
