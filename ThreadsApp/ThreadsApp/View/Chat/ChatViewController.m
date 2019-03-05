@@ -125,6 +125,7 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
     } else {
         self.attributes = [THRAttributes defaultAttributes];
         self.attributes.refreshColor = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
+        self.attributes.statusBarStyle = UIStatusBarStyleDefault;
         self.attributes.navigationBarBackgroundColor = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
         self.attributes.navigationBarTintColor = [UIColor whiteColor];
         self.attributes.navigationBarTitleFont = [UIFont fontWithName:@"Lato-Semibold" size:18.f];
