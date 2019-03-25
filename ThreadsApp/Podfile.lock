@@ -11,21 +11,25 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
+  - ReactiveObjC (3.1.0)
   - URLEmbeddedView (0.16.2)
 
 DEPENDENCIES:
   - MMDrawerController (~> 0.5.7)
+  - ReactiveObjC
   - URLEmbeddedView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - MMDrawerController
+    - ReactiveObjC
     - URLEmbeddedView
 
 SPEC CHECKSUMS:
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   URLEmbeddedView: 5fa153bf91a78642c6677aded9a1494c09b75e86
 
-PODFILE CHECKSUM: 502ce2a3314c48483f44133098692623aa74fe2d
+PODFILE CHECKSUM: 22e18d4090820f4ec92ab68244f546fc54a1dea7
 
 COCOAPODS: 1.5.3

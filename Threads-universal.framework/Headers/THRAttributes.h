@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIFont* navigationBarItemFont;
 @property (strong, nonatomic, readwrite) UIFont* navigationBarTitleFont;
 @property (strong, nonatomic, readwrite) UIFont* navigationBarSubtitleFont;
+@property (nonatomic, assign, readwrite) BOOL navigationBarSubtitleShowOrgUnit;
 
 #pragma mark - Navigation animations
 @property (nonatomic, assign, readwrite) BOOL shouldAnimateShowNavigation;

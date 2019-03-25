@@ -6,4 +6,5 @@ target 'ThreadsApp' do
     workspace 'Threads.xcworkspace'
     pod 'MMDrawerController', '~> 0.5.7'
     pod 'URLEmbeddedView'
+    pod 'ReactiveObjC'
 end

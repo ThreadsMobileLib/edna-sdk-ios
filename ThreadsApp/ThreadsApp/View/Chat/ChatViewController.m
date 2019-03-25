@@ -122,6 +122,7 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         self.attributes.shouldAnimateShowNavigation = NO;
         self.attributes.shouldAnimatePopNavigation = NO;
         self.attributes.navigationBarTintColor = [UIColor yellowColor];
+        self.attributes.navigationBarSubtitleShowOrgUnit = YES;
     } else {
         self.attributes = [THRAttributes defaultAttributes];
         self.attributes.refreshColor = [UIColor colorWithRed:131.f/255.f green:177.f/255.f blue:67.f/255.f alpha:1.f];
