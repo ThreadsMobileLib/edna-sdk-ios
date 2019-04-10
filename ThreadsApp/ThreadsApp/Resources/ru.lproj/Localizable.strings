@@ -5,7 +5,7 @@
   Created by Brooma Service on 23/08/16.
   Copyright © 2016 Brooma Service. All rights reserved.
 */
-"input_login_alert" = "Не введен логин";
+"input_login_alert" = "Авторизация не удалась";
 
 "show_chat_title" = "Открыть чат";
 "chat_fragment_title" = "(во фрагменте)";

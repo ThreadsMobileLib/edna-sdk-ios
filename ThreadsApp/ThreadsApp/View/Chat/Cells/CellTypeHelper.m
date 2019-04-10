@@ -8,12 +8,13 @@
 
 #import "CellTypeHelper.h"
 #import <Threads/Threads.h>
+#import "PlistUtils.h"
 
 @implementation CellTypeHelper
 
 + (NSString *) textByType: (CellType) type {
     if (type == CellTypeVersion) {
-        return [NSString stringWithFormat: @"Threads v%@", [Threads version]];
+        return [NSString stringWithFormat: @"ThreadsLib - v%@\nThreadsApp - v%@", [Threads version], [PlistUtils getAppVersion]];
     } else if (type == CellTypeDebugMode) {
         return @"Debug-mode";
     } else if (type == CellTypeDesign) {

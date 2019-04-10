@@ -44,6 +44,8 @@ typedef enum : NSUInteger {
  */
 @property NSString *clientId;
 
+@property NSString* clientIdSignature;
+
 /*!
  * Name of client
  */
@@ -114,6 +116,8 @@ typedef enum : NSUInteger {
  * @param clientId: must be set
  */
 + (void) setClientId: (NSString *) clientId;
+
++ (void) setClientIdSignature: (NSString*) clientIdSignature;
 
 + (void) setAppMarker: (NSString*) appMarker;
 

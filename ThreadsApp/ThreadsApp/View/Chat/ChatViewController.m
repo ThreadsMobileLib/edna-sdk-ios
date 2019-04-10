@@ -25,6 +25,7 @@
 #import "TAStorage.h"
 #import <MFMSPushLite/MFMSPushLite.h>
 #import "ChatFragmentViewController.h"
+#import "ServerAPI.h"
 
 @interface ChatViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource,
 UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate,
@@ -253,20 +254,29 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         Client* client = [self getCurrentClient];
         if (client.clientId.length > 0) {
             
-            [Threads setClientId:client.clientId];
-            [Threads setClientName:client.name];
+            [Threads setClientId: client.clientId];
+            [Threads setClientIdSignature: client.clientIdSignature];
+            [Threads setClientName: client.name];
             [Threads setAppMarker: client.appMarker];
             
             [self configureThreads];
+            
             [self registerAndShow: button type: type];
+
+        } else {
+            [self showAlert: NSLocalizedString(@"input_login_alert", @"")];
         }
     } else {
-        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"input_login_alert", @"")
-                                    message:@""
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+        [self showAlert: NSLocalizedString(@"input_login_alert", @"")];
     }
+}
+
+- (void) showAlert: (NSString*) alert {
+    [[[UIAlertView alloc] initWithTitle:alert
+                                message:@""
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 - (void) configureThreads {
@@ -369,6 +379,12 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         appMarkerInput = textField;
     }];
     
+    __block UITextField* clientIdSignatureInput = nil;
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Signature (if empty - will load from server)";
+        clientIdSignatureInput = textField;
+    }];
+    
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //Cancel
     }]];
@@ -377,8 +393,25 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         NSString* newClientId = clientIdInput.text;
         NSString* newClientName = clientNameInput.text;
         NSString* newAppMarker = appMarkerInput.text;
+        NSString* newClientIdSignature = clientIdSignatureInput.text;
         if (newClientId.length > 0) {
-            [self addClient: [Client clientWithId:newClientId name:newClientName appMarker:newAppMarker]];
+            
+            if (newClientIdSignature.length > 0) {
+                [self addClient: [Client clientWithId:newClientId name:newClientName appMarker:newAppMarker clientIdsignature:newClientIdSignature]];
+            } else {
+            
+                [ServerAPI getClientIdSignature: newClientId withCompletion:^(NSString * _Nullable signature, NSError * _Nullable error) {
+                    
+                    if (error) {
+                        [self showAlert: @"Signature loading failed, left empty"];
+                        NSLog(@"Signature loading failed, left empty");
+                        signature = @"";
+                    }
+                    
+                    [self addClient: [Client clientWithId:newClientId name:newClientName appMarker:newAppMarker clientIdsignature:signature]];
+                }];
+            }
+
         }
     }]];
     
@@ -612,6 +645,10 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
             
             if (pushClient != nil) {
                 //Reconfigure for chat that should be opened
+                [Threads setClientId: pushClient.clientId];
+                [Threads setClientIdSignature: pushClient.clientIdSignature];
+                [Threads setClientName: pushClient.name];
+                [Threads setAppMarker:  pushClient.appMarker];
                 
                 if ([appMarker hasSuffix:@"CRG"]) {
                     self.design = THRDesignBRS;
@@ -620,12 +657,10 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
                 }
                 
                 [self configureThreads];
-                [Threads setClientId: pushClient.clientId];
-                [Threads setClientName: pushClient.name];
-                [Threads setAppMarker:  pushClient.appMarker];
                 
                 [self.tabBarController setSelectedIndex:2];
                 [self registerAndShow: nil type: CellTypeToFragmentChat];
+                
             }
         }
     }

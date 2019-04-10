@@ -14,12 +14,14 @@
 static NSString* kClientIdKey               = @"client_id";
 static NSString* kClientNameKey             = @"client_name";
 static NSString* kClientAppMarkerKey             = @"app_marker";
+static NSString* kClientIdSignatureKey             = @"client_id_signature";
 
-+ (instancetype) clientWithId: (NSString*) clientId name: (NSString*) name appMarker:(NSString*) appMarker {
++ (instancetype) clientWithId: (NSString*) clientId name: (NSString*) name appMarker:(NSString*) appMarker clientIdsignature:(NSString*) clientIdSignature {
     Client* client = [Client alloc];
     client.clientId = clientId;
     client.name = name;
     client.appMarker = appMarker;
+    client.clientIdSignature = clientIdSignature;
     
     return client;
 }
@@ -29,6 +31,7 @@ static NSString* kClientAppMarkerKey             = @"app_marker";
     client.clientId = [DictUtils getStringFrom:json byKey:kClientIdKey];
     client.name = [DictUtils getStringFrom:json byKey:kClientNameKey];
     client.appMarker = [DictUtils getStringFrom:json byKey:kClientAppMarkerKey];
+    client.clientIdSignature = [DictUtils getStringFrom:json byKey:kClientIdSignatureKey];
     
     return client;
 }
@@ -39,6 +42,7 @@ static NSString* kClientAppMarkerKey             = @"app_marker";
     [aCoder encodeObject:self.clientId forKey: kClientIdKey];
     [aCoder encodeObject:self.name forKey: kClientNameKey];
     [aCoder encodeObject:self.appMarker forKey: kClientAppMarkerKey];
+    [aCoder encodeObject:self.clientIdSignature forKey: kClientIdSignatureKey];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
@@ -46,6 +50,7 @@ static NSString* kClientAppMarkerKey             = @"app_marker";
         self.clientId = [aDecoder decodeObjectForKey: kClientIdKey];
         self.name = [aDecoder decodeObjectForKey: kClientNameKey];
         self.appMarker = [aDecoder decodeObjectForKey: kClientAppMarkerKey];
+        self.clientIdSignature = [aDecoder decodeObjectForKey: kClientIdSignatureKey];
     }
     return self;
 }

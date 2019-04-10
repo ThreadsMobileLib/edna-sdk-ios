@@ -19,6 +19,7 @@
     self.clientId.text = client.clientId;
     self.clientName.text = client.name;
     self.appMarker.text = client.appMarker;
+    self.clientIdSignature.text = client.clientIdSignature;
 }
 
 - (Client*) getClient {

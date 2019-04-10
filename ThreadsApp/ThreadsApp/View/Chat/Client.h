@@ -13,8 +13,9 @@
 @property NSString* clientId;
 @property NSString* name;
 @property NSString* appMarker;
+@property NSString* clientIdSignature;
 
-+ (instancetype) clientWithId: (NSString*) clientId name: (NSString*) name appMarker:(NSString*) appMarker;
++ (instancetype) clientWithId: (NSString*) clientId name: (NSString*) name appMarker:(NSString*) appMarker clientIdsignature:(NSString*) clientIdSignature;
 + (instancetype) initWithJson: (NSDictionary*) json;
 
 #pragma mark - NSCoding
