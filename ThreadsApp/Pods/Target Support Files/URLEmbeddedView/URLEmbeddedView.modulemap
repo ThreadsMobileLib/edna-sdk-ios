@@ -1,6 +1,0 @@
-framework module URLEmbeddedView {
-  umbrella header "URLEmbeddedView-umbrella.h"
-
-  export *
-  module * { export * }
-}

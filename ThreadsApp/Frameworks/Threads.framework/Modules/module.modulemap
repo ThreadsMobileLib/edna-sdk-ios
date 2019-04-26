@@ -4,3 +4,8 @@ framework module Threads {
   export *
   module * { export * }
 }
+
+module Threads.Swift {
+    header "Threads-Swift.h"
+    requires objc
+}
