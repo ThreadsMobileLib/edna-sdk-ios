@@ -121,14 +121,27 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    [self.pushAPI.appDelegate didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
     
-    THRMessageRecieveState state = [Threads didReceiveShortPush: userInfo handler: completionHandler];
-    if(state == THRMessageRecieveStateAccepted) {
-        NSLog(@"Short Push accepted by chat");
-    } else {
-        NSLog(@"Short Push not accepted by chat");
-    }
+    dispatch_group_t dispatchGroup = dispatch_group_create();
+    
+    dispatch_group_enter(dispatchGroup);
+    [self.pushAPI.appDelegate didReceiveRemoteNotification: userInfo fetchCompletionHandler: ^(UIBackgroundFetchResult result) {
+        dispatch_group_leave(dispatchGroup);
+    }];
+    
+    dispatch_group_enter(dispatchGroup);
+    THRMessageRecieveState state = [Threads didReceiveShortPush: userInfo handler: ^(UIBackgroundFetchResult result) {
+        dispatch_group_leave(dispatchGroup);
+    }];
+    
+    dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^{
+        if(state == THRMessageRecieveStateAccepted) {
+            NSLog(@"Short Push accepted by chat");
+        } else {
+            NSLog(@"Short Push not accepted by chat");
+        }
+        completionHandler(UIBackgroundFetchResultNewData);
+    });
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification
@@ -136,19 +149,26 @@
     
     NSDictionary * userInfo = notification.request.content.userInfo;
     
+    dispatch_group_t dispatchGroup = dispatch_group_create();
+    
+    dispatch_group_enter(dispatchGroup);
     [self.pushAPI.appDelegate didReceiveRemoteNotification:userInfo fetchCompletionHandler:^(UIBackgroundFetchResult result) {
-        completionHandler(UNNotificationPresentationOptionNone);
+        dispatch_group_leave(dispatchGroup);
     }];
     
+    dispatch_group_enter(dispatchGroup);
     THRMessageRecieveState state = [Threads didReceiveShortPush: userInfo handler: ^(UIBackgroundFetchResult result) {
-        completionHandler(UNNotificationPresentationOptionNone);
+        dispatch_group_leave(dispatchGroup);
     }];
     
-    if(state == THRMessageRecieveStateAccepted) {
-        NSLog(@"Short Push accepted by chat");
-    } else {
-        NSLog(@"Short Push not accepted by chat");
-    }
+    dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^{
+        if(state == THRMessageRecieveStateAccepted) {
+            NSLog(@"Short Push accepted by chat");
+        } else {
+            NSLog(@"Short Push not accepted by chat");
+        }
+        completionHandler(UNNotificationPresentationOptionNone);
+    });
 }
 
 - (void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
@@ -159,6 +179,7 @@
         ChatViewController* chatViewController = (ChatViewController*) ((UITabBarController*) self.tabBarController).viewControllers[0].childViewControllers.firstObject;
         [chatViewController appLaunchedWithNotification: pusDict];
     }
+    completionHandler();
 }
 
 + (BOOL) isProduction {

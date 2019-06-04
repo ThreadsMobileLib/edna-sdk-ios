@@ -663,6 +663,8 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
                 
             }
         }
+        
+        [Threads reloadHistory];
     }
 }
 

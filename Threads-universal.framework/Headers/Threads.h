@@ -202,6 +202,8 @@ typedef enum : NSUInteger {
  */
 + (void) logout: (NSString*) clientId;
 
++ (void) reloadHistory;
+
 /*!
  * Clearing local cache of images
  */
