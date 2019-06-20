@@ -336,7 +336,7 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         [emp setCounterValue: messagesCount];
         NSString *badge = (messagesCount > 0) ? [NSString stringWithFormat:@"%ld", (long)messagesCount] : nil;
 
-        if (self.tabBarController.selectedIndex != 2) {
+        if (self.tabBarController.selectedIndex != 2 || messagesCount == 0) {
             [self.tabBarController.tabBar.items[2] setBadgeValue: badge];
         }
     }];
