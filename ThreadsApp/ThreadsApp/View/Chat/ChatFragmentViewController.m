@@ -48,7 +48,7 @@
 }
 
 - (void) orientationChanged: (NSNotification *) notification {
-    [Threads setMessageInputInset:self.tabBarController.tabBar.frame.size.height animated:NO];
+    
 }
 
 

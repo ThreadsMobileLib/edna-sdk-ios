@@ -18,8 +18,6 @@
 
 - (IBAction) showOrHideInput: (id) sender;
 
-- (IBAction) changeBottomSpacing: (id) sender;
-
 - (void) appLaunchedWithNotification: (NSDictionary*) notification;
 
 @end

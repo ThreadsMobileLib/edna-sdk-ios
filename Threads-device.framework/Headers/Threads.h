@@ -184,8 +184,11 @@ typedef enum : NSUInteger {
  */
 
 + (void) showInView: (UIView *) view
+   parentController: (UIViewController *) parentController;
+    
++ (void) showInView: (UIView *) view
    parentController: (UIViewController *) parentController
-      bottomSpacing: (CGFloat) spacing;
+      bottomSpacing: (CGFloat) spacing __deprecated_msg("Use showInView:parentController");
 
 /*!
  * Dismiss Threads
@@ -232,7 +235,7 @@ typedef enum : NSUInteger {
 /*!
  * Set inset for messages collection
  */
-+ (void) setMessageInputInset:(CGFloat)inset animated:(BOOL)animated;
++ (void) setMessageInputInset:(CGFloat)inset animated:(BOOL)animated __deprecated_msg("Do not use anymore");
 
 /*!
  * Short push message receiver

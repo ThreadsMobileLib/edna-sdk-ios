@@ -19,8 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [Threads showInView: self.chatContainer
-       parentController: self
-          bottomSpacing: 0];
+       parentController: self];
+
     // Do any additional setup after loading the view.
 }
 

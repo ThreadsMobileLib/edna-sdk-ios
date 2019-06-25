@@ -298,13 +298,10 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
                     ChatFragmentViewController* fragmentController = (ChatFragmentViewController*) self.tabBarController.viewControllers[2].childViewControllers.firstObject;
                     
                     [Threads showInView: fragmentController.chatContainer
-                       parentController: fragmentController
-                          bottomSpacing: self.tabBarController.tabBar.frame.size.height];
-                
+                       parentController: fragmentController];
                 } else {
                     [Threads showInView: self.chatContainer
-                       parentController: self
-                          bottomSpacing: self.tabBarController.tabBar.frame.size.height];
+                       parentController: self];
                     [self.view bringSubviewToFront:self.chatContainer];
                 }
                 
@@ -427,16 +424,6 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
         _inputVisible = YES;
         [Threads showToolbarAnimated:NO];
     }
-}
-
-- (IBAction) changeBottomSpacing:(id)sender {
-    if(_bottomSpacing == 0) {
-        _bottomSpacing = self.tabBarController.tabBar.frame.size.height;
-    }
-    else {
-        _bottomSpacing = 0;
-    }
-    [Threads setMessageInputInset:_bottomSpacing animated:YES];
 }
 
 #pragma mark - New Client Connected
