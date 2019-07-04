@@ -15,6 +15,8 @@ typedef enum : NSUInteger {
     CellTypeToFragmentChat,
     CellTypeToFullChat,
     CellTypeToOtherChats,
+    CellTypeToOutsideTextMessage,
+    CellTypeToOutsideImageMessage,
     CellTypeCount
 } CellType;
 

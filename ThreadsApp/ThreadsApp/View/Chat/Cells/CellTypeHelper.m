@@ -29,6 +29,10 @@
                 NSLocalizedString(@"chat_full_controller_title", nil)];
     } else if (type == CellTypeToOtherChats) {
         return @"Other Chat Integrations";
+    } else if (type == CellTypeToOutsideTextMessage) {
+        return @"Outside Text Message";
+    } else if (type == CellTypeToOutsideImageMessage) {
+        return @"Outside Image Message";
     } else {
         return @"unknown type";
     }

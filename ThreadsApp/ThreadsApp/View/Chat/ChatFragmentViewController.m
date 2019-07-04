@@ -17,12 +17,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
-    [self registerDeviceOrientationNotification: YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self registerDeviceOrientationNotification: NO];
 }
 
 - (void)viewDidLoad {
@@ -34,23 +32,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void) registerDeviceOrientationNotification: (BOOL) state {
-    if (state)
-        [[NSNotificationCenter defaultCenter] addObserver: self
-                                                 selector: @selector(orientationChanged:)
-                                                     name: UIDeviceOrientationDidChangeNotification
-                                                   object: nil];
-    else
-        [[NSNotificationCenter defaultCenter] removeObserver: self
-                                                        name: UIDeviceOrientationDidChangeNotification
-                                                      object: nil];
-}
-
-- (void) orientationChanged: (NSNotification *) notification {
-    
-}
-
 
 /*
 #pragma mark - Navigation

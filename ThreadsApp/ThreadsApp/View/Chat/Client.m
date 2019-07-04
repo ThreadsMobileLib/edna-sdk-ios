@@ -55,4 +55,23 @@ static NSString* kClientIdSignatureKey             = @"client_id_signature";
     return self;
 }
 
+- (BOOL)isEqual:(id)object {
+    
+    if ([super isEqual: object]) {
+        return YES;
+    } else if (![object isKindOfClass:[self class]]) {
+        return NO;
+    } else {
+        Client* item = (Client*) object;
+        return [self.clientId isEqualToString: item.clientId]
+        && [self.appMarker isEqualToString: item.appMarker]
+        && [self.clientIdSignature isEqualToString: item.clientIdSignature]
+        && [self.name isEqualToString: item.name];
+    }
+}
+
+- (NSUInteger)hash {
+    return self.clientId.hash ^ self.appMarker.hash ^ self.clientIdSignature.hash ^ self.name.hash;
+}
+
 @end
