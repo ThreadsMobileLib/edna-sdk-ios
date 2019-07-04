@@ -26,25 +26,26 @@ FOUNDATION_EXPORT double ThreadsVersionNumber;
 FOUNDATION_EXPORT const unsigned char ThreadsVersionString[];
 
 typedef void(^THRRegistrationCompletion)(BOOL state, NSError *error);
+typedef void(^THRSubmissionCompletion)(BOOL success, NSError *error);
 
-static NSInteger const THRErrorNoErrors            = 0;
-static NSInteger const THRErrorEmptyClientIdCode   = -1;
-static NSInteger const THRErrorEmptyClientNameCode = -2;
+static NSInteger const THRErrorNoErrors                 = 0;
+static NSInteger const THRErrorEmptyClientIdCode        = -1;
+static NSInteger const THRErrorEmptyClientNameCode      = -2;
+static NSInteger const THRErrorOutsideMessageImageIsNil = -3;
 
 typedef enum : NSUInteger {
     THRMessageRecieveStateAccepted,
     THRMessageRecieveStateNotAccepted
 } THRMessageRecieveState;
 
-
-@interface Threads : NSObject
+@interface Threads: NSObject
 
 /*!
  * Identifier of client
  */
 @property NSString *clientId;
 
-@property NSString* clientIdSignature;
+@property NSString *clientIdSignature;
 
 /*!
  * Name of client
@@ -56,7 +57,7 @@ typedef enum : NSUInteger {
  */
 @property NSString *data;
 
-@property NSString* appMarker;
+@property NSString *appMarker;
 
 /*!
  * Boolean parameneter, which enable or disable Google Analytics
@@ -66,7 +67,7 @@ typedef enum : NSUInteger {
 /*!
  * Debug logging enabling paramter
  */
-@property BOOL debugLogggingEnabled;
+@property BOOL debugLoggingEnabled;
 
 /*!
  * It is title that will be show in the empty screen of chat
@@ -81,33 +82,33 @@ typedef enum : NSUInteger {
 /*!
  * It is boolean which tell us about chat style: gragmented or not
  */
-@property (readonly) BOOL fragmented;
+@property (readonly)BOOL fragmented;
 
 /*!
  * Return count of unreaded messages
  */
-@property (nonatomic, readonly) NSInteger unreadedMessagesCount;
+@property (nonatomic, readonly)NSInteger unreadedMessagesCount;
 
 /*!
  * Unreaded messages block which will be called on changing `unreadedMessagesCount` value
  */
-@property (strong, nonatomic) void (^unreadedMessagesCountChanged)(NSInteger unreadedCount);
+@property (strong, nonatomic)void (^unreadedMessagesCountChanged)(NSInteger unreadedCount);
 
 /*!
  * Returns Threads singletone
  */
-+ (instancetype) threads NS_SWIFT_NAME(threads());
++ (instancetype)threads NS_SWIFT_NAME(threads());
 
-+ (void) setClienIdEncrypted: (BOOL) isEncrypted;
++ (void)setClienIdEncrypted:(BOOL)isEncrypted;
 
-+ (void) setHistoryUrl: (NSString*) historyUrl;
++ (void)setHistoryUrl:(NSString *)historyUrl;
 
-+ (void) setFileUploadUrl: (NSString*) fileUploadUrl;
++ (void)setFileUploadUrl:(NSString *)fileUploadUrl;
 
 /*!
  * @param attributes: set if you need customization
  */
-+ (void) setAttributes: (THRAttributes*) attributes;
++ (void)setAttributes:(THRAttributes *)attributes;
 
 /*!
  * Setting client id for identity user on MFMS servers.
@@ -115,147 +116,162 @@ typedef enum : NSUInteger {
  *
  * @param clientId: must be set
  */
-+ (void) setClientId: (NSString *) clientId;
++ (void)setClientId:(NSString *)clientId;
 
-+ (void) setClientIdSignature: (NSString*) clientIdSignature;
++ (void)setClientIdSignature:(NSString *)clientIdSignature;
 
-+ (void) setAppMarker: (NSString*) appMarker;
++ (void)setAppMarker:(NSString *)appMarker;
 
 /*!
  * Setting client name for showing user's name on MFMS servers.
  *
  * @param clientName: must be set
  */
-+ (void) setClientName: (NSString *) clientName;
++ (void)setClientName:(NSString *)clientName;
 
 /*!
  * Setting custom data to be sent in client_info system message
  *
  * @param data
  */
-+ (void) setData: (NSString *) data;
++ (void)setData:(NSString *)data;
 
 /*!
  * Setting enable Analytics.
  */
-+ (void) setAnalyticsEnabled: (BOOL) enabled;
++ (void)setAnalyticsEnabled:(BOOL)enabled;
 
-+ (void) setDebugLoggingEnabled: (BOOL) enabled;
++ (void)setDebugLoggingEnabled:(BOOL)enabled;
 
 /*!
  * Setting hello title.
  */
-+ (void) setHelloTitle: (NSString *) title;
++ (void)setHelloTitle:(NSString *)title;
 
 /*!
  * Setting hello description.
  */
-+ (void) setHelloDescription: (NSString *) description;
++ (void)setHelloDescription:(NSString *)description;
 
 /*!
  * Return last known client id. Need for demo project
  */
-+ (NSString *) getLastClientId;
++ (NSString *)getLastClientId;
 
 /*!
  * Return last known client name. Need for demo project
  */
-+ (NSString *) getLastClientName;
++ (NSString *)getLastClientName;
 
 /*!
  * Return attributes of chat
  */
-+ (THRAttributes *) getAttributes;
++ (THRAttributes *)getAttributes;
 
 /*!
  *  Registering clients with clientId on MFMS's servers.
  */
-+ (void) registerClientWithCompletion: (THRRegistrationCompletion) completion;
++ (void)registerClientWithCompletion:(THRRegistrationCompletion)completion;
 
 /*!
  * Show Threads window in fullscreen mode
  */
-+ (void) show;
++ (void)show;
 
-+ (void) showAnimated: (BOOL) animated;
++ (void)showAnimated:(BOOL)animated;
 
 /*!
  * Show Threads as fragment
  */
 
-+ (void) showInView: (UIView *) view
-   parentController: (UIViewController *) parentController;
++ (void)showInView:(UIView *)view
+   parentController:(UIViewController *)parentController;
     
-+ (void) showInView: (UIView *) view
-   parentController: (UIViewController *) parentController
-      bottomSpacing: (CGFloat) spacing __deprecated_msg("Use showInView:parentController");
++ (void)showInView:(UIView *)view
+   parentController:(UIViewController *)parentController
+      bottomSpacing:(CGFloat)spacing __deprecated_msg("Use showInView:parentController");
 
 /*!
  * Dismiss Threads
  */
-+ (void) dismissFromCurrentView;
++ (void)dismissFromCurrentView;
 
 /*!
  * Logout current clientId
  */
-+ (void) logout;
++ (void)logout;
 
 /*!
  * Logout specific clientId
  */
-+ (void) logout: (NSString*) clientId;
++ (void)logout:(NSString*)clientId;
 
-+ (void) reloadHistory;
++ (void)reloadHistory;
 
 /*!
  * Clearing local cache of images
  */
-+ (void) clearCachedFiles;
++ (void)clearCachedFiles;
 
 
 /*!
  * Return current version of Threads
  */
-+ (NSString *) version;
++ (NSString *)version;
 
 /*!
  * Access point for showing toolbar when need (for example, after dragging side menu)
  */
-+ (void) showToolbarAnimated:(BOOL)animated;
++ (void)showToolbarAnimated:(BOOL)animated;
 
 /*!
  * Access point for hiding toolbar when need (for example, after dragging side menu)
  */
-+ (void) hideToolbarAnimated:(BOOL)animated;
++ (void)hideToolbarAnimated:(BOOL)animated;
 
-+ (void) showKeyboard;
++ (void)showKeyboard;
 
-+ (void) hideKeyboard;
++ (void)hideKeyboard;
 
 /*!
  * Set inset for messages collection
  */
-+ (void) setMessageInputInset:(CGFloat)inset animated:(BOOL)animated __deprecated_msg("Do not use anymore");
++ (void)setMessageInputInset:(CGFloat)inset animated:(BOOL)animated __deprecated_msg("Do not use anymore");
 
 /*!
  * Short push message receiver
  */
-+ (THRMessageRecieveState) didReceiveShortPush: (NSDictionary *) dict
-                                       handler: (thr_nullable THRShortPushHandler) handler;
++ (THRMessageRecieveState)didReceiveShortPush:(NSDictionary *)dict
+                                       handler:(thr_nullable THRShortPushHandler)handler;
 
 /*!
  * Full push message receiver
  */
-+ (THRMessageRecieveState) didReceiveFullPush: (PushNotificationMessage *) message;
++ (THRMessageRecieveState)didReceiveFullPush:(PushNotificationMessage *)message;
 
-+ (BOOL) isThreadsOriginPush: (NSDictionary*) pushDict;
++ (BOOL)isThreadsOriginPush:(NSDictionary *)pushDict;
 
-+ (NSString*) getAppMarkerFromPush: (NSDictionary*) pushDict;
++ (NSString *)getAppMarkerFromPush:(NSDictionary *)pushDict;
 
 /*!
  * Return boolean value which tells about visibility of Threads
  */
-- (BOOL) threadsIsVisible;
+- (BOOL)threadsIsVisible;
+
+/*!
+ * Return boolean value which tells about configuration of Threads
+ */
+- (BOOL)isConfigured;
+
+/*!
+ * Submit text outside chat
+ */
+- (void)submitMessageWithText:(NSString *)text completion:(THRSubmissionCompletion)completion;
+
+/*!
+ * Submit image outside chat
+ */
+- (void)submitMessageWithImage:(UIImage *)image completion:(THRSubmissionCompletion)completion;
 
 @end
 
