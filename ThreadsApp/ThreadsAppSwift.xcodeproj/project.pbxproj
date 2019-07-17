@@ -211,7 +211,6 @@
 				452F88A7E4236B9C4F689644 /* Pods-ThreadsAppSwift.debug.xcconfig */,
 				E0617E61EAA9BF18A70AFD93 /* Pods-ThreadsAppSwift.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -671,7 +670,7 @@
 				CODE_SIGN_ENTITLEMENTS = ThreadsAppSwift/ThreadsAppSwift.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.48.6;
+				CURRENT_PROJECT_VERSION = 2.48.7;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -736,7 +735,7 @@
 				CODE_SIGN_ENTITLEMENTS = ThreadsAppSwift/ThreadsAppSwift.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.48.6;
+				CURRENT_PROJECT_VERSION = 2.48.7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
