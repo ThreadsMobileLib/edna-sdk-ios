@@ -67,7 +67,6 @@
 		AAB161881F330D110036B18E /* ThreadsApp-Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAB161871F330D110036B18E /* ThreadsApp-Sample.plist */; };
 		AAB39E67225DDB3E00AC4887 /* ServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB39E63225DDB3E00AC4887 /* ServerAPI.m */; };
 		AAB39E68225DDB3E00AC4887 /* ConfigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB39E66225DDB3E00AC4887 /* ConfigHelper.m */; };
-		AAB39E6D225DDBBC00AC4887 /* NSDictionary+SQExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB39E69225DDBBB00AC4887 /* NSDictionary+SQExtended.m */; };
 		AAB39E6E225DDBBC00AC4887 /* PlistUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB39E6A225DDBBB00AC4887 /* PlistUtils.m */; };
 		AAC55BB320D38EC200AC71BD /* ChatFragmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC55BB220D38EC200AC71BD /* ChatFragmentViewController.m */; };
 		AADDF7CF1FA3440D00716CAD /* ClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AADDF7CE1FA3440D00716CAD /* ClientCell.m */; };
@@ -176,10 +175,8 @@
 		AAB39E63225DDB3E00AC4887 /* ServerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerAPI.m; sourceTree = "<group>"; };
 		AAB39E65225DDB3E00AC4887 /* ConfigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHelper.h; sourceTree = "<group>"; };
 		AAB39E66225DDB3E00AC4887 /* ConfigHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigHelper.m; sourceTree = "<group>"; };
-		AAB39E69225DDBBB00AC4887 /* NSDictionary+SQExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SQExtended.m"; sourceTree = "<group>"; };
 		AAB39E6A225DDBBB00AC4887 /* PlistUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistUtils.m; sourceTree = "<group>"; };
 		AAB39E6B225DDBBB00AC4887 /* PlistUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistUtils.h; sourceTree = "<group>"; };
-		AAB39E6C225DDBBC00AC4887 /* NSDictionary+SQExtended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SQExtended.h"; sourceTree = "<group>"; };
 		AAC55BB120D38EC200AC71BD /* ChatFragmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFragmentViewController.h; sourceTree = "<group>"; };
 		AAC55BB220D38EC200AC71BD /* ChatFragmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFragmentViewController.m; sourceTree = "<group>"; };
 		AADDF7CD1FA3440D00716CAD /* ClientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientCell.h; sourceTree = "<group>"; };
@@ -478,8 +475,6 @@
 				AADDF7DD1FA8697300716CAD /* TAStorage.m */,
 				AAF7632E1FE3B2C2008D04DC /* DictUtils.h */,
 				AAF7632F1FE3B2C2008D04DC /* DictUtils.m */,
-				AAB39E6C225DDBBC00AC4887 /* NSDictionary+SQExtended.h */,
-				AAB39E69225DDBBB00AC4887 /* NSDictionary+SQExtended.m */,
 				AAB39E6B225DDBBB00AC4887 /* PlistUtils.h */,
 				AAB39E6A225DDBBB00AC4887 /* PlistUtils.m */,
 			);
@@ -669,7 +664,6 @@
 				AADDF7DE1FA8697300716CAD /* TAStorage.m in Sources */,
 				AAB1614D1F330CF60036B18E /* SwitchCell.m in Sources */,
 				AAC55BB320D38EC200AC71BD /* ChatFragmentViewController.m in Sources */,
-				AAB39E6D225DDBBC00AC4887 /* NSDictionary+SQExtended.m in Sources */,
 				AA28974B214A383100B196BF /* ChatInStackController.m in Sources */,
 				AAB1614E1F330CF60036B18E /* DrawerViewController.m in Sources */,
 				AAB1614F1F330CF60036B18E /* SelectCell.m in Sources */,

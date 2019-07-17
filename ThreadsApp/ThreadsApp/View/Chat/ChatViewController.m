@@ -210,6 +210,14 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
     
     if ([viewController.childViewControllers.firstObject isKindOfClass: [ChatFragmentViewController class]]) {
         [self showChat:nil type:CellTypeToFragmentChat];
+        [self.tabBarController.tabBar.items[2] setBadgeValue: nil];
+    } else {
+        NSInteger count = [Threads threads].unreadedMessagesCount;
+        if (count > 0) {
+            [self.tabBarController.tabBar.items[2] setBadgeValue: [NSString stringWithFormat:@"%ld", count]];
+        } else {
+            [self.tabBarController.tabBar.items[2] setBadgeValue: nil];
+        }
     }
     
     return YES;
@@ -402,15 +410,6 @@ TextCellDelegate, ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, Cl
     else {
         _inputVisible = YES;
         [Threads showToolbarAnimated:NO];
-    }
-}
-
-- (IBAction) toggleBottomSpacing:(id)sender {
-    if(_bottomSpacing == 0) {
-        _bottomSpacing = self.tabBarController.tabBar.frame.size.height;
-    }
-    else {
-        _bottomSpacing = 0;
     }
 }
 

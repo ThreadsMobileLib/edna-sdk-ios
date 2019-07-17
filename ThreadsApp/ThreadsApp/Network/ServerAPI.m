@@ -84,7 +84,7 @@ static BOOL const kIsDebugLoggingEnabled = YES;
     NSURL *url = [NSURL URLWithString: urlString];
     NSMutableURLRequest* signatureRequest = [NSMutableURLRequest requestWithURL: url
                                                                     cachePolicy: NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                                                timeoutInterval: 30];
+                                                                timeoutInterval: 2];
     [signatureRequest setHTTPMethod: @"GET"];
     return signatureRequest;
 }
