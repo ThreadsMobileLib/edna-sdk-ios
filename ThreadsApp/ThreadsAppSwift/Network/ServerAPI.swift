@@ -39,7 +39,7 @@ class ServerAPI {
     
     class func loadSignature(withUrl url: URL, completion: @escaping THRClientIdSignatureCompletion) {
         
-        var signatureRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30.0)
+        var signatureRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 2.0)
         signatureRequest.httpMethod = "GET"
         
         
