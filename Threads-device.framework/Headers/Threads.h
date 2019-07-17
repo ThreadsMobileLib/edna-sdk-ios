@@ -90,6 +90,11 @@ typedef enum : NSUInteger {
 @property (nonatomic, readonly)NSInteger unreadedMessagesCount;
 
 /*!
+ * File size limit in bytes. Default value is 30 MB (30 * 1024 * 1024).
+ */
+@property (nonatomic, readwrite) NSInteger fileSizeLimit;
+
+/*!
  * Unreaded messages block which will be called on changing `unreadedMessagesCount` value
  */
 @property (strong, nonatomic)void (^unreadedMessagesCountChanged)(NSInteger unreadedCount);
@@ -152,6 +157,11 @@ typedef enum : NSUInteger {
  * Setting hello description.
  */
 + (void)setHelloDescription:(NSString *)description;
+
+/*!
+ * Setting file size limit in bytes. Default value is 30 MB (30 * 1024 * 1024).
+ */
++ (void)setFileSizeLimit:(NSInteger)fileSizeLimit;
 
 /*!
  * Return last known client id. Need for demo project
