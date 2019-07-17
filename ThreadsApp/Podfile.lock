@@ -11,21 +11,17 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
-  - ReactiveObjC (3.1.0)
 
 DEPENDENCIES:
   - MMDrawerController (~> 0.5.7)
-  - ReactiveObjC
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - MMDrawerController
-    - ReactiveObjC
 
 SPEC CHECKSUMS:
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
-  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
 
-PODFILE CHECKSUM: d554327177bd8a86a39c0e78ec661cce27d08223
+PODFILE CHECKSUM: d064159f4db286aa060d78ef61d2318a9e9f7bd5
 
 COCOAPODS: 1.6.1
