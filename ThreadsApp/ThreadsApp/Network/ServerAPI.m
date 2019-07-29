@@ -28,7 +28,11 @@ static BOOL const kIsDebugLoggingEnabled = YES;
                         completion: completion];
         
     } else {
-        NSLog(@"Signature loading failed: Server url empty");
+        NSError* signatureLoadError = [NSError errorWithDomain:[[NSBundle bundleForClass:[self class]] bundleIdentifier]
+                                                          code:0
+                                                      userInfo:@{@"error_description" : @"Signature loading failed: Server url empty"}];
+        NSLog(@"Load signature: ERROR    = %@", signatureLoadError);
+        completion(nil, signatureLoadError);
     }
 }
 

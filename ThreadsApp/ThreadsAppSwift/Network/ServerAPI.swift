@@ -33,7 +33,12 @@ class ServerAPI {
             }
             
         } else {
-            print("Signature loading failed: Server url empty")
+            let signatureLoadError = NSError(domain: Bundle(for: self).bundleIdentifier ?? "",
+                                             code: 0,
+                                             userInfo: ["error_description": "Signature loading failed: Server url empty"])
+            
+            print("Load signature: ERROR    = ", signatureLoadError);
+            completion(nil, signatureLoadError);
         }
     }
     
