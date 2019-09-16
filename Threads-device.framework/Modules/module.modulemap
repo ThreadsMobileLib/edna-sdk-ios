@@ -1,0 +1,11 @@
+framework module Threads {
+  umbrella header "Threads.h"
+
+  export *
+  module * { export * }
+}
+
+module Threads.Swift {
+    header "Threads-Swift.h"
+    requires objc
+}
