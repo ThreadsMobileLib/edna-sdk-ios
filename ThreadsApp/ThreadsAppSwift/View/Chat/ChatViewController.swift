@@ -611,22 +611,30 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
             attributes.canShowDebugScreen = self.canShowDebugScreen;
             attributes.historyLoadingCount = 25;
             
-            attributes.incomingBubbleColor = UIColor(red: 53.0/255.0, green: 152.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+            if #available(iOS 13.0, *) {
+                attributes.incomingBubbleColor = UIColor(named:"threads_incomingBubbleColor")
+                    ?? UIColor (red: 53.0/255.0, green: 152.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+                attributes.outgoingBubbleColor = UIColor(named:"threads_outgoingBubbleColor")
+                    ?? UIColor (red: 53.0/255.0, green: 152.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+            } else {
+                attributes.incomingBubbleColor = UIColor (red: 53.0/255.0, green: 152.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+                attributes.outgoingBubbleColor = UIColor (red: 53.0/255.0, green: 152.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+            };
             
             attributes.incomingBubbleStroked = true;
             attributes.shouldAnimateShowNavigation = false;
             attributes.shouldAnimatePopNavigation = false;
             attributes.navigationBarTintColor = UIColor.yellow;
             attributes.navigationBarSubtitleShowOrgUnit = true;
+        
         } else {
             attributes = THRAttributes.default()
-            
-            attributes.refreshColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
+                        
+            attributes.refreshColor = UIColor.alt_refreshColor()
             attributes.statusBarStyle = .default
             
-            
-            attributes.navigationBarBackgroundColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
-            attributes.navigationBarTintColor = UIColor.white
+            attributes.navigationBarBackgroundColor = UIColor.alt_navigationBarBackgroundColor()
+            attributes.navigationBarTintColor = UIColor.alt_navigationBarTintColor()
             
             let navigationBarTitleFont = UIFont(name: "Lato-Semibold", size: 18.0)
             if (navigationBarTitleFont != nil) {
@@ -643,10 +651,10 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
                 attributes.placeholderImage = placeholderImage!
             }
             
-            attributes.backgroundColor = UIColor(red:234.0/255.0, green:240.0/255.0, blue:240.0/255.0, alpha:1.0)
+            attributes.backgroundColor = UIColor.alt_mainBackgroundColor()
             
-            attributes.placeholderTitleColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.7)
-            attributes.placeholderSubtitleColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.5)
+            attributes.placeholderTitleColor = UIColor.alt_placeholderTitleColor()
+            attributes.placeholderSubtitleColor = UIColor.alt_placeholderSubtitleColor()
             
             let placeholderTitleFont = UIFont(name: "Lato-Semibold", size:19.0)
             if (placeholderTitleFont != nil) {
@@ -663,21 +671,22 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
                 attributes.myMessageFont = myMessageFont!
             }
             
-            attributes.attachButtonColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
-            attributes.attachButtonHighlightColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:0.7)
+            attributes.attachButtonColor = UIColor.alt_attachButtonColor()
+            attributes.attachButtonHighlightColor = UIColor.alt_attachButtonHighlightColor()
             
-            attributes.sendButtonColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
-            attributes.sendButtonHighlightColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:0.7)
+            attributes.sendButtonColor = UIColor.alt_sendButtonColor()
+            attributes.sendButtonHighlightColor = UIColor.alt_sendButtonHighlightColor()
             
-            attributes.waitingSpecialistBorderColor = UIColor.clear
-            attributes.waitingSpecialistSpinnerColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
+            attributes.waitingSpecialistBorderColor = UIColor.alt_waitingSpecialistBorderColor()
+            attributes.waitingSpecialistSpinnerColor = UIColor.alt_waitingSpecialistSpinnerColor()
             
-            attributes.outgoingBubbleColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
-            attributes.outgoingBubbleTextColor = UIColor.white
-            attributes.outgoingBubbleLinkColor = UIColor.blue
-            attributes.failedBubbleColor = UIColor(red:244.0/255.0, green:67.0/255.0, blue:54.0/255.0, alpha:1.0)
-            attributes.incomingBubbleTextColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0)
-            attributes.incomingBubbleLinkColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
+            attributes.outgoingBubbleColor = UIColor.alt_outgoingBubbleColor()
+            attributes.outgoingBubbleTextColor = UIColor.alt_outgoingBubbleTextColor()
+            attributes.outgoingBubbleLinkColor = UIColor.alt_outgoingBubbleLinkColor()
+            attributes.failedBubbleColor = UIColor.alt_failedBubbleColor()
+            attributes.incomingBubbleColor = UIColor.alt_incomingBubbleColor()
+            attributes.incomingBubbleTextColor = UIColor.alt_incomingBubbleTextColor()
+            attributes.incomingBubbleLinkColor = UIColor.alt_incomingBubbleLinkColor()
             
             let bubbleMessageFont = UIFont(name: "Lato-Regular", size:17.0)
             if (bubbleMessageFont != nil) {
@@ -709,10 +718,9 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
                 attributes.specialisConnectSubtitleFont = specialisConnectSubtitleFont!
             }
             
-            attributes.specialisConnectTitleColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0)
-            attributes.specialisConnectSubtitleColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0)
-            
-            attributes.toolbarTintColor = UIColor.red
+            attributes.specialisConnectTitleColor = UIColor.alt_specialisConnectTitleColor()
+            attributes.specialisConnectSubtitleColor = UIColor.alt_specialisConnectSubtitleColor()
+            attributes.toolbarTintColor = UIColor.alt_toolbarTintColor()
             
             let toolbarQuotedMessageAuthorFont = UIFont(name: "Lato-Regular", size:17.0)
             if (toolbarQuotedMessageAuthorFont != nil) {
@@ -724,8 +732,8 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
                 attributes.toolbarQuotedMessageFont = toolbarQuotedMessageFont!
             }
             
-            attributes.toolbarQuotedMessageAuthorColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0)
-            attributes.toolbarQuotedMessageColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.5)
+            attributes.toolbarQuotedMessageAuthorColor = UIColor.alt_toolbarQuotedMessageAuthorColor()
+            attributes.toolbarQuotedMessageColor = UIColor.alt_toolbarQuotedMessageColor()
             
             let quoteAuthorFont = UIFont(name: "Lato-Semibold", size:17.0)
             if (quoteAuthorFont != nil) {
@@ -747,57 +755,58 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
                 attributes.quoteTimeFont = quoteTimeFont!
             }
             
-            attributes.outgoingQuoteSeparatorColor = UIColor.white
-            attributes.outgoingQuoteAuthorColor = UIColor.white
-            attributes.outgoingQuoteMessageColor = UIColor.white
-            attributes.outgoingQuoteTimeColor = UIColor.white
-            attributes.outgoingQuoteFilesizeColor = UIColor.white
+            attributes.outgoingQuoteSeparatorColor = UIColor.alt_outgoingQuoteSeparatorColor()
+            attributes.outgoingQuoteAuthorColor = UIColor.alt_outgoingQuoteAuthorColor()
+            attributes.outgoingQuoteMessageColor = UIColor.alt_outgoingQuoteMessageColor()
+            attributes.outgoingQuoteTimeColor = UIColor.alt_outgoingQuoteTimeColor()
+            attributes.outgoingQuoteFilesizeColor = UIColor.alt_outgoingQuoteFilesizeColor()
             
-            attributes.incomingQuoteSeparatorColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
-            attributes.incomingQuoteAuthorColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0)
-            attributes.incomingQuoteMessageColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.7)
-            attributes.incomingQuoteTimeColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.7)
-            attributes.incomingQuoteFilesizeColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.7)
-            attributes.incomingFileIconTintColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
-            attributes.incomingFileIconBgColor = UIColor(red:234.0/255.0, green:240.0/255.0, blue:240.0/255.0, alpha:1.0)
+            attributes.incomingQuoteSeparatorColor = UIColor.alt_incomingQuoteSeparatorColor()
+            attributes.incomingQuoteAuthorColor = UIColor.alt_incomingQuoteAuthorColor()
+            attributes.incomingQuoteMessageColor = UIColor.alt_incomingQuoteMessageColor()
+            attributes.incomingQuoteTimeColor = UIColor.alt_incomingQuoteTimeColor()
+            attributes.incomingQuoteFilesizeColor = UIColor.alt_incomingQuoteFilesizeColor()
+            attributes.incomingFileIconTintColor = UIColor.alt_incomingFileIconTintColor()
+            attributes.incomingFileIconBgColor = UIColor.alt_incomingFileIconBgColor()
             
             let clearSearchIcon = UIImage(named:"ic_clear_search")
             if (clearSearchIcon != nil) {
                 attributes.clearSearchIcon = clearSearchIcon!
             }
-            attributes.searchBarTintColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0)
-            attributes.searchBarTextColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0)
+            
+            attributes.searchBarTintColor = UIColor.alt_searchBarTintColor()
+            attributes.searchBarTextColor = UIColor.alt_searchBarTextColor()
             
             let searchBarTextFont = UIFont(name: "Lato-Regular", size:14.0)
             if (searchBarTextFont != nil) {
                 attributes.searchBarTextFont = searchBarTextFont!
             }
-            attributes.searchScopeBarTintColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
+            attributes.searchScopeBarTintColor = UIColor.alt_searchScopeBarTintColor()
             
             let searchScopeBarFont = UIFont(name: "Lato-Regular", size:13.0)
             if (searchScopeBarFont != nil) {
                 attributes.searchScopeBarFont = searchScopeBarFont!
             }
             
-            attributes.findedMessageHeaderTextColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.5)
-            attributes.findedMessageHeaderBackgroundColor = UIColor(red:234.0/255.0, green:240.0/255.0, blue:240.0/255.0, alpha:1.0)
+            attributes.findedMessageHeaderTextColor = UIColor.alt_findedMessageHeaderTextColor()
+            attributes.findedMessageHeaderBackgroundColor = UIColor.alt_findedMessageHeaderBackgroundColor()
             
             let findedMessageHeaderTextFont = UIFont(name: "Lato-Regular", size:13.0)
             if (findedMessageHeaderTextFont != nil) {
                 attributes.findedMessageHeaderTextFont = findedMessageHeaderTextFont!
             }
             
-            attributes.findMoreMessageTextColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0)
+            attributes.findMoreMessageTextColor = UIColor.alt_findMoreMessageTextColor()
             let findMoreMessageTextFont = UIFont(name: "Lato-Regular", size:15.0)
             if (findMoreMessageTextFont != nil) {
                 attributes.findMoreMessageTextFont = findMoreMessageTextFont!
             }
             
-            attributes.searchMessageAuthorTextColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0);
-            attributes.searchMessageTextColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.7)
-            attributes.searchMessageDateTextColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.7)
-            attributes.searchMessageFileTextColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.7)
-            attributes.searchMessageMatchTextColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
+            attributes.searchMessageAuthorTextColor = UIColor.alt_searchMessageAuthorTextColor()
+            attributes.searchMessageTextColor = UIColor.alt_searchMessageTextColor()
+            attributes.searchMessageDateTextColor = UIColor.alt_searchMessageDateTextColor()
+            attributes.searchMessageFileTextColor = UIColor.alt_searchMessageFileTextColor()
+            attributes.searchMessageMatchTextColor = UIColor.alt_searchMessageMatchTextColor()
             
             let searchMessageAuthorTextFont = UIFont(name: "Lato-Regular", size:17.0)
             if (searchMessageAuthorTextFont != nil) {
@@ -828,14 +837,14 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
             if (photoPickerCheckmarkIcon != nil) {
                 attributes.photoPickerCheckmarkIcon = photoPickerCheckmarkIcon!
             }
-            attributes.photoPickerToolbarTintColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
+            attributes.photoPickerToolbarTintColor = UIColor.alt_photoPickerToolbarTintColor()
             
             let photoPickerToolbarButtonFont = UIFont(name: "Lato-Regular", size:17.0)
             if (photoPickerToolbarButtonFont != nil) {
                 attributes.photoPickerToolbarButtonFont = photoPickerToolbarButtonFont!
             }
             
-            attributes.photoPickerSheetTextColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
+            attributes.photoPickerSheetTextColor = UIColor.alt_photoPickerSheetTextColor()
             
             let photoPickerSheetTextFont = UIFont(name: "Lato-Regular", size:17.0)
             if (photoPickerSheetTextFont != nil) {
@@ -862,7 +871,7 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
             }
             
             attributes.typingText = "печатает...";
-            attributes.typingTextColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:0.5)
+            attributes.typingTextColor = UIColor.alt_typingTextColor()
             
             let typingTextFont = UIFont(name: "Lato-Medium", size:13.0)
             if (typingTextFont != nil) {
@@ -878,7 +887,7 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
             if (scheduleAlertFont != nil) {
                 attributes.scheduleAlertFont = scheduleAlertFont!
             }
-            attributes.scheduleAlertColor = UIColor(red:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0)
+            attributes.scheduleAlertColor = UIColor.alt_scheduleAlertColor()
             
             let scrollToBottomImage = UIImage(named:"scroll_down_button_brs")
             if (scrollToBottomImage != nil) {
@@ -889,13 +898,13 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
             if (surveyTextFont != nil) {
                 attributes.surveyTextFont = surveyTextFont!
             }
-            attributes.surveyTextColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
+            attributes.surveyTextColor = UIColor.alt_surveyTextColor()
             
             let surveyCompletionFont = UIFont(name: "Lato-Regular", size:17.0)
             if (surveyCompletionFont != nil) {
                 attributes.surveyCompletionFont = surveyCompletionFont!
             }
-            attributes.surveyCompletionColor = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
+            attributes.surveyCompletionColor = UIColor.alt_surveyCompletionColor()
             
             let iconLikeFull = UIImage(named:"ic_like_filled")?.withRenderingMode(.alwaysTemplate)
             if (iconLikeFull != nil) {
@@ -927,12 +936,12 @@ ButtonCellDelegate, SelectCellDelegate, SwitchCellDelegate, ClientCellDelegate, 
                 attributes.iconStarRatingEmty = iconStarRatingEmty!
             }
             
-            attributes.likeRatingColorEnabled = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
-            attributes.likeRatingColorDisabled = UIColor(red:131.0/255.0, green:177.0/255.0, blue:67.0/255.0, alpha:1.0)
-            attributes.starRatingColorEnabled = UIColor.red
-            attributes.starRatingColorDisabled = UIColor.red
-            attributes.likeRatingColorCompleted = UIColor.yellow
-            attributes.starRatingColorCompleted = UIColor.red
+            attributes.likeRatingColorEnabled = UIColor.alt_likeRatingColorEnabled()
+            attributes.likeRatingColorDisabled = UIColor.alt_likeRatingColorDisabled()
+            attributes.starRatingColorEnabled = UIColor.alt_starRatingColorEnabled()
+            attributes.starRatingColorDisabled = UIColor.alt_starRatingColorDisabled()
+            attributes.likeRatingColorCompleted = UIColor.alt_likeRatingColorCompleted()
+            attributes.starRatingColorCompleted = UIColor.alt_starRatingColorCompleted()
             
             attributes.showWaitingForSpecialistProgress = false;
             attributes.canShowSpecialistInfo = false;

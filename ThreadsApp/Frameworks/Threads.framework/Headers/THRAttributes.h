@@ -227,8 +227,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *likeLabelUnderStarColor;
 @property (nonatomic, strong) UIColor* surveyTextColor;
 @property (nonatomic, strong) UIFont *surveyTextFont;
+
 @property (nonatomic, strong) UIColor* surveyCompletionColor;
 @property (nonatomic, strong) UIFont *surveyCompletionFont;
+@property int surveyCompletionDelay;
 
 @property (nonatomic, strong) UIImage *iconStarRatingEmty;
 @property (nonatomic, strong) UIImage *iconStarRatingFull;

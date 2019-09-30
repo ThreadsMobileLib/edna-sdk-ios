@@ -12,6 +12,9 @@
 		791F89B022CDFC37000CD184 /* MFMSPushLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 791F89A822CDFC1D000CD184 /* MFMSPushLite.framework */; };
 		791F89B122CDFC37000CD184 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 791F89A822CDFC1D000CD184 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9DA42C9669C8A39CB9FB6D2A /* Pods_ThreadsAppSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638A16ACBBC3DCBCF4A9F5F4 /* Pods_ThreadsAppSwift.framework */; };
+		AA1E7CEB2342113E00C80AC8 /* AlternateAttributes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1E7CEA2342113E00C80AC8 /* AlternateAttributes.xcassets */; };
+		AA1E7CEF2342114D00C80AC8 /* THRColorCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E7CED2342114D00C80AC8 /* THRColorCompatibility.swift */; };
+		AA1E7CF02342114D00C80AC8 /* UIColor+AltColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E7CEE2342114D00C80AC8 /* UIColor+AltColor.swift */; };
 		AA547B4D22927A6C00622AB8 /* TAStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE9BB72282E96C006B62A2 /* TAStorage.swift */; };
 		AA547B4E22927A6C00622AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA961CF2227706BF009550E5 /* AppDelegate.swift */; };
 		AA547B4F22927A6C00622AB8 /* SelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7920E228D80BE00724333 /* SelectCell.swift */; };
@@ -43,25 +46,18 @@
 		AA547B6E22927A6C00622AB8 /* rect_bubble_stroked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961CA5227706BF009550E5 /* rect_bubble_stroked@2x.png */; };
 		AA547B6F22927A6C00622AB8 /* ic_like_stroked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C93227706BF009550E5 /* ic_like_stroked@2x.png */; };
 		AA547B7022927A6C00622AB8 /* rect_bubble_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C8A227706BF009550E5 /* rect_bubble_filled.png */; };
-		AA547B7122927A6C00622AB8 /* THRAppSwift-Polarbear Channel 2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA961CBE227706BF009550E5 /* THRAppSwift-Polarbear Channel 2-Info.plist */; };
 		AA547B7222927A6C00622AB8 /* ic_like_stroked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C8C227706BF009550E5 /* ic_like_stroked@3x.png */; };
 		AA547B7322927A6C00622AB8 /* ic_clear_search.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C99227706BF009550E5 /* ic_clear_search.png */; };
-		AA547B7422927A6C00622AB8 /* THRAppSwift-Winlab2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA961CC2227706BF009550E5 /* THRAppSwift-Winlab2-Info.plist */; };
-		AA547B7522927A6C00622AB8 /* THRAppSwift-Winlab(Beta4)-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA961CC4227706BF009550E5 /* THRAppSwift-Winlab(Beta4)-Info.plist */; };
 		AA547B7622927A6C00622AB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA961C82227706BF009550E5 /* Assets.xcassets */; };
 		AA547B7722927A6C00622AB8 /* ic_heart_stroked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961CA1227706BF009550E5 /* ic_heart_stroked@3x.png */; };
 		AA547B7822927A6C00622AB8 /* schedule_alert@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C9D227706BF009550E5 /* schedule_alert@3x.png */; };
 		AA547B7922927A6C00622AB8 /* ic_heart_stroked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961CA2227706BF009550E5 /* ic_heart_stroked@2x.png */; };
-		AA547B7A22927A6C00622AB8 /* THRAppSwift-Beta2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA961CC3227706BF009550E5 /* THRAppSwift-Beta2-Info.plist */; };
 		AA547B7B22927A6C00622AB8 /* lato-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA961CA9227706BF009550E5 /* lato-semibold.ttf */; };
-		AA547B7C22927A6C00622AB8 /* THRAppSwift-AmurTiger-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA961CC0227706BF009550E5 /* THRAppSwift-AmurTiger-Info.plist */; };
 		AA547B7D22927A6C00622AB8 /* ic_like_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C91227706BF009550E5 /* ic_like_filled@2x.png */; };
 		AA547B7E22927A6C00622AB8 /* placeholder_image.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C90227706BF009550E5 /* placeholder_image.png */; };
 		AA547B7F22927A6C00622AB8 /* ic_like_filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C8F227706BF009550E5 /* ic_like_filled@3x.png */; };
 		AA547B8022927A6C00622AB8 /* ic_clear_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C9B227706BF009550E5 /* ic_clear_search@2x.png */; };
 		AA547B8122927A6C00622AB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA961C83227706BF009550E5 /* Localizable.strings */; };
-		AA547B8222927A6C00622AB8 /* THRAppSwift-Winlab0-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA961CC5227706BF009550E5 /* THRAppSwift-Winlab0-Info.plist */; };
-		AA547B8322927A6C00622AB8 /* THRAppSwift-Winlab(Beta4) Channel2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA961CC1227706BF009550E5 /* THRAppSwift-Winlab(Beta4) Channel2-Info.plist */; };
 		AA547B8422927A6C00622AB8 /* placeholder_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C9C227706BF009550E5 /* placeholder_image@2x.png */; };
 		AA547B8522927A6C00622AB8 /* scroll_down_button_brs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961CA4227706BF009550E5 /* scroll_down_button_brs@2x.png */; };
 		AA547B8622927A6C00622AB8 /* lato-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA961CA8227706BF009550E5 /* lato-regular.ttf */; };
@@ -75,13 +71,11 @@
 		AA547B8E22927A6C00622AB8 /* logo1055@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C81227706BF009550E5 /* logo1055@3x.png */; };
 		AA547B8F22927A6C00622AB8 /* rect_bubble_filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C92227706BF009550E5 /* rect_bubble_filled@3x.png */; };
 		AA547B9022927A6C00622AB8 /* scroll_down_button_brs@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C9F227706BF009550E5 /* scroll_down_button_brs@3x.png */; };
-		AA547B9122927A6C00622AB8 /* THRAppSwift-Polarbear-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA961CBD227706BF009550E5 /* THRAppSwift-Polarbear-Info.plist */; };
 		AA547B9222927A6C00622AB8 /* schedule_alert.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961CA3227706BF009550E5 /* schedule_alert.png */; };
 		AA547B9322927A6C00622AB8 /* rect_bubble_stroked.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C9A227706BF009550E5 /* rect_bubble_stroked.png */; };
 		AA547B9422927A6C00622AB8 /* schedule_alert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA961C97227706BF009550E5 /* schedule_alert@2x.png */; };
 		AA547B9522927A6C00622AB8 /* lato-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA961CAB227706BF009550E5 /* lato-medium.ttf */; };
 		AA547B9622927A6C00622AB8 /* THRAppSwift-Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA961CBB227706BF009550E5 /* THRAppSwift-Sample.plist */; };
-		AA547B9722927A6C00622AB8 /* THRAppSwift-Brooma(Threads-Dev)-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA961CBA227706BF009550E5 /* THRAppSwift-Brooma(Threads-Dev)-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -104,6 +98,9 @@
 		638A16ACBBC3DCBCF4A9F5F4 /* Pods_ThreadsAppSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreadsAppSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		791F89A722CDFC1D000CD184 /* Threads.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Threads.framework; sourceTree = "<group>"; };
 		791F89A822CDFC1D000CD184 /* MFMSPushLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MFMSPushLite.framework; sourceTree = "<group>"; };
+		AA1E7CEA2342113E00C80AC8 /* AlternateAttributes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AlternateAttributes.xcassets; sourceTree = "<group>"; };
+		AA1E7CED2342114D00C80AC8 /* THRColorCompatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THRColorCompatibility.swift; sourceTree = "<group>"; };
+		AA1E7CEE2342114D00C80AC8 /* UIColor+AltColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AltColor.swift"; sourceTree = "<group>"; };
 		AA547B9F22927A6C00622AB8 /* ThreadsAppSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsAppSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5EB2CC228E7351009D685B /* CellTypeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypeHelper.swift; sourceTree = "<group>"; };
 		AA70B135228AD7E100B9776A /* PlistUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistUtils.swift; sourceTree = "<group>"; };
@@ -148,17 +145,8 @@
 		AA961CA9227706BF009550E5 /* lato-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-semibold.ttf"; sourceTree = "<group>"; };
 		AA961CAA227706BF009550E5 /* lato-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-light.ttf"; sourceTree = "<group>"; };
 		AA961CAB227706BF009550E5 /* lato-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-medium.ttf"; sourceTree = "<group>"; };
-		AA961CBA227706BF009550E5 /* THRAppSwift-Brooma(Threads-Dev)-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "THRAppSwift-Brooma(Threads-Dev)-Info.plist"; sourceTree = "<group>"; };
 		AA961CBB227706BF009550E5 /* THRAppSwift-Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "THRAppSwift-Sample.plist"; sourceTree = "<group>"; };
 		AA961CBC227706BF009550E5 /* ThreadsAppSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ThreadsAppSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		AA961CBD227706BF009550E5 /* THRAppSwift-Polarbear-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "THRAppSwift-Polarbear-Info.plist"; sourceTree = "<group>"; };
-		AA961CBE227706BF009550E5 /* THRAppSwift-Polarbear Channel 2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "THRAppSwift-Polarbear Channel 2-Info.plist"; sourceTree = "<group>"; };
-		AA961CC0227706BF009550E5 /* THRAppSwift-AmurTiger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "THRAppSwift-AmurTiger-Info.plist"; sourceTree = "<group>"; };
-		AA961CC1227706BF009550E5 /* THRAppSwift-Winlab(Beta4) Channel2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "THRAppSwift-Winlab(Beta4) Channel2-Info.plist"; sourceTree = "<group>"; };
-		AA961CC2227706BF009550E5 /* THRAppSwift-Winlab2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "THRAppSwift-Winlab2-Info.plist"; sourceTree = "<group>"; };
-		AA961CC3227706BF009550E5 /* THRAppSwift-Beta2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "THRAppSwift-Beta2-Info.plist"; sourceTree = "<group>"; };
-		AA961CC4227706BF009550E5 /* THRAppSwift-Winlab(Beta4)-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "THRAppSwift-Winlab(Beta4)-Info.plist"; sourceTree = "<group>"; };
-		AA961CC5227706BF009550E5 /* THRAppSwift-Winlab0-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "THRAppSwift-Winlab0-Info.plist"; sourceTree = "<group>"; };
 		AA961CE8227706BF009550E5 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		AA961CEE227706BF009550E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA961CF0227706BF009550E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -214,6 +202,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AA1E7CEC2342114D00C80AC8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AA1E7CED2342114D00C80AC8 /* THRColorCompatibility.swift */,
+				AA1E7CEE2342114D00C80AC8 /* UIColor+AltColor.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		AA36556822731BBA00901961 = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +236,7 @@
 				AA961C80227706BF009550E5 /* Resources */,
 				AA961CAC227706BF009550E5 /* Network */,
 				AA961CB0227706BF009550E5 /* Utils */,
+				AA1E7CEC2342114D00C80AC8 /* Settings */,
 				AA961CB9227706BF009550E5 /* Supporting Files */,
 				AA961CC6227706BF009550E5 /* View */,
 				AA961CF1227706BF009550E5 /* Application */,
@@ -251,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				AA961C81227706BF009550E5 /* logo1055@3x.png */,
+				AA1E7CEA2342113E00C80AC8 /* AlternateAttributes.xcassets */,
 				AA961C82227706BF009550E5 /* Assets.xcassets */,
 				AA961C83227706BF009550E5 /* Localizable.strings */,
 				AA961C85227706BF009550E5 /* icons */,
@@ -329,16 +328,7 @@
 		AA961CB9227706BF009550E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AA961CC0227706BF009550E5 /* THRAppSwift-AmurTiger-Info.plist */,
-				AA961CC3227706BF009550E5 /* THRAppSwift-Beta2-Info.plist */,
-				AA961CBA227706BF009550E5 /* THRAppSwift-Brooma(Threads-Dev)-Info.plist */,
-				AA961CBE227706BF009550E5 /* THRAppSwift-Polarbear Channel 2-Info.plist */,
-				AA961CBD227706BF009550E5 /* THRAppSwift-Polarbear-Info.plist */,
 				AA961CBB227706BF009550E5 /* THRAppSwift-Sample.plist */,
-				AA961CC1227706BF009550E5 /* THRAppSwift-Winlab(Beta4) Channel2-Info.plist */,
-				AA961CC4227706BF009550E5 /* THRAppSwift-Winlab(Beta4)-Info.plist */,
-				AA961CC5227706BF009550E5 /* THRAppSwift-Winlab0-Info.plist */,
-				AA961CC2227706BF009550E5 /* THRAppSwift-Winlab2-Info.plist */,
 				AA961CBC227706BF009550E5 /* ThreadsAppSwift-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
@@ -484,25 +474,18 @@
 				AA547B6E22927A6C00622AB8 /* rect_bubble_stroked@2x.png in Resources */,
 				AA547B6F22927A6C00622AB8 /* ic_like_stroked@2x.png in Resources */,
 				AA547B7022927A6C00622AB8 /* rect_bubble_filled.png in Resources */,
-				AA547B7122927A6C00622AB8 /* THRAppSwift-Polarbear Channel 2-Info.plist in Resources */,
 				AA547B7222927A6C00622AB8 /* ic_like_stroked@3x.png in Resources */,
 				AA547B7322927A6C00622AB8 /* ic_clear_search.png in Resources */,
-				AA547B7422927A6C00622AB8 /* THRAppSwift-Winlab2-Info.plist in Resources */,
-				AA547B7522927A6C00622AB8 /* THRAppSwift-Winlab(Beta4)-Info.plist in Resources */,
 				AA547B7622927A6C00622AB8 /* Assets.xcassets in Resources */,
 				AA547B7722927A6C00622AB8 /* ic_heart_stroked@3x.png in Resources */,
 				AA547B7822927A6C00622AB8 /* schedule_alert@3x.png in Resources */,
 				AA547B7922927A6C00622AB8 /* ic_heart_stroked@2x.png in Resources */,
-				AA547B7A22927A6C00622AB8 /* THRAppSwift-Beta2-Info.plist in Resources */,
 				AA547B7B22927A6C00622AB8 /* lato-semibold.ttf in Resources */,
-				AA547B7C22927A6C00622AB8 /* THRAppSwift-AmurTiger-Info.plist in Resources */,
 				AA547B7D22927A6C00622AB8 /* ic_like_filled@2x.png in Resources */,
 				AA547B7E22927A6C00622AB8 /* placeholder_image.png in Resources */,
 				AA547B7F22927A6C00622AB8 /* ic_like_filled@3x.png in Resources */,
 				AA547B8022927A6C00622AB8 /* ic_clear_search@2x.png in Resources */,
 				AA547B8122927A6C00622AB8 /* Localizable.strings in Resources */,
-				AA547B8222927A6C00622AB8 /* THRAppSwift-Winlab0-Info.plist in Resources */,
-				AA547B8322927A6C00622AB8 /* THRAppSwift-Winlab(Beta4) Channel2-Info.plist in Resources */,
 				AA547B8422927A6C00622AB8 /* placeholder_image@2x.png in Resources */,
 				AA547B8522927A6C00622AB8 /* scroll_down_button_brs@2x.png in Resources */,
 				AA547B8622927A6C00622AB8 /* lato-regular.ttf in Resources */,
@@ -516,13 +499,12 @@
 				AA547B8E22927A6C00622AB8 /* logo1055@3x.png in Resources */,
 				AA547B8F22927A6C00622AB8 /* rect_bubble_filled@3x.png in Resources */,
 				AA547B9022927A6C00622AB8 /* scroll_down_button_brs@3x.png in Resources */,
-				AA547B9122927A6C00622AB8 /* THRAppSwift-Polarbear-Info.plist in Resources */,
 				AA547B9222927A6C00622AB8 /* schedule_alert.png in Resources */,
 				AA547B9322927A6C00622AB8 /* rect_bubble_stroked.png in Resources */,
+				AA1E7CEB2342113E00C80AC8 /* AlternateAttributes.xcassets in Resources */,
 				AA547B9422927A6C00622AB8 /* schedule_alert@2x.png in Resources */,
 				AA547B9522927A6C00622AB8 /* lato-medium.ttf in Resources */,
 				AA547B9622927A6C00622AB8 /* THRAppSwift-Sample.plist in Resources */,
-				AA547B9722927A6C00622AB8 /* THRAppSwift-Brooma(Threads-Dev)-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,10 +563,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA547B4D22927A6C00622AB8 /* TAStorage.swift in Sources */,
+				AA1E7CEF2342114D00C80AC8 /* THRColorCompatibility.swift in Sources */,
 				AA547B4E22927A6C00622AB8 /* AppDelegate.swift in Sources */,
 				AA547B4F22927A6C00622AB8 /* SelectCell.swift in Sources */,
 				AA547B5022927A6C00622AB8 /* AboutViewController.swift in Sources */,
 				AA547B5122927A6C00622AB8 /* ServerAPI.swift in Sources */,
+				AA1E7CF02342114D00C80AC8 /* UIColor+AltColor.swift in Sources */,
 				AA547B5222927A6C00622AB8 /* DrawerViewController.swift in Sources */,
 				AA547B5322927A6C00622AB8 /* ConfigHelper.swift in Sources */,
 				AA547B5422927A6C00622AB8 /* TextCell.swift in Sources */,
@@ -668,7 +652,7 @@
 				CODE_SIGN_ENTITLEMENTS = ThreadsAppSwift/ThreadsAppSwift.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.48.8;
+				CURRENT_PROJECT_VERSION = 2.48.9;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -733,7 +717,7 @@
 				CODE_SIGN_ENTITLEMENTS = ThreadsAppSwift/ThreadsAppSwift.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.48.8;
+				CURRENT_PROJECT_VERSION = 2.48.9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

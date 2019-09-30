@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6F9D9A687D50D94F2D6DE90E /* Pods_ThreadsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1F74A606416031B4A13889 /* Pods_ThreadsApp.framework */; };
+		AA1E7CE22342110C00C80AC8 /* AlternateAttributes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1E7CE12342110B00C80AC8 /* AlternateAttributes.xcassets */; };
+		AA1E7CE82342112700C80AC8 /* THRColorCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1E7CE42342112700C80AC8 /* THRColorCompatibility.m */; };
+		AA1E7CE92342112700C80AC8 /* UIColor+AltColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1E7CE72342112700C80AC8 /* UIColor+AltColor.m */; };
 		AA28974B214A383100B196BF /* ChatInStackController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA28974A214A383100B196BF /* ChatInStackController.m */; };
 		AA54DA271F71084200B10AA8 /* Threads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D587041D0D3386007E2AC8 /* Threads.framework */; };
 		AA54DA281F71084200B10AA8 /* Threads.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80D587041D0D3386007E2AC8 /* Threads.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -152,6 +155,11 @@
 		80FFB11C1E83BB7400C03798 /* rect_bubble_filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rect_bubble_filled@2x.png"; sourceTree = "<group>"; };
 		80FFB11D1E83BB7400C03798 /* rect_bubble_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rect_bubble_filled.png; sourceTree = "<group>"; };
 		95B5BD7D3E65C44F5D9E3BC8 /* Pods-ThreadsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreadsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThreadsApp/Pods-ThreadsApp.release.xcconfig"; sourceTree = "<group>"; };
+		AA1E7CE12342110B00C80AC8 /* AlternateAttributes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AlternateAttributes.xcassets; sourceTree = "<group>"; };
+		AA1E7CE42342112700C80AC8 /* THRColorCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRColorCompatibility.m; sourceTree = "<group>"; };
+		AA1E7CE52342112700C80AC8 /* UIColor+AltColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AltColor.h"; sourceTree = "<group>"; };
+		AA1E7CE62342112700C80AC8 /* THRColorCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRColorCompatibility.h; sourceTree = "<group>"; };
+		AA1E7CE72342112700C80AC8 /* UIColor+AltColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AltColor.m"; sourceTree = "<group>"; };
 		AA289749214A383000B196BF /* ChatInStackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInStackController.h; sourceTree = "<group>"; };
 		AA28974A214A383100B196BF /* ChatInStackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInStackController.m; sourceTree = "<group>"; };
 		AA7EA81C1F3B484700D2F60A /* libPods-Threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Threads.a"; path = "../../../../Library/Developer/Xcode/DerivedData/Threads-gftmplayupomsadcvnyrhhfjtplr/Build/Products/Debug-iphoneos/libPods-Threads.a"; sourceTree = "<group>"; };
@@ -328,6 +336,7 @@
 				AAB39E64225DDB3E00AC4887 /* Helpers */,
 				AAB39E61225DDB3E00AC4887 /* Network */,
 				8047106E1CFD94AE0088FB8E /* Resources */,
+				AA1E7CE32342112700C80AC8 /* Settings */,
 				804710541CFD94120088FB8E /* Supporting Files */,
 				AADDF7DB1FA8691D00716CAD /* Utils */,
 				8047106D1CFD947B0088FB8E /* View */,
@@ -385,6 +394,7 @@
 			children = (
 				8098E2BF1E813D2E00B3C696 /* fonts */,
 				8068833B1E826A88008C40EC /* icons */,
+				AA1E7CE12342110B00C80AC8 /* AlternateAttributes.xcassets */,
 				804710601CFD94130088FB8E /* Assets.xcassets */,
 				80DC61651D6BE7B800915869 /* Localizable.strings */,
 				807EE0B71D17F1700018A449 /* logo1055@3x.png */,
@@ -448,6 +458,17 @@
 				8098E2CE1E813D2E00B3C696 /* lato-semibold.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		AA1E7CE32342112700C80AC8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AA1E7CE42342112700C80AC8 /* THRColorCompatibility.m */,
+				AA1E7CE52342112700C80AC8 /* UIColor+AltColor.h */,
+				AA1E7CE62342112700C80AC8 /* THRColorCompatibility.h */,
+				AA1E7CE72342112700C80AC8 /* UIColor+AltColor.m */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		AAB39E61225DDB3E00AC4887 /* Network */ = {
@@ -584,6 +605,7 @@
 				AA8827F120E6599600241516 /* ic_dislike_filled@2x.png in Resources */,
 				AA8827FD20E659A800241516 /* ic_heart_filled@3x.png in Resources */,
 				AAB1616D1F330CF60036B18E /* ic_checkmark.png in Resources */,
+				AA1E7CE22342110C00C80AC8 /* AlternateAttributes.xcassets in Resources */,
 				AAB1616E1F330CF60036B18E /* rect_bubble_stroked.png in Resources */,
 				AAB1616F1F330CF60036B18E /* rect_bubble_filled@2x.png in Resources */,
 				AAB161701F330CF60036B18E /* schedule_alert.png in Resources */,
@@ -660,11 +682,13 @@
 				AAB1614C1F330CF60036B18E /* AppDelegate.m in Sources */,
 				AAB39E67225DDB3E00AC4887 /* ServerAPI.m in Sources */,
 				AADDF7DE1FA8697300716CAD /* TAStorage.m in Sources */,
+				AA1E7CE92342112700C80AC8 /* UIColor+AltColor.m in Sources */,
 				AAB1614D1F330CF60036B18E /* SwitchCell.m in Sources */,
 				AAC55BB320D38EC200AC71BD /* ChatFragmentViewController.m in Sources */,
 				AA28974B214A383100B196BF /* ChatInStackController.m in Sources */,
 				AAB1614E1F330CF60036B18E /* DrawerViewController.m in Sources */,
 				AAB1614F1F330CF60036B18E /* SelectCell.m in Sources */,
+				AA1E7CE82342112700C80AC8 /* THRColorCompatibility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,7 +750,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.48.8;
+				CURRENT_PROJECT_VERSION = 2.48.9;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -777,7 +801,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.48.8;
+				CURRENT_PROJECT_VERSION = 2.48.9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
