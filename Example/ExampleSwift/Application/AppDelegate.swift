@@ -41,8 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         threads.configure(
             with: self,
             productionMFMSServer: true,
-            historyURL: URL(string: "https://polarbearstore.threads.im/")!,
-            fileUploadingURL: URL(string: "https://polarbearstore.threads.im/files")!
+            historyURL: URL(string: "<#HISTORY_URL#>")!,
+            fileUploadingURL: URL(string: "<#FILE_UPLOADING_URL#>")!
         )
     }
     
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configureSignatureService() {
-        SignatureService.sharedInstance().serverURL = URL(string: "https://polarbear.threads.im")!
+        SignatureService.sharedInstance().serverURL = URL(string: "<#SIGNATURE_URL#>")!
     }
     
     // MARK: - Remote Notifications

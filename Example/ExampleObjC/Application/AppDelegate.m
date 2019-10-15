@@ -45,8 +45,8 @@
     
     [threads configureWithDelegate:self
               productionMFMSServer:YES
-                        historyURL:[NSURL URLWithString:@"https://polarbearstore.threads.im/"]
-                  fileUploadingURL:[NSURL URLWithString:@"https://polarbearstore.threads.im/files"]];
+                        historyURL:[NSURL URLWithString:@"<#HISTORY_URL#>"]
+                  fileUploadingURL:[NSURL URLWithString:@"<#FILE_UPLOADING_URL#>"]];
 }
 
 /**
@@ -64,7 +64,7 @@
 }
 
 - (void)configureSignatureService {
-    [SignatureService sharedInstance].serverURL = [NSURL URLWithString:@"https://polarbear.threads.im"];
+    [SignatureService sharedInstance].serverURL = [NSURL URLWithString:@"<#SIGNATURE_URL#>"];
 }
 
 #pragma mark - Remote Notifications

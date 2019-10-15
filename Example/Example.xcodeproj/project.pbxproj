@@ -70,12 +70,12 @@
 		79CC6ACF2355BAD7007A94A1 /* TextMessageObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AC72355BAD7007A94A1 /* TextMessageObjcViewController.m */; };
 		79CC6ADF2355BE64007A94A1 /* Threads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; };
 		79CC6AE02355BE64007A94A1 /* Threads.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		79CC6AE12355BE65007A94A1 /* MFMSPushLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AD92355BE4C007A94A1 /* MFMSPushLite.framework */; };
-		79CC6AE22355BE65007A94A1 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AD92355BE4C007A94A1 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		79CC6AE52355BFDA007A94A1 /* MFMSPushLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AD92355BE4C007A94A1 /* MFMSPushLite.framework */; };
-		79CC6AE62355BFDA007A94A1 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AD92355BE4C007A94A1 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		79CC6AE82355BFDB007A94A1 /* Threads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; };
 		79CC6AE92355BFDB007A94A1 /* Threads.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		79CC6AF02355C9D3007A94A1 /* MFMSPushLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; };
+		79CC6AF12355C9D3007A94A1 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		79CC6AF22355C9D9007A94A1 /* MFMSPushLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; };
+		79CC6AF32355C9D9007A94A1 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,7 +86,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				79CC6AE02355BE64007A94A1 /* Threads.framework in Embed Frameworks */,
-				79CC6AE22355BE65007A94A1 /* MFMSPushLite.framework in Embed Frameworks */,
+				79CC6AF12355C9D3007A94A1 /* MFMSPushLite.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,7 +98,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				79CC6AE92355BFDB007A94A1 /* Threads.framework in Embed Frameworks */,
-				79CC6AE62355BFDA007A94A1 /* MFMSPushLite.framework in Embed Frameworks */,
+				79CC6AF32355C9D9007A94A1 /* MFMSPushLite.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,10 +176,10 @@
 		79CC6AC82355BAD7007A94A1 /* TextMessageObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextMessageObjcViewController.h; sourceTree = "<group>"; };
 		79CC6AD12355BAF4007A94A1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainObjC.strings; sourceTree = "<group>"; };
 		79CC6AD32355BAFF007A94A1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainSwift.strings; sourceTree = "<group>"; };
-		79CC6AD92355BE4C007A94A1 /* MFMSPushLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MFMSPushLite.framework; path = ../Frameworks/universal/MFMSPushLite.framework; sourceTree = "<group>"; };
 		79CC6ADA2355BE4C007A94A1 /* Threads.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Threads.framework; path = ../Frameworks/universal/Threads.framework; sourceTree = "<group>"; };
 		79CC6AE32355BF21007A94A1 /* ExampleSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExampleSwift.entitlements; sourceTree = "<group>"; };
 		79CC6AE42355BF2C007A94A1 /* ExampleObjC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExampleObjC.entitlements; sourceTree = "<group>"; };
+		79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MFMSPushLite.framework; path = ../Frameworks/universal/MFMSPushLite.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79CC6ADF2355BE64007A94A1 /* Threads.framework in Frameworks */,
-				79CC6AE12355BE65007A94A1 /* MFMSPushLite.framework in Frameworks */,
+				79CC6AF02355C9D3007A94A1 /* MFMSPushLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79CC6AE82355BFDB007A94A1 /* Threads.framework in Frameworks */,
-				79CC6AE52355BFDA007A94A1 /* MFMSPushLite.framework in Frameworks */,
+				79CC6AF22355C9D9007A94A1 /* MFMSPushLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +499,7 @@
 		79CC6AA62355B808007A94A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6AD92355BE4C007A94A1 /* MFMSPushLite.framework */,
+				79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */,
 				79CC6ADA2355BE4C007A94A1 /* Threads.framework */,
 			);
 			name = Frameworks;
@@ -929,7 +929,7 @@
 					"@executable_path/Frameworks",
 					Threads.framework,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brooma.threads.polarbear;
+				PRODUCT_BUNDLE_IDENTIFIER = im.threads.ExampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ExampleSwift/Application/ExampleSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -951,7 +951,7 @@
 					"@executable_path/Frameworks",
 					Threads.framework,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brooma.threads.polarbear;
+				PRODUCT_BUNDLE_IDENTIFIER = im.threads.ExampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ExampleSwift/Application/ExampleSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -972,7 +972,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brooma.threads.polarbear;
+				PRODUCT_BUNDLE_IDENTIFIER = im.threads.ExampleObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -991,7 +991,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brooma.threads.polarbear;
+				PRODUCT_BUNDLE_IDENTIFIER = im.threads.ExampleObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
