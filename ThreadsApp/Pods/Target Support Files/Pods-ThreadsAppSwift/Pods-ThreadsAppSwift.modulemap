@@ -1,6 +1,0 @@
-framework module Pods_ThreadsAppSwift {
-  umbrella header "Pods-ThreadsAppSwift-umbrella.h"
-
-  export *
-  module * { export * }
-}

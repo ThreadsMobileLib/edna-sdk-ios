@@ -1,0 +1,50 @@
+/* 
+  Localizable.string.strings
+  Example
+
+  Created by Vitaliy Kuzmenko on 09/09/2019.
+  Copyright © 2019 Threads. All rights reserved.
+*/
+
+/* Configuration */
+
+"Configuration:" = "Конифигурация";
+"Language: %@" = "Язык: %@";
+"Bundle Identifier: %@" = "Идентификатор сборки: %@";
+"App Name: %@" = "Имя приложения: %@";
+"App Version: %@" = "Версия приложения: %@";
+"Lib Version: %@" = "Версия библиотеки: %@";
+
+/* Signature Service */
+
+"Signature URL is nil" = "Signature URL пустой";
+"clientSignature is absent or empty" = "clientSignature пустой или отсутствует";
+"Empty" = "Пусто";
+
+/* ClientTableViewCell */
+
+"No Name" = "Нет имени";
+"Signature is missing" = "Подпись отсутствует";
+
+/* CleintComposerViewController */
+
+"Client Id (Required)" = "Id клинета (Обязательно)";
+"Client Id (Exist)" = "Id клинета (Уже имеется)";
+"Client Id" = "Id клиента";
+"Signature loading failed with error: %@" = "Возникла ошибка во время загрузки подписи: %@";
+"Signature" = "Подпись";
+"Continue" = "Продолжить";
+
+/* TextMessageViewController, PictureMessageViewController */
+
+"Failed" = "Ошибка";
+"Success" = "Успешно";
+"Your message successfuly submited." = "Ваше сообщение успешно отправлено";
+
+/* IntegrationsViewController */
+
+"Chat" = "Чат";
+
+/* IntegrationsViewController+BRS */
+
+"typing..." = "печатает...";
