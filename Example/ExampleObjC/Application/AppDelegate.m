@@ -132,4 +132,8 @@
     NSLog(@"Threads received error = %@", error.localizedDescription);
 }
 
+- (void)threads:(Threads *)threads didChangeDeviceAddress:(NSString *)deviceAddress {
+    NSLog(@"Threads did change deviceAddress = %@", deviceAddress);
+}
+
 @end

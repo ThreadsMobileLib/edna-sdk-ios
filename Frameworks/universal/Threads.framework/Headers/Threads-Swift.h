@@ -216,7 +216,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// OGP cache object
 SWIFT_CLASS("_TtC7Threads11OGCacheData")
 @interface OGCacheData : NSObject
-@property (nonatomic, readonly, copy) NSDate * _Nonnull createDate;
+@property (nonatomic, readonly, copy) NSDate * _Nullable createDate;
 @property (nonatomic, readonly, copy) NSDate * _Nullable updateDate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

@@ -37,6 +37,7 @@ static NSInteger const THRErrorOutsideMessageTextIsEmpty    = -3;
 static NSInteger const THRErrorOutsideMessageTextIsTooLong  = -4;
 static NSInteger const THRErrorOutsideMessageImageIsNil     = -5;
 static NSInteger const THRErrorOutsideMessageImageTooBig    = -6;
+static NSInteger const THRErrorClientDataUnparsedCode = -7;
 
 typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
     THRMessageRecieveStateAccepted,
@@ -56,6 +57,8 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
 - (void)threads:(Threads *)threads unreadMessagesCount:(NSUInteger)unreadMessagesCount;
 
 - (id<PushServerApiConfigDataSource>)threads:(Threads *)threads configurePushServerApiFor:(MFMSPushLite *)mfmsPushLite;
+
+- (void)threads:(Threads *)threads didChangeDeviceAddress:(NSString *)deviceAddress;
 
 @end
 
@@ -135,7 +138,7 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
 /**
  Custom data. See more details in Threads-API documentation.
  */
-@property (nonatomic, copy, nullable) NSString *data;
+@property (nonatomic, copy, nullable, readonly) NSString *data;
 
 
 /**
@@ -249,10 +252,11 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
 
  @param id Unique client identifier, required parameter. For example, you can use the user’s phone number.
  @param name Name of user
+ @param data custom data, json key-value pairs string
  @param appMarker hreads support connecting multiple apps to a single server. Configure the appMarker identifier on the server and in app. As appMarker can be any unique string. appMarker should be the same for corresponding Android and iOS applications.
  @param signature The clientId authorization signature, the signature should be generated on your server based on the clientId using the RSA private key, then encrypted in Base64. Under the general scheme of work with the signature, see the documentation for Threads-API.
  */
-- (void)setClientWithId:(NSString *)id name:(NSString * _Nullable)name appMarker:(NSString * _Nullable)appMarker signature:(NSString *)signature;
+- (void)setClientWithId:(NSString *)id name:(NSString * _Nullable)name data:(NSDictionary * _Nullable)data appMarker:(NSString * _Nullable)appMarker signature:(NSString *)signature;
 
 
 /**

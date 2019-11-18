@@ -16,11 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)isClientSet;
 
-- (BOOL)isCurrentClient:(Client *)client;
+- (BOOL)isActiveClient:(Client *)client;
 
 - (void)activateClient:(Client *)client;
 
-- (void)deleteClient:(Client *)client;
+- (void)didDelete:(Client *)client;
 
 @end
 
@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ClientsTableViewDataSource : NSObject
 
 @property (nonatomic, weak) IBOutlet id<ClientsTableViewDataSourceDelegate>delegate;
+
+- (void) reactivateLastClient;
 
 @end
 

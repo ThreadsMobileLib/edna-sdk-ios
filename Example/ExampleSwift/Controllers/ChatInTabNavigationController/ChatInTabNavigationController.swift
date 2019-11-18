@@ -19,7 +19,6 @@ class ChatInTabNavigationController: UINavigationController {
     
     func getAttributes() -> THRAttributes {
         let attributes = THRAttributes()
-        attributes.showWaitingForSpecialistProgress = false
         return attributes
     }
     

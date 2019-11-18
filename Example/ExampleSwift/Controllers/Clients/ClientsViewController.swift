@@ -15,14 +15,14 @@ class ClientsViewController: UIViewController, ClientsTableViewDataSourceDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        clientsTableViewDataSource.reactivateLastClient()
     }
     
     func isClientSet() -> Bool {
         return Threads.threads().isClientSet
     }
     
-    func isCurrentClient(_ client: Client) -> Bool {
+    func isActiveClient(_ client: Client) -> Bool {
         return Threads.threads().clientId == client.id
     }
     
@@ -30,13 +30,14 @@ class ClientsViewController: UIViewController, ClientsTableViewDataSourceDelegat
         Threads.threads().setClientWithId(
             client.id,
             name: client.name,
-            appMarker: client.name,
+            data: ["param1": "value1", "param2":"value2"],
+            appMarker: client.appMarker,
             signature: client.signature
         )
     }
     
-    func delete(_ client: Client) {
-        if isCurrentClient(client) {
+    func didDelete(_ client: Client) {
+        if isActiveClient(client) {
             Threads.threads().logout()
         } else {
             Threads.threads().logout(withClientId: client.id)

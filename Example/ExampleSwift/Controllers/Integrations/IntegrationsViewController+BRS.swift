@@ -183,10 +183,9 @@ extension IntegrationsViewController {
         attributes.likeRatingColorCompleted = .yellow
         attributes.starRatingColorCompleted = .red
         
+        attributes.navigationBarSubtitleShowOrgUnit = true
         attributes.showWaitingForSpecialistProgress = false
         attributes.canShowSpecialistInfo = false
-        attributes.showWaitingForSpecialistProgress = false
-        attributes.canShowSpecialistInfo = true
         attributes.navigationBarVisible = true
         
         attributes.historyLoadingCount = 25;

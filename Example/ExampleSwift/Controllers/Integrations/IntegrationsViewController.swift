@@ -102,8 +102,6 @@ class IntegrationsViewController: UITableViewController {
     
     func getStandartAttributes() -> THRAttributes {
         let attributes = THRAttributes()
-        attributes.showWaitingForSpecialistProgress = false
-        attributes.navigationBarSubtitleShowOrgUnit = true
         return attributes
     }
     

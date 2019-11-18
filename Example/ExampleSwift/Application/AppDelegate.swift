@@ -134,4 +134,8 @@ extension AppDelegate: ThreadsDelegate {
         print("Threads received error = \(error.localizedDescription)")
     }
     
+    func threads(_ threads: Threads, didChangeDeviceAddress deviceAddress: String) {
+        print("Threads did change deviceAddress = \(deviceAddress)")
+    }
+    
 }

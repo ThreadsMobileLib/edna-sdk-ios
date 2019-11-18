@@ -39,6 +39,19 @@
     }];
 }
 
+- (void) reactivateLastClient {
+    
+    for (int row = 0; row < self.clients.count; row++) {
+        Client* client = self.clients[row];
+        
+        if ([self.delegate isActiveClient:client]) {
+            [self.delegate activateClient: client];
+            [self.tableView reloadRowsAtIndexPaths : @[[NSIndexPath indexPathForRow:row inSection:0]]
+                                  withRowAnimation : UITableViewRowAnimationAutomatic];
+        }
+    }
+}
+
 - (BOOL)activateFirstAvailableClientIfNeeded {
     if (!self.clients.count) {
         return NO;
@@ -48,10 +61,6 @@
     [self.delegate activateClient:client];
     [self.tableView reloadData];
     return YES;
-}
-
-- (BOOL)isCurrentClient:(Client *)client {
-    return [self.delegate isCurrentClient:client];
 }
 
 #pragma mark - UITableViewDataSource
@@ -69,7 +78,7 @@
         Client *client = self.clients[indexPath.row];
         ClientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ClientTableViewCell class]) forIndexPath:indexPath];
         [cell configureForClient:client];
-        cell.accessoryType = [self isCurrentClient:client] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+        cell.accessoryType = [self.delegate isActiveClient:client] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
         return cell;
     } else {
         return [tableView dequeueReusableCellWithIdentifier:@"NoClients" forIndexPath:indexPath];
@@ -88,7 +97,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     Client *client = self.clients[indexPath.row];
-    [self.delegate deleteClient:client];
+    [self.delegate didDelete:client];
     [[Storage sharedInstance] removeClient:client];
 }
 
@@ -96,7 +105,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (![self isClientIndexPath:indexPath]) { return; }
     Client *client = self.clients[indexPath.row];
-    if (![self isCurrentClient:client]) {
+    if (![self.delegate isActiveClient:client]) {
         [self.delegate activateClient:client];
         [self.tableView reloadData];
     }

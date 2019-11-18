@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		79CC699F2355B5D8007A94A1 /* MainSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC699D2355B5D8007A94A1 /* MainSwift.storyboard */; };
-		79CC69A42355B5D9007A94A1 /* LaunchScreenSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC69A22355B5D9007A94A1 /* LaunchScreenSwift.storyboard */; };
 		79CC6A212355B657007A94A1 /* MainObjC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A1F2355B657007A94A1 /* MainObjC.storyboard */; };
-		79CC6A262355B658007A94A1 /* LaunchScreenObjc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A242355B658007A94A1 /* LaunchScreenObjc.storyboard */; };
 		79CC6A632355B664007A94A1 /* THRColorCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A2F2355B664007A94A1 /* THRColorCompatibility.m */; };
 		79CC6A642355B664007A94A1 /* THRColorCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A2F2355B664007A94A1 /* THRColorCompatibility.m */; };
 		79CC6A652355B664007A94A1 /* UIColor+AltColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A322355B664007A94A1 /* UIColor+AltColor.m */; };
@@ -61,13 +59,6 @@
 		79CC6AA42355B79A007A94A1 /* TextMessageSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A9D2355B79A007A94A1 /* TextMessageSwiftViewController.swift */; };
 		79CC6AB22355BA62007A94A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AAF2355BA62007A94A1 /* main.m */; };
 		79CC6AB32355BA62007A94A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AB02355BA62007A94A1 /* AppDelegate.m */; };
-		79CC6AC92355BAD7007A94A1 /* ClientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AB82355BAD7007A94A1 /* ClientsViewController.m */; };
-		79CC6ACA2355BAD7007A94A1 /* ChatInTabNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6ABB2355BAD7007A94A1 /* ChatInTabNavigationController.m */; };
-		79CC6ACB2355BAD7007A94A1 /* PictureMessageObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6ABD2355BAD7007A94A1 /* PictureMessageObjcViewController.m */; };
-		79CC6ACC2355BAD7007A94A1 /* IntegrationsViewController+BRS.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AC02355BAD7007A94A1 /* IntegrationsViewController+BRS.m */; };
-		79CC6ACD2355BAD7007A94A1 /* IntegrationsViewController+UITableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AC22355BAD7007A94A1 /* IntegrationsViewController+UITableViewDelegate.m */; };
-		79CC6ACE2355BAD7007A94A1 /* IntegrationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AC42355BAD7007A94A1 /* IntegrationsViewController.m */; };
-		79CC6ACF2355BAD7007A94A1 /* TextMessageObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AC72355BAD7007A94A1 /* TextMessageObjcViewController.m */; };
 		79CC6ADF2355BE64007A94A1 /* Threads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; };
 		79CC6AE02355BE64007A94A1 /* Threads.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		79CC6AE82355BFDB007A94A1 /* Threads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; };
@@ -76,6 +67,15 @@
 		79CC6AF12355C9D3007A94A1 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		79CC6AF22355C9D9007A94A1 /* MFMSPushLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; };
 		79CC6AF32355C9D9007A94A1 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA605B6E2382EC09000FFD16 /* LaunchScreenObjC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA605B6D2382EC09000FFD16 /* LaunchScreenObjC.storyboard */; };
+		AA605B702382ECB1000FFD16 /* LaunchScreenSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA605B6F2382ECB1000FFD16 /* LaunchScreenSwift.storyboard */; };
+		AA605B852382EEF3000FFD16 /* ClientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B742382EEF2000FFD16 /* ClientsViewController.m */; };
+		AA605B862382EEF3000FFD16 /* ChatInTabNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B772382EEF2000FFD16 /* ChatInTabNavigationController.m */; };
+		AA605B872382EEF3000FFD16 /* PictureMessageObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B792382EEF2000FFD16 /* PictureMessageObjcViewController.m */; };
+		AA605B882382EEF3000FFD16 /* IntegrationsViewController+BRS.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B7C2382EEF2000FFD16 /* IntegrationsViewController+BRS.m */; };
+		AA605B892382EEF3000FFD16 /* IntegrationsViewController+UITableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B7E2382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.m */; };
+		AA605B8A2382EEF3000FFD16 /* IntegrationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B802382EEF2000FFD16 /* IntegrationsViewController.m */; };
+		AA605B8B2382EEF3000FFD16 /* TextMessageObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B832382EEF2000FFD16 /* TextMessageObjcViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -108,10 +108,8 @@
 /* Begin PBXFileReference section */
 		79CC69952355B5D8007A94A1 /* ExampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CC699E2355B5D8007A94A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainSwift.storyboard; sourceTree = "<group>"; };
-		79CC69A32355B5D9007A94A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreenSwift.storyboard; sourceTree = "<group>"; };
 		79CC6A142355B657007A94A1 /* ExampleObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CC6A202355B657007A94A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainObjC.storyboard; sourceTree = "<group>"; };
-		79CC6A252355B658007A94A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreenObjc.storyboard; sourceTree = "<group>"; };
 		79CC6A2F2355B664007A94A1 /* THRColorCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRColorCompatibility.m; sourceTree = "<group>"; };
 		79CC6A302355B664007A94A1 /* UIColor+AltColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AltColor.h"; sourceTree = "<group>"; };
 		79CC6A312355B664007A94A1 /* THRColorCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRColorCompatibility.h; sourceTree = "<group>"; };
@@ -160,26 +158,28 @@
 		79CC6AAF2355BA62007A94A1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		79CC6AB02355BA62007A94A1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		79CC6AB12355BA62007A94A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79CC6AB72355BAD7007A94A1 /* ClientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientsViewController.h; sourceTree = "<group>"; };
-		79CC6AB82355BAD7007A94A1 /* ClientsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientsViewController.m; sourceTree = "<group>"; };
-		79CC6ABA2355BAD7007A94A1 /* ChatInTabNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInTabNavigationController.h; sourceTree = "<group>"; };
-		79CC6ABB2355BAD7007A94A1 /* ChatInTabNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInTabNavigationController.m; sourceTree = "<group>"; };
-		79CC6ABD2355BAD7007A94A1 /* PictureMessageObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureMessageObjcViewController.m; sourceTree = "<group>"; };
-		79CC6ABE2355BAD7007A94A1 /* PictureMessageObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureMessageObjcViewController.h; sourceTree = "<group>"; };
-		79CC6AC02355BAD7007A94A1 /* IntegrationsViewController+BRS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IntegrationsViewController+BRS.m"; sourceTree = "<group>"; };
-		79CC6AC12355BAD7007A94A1 /* IntegrationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegrationsViewController.h; sourceTree = "<group>"; };
-		79CC6AC22355BAD7007A94A1 /* IntegrationsViewController+UITableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IntegrationsViewController+UITableViewDelegate.m"; sourceTree = "<group>"; };
-		79CC6AC32355BAD7007A94A1 /* IntegrationsViewController+BRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IntegrationsViewController+BRS.h"; sourceTree = "<group>"; };
-		79CC6AC42355BAD7007A94A1 /* IntegrationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegrationsViewController.m; sourceTree = "<group>"; };
-		79CC6AC52355BAD7007A94A1 /* IntegrationsViewController+UITableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IntegrationsViewController+UITableViewDelegate.h"; sourceTree = "<group>"; };
-		79CC6AC72355BAD7007A94A1 /* TextMessageObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextMessageObjcViewController.m; sourceTree = "<group>"; };
-		79CC6AC82355BAD7007A94A1 /* TextMessageObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextMessageObjcViewController.h; sourceTree = "<group>"; };
 		79CC6AD12355BAF4007A94A1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainObjC.strings; sourceTree = "<group>"; };
 		79CC6AD32355BAFF007A94A1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainSwift.strings; sourceTree = "<group>"; };
 		79CC6ADA2355BE4C007A94A1 /* Threads.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Threads.framework; path = ../Frameworks/universal/Threads.framework; sourceTree = "<group>"; };
 		79CC6AE32355BF21007A94A1 /* ExampleSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExampleSwift.entitlements; sourceTree = "<group>"; };
 		79CC6AE42355BF2C007A94A1 /* ExampleObjC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExampleObjC.entitlements; sourceTree = "<group>"; };
 		79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MFMSPushLite.framework; path = ../Frameworks/universal/MFMSPushLite.framework; sourceTree = "<group>"; };
+		AA605B6D2382EC09000FFD16 /* LaunchScreenObjC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreenObjC.storyboard; sourceTree = "<group>"; };
+		AA605B6F2382ECB1000FFD16 /* LaunchScreenSwift.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreenSwift.storyboard; sourceTree = "<group>"; };
+		AA605B732382EEF2000FFD16 /* ClientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientsViewController.h; sourceTree = "<group>"; };
+		AA605B742382EEF2000FFD16 /* ClientsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientsViewController.m; sourceTree = "<group>"; };
+		AA605B762382EEF2000FFD16 /* ChatInTabNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInTabNavigationController.h; sourceTree = "<group>"; };
+		AA605B772382EEF2000FFD16 /* ChatInTabNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInTabNavigationController.m; sourceTree = "<group>"; };
+		AA605B792382EEF2000FFD16 /* PictureMessageObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureMessageObjcViewController.m; sourceTree = "<group>"; };
+		AA605B7A2382EEF2000FFD16 /* PictureMessageObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureMessageObjcViewController.h; sourceTree = "<group>"; };
+		AA605B7C2382EEF2000FFD16 /* IntegrationsViewController+BRS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IntegrationsViewController+BRS.m"; sourceTree = "<group>"; };
+		AA605B7D2382EEF2000FFD16 /* IntegrationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegrationsViewController.h; sourceTree = "<group>"; };
+		AA605B7E2382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IntegrationsViewController+UITableViewDelegate.m"; sourceTree = "<group>"; };
+		AA605B7F2382EEF2000FFD16 /* IntegrationsViewController+BRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IntegrationsViewController+BRS.h"; sourceTree = "<group>"; };
+		AA605B802382EEF2000FFD16 /* IntegrationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegrationsViewController.m; sourceTree = "<group>"; };
+		AA605B812382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IntegrationsViewController+UITableViewDelegate.h"; sourceTree = "<group>"; };
+		AA605B832382EEF2000FFD16 /* TextMessageObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextMessageObjcViewController.m; sourceTree = "<group>"; };
+		AA605B842382EEF2000FFD16 /* TextMessageObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextMessageObjcViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,7 +231,7 @@
 				79CC6A8B2355B72F007A94A1 /* Application */,
 				79CC6A912355B79A007A94A1 /* Controllers */,
 				79CC699D2355B5D8007A94A1 /* MainSwift.storyboard */,
-				79CC69A22355B5D9007A94A1 /* LaunchScreenSwift.storyboard */,
+				AA605B6F2382ECB1000FFD16 /* LaunchScreenSwift.storyboard */,
 			);
 			path = ExampleSwift;
 			sourceTree = "<group>";
@@ -241,9 +241,9 @@
 			children = (
 				79CC6AE42355BF2C007A94A1 /* ExampleObjC.entitlements */,
 				79CC6AAD2355BA62007A94A1 /* Application */,
-				79CC6AB52355BAD7007A94A1 /* Controllers */,
+				AA605B712382EEF2000FFD16 /* Controllers */,
 				79CC6A1F2355B657007A94A1 /* MainObjC.storyboard */,
-				79CC6A242355B658007A94A1 /* LaunchScreenObjc.storyboard */,
+				AA605B6D2382EC09000FFD16 /* LaunchScreenObjC.storyboard */,
 			);
 			path = ExampleObjC;
 			sourceTree = "<group>";
@@ -516,64 +516,63 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		79CC6AB52355BAD7007A94A1 /* Controllers */ = {
+		AA605B712382EEF2000FFD16 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6AB62355BAD7007A94A1 /* Clients */,
-				79CC6AB92355BAD7007A94A1 /* ChatInTabNavigationController */,
-				79CC6ABC2355BAD7007A94A1 /* PictureMessage */,
-				79CC6ABF2355BAD7007A94A1 /* Integrations */,
-				79CC6AC62355BAD7007A94A1 /* TextMessage */,
+				AA605B722382EEF2000FFD16 /* Clients */,
+				AA605B752382EEF2000FFD16 /* ChatInTabNavigationController */,
+				AA605B782382EEF2000FFD16 /* PictureMessage */,
+				AA605B7B2382EEF2000FFD16 /* Integrations */,
+				AA605B822382EEF2000FFD16 /* TextMessage */,
 			);
-			name = Controllers;
-			path = ../../_Example/ExampleObjC/Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		79CC6AB62355BAD7007A94A1 /* Clients */ = {
+		AA605B722382EEF2000FFD16 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6AB72355BAD7007A94A1 /* ClientsViewController.h */,
-				79CC6AB82355BAD7007A94A1 /* ClientsViewController.m */,
+				AA605B732382EEF2000FFD16 /* ClientsViewController.h */,
+				AA605B742382EEF2000FFD16 /* ClientsViewController.m */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
 		};
-		79CC6AB92355BAD7007A94A1 /* ChatInTabNavigationController */ = {
+		AA605B752382EEF2000FFD16 /* ChatInTabNavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6ABA2355BAD7007A94A1 /* ChatInTabNavigationController.h */,
-				79CC6ABB2355BAD7007A94A1 /* ChatInTabNavigationController.m */,
+				AA605B762382EEF2000FFD16 /* ChatInTabNavigationController.h */,
+				AA605B772382EEF2000FFD16 /* ChatInTabNavigationController.m */,
 			);
 			path = ChatInTabNavigationController;
 			sourceTree = "<group>";
 		};
-		79CC6ABC2355BAD7007A94A1 /* PictureMessage */ = {
+		AA605B782382EEF2000FFD16 /* PictureMessage */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6ABD2355BAD7007A94A1 /* PictureMessageObjcViewController.m */,
-				79CC6ABE2355BAD7007A94A1 /* PictureMessageObjcViewController.h */,
+				AA605B792382EEF2000FFD16 /* PictureMessageObjcViewController.m */,
+				AA605B7A2382EEF2000FFD16 /* PictureMessageObjcViewController.h */,
 			);
 			path = PictureMessage;
 			sourceTree = "<group>";
 		};
-		79CC6ABF2355BAD7007A94A1 /* Integrations */ = {
+		AA605B7B2382EEF2000FFD16 /* Integrations */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6AC02355BAD7007A94A1 /* IntegrationsViewController+BRS.m */,
-				79CC6AC12355BAD7007A94A1 /* IntegrationsViewController.h */,
-				79CC6AC22355BAD7007A94A1 /* IntegrationsViewController+UITableViewDelegate.m */,
-				79CC6AC32355BAD7007A94A1 /* IntegrationsViewController+BRS.h */,
-				79CC6AC42355BAD7007A94A1 /* IntegrationsViewController.m */,
-				79CC6AC52355BAD7007A94A1 /* IntegrationsViewController+UITableViewDelegate.h */,
+				AA605B7C2382EEF2000FFD16 /* IntegrationsViewController+BRS.m */,
+				AA605B7D2382EEF2000FFD16 /* IntegrationsViewController.h */,
+				AA605B7E2382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.m */,
+				AA605B7F2382EEF2000FFD16 /* IntegrationsViewController+BRS.h */,
+				AA605B802382EEF2000FFD16 /* IntegrationsViewController.m */,
+				AA605B812382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.h */,
 			);
 			path = Integrations;
 			sourceTree = "<group>";
 		};
-		79CC6AC62355BAD7007A94A1 /* TextMessage */ = {
+		AA605B822382EEF2000FFD16 /* TextMessage */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6AC72355BAD7007A94A1 /* TextMessageObjcViewController.m */,
-				79CC6AC82355BAD7007A94A1 /* TextMessageObjcViewController.h */,
+				AA605B832382EEF2000FFD16 /* TextMessageObjcViewController.m */,
+				AA605B842382EEF2000FFD16 /* TextMessageObjcViewController.h */,
 			);
 			path = TextMessage;
 			sourceTree = "<group>";
@@ -660,13 +659,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79CC69A42355B5D9007A94A1 /* LaunchScreenSwift.storyboard in Resources */,
 				79CC6A752355B664007A94A1 /* lato-medium.ttf in Resources */,
 				79CC6A712355B664007A94A1 /* lato-semibold.ttf in Resources */,
 				79CC6A732355B664007A94A1 /* lato-light.ttf in Resources */,
 				79CC6A692355B664007A94A1 /* Localizable.strings in Resources */,
 				79CC6A6D2355B664007A94A1 /* AlternateAttributes.xcassets in Resources */,
 				79CC699F2355B5D8007A94A1 /* MainSwift.storyboard in Resources */,
+				AA605B702382ECB1000FFD16 /* LaunchScreenSwift.storyboard in Resources */,
 				79CC6A6B2355B664007A94A1 /* Assets.xcassets in Resources */,
 				79CC6A6F2355B664007A94A1 /* lato-regular.ttf in Resources */,
 			);
@@ -676,7 +675,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79CC6A262355B658007A94A1 /* LaunchScreenObjc.storyboard in Resources */,
+				AA605B6E2382EC09000FFD16 /* LaunchScreenObjC.storyboard in Resources */,
 				79CC6A762355B664007A94A1 /* lato-medium.ttf in Resources */,
 				79CC6A722355B664007A94A1 /* lato-semibold.ttf in Resources */,
 				79CC6A742355B664007A94A1 /* lato-light.ttf in Resources */,
@@ -723,25 +722,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79CC6ACD2355BAD7007A94A1 /* IntegrationsViewController+UITableViewDelegate.m in Sources */,
+				AA605B892382EEF3000FFD16 /* IntegrationsViewController+UITableViewDelegate.m in Sources */,
 				79CC6A882355B664007A94A1 /* SignatureService.m in Sources */,
-				79CC6ACB2355BAD7007A94A1 /* PictureMessageObjcViewController.m in Sources */,
-				79CC6ACA2355BAD7007A94A1 /* ChatInTabNavigationController.m in Sources */,
+				AA605B872382EEF3000FFD16 /* PictureMessageObjcViewController.m in Sources */,
+				AA605B862382EEF3000FFD16 /* ChatInTabNavigationController.m in Sources */,
 				79CC6A7E2355B664007A94A1 /* ClientComposerViewController.m in Sources */,
 				79CC6A7C2355B664007A94A1 /* ClientTableViewCell.m in Sources */,
-				79CC6AC92355BAD7007A94A1 /* ClientsViewController.m in Sources */,
-				79CC6ACC2355BAD7007A94A1 /* IntegrationsViewController+BRS.m in Sources */,
+				AA605B852382EEF3000FFD16 /* ClientsViewController.m in Sources */,
+				AA605B882382EEF3000FFD16 /* IntegrationsViewController+BRS.m in Sources */,
 				79CC6A682355B664007A94A1 /* Configuration.m in Sources */,
 				79CC6A782355B664007A94A1 /* Client.m in Sources */,
 				79CC6A822355B664007A94A1 /* TextMessageViewController.m in Sources */,
-				79CC6ACF2355BAD7007A94A1 /* TextMessageObjcViewController.m in Sources */,
+				AA605B8B2382EEF3000FFD16 /* TextMessageObjcViewController.m in Sources */,
 				79CC6A7A2355B664007A94A1 /* ClientsTableViewDataSource.m in Sources */,
 				79CC6A842355B664007A94A1 /* UtilitesViewController.m in Sources */,
 				79CC6A662355B664007A94A1 /* UIColor+AltColor.m in Sources */,
 				79CC6A642355B664007A94A1 /* THRColorCompatibility.m in Sources */,
 				79CC6A802355B664007A94A1 /* PictureMessageViewController.m in Sources */,
 				79CC6A862355B664007A94A1 /* MainViewController.m in Sources */,
-				79CC6ACE2355BAD7007A94A1 /* IntegrationsViewController.m in Sources */,
+				AA605B8A2382EEF3000FFD16 /* IntegrationsViewController.m in Sources */,
 				79CC6AB22355BA62007A94A1 /* main.m in Sources */,
 				79CC6A8A2355B664007A94A1 /* Storage.m in Sources */,
 				79CC6AB32355BA62007A94A1 /* AppDelegate.m in Sources */,
@@ -760,14 +759,6 @@
 			name = MainSwift.storyboard;
 			sourceTree = "<group>";
 		};
-		79CC69A22355B5D9007A94A1 /* LaunchScreenSwift.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				79CC69A32355B5D9007A94A1 /* Base */,
-			);
-			name = LaunchScreenSwift.storyboard;
-			sourceTree = "<group>";
-		};
 		79CC6A1F2355B657007A94A1 /* MainObjC.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -775,14 +766,6 @@
 				79CC6AD12355BAF4007A94A1 /* ru */,
 			);
 			name = MainObjC.storyboard;
-			sourceTree = "<group>";
-		};
-		79CC6A242355B658007A94A1 /* LaunchScreenObjc.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				79CC6A252355B658007A94A1 /* Base */,
-			);
-			name = LaunchScreenObjc.storyboard;
 			sourceTree = "<group>";
 		};
 		79CC6A372355B664007A94A1 /* Localizable.strings */ = {
