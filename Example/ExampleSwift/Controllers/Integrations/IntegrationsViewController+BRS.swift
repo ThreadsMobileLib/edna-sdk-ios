@@ -141,6 +141,7 @@ extension IntegrationsViewController {
         attributes.searchMessageDateTextFont = .latoRegular(ofSize: 13)
         attributes.searchMessageMatchTextFont = .latoRegular(ofSize: 13)
         
+        attributes.photoPickerSelfieEnabled = true
         attributes.photoPickerCheckmarkIcon = #imageLiteral(resourceName: "ic_checkmark.png")
         attributes.photoPickerToolbarTintColor = .brsTint
         attributes.photoPickerToolbarButtonFont = .latoRegular(ofSize: 17)

@@ -201,6 +201,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIFont* searchMessageDateTextFont;
 
 #pragma mark - Photopicker
+@property (nonatomic, assign) BOOL photoPickerSelfieEnabled;
 @property (nonatomic, strong) UIColor *photoPickerToolbarTintColor;
 @property (nonatomic, strong) UIFont *photoPickerToolbarButtonFont;
 

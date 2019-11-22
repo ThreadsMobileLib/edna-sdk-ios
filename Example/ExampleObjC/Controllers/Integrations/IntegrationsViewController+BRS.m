@@ -150,6 +150,7 @@
     attributes.searchMessageDateTextFont = [UIFont latoRegularOfSize:13.f];
     attributes.searchMessageMatchTextFont = [UIFont latoMediumOfSize:13.f];
     
+    attributes.photoPickerSelfieEnabled = YES;
     attributes.photoPickerCheckmarkIcon = [UIImage imageNamed:@"ic_checkmark"];
     attributes.photoPickerToolbarTintColor = [UIColor brsTintColor];
     attributes.photoPickerToolbarButtonFont = [UIFont latoRegularOfSize:17.f];
