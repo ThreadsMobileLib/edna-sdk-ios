@@ -1,5 +1,5 @@
 //
-//  UIColor+THRColor.m
+//  UIColor+AltColor.m
 //  Threads
 //
 //  Created by Nikolay Kagala on 31/05/16.

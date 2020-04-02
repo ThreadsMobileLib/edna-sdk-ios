@@ -13,11 +13,11 @@ class PictureMessageSwiftViewController: PictureMessageViewController {
 
     override func sendOutsideImageMessage(with image: UIImage) {
         startAnimating()
-        Threads.threads().sendMessage(with: image) { [weak self] (isSuccess, error) in
+        Threads.threads().sendMessage(with: image) { [weak self] (error) in
             self?.stopAnimating()
             if let error = error {
                 self?.presentFailedSubmissionOutsideMessageAlertWithError(error)
-            } else if isSuccess {
+            } else {
                 self?.presentSuccessfulySubmitedOutsideMessageAlert()
             }
         }

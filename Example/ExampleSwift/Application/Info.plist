@@ -47,6 +47,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Used for attaching images</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Used for saving images</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Used for attaching images</string>
 	<key>UIAppFonts</key>

@@ -40,10 +40,10 @@
 
 // Design header title
 "MAM-SI-dDS.headerTitle" = "Дизайн";
-// Design: Classic segment
-"990-Ay-hkn.segmentTitles[0]" = "Классический";
-// Design: BRS segment
-"990-Ay-hkn.segmentTitles[1]" = "БРС";
+// Design: Default segment
+"990-Ay-hkn.segmentTitles[0]" = "По умолчанию";
+// Design: Alternative segment
+"990-Ay-hkn.segmentTitles[1]" = "Альтернативный";
 
 // Current navigation controller section header
 "VWu-P2-OUf.headerTitle" = "Текущий navigation controller";

@@ -203,6 +203,16 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC7Threads14MFMSPushHelper")
+@interface MFMSPushHelper : NSObject
++ (NSArray<NSString *> * _Nonnull)getFullProviderIds:(NSArray<NSString *> * _Nonnull)providerIds SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nonnull)getFullProviderId:(NSString * _Nonnull)providerId SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)getProviderIdPrefix SWIFT_WARN_UNUSED_RESULT;
++ (void)saveProviderIdPrefixFromPush:(NSDictionary<NSString *, id> * _Nonnull)dict;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @interface NSNumber (SWIFT_EXTENSION(Threads))
 + (NSTimeInterval)minutes:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 + (NSTimeInterval)hours:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;

@@ -8,6 +8,7 @@
 
 #import "ChatInTabNavigationController.h"
 #import <Threads/Threads.h>
+#import "AttributesHelper.h"
 
 @implementation ChatInTabNavigationController
 
@@ -18,8 +19,12 @@
 }
 
 - (THRAttributes *)getAttributes {
-    THRAttributes *attributes = [[THRAttributes alloc] init];
-    return attributes;
+    switch (self.design) {
+        case DesignDefault:
+            return [AttributesHelper getDefaultAttributes];
+        case DesignAlternative:
+            return [AttributesHelper getAltAttributes];
+    }
 }
 
 - (UIViewController *)getChatViewController {

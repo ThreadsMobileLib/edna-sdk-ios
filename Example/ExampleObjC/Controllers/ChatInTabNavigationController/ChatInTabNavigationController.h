@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IntegrationsViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ChatInTabNavigationController : UINavigationController
+
+@property (nonatomic, assign) Design design;
 
 @end
 

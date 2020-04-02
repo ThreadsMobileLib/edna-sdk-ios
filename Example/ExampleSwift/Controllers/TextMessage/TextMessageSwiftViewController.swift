@@ -13,11 +13,11 @@ class TextMessageSwiftViewController: TextMessageViewController {
 
     override func sendMessage(withText text: String) {
         startAnimating()
-        Threads.threads().sendMessage(withText: text) { [weak self] (isSuccess, error) in
+        Threads.threads().sendMessage(withText: text) { [weak self] (error) in
             self?.stopAnimating()
             if let error = error {
                 self?.presentFailedSubmissionOutsideMessageAlertWithError(error)
-            } else if isSuccess {
+            } else {
                 self?.presentSuccessfulySubmitedOutsideMessageAlert()
             }
         }

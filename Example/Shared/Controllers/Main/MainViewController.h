@@ -12,9 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MainViewController : UITabBarController
 
+- (void)updateUnreadMessagesCountBadgeValue;
+
 - (void)setUnreadMessagesCount:(NSUInteger)unreadMessagesCount;
 
 - (void)showChatForAppMarker:(NSString *)appMarker;
+
+@end
+
+@protocol IntegrationsProtocol
+
+- (void)presentFromPushWithDesign:(NSInteger)design;
 
 @end
 

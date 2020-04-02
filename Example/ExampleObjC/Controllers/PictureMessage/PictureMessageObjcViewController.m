@@ -18,11 +18,11 @@
 - (void)sendOutsideImageMessageWithImage:(UIImage *)image {
     [self startAnimating];
     __weak typeof(self) weakSelf = self;
-    [[Threads threads] sendMessageWithImage:image completion:^(BOOL success, NSError * _Nullable error) {
+    [[Threads threads] sendMessageWithImage:image completion:^(NSError * _Nullable error) {
         [weakSelf stopAnimating];
         if (error) {
             [weakSelf presentFailedSubmissionOutsideMessageAlertWithError:error];
-        } else if (success) {
+        } else {
             [weakSelf presentSuccessfulySubmitedOutsideMessageAlert];
         }
     }];

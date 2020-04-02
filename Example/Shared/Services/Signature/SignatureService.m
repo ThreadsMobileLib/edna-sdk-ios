@@ -13,9 +13,6 @@ static NSString * const kSignatureEndpoint = @"auth/getSignature";
 static NSString * const kSignatureResponseKey = @"encodedSignature";
 static BOOL const kIsDebugLoggingEnabled = YES;
 
-NSString * const kTHRConfigDictKey = @"THR_APP_CONFIG";
-NSString * const kTHRServerUrlKey = @"THR_SERVER_URL";
-
 NSTimeInterval const kTHRSignatureRequestTimeOut = 2;
 
 @implementation SignatureService

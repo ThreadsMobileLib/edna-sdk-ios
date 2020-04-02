@@ -8,14 +8,11 @@
 
 #import "IntegrationsViewController.h"
 #import <Threads/Threads.h>
-#import "IntegrationsViewController+BRS.h"
+#import "MainViewController.h"
+#import "AttributesHelper.h"
+#import "ChatInTabNavigationController.h"
 
-typedef NS_ENUM(NSInteger, Design) {
-    DesignStandart,
-    DesignBRS,
-};
-
-@interface IntegrationsViewController ()
+@interface IntegrationsViewController () <IntegrationsProtocol>
 
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 
@@ -28,7 +25,7 @@ typedef NS_ENUM(NSInteger, Design) {
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.design = DesignStandart;
+        self.design = DesignDefault;
     }
     return self;
 }
@@ -39,12 +36,19 @@ typedef NS_ENUM(NSInteger, Design) {
     self.segmentedControl.selectedSegmentIndex = self.design;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    MainViewController* tb = (MainViewController *)self.tabBarController;
+    [tb updateUnreadMessagesCountBadgeValue];
+}
+
 - (THRAttributes *)getAttributes {
     switch (self.design) {
-        case DesignStandart:
-            return [self getStandartAttributes];
-        case DesignBRS:
-            return [self getBRSAttributes];
+        case DesignDefault:
+            return [AttributesHelper getDefaultAttributes];
+        case DesignAlternative:
+            return [AttributesHelper getAltAttributes];
     }
 }
 
@@ -114,11 +118,12 @@ typedef NS_ENUM(NSInteger, Design) {
     [self performSegueWithIdentifier:@"ChatTabBarControllerSegueIdentifier" sender:nil];
 }
 
-#pragma mark - Attributes
-
-- (THRAttributes *)getStandartAttributes {
-    THRAttributes *attributes = [[THRAttributes alloc] init];
-    return attributes;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier  isEqual: @"ChatTabBarControllerSegueIdentifier"]) {
+        UITabBarController *tabController = (UITabBarController*) segue.destinationViewController;
+        ChatInTabNavigationController *chatInTabVC = (ChatInTabNavigationController*) tabController.viewControllers[0];
+        chatInTabVC.design = self.design;
+    }
 }
 
 - (void)presentFromPushWithDesign:(NSInteger)desgin {

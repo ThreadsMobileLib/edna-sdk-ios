@@ -55,7 +55,6 @@
 		79CC6AA02355B79A007A94A1 /* PictureMessageSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A972355B79A007A94A1 /* PictureMessageSwiftViewController.swift */; };
 		79CC6AA12355B79A007A94A1 /* IntegrationsViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A992355B79A007A94A1 /* IntegrationsViewController+UITableViewDelegate.swift */; };
 		79CC6AA22355B79A007A94A1 /* IntegrationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A9A2355B79A007A94A1 /* IntegrationsViewController.swift */; };
-		79CC6AA32355B79A007A94A1 /* IntegrationsViewController+BRS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A9B2355B79A007A94A1 /* IntegrationsViewController+BRS.swift */; };
 		79CC6AA42355B79A007A94A1 /* TextMessageSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A9D2355B79A007A94A1 /* TextMessageSwiftViewController.swift */; };
 		79CC6AB22355BA62007A94A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AAF2355BA62007A94A1 /* main.m */; };
 		79CC6AB32355BA62007A94A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AB02355BA62007A94A1 /* AppDelegate.m */; };
@@ -67,12 +66,14 @@
 		79CC6AF12355C9D3007A94A1 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		79CC6AF22355C9D9007A94A1 /* MFMSPushLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; };
 		79CC6AF32355C9D9007A94A1 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA492DF82435C46800C11B63 /* AttributesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA492DF72435C46800C11B63 /* AttributesHelper.m */; };
+		AA492DFB2435C47600C11B63 /* AttributesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA492DFA2435C47600C11B63 /* AttributesHelper.swift */; };
+		AA492E012435D51700C11B63 /* UIFont+THRFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = AA492E002435D51700C11B63 /* UIFont+THRFonts.m */; };
 		AA605B6E2382EC09000FFD16 /* LaunchScreenObjC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA605B6D2382EC09000FFD16 /* LaunchScreenObjC.storyboard */; };
 		AA605B702382ECB1000FFD16 /* LaunchScreenSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA605B6F2382ECB1000FFD16 /* LaunchScreenSwift.storyboard */; };
 		AA605B852382EEF3000FFD16 /* ClientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B742382EEF2000FFD16 /* ClientsViewController.m */; };
 		AA605B862382EEF3000FFD16 /* ChatInTabNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B772382EEF2000FFD16 /* ChatInTabNavigationController.m */; };
 		AA605B872382EEF3000FFD16 /* PictureMessageObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B792382EEF2000FFD16 /* PictureMessageObjcViewController.m */; };
-		AA605B882382EEF3000FFD16 /* IntegrationsViewController+BRS.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B7C2382EEF2000FFD16 /* IntegrationsViewController+BRS.m */; };
 		AA605B892382EEF3000FFD16 /* IntegrationsViewController+UITableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B7E2382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.m */; };
 		AA605B8A2382EEF3000FFD16 /* IntegrationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B802382EEF2000FFD16 /* IntegrationsViewController.m */; };
 		AA605B8B2382EEF3000FFD16 /* TextMessageObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B832382EEF2000FFD16 /* TextMessageObjcViewController.m */; };
@@ -152,7 +153,6 @@
 		79CC6A972355B79A007A94A1 /* PictureMessageSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureMessageSwiftViewController.swift; sourceTree = "<group>"; };
 		79CC6A992355B79A007A94A1 /* IntegrationsViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IntegrationsViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		79CC6A9A2355B79A007A94A1 /* IntegrationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegrationsViewController.swift; sourceTree = "<group>"; };
-		79CC6A9B2355B79A007A94A1 /* IntegrationsViewController+BRS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IntegrationsViewController+BRS.swift"; sourceTree = "<group>"; };
 		79CC6A9D2355B79A007A94A1 /* TextMessageSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessageSwiftViewController.swift; sourceTree = "<group>"; };
 		79CC6AAE2355BA62007A94A1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		79CC6AAF2355BA62007A94A1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -164,6 +164,11 @@
 		79CC6AE32355BF21007A94A1 /* ExampleSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExampleSwift.entitlements; sourceTree = "<group>"; };
 		79CC6AE42355BF2C007A94A1 /* ExampleObjC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExampleObjC.entitlements; sourceTree = "<group>"; };
 		79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MFMSPushLite.framework; path = ../Frameworks/universal/MFMSPushLite.framework; sourceTree = "<group>"; };
+		AA492DF62435C46800C11B63 /* AttributesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesHelper.h; sourceTree = "<group>"; };
+		AA492DF72435C46800C11B63 /* AttributesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesHelper.m; sourceTree = "<group>"; };
+		AA492DFA2435C47600C11B63 /* AttributesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributesHelper.swift; sourceTree = "<group>"; };
+		AA492DFF2435D51700C11B63 /* UIFont+THRFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+THRFonts.h"; sourceTree = "<group>"; };
+		AA492E002435D51700C11B63 /* UIFont+THRFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+THRFonts.m"; sourceTree = "<group>"; };
 		AA605B6D2382EC09000FFD16 /* LaunchScreenObjC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreenObjC.storyboard; sourceTree = "<group>"; };
 		AA605B6F2382ECB1000FFD16 /* LaunchScreenSwift.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreenSwift.storyboard; sourceTree = "<group>"; };
 		AA605B732382EEF2000FFD16 /* ClientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientsViewController.h; sourceTree = "<group>"; };
@@ -172,10 +177,8 @@
 		AA605B772382EEF2000FFD16 /* ChatInTabNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInTabNavigationController.m; sourceTree = "<group>"; };
 		AA605B792382EEF2000FFD16 /* PictureMessageObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureMessageObjcViewController.m; sourceTree = "<group>"; };
 		AA605B7A2382EEF2000FFD16 /* PictureMessageObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureMessageObjcViewController.h; sourceTree = "<group>"; };
-		AA605B7C2382EEF2000FFD16 /* IntegrationsViewController+BRS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IntegrationsViewController+BRS.m"; sourceTree = "<group>"; };
 		AA605B7D2382EEF2000FFD16 /* IntegrationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegrationsViewController.h; sourceTree = "<group>"; };
 		AA605B7E2382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IntegrationsViewController+UITableViewDelegate.m"; sourceTree = "<group>"; };
-		AA605B7F2382EEF2000FFD16 /* IntegrationsViewController+BRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IntegrationsViewController+BRS.h"; sourceTree = "<group>"; };
 		AA605B802382EEF2000FFD16 /* IntegrationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegrationsViewController.m; sourceTree = "<group>"; };
 		AA605B812382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IntegrationsViewController+UITableViewDelegate.h"; sourceTree = "<group>"; };
 		AA605B832382EEF2000FFD16 /* TextMessageObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextMessageObjcViewController.m; sourceTree = "<group>"; };
@@ -207,8 +210,8 @@
 		799E15322355B4E800E572B8 = {
 			isa = PBXGroup;
 			children = (
-				79CC69962355B5D8007A94A1 /* ExampleSwift */,
 				79CC6A152355B657007A94A1 /* ExampleObjC */,
+				79CC69962355B5D8007A94A1 /* ExampleSwift */,
 				79CC6A2D2355B664007A94A1 /* Shared */,
 				799E153C2355B4E800E572B8 /* Products */,
 				79CC6AA62355B808007A94A1 /* Frameworks */,
@@ -230,6 +233,7 @@
 				79CC6AE32355BF21007A94A1 /* ExampleSwift.entitlements */,
 				79CC6A8B2355B72F007A94A1 /* Application */,
 				79CC6A912355B79A007A94A1 /* Controllers */,
+				AA492DF92435C47600C11B63 /* Settings */,
 				79CC699D2355B5D8007A94A1 /* MainSwift.storyboard */,
 				AA605B6F2382ECB1000FFD16 /* LaunchScreenSwift.storyboard */,
 			);
@@ -242,6 +246,7 @@
 				79CC6AE42355BF2C007A94A1 /* ExampleObjC.entitlements */,
 				79CC6AAD2355BA62007A94A1 /* Application */,
 				AA605B712382EEF2000FFD16 /* Controllers */,
+				AA492DF52435C46800C11B63 /* Settings */,
 				79CC6A1F2355B657007A94A1 /* MainObjC.storyboard */,
 				AA605B6D2382EC09000FFD16 /* LaunchScreenObjC.storyboard */,
 			);
@@ -251,12 +256,12 @@
 		79CC6A2D2355B664007A94A1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6A2E2355B664007A94A1 /* Settings */,
 				79CC6A332355B664007A94A1 /* Configuration */,
-				79CC6A362355B664007A94A1 /* Resources */,
-				79CC6A412355B664007A94A1 /* Models */,
 				79CC6A452355B664007A94A1 /* Controllers */,
+				79CC6A412355B664007A94A1 /* Models */,
+				79CC6A362355B664007A94A1 /* Resources */,
 				79CC6A5C2355B664007A94A1 /* Services */,
+				79CC6A2E2355B664007A94A1 /* Settings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -264,10 +269,12 @@
 		79CC6A2E2355B664007A94A1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				79CC6A312355B664007A94A1 /* THRColorCompatibility.h */,
 				79CC6A2F2355B664007A94A1 /* THRColorCompatibility.m */,
 				79CC6A302355B664007A94A1 /* UIColor+AltColor.h */,
-				79CC6A312355B664007A94A1 /* THRColorCompatibility.h */,
 				79CC6A322355B664007A94A1 /* UIColor+AltColor.m */,
+				AA492DFF2435D51700C11B63 /* UIFont+THRFonts.h */,
+				AA492E002435D51700C11B63 /* UIFont+THRFonts.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -483,7 +490,6 @@
 			children = (
 				79CC6A992355B79A007A94A1 /* IntegrationsViewController+UITableViewDelegate.swift */,
 				79CC6A9A2355B79A007A94A1 /* IntegrationsViewController.swift */,
-				79CC6A9B2355B79A007A94A1 /* IntegrationsViewController+BRS.swift */,
 			);
 			path = Integrations;
 			sourceTree = "<group>";
@@ -514,6 +520,23 @@
 				79CC6AB02355BA62007A94A1 /* AppDelegate.m */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		AA492DF52435C46800C11B63 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AA492DF62435C46800C11B63 /* AttributesHelper.h */,
+				AA492DF72435C46800C11B63 /* AttributesHelper.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		AA492DF92435C47600C11B63 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AA492DFA2435C47600C11B63 /* AttributesHelper.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		AA605B712382EEF2000FFD16 /* Controllers */ = {
@@ -560,8 +583,6 @@
 			children = (
 				AA605B7D2382EEF2000FFD16 /* IntegrationsViewController.h */,
 				AA605B7E2382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.m */,
-				AA605B7F2382EEF2000FFD16 /* IntegrationsViewController+BRS.h */,
-				AA605B7C2382EEF2000FFD16 /* IntegrationsViewController+BRS.m */,
 				AA605B802382EEF2000FFD16 /* IntegrationsViewController.m */,
 				AA605B812382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.h */,
 			);
@@ -696,6 +717,7 @@
 			files = (
 				79CC6A9F2355B79A007A94A1 /* ChatInTabNavigationController.swift in Sources */,
 				79CC6A7B2355B664007A94A1 /* ClientTableViewCell.m in Sources */,
+				AA492DFB2435C47600C11B63 /* AttributesHelper.swift in Sources */,
 				79CC6A832355B664007A94A1 /* UtilitesViewController.m in Sources */,
 				79CC6A632355B664007A94A1 /* THRColorCompatibility.m in Sources */,
 				79CC6AA12355B79A007A94A1 /* IntegrationsViewController+UITableViewDelegate.swift in Sources */,
@@ -705,11 +727,11 @@
 				79CC6A652355B664007A94A1 /* UIColor+AltColor.m in Sources */,
 				79CC6A8F2355B72F007A94A1 /* AppDelegate.swift in Sources */,
 				79CC6A672355B664007A94A1 /* Configuration.m in Sources */,
+				AA492E012435D51700C11B63 /* UIFont+THRFonts.m in Sources */,
 				79CC6A872355B664007A94A1 /* SignatureService.m in Sources */,
 				79CC6A892355B664007A94A1 /* Storage.m in Sources */,
 				79CC6A7D2355B664007A94A1 /* ClientComposerViewController.m in Sources */,
 				79CC6A772355B664007A94A1 /* Client.m in Sources */,
-				79CC6AA32355B79A007A94A1 /* IntegrationsViewController+BRS.swift in Sources */,
 				79CC6AA42355B79A007A94A1 /* TextMessageSwiftViewController.swift in Sources */,
 				79CC6A7F2355B664007A94A1 /* PictureMessageViewController.m in Sources */,
 				79CC6A852355B664007A94A1 /* MainViewController.m in Sources */,
@@ -729,7 +751,6 @@
 				79CC6A7E2355B664007A94A1 /* ClientComposerViewController.m in Sources */,
 				79CC6A7C2355B664007A94A1 /* ClientTableViewCell.m in Sources */,
 				AA605B852382EEF3000FFD16 /* ClientsViewController.m in Sources */,
-				AA605B882382EEF3000FFD16 /* IntegrationsViewController+BRS.m in Sources */,
 				79CC6A682355B664007A94A1 /* Configuration.m in Sources */,
 				79CC6A782355B664007A94A1 /* Client.m in Sources */,
 				79CC6A822355B664007A94A1 /* TextMessageViewController.m in Sources */,
@@ -741,6 +762,7 @@
 				79CC6A802355B664007A94A1 /* PictureMessageViewController.m in Sources */,
 				79CC6A862355B664007A94A1 /* MainViewController.m in Sources */,
 				AA605B8A2382EEF3000FFD16 /* IntegrationsViewController.m in Sources */,
+				AA492DF82435C46800C11B63 /* AttributesHelper.m in Sources */,
 				79CC6AB22355BA62007A94A1 /* main.m in Sources */,
 				79CC6A8A2355B664007A94A1 /* Storage.m in Sources */,
 				79CC6AB32355BA62007A94A1 /* AppDelegate.m in Sources */,
@@ -813,7 +835,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3.1.0;
+				CURRENT_PROJECT_VERSION = 3.2.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -875,7 +897,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3.1.0;
+				CURRENT_PROJECT_VERSION = 3.2.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

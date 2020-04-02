@@ -10,6 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, Design) {
+    DesignDefault,
+    DesignAlternative,
+};
+
 @interface IntegrationsViewController : UITableViewController
 
 - (void)pushChatInCurrentNavigationController;

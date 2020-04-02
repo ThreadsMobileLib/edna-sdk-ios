@@ -9,6 +9,7 @@
 /* Configuration */
 
 "Configuration:" = "Конифигурация";
+"Protocol: %@" = "Протокол: %@";
 "Language: %@" = "Язык: %@";
 "Bundle Identifier: %@" = "Идентификатор сборки: %@";
 "App Name: %@" = "Имя приложения: %@";
@@ -45,6 +46,6 @@
 
 "Chat" = "Чат";
 
-/* IntegrationsViewController+BRS */
+/* AttributesHelper */
 
 "typing..." = "печатает...";

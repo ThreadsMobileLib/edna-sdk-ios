@@ -18,7 +18,7 @@
 - (void)sendMessageWithText:(NSString *)text {
     [self startAnimating];
     __weak typeof(self) weakSelf = self;
-    [[Threads threads] sendMessageWithText:text completion:^(BOOL success, NSError * _Nullable error) {
+    [[Threads threads] sendMessageWithText:text completion:^(NSError * _Nullable error) {
         [weakSelf stopAnimating];
         if (error) {
             [weakSelf presentFailedSubmissionOutsideMessageAlertWithError:error];

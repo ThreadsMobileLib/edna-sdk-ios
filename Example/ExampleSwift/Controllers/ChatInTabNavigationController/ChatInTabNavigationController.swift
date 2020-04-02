@@ -10,6 +10,8 @@ import UIKit
 import Threads
 
 class ChatInTabNavigationController: UINavigationController {
+    
+    var design: Design = .default
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +20,12 @@ class ChatInTabNavigationController: UINavigationController {
     }
     
     func getAttributes() -> THRAttributes {
-        let attributes = THRAttributes()
-        return attributes
+        switch design {
+        case .default:
+            return AttributesHelper.getDefaultAttributes()
+        case .alternative:
+            return AttributesHelper.getAltAttributes()
+        }
     }
     
     func getChatViewController() -> UIViewController {

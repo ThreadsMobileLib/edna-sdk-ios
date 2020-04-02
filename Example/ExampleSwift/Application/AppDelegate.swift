@@ -38,12 +38,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         threads.isClientIdEncrypted = false
         threads.isShowsNetworkActivity = true
         
-        threads.configure(
+
+        //MFMSPushTransport
+//        threads.configurePushTransportProtocol(
+//            with: self,
+//            productionMFMSServer: true,
+//            historyURL: URL(string: "HISTORY_URL")!,
+//            fileUploadingURL: URL(string: "FILE_UPLOADING_URL")!)
+        
+        //ThreadsGateTransport
+        threads.configureThreadsGateTransportProtocol(
             with: self,
-            productionMFMSServer: true,
-            historyURL: URL(string: "<#HISTORY_URL#>")!,
-            fileUploadingURL: URL(string: "<#FILE_UPLOADING_URL#>")!
-        )
+            webSocketURL: URL(string: "WEBSOCKET_URL")!,
+            providerUid: "PROVIDER_UID",
+            historyURL: URL(string: "HISTORY_URL")!,
+            fileUploadingURL: URL(string: "FILE_UPLOADING_URL")!)
+
     }
     
     func registerForRemoteNotifications() {
@@ -58,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configureSignatureService() {
-        SignatureService.sharedInstance().serverURL = URL(string: "<#SIGNATURE_URL#>")!
+        SignatureService.sharedInstance().serverURL = URL(string: "SIGNATURE_URL")
     }
     
     // MARK: - Remote Notifications
@@ -76,10 +86,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        //MFMSPushTransport only
         Threads.threads().applicationDidReceiveRemoteNotification(userInfo)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        //MFMSPushTransport only
         Threads.threads().applicationDidReceiveRemoteNotification(userInfo) { state in
             completionHandler(.newData)
         }
@@ -102,6 +114,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        //MFMSPushTransport only
         Threads.threads().applicationDidReceiveRemoteNotification(notification.request.content.userInfo) { state in
             completionHandler([])
         }
@@ -122,6 +135,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 extension AppDelegate: ThreadsDelegate {
     
     func threads(_ threads: Threads, didReceiveFullMessages messages: [PushNotificationMessage]) {
+        // MFMSPushTransport only
         // Use this delegate method for access to received full data messages
     }
     

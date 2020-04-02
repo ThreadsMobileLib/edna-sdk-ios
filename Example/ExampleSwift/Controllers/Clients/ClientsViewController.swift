@@ -30,7 +30,7 @@ class ClientsViewController: UIViewController, ClientsTableViewDataSourceDelegat
         Threads.threads().setClientWithId(
             client.id,
             name: client.name,
-            data: ["param1": "value1", "param2":"value2"],
+            data: "{\"param1\": \"value1\"}",
             appMarker: client.appMarker,
             signature: client.signature
         )

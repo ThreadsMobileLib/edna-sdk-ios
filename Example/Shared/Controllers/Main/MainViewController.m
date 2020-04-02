@@ -14,17 +14,11 @@ typedef NS_ENUM(NSInteger, MainViewControllerTab) {
     MainViewControllerTabUtilites,
 };
 
-@interface IntegrationsViewController : UIViewController
-
-- (void)pushChatInCurrentNavigationController;
-
-- (void)presentFromPushWithDesign:(NSInteger)design;
-
-@end
-
 @interface MainViewController () <UITabBarControllerDelegate>
 
 @property (nonatomic, copy, nullable) NSString *unreadMessagesBadgeValue;
+
+- (void)updateUnreadMessagesCountBadgeValue;
 
 @end
 
@@ -43,7 +37,13 @@ typedef NS_ENUM(NSInteger, MainViewControllerTab) {
 
 - (void)updateUnreadMessagesCountBadgeValue {
     UITabBarItem *tabBarItem = self.viewControllers[MainViewControllerTabIntegrations].tabBarItem;
-    tabBarItem.badgeValue = self.selectedIndex == MainViewControllerTabIntegrations ? nil : self.unreadMessagesBadgeValue;
+    UINavigationController *nc = (UINavigationController *)self.selectedViewController;
+    
+    if (self.selectedIndex != MainViewControllerTabIntegrations || [nc.visibleViewController conformsToProtocol:@protocol(IntegrationsProtocol)]) {
+        tabBarItem.badgeValue = self.unreadMessagesBadgeValue;
+    } else {
+        tabBarItem.badgeValue = nil;
+    }
 }
 
 #pragma mark - Show Chat from Notification
@@ -51,9 +51,9 @@ typedef NS_ENUM(NSInteger, MainViewControllerTab) {
 - (void)showChatForAppMarker:(NSString *)appMarker {
     self.selectedIndex = 1;
     UINavigationController *nvc = (UINavigationController *)self.viewControllers[1];
-    IntegrationsViewController *vc = nvc.viewControllers[0];
+    UIViewController <IntegrationsProtocol> *vc = (UIViewController <IntegrationsProtocol> *) nvc.viewControllers[0];
     NSInteger design = [appMarker hasSuffix:@"CRG"] ? 1 : 0;
-    [vc presentFromPushWithDesign:design];    
+    [vc presentFromPushWithDesign:design];
 }
 
 #pragma mark - UITabBarDelegate

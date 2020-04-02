@@ -10,14 +10,14 @@ import UIKit
 import Threads
 
 enum Design: Int {
-    case standart, brs
+    case `default`, alternative
 }
 
-class IntegrationsViewController: UITableViewController {
+class IntegrationsViewController: UITableViewController, IntegrationsProtocol {
 
     @IBOutlet var segmentedControl: UISegmentedControl!
     
-    var design: Design = .standart
+    var design: Design = .default
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,19 @@ class IntegrationsViewController: UITableViewController {
         segmentedControl.selectedSegmentIndex = design.rawValue
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let tb = tabBarController as? MainViewController
+        tb?.updateUnreadMessagesCountBadgeValue()
+    }
+    
     func getAttributes() -> THRAttributes {
         switch design {
-        case .standart:
-            return getStandartAttributes()
-        case .brs:
-            return getBRSAttributes()
+        case .default:
+            return AttributesHelper.getDefaultAttributes()
+        case .alternative:
+            return AttributesHelper.getAltAttributes()
         }
     }
     
@@ -98,14 +105,16 @@ class IntegrationsViewController: UITableViewController {
         performSegue(withIdentifier: "ChatTabBarControllerSegueIdentifier", sender: nil)
     }
     
-    // MARK: - Attributes
-    
-    func getStandartAttributes() -> THRAttributes {
-        let attributes = THRAttributes()
-        return attributes
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "ChatTabBarControllerSegueIdentifier") {
+            let tabController = segue.destination as? UITabBarController
+            let chatInTabVC = tabController?.viewControllers?[0] as? ChatInTabNavigationController
+            chatInTabVC?.design = self.design;
+        }
     }
     
-    @objc func presentFromPushWithDesign(_ design: Int) {
+    @objc func presentFromPush(withDesign design: Int) {
         if navigationController!.viewControllers.count > 1 || navigationController?.presentedViewController != nil { return }
         self.design = Design(rawValue: design)!
         let chatViewController = getChatViewController()

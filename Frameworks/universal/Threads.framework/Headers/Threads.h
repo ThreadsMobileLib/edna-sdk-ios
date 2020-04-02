@@ -24,9 +24,11 @@ FOUNDATION_EXPORT const unsigned char ThreadsVersionString[];
 
 FOUNDATION_EXPORT void THRLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2) NS_NO_TAIL_CALL;
 
-typedef void(^THRRegistrationCompletion)(BOOL state, NSError *error);
+@class THRSendMessageResponse;
 
-typedef void(^THROperationCompletion)(BOOL success, NSError * _Nullable error);
+typedef void(^THRMessageSubmissionCompletion)(THRSendMessageResponse *response);
+
+typedef void(^THROperationCompletion)(NSError * _Nullable error);
 
 typedef void(^THRRemoteNotificationsRegistrationCompletion)(NSData * _Nullable deviceToken);
 
@@ -42,6 +44,11 @@ static NSInteger const THRErrorClientDataUnparsedCode = -7;
 typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
     THRMessageRecieveStateAccepted,
     THRMessageRecieveStateNotAccepted
+};
+
+typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
+    ThreadsTrasportProtocolPushLib,
+    ThreadsTrasportProtocolThreadsGate
 };
 
 @class Threads;
@@ -68,7 +75,7 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
 /**
  Access to MFMSPushLite instance
  */
-@property (strong, nonatomic) MFMSPushLite *mfmsPush;
+@property (readonly, nullable) MFMSPushLite *mfmsPush;
 
 @property (nonatomic, weak, nullable) id <ThreadsDelegate> delegate;
 
@@ -140,12 +147,6 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
  */
 @property (nonatomic, copy, nullable, readonly) NSString *data;
 
-
-/**
- Returns unread messages count
- */
-@property (nonatomic, readonly)NSInteger unreadMessagesCount;
-
 /**
  File size limit in bytes.
  Default value is 30 MB (30 * 1024 * 1024).
@@ -179,14 +180,25 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
 
 
 /**
- Initial configuration
+ Initial MFMS configuration
 
  @param delegate Threads delegate object
  @param productionMFMSServer Switch between test and production MFMS server
  @param historyURL History server url
  @param fileUploadingURL File uploading server url
  */
-- (void)configureWithDelegate:(id<ThreadsDelegate> _Nullable)delegate productionMFMSServer:(BOOL)productionMFMSServer historyURL:(NSURL *)historyURL fileUploadingURL:(NSURL *)fileUploadingURL;
+- (void)configurePushTransportProtocolWithDelegate:(id<ThreadsDelegate> _Nullable)delegate productionMFMSServer:(BOOL)productionMFMSServer historyURL:(NSURL *)historyURL fileUploadingURL:(NSURL *)fileUploadingURL;
+
+/**
+ Initial Threads Gate configuration
+
+ @param delegate Threads delegate object
+ @param historyURL History server url
+ @param webSocketURL WebSocket server url
+ @param providerUid Provider Uid
+ @param fileUploadingURL File uploading server url
+ */
+- (void)configureThreadsGateTransportProtocolWithDelegate:(id<ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL *)webSocketURL providerUid:(NSString *)providerUid historyURL:(NSURL *)historyURL fileUploadingURL:(NSURL *)fileUploadingURL;
 
 /**
  Register application for APNS remote notification
@@ -256,7 +268,7 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
  @param appMarker hreads support connecting multiple apps to a single server. Configure the appMarker identifier on the server and in app. As appMarker can be any unique string. appMarker should be the same for corresponding Android and iOS applications.
  @param signature The clientId authorization signature, the signature should be generated on your server based on the clientId using the RSA private key, then encrypted in Base64. Under the general scheme of work with the signature, see the documentation for Threads-API.
  */
-- (void)setClientWithId:(NSString *)id name:(NSString * _Nullable)name data:(NSDictionary * _Nullable)data appMarker:(NSString * _Nullable)appMarker signature:(NSString *)signature;
+- (void)setClientWithId:(NSString *)id name:(NSString * _Nullable)name data:(NSString * _Nullable)data appMarker:(NSString * _Nullable)appMarker signature:(NSString *)signature;
 
 
 /**
@@ -303,6 +315,7 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
  */
 - (NSString *)version;
 
+- (NSUInteger) unreadMessagesCount;
 
 /**
  Delete all cached images

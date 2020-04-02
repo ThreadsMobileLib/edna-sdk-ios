@@ -43,10 +43,18 @@
     threads.isClientIdEncrypted = NO;
     threads.isShowsNetworkActivity = YES;
     
-    [threads configureWithDelegate:self
-              productionMFMSServer:YES
-                        historyURL:[NSURL URLWithString:@"<#HISTORY_URL#>"]
-                  fileUploadingURL:[NSURL URLWithString:@"<#FILE_UPLOADING_URL#>"]];
+    //MFMSPushTransport
+//    [threads configurePushTransportProtocolWithDelegate:self
+//                                   productionMFMSServer:YES
+//                                             historyURL:[NSURL URLWithString:@"HISTORY_URL"]
+//                                       fileUploadingURL:[NSURL URLWithString:@"FILE_UPLOADING_URL"]];
+    
+    //ThreadsGateTransport
+    [threads configureThreadsGateTransportProtocolWithDelegate:self
+                                                  webSocketURL:[NSURL URLWithString:@"WEBSOCKET_URL"]
+                                                   providerUid:@"PROVIDER_UID"
+                                                    historyURL:[NSURL URLWithString:@"HISTORY_URL"]
+                                              fileUploadingURL:[NSURL URLWithString:@"FILE_UPLOADING_URL"]];
 }
 
 /**
@@ -64,7 +72,7 @@
 }
 
 - (void)configureSignatureService {
-    [SignatureService sharedInstance].serverURL = [NSURL URLWithString:@"<#SIGNATURE_URL#>"];
+    [SignatureService sharedInstance].serverURL = [NSURL URLWithString:@"SIGNATURE_URL"];
 }
 
 #pragma mark - Remote Notifications
@@ -82,10 +90,12 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    //MFMSPushTransport only
     [[Threads threads] applicationDidReceiveRemoteNotification:userInfo];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    //MFMSPushTransport only
     [[Threads threads] applicationDidReceiveRemoteNotification:userInfo fetchCompletionHandler:^(THRMessageRecieveState state) {
         completionHandler(UIBackgroundFetchResultNewData);
     }];
@@ -105,6 +115,7 @@
 #pragma mark - UNUserNotificationCenterDelegate
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler API_AVAILABLE(ios(10.0)){
+    //MFMSPushTransport only
     [[Threads threads] applicationDidReceiveRemoteNotification:notification.request.content.userInfo fetchCompletionHandler:^(THRMessageRecieveState state) {
         completionHandler(UNNotificationPresentationOptionNone);
     }];
@@ -120,6 +131,7 @@
 }
 
 - (void)threads:(nonnull Threads *)threads didReceiveFullMessages:(nonnull NSArray<PushNotificationMessage *> *)messages {
+    // MFMSPushTransport only
     // Use this delegate method for access to received full data messages
 }
 

@@ -91,9 +91,9 @@
     return [[self.tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[ClientTableViewCell class]];
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self isClientIndexPath:indexPath];
-}
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return [self isClientIndexPath:indexPath];
+//}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     Client *client = self.clients[indexPath.row];
