@@ -159,6 +159,14 @@ class AttributesHelper {
         attributes.likeRatingColorCompleted = UIColor.alt_likeRatingColorCompleted()
         attributes.starRatingColorCompleted = UIColor.alt_starRatingColorCompleted()
         
+        attributes.quickReplyFont = .latoSemibold(ofSize: 20)
+        attributes.quickReplyBorderCornerRadius = 0;
+        attributes.quickReplyBorderColor = UIColor.alt_quickReplyBorder()
+        attributes.quickReplyTextColor = UIColor.alt_quickReplyText()
+        attributes.quickReplyTextColorHighLighted = UIColor.alt_quickReplyTextColorHighLighted()
+        attributes.quickReplyBackgroundColor = UIColor.alt_quickReplyBackground()
+        attributes.quickReplyBackgroundColorHighlighted = UIColor.alt_quickReplyBackgroundColorHighlighted()
+        
         attributes.navigationBarSubtitleShowOrgUnit = true
         attributes.showWaitingForSpecialistProgress = false
         attributes.canShowSpecialistInfo = false

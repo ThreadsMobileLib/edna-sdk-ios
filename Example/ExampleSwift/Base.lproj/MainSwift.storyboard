@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kkr-YR-Pny">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kkr-YR-Pny">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="Apa-ls-Jul">
             <objects>
-                <tabBarController id="kkr-YR-Pny" customClass="MainViewController" sceneMemberID="viewController">
+                <tabBarController id="kkr-YR-Pny" customClass="MainViewController" customModule="ExampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Lt-ez-iO5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -43,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="-1496" y="650"/>
         </scene>
-        <!--Delegate-->
+        <!--Clients-->
         <scene sceneID="8UD-L8-Wer">
             <objects>
                 <viewController id="VHF-HR-hnX" customClass="ClientsViewController" customModule="ExampleSwift" customModuleProvider="target" sceneMemberID="viewController">

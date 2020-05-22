@@ -9,6 +9,3 @@
 #import "SignatureService.h"
 #import "Storage.h"
 #import "TextMessageViewController.h"
-#import "MainViewController.h"
-#import "UIColor+AltColor.h"
-#import "UIFont+THRFonts.h"

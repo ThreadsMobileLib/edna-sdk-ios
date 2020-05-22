@@ -1,0 +1,226 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-module-flags: -target x86_64-apple-ios8.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Threads
+import CoreData
+import Foundation
+import Swift
+@_exported import Threads
+import UIKit
+@_hasMissingDesignatedInitializers @objc final public class OGDataProvider : ObjectiveC.NSObject {
+  @objc(sharedInstance) public static var shared: Threads.OGDataProvider
+  @objc final public var cacheManager: Threads.OGDataCacheManagerProtocol {
+    @objc get
+    @objc set(value)
+  }
+  @objc final public var updateInterval: Foundation.TimeInterval {
+    @objc get
+    @objc set(newValue)
+  }
+  @discardableResult
+  @objc final public func fetchOGData(withURLString urlString: Swift.String, completion: ((Threads.OpenGraphData, Swift.Error?) -> Swift.Void)? = nil) -> Threads.Task
+  @discardableResult
+  @nonobjc final public func fetchOGData(urlString: Swift.String, completion: ((Threads.OpenGraph.Data, Swift.Error?) -> Swift.Void)? = nil) -> Threads.Task
+  @objc final public func deleteOGData(urlString: Swift.String, completion: ((Swift.Error?) -> Swift.Void)? = nil)
+  @objc final public func deleteOGData(_ ogData: Threads.OpenGraphData, completion: ((Swift.Error?) -> Swift.Void)? = nil)
+  @nonobjc final public func deleteOGData(_ ogData: Threads.OpenGraph.Data, completion: ((Swift.Error?) -> Swift.Void)? = nil)
+  @objc final public func cancelLoading(_ task: Threads.Task, shouldContinueDownloading: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public enum OpenGraph {
+}
+@_hasMissingDesignatedInitializers @objc public class OpenGraphData : ObjectiveC.NSObject {
+  @objc final public let imageUrl: Foundation.URL?
+  @objc final public let pageDescription: Swift.String?
+  @objc final public let pageTitle: Swift.String?
+  @objc final public let pageType: Swift.String?
+  @objc final public let siteName: Swift.String?
+  @objc final public let sourceUrl: Foundation.URL?
+  @objc final public let url: Foundation.URL?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc final public class OGImageProvider : ObjectiveC.NSObject {
+  @objc(sharedInstance) public static var shared: Threads.OGImageProvider
+  @objc final public func loadImage(withURLString urlString: Swift.String, completion: ((UIKit.UIImage?, Swift.Error?) -> Swift.Void)? = nil) -> Threads.Task?
+  @nonobjc final public func loadImage(urlString: Swift.String, completion: ((Threads.Result<UIKit.UIImage>) -> Swift.Void)? = nil) -> Threads.Task?
+  @objc final public func clearMemoryCache()
+  @objc final public func clearAllCache()
+  @objc final public func cancelLoading(_ task: Threads.Task, shouldContinueDownloading: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc final public class OGDataNoCacheManager : ObjectiveC.NSObject, Threads.OGDataCacheManagerProtocol {
+  @objc final public var updateInterval: Foundation.TimeInterval
+  @objc override dynamic public init()
+  @objc final public func fetchOrInsertOGCacheData(url: Swift.String, completion: @escaping (Threads.OGCacheData) -> ())
+  @objc final public func fetchOGCacheData(url: Swift.String, completion: @escaping (Threads.OGCacheData?) -> ())
+  @objc final public func updateIfNeeded(cache: Threads.OGCacheData)
+  @objc final public func deleteOGCacheDate(cache: Threads.OGCacheData, completion: ((Swift.Error?) -> Swift.Void)?)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class TransportMessagesParser : ObjectiveC.NSObject {
+  @objc public class func getQuickRepliesFromDict(_ dict: Swift.Dictionary<Swift.String, Any>) -> Swift.Array<Threads.QuickReply>?
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension OpenGraph {
+  public struct Data {
+    public var imageUrl: Foundation.URL? {
+      get
+    }
+    public var pageDescription: Swift.String? {
+      get
+    }
+    public var pageTitle: Swift.String? {
+      get
+    }
+    public var pageType: Swift.String? {
+      get
+    }
+    public var siteName: Swift.String? {
+      get
+    }
+    public var sourceUrl: Foundation.URL? {
+      get
+    }
+    public var url: Foundation.URL? {
+      get
+    }
+  }
+}
+extension OpenGraph.Data : Swift._ObjectiveCBridgeable {
+  public typealias _ObjectiveCType = Threads.OpenGraphData
+  public func _bridgeToObjectiveC() -> Threads.OpenGraphData
+  public static func _forceBridgeFromObjectiveC(_ source: Threads.OpenGraphData, result: inout Threads.OpenGraph.Data?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: Threads.OpenGraphData, result: inout Threads.OpenGraph.Data?) -> Swift.Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: Threads.OpenGraphData?) -> Threads.OpenGraph.Data
+}
+@_hasMissingDesignatedInitializers @objc final public class OpenGraphDataDownloader : ObjectiveC.NSObject {
+  @objc(sharedInstance) public static var shared: Threads.OpenGraphDataDownloader
+  @discardableResult
+  @objc final public func fetchOGData(withURLString urlString: Swift.String, completion: ((Threads.OpenGraphData?, Swift.Error?) -> Swift.Void)? = nil) -> Threads.Task
+  @discardableResult
+  @nonobjc final public func fetchOGData(urlString: Swift.String, completion: ((Threads.OpenGraphDataDownloader.Result) -> Swift.Void)? = nil) -> Threads.Task
+  @objc final public func cancelLoading(_ task: Threads.Task, shouldContinueDownloading: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension OpenGraphDataDownloader {
+  public enum Error : Swift.Error {
+    case createURLFailed(Swift.String)
+    case createYoutubeRequestFailed(Swift.String)
+  }
+  public enum Result {
+    case success(data: Threads.OpenGraph.Data, isExpired: Swift.Bool)
+    case failure(error: Swift.Error, isExpired: Swift.Bool)
+  }
+}
+extension OpenGraphDataDownloader.Result {
+  public var isExpired: Swift.Bool {
+    get
+  }
+  public var data: Threads.OpenGraph.Data? {
+    get
+  }
+  public var error: Swift.Error? {
+    get
+  }
+}
+@objc public protocol QuickReplyCellDelegate {
+  @objc func didSelectQuickReply(_ quickReply: Threads.QuickReply)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class QuickReplyCell : UIKit.UICollectionViewCell {
+  @objc public class var sizingCell: Threads.QuickReplyCell! {
+    @objc get
+  }
+  @objc @IBOutlet weak public var cellWidth: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var actionButton: UIKit.UIButton!
+  @objc public class func cellIdentifier() -> Swift.String
+  @objc public class func nib() -> UIKit.UINib
+  @objc override dynamic public func awakeFromNib()
+  @objc public func configure(quickReply: Threads.QuickReply, delegate: Threads.QuickReplyCellDelegate)
+  @objc public func setWidth(_ width: CoreGraphics.CGFloat)
+  @objc override dynamic public func prepareForReuse()
+  @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_hasMissingDesignatedInitializers @objc final public class OGCacheData : ObjectiveC.NSObject {
+  @nonobjc final public let ogData: Threads.OpenGraph.Data
+  @objc final public let createDate: Foundation.Date?
+  @objc final public let updateDate: Foundation.Date?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol OGDataCacheManagerProtocol : ObjectiveC.NSObjectProtocol {
+  @objc var updateInterval: Foundation.TimeInterval { get set }
+  @objc func fetchOrInsertOGCacheData(url: Swift.String, completion: @escaping (Threads.OGCacheData) -> ())
+  @objc func fetchOGCacheData(url: Swift.String, completion: @escaping (Threads.OGCacheData?) -> ())
+  @objc func updateIfNeeded(cache: Threads.OGCacheData)
+  @objc func deleteOGCacheDate(cache: Threads.OGCacheData, completion: ((Swift.Error?) -> Swift.Void)?)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class MFMSPushHelper : ObjectiveC.NSObject {
+  @objc public class func getFullProviderIds(_ providerIds: [Swift.String]) -> [Swift.String]
+  @objc public class func getFullProviderId(_ providerId: Swift.String) -> Swift.String
+  @objc public class func getProviderIdPrefix() -> Swift.String?
+  @objc public class func saveProviderIdPrefixFromPush(_ dict: Swift.Dictionary<Swift.String, Any>)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class QuickReply : ObjectiveC.NSObject {
+  @objc final public let text: Swift.String
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension Double {
+  public var minutes: Foundation.TimeInterval {
+    get
+  }
+  public var hours: Foundation.TimeInterval {
+    get
+  }
+  public var days: Foundation.TimeInterval {
+    get
+  }
+  public var weeks: Foundation.TimeInterval {
+    get
+  }
+  public var months: Foundation.TimeInterval {
+    get
+  }
+  public var years: Foundation.TimeInterval {
+    get
+  }
+}
+extension NSNumber {
+  @objc dynamic public class func minutes(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
+  @objc dynamic public class func hours(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
+  @objc dynamic public class func days(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
+  @objc dynamic public class func weeks(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
+  @objc dynamic public class func months(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
+  @objc dynamic public class func years(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
+}
+extension String {
+  public func md5() -> Swift.String
+}
+public enum URLEmbeddedViewError : Swift.Error {
+  case invalidURLString(Swift.String)
+}
+public enum Result<T> {
+  case success(T)
+  case failure(Swift.Error)
+  public var value: T? {
+    get
+  }
+  public var error: Swift.Error? {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class Task : ObjectiveC.NSObject {
+  @objc deinit
+}

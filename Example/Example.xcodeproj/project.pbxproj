@@ -8,75 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		79CC699F2355B5D8007A94A1 /* MainSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC699D2355B5D8007A94A1 /* MainSwift.storyboard */; };
-		79CC6A212355B657007A94A1 /* MainObjC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A1F2355B657007A94A1 /* MainObjC.storyboard */; };
-		79CC6A632355B664007A94A1 /* THRColorCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A2F2355B664007A94A1 /* THRColorCompatibility.m */; };
-		79CC6A642355B664007A94A1 /* THRColorCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A2F2355B664007A94A1 /* THRColorCompatibility.m */; };
-		79CC6A652355B664007A94A1 /* UIColor+AltColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A322355B664007A94A1 /* UIColor+AltColor.m */; };
-		79CC6A662355B664007A94A1 /* UIColor+AltColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A322355B664007A94A1 /* UIColor+AltColor.m */; };
 		79CC6A672355B664007A94A1 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A352355B664007A94A1 /* Configuration.m */; };
-		79CC6A682355B664007A94A1 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A352355B664007A94A1 /* Configuration.m */; };
 		79CC6A692355B664007A94A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A372355B664007A94A1 /* Localizable.strings */; };
-		79CC6A6A2355B664007A94A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A372355B664007A94A1 /* Localizable.strings */; };
 		79CC6A6B2355B664007A94A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A392355B664007A94A1 /* Assets.xcassets */; };
-		79CC6A6C2355B664007A94A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A392355B664007A94A1 /* Assets.xcassets */; };
 		79CC6A6D2355B664007A94A1 /* AlternateAttributes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A3A2355B664007A94A1 /* AlternateAttributes.xcassets */; };
-		79CC6A6E2355B664007A94A1 /* AlternateAttributes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A3A2355B664007A94A1 /* AlternateAttributes.xcassets */; };
 		79CC6A6F2355B664007A94A1 /* lato-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A3D2355B664007A94A1 /* lato-regular.ttf */; };
-		79CC6A702355B664007A94A1 /* lato-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A3D2355B664007A94A1 /* lato-regular.ttf */; };
 		79CC6A712355B664007A94A1 /* lato-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A3E2355B664007A94A1 /* lato-semibold.ttf */; };
-		79CC6A722355B664007A94A1 /* lato-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A3E2355B664007A94A1 /* lato-semibold.ttf */; };
 		79CC6A732355B664007A94A1 /* lato-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A3F2355B664007A94A1 /* lato-light.ttf */; };
-		79CC6A742355B664007A94A1 /* lato-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A3F2355B664007A94A1 /* lato-light.ttf */; };
 		79CC6A752355B664007A94A1 /* lato-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A402355B664007A94A1 /* lato-medium.ttf */; };
-		79CC6A762355B664007A94A1 /* lato-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A402355B664007A94A1 /* lato-medium.ttf */; };
-		79CC6A772355B664007A94A1 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A442355B664007A94A1 /* Client.m */; };
-		79CC6A782355B664007A94A1 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A442355B664007A94A1 /* Client.m */; };
-		79CC6A792355B664007A94A1 /* ClientsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A492355B664007A94A1 /* ClientsTableViewDataSource.m */; };
-		79CC6A7A2355B664007A94A1 /* ClientsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A492355B664007A94A1 /* ClientsTableViewDataSource.m */; };
-		79CC6A7B2355B664007A94A1 /* ClientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A4C2355B664007A94A1 /* ClientTableViewCell.m */; };
-		79CC6A7C2355B664007A94A1 /* ClientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A4C2355B664007A94A1 /* ClientTableViewCell.m */; };
-		79CC6A7D2355B664007A94A1 /* ClientComposerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A4F2355B664007A94A1 /* ClientComposerViewController.m */; };
-		79CC6A7E2355B664007A94A1 /* ClientComposerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A4F2355B664007A94A1 /* ClientComposerViewController.m */; };
-		79CC6A7F2355B664007A94A1 /* PictureMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A512355B664007A94A1 /* PictureMessageViewController.m */; };
-		79CC6A802355B664007A94A1 /* PictureMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A512355B664007A94A1 /* PictureMessageViewController.m */; };
-		79CC6A812355B664007A94A1 /* TextMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A542355B664007A94A1 /* TextMessageViewController.m */; };
-		79CC6A822355B664007A94A1 /* TextMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A542355B664007A94A1 /* TextMessageViewController.m */; };
-		79CC6A832355B664007A94A1 /* UtilitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A572355B664007A94A1 /* UtilitesViewController.m */; };
-		79CC6A842355B664007A94A1 /* UtilitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A572355B664007A94A1 /* UtilitesViewController.m */; };
-		79CC6A852355B664007A94A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A5A2355B664007A94A1 /* MainViewController.m */; };
-		79CC6A862355B664007A94A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A5A2355B664007A94A1 /* MainViewController.m */; };
-		79CC6A872355B664007A94A1 /* SignatureService.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A5E2355B664007A94A1 /* SignatureService.m */; };
-		79CC6A882355B664007A94A1 /* SignatureService.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A5E2355B664007A94A1 /* SignatureService.m */; };
-		79CC6A892355B664007A94A1 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A612355B664007A94A1 /* Storage.m */; };
-		79CC6A8A2355B664007A94A1 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A612355B664007A94A1 /* Storage.m */; };
 		79CC6A8F2355B72F007A94A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A8D2355B72F007A94A1 /* AppDelegate.swift */; };
-		79CC6A9E2355B79A007A94A1 /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A932355B79A007A94A1 /* ClientsViewController.swift */; };
-		79CC6A9F2355B79A007A94A1 /* ChatInTabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A952355B79A007A94A1 /* ChatInTabNavigationController.swift */; };
-		79CC6AA02355B79A007A94A1 /* PictureMessageSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A972355B79A007A94A1 /* PictureMessageSwiftViewController.swift */; };
-		79CC6AA12355B79A007A94A1 /* IntegrationsViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A992355B79A007A94A1 /* IntegrationsViewController+UITableViewDelegate.swift */; };
-		79CC6AA22355B79A007A94A1 /* IntegrationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A9A2355B79A007A94A1 /* IntegrationsViewController.swift */; };
-		79CC6AA42355B79A007A94A1 /* TextMessageSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6A9D2355B79A007A94A1 /* TextMessageSwiftViewController.swift */; };
-		79CC6AB22355BA62007A94A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AAF2355BA62007A94A1 /* main.m */; };
-		79CC6AB32355BA62007A94A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6AB02355BA62007A94A1 /* AppDelegate.m */; };
 		79CC6ADF2355BE64007A94A1 /* Threads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; };
 		79CC6AE02355BE64007A94A1 /* Threads.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		79CC6AE82355BFDB007A94A1 /* Threads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; };
-		79CC6AE92355BFDB007A94A1 /* Threads.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6ADA2355BE4C007A94A1 /* Threads.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		79CC6AF02355C9D3007A94A1 /* MFMSPushLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; };
 		79CC6AF12355C9D3007A94A1 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		79CC6AF22355C9D9007A94A1 /* MFMSPushLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; };
-		79CC6AF32355C9D9007A94A1 /* MFMSPushLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AA492DF82435C46800C11B63 /* AttributesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA492DF72435C46800C11B63 /* AttributesHelper.m */; };
-		AA492DFB2435C47600C11B63 /* AttributesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA492DFA2435C47600C11B63 /* AttributesHelper.swift */; };
-		AA492E012435D51700C11B63 /* UIFont+THRFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = AA492E002435D51700C11B63 /* UIFont+THRFonts.m */; };
-		AA605B6E2382EC09000FFD16 /* LaunchScreenObjC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA605B6D2382EC09000FFD16 /* LaunchScreenObjC.storyboard */; };
 		AA605B702382ECB1000FFD16 /* LaunchScreenSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA605B6F2382ECB1000FFD16 /* LaunchScreenSwift.storyboard */; };
-		AA605B852382EEF3000FFD16 /* ClientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B742382EEF2000FFD16 /* ClientsViewController.m */; };
-		AA605B862382EEF3000FFD16 /* ChatInTabNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B772382EEF2000FFD16 /* ChatInTabNavigationController.m */; };
-		AA605B872382EEF3000FFD16 /* PictureMessageObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B792382EEF2000FFD16 /* PictureMessageObjcViewController.m */; };
-		AA605B892382EEF3000FFD16 /* IntegrationsViewController+UITableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B7E2382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.m */; };
-		AA605B8A2382EEF3000FFD16 /* IntegrationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B802382EEF2000FFD16 /* IntegrationsViewController.m */; };
-		AA605B8B2382EEF3000FFD16 /* TextMessageObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA605B832382EEF2000FFD16 /* TextMessageObjcViewController.m */; };
+		AA9A88EE2478026300F6B989 /* SignatureService.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A88EC2478026300F6B989 /* SignatureService.m */; };
+		AAC185772477F0F500B99057 /* UtilitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC185752477F0F500B99057 /* UtilitesViewController.m */; };
+		AAC1857E2477F11A00B99057 /* UIFont+THRFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC185792477F11A00B99057 /* UIFont+THRFonts.swift */; };
+		AAC1857F2477F11A00B99057 /* AttributesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1857A2477F11A00B99057 /* AttributesHelper.swift */; };
+		AAC185802477F11A00B99057 /* UIColor+AltColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1857B2477F11A00B99057 /* UIColor+AltColors.swift */; };
+		AAC185812477F11A00B99057 /* ColorCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1857C2477F11A00B99057 /* ColorCompatibility.swift */; };
+		AAC185822477F11A00B99057 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1857D2477F11A00B99057 /* UIColor+RGB.swift */; };
+		AAC1858B2477F12D00B99057 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC185882477F12D00B99057 /* Storage.m */; };
+		AAC185AA2477F14300B99057 /* ClientsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC185902477F14300B99057 /* ClientsTableViewDataSource.m */; };
+		AAC185AB2477F14300B99057 /* ClientComposerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC185932477F14300B99057 /* ClientComposerViewController.m */; };
+		AAC185AC2477F14300B99057 /* ClientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC185962477F14300B99057 /* ClientTableViewCell.m */; };
+		AAC185AD2477F14300B99057 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC185992477F14300B99057 /* Client.m */; };
+		AAC185AE2477F14300B99057 /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1859A2477F14300B99057 /* ClientsViewController.swift */; };
+		AAC185AF2477F14300B99057 /* ChatInTabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC1859C2477F14300B99057 /* ChatInTabNavigationController.swift */; };
+		AAC185B02477F14300B99057 /* PictureMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC1859E2477F14300B99057 /* PictureMessageViewController.m */; };
+		AAC185B12477F14300B99057 /* PictureMessageSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC185A02477F14300B99057 /* PictureMessageSwiftViewController.swift */; };
+		AAC185B22477F14300B99057 /* IntegrationsViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC185A22477F14300B99057 /* IntegrationsViewController+UITableViewDelegate.swift */; };
+		AAC185B32477F14300B99057 /* IntegrationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC185A32477F14300B99057 /* IntegrationsViewController.swift */; };
+		AAC185B42477F14300B99057 /* TextMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC185A52477F14300B99057 /* TextMessageViewController.m */; };
+		AAC185B52477F14300B99057 /* TextMessageSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC185A72477F14300B99057 /* TextMessageSwiftViewController.swift */; };
+		AAC185B62477F14300B99057 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC185A92477F14300B99057 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -92,29 +58,11 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79CC6AE72355BFDA007A94A1 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				79CC6AE92355BFDB007A94A1 /* Threads.framework in Embed Frameworks */,
-				79CC6AF32355C9D9007A94A1 /* MFMSPushLite.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		79CC69952355B5D8007A94A1 /* ExampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CC699E2355B5D8007A94A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainSwift.storyboard; sourceTree = "<group>"; };
-		79CC6A142355B657007A94A1 /* ExampleObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		79CC6A202355B657007A94A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainObjC.storyboard; sourceTree = "<group>"; };
-		79CC6A2F2355B664007A94A1 /* THRColorCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRColorCompatibility.m; sourceTree = "<group>"; };
-		79CC6A302355B664007A94A1 /* UIColor+AltColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AltColor.h"; sourceTree = "<group>"; };
-		79CC6A312355B664007A94A1 /* THRColorCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRColorCompatibility.h; sourceTree = "<group>"; };
-		79CC6A322355B664007A94A1 /* UIColor+AltColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AltColor.m"; sourceTree = "<group>"; };
 		79CC6A342355B664007A94A1 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
 		79CC6A352355B664007A94A1 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		79CC6A382355B664007A94A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -125,64 +73,44 @@
 		79CC6A3E2355B664007A94A1 /* lato-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-semibold.ttf"; sourceTree = "<group>"; };
 		79CC6A3F2355B664007A94A1 /* lato-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-light.ttf"; sourceTree = "<group>"; };
 		79CC6A402355B664007A94A1 /* lato-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-medium.ttf"; sourceTree = "<group>"; };
-		79CC6A432355B664007A94A1 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
-		79CC6A442355B664007A94A1 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
-		79CC6A482355B664007A94A1 /* ClientsTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientsTableViewDataSource.h; sourceTree = "<group>"; };
-		79CC6A492355B664007A94A1 /* ClientsTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientsTableViewDataSource.m; sourceTree = "<group>"; };
-		79CC6A4B2355B664007A94A1 /* ClientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientTableViewCell.h; sourceTree = "<group>"; };
-		79CC6A4C2355B664007A94A1 /* ClientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientTableViewCell.m; sourceTree = "<group>"; };
-		79CC6A4E2355B664007A94A1 /* ClientComposerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientComposerViewController.h; sourceTree = "<group>"; };
-		79CC6A4F2355B664007A94A1 /* ClientComposerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientComposerViewController.m; sourceTree = "<group>"; };
-		79CC6A512355B664007A94A1 /* PictureMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureMessageViewController.m; sourceTree = "<group>"; };
-		79CC6A522355B664007A94A1 /* PictureMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureMessageViewController.h; sourceTree = "<group>"; };
-		79CC6A542355B664007A94A1 /* TextMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextMessageViewController.m; sourceTree = "<group>"; };
-		79CC6A552355B664007A94A1 /* TextMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextMessageViewController.h; sourceTree = "<group>"; };
-		79CC6A572355B664007A94A1 /* UtilitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilitesViewController.m; sourceTree = "<group>"; };
-		79CC6A582355B664007A94A1 /* UtilitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilitesViewController.h; sourceTree = "<group>"; };
-		79CC6A5A2355B664007A94A1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		79CC6A5B2355B664007A94A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		79CC6A5E2355B664007A94A1 /* SignatureService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureService.m; sourceTree = "<group>"; };
-		79CC6A5F2355B664007A94A1 /* SignatureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureService.h; sourceTree = "<group>"; };
-		79CC6A612355B664007A94A1 /* Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storage.m; sourceTree = "<group>"; };
-		79CC6A622355B664007A94A1 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
 		79CC6A8C2355B72F007A94A1 /* ExampleSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ExampleSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		79CC6A8D2355B72F007A94A1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CC6A8E2355B72F007A94A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79CC6A932355B79A007A94A1 /* ClientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
-		79CC6A952355B79A007A94A1 /* ChatInTabNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInTabNavigationController.swift; sourceTree = "<group>"; };
-		79CC6A972355B79A007A94A1 /* PictureMessageSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureMessageSwiftViewController.swift; sourceTree = "<group>"; };
-		79CC6A992355B79A007A94A1 /* IntegrationsViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IntegrationsViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
-		79CC6A9A2355B79A007A94A1 /* IntegrationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegrationsViewController.swift; sourceTree = "<group>"; };
-		79CC6A9D2355B79A007A94A1 /* TextMessageSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessageSwiftViewController.swift; sourceTree = "<group>"; };
-		79CC6AAE2355BA62007A94A1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		79CC6AAF2355BA62007A94A1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		79CC6AB02355BA62007A94A1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		79CC6AB12355BA62007A94A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79CC6AD12355BAF4007A94A1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainObjC.strings; sourceTree = "<group>"; };
 		79CC6AD32355BAFF007A94A1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainSwift.strings; sourceTree = "<group>"; };
 		79CC6ADA2355BE4C007A94A1 /* Threads.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Threads.framework; path = ../Frameworks/universal/Threads.framework; sourceTree = "<group>"; };
 		79CC6AE32355BF21007A94A1 /* ExampleSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExampleSwift.entitlements; sourceTree = "<group>"; };
-		79CC6AE42355BF2C007A94A1 /* ExampleObjC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExampleObjC.entitlements; sourceTree = "<group>"; };
 		79CC6AED2355C7CE007A94A1 /* MFMSPushLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MFMSPushLite.framework; path = ../Frameworks/universal/MFMSPushLite.framework; sourceTree = "<group>"; };
-		AA492DF62435C46800C11B63 /* AttributesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesHelper.h; sourceTree = "<group>"; };
-		AA492DF72435C46800C11B63 /* AttributesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesHelper.m; sourceTree = "<group>"; };
-		AA492DFA2435C47600C11B63 /* AttributesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributesHelper.swift; sourceTree = "<group>"; };
-		AA492DFF2435D51700C11B63 /* UIFont+THRFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+THRFonts.h"; sourceTree = "<group>"; };
-		AA492E002435D51700C11B63 /* UIFont+THRFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+THRFonts.m"; sourceTree = "<group>"; };
-		AA605B6D2382EC09000FFD16 /* LaunchScreenObjC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreenObjC.storyboard; sourceTree = "<group>"; };
 		AA605B6F2382ECB1000FFD16 /* LaunchScreenSwift.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreenSwift.storyboard; sourceTree = "<group>"; };
-		AA605B732382EEF2000FFD16 /* ClientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientsViewController.h; sourceTree = "<group>"; };
-		AA605B742382EEF2000FFD16 /* ClientsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientsViewController.m; sourceTree = "<group>"; };
-		AA605B762382EEF2000FFD16 /* ChatInTabNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInTabNavigationController.h; sourceTree = "<group>"; };
-		AA605B772382EEF2000FFD16 /* ChatInTabNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInTabNavigationController.m; sourceTree = "<group>"; };
-		AA605B792382EEF2000FFD16 /* PictureMessageObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureMessageObjcViewController.m; sourceTree = "<group>"; };
-		AA605B7A2382EEF2000FFD16 /* PictureMessageObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureMessageObjcViewController.h; sourceTree = "<group>"; };
-		AA605B7D2382EEF2000FFD16 /* IntegrationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegrationsViewController.h; sourceTree = "<group>"; };
-		AA605B7E2382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IntegrationsViewController+UITableViewDelegate.m"; sourceTree = "<group>"; };
-		AA605B802382EEF2000FFD16 /* IntegrationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegrationsViewController.m; sourceTree = "<group>"; };
-		AA605B812382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IntegrationsViewController+UITableViewDelegate.h"; sourceTree = "<group>"; };
-		AA605B832382EEF2000FFD16 /* TextMessageObjcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextMessageObjcViewController.m; sourceTree = "<group>"; };
-		AA605B842382EEF2000FFD16 /* TextMessageObjcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextMessageObjcViewController.h; sourceTree = "<group>"; };
+		AA9A88EC2478026300F6B989 /* SignatureService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureService.m; sourceTree = "<group>"; };
+		AA9A88ED2478026300F6B989 /* SignatureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureService.h; sourceTree = "<group>"; };
+		AAC185752477F0F500B99057 /* UtilitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilitesViewController.m; sourceTree = "<group>"; };
+		AAC185762477F0F500B99057 /* UtilitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilitesViewController.h; sourceTree = "<group>"; };
+		AAC185792477F11A00B99057 /* UIFont+THRFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+THRFonts.swift"; sourceTree = "<group>"; };
+		AAC1857A2477F11A00B99057 /* AttributesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributesHelper.swift; sourceTree = "<group>"; };
+		AAC1857B2477F11A00B99057 /* UIColor+AltColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AltColors.swift"; sourceTree = "<group>"; };
+		AAC1857C2477F11A00B99057 /* ColorCompatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCompatibility.swift; sourceTree = "<group>"; };
+		AAC1857D2477F11A00B99057 /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
+		AAC185882477F12D00B99057 /* Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storage.m; sourceTree = "<group>"; };
+		AAC185892477F12D00B99057 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
+		AAC1858F2477F14300B99057 /* ClientsTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientsTableViewDataSource.h; sourceTree = "<group>"; };
+		AAC185902477F14300B99057 /* ClientsTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientsTableViewDataSource.m; sourceTree = "<group>"; };
+		AAC185922477F14300B99057 /* ClientComposerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientComposerViewController.h; sourceTree = "<group>"; };
+		AAC185932477F14300B99057 /* ClientComposerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientComposerViewController.m; sourceTree = "<group>"; };
+		AAC185952477F14300B99057 /* ClientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientTableViewCell.h; sourceTree = "<group>"; };
+		AAC185962477F14300B99057 /* ClientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientTableViewCell.m; sourceTree = "<group>"; };
+		AAC185982477F14300B99057 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		AAC185992477F14300B99057 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
+		AAC1859A2477F14300B99057 /* ClientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
+		AAC1859C2477F14300B99057 /* ChatInTabNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInTabNavigationController.swift; sourceTree = "<group>"; };
+		AAC1859E2477F14300B99057 /* PictureMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureMessageViewController.m; sourceTree = "<group>"; };
+		AAC1859F2477F14300B99057 /* PictureMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureMessageViewController.h; sourceTree = "<group>"; };
+		AAC185A02477F14300B99057 /* PictureMessageSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureMessageSwiftViewController.swift; sourceTree = "<group>"; };
+		AAC185A22477F14300B99057 /* IntegrationsViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IntegrationsViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		AAC185A32477F14300B99057 /* IntegrationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegrationsViewController.swift; sourceTree = "<group>"; };
+		AAC185A52477F14300B99057 /* TextMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextMessageViewController.m; sourceTree = "<group>"; };
+		AAC185A62477F14300B99057 /* TextMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextMessageViewController.h; sourceTree = "<group>"; };
+		AAC185A72477F14300B99057 /* TextMessageSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessageSwiftViewController.swift; sourceTree = "<group>"; };
+		AAC185A92477F14300B99057 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,24 +123,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79CC6A112355B657007A94A1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				79CC6AE82355BFDB007A94A1 /* Threads.framework in Frameworks */,
-				79CC6AF22355C9D9007A94A1 /* MFMSPushLite.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		799E15322355B4E800E572B8 = {
 			isa = PBXGroup;
 			children = (
-				79CC6A152355B657007A94A1 /* ExampleObjC */,
 				79CC69962355B5D8007A94A1 /* ExampleSwift */,
-				79CC6A2D2355B664007A94A1 /* Shared */,
 				799E153C2355B4E800E572B8 /* Products */,
 				79CC6AA62355B808007A94A1 /* Frameworks */,
 			);
@@ -222,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				79CC69952355B5D8007A94A1 /* ExampleSwift.app */,
-				79CC6A142355B657007A94A1 /* ExampleObjC.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,51 +148,16 @@
 			children = (
 				79CC6AE32355BF21007A94A1 /* ExampleSwift.entitlements */,
 				79CC6A8B2355B72F007A94A1 /* Application */,
-				79CC6A912355B79A007A94A1 /* Controllers */,
-				AA492DF92435C47600C11B63 /* Settings */,
+				79CC6A332355B664007A94A1 /* Configuration */,
+				AAC1858C2477F14300B99057 /* Controllers */,
+				79CC6A362355B664007A94A1 /* Resources */,
+				AAC185832477F12D00B99057 /* Services */,
+				AAC185782477F11A00B99057 /* Settings */,
+				AAC185742477F0F500B99057 /* Utilites */,
 				79CC699D2355B5D8007A94A1 /* MainSwift.storyboard */,
 				AA605B6F2382ECB1000FFD16 /* LaunchScreenSwift.storyboard */,
 			);
 			path = ExampleSwift;
-			sourceTree = "<group>";
-		};
-		79CC6A152355B657007A94A1 /* ExampleObjC */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6AE42355BF2C007A94A1 /* ExampleObjC.entitlements */,
-				79CC6AAD2355BA62007A94A1 /* Application */,
-				AA605B712382EEF2000FFD16 /* Controllers */,
-				AA492DF52435C46800C11B63 /* Settings */,
-				79CC6A1F2355B657007A94A1 /* MainObjC.storyboard */,
-				AA605B6D2382EC09000FFD16 /* LaunchScreenObjC.storyboard */,
-			);
-			path = ExampleObjC;
-			sourceTree = "<group>";
-		};
-		79CC6A2D2355B664007A94A1 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A332355B664007A94A1 /* Configuration */,
-				79CC6A452355B664007A94A1 /* Controllers */,
-				79CC6A412355B664007A94A1 /* Models */,
-				79CC6A362355B664007A94A1 /* Resources */,
-				79CC6A5C2355B664007A94A1 /* Services */,
-				79CC6A2E2355B664007A94A1 /* Settings */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		79CC6A2E2355B664007A94A1 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A312355B664007A94A1 /* THRColorCompatibility.h */,
-				79CC6A2F2355B664007A94A1 /* THRColorCompatibility.m */,
-				79CC6A302355B664007A94A1 /* UIColor+AltColor.h */,
-				79CC6A322355B664007A94A1 /* UIColor+AltColor.m */,
-				AA492DFF2435D51700C11B63 /* UIFont+THRFonts.h */,
-				AA492E002435D51700C11B63 /* UIFont+THRFonts.m */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		79CC6A332355B664007A94A1 /* Configuration */ = {
@@ -310,196 +191,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		79CC6A412355B664007A94A1 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A422355B664007A94A1 /* Client */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		79CC6A422355B664007A94A1 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A432355B664007A94A1 /* Client.h */,
-				79CC6A442355B664007A94A1 /* Client.m */,
-			);
-			path = Client;
-			sourceTree = "<group>";
-		};
-		79CC6A452355B664007A94A1 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A462355B664007A94A1 /* Clients */,
-				79CC6A4D2355B664007A94A1 /* ClientComposer */,
-				79CC6A502355B664007A94A1 /* PictureMessage */,
-				79CC6A532355B664007A94A1 /* TextMessage */,
-				79CC6A562355B664007A94A1 /* Utilites */,
-				79CC6A592355B664007A94A1 /* Main */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		79CC6A462355B664007A94A1 /* Clients */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A472355B664007A94A1 /* DataSource */,
-				79CC6A4A2355B664007A94A1 /* TableViewCell */,
-			);
-			path = Clients;
-			sourceTree = "<group>";
-		};
-		79CC6A472355B664007A94A1 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A482355B664007A94A1 /* ClientsTableViewDataSource.h */,
-				79CC6A492355B664007A94A1 /* ClientsTableViewDataSource.m */,
-			);
-			path = DataSource;
-			sourceTree = "<group>";
-		};
-		79CC6A4A2355B664007A94A1 /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A4B2355B664007A94A1 /* ClientTableViewCell.h */,
-				79CC6A4C2355B664007A94A1 /* ClientTableViewCell.m */,
-			);
-			path = TableViewCell;
-			sourceTree = "<group>";
-		};
-		79CC6A4D2355B664007A94A1 /* ClientComposer */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A4E2355B664007A94A1 /* ClientComposerViewController.h */,
-				79CC6A4F2355B664007A94A1 /* ClientComposerViewController.m */,
-			);
-			path = ClientComposer;
-			sourceTree = "<group>";
-		};
-		79CC6A502355B664007A94A1 /* PictureMessage */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A512355B664007A94A1 /* PictureMessageViewController.m */,
-				79CC6A522355B664007A94A1 /* PictureMessageViewController.h */,
-			);
-			path = PictureMessage;
-			sourceTree = "<group>";
-		};
-		79CC6A532355B664007A94A1 /* TextMessage */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A542355B664007A94A1 /* TextMessageViewController.m */,
-				79CC6A552355B664007A94A1 /* TextMessageViewController.h */,
-			);
-			path = TextMessage;
-			sourceTree = "<group>";
-		};
-		79CC6A562355B664007A94A1 /* Utilites */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A572355B664007A94A1 /* UtilitesViewController.m */,
-				79CC6A582355B664007A94A1 /* UtilitesViewController.h */,
-			);
-			path = Utilites;
-			sourceTree = "<group>";
-		};
-		79CC6A592355B664007A94A1 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A5A2355B664007A94A1 /* MainViewController.m */,
-				79CC6A5B2355B664007A94A1 /* MainViewController.h */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		79CC6A5C2355B664007A94A1 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A5D2355B664007A94A1 /* Signature */,
-				79CC6A602355B664007A94A1 /* Storage */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		79CC6A5D2355B664007A94A1 /* Signature */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A5E2355B664007A94A1 /* SignatureService.m */,
-				79CC6A5F2355B664007A94A1 /* SignatureService.h */,
-			);
-			path = Signature;
-			sourceTree = "<group>";
-		};
-		79CC6A602355B664007A94A1 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A612355B664007A94A1 /* Storage.m */,
-				79CC6A622355B664007A94A1 /* Storage.h */,
-			);
-			path = Storage;
-			sourceTree = "<group>";
-		};
 		79CC6A8B2355B72F007A94A1 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6A8E2355B72F007A94A1 /* Info.plist */,
-				79CC6A8C2355B72F007A94A1 /* ExampleSwift-Bridging-Header.h */,
 				79CC6A8D2355B72F007A94A1 /* AppDelegate.swift */,
+				79CC6A8C2355B72F007A94A1 /* ExampleSwift-Bridging-Header.h */,
+				79CC6A8E2355B72F007A94A1 /* Info.plist */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		79CC6A912355B79A007A94A1 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A922355B79A007A94A1 /* Clients */,
-				79CC6A942355B79A007A94A1 /* ChatInTabNavigationController */,
-				79CC6A962355B79A007A94A1 /* PictureMessage */,
-				79CC6A982355B79A007A94A1 /* Integrations */,
-				79CC6A9C2355B79A007A94A1 /* TextMessage */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		79CC6A922355B79A007A94A1 /* Clients */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A932355B79A007A94A1 /* ClientsViewController.swift */,
-			);
-			path = Clients;
-			sourceTree = "<group>";
-		};
-		79CC6A942355B79A007A94A1 /* ChatInTabNavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A952355B79A007A94A1 /* ChatInTabNavigationController.swift */,
-			);
-			path = ChatInTabNavigationController;
-			sourceTree = "<group>";
-		};
-		79CC6A962355B79A007A94A1 /* PictureMessage */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A972355B79A007A94A1 /* PictureMessageSwiftViewController.swift */,
-			);
-			path = PictureMessage;
-			sourceTree = "<group>";
-		};
-		79CC6A982355B79A007A94A1 /* Integrations */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A992355B79A007A94A1 /* IntegrationsViewController+UITableViewDelegate.swift */,
-				79CC6A9A2355B79A007A94A1 /* IntegrationsViewController.swift */,
-			);
-			path = Integrations;
-			sourceTree = "<group>";
-		};
-		79CC6A9C2355B79A007A94A1 /* TextMessage */ = {
-			isa = PBXGroup;
-			children = (
-				79CC6A9D2355B79A007A94A1 /* TextMessageSwiftViewController.swift */,
-			);
-			path = TextMessage;
 			sourceTree = "<group>";
 		};
 		79CC6AA62355B808007A94A1 /* Frameworks */ = {
@@ -511,91 +210,159 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		79CC6AAD2355BA62007A94A1 /* Application */ = {
+		AA9A88EB2478026300F6B989 /* Signature */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6AB12355BA62007A94A1 /* Info.plist */,
-				79CC6AAF2355BA62007A94A1 /* main.m */,
-				79CC6AAE2355BA62007A94A1 /* AppDelegate.h */,
-				79CC6AB02355BA62007A94A1 /* AppDelegate.m */,
+				AA9A88EC2478026300F6B989 /* SignatureService.m */,
+				AA9A88ED2478026300F6B989 /* SignatureService.h */,
 			);
-			path = Application;
+			name = Signature;
+			path = Services/Signature;
 			sourceTree = "<group>";
 		};
-		AA492DF52435C46800C11B63 /* Settings */ = {
+		AAC185742477F0F500B99057 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
-				AA492DF62435C46800C11B63 /* AttributesHelper.h */,
-				AA492DF72435C46800C11B63 /* AttributesHelper.m */,
+				AAC185762477F0F500B99057 /* UtilitesViewController.h */,
+				AAC185752477F0F500B99057 /* UtilitesViewController.m */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+		AAC185782477F11A00B99057 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AAC1857A2477F11A00B99057 /* AttributesHelper.swift */,
+				AAC1857C2477F11A00B99057 /* ColorCompatibility.swift */,
+				AAC1857B2477F11A00B99057 /* UIColor+AltColors.swift */,
+				AAC1857D2477F11A00B99057 /* UIColor+RGB.swift */,
+				AAC185792477F11A00B99057 /* UIFont+THRFonts.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		AA492DF92435C47600C11B63 /* Settings */ = {
+		AAC185832477F12D00B99057 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AA492DFA2435C47600C11B63 /* AttributesHelper.swift */,
+				AA9A88EB2478026300F6B989 /* Signature */,
+				AAC185872477F12D00B99057 /* Storage */,
 			);
-			path = Settings;
+			path = Services;
 			sourceTree = "<group>";
 		};
-		AA605B712382EEF2000FFD16 /* Controllers */ = {
+		AAC185872477F12D00B99057 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				AA605B722382EEF2000FFD16 /* Clients */,
-				AA605B752382EEF2000FFD16 /* ChatInTabNavigationController */,
-				AA605B782382EEF2000FFD16 /* PictureMessage */,
-				AA605B7B2382EEF2000FFD16 /* Integrations */,
-				AA605B822382EEF2000FFD16 /* TextMessage */,
+				AAC185892477F12D00B99057 /* Storage.h */,
+				AAC185882477F12D00B99057 /* Storage.m */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		AAC1858C2477F14300B99057 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAC1859B2477F14300B99057 /* ChatInTabNavigationController */,
+				AAC1858D2477F14300B99057 /* Clients */,
+				AAC185A12477F14300B99057 /* Integrations */,
+				AAC185A82477F14300B99057 /* Main */,
+				AAC1859D2477F14300B99057 /* PictureMessage */,
+				AAC185A42477F14300B99057 /* TextMessage */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		AA605B722382EEF2000FFD16 /* Clients */ = {
+		AAC1858D2477F14300B99057 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
-				AA605B732382EEF2000FFD16 /* ClientsViewController.h */,
-				AA605B742382EEF2000FFD16 /* ClientsViewController.m */,
+				AAC185972477F14300B99057 /* Client */,
+				AAC185912477F14300B99057 /* ClientComposer */,
+				AAC1858E2477F14300B99057 /* DataSource */,
+				AAC185942477F14300B99057 /* TableViewCell */,
+				AAC1859A2477F14300B99057 /* ClientsViewController.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
 		};
-		AA605B752382EEF2000FFD16 /* ChatInTabNavigationController */ = {
+		AAC1858E2477F14300B99057 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				AA605B762382EEF2000FFD16 /* ChatInTabNavigationController.h */,
-				AA605B772382EEF2000FFD16 /* ChatInTabNavigationController.m */,
+				AAC1858F2477F14300B99057 /* ClientsTableViewDataSource.h */,
+				AAC185902477F14300B99057 /* ClientsTableViewDataSource.m */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		AAC185912477F14300B99057 /* ClientComposer */ = {
+			isa = PBXGroup;
+			children = (
+				AAC185922477F14300B99057 /* ClientComposerViewController.h */,
+				AAC185932477F14300B99057 /* ClientComposerViewController.m */,
+			);
+			path = ClientComposer;
+			sourceTree = "<group>";
+		};
+		AAC185942477F14300B99057 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AAC185952477F14300B99057 /* ClientTableViewCell.h */,
+				AAC185962477F14300B99057 /* ClientTableViewCell.m */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		AAC185972477F14300B99057 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				AAC185982477F14300B99057 /* Client.h */,
+				AAC185992477F14300B99057 /* Client.m */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		AAC1859B2477F14300B99057 /* ChatInTabNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				AAC1859C2477F14300B99057 /* ChatInTabNavigationController.swift */,
 			);
 			path = ChatInTabNavigationController;
 			sourceTree = "<group>";
 		};
-		AA605B782382EEF2000FFD16 /* PictureMessage */ = {
+		AAC1859D2477F14300B99057 /* PictureMessage */ = {
 			isa = PBXGroup;
 			children = (
-				AA605B792382EEF2000FFD16 /* PictureMessageObjcViewController.m */,
-				AA605B7A2382EEF2000FFD16 /* PictureMessageObjcViewController.h */,
+				AAC185A02477F14300B99057 /* PictureMessageSwiftViewController.swift */,
+				AAC1859F2477F14300B99057 /* PictureMessageViewController.h */,
+				AAC1859E2477F14300B99057 /* PictureMessageViewController.m */,
 			);
 			path = PictureMessage;
 			sourceTree = "<group>";
 		};
-		AA605B7B2382EEF2000FFD16 /* Integrations */ = {
+		AAC185A12477F14300B99057 /* Integrations */ = {
 			isa = PBXGroup;
 			children = (
-				AA605B7D2382EEF2000FFD16 /* IntegrationsViewController.h */,
-				AA605B7E2382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.m */,
-				AA605B802382EEF2000FFD16 /* IntegrationsViewController.m */,
-				AA605B812382EEF2000FFD16 /* IntegrationsViewController+UITableViewDelegate.h */,
+				AAC185A32477F14300B99057 /* IntegrationsViewController.swift */,
+				AAC185A22477F14300B99057 /* IntegrationsViewController+UITableViewDelegate.swift */,
 			);
 			path = Integrations;
 			sourceTree = "<group>";
 		};
-		AA605B822382EEF2000FFD16 /* TextMessage */ = {
+		AAC185A42477F14300B99057 /* TextMessage */ = {
 			isa = PBXGroup;
 			children = (
-				AA605B832382EEF2000FFD16 /* TextMessageObjcViewController.m */,
-				AA605B842382EEF2000FFD16 /* TextMessageObjcViewController.h */,
+				AAC185A72477F14300B99057 /* TextMessageSwiftViewController.swift */,
+				AAC185A62477F14300B99057 /* TextMessageViewController.h */,
+				AAC185A52477F14300B99057 /* TextMessageViewController.m */,
 			);
 			path = TextMessage;
+			sourceTree = "<group>";
+		};
+		AAC185A82477F14300B99057 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AAC185A92477F14300B99057 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -619,24 +386,6 @@
 			productReference = 79CC69952355B5D8007A94A1 /* ExampleSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		79CC6A132355B657007A94A1 /* ExampleObjC */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 79CC6A2A2355B658007A94A1 /* Build configuration list for PBXNativeTarget "ExampleObjC" */;
-			buildPhases = (
-				79CC6A102355B657007A94A1 /* Sources */,
-				79CC6A112355B657007A94A1 /* Frameworks */,
-				79CC6A122355B657007A94A1 /* Resources */,
-				79CC6AE72355BFDA007A94A1 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ExampleObjC;
-			productName = ExampleObjC;
-			productReference = 79CC6A142355B657007A94A1 /* ExampleObjC.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -648,9 +397,6 @@
 				ORGANIZATIONNAME = Threads;
 				TargetAttributes = {
 					79CC69942355B5D8007A94A1 = {
-						CreatedOnToolsVersion = 11.1;
-					};
-					79CC6A132355B657007A94A1 = {
 						CreatedOnToolsVersion = 11.1;
 					};
 				};
@@ -670,7 +416,6 @@
 			projectRoot = "";
 			targets = (
 				79CC69942355B5D8007A94A1 /* ExampleSwift */,
-				79CC6A132355B657007A94A1 /* ExampleObjC */,
 			);
 		};
 /* End PBXProject section */
@@ -692,22 +437,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79CC6A122355B657007A94A1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA605B6E2382EC09000FFD16 /* LaunchScreenObjC.storyboard in Resources */,
-				79CC6A762355B664007A94A1 /* lato-medium.ttf in Resources */,
-				79CC6A722355B664007A94A1 /* lato-semibold.ttf in Resources */,
-				79CC6A742355B664007A94A1 /* lato-light.ttf in Resources */,
-				79CC6A6A2355B664007A94A1 /* Localizable.strings in Resources */,
-				79CC6A6E2355B664007A94A1 /* AlternateAttributes.xcassets in Resources */,
-				79CC6A212355B657007A94A1 /* MainObjC.storyboard in Resources */,
-				79CC6A6C2355B664007A94A1 /* Assets.xcassets in Resources */,
-				79CC6A702355B664007A94A1 /* lato-regular.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -715,57 +444,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79CC6A9F2355B79A007A94A1 /* ChatInTabNavigationController.swift in Sources */,
-				79CC6A7B2355B664007A94A1 /* ClientTableViewCell.m in Sources */,
-				AA492DFB2435C47600C11B63 /* AttributesHelper.swift in Sources */,
-				79CC6A832355B664007A94A1 /* UtilitesViewController.m in Sources */,
-				79CC6A632355B664007A94A1 /* THRColorCompatibility.m in Sources */,
-				79CC6AA12355B79A007A94A1 /* IntegrationsViewController+UITableViewDelegate.swift in Sources */,
-				79CC6A9E2355B79A007A94A1 /* ClientsViewController.swift in Sources */,
-				79CC6AA22355B79A007A94A1 /* IntegrationsViewController.swift in Sources */,
-				79CC6AA02355B79A007A94A1 /* PictureMessageSwiftViewController.swift in Sources */,
-				79CC6A652355B664007A94A1 /* UIColor+AltColor.m in Sources */,
+				AAC185AF2477F14300B99057 /* ChatInTabNavigationController.swift in Sources */,
+				AAC185B62477F14300B99057 /* MainViewController.swift in Sources */,
+				AAC185AA2477F14300B99057 /* ClientsTableViewDataSource.m in Sources */,
+				AAC185772477F0F500B99057 /* UtilitesViewController.m in Sources */,
+				AAC1857E2477F11A00B99057 /* UIFont+THRFonts.swift in Sources */,
+				AAC185B22477F14300B99057 /* IntegrationsViewController+UITableViewDelegate.swift in Sources */,
+				AAC185B52477F14300B99057 /* TextMessageSwiftViewController.swift in Sources */,
+				AAC185AE2477F14300B99057 /* ClientsViewController.swift in Sources */,
+				AAC185AB2477F14300B99057 /* ClientComposerViewController.m in Sources */,
+				AAC185812477F11A00B99057 /* ColorCompatibility.swift in Sources */,
+				AAC185B02477F14300B99057 /* PictureMessageViewController.m in Sources */,
+				AAC185B12477F14300B99057 /* PictureMessageSwiftViewController.swift in Sources */,
+				AAC185AD2477F14300B99057 /* Client.m in Sources */,
+				AAC1858B2477F12D00B99057 /* Storage.m in Sources */,
+				AA9A88EE2478026300F6B989 /* SignatureService.m in Sources */,
 				79CC6A8F2355B72F007A94A1 /* AppDelegate.swift in Sources */,
+				AAC185B32477F14300B99057 /* IntegrationsViewController.swift in Sources */,
 				79CC6A672355B664007A94A1 /* Configuration.m in Sources */,
-				AA492E012435D51700C11B63 /* UIFont+THRFonts.m in Sources */,
-				79CC6A872355B664007A94A1 /* SignatureService.m in Sources */,
-				79CC6A892355B664007A94A1 /* Storage.m in Sources */,
-				79CC6A7D2355B664007A94A1 /* ClientComposerViewController.m in Sources */,
-				79CC6A772355B664007A94A1 /* Client.m in Sources */,
-				79CC6AA42355B79A007A94A1 /* TextMessageSwiftViewController.swift in Sources */,
-				79CC6A7F2355B664007A94A1 /* PictureMessageViewController.m in Sources */,
-				79CC6A852355B664007A94A1 /* MainViewController.m in Sources */,
-				79CC6A792355B664007A94A1 /* ClientsTableViewDataSource.m in Sources */,
-				79CC6A812355B664007A94A1 /* TextMessageViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		79CC6A102355B657007A94A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA605B892382EEF3000FFD16 /* IntegrationsViewController+UITableViewDelegate.m in Sources */,
-				79CC6A882355B664007A94A1 /* SignatureService.m in Sources */,
-				AA605B872382EEF3000FFD16 /* PictureMessageObjcViewController.m in Sources */,
-				AA605B862382EEF3000FFD16 /* ChatInTabNavigationController.m in Sources */,
-				79CC6A7E2355B664007A94A1 /* ClientComposerViewController.m in Sources */,
-				79CC6A7C2355B664007A94A1 /* ClientTableViewCell.m in Sources */,
-				AA605B852382EEF3000FFD16 /* ClientsViewController.m in Sources */,
-				79CC6A682355B664007A94A1 /* Configuration.m in Sources */,
-				79CC6A782355B664007A94A1 /* Client.m in Sources */,
-				79CC6A822355B664007A94A1 /* TextMessageViewController.m in Sources */,
-				AA605B8B2382EEF3000FFD16 /* TextMessageObjcViewController.m in Sources */,
-				79CC6A7A2355B664007A94A1 /* ClientsTableViewDataSource.m in Sources */,
-				79CC6A842355B664007A94A1 /* UtilitesViewController.m in Sources */,
-				79CC6A662355B664007A94A1 /* UIColor+AltColor.m in Sources */,
-				79CC6A642355B664007A94A1 /* THRColorCompatibility.m in Sources */,
-				79CC6A802355B664007A94A1 /* PictureMessageViewController.m in Sources */,
-				79CC6A862355B664007A94A1 /* MainViewController.m in Sources */,
-				AA605B8A2382EEF3000FFD16 /* IntegrationsViewController.m in Sources */,
-				AA492DF82435C46800C11B63 /* AttributesHelper.m in Sources */,
-				79CC6AB22355BA62007A94A1 /* main.m in Sources */,
-				79CC6A8A2355B664007A94A1 /* Storage.m in Sources */,
-				79CC6AB32355BA62007A94A1 /* AppDelegate.m in Sources */,
+				AAC185802477F11A00B99057 /* UIColor+AltColors.swift in Sources */,
+				AAC1857F2477F11A00B99057 /* AttributesHelper.swift in Sources */,
+				AAC185822477F11A00B99057 /* UIColor+RGB.swift in Sources */,
+				AAC185AC2477F14300B99057 /* ClientTableViewCell.m in Sources */,
+				AAC185B42477F14300B99057 /* TextMessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,15 +480,6 @@
 				79CC6AD32355BAFF007A94A1 /* ru */,
 			);
 			name = MainSwift.storyboard;
-			sourceTree = "<group>";
-		};
-		79CC6A1F2355B657007A94A1 /* MainObjC.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				79CC6A202355B657007A94A1 /* Base */,
-				79CC6AD12355BAF4007A94A1 /* ru */,
-			);
-			name = MainObjC.storyboard;
 			sourceTree = "<group>";
 		};
 		79CC6A372355B664007A94A1 /* Localizable.strings */ = {
@@ -956,48 +648,10 @@
 					"@executable_path/Frameworks",
 					Threads.framework,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.threads.ExampleSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = im.threads.ExampleObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ExampleSwift/Application/ExampleSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		79CC6A2B2355B658007A94A1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.ObjC;
-				CODE_SIGN_ENTITLEMENTS = ExampleObjC/ExampleObjC.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6U22Z6MLM;
-				INFOPLIST_FILE = "$(SRCROOT)/ExampleObjC/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.threads.ExampleObjC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		79CC6A2C2355B658007A94A1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.ObjC;
-				CODE_SIGN_ENTITLEMENTS = ExampleObjC/ExampleObjC.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6U22Z6MLM;
-				INFOPLIST_FILE = "$(SRCROOT)/ExampleObjC/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.threads.ExampleObjC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1019,15 +673,6 @@
 			buildConfigurations = (
 				79CC69A72355B5D9007A94A1 /* Debug */,
 				79CC69A82355B5D9007A94A1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		79CC6A2A2355B658007A94A1 /* Build configuration list for PBXNativeTarget "ExampleObjC" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				79CC6A2B2355B658007A94A1 /* Debug */,
-				79CC6A2C2355B658007A94A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

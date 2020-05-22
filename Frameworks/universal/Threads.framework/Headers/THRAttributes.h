@@ -29,19 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Navigation bar
 @property (nonatomic, assign, readwrite) BOOL navigationBarVisible;
-//@property (strong, nonatomic, readwrite) UIColor* navigationBarBackgroundColor;
-//@property (strong, nonatomic, readwrite) UIColor* navigationBarTintColor;
 
-//@property (strong, nonatomic, readwrite) UIFont* navigationBarItemFont;
 @property (strong, nonatomic, readwrite) UIColor* navigationBarTitleColor;
 @property (strong, nonatomic, readwrite) UIFont* navigationBarTitleFont;
 @property (strong, nonatomic, readwrite) UIFont* navigationBarSubtitleFont;
 @property (strong, nonatomic, readwrite) UIColor* navigationBarSubtitleColor;
 @property (nonatomic, assign, readwrite) BOOL navigationBarSubtitleShowOrgUnit;
-
-#pragma mark - Navigation animations
-//@property (nonatomic, assign, readwrite) BOOL shouldAnimateShowNavigation;
-//@property (nonatomic, assign, readwrite) BOOL shouldAnimatePopNavigation;
 
 #pragma mark - Placeholder
 @property (strong, nonatomic, readwrite) UIColor* backgroundColor;
@@ -249,6 +242,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) NSString* closeThreadSurveyText;
 @property (strong, nonatomic, readwrite) NSString* closeThreadSurveyAnswerClose;
 @property (strong, nonatomic, readwrite) NSString* closeThreadSurveyAnswerContinue;
+
+#pragma mark - Quick Replies
+@property (nonatomic, strong) UIFont* quickReplyFont;
+@property (nonatomic, strong) NSNumber* quickReplyBorderCornerRadius;
+@property (nonatomic, strong) UIColor* quickReplyBorderColor;
+@property (nonatomic, strong) UIColor* quickReplyBackgroundColor;
+@property (nonatomic, strong) UIColor* quickReplyTextColor;
+@property (nonatomic, strong) UIColor* quickReplyBackgroundColorHighlighted;
+@property (nonatomic, strong) UIColor* quickReplyTextColorHighLighted;
 
 #pragma mark - DataStore
 @property (nonatomic, strong) NSDictionary <NSString *, NSString *> *customHTTPHeadersForDataStore;
