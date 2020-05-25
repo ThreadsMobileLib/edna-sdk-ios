@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
     s.summary      = "Threads iOS SDK"
     s.description  = "Threads Contant-center iOS SDK"
     s.homepage     = "https://threads.im/"
-    s.license      = { :type => "MIT", :file => "LICENSE" }
+    s.license      = { :type => "MIT", :file => "LICENSE" }
     s.author       = { "maslennikov" => "maslennikov@brooma.ru" }
     
     s.platform     = :ios
