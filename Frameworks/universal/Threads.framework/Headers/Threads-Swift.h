@@ -192,6 +192,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
+@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -209,6 +210,80 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSCoder;
+
+/// A layout manager capable of drawing the custom attributes set by the <code>DownStyler</code>.
+/// Insert this into a TextKit stack manually, or use the provided <code>DownTextView</code>.
+SWIFT_CLASS("_TtC7Threads17DownLayoutManager")
+@interface DownLayoutManager : NSLayoutManager
+- (void)drawGlyphsForGlyphRange:(NSRange)glyphsToShow atPoint:(CGPoint)origin;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// A layout manager that draws the line fragments.
+/// Line fragments are the areas with a document that contain lines of text. There
+/// are two types.
+/// <ol>
+///   <li>
+///     A <em>line rect</em> (drawn in red) indicates the maximum rect enclosing the line.
+///     This inlcudes not only the textual content, but also the padding (if any) around that text.
+///   </li>
+///   <li>
+///     A <em>line used rect</em> (drawn in blue) is the smallest rect enclosing the textual content.
+///   </li>
+/// </ol>
+/// The visualization of these rects is useful when determining the paragraph styles
+/// of a <code>DownStyler</code>.
+/// Insert this into a TextKit stack manually, or use the provided <code>DownDebugTextView</code>.
+SWIFT_CLASS("_TtC7Threads22DownDebugLayoutManager")
+@interface DownDebugLayoutManager : DownLayoutManager
+- (void)drawGlyphsForGlyphRange:(NSRange)glyphsToShow atPoint:(CGPoint)origin;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSTextContainer;
+
+/// A text view capable of parsing and rendering markdown via the AST.
+SWIFT_CLASS("_TtC7Threads12DownTextView")
+@interface DownTextView : UITextView
+@property (nonatomic, copy) NSString * _Null_unspecified text;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer * _Nullable)textContainer SWIFT_UNAVAILABLE;
+@end
+
+
+/// A text view capable of parsing and rendering markdown via the AST, as well as line fragments.
+/// See <code>DownDebugLayoutManager</code>.
+SWIFT_CLASS("_TtC7Threads17DownDebugTextView")
+@interface DownDebugTextView : DownTextView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class WKWebViewConfiguration;
+
+SWIFT_CLASS("_TtC7Threads8DownView")
+@interface DownView : WKWebView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration SWIFT_UNAVAILABLE;
+@end
+
+
+
+@class WKNavigationResponse;
+@class WKNavigationAction;
+@class WKNavigation;
+
+@interface DownView (SWIFT_EXTENSION(Threads)) <WKNavigationDelegate>
+- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationResponse:(WKNavigationResponse * _Nonnull)navigationResponse decisionHandler:(void (^ _Nonnull)(WKNavigationResponsePolicy))decisionHandler;
+- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
+- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
+@end
+
 
 
 
@@ -222,6 +297,18 @@ SWIFT_CLASS("_TtC7Threads14MFMSPushHelper")
 @end
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 @interface NSNumber (SWIFT_EXTENSION(Threads))
 + (NSTimeInterval)minutes:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 + (NSTimeInterval)hours:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
@@ -230,6 +317,8 @@ SWIFT_CLASS("_TtC7Threads14MFMSPushHelper")
 + (NSTimeInterval)months:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 + (NSTimeInterval)years:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
 
 
 /// OGP cache object
@@ -346,7 +435,6 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 @class UINib;
 @protocol QuickReplyCellDelegate;
 @class UITraitCollection;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
@@ -378,12 +466,18 @@ SWIFT_CLASS("_TtC7Threads4Task")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class THRAttributes;
 
 SWIFT_CLASS("_TtC7Threads23TransportMessagesParser")
 @interface TransportMessagesParser : NSObject
 + (NSArray<QuickReply *> * _Nullable)getQuickRepliesFromDict:(NSDictionary<NSString *, id> * _Nonnull)dict SWIFT_WARN_UNUSED_RESULT;
++ (NSAttributedString * _Nonnull)getAttrStringFromMarkdown:(NSString * _Nonnull)string withAttributes:(THRAttributes * _Nonnull)attributes isOutgoing:(BOOL)isOutgoing SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+
 
 
 
@@ -591,6 +685,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
+@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -608,6 +703,80 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSCoder;
+
+/// A layout manager capable of drawing the custom attributes set by the <code>DownStyler</code>.
+/// Insert this into a TextKit stack manually, or use the provided <code>DownTextView</code>.
+SWIFT_CLASS("_TtC7Threads17DownLayoutManager")
+@interface DownLayoutManager : NSLayoutManager
+- (void)drawGlyphsForGlyphRange:(NSRange)glyphsToShow atPoint:(CGPoint)origin;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// A layout manager that draws the line fragments.
+/// Line fragments are the areas with a document that contain lines of text. There
+/// are two types.
+/// <ol>
+///   <li>
+///     A <em>line rect</em> (drawn in red) indicates the maximum rect enclosing the line.
+///     This inlcudes not only the textual content, but also the padding (if any) around that text.
+///   </li>
+///   <li>
+///     A <em>line used rect</em> (drawn in blue) is the smallest rect enclosing the textual content.
+///   </li>
+/// </ol>
+/// The visualization of these rects is useful when determining the paragraph styles
+/// of a <code>DownStyler</code>.
+/// Insert this into a TextKit stack manually, or use the provided <code>DownDebugTextView</code>.
+SWIFT_CLASS("_TtC7Threads22DownDebugLayoutManager")
+@interface DownDebugLayoutManager : DownLayoutManager
+- (void)drawGlyphsForGlyphRange:(NSRange)glyphsToShow atPoint:(CGPoint)origin;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSTextContainer;
+
+/// A text view capable of parsing and rendering markdown via the AST.
+SWIFT_CLASS("_TtC7Threads12DownTextView")
+@interface DownTextView : UITextView
+@property (nonatomic, copy) NSString * _Null_unspecified text;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer * _Nullable)textContainer SWIFT_UNAVAILABLE;
+@end
+
+
+/// A text view capable of parsing and rendering markdown via the AST, as well as line fragments.
+/// See <code>DownDebugLayoutManager</code>.
+SWIFT_CLASS("_TtC7Threads17DownDebugTextView")
+@interface DownDebugTextView : DownTextView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class WKWebViewConfiguration;
+
+SWIFT_CLASS("_TtC7Threads8DownView")
+@interface DownView : WKWebView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration SWIFT_UNAVAILABLE;
+@end
+
+
+
+@class WKNavigationResponse;
+@class WKNavigationAction;
+@class WKNavigation;
+
+@interface DownView (SWIFT_EXTENSION(Threads)) <WKNavigationDelegate>
+- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationResponse:(WKNavigationResponse * _Nonnull)navigationResponse decisionHandler:(void (^ _Nonnull)(WKNavigationResponsePolicy))decisionHandler;
+- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
+- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
+@end
+
 
 
 
@@ -621,6 +790,18 @@ SWIFT_CLASS("_TtC7Threads14MFMSPushHelper")
 @end
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 @interface NSNumber (SWIFT_EXTENSION(Threads))
 + (NSTimeInterval)minutes:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 + (NSTimeInterval)hours:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
@@ -629,6 +810,8 @@ SWIFT_CLASS("_TtC7Threads14MFMSPushHelper")
 + (NSTimeInterval)months:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 + (NSTimeInterval)years:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
 
 
 /// OGP cache object
@@ -745,7 +928,6 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 @class UINib;
 @protocol QuickReplyCellDelegate;
 @class UITraitCollection;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
@@ -777,12 +959,18 @@ SWIFT_CLASS("_TtC7Threads4Task")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class THRAttributes;
 
 SWIFT_CLASS("_TtC7Threads23TransportMessagesParser")
 @interface TransportMessagesParser : NSObject
 + (NSArray<QuickReply *> * _Nullable)getQuickRepliesFromDict:(NSDictionary<NSString *, id> * _Nonnull)dict SWIFT_WARN_UNUSED_RESULT;
++ (NSAttributedString * _Nonnull)getAttrStringFromMarkdown:(NSString * _Nonnull)string withAttributes:(THRAttributes * _Nonnull)attributes isOutgoing:(BOOL)isOutgoing SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+
 
 
 

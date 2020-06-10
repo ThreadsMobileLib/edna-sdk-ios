@@ -9,13 +9,15 @@
 import UIKit
 import Threads
 
-class ClientsViewController: UIViewController, ClientsTableViewDataSourceDelegate {
+class ClientsViewController: UIViewController, ClientsDataSourceDelegate {
     
-    @IBOutlet var clientsTableViewDataSource: ClientsTableViewDataSource!
+    @IBOutlet var clientsDataSource: ClientsDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        clientsTableViewDataSource.reactivateLastClient()
+        clientsDataSource.delegate = self
+        clientsDataSource.configureClientsObserver()
+        clientsDataSource.reactivateLastClient()
     }
     
     func isClientSet() -> Bool {

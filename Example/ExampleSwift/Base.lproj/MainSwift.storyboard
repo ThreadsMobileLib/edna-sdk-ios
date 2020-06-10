@@ -59,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ClientTableViewCell" rowHeight="75" id="1aX-YU-Wvz" customClass="ClientTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ClientCell" rowHeight="75" id="1aX-YU-Wvz" customClass="ClientCell" customModule="ExampleSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1aX-YU-Wvz" id="b7k-YN-as3">
@@ -75,13 +75,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOB-jp-SJo">
                                                     <rect key="frame" x="16" y="37" width="249" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <color key="textColor" red="0.35473930840000001" green="0.76119893790000004" blue="0.47162032129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msu-yr-F6l">
-                                                    <rect key="frame" x="67" y="8" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="67" y="8" width="43" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" red="0.3529411764705882" green="0.76078431372549016" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -98,9 +98,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="idLabel" destination="msu-yr-F6l" id="A2L-y8-Q0B"/>
-                                            <outlet property="nameLabel" destination="7wy-br-cgB" id="hqg-Au-2mK"/>
-                                            <outlet property="signatureLabel" destination="kOB-jp-SJo" id="fIa-cn-wTk"/>
+                                            <outlet property="idLabel" destination="msu-yr-F6l" id="SA5-DE-guf"/>
+                                            <outlet property="nameLabel" destination="7wy-br-cgB" id="j5F-BD-gcH"/>
+                                            <outlet property="signatureLabel" destination="kOB-jp-SJo" id="3tM-vr-8IT"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoClients" id="xHV-M6-ydP">
@@ -125,7 +125,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Mso-up-6mT" id="nI0-MW-pXE"/>
+                                    <outlet property="dataSource" destination="Mso-up-6mT" id="nl2-Rl-MZu"/>
                                     <outlet property="delegate" destination="Mso-up-6mT" id="VAF-Gx-TF3"/>
                                 </connections>
                             </tableView>
@@ -146,14 +146,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="clientsTableViewDataSource" destination="Mso-up-6mT" id="wtQ-K0-Zga"/>
+                        <outlet property="clientsDataSource" destination="Mso-up-6mT" id="Pbp-JS-udm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVV-rJ-LXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="Mso-up-6mT" customClass="ClientsTableViewDataSource">
+                <customObject id="Mso-up-6mT" customClass="ClientsDataSource" customModule="ExampleSwift" customModuleProvider="target">
                     <connections>
-                        <outlet property="delegate" destination="VHF-HR-hnX" id="Jea-wi-3bz"/>
-                        <outlet property="tableView" destination="qkD-we-OQv" id="hHw-xa-Lfn"/>
+                        <outlet property="tableView" destination="qkD-we-OQv" id="5Hz-g1-PSB"/>
                     </connections>
                 </customObject>
             </objects>
@@ -514,7 +513,7 @@
         <!--Text Message-->
         <scene sceneID="p6B-vt-kDc">
             <objects>
-                <tableViewController id="omd-ik-LQB" customClass="TextMessageSwiftViewController" customModule="ExampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="omd-ik-LQB" customClass="SendTextViewController" customModule="ExampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Qd5-zG-R5f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -554,14 +553,14 @@
                     <navigationItem key="navigationItem" title="Text Message" id="quo-hI-4Vu">
                         <barButtonItem key="rightBarButtonItem" title="Send" style="done" id="D5F-bU-b2C">
                             <connections>
-                                <action selector="sendMessage:" destination="omd-ik-LQB" id="DNx-iF-ZZY"/>
+                                <action selector="sendMessage:" destination="omd-ik-LQB" id="auu-ef-1P9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityView" destination="6Ap-AN-CNa" id="C9A-sY-rxY"/>
-                        <outlet property="sendBarButton" destination="D5F-bU-b2C" id="zi1-DL-Zcl"/>
-                        <outlet property="textView" destination="d6z-be-Tdv" id="DT6-0M-Brq"/>
+                        <outlet property="activityView" destination="6Ap-AN-CNa" id="J9O-DT-fv4"/>
+                        <outlet property="sendBarButton" destination="D5F-bU-b2C" id="EIh-hK-eSq"/>
+                        <outlet property="textView" destination="d6z-be-Tdv" id="u2o-zO-Koe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDr-SS-tCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -575,7 +574,7 @@
         <!--New Client-->
         <scene sceneID="m9U-eZ-eKC">
             <objects>
-                <tableViewController id="elh-z6-79f" customClass="ClientComposerViewController" sceneMemberID="viewController">
+                <tableViewController id="elh-z6-79f" customClass="ClientComposerVC" customModule="ExampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="KQY-XX-3ZN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -726,18 +725,21 @@
                     <navigationItem key="navigationItem" title="New Client" id="Z7p-5B-H25">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="mRf-fg-9eD">
                             <connections>
-                                <action selector="saveClient:" destination="elh-z6-79f" id="FAH-gD-EVO"/>
+                                <action selector="saveClient:" destination="elh-z6-79f" id="Drt-0V-ncz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityView" destination="hdn-BG-0h3" id="Auv-DR-6IF"/>
-                        <outlet property="appMarkerTextField" destination="BMg-U8-STp" id="7sO-qa-Om8"/>
-                        <outlet property="cleintIdLabel" destination="gkJ-VO-GTV" id="9Gc-zz-mtY"/>
-                        <outlet property="clientIdTextField" destination="n2y-KX-LxL" id="jus-BD-2Gk"/>
-                        <outlet property="clientNameTextField" destination="FRC-F3-T7c" id="cgC-qc-Hjo"/>
-                        <outlet property="saveBarButton" destination="mRf-fg-9eD" id="Fjv-CF-zKo"/>
-                        <outlet property="signatureTextField" destination="Abl-KC-7q8" id="fef-xM-7a7"/>
+                        <outlet property="activityView" destination="hdn-BG-0h3" id="koc-FX-mJJ"/>
+                        <outlet property="appMarkerInput" destination="BMg-U8-STp" id="JFq-t9-jKQ"/>
+                        <outlet property="appMarkerLabel" destination="I1J-eb-PAn" id="d6Y-bE-ykm"/>
+                        <outlet property="clientIdInput" destination="n2y-KX-LxL" id="F2s-TA-urE"/>
+                        <outlet property="clientIdLabel" destination="gkJ-VO-GTV" id="4pT-L0-B5g"/>
+                        <outlet property="clientNameInput" destination="FRC-F3-T7c" id="N2w-gL-cfo"/>
+                        <outlet property="clientNameLabel" destination="96Q-Gf-2N1" id="vj6-Xu-mou"/>
+                        <outlet property="saveButton" destination="mRf-fg-9eD" id="MEk-vk-Kf7"/>
+                        <outlet property="signatureInput" destination="Abl-KC-7q8" id="gzk-Na-I18"/>
+                        <outlet property="signatureLabel" destination="dmt-N3-eki" id="Wot-Q8-kTD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFJ-pP-P0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -768,7 +770,7 @@
         <!--Picture-->
         <scene sceneID="3xU-Jf-RUG">
             <objects>
-                <tableViewController id="0lG-kX-LFw" customClass="PictureMessageSwiftViewController" customModule="ExampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0lG-kX-LFw" customClass="SendPictureViewController" customModule="ExampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="paK-lL-m1c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -835,15 +837,15 @@
                     <navigationItem key="navigationItem" title="Picture" id="qol-kY-VmC">
                         <barButtonItem key="rightBarButtonItem" title="Send" style="done" id="Juv-EU-QNI">
                             <connections>
-                                <action selector="sendImage:" destination="0lG-kX-LFw" id="I3V-X5-3Vq"/>
+                                <action selector="sendImage:" destination="0lG-kX-LFw" id="2Ke-ds-qZt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityView" destination="ACY-Ip-QmM" id="tRZ-hL-HBn"/>
-                        <outlet property="imageView" destination="Za2-He-8IL" id="3g5-qD-awk"/>
-                        <outlet property="noImageLabel" destination="Mn4-Op-tpO" id="tYp-UT-OH3"/>
-                        <outlet property="sendBarButton" destination="Juv-EU-QNI" id="aSg-JA-j1c"/>
+                        <outlet property="activityView" destination="ACY-Ip-QmM" id="TiJ-nl-8jQ"/>
+                        <outlet property="imageView" destination="Za2-He-8IL" id="dQy-vq-z3h"/>
+                        <outlet property="noImageLabel" destination="Mn4-Op-tpO" id="sqx-wR-ohC"/>
+                        <outlet property="sendBarButton" destination="Juv-EU-QNI" id="oTg-ep-IXw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAy-Ub-gMa" userLabel="First Responder" sceneMemberID="firstResponder"/>

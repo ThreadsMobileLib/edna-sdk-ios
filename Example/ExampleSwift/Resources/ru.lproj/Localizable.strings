@@ -18,11 +18,11 @@
 
 /* Signature Service */
 
-"Signature URL is nil" = "Signature URL пустой";
+"Signature URL is invalid" = "Signature URL пустой";
 "clientSignature is absent or empty" = "clientSignature пустой или отсутствует";
 "Empty" = "Пусто";
 
-/* ClientTableViewCell */
+/* ClientCell */
 
 "No Name" = "Нет имени";
 "Signature is missing" = "Подпись отсутствует";
