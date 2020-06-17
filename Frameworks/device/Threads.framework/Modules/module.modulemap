@@ -1,8 +1,13 @@
 framework module Threads {
-  umbrella header "Threads.h"
+  umbrella header "Threads-umbrella.h"
 
   export *
   module * { export * }
+  
+  explicit module libcmark [system][extern_c] {
+      header "node.h"
+      export *
+  }
 }
 
 module Threads.Swift {

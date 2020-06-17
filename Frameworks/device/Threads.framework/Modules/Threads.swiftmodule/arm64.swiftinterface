@@ -7,7 +7,7 @@ import Swift
 @_exported import Threads
 import UIKit
 import WebKit
-import libcmark
+import Threads.libcmark
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ThematicBreak : Threads.BaseNode {
   @objc deinit
 }
@@ -114,7 +114,7 @@ extension DownGroffRenderable {
   public func toGroff(_ options: Threads.DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
 }
 public struct DownGroffRenderer {
-  public static func astToGroff(_ ast: Swift.UnsafeMutablePointer<libcmark.cmark_node>, options: Threads.DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
+  public static func astToGroff(_ ast: Swift.UnsafeMutablePointer<Threads.cmark_node>, options: Threads.DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
 }
 public enum OpenGraph {
 }
@@ -221,7 +221,7 @@ extension DownLaTeXRenderable {
   public func toLaTeX(_ options: Threads.DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
 }
 public struct DownLaTeXRenderer {
-  public static func astToLaTeX(_ ast: Swift.UnsafeMutablePointer<libcmark.cmark_node>, options: Threads.DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
+  public static func astToLaTeX(_ ast: Swift.UnsafeMutablePointer<Threads.cmark_node>, options: Threads.DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Item : Threads.BaseNode {
   @objc deinit
@@ -306,13 +306,13 @@ extension BlockQuote : Swift.CustomDebugStringConvertible {
   }
 }
 public protocol DownASTRenderable : Threads.DownRenderable {
-  func toAST(_ options: Threads.DownOptions) throws -> Swift.UnsafeMutablePointer<libcmark.cmark_node>
+  func toAST(_ options: Threads.DownOptions) throws -> Swift.UnsafeMutablePointer<Threads.cmark_node>
 }
 extension DownASTRenderable {
-  public func toAST(_ options: Threads.DownOptions = .default) throws -> Swift.UnsafeMutablePointer<libcmark.cmark_node>
+  public func toAST(_ options: Threads.DownOptions = .default) throws -> Swift.UnsafeMutablePointer<Threads.cmark_node>
 }
 public struct DownASTRenderer {
-  public static func stringToAST(_ string: Swift.String, options: Threads.DownOptions = .default) throws -> Swift.UnsafeMutablePointer<libcmark.cmark_node>
+  public static func stringToAST(_ string: Swift.String, options: Threads.DownOptions = .default) throws -> Swift.UnsafeMutablePointer<Threads.cmark_node>
 }
 public class ListItemParagraphStyler {
   public var indentation: CoreGraphics.CGFloat {
@@ -332,7 +332,7 @@ extension DownHTMLRenderable {
   public func toHTML(_ options: Threads.DownOptions = .default) throws -> Swift.String
 }
 public struct DownHTMLRenderer {
-  public static func astToHTML(_ ast: Swift.UnsafeMutablePointer<libcmark.cmark_node>, options: Threads.DownOptions = .default) throws -> Swift.String
+  public static func astToHTML(_ ast: Swift.UnsafeMutablePointer<Threads.cmark_node>, options: Threads.DownOptions = .default) throws -> Swift.String
 }
 public struct DownStylerConfiguration {
   public var fonts: Threads.FontCollection
@@ -565,7 +565,7 @@ extension DownXMLRenderable {
   public func toXML(_ options: Threads.DownOptions = .default) throws -> Swift.String
 }
 public struct DownXMLRenderer {
-  public static func astToXML(_ ast: Swift.UnsafeMutablePointer<libcmark.cmark_node>, options: Threads.DownOptions = .default) throws -> Swift.String
+  public static func astToXML(_ ast: Swift.UnsafeMutablePointer<Threads.cmark_node>, options: Threads.DownOptions = .default) throws -> Swift.String
 }
 @objc public protocol OGDataCacheManagerProtocol : ObjectiveC.NSObjectProtocol {
   @objc var updateInterval: Foundation.TimeInterval { get set }
@@ -633,13 +633,13 @@ extension Node {
     get
   }
 }
-public typealias CMarkNode = Swift.UnsafeMutablePointer<libcmark.cmark_node>
-extension UnsafeMutablePointer where Pointee == libcmark.cmark_node {
+public typealias CMarkNode = Swift.UnsafeMutablePointer<Threads.cmark_node>
+extension UnsafeMutablePointer where Pointee == Threads.cmark_node {
   public func wrap() -> Threads.Node?
   public var parent: Threads.CMarkNode? {
     get
   }
-  public var type: libcmark.cmark_node_type {
+  public var type: Threads.cmark_node_type {
     get
   }
   public var literal: Swift.String? {
@@ -651,7 +651,7 @@ extension UnsafeMutablePointer where Pointee == libcmark.cmark_node {
   public var headingLevel: Swift.Int {
     get
   }
-  public var listType: libcmark.cmark_list_type {
+  public var listType: Threads.cmark_list_type {
     get
   }
   public var listStart: Swift.Int {
@@ -749,7 +749,7 @@ extension DownCommonMarkRenderable {
   public func toCommonMark(_ options: Threads.DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
 }
 public struct DownCommonMarkRenderer {
-  public static func astToCommonMark(_ ast: Swift.UnsafeMutablePointer<libcmark.cmark_node>, options: Threads.DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
+  public static func astToCommonMark(_ ast: Swift.UnsafeMutablePointer<Threads.cmark_node>, options: Threads.DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class HtmlBlock : Threads.BaseNode {
   public var literal: Swift.String? {
