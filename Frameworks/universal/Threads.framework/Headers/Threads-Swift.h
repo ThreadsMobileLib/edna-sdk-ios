@@ -287,16 +287,6 @@ SWIFT_CLASS("_TtC7Threads8DownView")
 
 
 
-SWIFT_CLASS("_TtC7Threads14MFMSPushHelper")
-@interface MFMSPushHelper : NSObject
-+ (NSArray<NSString *> * _Nonnull)getFullProviderIds:(NSArray<NSString *> * _Nonnull)providerIds SWIFT_WARN_UNUSED_RESULT;
-+ (NSString * _Nonnull)getFullProviderId:(NSString * _Nonnull)providerId SWIFT_WARN_UNUSED_RESULT;
-+ (NSString * _Nullable)getProviderIdPrefix SWIFT_WARN_UNUSED_RESULT;
-+ (void)saveProviderIdPrefixFromPush:(NSDictionary<NSString *, id> * _Nonnull)dict;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
 
 
 
@@ -464,6 +454,18 @@ SWIFT_CLASS("_TtC7Threads4Task")
 @interface Task : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class THRMessage;
+
+SWIFT_CLASS("_TtC7Threads16ThreadsServerAPI")
+@interface ThreadsServerAPI : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull apiVersion;)
++ (NSString * _Nonnull)apiVersion SWIFT_WARN_UNUSED_RESULT;
++ (void)setServerWithBaseUrl:(NSURL * _Nonnull)baseUrl;
++ (void)markMessagesRead:(NSArray<THRMessage *> * _Nonnull)messages completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
++ (void)getHistoryMessagesWithClientId:(NSString * _Nonnull)clientId count:(NSInteger)count beforeMessage:(THRMessage * _Nullable)beforeMessage completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class THRAttributes;
@@ -780,16 +782,6 @@ SWIFT_CLASS("_TtC7Threads8DownView")
 
 
 
-SWIFT_CLASS("_TtC7Threads14MFMSPushHelper")
-@interface MFMSPushHelper : NSObject
-+ (NSArray<NSString *> * _Nonnull)getFullProviderIds:(NSArray<NSString *> * _Nonnull)providerIds SWIFT_WARN_UNUSED_RESULT;
-+ (NSString * _Nonnull)getFullProviderId:(NSString * _Nonnull)providerId SWIFT_WARN_UNUSED_RESULT;
-+ (NSString * _Nullable)getProviderIdPrefix SWIFT_WARN_UNUSED_RESULT;
-+ (void)saveProviderIdPrefixFromPush:(NSDictionary<NSString *, id> * _Nonnull)dict;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
 
 
 
@@ -957,6 +949,18 @@ SWIFT_CLASS("_TtC7Threads4Task")
 @interface Task : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class THRMessage;
+
+SWIFT_CLASS("_TtC7Threads16ThreadsServerAPI")
+@interface ThreadsServerAPI : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull apiVersion;)
++ (NSString * _Nonnull)apiVersion SWIFT_WARN_UNUSED_RESULT;
++ (void)setServerWithBaseUrl:(NSURL * _Nonnull)baseUrl;
++ (void)markMessagesRead:(NSArray<THRMessage *> * _Nonnull)messages completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
++ (void)getHistoryMessagesWithClientId:(NSString * _Nonnull)clientId count:(NSInteger)count beforeMessage:(THRMessage * _Nullable)beforeMessage completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class THRAttributes;

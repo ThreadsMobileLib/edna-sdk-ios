@@ -3,11 +3,14 @@
 // swift-module-flags: -target x86_64-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Threads
 import CoreData
 import Foundation
+import Threads.Private
 import Swift
 @_exported import Threads
 import UIKit
 import WebKit
 import Threads.libcmark
+import os.log
+import os
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ThematicBreak : Threads.BaseNode {
   @objc deinit
 }
@@ -574,14 +577,6 @@ public struct DownXMLRenderer {
   @objc func updateIfNeeded(cache: Threads.OGCacheData)
   @objc func deleteOGCacheDate(cache: Threads.OGCacheData, completion: ((Swift.Error?) -> Swift.Void)?)
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class MFMSPushHelper : ObjectiveC.NSObject {
-  @objc public class func getFullProviderIds(_ providerIds: [Swift.String]) -> [Swift.String]
-  @objc public class func getFullProviderId(_ providerId: Swift.String) -> Swift.String
-  @objc public class func getProviderIdPrefix() -> Swift.String?
-  @objc public class func saveProviderIdPrefixFromPush(_ dict: Swift.Dictionary<Swift.String, Any>)
-  @objc deinit
-  @objc override dynamic public init()
-}
 public struct DownOptions : Swift.OptionSet {
   public let rawValue: Swift.Int32
   public init(rawValue: Swift.Int32)
@@ -616,6 +611,17 @@ extension Heading : Swift.CustomDebugStringConvertible {
   public var debugDescription: Swift.String {
     get
   }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ThreadsServerAPI : ObjectiveC.NSObject {
+  @objc public static var apiVersion: Swift.String
+  public typealias Completion<T> = (T?, Swift.Error?) -> Swift.Void
+  public typealias HistoryCompletion = Threads.ThreadsServerAPI.Completion<Swift.Array<Threads.THRMessage>>
+  public typealias MessagesReadCompletion = Threads.ThreadsServerAPI.Completion<Swift.Array<Threads.THRMessage>>
+  @objc public static func setServer(baseUrl: Foundation.URL)
+  @objc public static func markMessagesRead(_ messages: Swift.Array<Threads.THRMessage>, completion: @escaping Threads.ThreadsServerAPI.MessagesReadCompletion)
+  @objc public static func getHistoryMessages(clientId: Swift.String, count: Swift.Int, beforeMessage: Threads.THRMessage?, completion: @escaping Threads.ThreadsServerAPI.HistoryCompletion)
+  @objc deinit
+  @objc override dynamic public init()
 }
 public struct ListItemOptions {
   public var maxPrefixDigits: Swift.UInt
@@ -839,6 +845,27 @@ public enum Result<T> {
 }
 public protocol DownRenderable {
   var markdownString: Swift.String { get set }
+}
+extension URLRequest {
+  public enum HTTPMethod : Swift.String {
+    case GET
+    case PUT
+    case POST
+    case DELETE
+    case HEAD
+    case OPTIONS
+    case TRACE
+    case CONNECT
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var method: Foundation.URLRequest.HTTPMethod? {
+    get
+    set(newValue)
+  }
 }
 @objc @_inheritsConvenienceInitializers public class DownDebugLayoutManager : Threads.DownLayoutManager {
   @objc override dynamic public func drawGlyphs(forGlyphRange glyphsToShow: Foundation.NSRange, at origin: CoreGraphics.CGPoint)

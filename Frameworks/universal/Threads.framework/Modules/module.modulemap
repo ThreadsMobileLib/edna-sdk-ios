@@ -8,6 +8,11 @@ framework module Threads {
       header "node.h"
       export *
   }
+  
+  explicit module Private [system] {
+      private header "Threads-private.h"
+      export *
+  }
 }
 
 module Threads.Swift {

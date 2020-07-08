@@ -14,11 +14,8 @@ enum TransportProtocol: String {
     case ThreadsGate
 }
 
-
-
 @objc
 class Configuration: NSObject {
-    
     
     class func string(forKey key: String) -> String {
         return Bundle.main.object(forInfoDictionaryKey: key) as? String ?? ""
@@ -30,7 +27,6 @@ class Configuration: NSObject {
     
     @objc
     public class func summary() -> String {
-        
         
         let array = [NSLocalizedString("Configuration:", comment: ""),
                      "",
