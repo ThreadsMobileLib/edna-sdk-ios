@@ -104,6 +104,30 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
  */
 @property (nonatomic, readwrite) BOOL loadedFromHistory;
 
+#pragma mark - Initialization
+
++ (instancetype) messageWithAuthor: (THRParticipant*) author
+                              date: (NSDate*) date
+                              text: (NSString*) text
+                     formattedText: (NSString*) formattedText
+                             media: (id<JSQMessageMediaData>) media;
+
++ (instancetype) messageWithAuthor:(THRParticipant*) author
+                              text:(NSString*) text;
+
++ (instancetype) messageWithAuthor:(THRParticipant *)author
+                             media:(id<JSQMessageMediaData>)media;
+
++ (instancetype) messageWithAuthor:(THRParticipant *)author
+                              date:(NSDate *)date
+                             media:(id<JSQMessageMediaData>)media;
+
++ (instancetype) messageWithDate:(NSDate*) date media:(id<JSQMessageMediaData>) media;
+
++ (instancetype) messageWithMessage: (THRMessage *) message;
+
+#pragma mark - methods
+
 /**
  *  Returns the formatted date. Uses for message header
  */
@@ -137,103 +161,5 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
 - (void) changeDateTo: (NSDate *) date;
 
 - (void) addProviderId: (NSString*) providerId;
-
-#pragma mark - Initialization
-
-//TODO: description for functions
-
-/**
- *  Initializes and returns a message object having the given senderId, displayName, text,
- *  and current system date.
- *
- *  @param senderId    The unique identifier for the user who sent the message. This value must not be `nil`.
- *  @param displayName The display name for the user who sent the message. This value must not be `nil`.
- *  @param text        The body text of the message. This value must not be `nil`.
- *
- *  @discussion Initializing a `THRMessage` with this method will set `isMediaMessage` to `NO`.
- *
- *  @return An initialized `THRMessage` object if successful, `nil` otherwise.
- */
-+ (instancetype)messageWithAuthor:(THRParticipant*) author
-                             text:(NSString*) text
-                    formattedText:(NSString*) formattedText;
-
-+ (instancetype)messageWithAuthor:(THRParticipant*) author
-                             date:(NSDate*) date
-                             text:(NSString*) text
-                    formattedText:(NSString*) formattedText;
-
-/**
- *  Initializes and returns a message object having the given senderId, senderDisplayName, date, and text.
- *
- *  @param senderId          The unique identifier for the user who sent the message. This value must not be `nil`.
- *  @param senderDisplayName The display name for the user who sent the message. This value must not be `nil`.
- *  @param date              The date that the message was sent. This value must not be `nil`.
- *  @param text              The body text of the message. This value must not be `nil`.
- *
- *  @discussion Initializing a `THRMessage` with this method will set `isMediaMessage` to `NO`.
- *
- *  @return An initialized `THRMessage` object if successful, `nil` otherwise.
- */
-- (instancetype)initWithAuthor:(THRParticipant*) author
-                          date:(NSDate*) date
-                          text:(NSString*) text
-                 formattedText:(NSString*) formattedText;
-
-+ (instancetype)messageWithAuthor: (THRParticipant*) author
-                             date: (NSDate*) date
-                             text: (NSString*) text
-                    formattedText: (NSString*) formattedText
-                            media: (id<JSQMessageMediaData>) media;
-/**
- *  Initializes and returns a message object having the given senderId, displayName, media,
- *  and current system date.
- *
- *  @param senderId    The unique identifier for the user who sent the message. This value must not be `nil`.
- *  @param displayName The display name for the user who sent the message. This value must not be `nil`.
- *  @param media       The media data for the message. This value must not be `nil`.
- *
- *  @discussion Initializing a `THRMessage` with this method will set `isMediaMessage` to `YES`.
- *
- *  @return An initialized `THRMessage` object if successful, `nil` otherwise.
- */
-+ (instancetype)messageWithAuthor:(THRParticipant *)author
-                            media:(id<JSQMessageMediaData>)media;
-
-+ (instancetype)messageWithAuthor:(THRParticipant *)author
-                             date:(NSDate *)date
-                            media:(id<JSQMessageMediaData>)media;
-
-/**
- *  Initializes and returns a message object having the given senderId, displayName, date, and media.
- *
- *  @param senderId          The unique identifier for the user who sent the message. This value must not be `nil`.
- *  @param senderDisplayName The display name for the user who sent the message. This value must not be `nil`.
- *  @param date              The date that the message was sent. This value must not be `nil`.
- *  @param media             The media data for the message. This value must not be `nil`.
- *
- *  @discussion Initializing a `THRMessage` with this method will set `isMediaMessage` to `YES`.
- *
- *  @return An initialized `THRMessage` object if successful, `nil` otherwise.
- */
-- (instancetype)initWithAuthor:(THRParticipant *)author
-                          date:(NSDate *)date
-                         media:(id<JSQMessageMediaData>)media;
-/**
- *  Initializes and returns a message object from NSDictionary.
- *
- *  @param dict     NSDictionary with properties of message
- *
- *  @return An initialized `THRMessage` object if successful, `nil` otherwise.
- */
-- (instancetype)initWithJSON:(NSDictionary *)dict;
-
-/**
- *  Initializes and returns a message object from other message that was encode from coder.
- *
- *  @return An initialized `THRMessage` object.
- */
-+ (instancetype)messageWithMessage: (THRMessage *) message;
-
 
 @end

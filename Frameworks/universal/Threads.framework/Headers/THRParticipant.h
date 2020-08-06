@@ -29,6 +29,8 @@ typedef NS_ENUM(NSUInteger, THRParticipantSex) {
 
 @property (nonatomic, readwrite) JSQMessagesAvatarImage *avatar;
 
++ (instancetype) unknown;
+
 - (instancetype) initWithIdentifier: (NSString*) identifier
                                name: (NSString*) name
                                 sex: (THRParticipantSex) sex NS_DESIGNATED_INITIALIZER;

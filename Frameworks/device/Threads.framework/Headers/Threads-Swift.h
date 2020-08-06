@@ -449,6 +449,30 @@ SWIFT_PROTOCOL("_TtP7Threads22QuickReplyCellDelegate_")
 - (void)didSelectQuickReply:(QuickReply * _Nonnull)quickReply;
 @end
 
+enum Connection : NSInteger;
+
+SWIFT_CLASS("_TtC7Threads16ReachabilityObjC")
+@interface ReachabilityObjC : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ReachabilityObjC * _Nonnull shared;)
++ (ReachabilityObjC * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (void)startNotifying:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))listener;
++ (void)startNotifying;
++ (void)stopNotifying;
++ (void)whenReachable:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))reachable;
++ (void)whenUnreachable:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))unreachable;
++ (BOOL)isConnected SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isConnected SWIFT_WARN_UNUSED_RESULT;
+- (enum Connection)getConnection SWIFT_WARN_UNUSED_RESULT;
+@end
+
+typedef SWIFT_ENUM(NSInteger, Connection, open) {
+  ConnectionUnavailable = 0,
+  ConnectionWifi = 1,
+  ConnectionCellular = 2,
+};
+
 
 SWIFT_CLASS("_TtC7Threads4Task")
 @interface Task : NSObject
@@ -943,6 +967,30 @@ SWIFT_PROTOCOL("_TtP7Threads22QuickReplyCellDelegate_")
 @protocol QuickReplyCellDelegate
 - (void)didSelectQuickReply:(QuickReply * _Nonnull)quickReply;
 @end
+
+enum Connection : NSInteger;
+
+SWIFT_CLASS("_TtC7Threads16ReachabilityObjC")
+@interface ReachabilityObjC : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ReachabilityObjC * _Nonnull shared;)
++ (ReachabilityObjC * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
++ (void)startNotifying:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))listener;
++ (void)startNotifying;
++ (void)stopNotifying;
++ (void)whenReachable:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))reachable;
++ (void)whenUnreachable:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))unreachable;
++ (BOOL)isConnected SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isConnected SWIFT_WARN_UNUSED_RESULT;
+- (enum Connection)getConnection SWIFT_WARN_UNUSED_RESULT;
+@end
+
+typedef SWIFT_ENUM(NSInteger, Connection, open) {
+  ConnectionUnavailable = 0,
+  ConnectionWifi = 1,
+  ConnectionCellular = 2,
+};
 
 
 SWIFT_CLASS("_TtC7Threads4Task")

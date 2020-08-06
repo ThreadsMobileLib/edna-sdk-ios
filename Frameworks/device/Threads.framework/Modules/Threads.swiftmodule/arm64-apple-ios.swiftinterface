@@ -5,6 +5,7 @@ import CoreData
 import Foundation
 import Threads.Private
 import Swift
+import SystemConfiguration
 @_exported import Threads
 import UIKit
 import WebKit
@@ -457,6 +458,43 @@ extension DownView : WebKit.WKNavigationDelegate {
   @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
   @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class ReachabilityObjC : ObjectiveC.NSObject {
+  @objc public static var shared: Threads.ReachabilityObjC
+  @objc public static func startNotifying(_ listener: @escaping (Threads.ReachabilityObjC) -> ())
+  @objc public static func startNotifying()
+  @objc public static func stopNotifying()
+  @objc public static func whenReachable(_ reachable: @escaping (Threads.ReachabilityObjC) -> ())
+  @objc public static func whenUnreachable(_ unreachable: @escaping (Threads.ReachabilityObjC) -> ())
+  @objc public static func isConnected() -> Swift.Bool
+  @objc public func isConnected() -> Swift.Bool
+  @objc public func getConnection() -> Threads.ReachabilityObjC.Connection
+  @objc public enum Connection : Swift.Int, Swift.RawRepresentable {
+    case unavailable
+    case wifi
+    case cellular
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum Connection1 : Swift.CustomStringConvertible {
+    @available(*, deprecated, renamed: "unavailable")
+    case none
+    case unavailable
+    case wifi
+    case cellular
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: Threads.ReachabilityObjC.Connection1, b: Threads.ReachabilityObjC.Connection1) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @objc deinit
+}
 @objc public protocol QuickReplyCellDelegate {
   @objc func didSelectQuickReply(_ quickReply: Threads.QuickReply)
 }
@@ -842,6 +880,91 @@ public enum Result<T> {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class Task : ObjectiveC.NSObject {
   @objc deinit
+}
+public enum ReachabilityError : Swift.Error {
+  case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
+  case failedToCreateWithHostname(Swift.String, Swift.Int32)
+  case unableToSetCallback(Swift.Int32)
+  case unableToSetDispatchQueue(Swift.Int32)
+  case unableToGetFlags(Swift.Int32)
+}
+@available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
+public var ReachabilityChangedNotification: Foundation.NSNotification.Name
+extension NSNotification.Name {
+  public static var reachabilityChanged: Foundation.Notification.Name
+}
+public class Reachability {
+  public typealias NetworkReachable = (Threads.Reachability) -> ()
+  public typealias NetworkUnreachable = (Threads.Reachability) -> ()
+  @available(*, unavailable, renamed: "Connection")
+  public enum NetworkStatus : Swift.CustomStringConvertible {
+    case notReachable
+    case reachableViaWiFi
+    case reachableViaWWAN
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: Threads.Reachability.NetworkStatus, b: Threads.Reachability.NetworkStatus) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public enum Connection : Swift.CustomStringConvertible {
+    @available(*, deprecated, renamed: "unavailable")
+    case none
+    case unavailable
+    case wifi
+    case cellular
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: Threads.Reachability.Connection, b: Threads.Reachability.Connection) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public var whenReachable: Threads.Reachability.NetworkReachable?
+  public var whenUnreachable: Threads.Reachability.NetworkUnreachable?
+  @available(*, deprecated, renamed: "allowsCellularConnection")
+  final public let reachableOnWWAN: Swift.Bool
+  public var allowsCellularConnection: Swift.Bool
+  public var notificationCenter: Foundation.NotificationCenter
+  @available(*, deprecated, renamed: "connection.description")
+  public var currentReachabilityString: Swift.String {
+    get
+  }
+  @available(*, unavailable, renamed: "connection")
+  public var currentReachabilityStatus: Threads.Reachability.Connection {
+    get
+  }
+  public var connection: Threads.Reachability.Connection {
+    get
+  }
+  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
+  public convenience init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  public convenience init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  @objc deinit
+}
+extension Reachability {
+  public func startNotifier() throws
+  public func stopNotifier()
+  @available(*, deprecated, message: "Please use `connection != .none`")
+  public var isReachable: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .cellular`")
+  public var isReachableViaWWAN: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .wifi`")
+  public var isReachableViaWiFi: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
 }
 public protocol DownRenderable {
   var markdownString: Swift.String { get set }
