@@ -7,7 +7,7 @@
 //
 
 #import "THRObject.h"
-#import "JSQMessagesAvatarImage.h"
+#import "THRJSQMessagesAvatarImage.h"
 
 @class UIImage;
 
@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, THRParticipantSex) {
 
 @property (strong, nonatomic, readwrite) UIImage* image;
 
-@property (nonatomic, readwrite) JSQMessagesAvatarImage *avatar;
+@property (nonatomic, readwrite) THRJSQMessagesAvatarImage *avatar;
 
 + (instancetype) unknown;
 

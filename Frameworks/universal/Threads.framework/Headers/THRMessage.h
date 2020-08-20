@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
     THRMessageStatusFailed
 };
 
-@protocol JSQMessageMediaData;
+@protocol THRJSQMessageMediaData;
 
 @interface THRMessage : THRObject <NSCopying>
 
@@ -79,7 +79,7 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
  *  Returns the media item attachment of the message, or `nil` if the message is not a media message.
  *  That is, if `isMediaMessage` is equal to `NO` then this value will be `nil`.
  */
-@property (copy, nonatomic, readwrite) id<JSQMessageMediaData> media;
+@property (copy, nonatomic, readwrite) id<THRJSQMessageMediaData> media;
 
 /**
  *  Returns the current status of the message
@@ -110,19 +110,19 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
                               date: (NSDate*) date
                               text: (NSString*) text
                      formattedText: (NSString*) formattedText
-                             media: (id<JSQMessageMediaData>) media;
+                             media: (id<THRJSQMessageMediaData>) media;
 
 + (instancetype) messageWithAuthor:(THRParticipant*) author
                               text:(NSString*) text;
 
 + (instancetype) messageWithAuthor:(THRParticipant *)author
-                             media:(id<JSQMessageMediaData>)media;
+                             media:(id<THRJSQMessageMediaData>)media;
 
 + (instancetype) messageWithAuthor:(THRParticipant *)author
                               date:(NSDate *)date
-                             media:(id<JSQMessageMediaData>)media;
+                             media:(id<THRJSQMessageMediaData>)media;
 
-+ (instancetype) messageWithDate:(NSDate*) date media:(id<JSQMessageMediaData>) media;
++ (instancetype) messageWithDate:(NSDate*) date media:(id<THRJSQMessageMediaData>) media;
 
 + (instancetype) messageWithMessage: (THRMessage *) message;
 

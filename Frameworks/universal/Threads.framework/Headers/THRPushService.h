@@ -20,7 +20,7 @@ static NSString * _Nonnull const THRForceSyncComplete = @"THRForceSyncComplete";
 @class THRSchedule;
 @class THRSurvey;
 @class TGMessageStatus;
-@class JSQMediaItem;
+@class THRJSQMediaItem;
 
 typedef void(^THRMessageAttachmentCompletion)(NSString * _Nullable url, NSError * _Nullable error);
 
@@ -78,9 +78,9 @@ typedef void(^THRRegistrationCompletion)(BOOL state, NSError * _Nullable error);
 
 - (THRSpecialist *) getSpecilistFromPush: (NSDictionary *) push;
 
-- (JSQMediaItem *) getMediaItemFromPush: (NSDictionary *) push;
+- (THRJSQMediaItem *) getMediaItemFromPush: (NSDictionary *) push;
 
-- (JSQMediaItem *) getMediaItemFromPush: (NSDictionary *) push forSearch:(BOOL)forSearch;
+- (THRJSQMediaItem *) getMediaItemFromPush: (NSDictionary *) push forSearch:(BOOL)forSearch;
 
 - (THRMessage *) getQuotedMessageFromPush: (NSDictionary *) push;
 
