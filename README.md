@@ -6,7 +6,7 @@ Threads iOS sdk libraries and demo project
 Libs:
 
 - `MFMSPushLite.framework` - `v2.5.2`
-- `Threads.framework` - `v3.5.1`
+- `Threads.framework`
 
 Contacts:  
 https://threads.im  
