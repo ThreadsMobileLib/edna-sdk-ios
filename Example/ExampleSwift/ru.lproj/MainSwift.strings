@@ -27,6 +27,12 @@
 "dmt-N3-eki.text" = "Подпись";
 // Signature Field Placeholder
 "Abl-KC-7q8.placeholder" = "Опционально";
+// Data Field Title
+/* Class = "UILabel"; text = "Data"; ObjectID = "8El-Da-HqM"; */
+"8El-Da-HqM.text" = "Данные";
+//Data Field Placeholder
+/* Class = "UITextField"; placeholder = "Optional"; ObjectID = "MfE-eZ-KrO"; */
+"MfE-eZ-KrO.placeholder" = "Опционально";
 // Table Footer
 "NWA-eb-NUl.footerTitle" = "Если \"Подпись\" оставить пустым, то она запросится с сервера. Смотри класс \"SignatureService\".";
 

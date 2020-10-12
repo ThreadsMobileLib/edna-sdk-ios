@@ -244,6 +244,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) NSString* closeThreadSurveyAnswerContinue;
 
 #pragma mark - Quick Replies
+@property (nonatomic, assign, readwrite) BOOL quickRepliesBlockInput;
 @property (nonatomic, strong) UIFont* quickReplyFont;
 @property (nonatomic, strong) NSNumber* quickReplyBorderCornerRadius;
 @property (nonatomic, strong) UIColor* quickReplyBorderColor;

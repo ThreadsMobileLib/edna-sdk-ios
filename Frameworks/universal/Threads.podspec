@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "Threads"
-    s.version      = "3.5.3"
+    s.version      = "3.6.0"
     s.summary      = "Threads iOS SDK"
     s.description  = "Threads Contant-center iOS SDK"
     s.homepage     = "https://threads.im/"

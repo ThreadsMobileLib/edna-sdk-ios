@@ -18,6 +18,8 @@ class ClientComposerVC: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var appMarkerInput: UITextField!
     @IBOutlet weak var signatureLabel: UILabel!
     @IBOutlet weak var signatureInput: UITextField!
+    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var dataInput: UITextField!
     @IBOutlet var activityView: UIActivityIndicatorView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -32,10 +34,17 @@ class ClientComposerVC: UITableViewController, UITextFieldDelegate {
         
         if let clientId = validateClientId(clientIdInput.text) {
             
+            //Autocorrecting wrong quotes input
+            var data = dataInput.text
+            data = data?.replacingOccurrences(of: "“", with: "\"")
+                .replacingOccurrences(of: "”", with: "\"")
+                .replacingOccurrences(of: "„", with: "\"")
+            
             let client = Client.init(id: clientId,
                                      name: clientNameInput.text,
                                      appMarker: appMarkerInput.text,
-                                     signature: signatureInput.text)
+                                     signature: signatureInput.text,
+                                     data: data)
             
             if let signature = client.signature, !signature.isEmpty {
                 addClient(client)
