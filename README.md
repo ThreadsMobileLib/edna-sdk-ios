@@ -1,5 +1,5 @@
-# Threads iOS SDK
-Threads iOS sdk libraries and demo project
+# edna iOS SDK
+edna iOS sdk libraries and demo project
 
 [Documentation and Guides](../../wiki)
 
@@ -10,4 +10,4 @@ Libs:
 
 Contacts:  
 https://threads.im  
-customer@threads.im
+support@edna.ru
