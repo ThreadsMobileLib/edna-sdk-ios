@@ -1,0 +1,21 @@
+framework module Threads {
+  umbrella header "Threads-umbrella.h"
+
+  export *
+  module * { export * }
+  
+  explicit module libcmark [system][extern_c] {
+      header "node.h"
+      export *
+  }
+  
+  explicit module Private [system] {
+      private header "Threads-private.h"
+      export *
+  }
+}
+
+module Threads.Swift {
+    header "Threads-Swift.h"
+    requires objc
+}
