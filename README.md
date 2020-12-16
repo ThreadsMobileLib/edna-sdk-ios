@@ -9,5 +9,4 @@ Libs:
 - `Threads.framework`
 
 Contacts:  
-https://threads.im  
-support@edna.ru
+https://edna.ru/<br />support@edna.ru
