@@ -15,3 +15,4 @@
 #import "THRPersistentStorage.h"
 #import "NSDate+THR.h"
 
+#import "THROpenUrlUtils.h"

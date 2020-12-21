@@ -67,6 +67,8 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 
 - (void)threads:(Threads *)threads didChangeDeviceAddress:(NSString *)deviceAddress;
 
+- (BOOL)threads:(Threads *)threads allowOpenUrl:(NSURL *)url;
+
 @end
 
 @interface Threads: NSObject
