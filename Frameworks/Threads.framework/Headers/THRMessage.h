@@ -18,7 +18,8 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
     THRMessageStatusSent,
     THRMessageStatusDelivered,
     THRMessageStatusRead,
-    THRMessageStatusFailed
+    THRMessageStatusFailed,
+    THRMessageStatusNone
 };
 
 @protocol THRJSQMessageMediaData;
