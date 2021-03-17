@@ -8,6 +8,7 @@
 
 import UIKit
 import Threads
+import MFMSPushLite
 import UserNotifications
 
 @UIApplicationMain
