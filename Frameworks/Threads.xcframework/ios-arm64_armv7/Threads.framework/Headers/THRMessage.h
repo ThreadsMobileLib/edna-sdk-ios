@@ -105,6 +105,9 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
  */
 @property (nonatomic, readwrite) BOOL loadedFromHistory;
 
+/// blockInput
+@property (nonatomic, readwrite) BOOL blockInput;
+
 #pragma mark - Initialization
 
 + (instancetype) messageWithAuthor: (THRParticipant*) author
