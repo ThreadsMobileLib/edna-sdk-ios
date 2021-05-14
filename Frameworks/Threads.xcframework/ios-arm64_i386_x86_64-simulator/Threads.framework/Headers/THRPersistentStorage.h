@@ -56,6 +56,14 @@ typedef void(^THRPersistentStorageGetMessagesCompletion)(NSArray<NSDictionary<NS
 
 + (NSString *) currentClientData;
 
++ (void) saveAuthToken:(NSString *)appMarker;
+
++ (NSString *)currentAuthToken;
+
++ (void) saveAuthSchema:(NSString *)appMarker;
+
++ (NSString *)currentAuthSchema;
+
 + (void)resetClientForClientId:(NSString *)clientId;
 
 + (void) saveUuid:(NSString*) uuid forClientId:(NSString*) clientId;

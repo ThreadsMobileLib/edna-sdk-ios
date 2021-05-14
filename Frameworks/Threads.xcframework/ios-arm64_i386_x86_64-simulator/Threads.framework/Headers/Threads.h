@@ -147,6 +147,15 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
  */
 @property (nonatomic, copy, nullable, readonly) NSString *clientSignature;
 
+/**
+ authToken
+ */
+@property (nonatomic, copy, nullable, readonly) NSString *clientAuthToken;
+
+/**
+ authSchema
+ */
+@property (nonatomic, copy, nullable, readonly) NSString *clientAuthSchema;
 
 /**
  Check for setting client
@@ -280,7 +289,7 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
  @param appMarker hreads support connecting multiple apps to a single server. Configure the appMarker identifier on the server and in app. As appMarker can be any unique string. appMarker should be the same for corresponding Android and iOS applications.
  @param signature The clientId authorization signature, the signature should be generated on your server based on the clientId using the RSA private key, then encrypted in Base64. Under the general scheme of work with the signature, see the documentation for Threads-API.
  */
-- (void)setClientWithId:(NSString *)id name:(NSString * _Nullable)name data:(NSString * _Nullable)data appMarker:(NSString * _Nullable)appMarker signature:(NSString * _Nullable)signature;
+- (void)setClientWithId:(NSString *)id name:(NSString * _Nullable)name data:(NSString * _Nullable)data appMarker:(NSString * _Nullable)appMarker signature:(NSString * _Nullable)signature authToken:(NSString * _Nullable)authToken authSchema:(NSString * _Nullable)authSchema;
 
 
 /**
