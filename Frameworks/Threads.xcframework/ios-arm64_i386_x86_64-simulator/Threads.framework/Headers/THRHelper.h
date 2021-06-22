@@ -14,8 +14,8 @@
 
 @class PushNotificationMessage;
 @protocol PushServerApiConfigDataSource;
-@class MFMSPushLite;
-@class MFMSPushLiteDelegate;
+@class EDNAPushLite;
+@class EDNAPushLiteDelegate;
 @class PushServerAPI;
 
 

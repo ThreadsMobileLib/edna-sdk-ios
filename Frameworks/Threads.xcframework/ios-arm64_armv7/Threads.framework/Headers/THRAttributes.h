@@ -252,6 +252,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor* quickReplyBackgroundColorHighlighted;
 @property (nonatomic, strong) UIColor* quickReplyTextColorHighLighted;
 
+#pragma mark - Voice Recording Allowed
+@property (nonatomic, assign) BOOL voiceRecordingAllowed;
+
 #pragma mark - DataStore
 @property (nonatomic, strong) NSDictionary <NSString *, NSString *> *customHTTPHeadersForDataStore;
 @property (nonatomic, strong) NSNumber *historyLoadingCount;

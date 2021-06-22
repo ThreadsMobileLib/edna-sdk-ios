@@ -54,8 +54,8 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 
 @class PushNotificationMessage;
 @protocol PushServerApiConfigDataSource;
-@class MFMSPushLite;
-@class MFMSPushLiteDelegate;
+@class EDNAPushLite;
+@class EDNAPushLiteDelegate;
 @class PushServerAPI;
 
 
@@ -71,7 +71,7 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 
 - (void)threads:(Threads *)threads unreadMessagesCount:(NSUInteger)unreadMessagesCount;
 
-- (id<PushServerApiConfigDataSource>)threads:(Threads *)threads configurePushServerApiFor:(MFMSPushLite *)mfmsPushLite;
+- (id<PushServerApiConfigDataSource>)threads:(Threads *)threads configurePushServerApiFor:(EDNAPushLite *)EDNAPushLite;
 
 - (void)threads:(Threads *)threads didChangeDeviceAddress:(NSString *)deviceAddress;
 
@@ -83,16 +83,16 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 
 
 /**
- Access to MFMSPushLite instance
+ Access to EDNAPushLite instance
  */
-@property (readonly, nullable) MFMSPushLite *mfmsPush;
+@property (readonly, nullable) EDNAPushLite *ednaPush;
 
 @property (nonatomic, weak, nullable) id <ThreadsDelegate> delegate;
 
 /**
- Switch between test and production mfms server. Default value is NO
+ Switch between test and production edna server. Default value is NO
  */
-@property (nonatomic, assign, readonly) BOOL isProductionMFMSServer;
+@property (nonatomic, assign, readonly) BOOL isProductionEDNAServer;
 
 /**
  Client id encryption information
@@ -201,14 +201,14 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 
 
 /**
- Initial MFMS configuration
+ Initial EDNA configuration
 
  @param delegate Threads delegate object
- @param productionMFMSServer Switch between test and production MFMS server
+ @param productionEDNAServer Switch between test and production EDNA server
  @param historyURL History server url
  @param fileUploadingURL File uploading server url
  */
-- (void)configurePushTransportProtocolWithDelegate:(id<ThreadsDelegate> _Nullable)delegate productionMFMSServer:(BOOL)productionMFMSServer historyURL:(NSURL *)historyURL fileUploadingURL:(NSURL *)fileUploadingURL;
+- (void)configurePushTransportProtocolWithDelegate:(id<ThreadsDelegate> _Nullable)delegate productionEDNAServer:(BOOL)productionEDNAServer historyURL:(NSURL *)historyURL fileUploadingURL:(NSURL *)fileUploadingURL;
 
 /**
  Initial Threads Gate configuration

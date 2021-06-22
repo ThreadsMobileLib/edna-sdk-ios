@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class PushNotificationMessage;
 @protocol PushServerApiConfigDataSource;
-@class MFMSPushLite;
-@class MFMSPushLiteDelegate;
+@class EDNAPushLite;
+@class EDNAPushLiteDelegate;
 @class PushServerAPI;
 
 
@@ -75,6 +75,10 @@ typedef void(^THRRegistrationCompletion)(BOOL state, NSError * _Nullable error);
           fileName: (NSString *) fileName
         completion: (THRMessageAttachmentCompletion _Nonnull )completion;
 
+- (void) sendAudioData: (NSData *) audioData
+          fileName: (NSString *) fileName
+            completion: (THRMessageAttachmentCompletion _Nonnull )completion;
+
 - (void) clearNotifications;
 
 - (void) markMessagesAsReadByProviderId:(NSArray *) providerIds;
@@ -99,7 +103,7 @@ typedef void(^THRRegistrationCompletion)(BOOL state, NSError * _Nullable error);
 
 - (NSString *) historySpecialist;
 
-#pragma mark - MFMS
+#pragma mark - EDNA
 
 - (void) forceSync;
 

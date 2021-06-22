@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
 @property (copy, nonatomic, readwrite) NSString *uuid;
 
 /**
- * MessageId in MFMS system, required to mark messages as read
+ * MessageId in EDNA system, required to mark messages as read
  */
 @property (nonatomic, readwrite) NSMutableArray<NSString*>* providerIds;
 
