@@ -255,6 +255,23 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Voice Recording Allowed
 @property (nonatomic, assign) BOOL voiceRecordingAllowed;
 
+@property (nonatomic, strong) UIImage *voiceMessageRecordButtonImage;
+@property (nonatomic, strong) UIImage *voiceMessageSendButtonImage;
+@property (nonatomic, strong) UIColor* voiceMessageRecordSendButtonColor;
+
+@property (nonatomic, strong) UIImage *voiceMessagePlayImage;
+@property (nonatomic, strong) UIImage *voiceMessagePauseImage;
+@property (nonatomic, strong) UIColor* incomingVoiceMessagePlayPauseColor;
+@property (nonatomic, strong) UIColor* outgoingVoiceMessagePlayPauseColor;
+@property (nonatomic, strong) UIColor* previewVoiceMessagePlayPauseColor;
+
+@property (nonatomic, strong) UIColor* incomingVoiceMessageProgressColor;
+@property (nonatomic, strong) UIColor* outgoingVoiceMessageProgressColor;
+@property (nonatomic, strong) UIColor* previewVoiceMessageProgressColor;
+
+#pragma mark - Show close button
+@property (nonatomic, assign) BOOL showCloseButton;
+
 #pragma mark - DataStore
 @property (nonatomic, strong) NSDictionary <NSString *, NSString *> *customHTTPHeadersForDataStore;
 @property (nonatomic, strong) NSNumber *historyLoadingCount;
