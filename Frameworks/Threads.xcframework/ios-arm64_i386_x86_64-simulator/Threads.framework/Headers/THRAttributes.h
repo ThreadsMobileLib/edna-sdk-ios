@@ -272,6 +272,9 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Show close button
 @property (nonatomic, assign) BOOL showCloseButton;
 
+#pragma mark - New API
+@property (nonatomic, assign) BOOL newChatCenterApi;
+
 #pragma mark - DataStore
 @property (nonatomic, strong) NSDictionary <NSString *, NSString *> *customHTTPHeadersForDataStore;
 @property (nonatomic, strong) NSNumber *historyLoadingCount;
