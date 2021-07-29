@@ -53,6 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic, readwrite) UIColor *attachButtonColor;
 @property (strong, nonatomic, readwrite) UIColor *attachButtonHighlightColor;
+@property (assign, nonatomic, readwrite) BOOL showAttachButton;
 
 @property (strong, nonatomic, readwrite) UIColor *sendButtonColor;
 @property (strong, nonatomic, readwrite) UIColor *sendButtonHighlightColor;
@@ -278,6 +279,9 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - DataStore
 @property (nonatomic, strong) NSDictionary <NSString *, NSString *> *customHTTPHeadersForDataStore;
 @property (nonatomic, strong) NSNumber *historyLoadingCount;
+
+#pragma mark - Client validity
+@property (nonatomic, assign) BOOL clientIdIgnoreEnabled;
 
 + (instancetype) defaultAttributes;
 

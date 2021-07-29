@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
 // swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Threads
 import CoreData
 import Foundation
@@ -88,8 +88,8 @@ extension List : Swift.CustomDebugStringConvertible {
   @objc final public func deleteOGData(_ ogData: OpenGraphData, completion: ((Swift.Error?) -> Swift.Void)? = nil)
   @nonobjc final public func deleteOGData(_ ogData: OpenGraph.Data, completion: ((Swift.Error?) -> Swift.Void)? = nil)
   @objc final public func cancelLoading(_ task: Task, shouldContinueDownloading: Swift.Bool)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 public struct CodeBlockOptions {
   public var containerInset: CoreGraphics.CGFloat
@@ -213,8 +213,8 @@ extension SoftBreak : Swift.CustomDebugStringConvertible {
   @objc final public let siteName: Swift.String?
   @objc final public let sourceUrl: Foundation.URL?
   @objc final public let url: Foundation.URL?
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 public protocol DownLaTeXRenderable : DownRenderable {
   func toLaTeX(_ options: DownOptions, width: Swift.Int32) throws -> Swift.String
@@ -240,8 +240,8 @@ extension Item : Swift.CustomDebugStringConvertible {
   @objc final public func clearMemoryCache()
   @objc final public func clearAllCache()
   @objc final public func cancelLoading(_ task: Task, shouldContinueDownloading: Swift.Bool)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CustomInline : BaseNode {
   public var literal: Swift.String? {
@@ -280,8 +280,8 @@ extension CodeBlock : Swift.CustomDebugStringConvertible {
 @objc @_inheritsConvenienceInitializers @objcMembers public class TransportMessagesParser : ObjectiveC.NSObject {
   @objc public class func getQuickRepliesFromDict(_ dict: Swift.Dictionary<Swift.String, Any>) -> Swift.Array<QuickReply>?
   @objc public class func getAttrString(fromMarkdown string: Swift.String, withAttributes attributes: THRAttributes, isOutgoing: Swift.Bool) -> Foundation.NSAttributedString
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Strong : BaseNode {
   @objc deinit
@@ -383,10 +383,10 @@ public enum DownErrors : Swift.Error {
   case astRenderingError
   case htmlDataConversionError
   public static func == (a: DownErrors, b: DownErrors) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
+  public func hash(into hasher: inout Swift.Hasher)
 }
 public typealias DownFont = UIKit.UIFont
 public protocol FontCollection {
@@ -419,8 +419,8 @@ public struct StaticFontCollection : FontCollection {
   @discardableResult
   @nonobjc final public func fetchOGData(urlString: Swift.String, completion: ((OpenGraphDataDownloader.Result) -> Swift.Void)? = nil) -> Task
   @objc final public func cancelLoading(_ task: Task, shouldContinueDownloading: Swift.Bool)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 extension OpenGraphDataDownloader {
   public enum Error : Swift.Error {
@@ -448,8 +448,8 @@ public typealias DownViewClosure = () -> ()
   public init(frame: CoreGraphics.CGRect, markdownString: Swift.String, openLinksInBrowser: Swift.Bool = true, templateBundle: Foundation.Bundle? = nil, writableBundle: Swift.Bool = false, configuration: WebKit.WKWebViewConfiguration? = nil, options: DownOptions = .default, didLoadSuccessfully: DownViewClosure? = nil) throws
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   public func update(markdownString: Swift.String, options: DownOptions? = nil, didLoadSuccessfully: DownViewClosure? = nil) throws
-  @objc override dynamic public init(frame: CoreGraphics.CGRect, configuration: WebKit.WKWebViewConfiguration)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect, configuration: WebKit.WKWebViewConfiguration)
 }
 extension DownView : WebKit.WKNavigationDelegate {
   @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
@@ -470,8 +470,8 @@ extension DownView : WebKit.WKNavigationDelegate {
     case unavailable
     case wifi
     case cellular
-    public init?(rawValue: Swift.Int)
     public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
     public var rawValue: Swift.Int {
       get
     }
@@ -486,10 +486,10 @@ extension DownView : WebKit.WKNavigationDelegate {
       get
     }
     public static func == (a: ReachabilityObjC.Connection1, b: ReachabilityObjC.Connection1) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
+    public func hash(into hasher: inout Swift.Hasher)
   }
   @objc deinit
 }
@@ -509,9 +509,9 @@ extension DownView : WebKit.WKNavigationDelegate {
   @objc public func setWidth(_ width: CoreGraphics.CGFloat)
   @objc override dynamic public func prepareForReuse()
   @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
 public typealias TextView = UIKit.UITextView
 @objc @_hasMissingDesignatedInitializers open class DownTextView : TextView {
@@ -523,9 +523,9 @@ public typealias TextView = UIKit.UITextView
   public convenience init(frame: CoreGraphics.CGRect, styler: Styler = DownStyler())
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   open func render() throws
+  @objc deinit
   @available(iOS 7.0, *)
   @objc override dynamic public init(frame: CoreGraphics.CGRect, textContainer: UIKit.NSTextContainer?)
-  @objc deinit
 }
 public typealias DownColor = UIKit.UIColor
 public protocol ColorCollection {
@@ -584,8 +584,8 @@ extension Paragraph : Swift.CustomDebugStringConvertible {
   @nonobjc final public let ogData: OpenGraph.Data
   @objc final public let createDate: Foundation.Date?
   @objc final public let updateDate: Foundation.Date?
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Document : BaseNode {
   @objc deinit
@@ -625,8 +625,8 @@ public struct DownOptions : Swift.OptionSet {
   public static var validateUTF8: DownOptions
   public static var smart: DownOptions
   public static var smartUnsafe: DownOptions
-  public typealias ArrayLiteralElement = DownOptions
   public typealias Element = DownOptions
+  public typealias ArrayLiteralElement = DownOptions
   public typealias RawValue = Swift.Int32
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class QuickReply : ObjectiveC.NSObject {
@@ -634,8 +634,8 @@ public struct DownOptions : Swift.OptionSet {
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Heading : BaseNode {
   public var headingLevel: Swift.Int {
@@ -656,8 +656,8 @@ extension Heading : Swift.CustomDebugStringConvertible {
   @objc public static func setServer(baseUrl: Foundation.URL)
   @objc public static func markMessagesRead(_ messages: Swift.Array<THRMessage>, completion: @escaping ThreadsServerAPI.MessagesReadCompletion)
   @objc public static func getHistoryMessages(clientId: Swift.String, count: Swift.Int, beforeMessage: THRMessage?, completion: @escaping ThreadsServerAPI.HistoryCompletion)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 public struct ListItemOptions {
   public var maxPrefixDigits: Swift.UInt
@@ -749,9 +749,9 @@ extension NSNumber {
 }
 @objc @_inheritsConvenienceInitializers public class DownLayoutManager : UIKit.NSLayoutManager {
   @objc override dynamic public func drawGlyphs(forGlyphRange glyphsToShow: Foundation.NSRange, at origin: CoreGraphics.CGPoint)
+  @objc deinit
   @objc override dynamic public init()
   @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class BaseNode : Node {
   final public let cmarkNode: CMarkNode
@@ -903,10 +903,10 @@ public class Reachability {
       get
     }
     public static func == (a: Reachability.NetworkStatus, b: Reachability.NetworkStatus) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
+    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum Connection : Swift.CustomStringConvertible {
     @available(*, deprecated, renamed: "unavailable")
@@ -918,10 +918,10 @@ public class Reachability {
       get
     }
     public static func == (a: Reachability.Connection, b: Reachability.Connection) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
+    public func hash(into hasher: inout Swift.Hasher)
   }
   public var whenReachable: Reachability.NetworkReachable?
   public var whenUnreachable: Reachability.NetworkUnreachable?
@@ -977,8 +977,8 @@ extension URLRequest {
     case OPTIONS
     case TRACE
     case CONNECT
-    public init?(rawValue: Swift.String)
     public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
     public var rawValue: Swift.String {
       get
     }
@@ -990,9 +990,9 @@ extension URLRequest {
 }
 @objc @_inheritsConvenienceInitializers public class DownDebugLayoutManager : DownLayoutManager {
   @objc override dynamic public func drawGlyphs(forGlyphRange glyphsToShow: Foundation.NSRange, at origin: CoreGraphics.CGPoint)
+  @objc deinit
   @objc override dynamic public init()
   @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
 open class DownStyler : Styler {
   final public let fonts: FontCollection
