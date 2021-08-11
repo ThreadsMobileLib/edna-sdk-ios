@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class LocalizationConfig;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface THRAttributes : NSObject
@@ -16,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - General
 @property (nonatomic, assign) BOOL canShowDebugScreen;
 
-@property (copy, nonatomic) NSString *helloTitle;
-@property (copy, nonatomic) NSString *helloDescription;
+#pragma mark - Localization
+@property (strong, nonatomic, nullable) LocalizationConfig *localizationConfig;
 
 /**
  *  Works properly for non view controller based status bar appearance
@@ -43,10 +45,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor* placeholderSubtitleColor;
 @property (strong, nonatomic, readwrite) UIFont* placeholderTitleFont;
 @property (strong, nonatomic, readwrite) UIFont* placeholderSubtitleFont;
-
-#pragma mark - Chat state
-@property (strong, nonatomic, readwrite) NSString* chatStateNotConnectedTitle;
-@property (strong, nonatomic, readwrite) NSString* chatStateReadyTitle;
 
 #pragma mark - Toolbar
 @property (strong, nonatomic, readwrite) UIColor *toolbarTintColor;
@@ -238,11 +236,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImage *iconDislikeEmpty;
 @property (nonatomic, strong) UIImage *iconLikeFull;
 @property (nonatomic, strong) UIImage *iconDislikeFull;
-
-#pragma mark - Request Close Thread Survey
-@property (strong, nonatomic, readwrite) NSString* closeThreadSurveyText;
-@property (strong, nonatomic, readwrite) NSString* closeThreadSurveyAnswerClose;
-@property (strong, nonatomic, readwrite) NSString* closeThreadSurveyAnswerContinue;
 
 #pragma mark - Quick Replies
 @property (nonatomic, strong) UIFont* quickReplyFont;
