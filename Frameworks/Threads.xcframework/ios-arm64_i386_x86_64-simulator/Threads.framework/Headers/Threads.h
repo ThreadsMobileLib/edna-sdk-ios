@@ -307,6 +307,12 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 
 #pragma mark - Chat UIViewController
 
+/**
+ Handle push notification
+
+ @param pushNotificationUserInfo push userInfo
+ */
+- (void)handlePushNotificationUserInfo:(NSDictionary * _Nonnull)pushNotificationUserInfo;
 
 /**
  Get Chat UIViewController without completion handler
@@ -324,7 +330,20 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
  @param completionHandler chat initialization and registration result
  @return chat UIViewController
  */
-- (UIViewController *)chatViewControllerWithAttributes:(THRAttributes *)attributes completionHandler:(THROperationCompletion _Nullable)completionHandler;
+- (UIViewController *)chatViewControllerWithAttributes:(THRAttributes *)attributes
+                                     completionHandler:(THROperationCompletion _Nullable)completionHandler;
+
+/**
+ Get Chat UIViewController
+
+ @param attributes chat attributes
+ @param pushUserInfo push notification user info
+ @param completionHandler chat initialization and registration result
+ @return chat UIViewController
+ */
+- (UIViewController *)chatViewControllerWithAttributes:(THRAttributes *)attributes
+                                          pushUserInfo:(NSDictionary * _Nullable)pushUserInfo
+                                     completionHandler:(THROperationCompletion _Nullable)completionHandler;
 
 #pragma mark - Utilites
 

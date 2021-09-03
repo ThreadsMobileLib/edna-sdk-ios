@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		zkJRXJaYFHD5MHrVWPMYcwmJpZ0=
+		kgtpJZG1bzXEbIkAKTSKNJGW+MY=
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		zkJRXJaYFHD5MHrVWPMYcwmJpZ0=
+		kgtpJZG1bzXEbIkAKTSKNJGW+MY=
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5NoHwjExh0S0zd3HSb0y/QiM3p4=
+		ix4tGF8dBGw3ZuHrNBAp4YTpLIc=
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/i386.swiftmodule</key>
 		<data>
-		5NoHwjExh0S0zd3HSb0y/QiM3p4=
+		ix4tGF8dBGw3ZuHrNBAp4YTpLIc=
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		O4R9QTGwmcU5Ya7w3i6TBn+wftU=
+		QdxCECwIQwANPK/QuORrZjNM/QU=
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Modules/EDNAPushLite.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		O4R9QTGwmcU5Ya7w3i6TBn+wftU=
+		QdxCECwIQwANPK/QuORrZjNM/QU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -143,11 +143,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zkJRXJaYFHD5MHrVWPMYcwmJpZ0=
+			kgtpJZG1bzXEbIkAKTSKNJGW+MY=
 			</data>
 			<key>hash2</key>
 			<data>
-			u1tIfDeRi95KPnb/4r1sNxBTY4BW1UjbQQY2WvFayCc=
+			CY25OxIJY9mGNknlOcHkAmV980rXo0LJ3p072oxYl9E=
 			</data>
 		</dict>
 		<key>Modules/EDNAPushLite.swiftmodule/arm64.swiftdoc</key>
@@ -176,11 +176,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zkJRXJaYFHD5MHrVWPMYcwmJpZ0=
+			kgtpJZG1bzXEbIkAKTSKNJGW+MY=
 			</data>
 			<key>hash2</key>
 			<data>
-			u1tIfDeRi95KPnb/4r1sNxBTY4BW1UjbQQY2WvFayCc=
+			CY25OxIJY9mGNknlOcHkAmV980rXo0LJ3p072oxYl9E=
 			</data>
 		</dict>
 		<key>Modules/EDNAPushLite.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -209,11 +209,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5NoHwjExh0S0zd3HSb0y/QiM3p4=
+			ix4tGF8dBGw3ZuHrNBAp4YTpLIc=
 			</data>
 			<key>hash2</key>
 			<data>
-			8yVB59rJqyWFEAvQ9e2bMIuGqUC8Y+XnQDFkXAB+9lo=
+			AEvclruOx/amsOR7bAR/A/C882qcYcYTowK+jddA60Q=
 			</data>
 		</dict>
 		<key>Modules/EDNAPushLite.swiftmodule/i386.swiftdoc</key>
@@ -242,11 +242,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5NoHwjExh0S0zd3HSb0y/QiM3p4=
+			ix4tGF8dBGw3ZuHrNBAp4YTpLIc=
 			</data>
 			<key>hash2</key>
 			<data>
-			8yVB59rJqyWFEAvQ9e2bMIuGqUC8Y+XnQDFkXAB+9lo=
+			AEvclruOx/amsOR7bAR/A/C882qcYcYTowK+jddA60Q=
 			</data>
 		</dict>
 		<key>Modules/EDNAPushLite.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -275,11 +275,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			O4R9QTGwmcU5Ya7w3i6TBn+wftU=
+			QdxCECwIQwANPK/QuORrZjNM/QU=
 			</data>
 			<key>hash2</key>
 			<data>
-			S4RbL9vyarh8IMkVRhPQnlh1rqFN8kgzPQULaWA1GHM=
+			/4XojbaDHNlTw/Va3q4JJVQqJfnzXoF/v1WRTJroZLc=
 			</data>
 		</dict>
 		<key>Modules/EDNAPushLite.swiftmodule/x86_64.swiftdoc</key>
@@ -308,11 +308,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			O4R9QTGwmcU5Ya7w3i6TBn+wftU=
+			QdxCECwIQwANPK/QuORrZjNM/QU=
 			</data>
 			<key>hash2</key>
 			<data>
-			S4RbL9vyarh8IMkVRhPQnlh1rqFN8kgzPQULaWA1GHM=
+			/4XojbaDHNlTw/Va3q4JJVQqJfnzXoF/v1WRTJroZLc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

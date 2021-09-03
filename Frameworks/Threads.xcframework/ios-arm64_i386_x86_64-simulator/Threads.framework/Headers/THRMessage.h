@@ -22,6 +22,16 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
     THRMessageStatusNone
 };
 
+@interface THRRoutingParams : NSObject
+
+@property (nonatomic, assign) NSInteger priority;
+@property (nonatomic, assign) NSInteger skillId;
+@property (nonatomic, copy, nonnull) NSString *expiredAt;
+
+- (NSDictionary * _Nonnull)toDictionary;
+
+@end
+
 @protocol THRJSQMessageMediaData;
 
 @interface THRMessage : THRObject <NSCopying>
@@ -95,6 +105,14 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
 @property (nonatomic, readwrite) NSArray<QuickReply*>* quickReplies;
 
 @property (nonatomic, readwrite) BOOL isQuickReply;
+
+@property (nonatomic, strong, readwrite, nullable) THRRoutingParams *routingParams;
+
+@property (nonatomic, readwrite) BOOL isMassPushMessage;
+
+@property (nonatomic, copy, readwrite, nullable) NSString *campaing;
+
+@property (nonatomic, copy, readwrite, nullable) NSString *chlSentAt;
 /**
  *  Returns YES if current message is system message `N new nessages`.
  */

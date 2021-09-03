@@ -626,6 +626,18 @@ public struct DownXMLRenderer {
   @objc func updateIfNeeded(cache: OGCacheData)
   @objc func deleteOGCacheDate(cache: OGCacheData, completion: ((Swift.Error?) -> Swift.Void)?)
 }
+@objc @objcMembers public class PushUserInfo : ObjectiveC.NSObject {
+  @objc final public let alert: Swift.String
+  @objc final public let skillId: Swift.Int
+  @objc final public let expiredAt: Swift.String
+  @objc final public let chlSentAt: Swift.String
+  @objc final public let campaign: Swift.String
+  @objc final public let priority: Swift.Int
+  @objc final public let senderName: Swift.String
+  @objc public init?(from pushUserInfo: [Swift.String : Any])
+  @objc override dynamic public init()
+  @objc deinit
+}
 public struct DownOptions : Swift.OptionSet {
   public let rawValue: Swift.Int32
   public init(rawValue: Swift.Int32)

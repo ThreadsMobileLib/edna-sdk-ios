@@ -426,6 +426,21 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OpenGraphDat
 
 
 
+SWIFT_CLASS("_TtC7Threads12PushUserInfo")
+@interface PushUserInfo : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull alert;
+@property (nonatomic, readonly) NSInteger skillId;
+@property (nonatomic, readonly, copy) NSString * _Nonnull expiredAt;
+@property (nonatomic, readonly, copy) NSString * _Nonnull chlSentAt;
+@property (nonatomic, readonly, copy) NSString * _Nonnull campaign;
+@property (nonatomic, readonly) NSInteger priority;
+@property (nonatomic, readonly, copy) NSString * _Nonnull senderName;
+- (nullable instancetype)initFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC7Threads10QuickReply")
 @interface QuickReply : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull text;
@@ -953,6 +968,21 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OpenGraphDat
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+
+SWIFT_CLASS("_TtC7Threads12PushUserInfo")
+@interface PushUserInfo : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull alert;
+@property (nonatomic, readonly) NSInteger skillId;
+@property (nonatomic, readonly, copy) NSString * _Nonnull expiredAt;
+@property (nonatomic, readonly, copy) NSString * _Nonnull chlSentAt;
+@property (nonatomic, readonly, copy) NSString * _Nonnull campaign;
+@property (nonatomic, readonly) NSInteger priority;
+@property (nonatomic, readonly, copy) NSString * _Nonnull senderName;
+- (nullable instancetype)initFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 SWIFT_CLASS("_TtC7Threads10QuickReply")
