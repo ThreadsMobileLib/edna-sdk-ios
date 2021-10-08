@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "EDNAClientInfo.h"
+
 @class THRMessage;
 
 typedef void(^THRPersistentStorageGetMessagesCompletion)(NSArray<NSDictionary<NSString*, id>*> *messages, NSError *error);
@@ -35,6 +37,9 @@ typedef void(^THRPersistentStorageGetMessagesCompletion)(NSArray<NSDictionary<NS
 + (void) saveChatState:(NSInteger)state;
 
 + (NSInteger) getChatState;
+
++ (void) saveClientInfo:(EDNAClientInfo*)clientInfo;
++ (EDNAClientInfo*) loadClientInfo;
 
 + (void) saveClientId:(NSString *)clientId;
 

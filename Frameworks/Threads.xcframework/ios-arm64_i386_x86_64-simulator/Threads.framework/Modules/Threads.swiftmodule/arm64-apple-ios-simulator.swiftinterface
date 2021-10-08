@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Threads
 import CoreData
 import Foundation
@@ -8,6 +8,7 @@ import SystemConfiguration
 @_exported import Threads
 import UIKit
 import WebKit
+import _Concurrency
 import os.log
 import os
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ThematicBreak : BaseNode {
@@ -74,7 +75,6 @@ extension List : Swift.CustomDebugStringConvertible {
   @objc final public let bundle: Foundation.Bundle
   @objc final public let tableName: Swift.String
   @objc public init(bundle: Foundation.Bundle, tableName: Swift.String)
-  @objc override dynamic public init()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc final public class OGDataProvider : ObjectiveC.NSObject {
@@ -95,7 +95,6 @@ extension List : Swift.CustomDebugStringConvertible {
   @objc final public func deleteOGData(_ ogData: OpenGraphData, completion: ((Swift.Error?) -> Swift.Void)? = nil)
   @nonobjc final public func deleteOGData(_ ogData: OpenGraph.Data, completion: ((Swift.Error?) -> Swift.Void)? = nil)
   @objc final public func cancelLoading(_ task: Task, shouldContinueDownloading: Swift.Bool)
-  @objc override dynamic public init()
   @objc deinit
 }
 public struct CodeBlockOptions {
@@ -113,7 +112,7 @@ extension CustomBlock : Swift.CustomDebugStringConvertible {
     get
   }
 }
-extension String {
+extension Swift.String {
   public func toHTML(_ options: DownOptions = .default) throws -> Swift.String
 }
 public protocol DownGroffRenderable : DownRenderable {
@@ -220,7 +219,6 @@ extension SoftBreak : Swift.CustomDebugStringConvertible {
   @objc final public let siteName: Swift.String?
   @objc final public let sourceUrl: Foundation.URL?
   @objc final public let url: Foundation.URL?
-  @objc override dynamic public init()
   @objc deinit
 }
 public protocol DownLaTeXRenderable : DownRenderable {
@@ -247,7 +245,6 @@ extension Item : Swift.CustomDebugStringConvertible {
   @objc final public func clearMemoryCache()
   @objc final public func clearAllCache()
   @objc final public func cancelLoading(_ task: Task, shouldContinueDownloading: Swift.Bool)
-  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CustomInline : BaseNode {
@@ -426,7 +423,6 @@ public struct StaticFontCollection : FontCollection {
   @discardableResult
   @nonobjc final public func fetchOGData(urlString: Swift.String, completion: ((OpenGraphDataDownloader.Result) -> Swift.Void)? = nil) -> Task
   @objc final public func cancelLoading(_ task: Task, shouldContinueDownloading: Swift.Bool)
-  @objc override dynamic public init()
   @objc deinit
 }
 extension OpenGraphDataDownloader {
@@ -451,17 +447,16 @@ extension OpenGraphDataDownloader.Result {
   }
 }
 public typealias DownViewClosure = () -> ()
-@objc open class DownView : WebKit.WKWebView {
-  public init(frame: CoreGraphics.CGRect, markdownString: Swift.String, openLinksInBrowser: Swift.Bool = true, templateBundle: Foundation.Bundle? = nil, writableBundle: Swift.Bool = false, configuration: WebKit.WKWebViewConfiguration? = nil, options: DownOptions = .default, didLoadSuccessfully: DownViewClosure? = nil) throws
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
-  public func update(markdownString: Swift.String, options: DownOptions? = nil, didLoadSuccessfully: DownViewClosure? = nil) throws
-  @objc override dynamic public init(frame: CoreGraphics.CGRect, configuration: WebKit.WKWebViewConfiguration)
+@objc @_Concurrency.MainActor(unsafe) open class DownView : WebKit.WKWebView {
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreGraphics.CGRect, markdownString: Swift.String, openLinksInBrowser: Swift.Bool = true, templateBundle: Foundation.Bundle? = nil, writableBundle: Swift.Bool = false, configuration: WebKit.WKWebViewConfiguration? = nil, options: DownOptions = .default, didLoadSuccessfully: DownViewClosure? = nil) throws
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func update(markdownString: Swift.String, options: DownOptions? = nil, didLoadSuccessfully: DownViewClosure? = nil) throws
   @objc deinit
 }
 extension DownView : WebKit.WKNavigationDelegate {
-  @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
-  @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
-  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class ReachabilityObjC : ObjectiveC.NSObject {
   @objc public static var shared: ReachabilityObjC
@@ -503,35 +498,33 @@ extension DownView : WebKit.WKNavigationDelegate {
 @objc public protocol QuickReplyCellDelegate {
   @objc func didSelectQuickReply(_ quickReply: QuickReply)
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class QuickReplyCell : UIKit.UICollectionViewCell {
-  @objc public class var sizingCell: QuickReplyCell! {
+@objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class QuickReplyCell : UIKit.UICollectionViewCell {
+  @objc @_Concurrency.MainActor(unsafe) public class var sizingCell: QuickReplyCell! {
     @objc get
   }
-  @objc @IBOutlet weak public var cellWidth: UIKit.NSLayoutConstraint!
-  @objc @IBOutlet weak public var actionButton: UIKit.UIButton!
-  @objc public class func cellIdentifier() -> Swift.String
-  @objc public class func nib() -> UIKit.UINib
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var cellWidth: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var actionButton: UIKit.UIButton!
+  @objc @_Concurrency.MainActor(unsafe) public class func cellIdentifier() -> Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public class func nib() -> UIKit.UINib
   @objc override dynamic public func awakeFromNib()
-  @objc public func configure(quickReply: QuickReply, delegate: QuickReplyCellDelegate)
-  @objc public func setWidth(_ width: CoreGraphics.CGFloat)
-  @objc override dynamic public func prepareForReuse()
-  @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public func configure(quickReply: QuickReply, delegate: QuickReplyCellDelegate)
+  @objc @_Concurrency.MainActor(unsafe) public func setWidth(_ width: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func prepareForReuse()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public typealias TextView = UIKit.UITextView
-@objc @_hasMissingDesignatedInitializers open class DownTextView : TextView {
-  open var styler: Styler
-  @objc override dynamic open var text: Swift.String! {
-    @objc get
-    @objc set(value)
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class DownTextView : TextView {
+  @_Concurrency.MainActor(unsafe) open var styler: Styler
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var text: Swift.String! {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set(value)
   }
-  public convenience init(frame: CoreGraphics.CGRect, styler: Styler = DownStyler())
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
-  open func render() throws
-  @available(iOS 7.0, *)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor(unsafe) public convenience init(frame: CoreGraphics.CGRect, styler: Styler = DownStyler())
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) open func render() throws
   @objc deinit
 }
 public typealias DownColor = UIKit.UIColor
@@ -591,7 +584,6 @@ extension Paragraph : Swift.CustomDebugStringConvertible {
   @nonobjc final public let ogData: OpenGraph.Data
   @objc final public let createDate: Foundation.Date?
   @objc final public let updateDate: Foundation.Date?
-  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Document : BaseNode {
@@ -635,7 +627,6 @@ public struct DownXMLRenderer {
   @objc final public let priority: Swift.Int
   @objc final public let senderName: Swift.String
   @objc public init?(from pushUserInfo: [Swift.String : Any])
-  @objc override dynamic public init()
   @objc deinit
 }
 public struct DownOptions : Swift.OptionSet {
@@ -659,7 +650,6 @@ public struct DownOptions : Swift.OptionSet {
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
-  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Heading : BaseNode {
@@ -678,6 +668,7 @@ extension Heading : Swift.CustomDebugStringConvertible {
   public typealias Completion<T> = (T?, Swift.Error?) -> Swift.Void
   public typealias HistoryCompletion = ThreadsServerAPI.Completion<Swift.Array<THRMessage>>
   public typealias MessagesReadCompletion = ThreadsServerAPI.Completion<Swift.Array<THRMessage>>
+  @objc public static var isDebugLoggingEnabled: Swift.Bool
   @objc public static func setServer(baseUrl: Foundation.URL)
   @objc public static func markMessagesRead(_ messages: Swift.Array<THRMessage>, completion: @escaping ThreadsServerAPI.MessagesReadCompletion)
   @objc public static func getHistoryMessages(clientId: Swift.String, count: Swift.Int, beforeMessage: THRMessage?, completion: @escaping ThreadsServerAPI.HistoryCompletion)
@@ -701,7 +692,7 @@ extension Node {
   }
 }
 public typealias CMarkNode = Swift.UnsafeMutablePointer<cmark_node>
-extension UnsafeMutablePointer where Pointee == cmark_node {
+extension Swift.UnsafeMutablePointer where Pointee == cmark_node {
   public func wrap() -> Node?
   public var parent: CMarkNode? {
     get
@@ -744,7 +735,7 @@ extension Emphasis : Swift.CustomDebugStringConvertible {
     get
   }
 }
-extension Double {
+extension Swift.Double {
   public var minutes: Foundation.TimeInterval {
     get
   }
@@ -764,7 +755,7 @@ extension Double {
     get
   }
 }
-extension NSNumber {
+extension Foundation.NSNumber {
   @objc dynamic public class func minutes(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
   @objc dynamic public class func hours(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
   @objc dynamic public class func days(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
@@ -843,7 +834,7 @@ extension Image : Swift.CustomDebugStringConvertible {
     get
   }
 }
-extension String {
+extension Swift.String {
   public func md5() -> Swift.String
 }
 public protocol Styler {
@@ -913,7 +904,7 @@ public enum ReachabilityError : Swift.Error {
 }
 @available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
 public var ReachabilityChangedNotification: Foundation.NSNotification.Name
-extension NSNotification.Name {
+extension Foundation.NSNotification.Name {
   public static var reachabilityChanged: Foundation.Notification.Name
 }
 public class Reachability {
@@ -992,7 +983,7 @@ extension Reachability {
 public protocol DownRenderable {
   var markdownString: Swift.String { get set }
 }
-extension URLRequest {
+extension Foundation.URLRequest {
   public enum HTTPMethod : Swift.String {
     case GET
     case PUT
@@ -1050,9 +1041,9 @@ open class DownStyler : Styler {
   open func style(image str: Foundation.NSMutableAttributedString, title: Swift.String?, url: Swift.String?)
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers public class DownDebugTextView : DownTextView {
-  public init(frame: CoreGraphics.CGRect, styler: Styler = DownStyler())
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DownDebugTextView : DownTextView {
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreGraphics.CGRect, styler: Styler = DownStyler())
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public typealias DownFontDescriptor = UIKit.UIFontDescriptor
