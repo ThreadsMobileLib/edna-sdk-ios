@@ -238,13 +238,28 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImage *iconDislikeFull;
 
 #pragma mark - Quick Replies
-@property (nonatomic, strong) UIFont* quickReplyFont;
-@property (nonatomic, strong) NSNumber* quickReplyBorderCornerRadius;
-@property (nonatomic, strong) UIColor* quickReplyBorderColor;
-@property (nonatomic, strong) UIColor* quickReplyBackgroundColor;
-@property (nonatomic, strong) UIColor* quickReplyTextColor;
-@property (nonatomic, strong) UIColor* quickReplyBackgroundColorHighlighted;
-@property (nonatomic, strong) UIColor* quickReplyTextColorHighLighted;
+
+/**
+  Режимы отображения быстрых ответов
+ */
+typedef NS_ENUM(NSUInteger, THRQuickReplyPresentationMode) {
+    THRQuickReplyPresentationModeToolbar, //< Показ кнопок быстрых ответов в всплывающей панели
+    THRQuickReplyPresentationModeEmbed ///< Показ кнопок быстрых ответов в потоке сообщений
+};
+
+/**
+ Настройки панели быстрых ответов
+ */
+@property (nonatomic, assign) THRQuickReplyPresentationMode quickReplyPresentationMode; ///< Режим отображения
+@property (nonatomic, strong) UIFont* quickReplyFont; ///< Шрифт для кнопок быстрых ответов
+@property (nonatomic, strong) NSNumber* quickReplyBorderCornerRadius; ///< Радиус закругления кнопок быстрых ответов
+@property (nonatomic, strong) UIColor* quickReplyBorderColor; ///< Цвет границы кнопок быстрых ответов
+@property (nonatomic, strong) UIColor* quickReplyBackgroundColor; ///< Цвет кнопок быстрых ответов
+@property (nonatomic, strong) UIColor* quickReplyTextColor; ///< Цвет текста на кнопках быстрых ответов
+@property (nonatomic, strong) UIColor* quickReplyBackgroundColorHighlighted; ///<  Цвет подсветки кнопок быстрых ответов
+@property (nonatomic, strong) UIColor* quickReplyTextColorHighLighted; ///< Цвет подстветки кнопок быстрых ответов
+@property (nonatomic, assign) CGFloat quickReplyButtonHeight; ///< Высота кнопки быстрого ответа (в режиме embed)
+@property (nonatomic, assign) CGFloat quickReplyBorderWidth; ///< Толщина границы кнопки быстрого ответа
 
 #pragma mark - Voice Recording Allowed
 @property (nonatomic, assign) BOOL voiceRecordingAllowed;

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		8ITsoqx45rC6eqxcJ6kuySOqbpY=
+		27yK08ahYy8g3/F/ZBbdTJSRfTo=
 		</data>
 		<key>COPYING</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/THRAttributes.h</key>
 		<data>
-		DWdcG1yVilSTzLjhDigK4rED+Ec=
+		JDcfQkJqbfzJ0GNrFvwsDx+zRb0=
 		</data>
 		<key>Headers/THRHelper.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/THRMessage.h</key>
 		<data>
-		5ofrDQG6IfnOHgtf8VeyE6uZnF4=
+		cGWU8HXCsvFkxWnbC6wVCrvsmxs=
 		</data>
 		<key>Headers/THRObject.h</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qhoGqTLXWmThfXpPnUMupWhF/ZI=
+		vCJYbdmwvXiPldkH2KlhaYptnoc=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -271,6 +271,14 @@
 		<key>THRBubbleSurvey.nib</key>
 		<data>
 		3HtLb3YDArj2oiKhdJSxiUq5YYY=
+		</data>
+		<key>THRButtonSelectorCell.nib/objects-12.3+.nib</key>
+		<data>
+		OZt9UpdL8AR0Kr/EoFXyKL707GE=
+		</data>
+		<key>THRButtonSelectorCell.nib/runtime.nib</key>
+		<data>
+		0OGVNCpqwVZRlNQ4Qg0ThpJGYfc=
 		</data>
 		<key>THRChatPlaceholder.nib</key>
 		<data>
@@ -845,11 +853,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8ITsoqx45rC6eqxcJ6kuySOqbpY=
+			27yK08ahYy8g3/F/ZBbdTJSRfTo=
 			</data>
 			<key>hash2</key>
 			<data>
-			o9fc4OlIpUbsRXS6x5fEYy8PjObmUafvvUNA1kcer+s=
+			DUvvzFKg1FZFSaUun3+uRXzI+1gL2np9sdiayWtbrFg=
 			</data>
 		</dict>
 		<key>COPYING</key>
@@ -889,11 +897,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DWdcG1yVilSTzLjhDigK4rED+Ec=
+			JDcfQkJqbfzJ0GNrFvwsDx+zRb0=
 			</data>
 			<key>hash2</key>
 			<data>
-			pSnDrEvNTZ1dYo42YJatZ1+SidTh6Vr5Dfscm9EVX7w=
+			U1LikhSfGftHeN2TTf78VR6Mt6O20H8DNY2+GW2TJAA=
 			</data>
 		</dict>
 		<key>Headers/THRHelper.h</key>
@@ -933,11 +941,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5ofrDQG6IfnOHgtf8VeyE6uZnF4=
+			cGWU8HXCsvFkxWnbC6wVCrvsmxs=
 			</data>
 			<key>hash2</key>
 			<data>
-			zl9Dsb18RDYph2KiA1/EGAMu5oxYnAc6oFvds0jCye8=
+			rcK7JVw9UNDQzrOlabz7fj6JdwMw9pPvJU93Yli1/Y0=
 			</data>
 		</dict>
 		<key>Headers/THRObject.h</key>
@@ -1565,6 +1573,28 @@
 			<key>hash2</key>
 			<data>
 			47ZjYmgH3Zjc/70cdzaQMJQH/ZaCOlGpR5GRk9FXbKU=
+			</data>
+		</dict>
+		<key>THRButtonSelectorCell.nib/objects-12.3+.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OZt9UpdL8AR0Kr/EoFXyKL707GE=
+			</data>
+			<key>hash2</key>
+			<data>
+			RBCdoCx/hqm/bxPPXA5i557qOLjP9VKLbTl7km2VcmI=
+			</data>
+		</dict>
+		<key>THRButtonSelectorCell.nib/runtime.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0OGVNCpqwVZRlNQ4Qg0ThpJGYfc=
+			</data>
+			<key>hash2</key>
+			<data>
+			Inle2JA7qrGMqMof6JY6ZmNF58zFnxBvriTtQo4EPus=
 			</data>
 		</dict>
 		<key>THRChatPlaceholder.nib</key>

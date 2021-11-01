@@ -126,6 +126,7 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
 /// blockInput
 @property (nonatomic, readwrite) BOOL blockInput;
 
+
 #pragma mark - Initialization
 
 + (instancetype) messageWithAuthor: (THRParticipant*) author
@@ -183,5 +184,7 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
 - (void) changeDateTo: (NSDate *) date;
 
 - (void) addProviderId: (NSString*) providerId;
+
+- (THRMessage*_Nullable) quickRepliesMessage;
 
 @end
