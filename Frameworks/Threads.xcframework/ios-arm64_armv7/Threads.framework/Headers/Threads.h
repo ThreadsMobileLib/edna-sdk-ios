@@ -114,6 +114,9 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 
 @property (nonatomic, assign) BOOL isSocketAdditionalDebugLoggingEnabled;
 
+/// Отключение регистрации при старте
+@property (nonatomic, assign) BOOL registrationAtStartupDisable;
+
 /**
  Status bar network activity indicator
  */
