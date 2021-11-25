@@ -59,7 +59,12 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 @class PushServerAPI;
 
 
-
+@protocol ThreadsPreloadView
+@required
+-(void) startAnimation;
+-(void) stopAnimation;
+-(UIView*) getView;
+@end
 
 @protocol ThreadsDelegate <NSObject>
 
@@ -77,7 +82,25 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 
 - (BOOL)threads:(Threads *)threads allowOpenUrl:(NSURL *)url;
 
+- (id<ThreadsPreloadView>) customPreloadView;
+
 @end
+
+
+@interface THRClientInfo : NSObject
+
+@property (nonatomic, strong, nonnull) NSString * clientId;
+@property (nonatomic, strong, nullable) NSString * name;
+@property (nonatomic, strong, nullable) NSString * data;
+@property (nonatomic, strong, nullable) NSString * appMarker;
+@property (nonatomic, strong, nullable) NSString * signature;
+@property (nonatomic, strong, nullable) NSString * authToken;
+@property (nonatomic, strong, nullable) NSString * authSchema;
+
+- (instancetype)initWithClientId:(NSString*)clientId;
+
+@end
+
 
 @interface Threads: NSObject
 
@@ -292,7 +315,13 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
  @param appMarker hreads support connecting multiple apps to a single server. Configure the appMarker identifier on the server and in app. As appMarker can be any unique string. appMarker should be the same for corresponding Android and iOS applications.
  @param signature The clientId authorization signature, the signature should be generated on your server based on the clientId using the RSA private key, then encrypted in Base64. Under the general scheme of work with the signature, see the documentation for Threads-API.
  */
-- (void)setClientWithId:(NSString *)id name:(NSString * _Nullable)name data:(NSString * _Nullable)data appMarker:(NSString * _Nullable)appMarker signature:(NSString * _Nullable)signature authToken:(NSString * _Nullable)authToken authSchema:(NSString * _Nullable)authSchema;
+
+- (void)setClientWithId:(NSString *)id name:(NSString * _Nullable)name data:(NSString * _Nullable)data appMarker:(NSString * _Nullable)appMarker signature:(NSString * _Nullable)signature authToken:(NSString * _Nullable)authToken authSchema:(NSString * _Nullable)authSchema __attribute__((deprecated("Use setClientInfo.")));
+
+/**
+ Client configuration
+ */
+-(void) setClientInfo:(THRClientInfo*)clientInfo;
 
 
 /**
@@ -392,6 +421,8 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
  */
 - (void)sendMessageWithText:(NSString *)text completion:(nullable THROperationCompletion)completion;
 
+/// Отправить запрос регистрации пользователи и сообщение с текстом
+- (void)registerUserWithClientInfo:(THRClientInfo*)clientInfo messageWithText:(NSString * _Nullable)text;
 
 /**
  Send picture message from user programmaticaly

@@ -287,6 +287,15 @@ SWIFT_CLASS("_TtC7Threads8DownView")
 @end
 
 
+@class NSStream;
+
+SWIFT_CLASS("_TtC7Threads19FoundationTransport")
+@interface FoundationTransport : NSObject <NSStreamDelegate>
+- (void)stream:(NSStream * _Nonnull)aStream handleEvent:(NSStreamEvent)eventCode;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 SWIFT_CLASS("_TtC7Threads12Localization")
 @interface Localization : NSObject
@@ -322,6 +331,17 @@ SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 + (NSTimeInterval)years:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+@class NSURLSession;
+@class NSURLSessionWebSocketTask;
+@class NSData;
+
+SWIFT_CLASS("_TtC7Threads12NativeEngine") SWIFT_AVAILABILITY(tvos,introduced=13.0) SWIFT_AVAILABILITY(watchos,introduced=6.0) SWIFT_AVAILABILITY(ios,introduced=13.0) SWIFT_AVAILABILITY(macos,introduced=10.15)
+@interface NativeEngine : NSObject <NSURLSessionDataDelegate, NSURLSessionWebSocketDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didOpenWithProtocol:(NSString * _Nullable)protocol;
+- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didCloseWithCode:(NSURLSessionWebSocketCloseCode)closeCode reason:(NSData * _Nullable)reason;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 @class NSDate;
 
@@ -502,6 +522,36 @@ typedef SWIFT_ENUM(NSInteger, Connection, open) {
   ConnectionCellular = 2,
 };
 
+@protocol SocketConnectionDelegate;
+@class SocketConnectionError;
+
+SWIFT_CLASS("_TtC7Threads16SocketConnection")
+@interface SocketConnection : NSObject
+@property (nonatomic, weak) id <SocketConnectionDelegate> _Nullable delegate;
+@property (nonatomic) BOOL autoReconnect;
+- (void)connectTo:(NSURL * _Nonnull)url;
+- (void)disconnect;
+- (void)reconnect;
+- (void)sendWithData:(NSData * _Nonnull)data completion:(void (^ _Nullable)(SocketConnectionError * _Nullable))completion;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+SWIFT_PROTOCOL("_TtP7Threads24SocketConnectionDelegate_")
+@protocol SocketConnectionDelegate
+- (void)didReceiveData:(NSData * _Nonnull)data;
+- (void)didConnected:(BOOL)isConnected;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads21SocketConnectionError")
+@interface SocketConnectionError : NSObject
+@property (nonatomic) NSError * _Nullable error;
+@property (nonatomic, copy) NSString * _Nullable stringError;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC7Threads4Task")
 @interface Task : NSObject
@@ -539,6 +589,13 @@ SWIFT_CLASS("_TtC7Threads23TransportMessagesParser")
 
 
 
+
+
+SWIFT_CLASS("_TtC7Threads14WaitForNetwork")
+@interface WaitForNetwork : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -834,6 +891,15 @@ SWIFT_CLASS("_TtC7Threads8DownView")
 @end
 
 
+@class NSStream;
+
+SWIFT_CLASS("_TtC7Threads19FoundationTransport")
+@interface FoundationTransport : NSObject <NSStreamDelegate>
+- (void)stream:(NSStream * _Nonnull)aStream handleEvent:(NSStreamEvent)eventCode;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 SWIFT_CLASS("_TtC7Threads12Localization")
 @interface Localization : NSObject
@@ -869,6 +935,17 @@ SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 + (NSTimeInterval)years:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+@class NSURLSession;
+@class NSURLSessionWebSocketTask;
+@class NSData;
+
+SWIFT_CLASS("_TtC7Threads12NativeEngine") SWIFT_AVAILABILITY(tvos,introduced=13.0) SWIFT_AVAILABILITY(watchos,introduced=6.0) SWIFT_AVAILABILITY(ios,introduced=13.0) SWIFT_AVAILABILITY(macos,introduced=10.15)
+@interface NativeEngine : NSObject <NSURLSessionDataDelegate, NSURLSessionWebSocketDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didOpenWithProtocol:(NSString * _Nullable)protocol;
+- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didCloseWithCode:(NSURLSessionWebSocketCloseCode)closeCode reason:(NSData * _Nullable)reason;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 @class NSDate;
 
@@ -1049,6 +1126,36 @@ typedef SWIFT_ENUM(NSInteger, Connection, open) {
   ConnectionCellular = 2,
 };
 
+@protocol SocketConnectionDelegate;
+@class SocketConnectionError;
+
+SWIFT_CLASS("_TtC7Threads16SocketConnection")
+@interface SocketConnection : NSObject
+@property (nonatomic, weak) id <SocketConnectionDelegate> _Nullable delegate;
+@property (nonatomic) BOOL autoReconnect;
+- (void)connectTo:(NSURL * _Nonnull)url;
+- (void)disconnect;
+- (void)reconnect;
+- (void)sendWithData:(NSData * _Nonnull)data completion:(void (^ _Nullable)(SocketConnectionError * _Nullable))completion;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+SWIFT_PROTOCOL("_TtP7Threads24SocketConnectionDelegate_")
+@protocol SocketConnectionDelegate
+- (void)didReceiveData:(NSData * _Nonnull)data;
+- (void)didConnected:(BOOL)isConnected;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads21SocketConnectionError")
+@interface SocketConnectionError : NSObject
+@property (nonatomic) NSError * _Nullable error;
+@property (nonatomic, copy) NSString * _Nullable stringError;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC7Threads4Task")
 @interface Task : NSObject
@@ -1086,6 +1193,13 @@ SWIFT_CLASS("_TtC7Threads23TransportMessagesParser")
 
 
 
+
+
+SWIFT_CLASS("_TtC7Threads14WaitForNetwork")
+@interface WaitForNetwork : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

@@ -31,13 +31,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Navigation bar
 @property (nonatomic, assign, readwrite) BOOL navigationBarVisible;
-
+@property (nonatomic, assign, readwrite) BOOL navigationBarCustomizeTitle;
+@property (nonatomic, retain, readwrite) NSString* navigationBarTitle;
 @property (strong, nonatomic, readwrite) UIColor* navigationBarTitleColor;
 @property (strong, nonatomic, readwrite) UIFont* navigationBarTitleFont;
 @property (strong, nonatomic, readwrite) UIFont* navigationBarSubtitleFont;
 @property (strong, nonatomic, readwrite) UIColor* navigationBarSubtitleColor;
 @property (nonatomic, assign, readwrite) BOOL navigationBarSubtitleShowOrgUnit;
 
+
+#pragma mark - LaunchView
+@property (nonatomic, assign) BOOL launchViewEnable;
+@property (nonatomic, retain) UIColor* launchActivityViewColor;
+@property (nonatomic, retain) UIColor* launchViewBackgroundColor;
+
+@property (nonatomic, retain) UIColor* launchViewInnerBoxBackgroundColor;
+@property (nonatomic, assign) CGFloat launchViewInnerBoxCornerRadius;
+@property (nonatomic, assign) CGSize launchViewInnerBoxSize;
+@property (nonatomic, retain) UIColor* launchViewTextColor;
+@property (nonatomic, retain) UIFont* launchViewTextFont;
 #pragma mark - Placeholder
 @property (strong, nonatomic, readwrite) UIColor* backgroundColor;
 @property (strong, nonatomic, readwrite) UIImage* placeholderImage;
@@ -202,6 +214,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIColor *photoPickerSheetTextColor;
 @property (nonatomic, strong) UIFont *photoPickerSheetTextFont;
+
+@property (nonatomic, assign) NSUInteger photoPickerMaxImagesCount;
+
 
 #pragma mark - FileViewer
 @property (nonatomic, strong) UIColor *fileViewerTitleColor;
