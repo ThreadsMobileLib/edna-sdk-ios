@@ -61,6 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Toolbar
 @property (strong, nonatomic, readwrite) UIColor *toolbarTintColor;
 
+@property (strong, nonatomic, readwrite) UIImage* attachButtonImage;
 @property (strong, nonatomic, readwrite) UIColor *attachButtonColor;
 @property (strong, nonatomic, readwrite) UIColor *attachButtonHighlightColor;
 @property (assign, nonatomic, readwrite) BOOL showAttachButton;
@@ -69,6 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor *sendButtonHighlightColor;
 @property (strong, nonatomic, readwrite) UIColor *sendButtonDisabledColor;
 @property (strong, nonatomic, readwrite) UIFont  *sendButtonFont;
+@property (strong, nonatomic, readwrite) UIImage *sendButtonImage;
 
 @property (strong, nonatomic, readwrite) UIFont* myMessageFont;
 
@@ -76,6 +78,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIFont* toolbarQuotedMessageFont;
 @property (strong, nonatomic, readwrite) UIColor* toolbarQuotedMessageAuthorColor;
 @property (strong, nonatomic, readwrite) UIColor* toolbarQuotedMessageColor;
+
+@property (nonatomic, assign, readwrite) BOOL toolbarInputHasBorder;
+@property (nonatomic, assign, readwrite) CGFloat toolbarInputCornerRadius;
+@property (nonatomic, assign, readwrite) CGFloat toolbarInputMinimumHeight;
+@property (nonatomic, assign, readwrite) CGFloat toolbarInputMaximumHeight;
+@property (nonatomic, strong, readwrite) UIColor* toolbarInputTextColor;
+@property (nonatomic, strong, readwrite) UIColor* toolbarInputCursorColor;
+@property (nonatomic, strong, readwrite) UIColor* toolbarInputBackgroundColor;
 
 #pragma mark - Waiting for specialist
 @property (nonatomic, assign, readwrite) BOOL showWaitingForSpecialistProgress;
@@ -97,6 +107,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic, readwrite) UIImage* messageBubbleFilledMaskImage;
 @property (strong, nonatomic, readwrite) UIImage* messageBubbleStrokedMaskImage;
+@property (nonatomic, assign) UIEdgeInsets messageBubbleFilledMaskInsets;
+@property (nonatomic, assign) UIEdgeInsets messageBubbleStrokedMaskInsets;
+@property (nonatomic, assign, readwrite) CGFloat messageContainerRightOffset;
+@property (nonatomic, assign, readwrite) CGFloat messageContainerLeftOffset;
 
 /**
  *  Right value sets margin to the avatar image

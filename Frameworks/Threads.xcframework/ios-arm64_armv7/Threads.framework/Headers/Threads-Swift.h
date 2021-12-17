@@ -455,6 +455,7 @@ SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 @property (nonatomic, readonly, copy) NSString * _Nonnull campaign;
 @property (nonatomic, readonly) NSInteger priority;
 @property (nonatomic, readonly, copy) NSString * _Nonnull senderName;
+@property (nonatomic, readonly, copy) NSString * _Nullable chatMessageId;
 - (nullable instancetype)initFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1059,6 +1060,7 @@ SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 @property (nonatomic, readonly, copy) NSString * _Nonnull campaign;
 @property (nonatomic, readonly) NSInteger priority;
 @property (nonatomic, readonly, copy) NSString * _Nonnull senderName;
+@property (nonatomic, readonly, copy) NSString * _Nullable chatMessageId;
 - (nullable instancetype)initFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
