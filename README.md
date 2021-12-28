@@ -5,8 +5,7 @@ edna iOS sdk libraries and demo project
 
 Libs:
 
-- `MFMSPushLite.framework` - `v2.5.4`
-- `Threads.framework`
+- `Threads.xcframework`
 
 Contacts:  
 https://edna.ru/<br />support@edna.ru

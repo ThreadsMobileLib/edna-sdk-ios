@@ -45,18 +45,10 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
     THRMessageRecieveStateNotAccepted
 };
 
-typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
-    ThreadsTrasportProtocolPushLib,
-    ThreadsTrasportProtocolThreadsGate
-};
 
 @class Threads;
 
-@class PushNotificationMessage;
-@protocol PushServerApiConfigDataSource;
-@class EDNAPushLite;
-@class EDNAPushLiteDelegate;
-@class PushServerAPI;
+//@class PushNotificationMessage;
 
 
 @protocol ThreadsPreloadView
@@ -70,13 +62,9 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 
 @optional
 
-- (void)threads:(Threads *)threads didReceiveFullMessages:(NSArray<PushNotificationMessage *> *)messages;
-
 - (void)threads:(Threads *)threads didReceiveError:(NSError *)error;
 
 - (void)threads:(Threads *)threads unreadMessagesCount:(NSUInteger)unreadMessagesCount;
-
-- (id<PushServerApiConfigDataSource>)threads:(Threads *)threads configurePushServerApiFor:(EDNAPushLite *)EDNAPushLite;
 
 - (void)threads:(Threads *)threads didChangeDeviceAddress:(NSString *)deviceAddress;
 
@@ -105,28 +93,12 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 @interface Threads: NSObject
 
 
-/**
- Access to EDNAPushLite instance
- */
-@property (readonly, nullable) EDNAPushLite *ednaPush;
-
 @property (nonatomic, weak, nullable) id <ThreadsDelegate> delegate;
-
-/**
- Switch between test and production edna server. Default value is NO
- */
-@property (nonatomic, assign, readonly) BOOL isProductionEDNAServer;
 
 /**
  Client id encryption information
  */
 @property (nonatomic, assign) BOOL isClientIdEncrypted;
-
-
-/**
- Boolean parameneter, which enable or disable Google Analytics
- */
-@property (nonatomic, assign) BOOL isAnalyticsEnabled;
 
 
 /**
@@ -227,16 +199,6 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
 
 
 /**
- Initial EDNA configuration
-
- @param delegate Threads delegate object
- @param productionEDNAServer Switch between test and production EDNA server
- @param historyURL History server url
- @param fileUploadingURL File uploading server url
- */
-- (void)configurePushTransportProtocolWithDelegate:(id<ThreadsDelegate> _Nullable)delegate productionEDNAServer:(BOOL)productionEDNAServer historyURL:(NSURL *)historyURL fileUploadingURL:(NSURL *)fileUploadingURL;
-
-/**
  Initial Threads Gate configuration
 
  @param delegate Threads delegate object
@@ -254,16 +216,6 @@ typedef NS_ENUM(NSUInteger, ThreadsTrasportProtocol) {
  @param completionHandler callback will be called when user accept push notification authorization request. Callback will be called with device token if it is successfully received
  */
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^)(void))authorizationStatusDenied completionHandler:(THRRemoteNotificationsRegistrationCompletion _Nonnull)completionHandler;
-
-
-/**
- Call only in AppDelegate method:
- - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-
- @param notificationSettings Put received data from parameter notificationSettings
- */
-- (void)applicationDidRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings;
-
 
 /**
  Call only in AppDelegate method:

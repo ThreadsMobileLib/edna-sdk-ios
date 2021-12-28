@@ -159,7 +159,7 @@ class AttributesHelper {
         attributes.likeRatingColorCompleted = UIColor.alt_likeRatingColorCompleted()
         attributes.starRatingColorCompleted = UIColor.alt_starRatingColorCompleted()
         
-        attributes.quickRepliesBlockInput = false
+        attributes.quickReplyPresentationMode = .toolbar
         attributes.quickReplyFont = .latoSemibold(ofSize: 20)
         attributes.quickReplyBorderCornerRadius = 0;
         attributes.quickReplyBorderColor = UIColor.alt_quickReplyBorder()

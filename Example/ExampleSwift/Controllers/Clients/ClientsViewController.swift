@@ -29,13 +29,14 @@ class ClientsViewController: UIViewController, ClientsDataSourceDelegate {
     }
     
     func activate(_ client: Client) {
-        Threads.threads().setClientWithId(
-            client.id,
-            name: client.name,
-            data: client.data,
-            appMarker: client.appMarker,
-            signature: client.signature
-        )
+        
+        let clientInfo = THRClientInfo(clientId: client.id)
+        clientInfo.name = client.name
+        clientInfo.data = client.data
+        clientInfo.appMarker = client.appMarker
+        clientInfo.signature = client.signature
+        
+        Threads.threads().setClientInfo(clientInfo)
     }
     
     func didDelete(_ client: Client) {

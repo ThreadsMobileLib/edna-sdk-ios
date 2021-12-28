@@ -10,13 +10,13 @@
 #import "THRMessage.h"
 
 @class THRChat;
-@class PushNotificationMessage;
 
-@class PushNotificationMessage;
-@protocol PushServerApiConfigDataSource;
-@class EDNAPushLite;
-@class EDNAPushLiteDelegate;
-@class PushServerAPI;
+//@class PushNotificationMessage;
+//@class PushNotificationMessage;
+//@protocol PushServerApiConfigDataSource;
+//@class EDNAPushLite;
+//@class EDNAPushLiteDelegate;
+//@class PushServerAPI;
 
 
 @interface THRHelper : NSObject
@@ -27,7 +27,7 @@
 
 - (BOOL) isOutgoingMessage:(THRMessage *)message;
 
-- (BOOL) isLoadedMessage: (PushNotificationMessage *) message;
+//- (BOOL) isLoadedMessage: (PushNotificationMessage *) message;
 
 - (UIViewController *) topMostController;
 

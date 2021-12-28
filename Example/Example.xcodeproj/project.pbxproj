@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3AF8EEFB260249D600F631D9 /* Threads.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8EEF9260249D600F631D9 /* Threads.xcframework */; };
 		3AF8EEFC260249D600F631D9 /* Threads.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8EEF9260249D600F631D9 /* Threads.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3AF8EEFD260249D600F631D9 /* MFMSPushLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8EEFA260249D600F631D9 /* MFMSPushLite.xcframework */; };
-		3AF8EEFE260249D600F631D9 /* MFMSPushLite.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8EEFA260249D600F631D9 /* MFMSPushLite.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		79CC699F2355B5D8007A94A1 /* MainSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC699D2355B5D8007A94A1 /* MainSwift.storyboard */; };
 		79CC6A692355B664007A94A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A372355B664007A94A1 /* Localizable.strings */; };
 		79CC6A6B2355B664007A94A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A392355B664007A94A1 /* Assets.xcassets */; };
@@ -53,7 +51,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3AF8EEFE260249D600F631D9 /* MFMSPushLite.xcframework in Embed Frameworks */,
 				3AF8EEFC260249D600F631D9 /* Threads.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -63,7 +60,6 @@
 
 /* Begin PBXFileReference section */
 		3AF8EEF9260249D600F631D9 /* Threads.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Threads.xcframework; path = ../Frameworks/Threads.xcframework; sourceTree = "<group>"; };
-		3AF8EEFA260249D600F631D9 /* MFMSPushLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MFMSPushLite.xcframework; path = ../Frameworks/MFMSPushLite.xcframework; sourceTree = "<group>"; };
 		79CC69952355B5D8007A94A1 /* ExampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CC699E2355B5D8007A94A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainSwift.storyboard; sourceTree = "<group>"; };
 		79CC6A382355B664007A94A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -109,7 +105,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF8EEFD260249D600F631D9 /* MFMSPushLite.xcframework in Frameworks */,
 				3AF8EEFB260249D600F631D9 /* Threads.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,7 +169,6 @@
 		79CC6AA62355B808007A94A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3AF8EEFA260249D600F631D9 /* MFMSPushLite.xcframework */,
 				3AF8EEF9260249D600F631D9 /* Threads.xcframework */,
 			);
 			name = Frameworks;

@@ -36,7 +36,6 @@ class Configuration: NSObject {
                      String.localizedStringWithFormat("Lib Version: %@", Threads.threads().version()),
                      "",
                      String.init(format: "debugLoggingEnabled: %@", Threads.threads().isDebugLoggingEnabled ? "YES" : "NO"),
-                     String.init(format: "productionMSMFServerEnabled: %@", Threads.threads().isProductionMFMSServer ? "YES" : "NO"),
                      String.init(format: "clientIdEncrypted: %@", Threads.threads().isClientIdEncrypted ? "YES" : "NO"),
                      "",
                      String.init(format: "historyURL: %@", Threads.threads().historyURL?.absoluteString ?? ""),

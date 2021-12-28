@@ -8,7 +8,6 @@
 
 import UIKit
 import Threads
-import MFMSPushLite
 import UserNotifications
 
 @UIApplicationMain
@@ -66,11 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Remote Notifications
-    
-    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
-        Threads.threads().applicationDidRegister(notificationSettings)
-    }
-    
+
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Threads.threads().applicationDidRegisterForRemoteNotifications(withDeviceToken: deviceToken)
     }
@@ -127,11 +122,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 }
 
 extension AppDelegate: ThreadsDelegate {
-    
-    func threads(_ threads: Threads, didReceiveFullMessages messages: [PushNotificationMessage]) {
-        // MFMSPushTransport only
-        // Use this delegate method for access to received full data messages
-    }
     
     func threads(_ threads: Threads, unreadMessagesCount: UInt) {
         let vc = self.window?.rootViewController as? MainViewController
