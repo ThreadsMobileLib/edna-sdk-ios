@@ -170,6 +170,8 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
 - (BOOL)isFileMessage;
 
 - (BOOL) isSystemMessage;
+// Fix для closed, надо переделать.
+@property (nonatomic) BOOL isSystemFlag;
 
 - (NSDictionary *)toDictionary;
 

@@ -320,6 +320,9 @@ typedef NS_ENUM(NSUInteger, THRQuickReplyPresentationMode) {
 #pragma mark - Client validity
 @property (nonatomic, assign) BOOL clientIdIgnoreEnabled;
 
+#pragma mark - Access call didReceiveResponse in delegate
+@property (nonatomic, assign) BOOL callReceiveResponseEnabled;
+
 + (instancetype) defaultAttributes;
 
 @end

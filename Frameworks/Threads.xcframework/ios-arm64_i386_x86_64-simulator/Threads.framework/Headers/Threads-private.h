@@ -16,5 +16,6 @@
 #import "NSDate+THR.h"
 
 #import "THROpenUrlUtils.h"
+#import "THRDelegateHelper.h"
 
 #import "node.h"

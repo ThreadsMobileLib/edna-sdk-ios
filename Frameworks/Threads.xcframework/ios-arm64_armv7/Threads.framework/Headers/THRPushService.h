@@ -32,7 +32,7 @@ static NSString * _Nonnull const THRForceSyncComplete = @"THRForceSyncComplete";
 @class TGMessageStatus;
 @class THRJSQMediaItem;
 
-typedef void(^THRMessageAttachmentCompletion)(NSString * _Nullable url, NSError * _Nullable error);
+typedef void(^THRMessageAttachmentCompletion)(NSString * _Nullable url, NSString * _Nullable state, NSError * _Nullable error);
 
 typedef void(^THRRegistrationCompletion)(BOOL state, NSError * _Nullable error);
 

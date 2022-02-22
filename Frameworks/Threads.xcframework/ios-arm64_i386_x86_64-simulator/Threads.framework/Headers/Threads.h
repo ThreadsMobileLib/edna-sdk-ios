@@ -58,6 +58,15 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
 -(UIView*) getView;
 @end
 
+@interface THRMessageInfo : NSObject
+
+@property (nonatomic, strong, readonly, nonnull) NSString* senderName;
+@property (nonatomic, strong, readonly, nullable) NSString* text;
+@property (nonatomic, readonly) BOOL hasAttachment;
+
+@end
+
+
 @protocol ThreadsDelegate <NSObject>
 
 @optional
@@ -71,6 +80,10 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
 - (BOOL)threads:(Threads *)threads allowOpenUrl:(NSURL *)url;
 
 - (id<ThreadsPreloadView>) customPreloadView;
+
+- (void)threads:(Threads *)threads didReceiveResponse:(NSDictionary *)response;
+
+- (void)threads:(Threads *)threads didReceiveMessage:(THRMessageInfo *)message;
 
 @end
 
@@ -100,6 +113,10 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
  */
 @property (nonatomic, assign) BOOL isClientIdEncrypted;
 
+/**
+ Returns the number of seconds elapsed since the last activity
+ */
+@property (nonatomic, assign, readonly) NSTimeInterval lastActivitySeconds;
 
 /**
  Debug logging enabling paramter
