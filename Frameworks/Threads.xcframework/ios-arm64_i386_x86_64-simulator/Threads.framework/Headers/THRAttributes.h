@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - General
 @property (nonatomic, assign) BOOL canShowDebugScreen;
+@property (nonatomic, assign) BOOL clearChatHistoryIfSocketReconnect;
 
 #pragma mark - Localization
 @property (strong, nonatomic, nullable) LocalizationConfig *localizationConfig;

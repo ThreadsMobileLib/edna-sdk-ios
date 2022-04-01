@@ -66,6 +66,57 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
 
 @end
 
+struct SocketClientSettings{
+    ///интервал повторной попытки отправки сообщения
+    NSTimeInterval resendIntervalSec;
+    ///интервал запросов поддержания активной соединения
+    NSTimeInterval resendPingIntervalSec;
+    ///таймаут установления нового соединения
+    NSTimeInterval connectTimeoutSec;
+    ///таймаут операций чтения для нового соединения
+    NSTimeInterval readTimeoutSec;
+    ///таймаут операций записи для нового соединения
+    NSTimeInterval writeTimeoutSec;
+};
+
+struct HttpClientSettings{
+    ///таймаут установления нового соединения
+    NSTimeInterval connectTimeoutSec;
+    ///таймаут операций загрузки
+    NSTimeInterval downloadTimeoutSec;
+    ///таймаут операций выгрузки
+    NSTimeInterval uploadTimeoutSec;
+};
+
+struct RequestConfig{
+    struct SocketClientSettings socket;
+    struct HttpClientSettings http;
+};
+
+CG_INLINE struct RequestConfig
+RequestConfigDefault(){
+    struct RequestConfig config;
+    
+    ///интервал повторной попытки отправки сообщения
+    config.socket.resendIntervalSec = 2;
+    ///интервал запросов поддержания активной соединения
+    config.socket.resendPingIntervalSec = 64;
+    ///таймаут установления нового соединения
+    config.socket.connectTimeoutSec = 60;
+    ///таймаут операций чтения для нового соединения
+    config.socket.readTimeoutSec = 5;
+    ///таймаут операций записи для нового соединения
+    config.socket.writeTimeoutSec = 5;
+    
+    ///таймаут установления нового соединения
+    config.http.connectTimeoutSec = 60;
+    ///таймаут операций загрузки
+    config.http.downloadTimeoutSec = 20;
+    ///таймаут операций выгрузки
+    config.http.uploadTimeoutSec = 120;
+    
+    return config;
+}
 
 @protocol ThreadsDelegate <NSObject>
 
@@ -107,6 +158,8 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
 
 
 @property (nonatomic, weak, nullable) id <ThreadsDelegate> delegate;
+
+@property struct RequestConfig requestConfig;
 
 /**
  Client id encryption information

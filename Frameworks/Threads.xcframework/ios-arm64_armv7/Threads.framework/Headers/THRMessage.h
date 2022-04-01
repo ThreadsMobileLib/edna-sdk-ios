@@ -87,6 +87,11 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
 @property (nonatomic, readwrite) UIImage* ogImage;
 
 /**
+ * Return type of message without any context
+ */
+@property (nonatomic, copy, readwrite, nullable) NSString *rawType;
+
+/**
  *  Returns the media item attachment of the message, or `nil` if the message is not a media message.
  *  That is, if `isMediaMessage` is equal to `NO` then this value will be `nil`.
  */
@@ -176,6 +181,8 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
 - (NSDictionary *)toDictionary;
 
 - (BOOL) containsOGData;
+
+- (NSString *)failedMessageKey;
 
 - (NSString *)hashWithoutDate;
 
