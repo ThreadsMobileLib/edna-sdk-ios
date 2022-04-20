@@ -634,6 +634,12 @@ extension DownHTMLRenderable {
 public struct DownHTMLRenderer {
   public static func astToHTML(_ ast: Swift.UnsafeMutablePointer<cmark_node>, options: DownOptions = .default) throws -> Swift.String
 }
+@_inheritsConvenienceInitializers @objc public class ThreadsURLSessionDelegate : ObjectiveC.NSObject, Foundation.URLSessionDelegate {
+  @objc public func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  @objc public class func getPinnedCertificates() -> Swift.Array<Foundation.NSData>
+  @objc override dynamic public init()
+  @objc deinit
+}
 public struct DownStylerConfiguration {
   public var fonts: FontCollection
   public var colors: ColorCollection
@@ -810,6 +816,28 @@ extension DownView : WebKit.WKNavigationDelegate {
       get
     }
   }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class SocketSettings : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc public var resendIntervalSec: Swift.Double
+  @objc public var resendPingIntervalSec: Swift.Double
+  @objc public var connectTimeoutSec: Swift.Double
+  @objc public var readTimeoutSec: Swift.Double
+  @objc public var writeTimeoutSec: Swift.Double
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class HttpSettings : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc public var connectTimeoutSec: Swift.Double
+  @objc public var downloadTimeoutSec: Swift.Double
+  @objc public var uploadTimeoutSec: Swift.Double
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class THRRequestConfigs : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc public var socket: SocketSettings
+  @objc public var http: HttpSettings
   @objc deinit
 }
 @objc public protocol QuickReplyCellDelegate {

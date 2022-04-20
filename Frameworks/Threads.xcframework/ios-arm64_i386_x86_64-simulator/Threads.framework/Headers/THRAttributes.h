@@ -324,6 +324,10 @@ typedef NS_ENUM(NSUInteger, THRQuickReplyPresentationMode) {
 #pragma mark - Access call didReceiveResponse in delegate
 @property (nonatomic, assign) BOOL callReceiveResponseEnabled;
 
+#pragma mark - Networking TLS
+@property (assign, nonatomic, readwrite) BOOL allowUntrustedSSLCertificate;
+@property (nonatomic, copy) NSString *trustedCertificatesList;
+
 + (instancetype) defaultAttributes;
 
 @end

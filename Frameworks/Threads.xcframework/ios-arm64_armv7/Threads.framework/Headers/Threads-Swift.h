@@ -297,6 +297,18 @@ SWIFT_CLASS("_TtC7Threads19FoundationTransport")
 @end
 
 
+SWIFT_CLASS("_TtC7Threads12HttpSettings")
+@interface HttpSettings : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// таймаут установления нового соединения
+@property (nonatomic) NSTimeInterval connectTimeoutSec;
+/// таймаут операций загрузки
+@property (nonatomic) NSTimeInterval downloadTimeoutSec;
+/// таймаут операций выгрузки
+@property (nonatomic) NSTimeInterval uploadTimeoutSec;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads12Localization")
 @interface Localization : NSObject
 + (NSString * _Nonnull)localizeWithKey:(NSString * _Nonnull)key value:(NSString * _Nonnull)value SWIFT_WARN_UNUSED_RESULT;
@@ -554,6 +566,30 @@ SWIFT_CLASS("_TtC7Threads21SocketConnectionError")
 @end
 
 
+SWIFT_CLASS("_TtC7Threads14SocketSettings")
+@interface SocketSettings : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// интервал повторной попытки отправки сообщения
+@property (nonatomic) NSTimeInterval resendIntervalSec;
+/// интервал запросов поддержания активной соединения
+@property (nonatomic) NSTimeInterval resendPingIntervalSec;
+/// таймаут установления нового соединения
+@property (nonatomic) NSTimeInterval connectTimeoutSec;
+/// таймаут операций чтения для нового соединения
+@property (nonatomic) NSTimeInterval readTimeoutSec;
+/// таймаут операций записи для нового соединения
+@property (nonatomic) NSTimeInterval writeTimeoutSec;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
+@interface THRRequestConfigs : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, strong) SocketSettings * _Nonnull socket;
+@property (nonatomic, strong) HttpSettings * _Nonnull http;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads4Task")
 @interface Task : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -572,6 +608,16 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugLoggingEnabled;)
 + (void)setServerWithBaseUrl:(NSURL * _Nonnull)baseUrl;
 + (void)markMessagesRead:(NSArray<THRMessage *> * _Nonnull)messages completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
 + (void)getHistoryMessagesWithClientId:(NSString * _Nonnull)clientId count:(NSInteger)count beforeMessage:(THRMessage * _Nullable)beforeMessage completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSURLAuthenticationChallenge;
+@class NSURLCredential;
+
+SWIFT_CLASS("_TtC7Threads25ThreadsURLSessionDelegate")
+@interface ThreadsURLSessionDelegate : NSObject <NSURLSessionDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
++ (NSArray<NSData *> * _Nonnull)getPinnedCertificates SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -902,6 +948,18 @@ SWIFT_CLASS("_TtC7Threads19FoundationTransport")
 @end
 
 
+SWIFT_CLASS("_TtC7Threads12HttpSettings")
+@interface HttpSettings : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// таймаут установления нового соединения
+@property (nonatomic) NSTimeInterval connectTimeoutSec;
+/// таймаут операций загрузки
+@property (nonatomic) NSTimeInterval downloadTimeoutSec;
+/// таймаут операций выгрузки
+@property (nonatomic) NSTimeInterval uploadTimeoutSec;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads12Localization")
 @interface Localization : NSObject
 + (NSString * _Nonnull)localizeWithKey:(NSString * _Nonnull)key value:(NSString * _Nonnull)value SWIFT_WARN_UNUSED_RESULT;
@@ -1159,6 +1217,30 @@ SWIFT_CLASS("_TtC7Threads21SocketConnectionError")
 @end
 
 
+SWIFT_CLASS("_TtC7Threads14SocketSettings")
+@interface SocketSettings : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// интервал повторной попытки отправки сообщения
+@property (nonatomic) NSTimeInterval resendIntervalSec;
+/// интервал запросов поддержания активной соединения
+@property (nonatomic) NSTimeInterval resendPingIntervalSec;
+/// таймаут установления нового соединения
+@property (nonatomic) NSTimeInterval connectTimeoutSec;
+/// таймаут операций чтения для нового соединения
+@property (nonatomic) NSTimeInterval readTimeoutSec;
+/// таймаут операций записи для нового соединения
+@property (nonatomic) NSTimeInterval writeTimeoutSec;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
+@interface THRRequestConfigs : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, strong) SocketSettings * _Nonnull socket;
+@property (nonatomic, strong) HttpSettings * _Nonnull http;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads4Task")
 @interface Task : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1177,6 +1259,16 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugLoggingEnabled;)
 + (void)setServerWithBaseUrl:(NSURL * _Nonnull)baseUrl;
 + (void)markMessagesRead:(NSArray<THRMessage *> * _Nonnull)messages completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
 + (void)getHistoryMessagesWithClientId:(NSString * _Nonnull)clientId count:(NSInteger)count beforeMessage:(THRMessage * _Nullable)beforeMessage completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSURLAuthenticationChallenge;
+@class NSURLCredential;
+
+SWIFT_CLASS("_TtC7Threads25ThreadsURLSessionDelegate")
+@interface ThreadsURLSessionDelegate : NSObject <NSURLSessionDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
++ (NSArray<NSData *> * _Nonnull)getPinnedCertificates SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

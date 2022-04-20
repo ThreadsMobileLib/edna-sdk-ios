@@ -82,6 +82,10 @@ typedef void(^THRRegistrationCompletion)(BOOL state, NSError * _Nullable error);
           fileName: (NSString *) fileName
             completion: (THRMessageAttachmentCompletion _Nonnull )completion;
 
+- (void) sendFileData: (NSData *) audioData
+          fileName: (NSString *) fileName
+           completion: (THRMessageAttachmentCompletion)completion;
+
 - (void) clearNotifications;
 
 - (void) markMessagesAsReadByProviderId:(NSArray *) providerIds;
@@ -112,7 +116,7 @@ typedef void(^THRRegistrationCompletion)(BOOL state, NSError * _Nullable error);
 
 #pragma mark - Accessors
 
-- (NSString *) historyToken;
+- (nullable NSString *) historyToken;
 
 - (NSString *) deviceAddress;
 
