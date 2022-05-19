@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		zJ2j7h7h4CWbvSqVAHC0EbHJ6Oo=
+		5820Aq0ahGjk3nKLYaLEcmG/q4w=
 		</data>
 		<key>COPYING</key>
 		<data>
@@ -27,10 +27,6 @@
 		<key>Headers/THRDelegateHelper.h</key>
 		<data>
 		fyr0z6bxCyht9PvfS/HERRvvM20=
-		</data>
-		<key>Headers/THRHelper.h</key>
-		<data>
-		y7qB+SqGdnjS+9fvxBesc6cP2Mo=
 		</data>
 		<key>Headers/THRJSQMessageAvatarImageDataSource.h</key>
 		<data>
@@ -70,11 +66,11 @@
 		</data>
 		<key>Headers/Threads-Swift.h</key>
 		<data>
-		wm/MOl8j+jmqLPOebRk/eNNQpO4=
+		3jveg0bSDz0SV8Ebl54nc1cS4Fo=
 		</data>
 		<key>Headers/Threads-private.h</key>
 		<data>
-		DSVSyqERFywLrKXN+y8fmhBpDN8=
+		cGyvcTLHXxSqwi2O+YD14mENYR0=
 		</data>
 		<key>Headers/Threads-umbrella.h</key>
 		<data>
@@ -118,7 +114,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		yAgNKbStFQytXk2beTOJfjf1rtQ=
+		cxUjCuZAlI2Nx4SMbn/3iKCbPhw=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -126,11 +122,11 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		EmRPL/4BMaL0puVwVEIOiZKUiWs=
+		p3epLY3Urt6aR23LchGBq8g/6YU=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		tDYgwFpeHsiV2WbfGyw/7dk4Ojg=
+		UXfdMuNfKhANF2/JcMXTGsANOSM=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -138,11 +134,11 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		EmRPL/4BMaL0puVwVEIOiZKUiWs=
+		p3epLY3Urt6aR23LchGBq8g/6YU=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		tDYgwFpeHsiV2WbfGyw/7dk4Ojg=
+		UXfdMuNfKhANF2/JcMXTGsANOSM=
 		</data>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -150,11 +146,11 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		pTSUVADBVUjOBQwJwjjAieTS6WI=
+		ttzt45/pBRereplNN5cf0uh/NG8=
 		</data>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		7ZiLSWqSxwNgLhUWxRTnD8qnAfc=
+		iQ8me7JYDAjxPJhESNp5UV5Ky0Y=
 		</data>
 		<key>Modules/Threads.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -162,11 +158,11 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/i386.swiftinterface</key>
 		<data>
-		pTSUVADBVUjOBQwJwjjAieTS6WI=
+		ttzt45/pBRereplNN5cf0uh/NG8=
 		</data>
 		<key>Modules/Threads.swiftmodule/i386.swiftmodule</key>
 		<data>
-		7ZiLSWqSxwNgLhUWxRTnD8qnAfc=
+		iQ8me7JYDAjxPJhESNp5UV5Ky0Y=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -174,11 +170,11 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		VDa52eHoPIoV8jNVaRcWRSpbtVY=
+		tesu4nsxBU+cb3MeCZzj3mTOZgM=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		YDdnAY9ic1srj8pi/U5qbWChXcQ=
+		jx1LMvwRpExvdoFXZo82cx7Hx50=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -186,11 +182,11 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		VDa52eHoPIoV8jNVaRcWRSpbtVY=
+		tesu4nsxBU+cb3MeCZzj3mTOZgM=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		YDdnAY9ic1srj8pi/U5qbWChXcQ=
+		jx1LMvwRpExvdoFXZo82cx7Hx50=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -881,11 +877,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zJ2j7h7h4CWbvSqVAHC0EbHJ6Oo=
+			5820Aq0ahGjk3nKLYaLEcmG/q4w=
 			</data>
 			<key>hash2</key>
 			<data>
-			emFPVvH5uRIR4brF3fRyO+aI6gxNAoWU+Bo4BSORwsA=
+			fsaaBZW7VB6J5ej37AaNDWTv2JUIXb8bDO8QB9vgdrQ=
 			</data>
 		</dict>
 		<key>COPYING</key>
@@ -941,17 +937,6 @@
 			<key>hash2</key>
 			<data>
 			y5c6bguM3HYLcSRg6HT9+0uNNYjsxBIjKp2/+zvajMQ=
-			</data>
-		</dict>
-		<key>Headers/THRHelper.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			y7qB+SqGdnjS+9fvxBesc6cP2Mo=
-			</data>
-			<key>hash2</key>
-			<data>
-			vtY+0oXtNyP3ZUPGMW45qL5RNWUtKhTNbnrQ1/zRe8A=
 			</data>
 		</dict>
 		<key>Headers/THRJSQMessageAvatarImageDataSource.h</key>
@@ -1057,22 +1042,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wm/MOl8j+jmqLPOebRk/eNNQpO4=
+			3jveg0bSDz0SV8Ebl54nc1cS4Fo=
 			</data>
 			<key>hash2</key>
 			<data>
-			svWImTM2czO+Ul2nDWm0rRO5zCqBHSzHwGd+5hqaiq0=
+			Yoce0j+RGN1VSaO697wurtO3emHKXJaOg3qcK4uMhsE=
 			</data>
 		</dict>
 		<key>Headers/Threads-private.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DSVSyqERFywLrKXN+y8fmhBpDN8=
+			cGyvcTLHXxSqwi2O+YD14mENYR0=
 			</data>
 			<key>hash2</key>
 			<data>
-			BNgaCchXPt5jcJLtBrDW9xiQjhIp+N61IrcW4hrDVPQ=
+			Irz1rNbYW+44M+oJDAjnYUwIGmY4mopH9irPgvM/vJ4=
 			</data>
 		</dict>
 		<key>Headers/Threads-umbrella.h</key>
@@ -1200,22 +1185,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EmRPL/4BMaL0puVwVEIOiZKUiWs=
+			p3epLY3Urt6aR23LchGBq8g/6YU=
 			</data>
 			<key>hash2</key>
 			<data>
-			KIJXp3K9tf4dAz953gfdIe5wdHEeeVDiMCuyLeO24KY=
+			cTk4CoBD1EC2H9JFQ7YR27f4N+UknhPOoEq5hr9WKgk=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tDYgwFpeHsiV2WbfGyw/7dk4Ojg=
+			UXfdMuNfKhANF2/JcMXTGsANOSM=
 			</data>
 			<key>hash2</key>
 			<data>
-			WTQECJiuJ1HPcgU6QwiUGAJMR+E7FnitfXeAs9aAiwU=
+			oORNJBAVGnlfws49Moag8OUs/7F39xVclVjAioX4Q90=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/arm64.swiftdoc</key>
@@ -1233,22 +1218,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EmRPL/4BMaL0puVwVEIOiZKUiWs=
+			p3epLY3Urt6aR23LchGBq8g/6YU=
 			</data>
 			<key>hash2</key>
 			<data>
-			KIJXp3K9tf4dAz953gfdIe5wdHEeeVDiMCuyLeO24KY=
+			cTk4CoBD1EC2H9JFQ7YR27f4N+UknhPOoEq5hr9WKgk=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tDYgwFpeHsiV2WbfGyw/7dk4Ojg=
+			UXfdMuNfKhANF2/JcMXTGsANOSM=
 			</data>
 			<key>hash2</key>
 			<data>
-			WTQECJiuJ1HPcgU6QwiUGAJMR+E7FnitfXeAs9aAiwU=
+			oORNJBAVGnlfws49Moag8OUs/7F39xVclVjAioX4Q90=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -1266,22 +1251,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pTSUVADBVUjOBQwJwjjAieTS6WI=
+			ttzt45/pBRereplNN5cf0uh/NG8=
 			</data>
 			<key>hash2</key>
 			<data>
-			0kZZlScgOUTo+FASV2DyQThyfV4eGTFtiBBD7E38nDc=
+			1o5j25TyEeqfpyFvuAXfH4hrftLEQTDOGIZJ8eCz9BM=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7ZiLSWqSxwNgLhUWxRTnD8qnAfc=
+			iQ8me7JYDAjxPJhESNp5UV5Ky0Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			367tpvoIzfu+wZRBa5xTGm0EdUhXVS5+5EIlUqnwjEg=
+			1Rxzwoq19rCOwj40b4zyeAE/UV4Fsylu/IIUSYfNC6A=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/i386.swiftdoc</key>
@@ -1299,22 +1284,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pTSUVADBVUjOBQwJwjjAieTS6WI=
+			ttzt45/pBRereplNN5cf0uh/NG8=
 			</data>
 			<key>hash2</key>
 			<data>
-			0kZZlScgOUTo+FASV2DyQThyfV4eGTFtiBBD7E38nDc=
+			1o5j25TyEeqfpyFvuAXfH4hrftLEQTDOGIZJ8eCz9BM=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7ZiLSWqSxwNgLhUWxRTnD8qnAfc=
+			iQ8me7JYDAjxPJhESNp5UV5Ky0Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			367tpvoIzfu+wZRBa5xTGm0EdUhXVS5+5EIlUqnwjEg=
+			1Rxzwoq19rCOwj40b4zyeAE/UV4Fsylu/IIUSYfNC6A=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -1332,22 +1317,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VDa52eHoPIoV8jNVaRcWRSpbtVY=
+			tesu4nsxBU+cb3MeCZzj3mTOZgM=
 			</data>
 			<key>hash2</key>
 			<data>
-			mkRrFiY1ro9s+fWV/j/9V6Rr+Gcat3evGbDWGS/yfMk=
+			5kgyk4MZRahFyyX8LYtmM0jQZ/a+S5KaSdgk2aIKWHM=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YDdnAY9ic1srj8pi/U5qbWChXcQ=
+			jx1LMvwRpExvdoFXZo82cx7Hx50=
 			</data>
 			<key>hash2</key>
 			<data>
-			wUgWe574cl9fislbPbldO6xmtoI7rawhGValcuG9reQ=
+			HCjzRvXq40EgeAjOpjucH7G+jio9D2If8cN2VLGIZ5A=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftdoc</key>
@@ -1365,22 +1350,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VDa52eHoPIoV8jNVaRcWRSpbtVY=
+			tesu4nsxBU+cb3MeCZzj3mTOZgM=
 			</data>
 			<key>hash2</key>
 			<data>
-			mkRrFiY1ro9s+fWV/j/9V6Rr+Gcat3evGbDWGS/yfMk=
+			5kgyk4MZRahFyyX8LYtmM0jQZ/a+S5KaSdgk2aIKWHM=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YDdnAY9ic1srj8pi/U5qbWChXcQ=
+			jx1LMvwRpExvdoFXZo82cx7Hx50=
 			</data>
 			<key>hash2</key>
 			<data>
-			wUgWe574cl9fislbPbldO6xmtoI7rawhGValcuG9reQ=
+			HCjzRvXq40EgeAjOpjucH7G+jio9D2If8cN2VLGIZ5A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

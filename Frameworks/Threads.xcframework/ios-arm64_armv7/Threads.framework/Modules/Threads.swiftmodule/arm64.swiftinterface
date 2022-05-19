@@ -1082,8 +1082,8 @@ public protocol FrameCollectorDelegate : AnyObject {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class ThreadsServerAPI : ObjectiveC.NSObject {
-  @objc public static var apiVersion: Swift.String
   public typealias Completion<T> = (T?, Swift.Error?) -> Swift.Void
+  @objc public static var chatApiVersion: Swift.String
   public typealias HistoryCompletion = ThreadsServerAPI.Completion<Swift.Array<THRMessage>>
   public typealias MessagesReadCompletion = ThreadsServerAPI.Completion<Swift.Array<THRMessage>>
   @objc public static var isDebugLoggingEnabled: Swift.Bool

@@ -600,8 +600,8 @@ SWIFT_CLASS("_TtC7Threads4Task")
 
 SWIFT_CLASS("_TtC7Threads16ThreadsServerAPI")
 @interface ThreadsServerAPI : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull apiVersion;)
-+ (NSString * _Nonnull)apiVersion SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull chatApiVersion;)
++ (NSString * _Nonnull)chatApiVersion SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugLoggingEnabled;)
 + (BOOL)isDebugLoggingEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsDebugLoggingEnabled:(BOOL)value;
@@ -1251,8 +1251,8 @@ SWIFT_CLASS("_TtC7Threads4Task")
 
 SWIFT_CLASS("_TtC7Threads16ThreadsServerAPI")
 @interface ThreadsServerAPI : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull apiVersion;)
-+ (NSString * _Nonnull)apiVersion SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull chatApiVersion;)
++ (NSString * _Nonnull)chatApiVersion SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugLoggingEnabled;)
 + (BOOL)isDebugLoggingEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsDebugLoggingEnabled:(BOOL)value;
@@ -1902,8 +1902,8 @@ SWIFT_CLASS("_TtC7Threads4Task")
 
 SWIFT_CLASS("_TtC7Threads16ThreadsServerAPI")
 @interface ThreadsServerAPI : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull apiVersion;)
-+ (NSString * _Nonnull)apiVersion SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull chatApiVersion;)
++ (NSString * _Nonnull)chatApiVersion SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugLoggingEnabled;)
 + (BOOL)isDebugLoggingEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsDebugLoggingEnabled:(BOOL)value;
