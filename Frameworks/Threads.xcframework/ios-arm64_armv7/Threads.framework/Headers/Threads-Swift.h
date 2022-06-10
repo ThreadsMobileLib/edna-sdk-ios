@@ -582,6 +582,29 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @end
 
 
+SWIFT_CLASS_NAMED("THRCert")
+@interface THRCert : NSObject
+/// Initialization certificate if it is in any place, main bundle or other bundles
+/// \param url URL for certificate’s file
+///
+- (nonnull instancetype)initWithContentsOf:(NSURL * _Nullable)url OBJC_DESIGNATED_INITIALIZER;
+/// Initialization certificate if it is in main bundle
+/// \param fileName String with name of file
+///
+- (nonnull instancetype)initWithContentsOfFile:(NSString * _Nonnull)fileName;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC7Threads11THRControls")
+@interface THRControls : NSObject
+@property (nonatomic, strong) UIButton * _Nullable sendButton;
+@property (nonatomic, strong) UIButton * _Nullable attachButton;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
 @interface THRRequestConfigs : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -608,16 +631,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugLoggingEnabled;)
 + (void)setServerWithBaseUrl:(NSURL * _Nonnull)baseUrl;
 + (void)markMessagesRead:(NSArray<THRMessage *> * _Nonnull)messages completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
 + (void)getHistoryMessagesWithClientId:(NSString * _Nonnull)clientId count:(NSInteger)count beforeMessage:(THRMessage * _Nullable)beforeMessage completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSURLAuthenticationChallenge;
-@class NSURLCredential;
-
-SWIFT_CLASS("_TtC7Threads25ThreadsURLSessionDelegate")
-@interface ThreadsURLSessionDelegate : NSObject <NSURLSessionDelegate>
-- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
-+ (NSArray<NSData *> * _Nonnull)getPinnedCertificates SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1233,6 +1246,29 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @end
 
 
+SWIFT_CLASS_NAMED("THRCert")
+@interface THRCert : NSObject
+/// Initialization certificate if it is in any place, main bundle or other bundles
+/// \param url URL for certificate’s file
+///
+- (nonnull instancetype)initWithContentsOf:(NSURL * _Nullable)url OBJC_DESIGNATED_INITIALIZER;
+/// Initialization certificate if it is in main bundle
+/// \param fileName String with name of file
+///
+- (nonnull instancetype)initWithContentsOfFile:(NSString * _Nonnull)fileName;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC7Threads11THRControls")
+@interface THRControls : NSObject
+@property (nonatomic, strong) UIButton * _Nullable sendButton;
+@property (nonatomic, strong) UIButton * _Nullable attachButton;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
 @interface THRRequestConfigs : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1259,16 +1295,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugLoggingEnabled;)
 + (void)setServerWithBaseUrl:(NSURL * _Nonnull)baseUrl;
 + (void)markMessagesRead:(NSArray<THRMessage *> * _Nonnull)messages completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
 + (void)getHistoryMessagesWithClientId:(NSString * _Nonnull)clientId count:(NSInteger)count beforeMessage:(THRMessage * _Nullable)beforeMessage completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSURLAuthenticationChallenge;
-@class NSURLCredential;
-
-SWIFT_CLASS("_TtC7Threads25ThreadsURLSessionDelegate")
-@interface ThreadsURLSessionDelegate : NSObject <NSURLSessionDelegate>
-- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
-+ (NSArray<NSData *> * _Nonnull)getPinnedCertificates SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

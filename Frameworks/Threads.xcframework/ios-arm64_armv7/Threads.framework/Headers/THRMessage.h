@@ -131,6 +131,8 @@ typedef NS_ENUM(NSUInteger, THRMessageStatus) {
 /// blockInput
 @property (nonatomic, readwrite) BOOL blockInput;
 
+/// Return error 
+@property (nonatomic, readwrite) NSError* error;
 
 #pragma mark - Initialization
 

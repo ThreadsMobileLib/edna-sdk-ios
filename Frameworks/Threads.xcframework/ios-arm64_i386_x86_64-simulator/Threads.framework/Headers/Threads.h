@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Threads/THRAttributes.h>
+@class THRControls;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -195,7 +196,7 @@ typedef NS_ENUM(NSUInteger, THRMessageRecieveState) {
 #pragma mark - Chat Configuration
 
 @property (strong, nonatomic, readonly) THRAttributes *attributes;
-
+@property (nonatomic, strong) THRControls *controls;
 
 /**
  Histoly URL

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+@class THRCert;
 @class LocalizationConfig;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIFont* navigationBarSubtitleFont;
 @property (strong, nonatomic, readwrite) UIColor* navigationBarSubtitleColor;
 @property (nonatomic, assign, readwrite) BOOL navigationBarSubtitleShowOrgUnit;
+@property (nonatomic, assign, readwrite) BOOL navigationBarSubtitleVisible;
+@property (nonatomic, assign) BOOL navigationBarLarge;
 
 
 #pragma mark - LaunchView
@@ -60,6 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIFont* placeholderSubtitleFont;
 
 #pragma mark - Toolbar
+@property (strong, nonatomic, readwrite) UIColor *toolbarbackgroundColor;
 @property (strong, nonatomic, readwrite) UIColor *toolbarTintColor;
 
 @property (strong, nonatomic, readwrite) UIImage* attachButtonImage;
@@ -176,6 +179,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIColor* outgoingPendingStatusColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingDeliveredStatusColor;
 @property (strong, nonatomic, readwrite) UIColor* outgoingReadStatusColor;
+@property (nullable, strong, nonatomic, readwrite) UIImage *outgoingPendingStatusImage;
+@property (nullable, strong, nonatomic, readwrite) UIImage *outgoingDeliveredStatusImage;
+@property (nullable, strong, nonatomic, readwrite) UIImage *outgoingReadStatusImage;
 @property (assign, nonatomic, readonly) BOOL showOutgoingAvatar;
 @property (strong, nonatomic, readwrite) UIImage* avatarPlaceholderImage;
 
@@ -199,6 +205,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readwrite) UIFont* searchBarTextFont;
 
 #pragma mark - Search message
+@property (assign, nonatomic, readonly) BOOL searchIconDisabled;
 @property (strong, nonatomic, readwrite) UIImage* clearSearchIcon;
 @property (strong, nonatomic, readwrite) UIColor* findedMessageHeaderTextColor;
 @property (strong, nonatomic, readwrite) UIColor* findedMessageHeaderBackgroundColor;
@@ -308,8 +315,10 @@ typedef NS_ENUM(NSUInteger, THRQuickReplyPresentationMode) {
 @property (nonatomic, strong) UIColor* outgoingVoiceMessageProgressColor;
 @property (nonatomic, strong) UIColor* previewVoiceMessageProgressColor;
 
-#pragma mark - Show close button
+#pragma mark - Close button
 @property (nonatomic, assign) BOOL showCloseButton;
+@property (nullable, nonatomic, strong) UIColor *closeButtonColor;
+@property (nullable, nonatomic, strong) UIImage *closeButtonImage;
 
 #pragma mark - New API
 @property (nonatomic, assign) BOOL newChatCenterApi;
@@ -326,7 +335,7 @@ typedef NS_ENUM(NSUInteger, THRQuickReplyPresentationMode) {
 
 #pragma mark - Networking TLS
 @property (assign, nonatomic, readwrite) BOOL allowUntrustedSSLCertificate;
-@property (nonatomic, copy) NSString *trustedCertificatesList;
+@property (nonatomic, strong) NSArray <THRCert *> *trustedCertificates;
 
 + (instancetype) defaultAttributes;
 

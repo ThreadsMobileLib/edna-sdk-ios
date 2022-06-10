@@ -634,12 +634,6 @@ extension DownHTMLRenderable {
 public struct DownHTMLRenderer {
   public static func astToHTML(_ ast: Swift.UnsafeMutablePointer<cmark_node>, options: DownOptions = .default) throws -> Swift.String
 }
-@_inheritsConvenienceInitializers @objc public class ThreadsURLSessionDelegate : ObjectiveC.NSObject, Foundation.URLSessionDelegate {
-  @objc public func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
-  @objc public class func getPinnedCertificates() -> Swift.Array<Foundation.NSData>
-  @objc override dynamic public init()
-  @objc deinit
-}
 public struct DownStylerConfiguration {
   public var fonts: FontCollection
   public var colors: ColorCollection
@@ -838,6 +832,17 @@ extension DownView : WebKit.WKNavigationDelegate {
   @objc override dynamic public init()
   @objc public var socket: SocketSettings
   @objc public var http: HttpSettings
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc final public class THRControls : ObjectiveC.NSObject {
+  @objc final public var sendButton: UIKit.UIButton?
+  @objc final public var attachButton: UIKit.UIButton?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(THRCert) final public class THRCert : ObjectiveC.NSObject {
+  @objc public init(contentsOf url: Foundation.URL?)
+  @objc public convenience init(contentsOfFile fileName: Swift.String)
   @objc deinit
 }
 @objc public protocol QuickReplyCellDelegate {
