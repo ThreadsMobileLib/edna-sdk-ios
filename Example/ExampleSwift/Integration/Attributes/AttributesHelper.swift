@@ -10,15 +10,12 @@ import Foundation
 import UIKit
 import Threads
 
-class AttributesHelper {
+fileprivate class AlternativeAttributes{
+    static let shared = AlternativeAttributes()
+    var attributes: THRAttributes?
     
-    class func getDefaultAttributes() -> THRAttributes {
-        return THRAttributes.default()
-    }
-    
-    class func getAltAttributes() -> THRAttributes {
-        
-        let attributes = THRAttributes.default()
+    static func baseAltAttributes() -> THRAttributes {
+        let attributes = THRAttributes.defaultAttributes()
         
         attributes.refreshColor = UIColor.alt_refresh()
         
@@ -39,6 +36,7 @@ class AttributesHelper {
         
         attributes.attachButtonColor = UIColor.alt_attachButton()
         attributes.attachButtonHighlightColor = UIColor.alt_attachButtonHighlight()
+        attributes.showAttachButton = false;
         
         attributes.sendButtonColor = UIColor.alt_sendButton()
         attributes.sendButtonHighlightColor = UIColor.alt_sendButtonHighlight()
@@ -63,7 +61,7 @@ class AttributesHelper {
         attributes.messageHeaderFont = .latoSemibold(ofSize: 13)
         
         attributes.specialisConnectTitleFont = .latoSemibold(ofSize: 17)
-        attributes.specialisConnectSubtitleFont = .latoRegular(ofSize: 12)
+        attributes.specialisConnectSubtitleFont = .latoRegular(ofSize: 17)
         attributes.specialisConnectTitleColor = UIColor.alt_specialisConnectTitle()
         attributes.specialisConnectSubtitleColor = UIColor.alt_specialisConnectSubtitle()
         
@@ -159,7 +157,6 @@ class AttributesHelper {
         attributes.likeRatingColorCompleted = UIColor.alt_likeRatingColorCompleted()
         attributes.starRatingColorCompleted = UIColor.alt_starRatingColorCompleted()
         
-        attributes.quickReplyPresentationMode = .toolbar
         attributes.quickReplyFont = .latoSemibold(ofSize: 20)
         attributes.quickReplyBorderCornerRadius = 0;
         attributes.quickReplyBorderColor = UIColor.alt_quickReplyBorder()
@@ -175,6 +172,64 @@ class AttributesHelper {
         
         attributes.historyLoadingCount = 25;
         
+        attributes.voiceRecordingAllowed = true;
+        //attributes.voiceMessageRecordButtonImage = #imageLiteral(resourceName: "tabBarItemUtilites");
+        //attributes.voiceMessageSendButtonImage = #imageLiteral(resourceName: "ic_like_filled");
+        attributes.voiceMessageRecordSendButtonColor = UIColor.green;
+        
+        //attributes.voiceMessagePlayImage = #imageLiteral(resourceName: "tabBarItemChat");
+        //attributes.voiceMessagePauseImage = #imageLiteral(resourceName: "tabBarItemIntegration");
+        attributes.incomingVoiceMessagePlayPauseColor = UIColor.yellow;
+        attributes.outgoingVoiceMessagePlayPauseColor = UIColor.purple;
+        attributes.previewVoiceMessagePlayPauseColor = UIColor.red;
+        
+        attributes.incomingVoiceMessageProgressColor = UIColor.yellow;
+        attributes.outgoingVoiceMessageProgressColor = UIColor.purple;
+        attributes.previewVoiceMessageProgressColor = UIColor.red;
+        
+        attributes.clientIdIgnoreEnabled = true;
+        attributes.newChatCenterApi = true;
+        
+        attributes.navigationBarCustomizeTitle = false;
+        
+        attributes.clearChatHistoryIfSocketReconnect = false;
+        
+        /*
+        attributes.trustedCertificates = [
+            THRCert(contentsOf: Bundle.main.url(forResource: "gpb.cer", withExtension: nil)),
+            THRCert(contentsOf: Bundle.main.url(forResource: "gpb_bad.cer", withExtension: nil)),
+            THRCert(contentsOfFile: "m4.cer"),
+            THRCert(contentsOfFile: "m5.cer"),
+        ]
+        */
+        
         return attributes
+    }
+}
+
+class AttributesHelper {
+    
+    static var defaultAttributes : THRAttributes = {
+        let attributes = THRAttributes.defaultAttributes()
+        
+        attributes.localizationConfig = .init(bundle: Bundle(for: AttributesHelper.self), tableName: "ThreadsLocalizable")
+        
+        return attributes
+        
+    }()
+    
+    class func getDefaultAttributes() -> THRAttributes {
+        return defaultAttributes
+    }
+    
+    class func getAltAttributes() -> THRAttributes {
+        
+        if let attributes = AlternativeAttributes.shared.attributes{
+            return attributes
+        }else{
+            AlternativeAttributes.shared.attributes = AlternativeAttributes.baseAltAttributes()
+            let attributes = AlternativeAttributes.shared.attributes!
+            return attributes
+        }
     }
 }

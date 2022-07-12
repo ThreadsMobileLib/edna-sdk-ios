@@ -89,9 +89,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func handleOpeningFromPush(with userInfo: [AnyHashable: Any]) {
         if Threads.threads().isThreadsOriginPushUserInfo(userInfo) {
             // Application launched from Threads notification
-            let appMarker = Threads.threads().getAppMarker(fromPushUserInfo: userInfo)
-            let vc = self.window?.rootViewController as? MainViewController
-            vc?.showChat(forAppMarker: appMarker)
+            if let appMarker = Threads.threads().getAppMarker(fromPushUserInfo: userInfo) {
+                let vc = self.window?.rootViewController as? MainViewController
+                vc?.showChat(forAppMarker: appMarker)
+            }
         } else {
             // Application launched from other notifications
         }

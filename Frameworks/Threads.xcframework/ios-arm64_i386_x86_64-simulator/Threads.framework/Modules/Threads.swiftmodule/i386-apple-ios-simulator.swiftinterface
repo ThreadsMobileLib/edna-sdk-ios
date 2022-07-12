@@ -4,6 +4,7 @@
 import CommonCrypto
 import CoreData
 import Foundation
+import Foundation/*.Bundle*/
 import Network
 import Swift
 import SystemConfiguration
@@ -14,14 +15,6 @@ import _Concurrency
 import os.log
 import os
 import zlib
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ThematicBreak : BaseNode {
-  @objc deinit
-}
-extension ThematicBreak : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
 @available(macOS 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
 @available(watchOS, unavailable)
 public class WebSocketServer : Server, ConnectionDelegate {
@@ -63,11 +56,11 @@ public struct WSError : Swift.Error {
 public protocol WebSocketClient : AnyObject {
   func connect()
   func disconnect(closeCode: Swift.UInt16)
-  func write(string: Swift.String, completion: ((WebSocketError?) -> ())?)
-  func write(stringData: Foundation.Data, completion: ((WebSocketError?) -> ())?)
-  func write(data: Foundation.Data, completion: ((WebSocketError?) -> ())?)
-  func write(ping: Foundation.Data, completion: ((WebSocketError?) -> ())?)
-  func write(pong: Foundation.Data, completion: ((WebSocketError?) -> ())?)
+  func write(string: Swift.String, completion: ((WebSocketError?) -> Swift.Void)?)
+  func write(stringData: Foundation.Data, completion: ((WebSocketError?) -> Swift.Void)?)
+  func write(data: Foundation.Data, completion: ((WebSocketError?) -> Swift.Void)?)
+  func write(ping: Foundation.Data, completion: ((WebSocketError?) -> Swift.Void)?)
+  func write(pong: Foundation.Data, completion: ((WebSocketError?) -> Swift.Void)?)
 }
 extension WebSocketClient {
   public func write(string: Swift.String)
@@ -105,40 +98,13 @@ open class WebSocket : WebSocketClient, EngineDelegate {
   public func connect()
   public func disconnect(closeCode: Swift.UInt16 = CloseCode.normal.rawValue)
   public func forceDisconnect()
-  public func write(data: Foundation.Data, completion: ((WebSocketError?) -> ())?)
-  public func write(string: Swift.String, completion: ((WebSocketError?) -> ())?)
-  public func write(stringData: Foundation.Data, completion: ((WebSocketError?) -> ())?)
-  public func write(ping: Foundation.Data, completion: ((WebSocketError?) -> ())?)
-  public func write(pong: Foundation.Data, completion: ((WebSocketError?) -> ())?)
+  public func write(data: Foundation.Data, completion: ((WebSocketError?) -> Swift.Void)?)
+  public func write(string: Swift.String, completion: ((WebSocketError?) -> Swift.Void)?)
+  public func write(stringData: Foundation.Data, completion: ((WebSocketError?) -> Swift.Void)?)
+  public func write(ping: Foundation.Data, completion: ((WebSocketError?) -> Swift.Void)?)
+  public func write(pong: Foundation.Data, completion: ((WebSocketError?) -> Swift.Void)?)
   public func didReceive(event: WebSocketEvent)
   @objc deinit
-}
-public class AttributedStringVisitor {
-  public init(styler: Styler, options: DownOptions = .default)
-  @objc deinit
-}
-extension AttributedStringVisitor : Visitor {
-  public typealias Result = Foundation.NSMutableAttributedString
-  public func visit(document node: Document) -> Foundation.NSMutableAttributedString
-  public func visit(blockQuote node: BlockQuote) -> Foundation.NSMutableAttributedString
-  public func visit(list node: List) -> Foundation.NSMutableAttributedString
-  public func visit(item node: Item) -> Foundation.NSMutableAttributedString
-  public func visit(codeBlock node: CodeBlock) -> Foundation.NSMutableAttributedString
-  public func visit(htmlBlock node: HtmlBlock) -> Foundation.NSMutableAttributedString
-  public func visit(customBlock node: CustomBlock) -> Foundation.NSMutableAttributedString
-  public func visit(paragraph node: Paragraph) -> Foundation.NSMutableAttributedString
-  public func visit(heading node: Heading) -> Foundation.NSMutableAttributedString
-  public func visit(thematicBreak node: ThematicBreak) -> Foundation.NSMutableAttributedString
-  public func visit(text node: Text) -> Foundation.NSMutableAttributedString
-  public func visit(softBreak node: SoftBreak) -> Foundation.NSMutableAttributedString
-  public func visit(lineBreak node: LineBreak) -> Foundation.NSMutableAttributedString
-  public func visit(code node: Code) -> Foundation.NSMutableAttributedString
-  public func visit(htmlInline node: HtmlInline) -> Foundation.NSMutableAttributedString
-  public func visit(customInline node: CustomInline) -> Foundation.NSMutableAttributedString
-  public func visit(emphasis node: Emphasis) -> Foundation.NSMutableAttributedString
-  public func visit(strong node: Strong) -> Foundation.NSMutableAttributedString
-  public func visit(link node: Link) -> Foundation.NSMutableAttributedString
-  public func visit(image node: Image) -> Foundation.NSMutableAttributedString
 }
 public protocol EngineDelegate : AnyObject {
   func didReceive(event: WebSocketEvent)
@@ -148,8 +114,8 @@ public protocol Engine {
   func start(request: Foundation.URLRequest)
   func stop(closeCode: Swift.UInt16)
   func forceStop()
-  func write(data: Foundation.Data, opcode: FrameOpCode, completion: ((WebSocketError?) -> ())?)
-  func write(string: Swift.String, completion: ((WebSocketError?) -> ())?)
+  func write(data: Foundation.Data, opcode: FrameOpCode, completion: ((WebSocketError?) -> Swift.Void)?)
+  func write(string: Swift.String, completion: ((WebSocketError?) -> Swift.Void)?)
 }
 public enum SecurityErrorCode : Swift.UInt16 {
   case acceptFailed
@@ -165,120 +131,26 @@ public enum PinningState {
   case failed(CoreFoundation.CFError?)
 }
 public protocol CertificatePinning : AnyObject {
-  func evaluateTrust(trust: Security.SecTrust, domain: Swift.String?, completion: ((PinningState) -> ()))
+  func evaluateTrust(trust: Security.SecTrust, domain: Swift.String?, completion: ((PinningState) -> Swift.Void))
 }
 public protocol HeaderValidator : AnyObject {
   func validate(headers: [Swift.String : Swift.String], key: Swift.String) -> Swift.Error?
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class List : BaseNode {
-  public var listType: List.ListType {
-    get
-    set(value)
-  }
-  public var numberOfItems: Swift.Int {
-    get
-    set(value)
-  }
-  @objc deinit
-}
-extension List {
-  public enum ListType : Swift.CustomDebugStringConvertible {
-    case bullet
-    case ordered(start: Swift.Int)
-    public var debugDescription: Swift.String {
-      get
-    }
-  }
-}
-extension List : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
 @objc @objcMembers public class LocalizationConfig : ObjectiveC.NSObject {
+  @objc public init(bundle: Foundation.Bundle, tableName: Swift.String)
   @objc final public let bundle: Foundation.Bundle
   @objc final public let tableName: Swift.String
-  @objc public init(bundle: Foundation.Bundle, tableName: Swift.String)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc final public class OGDataProvider : ObjectiveC.NSObject {
-  @objc(sharedInstance) public static var shared: OGDataProvider
-  @objc final public var cacheManager: OGDataCacheManagerProtocol {
-    @objc get
-    @objc set(value)
-  }
-  @objc final public var updateInterval: Foundation.TimeInterval {
-    @objc get
-    @objc set(newValue)
-  }
-  @discardableResult
-  @objc final public func fetchOGData(withURLString urlString: Swift.String, completion: ((OpenGraphData, Swift.Error?) -> Swift.Void)? = nil) -> Task
-  @discardableResult
-  @nonobjc final public func fetchOGData(urlString: Swift.String, completion: ((OpenGraph.Data, Swift.Error?) -> Swift.Void)? = nil) -> Task
-  @objc final public func deleteOGData(urlString: Swift.String, completion: ((Swift.Error?) -> Swift.Void)? = nil)
-  @objc final public func deleteOGData(_ ogData: OpenGraphData, completion: ((Swift.Error?) -> Swift.Void)? = nil)
-  @nonobjc final public func deleteOGData(_ ogData: OpenGraph.Data, completion: ((Swift.Error?) -> Swift.Void)? = nil)
-  @objc final public func cancelLoading(_ task: Task, shouldContinueDownloading: Swift.Bool)
-  @objc deinit
-}
-public struct CodeBlockOptions {
-  public var containerInset: CoreGraphics.CGFloat
-  public init(containerInset: CoreGraphics.CGFloat = 8)
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CustomBlock : BaseNode {
-  public var literal: Swift.String? {
-    get
-  }
-  @objc deinit
-}
-extension CustomBlock : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-extension Swift.String {
-  public func toHTML(_ options: DownOptions = .default) throws -> Swift.String
-}
-public protocol DownGroffRenderable : DownRenderable {
-  func toGroff(_ options: DownOptions, width: Swift.Int32) throws -> Swift.String
-}
-extension DownGroffRenderable {
-  public func toGroff(_ options: DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
-}
-public struct DownGroffRenderer {
-  public static func astToGroff(_ ast: Swift.UnsafeMutablePointer<cmark_node>, options: DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
-}
-public enum OpenGraph {
-}
-public struct Down : DownASTRenderable, DownHTMLRenderable, DownXMLRenderable, DownLaTeXRenderable, DownGroffRenderable, DownCommonMarkRenderable {
-  public var markdownString: Swift.String
-  public init(markdownString: Swift.String)
-}
-extension Down : DownAttributedStringRenderable {
-}
-public class DebugVisitor : Visitor {
-  public init()
-  public typealias Result = Swift.String
-  public func visit(document node: Document) -> Swift.String
-  public func visit(blockQuote node: BlockQuote) -> Swift.String
-  public func visit(list node: List) -> Swift.String
-  public func visit(item node: Item) -> Swift.String
-  public func visit(codeBlock node: CodeBlock) -> Swift.String
-  public func visit(htmlBlock node: HtmlBlock) -> Swift.String
-  public func visit(customBlock node: CustomBlock) -> Swift.String
-  public func visit(paragraph node: Paragraph) -> Swift.String
-  public func visit(heading node: Heading) -> Swift.String
-  public func visit(thematicBreak node: ThematicBreak) -> Swift.String
-  public func visit(text node: Text) -> Swift.String
-  public func visit(softBreak node: SoftBreak) -> Swift.String
-  public func visit(lineBreak node: LineBreak) -> Swift.String
-  public func visit(code node: Code) -> Swift.String
-  public func visit(htmlInline node: HtmlInline) -> Swift.String
-  public func visit(customInline node: CustomInline) -> Swift.String
-  public func visit(emphasis node: Emphasis) -> Swift.String
-  public func visit(strong node: Strong) -> Swift.String
-  public func visit(link node: Link) -> Swift.String
-  public func visit(image node: Image) -> Swift.String
+@objc @objcMembers public class THRClientInfo : ObjectiveC.NSObject {
+  @objc final public let clientId: Swift.String
+  @objc public init(clientId: Swift.String)
+  @objc public var name: Swift.String?
+  @objc public var data: Swift.String?
+  @objc public var appMarker: Swift.String?
+  @objc public var signature: Swift.String?
+  @objc public var authToken: Swift.String?
+  @objc public var authSchema: Swift.String?
   @objc deinit
 }
 public enum ConnectionEvent {
@@ -325,97 +197,7 @@ public class TCPTransport : Transport {
   public func connect(url: Foundation.URL, timeout: Swift.Double = 10, certificatePinning: CertificatePinning? = nil)
   public func disconnect()
   public func register(delegate: TransportEventClient)
-  public func write(data: Foundation.Data, completion: @escaping ((Swift.Error?) -> ()))
-  @objc deinit
-}
-public struct ThematicBreakOptions {
-  public var thickness: CoreGraphics.CGFloat
-  public var indentation: CoreGraphics.CGFloat
-  public init(thickness: CoreGraphics.CGFloat = 1, indentation: CoreGraphics.CGFloat = 0)
-}
-public protocol Visitor {
-  associatedtype Result
-  func visit(document node: Document) -> Self.Result
-  func visit(blockQuote node: BlockQuote) -> Self.Result
-  func visit(list node: List) -> Self.Result
-  func visit(item node: Item) -> Self.Result
-  func visit(codeBlock node: CodeBlock) -> Self.Result
-  func visit(htmlBlock node: HtmlBlock) -> Self.Result
-  func visit(customBlock node: CustomBlock) -> Self.Result
-  func visit(paragraph node: Paragraph) -> Self.Result
-  func visit(heading node: Heading) -> Self.Result
-  func visit(thematicBreak node: ThematicBreak) -> Self.Result
-  func visit(text node: Text) -> Self.Result
-  func visit(softBreak node: SoftBreak) -> Self.Result
-  func visit(lineBreak node: LineBreak) -> Self.Result
-  func visit(code node: Code) -> Self.Result
-  func visit(htmlInline node: HtmlInline) -> Self.Result
-  func visit(customInline node: CustomInline) -> Self.Result
-  func visit(emphasis node: Emphasis) -> Self.Result
-  func visit(strong node: Strong) -> Self.Result
-  func visit(link node: Link) -> Self.Result
-  func visit(image node: Image) -> Self.Result
-  func visitChildren(of node: Node) -> [Self.Result]
-}
-extension Visitor {
-  public func visitChildren(of node: Node) -> [Self.Result]
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Link : BaseNode {
-  public var title: Swift.String? {
-    get
-  }
-  public var url: Swift.String? {
-    get
-  }
-  @objc deinit
-}
-extension Link : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SoftBreak : BaseNode {
-  @objc deinit
-}
-extension SoftBreak : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers @objc public class OpenGraphData : ObjectiveC.NSObject {
-  @objc final public let imageUrl: Foundation.URL?
-  @objc final public let pageDescription: Swift.String?
-  @objc final public let pageTitle: Swift.String?
-  @objc final public let pageType: Swift.String?
-  @objc final public let siteName: Swift.String?
-  @objc final public let sourceUrl: Foundation.URL?
-  @objc final public let url: Foundation.URL?
-  @objc deinit
-}
-public protocol DownLaTeXRenderable : DownRenderable {
-  func toLaTeX(_ options: DownOptions, width: Swift.Int32) throws -> Swift.String
-}
-extension DownLaTeXRenderable {
-  public func toLaTeX(_ options: DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
-}
-public struct DownLaTeXRenderer {
-  public static func astToLaTeX(_ ast: Swift.UnsafeMutablePointer<cmark_node>, options: DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Item : BaseNode {
-  @objc deinit
-}
-extension Item : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers @objc final public class OGImageProvider : ObjectiveC.NSObject {
-  @objc(sharedInstance) public static var shared: OGImageProvider
-  @objc final public func loadImage(withURLString urlString: Swift.String, completion: ((UIKit.UIImage?, Swift.Error?) -> Swift.Void)? = nil) -> Task?
-  @nonobjc final public func loadImage(urlString: Swift.String, completion: ((Result<UIKit.UIImage>) -> Swift.Void)? = nil) -> Task?
-  @objc final public func clearMemoryCache()
-  @objc final public func clearAllCache()
-  @objc final public func cancelLoading(_ task: Task, shouldContinueDownloading: Swift.Bool)
+  public func write(data: Foundation.Data, completion: @escaping ((Swift.Error?) -> Swift.Void))
   @objc deinit
 }
 public enum FoundationTransportError : Swift.Error {
@@ -437,33 +219,8 @@ public enum FoundationTransportError : Swift.Error {
   public func connect(url: Foundation.URL, timeout: Swift.Double = 10, certificatePinning: CertificatePinning? = nil)
   public func disconnect()
   public func register(delegate: TransportEventClient)
-  public func write(data: Foundation.Data, completion: @escaping ((Swift.Error?) -> ()))
+  public func write(data: Foundation.Data, completion: @escaping ((Swift.Error?) -> Swift.Void))
   @objc open func stream(_ aStream: Foundation.Stream, handle eventCode: Foundation.Stream.Event)
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CustomInline : BaseNode {
-  public var literal: Swift.String? {
-    get
-  }
-  @objc deinit
-}
-extension CustomInline : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CodeBlock : BaseNode {
-  public var literal: Swift.String? {
-    get
-  }
-  public var fenceInfo: Swift.String? {
-    get
-  }
-  @objc deinit
-}
-extension CodeBlock : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
 }
 public enum CloseCode : Swift.UInt16 {
   case normal
@@ -532,50 +289,11 @@ extension Swift.Array where Element : Swift.UnsignedInteger, Element : MyWSArray
 public func writeUint16(_ buffer: inout [Swift.UInt8], offset: Swift.Int, value: Swift.UInt16)
 public func writeUint32(_ buffer: inout [Swift.UInt8], offset: Swift.Int, value: Swift.UInt32)
 public func writeUint64(_ buffer: inout [Swift.UInt8], offset: Swift.Int, value: Swift.UInt64)
-@_inheritsConvenienceInitializers @objc final public class OGDataNoCacheManager : ObjectiveC.NSObject, OGDataCacheManagerProtocol {
-  @objc final public var updateInterval: Foundation.TimeInterval
-  @objc override dynamic public init()
-  @objc final public func fetchOrInsertOGCacheData(url: Swift.String, completion: @escaping (OGCacheData) -> ())
-  @objc final public func fetchOGCacheData(url: Swift.String, completion: @escaping (OGCacheData?) -> ())
-  @objc final public func updateIfNeeded(cache: OGCacheData)
-  @objc final public func deleteOGCacheDate(cache: OGCacheData, completion: ((Swift.Error?) -> Swift.Void)?)
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class TransportMessagesParser : ObjectiveC.NSObject {
-  @objc public class func getQuickRepliesFromDict(_ dict: Swift.Dictionary<Swift.String, Any>) -> Swift.Array<QuickReply>?
-  @objc public class func getAttrString(fromMarkdown string: Swift.String, withAttributes attributes: THRAttributes, isOutgoing: Swift.Bool) -> Foundation.NSAttributedString
-  @objc override dynamic public init()
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Strong : BaseNode {
-  @objc deinit
-}
-extension Strong : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
 @_hasMissingDesignatedInitializers public class FoundationHTTPServerHandler : HTTPServerHandler {
   public func register(delegate: HTTPServerDelegate)
   public func createResponse(headers: [Swift.String : Swift.String]) -> Foundation.Data
   public func parse(data: Foundation.Data)
   @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LineBreak : BaseNode {
-  @objc deinit
-}
-extension LineBreak : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BlockQuote : BaseNode {
-  @objc deinit
-}
-extension BlockQuote : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
 }
 public enum ConnectionState {
   case connected
@@ -593,17 +311,8 @@ public protocol Transport : AnyObject {
   func register(delegate: TransportEventClient)
   func connect(url: Foundation.URL, timeout: Swift.Double, certificatePinning: CertificatePinning?)
   func disconnect()
-  func write(data: Foundation.Data, completion: @escaping ((Swift.Error?) -> ()))
+  func write(data: Foundation.Data, completion: @escaping ((Swift.Error?) -> Swift.Void))
   var usingTLS: Swift.Bool { get }
-}
-public protocol DownASTRenderable : DownRenderable {
-  func toAST(_ options: DownOptions) throws -> Swift.UnsafeMutablePointer<cmark_node>
-}
-extension DownASTRenderable {
-  public func toAST(_ options: DownOptions = .default) throws -> Swift.UnsafeMutablePointer<cmark_node>
-}
-public struct DownASTRenderer {
-  public static func stringToAST(_ string: Swift.String, options: DownOptions = .default) throws -> Swift.UnsafeMutablePointer<cmark_node>
 }
 public enum WebSocketError {
   case unknownError
@@ -614,77 +323,10 @@ public enum WebSocketError {
   case serverError(Swift.String)
   case anyError(Swift.Error?)
 }
-public class ListItemParagraphStyler {
-  public var indentation: CoreGraphics.CGFloat {
-    get
-  }
-  public var trailingParagraphStyle: UIKit.NSParagraphStyle {
-    get
-  }
-  public init(options: ListItemOptions, prefixFont: DownFont)
-  public func leadingParagraphStyle(prefixWidth: CoreGraphics.CGFloat) -> UIKit.NSParagraphStyle
+@objc @objcMembers public class THRRoutingParams : ObjectiveC.NSObject {
+  @objc public init(priority: Swift.Int, skillId: Swift.Int, expiredAt: Swift.String?)
+  @objc public func toDictionary() -> [Swift.String : Any]
   @objc deinit
-}
-public protocol DownHTMLRenderable : DownRenderable {
-  func toHTML(_ options: DownOptions) throws -> Swift.String
-}
-extension DownHTMLRenderable {
-  public func toHTML(_ options: DownOptions = .default) throws -> Swift.String
-}
-public struct DownHTMLRenderer {
-  public static func astToHTML(_ ast: Swift.UnsafeMutablePointer<cmark_node>, options: DownOptions = .default) throws -> Swift.String
-}
-public struct DownStylerConfiguration {
-  public var fonts: FontCollection
-  public var colors: ColorCollection
-  public var paragraphStyles: ParagraphStyleCollection
-  public var listItemOptions: ListItemOptions
-  public var quoteStripeOptions: QuoteStripeOptions
-  public var thematicBreakOptions: ThematicBreakOptions
-  public var codeBlockOptions: CodeBlockOptions
-  public init(fonts: FontCollection = StaticFontCollection(), colors: ColorCollection = StaticColorCollection(), paragraphStyles: ParagraphStyleCollection = StaticParagraphStyleCollection(), listItemOptions: ListItemOptions = ListItemOptions(), quoteStripeOptions: QuoteStripeOptions = QuoteStripeOptions(), thematicBreakOptions: ThematicBreakOptions = ThematicBreakOptions(), codeBlockOptions: CodeBlockOptions = CodeBlockOptions())
-}
-extension OpenGraph {
-  public struct Data {
-    public var imageUrl: Foundation.URL? {
-      get
-    }
-    public var pageDescription: Swift.String? {
-      get
-    }
-    public var pageTitle: Swift.String? {
-      get
-    }
-    public var pageType: Swift.String? {
-      get
-    }
-    public var siteName: Swift.String? {
-      get
-    }
-    public var sourceUrl: Foundation.URL? {
-      get
-    }
-    public var url: Foundation.URL? {
-      get
-    }
-  }
-}
-extension OpenGraph.Data : Swift._ObjectiveCBridgeable {
-  public typealias _ObjectiveCType = OpenGraphData
-  public func _bridgeToObjectiveC() -> OpenGraphData
-  public static func _forceBridgeFromObjectiveC(_ source: OpenGraphData, result: inout OpenGraph.Data?)
-  public static func _conditionallyBridgeFromObjectiveC(_ source: OpenGraphData, result: inout OpenGraph.Data?) -> Swift.Bool
-  public static func _unconditionallyBridgeFromObjectiveC(_ source: OpenGraphData?) -> OpenGraph.Data
-}
-public enum DownErrors : Swift.Error {
-  case markdownToASTError
-  case astRenderingError
-  case htmlDataConversionError
-  public static func == (a: DownErrors, b: DownErrors) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 public class WSEngine : Engine, TransportEventClient, FramerEventClient, FrameCollectorDelegate, HTTPHandlerDelegate {
   public var respondToPingWithPong: Swift.Bool
@@ -693,8 +335,8 @@ public class WSEngine : Engine, TransportEventClient, FramerEventClient, FrameCo
   public func start(request: Foundation.URLRequest)
   public func stop(closeCode: Swift.UInt16 = CloseCode.normal.rawValue)
   public func forceStop()
-  public func write(string: Swift.String, completion: ((WebSocketError?) -> ())?)
-  public func write(data: Foundation.Data, opcode: FrameOpCode, completion: ((WebSocketError?) -> ())?)
+  public func write(string: Swift.String, completion: ((WebSocketError?) -> Swift.Void)?)
+  public func write(data: Foundation.Data, opcode: FrameOpCode, completion: ((WebSocketError?) -> Swift.Void)?)
   public func connectionChanged(state: ConnectionState)
   public func didReceiveHTTP(event: HTTPEvent)
   public func frameProcessed(event: FrameEvent)
@@ -702,114 +344,11 @@ public class WSEngine : Engine, TransportEventClient, FramerEventClient, FrameCo
   public func didForm(event: FrameCollector.Event)
   @objc deinit
 }
-public typealias DownFont = UIKit.UIFont
-public protocol FontCollection {
-  var heading1: DownFont { get set }
-  var heading2: DownFont { get set }
-  var heading3: DownFont { get set }
-  var heading4: DownFont { get set }
-  var heading5: DownFont { get set }
-  var heading6: DownFont { get set }
-  var body: DownFont { get set }
-  var code: DownFont { get set }
-  var listItemPrefix: DownFont { get set }
-}
-public struct StaticFontCollection : FontCollection {
-  public var heading1: DownFont
-  public var heading2: DownFont
-  public var heading3: DownFont
-  public var heading4: DownFont
-  public var heading5: DownFont
-  public var heading6: DownFont
-  public var body: DownFont
-  public var code: DownFont
-  public var listItemPrefix: DownFont
-  public init(heading1: DownFont = .boldSystemFont(ofSize: 28), heading2: DownFont = .boldSystemFont(ofSize: 24), heading3: DownFont = .boldSystemFont(ofSize: 20), heading4: DownFont = .boldSystemFont(ofSize: 20), heading5: DownFont = .boldSystemFont(ofSize: 20), heading6: DownFont = .boldSystemFont(ofSize: 20), body: DownFont = .systemFont(ofSize: 17), code: DownFont = DownFont(name: "menlo", size: 17) ?? .systemFont(ofSize: 17), listItemPrefix: DownFont = DownFont.monospacedDigitSystemFont(ofSize: 17, weight: .regular))
-}
 public class FoundationHTTPHandler : HTTPHandler {
   public init()
   public func convert(request: Foundation.URLRequest) -> Foundation.Data
   public func parse(data: Foundation.Data) -> Swift.Int
   public func register(delegate: HTTPHandlerDelegate)
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers @objc final public class OpenGraphDataDownloader : ObjectiveC.NSObject {
-  @objc(sharedInstance) public static var shared: OpenGraphDataDownloader
-  @discardableResult
-  @objc final public func fetchOGData(withURLString urlString: Swift.String, completion: ((OpenGraphData?, Swift.Error?) -> Swift.Void)? = nil) -> Task
-  @discardableResult
-  @nonobjc final public func fetchOGData(urlString: Swift.String, completion: ((OpenGraphDataDownloader.Result) -> Swift.Void)? = nil) -> Task
-  @objc final public func cancelLoading(_ task: Task, shouldContinueDownloading: Swift.Bool)
-  @objc deinit
-}
-extension OpenGraphDataDownloader {
-  public enum Error : Swift.Error {
-    case createURLFailed(Swift.String)
-    case createYoutubeRequestFailed(Swift.String)
-  }
-  public enum Result {
-    case success(data: OpenGraph.Data, isExpired: Swift.Bool)
-    case failure(error: Swift.Error, isExpired: Swift.Bool)
-  }
-}
-extension OpenGraphDataDownloader.Result {
-  public var isExpired: Swift.Bool {
-    get
-  }
-  public var data: OpenGraph.Data? {
-    get
-  }
-  public var error: Swift.Error? {
-    get
-  }
-}
-public typealias DownViewClosure = () -> ()
-@objc @_Concurrency.MainActor(unsafe) open class DownView : WebKit.WKWebView {
-  @_Concurrency.MainActor(unsafe) public init(frame: CoreGraphics.CGRect, markdownString: Swift.String, openLinksInBrowser: Swift.Bool = true, templateBundle: Foundation.Bundle? = nil, writableBundle: Swift.Bool = false, configuration: WebKit.WKWebViewConfiguration? = nil, options: DownOptions = .default, didLoadSuccessfully: DownViewClosure? = nil) throws
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) public func update(markdownString: Swift.String, options: DownOptions? = nil, didLoadSuccessfully: DownViewClosure? = nil) throws
-  @objc deinit
-}
-extension DownView : WebKit.WKNavigationDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class ReachabilityObjC : ObjectiveC.NSObject {
-  @objc public static var shared: ReachabilityObjC
-  @objc public static func startNotifying(_ listener: @escaping (ReachabilityObjC) -> ())
-  @objc public static func startNotifying()
-  @objc public static func stopNotifying()
-  @objc public static func whenReachable(_ reachable: @escaping (ReachabilityObjC) -> ())
-  @objc public static func whenUnreachable(_ unreachable: @escaping (ReachabilityObjC) -> ())
-  @objc public static func isConnected() -> Swift.Bool
-  @objc public func isConnected() -> Swift.Bool
-  @objc public func getConnection() -> ReachabilityObjC.Connection
-  @objc public enum Connection : Swift.Int, Swift.RawRepresentable {
-    case unavailable
-    case wifi
-    case cellular
-    public init?(rawValue: Swift.Int)
-    public typealias RawValue = Swift.Int
-    public var rawValue: Swift.Int {
-      get
-    }
-  }
-  public enum Connection1 : Swift.CustomStringConvertible {
-    @available(*, deprecated, renamed: "unavailable")
-    case none
-    case unavailable
-    case wifi
-    case cellular
-    public var description: Swift.String {
-      get
-    }
-    public static func == (a: ReachabilityObjC.Connection1, b: ReachabilityObjC.Connection1) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class SocketSettings : ObjectiveC.NSObject {
@@ -834,7 +373,7 @@ extension DownView : WebKit.WKNavigationDelegate {
   @objc public var http: HttpSettings
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc final public class THRControls : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers final public class THRControls : ObjectiveC.NSObject {
   @objc final public var sendButton: UIKit.UIButton?
   @objc final public var attachButton: UIKit.UIButton?
   @objc override dynamic public init()
@@ -849,11 +388,11 @@ extension DownView : WebKit.WKNavigationDelegate {
   @objc func didSelectQuickReply(_ quickReply: QuickReply)
 }
 @objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class QuickReplyCell : UIKit.UICollectionViewCell {
-  @objc @_Concurrency.MainActor(unsafe) public class var sizingCell: QuickReplyCell! {
+  @objc @_Concurrency.MainActor(unsafe) public class var sizingCell: QuickReplyCell {
     @objc get
   }
-  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var cellWidth: UIKit.NSLayoutConstraint!
-  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var actionButton: UIKit.UIButton!
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var cellWidth: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var actionButton: UIKit.UIButton!
   @objc @_Concurrency.MainActor(unsafe) public class func cellIdentifier() -> Swift.String
   @objc @_Concurrency.MainActor(unsafe) public class func nib() -> UIKit.UINib
   @objc override dynamic public func awakeFromNib()
@@ -863,18 +402,6 @@ extension DownView : WebKit.WKNavigationDelegate {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-public typealias TextView = UIKit.UITextView
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class DownTextView : TextView {
-  @_Concurrency.MainActor(unsafe) open var styler: Styler
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var text: Swift.String! {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set(value)
-  }
-  @_Concurrency.MainActor(unsafe) public convenience init(frame: CoreGraphics.CGRect, styler: Styler = DownStyler())
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) open func render() throws
   @objc deinit
 }
 public enum HTTPUpgradeError : Swift.Error {
@@ -913,74 +440,115 @@ extension Foundation.URL {
   }
   public func getParts() -> URLParts?
 }
-public typealias DownColor = UIKit.UIColor
-public protocol ColorCollection {
-  var heading1: DownColor { get set }
-  var heading2: DownColor { get set }
-  var heading3: DownColor { get set }
-  var heading4: DownColor { get set }
-  var heading5: DownColor { get set }
-  var heading6: DownColor { get set }
-  var body: DownColor { get set }
-  var code: DownColor { get set }
-  var link: DownColor { get set }
-  var quote: DownColor { get set }
-  var quoteStripe: DownColor { get set }
-  var thematicBreak: DownColor { get set }
-  var listItemPrefix: DownColor { get set }
-  var codeBlockBackground: DownColor { get set }
+@objc public protocol ThreadsPreloadView {
+  @objc func startAnimation()
+  @objc func stopAnimation()
+  @objc func getView() -> UIKit.UIView!
 }
-public struct StaticColorCollection : ColorCollection {
-  public var heading1: DownColor
-  public var heading2: DownColor
-  public var heading3: DownColor
-  public var heading4: DownColor
-  public var heading5: DownColor
-  public var heading6: DownColor
-  public var body: DownColor
-  public var code: DownColor
-  public var link: DownColor
-  public var quote: DownColor
-  public var quoteStripe: DownColor
-  public var thematicBreak: DownColor
-  public var listItemPrefix: DownColor
-  public var codeBlockBackground: DownColor
-  public init(heading1: DownColor = .black, heading2: DownColor = .black, heading3: DownColor = .black, heading4: DownColor = .black, heading5: DownColor = .black, heading6: DownColor = .black, body: DownColor = .black, code: DownColor = .black, link: DownColor = .blue, quote: DownColor = .darkGray, quoteStripe: DownColor = .darkGray, thematicBreak: DownColor = .init(white: 0.9, alpha: 1), listItemPrefix: DownColor = .lightGray, codeBlockBackground: DownColor = .init(red: 0.96, green: 0.97, blue: 0.98, alpha: 1))
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Code : BaseNode {
-  public var literal: Swift.String? {
-    get
-  }
-  @objc deinit
-}
-extension Code : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
+@objc public enum THRMessageRecieveState : Swift.Int {
+  case accepted
+  case notAccepted
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Paragraph : BaseNode {
-  @objc deinit
+@objc public protocol ThreadsDelegate {
+  @objc func threads(_ threads: Threads, didReceiveError error: Swift.Error)
+  @objc func threads(_ threads: Threads, unreadMessagesCount: Swift.UInt)
+  @objc func threads(_ threads: Threads, didChangeDeviceAddress deviceAddress: Swift.String)
+  @objc optional func threads(_ threads: Threads, allowOpenUrl: Foundation.URL) -> Swift.Bool
+  @objc optional func customPreloadView() -> ThreadsPreloadView!
 }
-extension Paragraph : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class Threads : ObjectiveC.NSObject {
+  public static func threads() -> Threads
+  @objc final public var isClientIdEncrypted: Swift.Bool {
+    @objc get
+    @objc set(newValue)
   }
-}
-@_hasMissingDesignatedInitializers @objc final public class OGCacheData : ObjectiveC.NSObject {
-  @nonobjc final public let ogData: OpenGraph.Data
-  @objc final public let createDate: Foundation.Date?
-  @objc final public let updateDate: Foundation.Date?
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Document : BaseNode {
-  @objc deinit
-  @discardableResult
-  public func accept<T>(_ visitor: T) -> T.Result where T : Visitor
-}
-extension Document : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
+  @objc final public var isDebugLoggingEnabled: Swift.Bool {
+    @objc get
+    @objc set(newValue)
   }
+  @objc final public var isSocketAdditionalDebugLoggingEnabled: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc final public var registrationAtStartupDisable: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc final public var isShowsNetworkActivity: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc final public var clientId: Swift.String? {
+    @objc get
+  }
+  @objc final public var clientName: Swift.String? {
+    @objc get
+  }
+  @objc final public var appMarker: Swift.String? {
+    @objc get
+  }
+  @objc final public var clientSignature: Swift.String? {
+    @objc get
+  }
+  @objc final public var clientAuthToken: Swift.String? {
+    @objc get
+  }
+  @objc final public var clientAuthSchema: Swift.String? {
+    @objc get
+  }
+  @objc final public var isClientSet: Swift.Bool {
+    @objc get
+  }
+  @objc final public var data: Swift.String? {
+    @objc get
+  }
+  @objc final public var fileSizeLimit: Swift.Int {
+    @objc get
+  }
+  @objc final public var attributes: THRAttributes {
+    @objc get
+  }
+  @objc final public var controls: THRControls {
+    @objc get
+  }
+  @objc final public var historyURL: Foundation.URL? {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc final public var fileUploadingURL: Foundation.URL? {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc final public func configureThreadsGateTransportProtocol(with delegate: ThreadsDelegate?, webSocketURL: Foundation.URL, providerUid: Swift.String, historyURL: Foundation.URL, fileUploadingURL: Foundation.URL)
+  @objc final public func registerApplicationForRemoteNotificationsStandartOptions(authorizationStatusDenied: (() -> Swift.Void)?, completionHandler: @escaping ((_ deviceToken: Foundation.Data?) -> Swift.Void))
+  @objc final public func applicationDidRegisterForRemoteNotifications(withDeviceToken deviceToken: Foundation.Data)
+  @objc final public func applicationDidFailToRegisterForRemoteNotificationsWithError(_ error: Swift.Error)
+  @objc final public func applicationDidReceiveRemoteNotification(_ withUserInfo: [Swift.AnyHashable : Any])
+  @objc final public func applicationDidReceiveRemoteNotification(_ withUserInfo: [Swift.AnyHashable : Any], fetchCompletionHandler completionHandler: ((_ state: THRMessageRecieveState) -> Swift.Void))
+  @objc final public func setClientInfo(_ clientInfo: THRClientInfo)
+  @objc final public func logout()
+  @objc final public func logout(withClientId clientId: Swift.String)
+  @objc final public func handlePushNotificationUserInfo(_ userInfo: [Swift.AnyHashable : Any])
+  @objc final public func version() -> Foundation.NSString
+  @objc final public func unreadMessagesCount() -> Swift.UInt
+  @objc final public func clearCachedFiles()
+  @objc final public func isThreadsOriginPushUserInfo(_ userInfo: [Swift.AnyHashable : Any]) -> Swift.Bool
+  @objc final public func getAppMarker(fromPushUserInfo userInfo: [Swift.AnyHashable : Any]) -> Swift.String?
+  @objc final public func sendMessage(withText: Swift.String, completion: ((_ error: Swift.Error?) -> Swift.Void)?)
+  @objc final public func registerUser(with clientInfo: THRClientInfo, messageWithText text: Swift.String)
+  @objc final public func sendMessage(with image: UIKit.UIImage, completion: ((_ error: Swift.Error?) -> Swift.Void)?)
+  @objc final public var lastActivitySeconds: Foundation.TimeInterval {
+    @objc get
+  }
+  @objc final public func chatViewController(with attributes: THRAttributes) -> UIKit.UIViewController
+  @objc final public func chatViewController(with attributes: THRAttributes, completionHandler: ((_ error: Swift.Error?) -> Swift.Void)?) -> UIKit.UIViewController
+  @objc final public func chatViewController(with attributes: THRAttributes, pushUserInfo: [Swift.AnyHashable : Any], completionHandler: ((_ error: Swift.Error?) -> Swift.Void)?) -> UIKit.UIViewController
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class Localization : ObjectiveC.NSObject {
   @objc public class func localize(key: Swift.String, value: Swift.String) -> Swift.String
@@ -988,34 +556,18 @@ extension Document : Swift.CustomDebugStringConvertible {
   @objc override dynamic public init()
   @objc deinit
 }
-public protocol DownXMLRenderable : DownRenderable {
-  func toXML(_ options: DownOptions) throws -> Swift.String
-}
-extension DownXMLRenderable {
-  public func toXML(_ options: DownOptions = .default) throws -> Swift.String
-}
-public struct DownXMLRenderer {
-  public static func astToXML(_ ast: Swift.UnsafeMutablePointer<cmark_node>, options: DownOptions = .default) throws -> Swift.String
-}
 @objc @_inheritsConvenienceInitializers @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public class NativeEngine : ObjectiveC.NSObject, Engine, Foundation.URLSessionDataDelegate, Foundation.URLSessionWebSocketDelegate {
   public func register(delegate: EngineDelegate)
   public func start(request: Foundation.URLRequest)
   public func stop(closeCode: Swift.UInt16)
   public func forceStop()
-  public func write(string: Swift.String, completion: ((WebSocketError?) -> ())?)
-  public func write(data: Foundation.Data, opcode: FrameOpCode, completion: ((WebSocketError?) -> ())?)
+  public func write(string: Swift.String, completion: ((WebSocketError?) -> Swift.Void)?)
+  public func write(data: Foundation.Data, opcode: FrameOpCode, completion: ((WebSocketError?) -> Swift.Void)?)
   @objc public func urlSession(_ session: Foundation.URLSession, webSocketTask: Foundation.URLSessionWebSocketTask, didOpenWithProtocol protocol: Swift.String?)
   @objc public func urlSession(_ session: Foundation.URLSession, webSocketTask: Foundation.URLSessionWebSocketTask, didCloseWith closeCode: Foundation.URLSessionWebSocketTask.CloseCode, reason: Foundation.Data?)
   @objc override dynamic public init()
   @objc deinit
-}
-@objc public protocol OGDataCacheManagerProtocol : ObjectiveC.NSObjectProtocol {
-  @objc var updateInterval: Foundation.TimeInterval { get set }
-  @objc func fetchOrInsertOGCacheData(url: Swift.String, completion: @escaping (OGCacheData) -> ())
-  @objc func fetchOGCacheData(url: Swift.String, completion: @escaping (OGCacheData?) -> ())
-  @objc func updateIfNeeded(cache: OGCacheData)
-  @objc func deleteOGCacheDate(cache: OGCacheData, completion: ((Swift.Error?) -> Swift.Void)?)
 }
 public class WSCompression : CompressionHandler {
   public init()
@@ -1025,6 +577,7 @@ public class WSCompression : CompressionHandler {
   @objc deinit
 }
 @objc @objcMembers public class PushUserInfo : ObjectiveC.NSObject {
+  @objc public init?(from pushUserInfo: [Swift.String : Any])
   @objc final public let alert: Swift.String
   @objc final public let skillId: Swift.Int
   @objc final public let expiredAt: Swift.String
@@ -1033,24 +586,7 @@ public class WSCompression : CompressionHandler {
   @objc final public let priority: Swift.Int
   @objc final public let senderName: Swift.String
   @objc final public let chatMessageId: Swift.String?
-  @objc public init?(from pushUserInfo: [Swift.String : Any])
   @objc deinit
-}
-public struct DownOptions : Swift.OptionSet {
-  public let rawValue: Swift.Int32
-  public init(rawValue: Swift.Int32)
-  public static var `default`: DownOptions
-  public static var sourcePos: DownOptions
-  public static var hardBreaks: DownOptions
-  public static var safe: DownOptions
-  public static var unsafe: DownOptions
-  public static var normalize: DownOptions
-  public static var validateUTF8: DownOptions
-  public static var smart: DownOptions
-  public static var smartUnsafe: DownOptions
-  public typealias ArrayLiteralElement = DownOptions
-  public typealias Element = DownOptions
-  public typealias RawValue = Swift.Int32
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class QuickReply : ObjectiveC.NSObject {
   @objc final public let text: Swift.String
@@ -1058,17 +594,6 @@ public struct DownOptions : Swift.OptionSet {
     @objc get
   }
   @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Heading : BaseNode {
-  public var headingLevel: Swift.Int {
-    get
-  }
-  @objc deinit
-}
-extension Heading : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
 }
 public protocol FrameCollectorDelegate : AnyObject {
   func didForm(event: FrameCollector.Event)
@@ -1086,113 +611,321 @@ public protocol FrameCollectorDelegate : AnyObject {
   public func add(frame: Frame)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class ThreadsServerAPI : ObjectiveC.NSObject {
-  public typealias Completion<T> = (T?, Swift.Error?) -> Swift.Void
-  @objc public static var chatApiVersion: Swift.String
-  public typealias HistoryCompletion = ThreadsServerAPI.Completion<Swift.Array<THRMessage>>
-  public typealias MessagesReadCompletion = ThreadsServerAPI.Completion<Swift.Array<THRMessage>>
-  @objc public static var isDebugLoggingEnabled: Swift.Bool
-  @objc public static func setServer(baseUrl: Foundation.URL)
-  @objc public static func markMessagesRead(_ messages: Swift.Array<THRMessage>, completion: @escaping ThreadsServerAPI.MessagesReadCompletion)
-  @objc public static func getHistoryMessages(clientId: Swift.String, count: Swift.Int, beforeMessage: THRMessage?, completion: @escaping ThreadsServerAPI.HistoryCompletion)
+@_inheritsConvenienceInitializers @objc public class THRColor : ObjectiveC.NSObject {
+  @objc public static func color(by name: Swift.String, colorType: THRSysColor) -> UIKit.UIColor
+  @objc public static func color(by name: Swift.String, defColor: UIKit.UIColor) -> UIKit.UIColor
+  @objc public static func color(by sysColor: THRSysColor) -> UIKit.UIColor
   @objc override dynamic public init()
   @objc deinit
 }
-public struct ListItemOptions {
-  public var maxPrefixDigits: Swift.UInt
-  public var spacingAfterPrefix: CoreGraphics.CGFloat
-  public var spacingAbove: CoreGraphics.CGFloat
-  public var spacingBelow: CoreGraphics.CGFloat
-  public init(maxPrefixDigits: Swift.UInt = 2, spacingAfterPrefix: CoreGraphics.CGFloat = 8, spacingAbove: CoreGraphics.CGFloat = 4, spacingBelow: CoreGraphics.CGFloat = 8)
-}
-public protocol Node {
-  var cmarkNode: CMarkNode { get }
-  var children: [Node] { get }
-}
-extension Node {
-  public var hasSuccessor: Swift.Bool {
+@objc public enum THRSysColor : Swift.Int {
+  case darkGreen
+  case lightGreen
+  case gray
+  case lightGray
+  case middleGray
+  case darkGray
+  case darkerGray
+  case blackTransparent50
+  case lightCyan
+  case blue
+  case red
+  case orange
+  case darkOrange
+  case gold
+  case label
+  case secondaryLabel
+  case tertiaryLabel
+  case quaternaryLabel
+  case systemFill
+  case secondarySystemFill
+  case tertiarySystemFill
+  case quaternarySystemFill
+  case placeholderText
+  case systemBackground
+  case secondarySystemBackground
+  case tertiarySystemBackground
+  case systemGroupedBackground
+  case secondarySystemGroupedBackground
+  case tertiarySystemGroupedBackground
+  case separator
+  case opaqueSeparator
+  case link
+  case darkText
+  case lightText
+  case systemBlue
+  case systemGreen
+  case systemIndigo
+  case systemOrange
+  case systemPink
+  case systemPurple
+  case systemRed
+  case systemTeal
+  case systemYellow
+  case systemGray
+  case systemGray2
+  case systemGray3
+  case systemGray4
+  case systemGray5
+  case systemGray6
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
 }
-public typealias CMarkNode = Swift.UnsafeMutablePointer<cmark_node>
-extension Swift.UnsafeMutablePointer where Pointee == cmark_node {
-  public func wrap() -> Node?
-  public var parent: CMarkNode? {
-    get
-  }
-  public var type: cmark_node_type {
-    get
-  }
-  public var literal: Swift.String? {
-    get
-  }
-  public var fenceInfo: Swift.String? {
-    get
-  }
-  public var headingLevel: Swift.Int {
-    get
-  }
-  public var listType: cmark_list_type {
-    get
-  }
-  public var listStart: Swift.Int {
-    get
-  }
-  public var url: Swift.String? {
-    get
-  }
-  public var title: Swift.String? {
+@objc public enum THRQuickReplyPresentationMode : Swift.UInt {
+  case toolbar
+  case embed
+  public init?(rawValue: Swift.UInt)
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
     get
   }
 }
-public struct QuoteStripeOptions {
-  public var thickness: CoreGraphics.CGFloat
-  public var spacingAfter: CoreGraphics.CGFloat
-  public init(thickness: CoreGraphics.CGFloat = 2, spacingAfter: CoreGraphics.CGFloat = 8)
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class SocketConnectionError : ObjectiveC.NSObject {
-  @objc public var error: Swift.Error?
-  @objc public var stringError: Swift.String?
+@objc @_inheritsConvenienceInitializers @objcMembers public class THRAttributes : ObjectiveC.NSObject {
   @objc override dynamic public init()
-  @objc deinit
-}
-@objc public protocol SocketConnectionDelegate {
-  @objc func didReceiveData(_ data: Foundation.Data)
-  @objc func didConnected(_ isConnected: Swift.Bool)
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class SocketConnection : ObjectiveC.NSObject {
-  @objc weak public var delegate: SocketConnectionDelegate?
-  @objc public var autoReconnect: Swift.Bool {
+  @objc public var canShowDebugScreen: Swift.Bool
+  @objc public var localizationConfig: LocalizationConfig?
+  @objc public var statusBarStyle: UIKit.UIStatusBarStyle
+  @objc public var refreshColor: UIKit.UIColor
+  @objc public var navigationBarVisible: Swift.Bool
+  @objc public var navigationBarCustomizeTitle: Swift.Bool
+  @objc public var navigationBarTitle: Swift.String?
+  @objc public var navigationBarTitleColor: UIKit.UIColor
+  @objc public var navigationBarTitleFont: UIKit.UIFont
+  @objc public var navigationBarSubtitleFont: UIKit.UIFont
+  @objc public var navigationBarSubtitleColor: UIKit.UIColor
+  @objc public var navigationBarSubtitleShowOrgUnit: Swift.Bool
+  @objc public var navigationBarSubtitleVisible: Swift.Bool
+  @objc public var navigationBarLarge: Swift.Bool
+  @objc public var navigationBarKeyboardControlVisible: Swift.Bool
+  @objc public var navigationBarKeyboardShowImage: UIKit.UIImage?
+  @objc public var navigationBarKeyboardHideImage: UIKit.UIImage?
+  @objc public var launchViewEnable: Swift.Bool
+  @objc public var launchActivityViewColor: UIKit.UIColor
+  @objc public var launchViewBackgroundColor: UIKit.UIColor
+  @objc public var launchViewInnerBoxBackgroundColor: UIKit.UIColor
+  @objc public var launchViewInnerBoxCornerRadius: CoreGraphics.CGFloat
+  @objc public var launchViewInnerBoxSize: CoreGraphics.CGSize
+  @objc public var launchViewTextColor: UIKit.UIColor
+  @objc public var launchViewTextFont: UIKit.UIFont
+  @objc public var backgroundColor: UIKit.UIColor
+  @objc public var placeholderImage: UIKit.UIImage?
+  @objc public var placeholderTitleColor: UIKit.UIColor
+  @objc public var placeholderSubtitleColor: UIKit.UIColor
+  @objc public var placeholderTitleFont: UIKit.UIFont
+  @objc public var placeholderSubtitleFont: UIKit.UIFont
+  @objc public var toolbarbackgroundColor: UIKit.UIColor
+  @objc public var toolbarTintColor: UIKit.UIColor
+  @objc public var attachButtonImage: UIKit.UIImage?
+  @objc public var attachButtonColor: UIKit.UIColor
+  @objc public var attachButtonHighlightColor: UIKit.UIColor
+  @objc public var showAttachButton: Swift.Bool
+  @objc public var sendButtonColor: UIKit.UIColor
+  @objc public var sendButtonHighlightColor: UIKit.UIColor
+  @objc public var sendButtonDisabledColor: UIKit.UIColor
+  @objc public var sendButtonFont: UIKit.UIFont
+  @objc public var sendButtonImage: UIKit.UIImage?
+  @objc public var myMessageFont: UIKit.UIFont
+  @objc public var toolbarQuotedMessageAuthorFont: UIKit.UIFont
+  @objc public var toolbarQuotedMessageFont: UIKit.UIFont
+  @objc public var toolbarQuotedMessageAuthorColor: UIKit.UIColor
+  @objc public var toolbarQuotedMessageColor: UIKit.UIColor
+  @objc public var toolbarInputHasBorder: Swift.Bool
+  @objc public var toolbarInputCornerRadius: CoreGraphics.CGFloat
+  @objc public var toolbarInputMinimumHeight: CoreGraphics.CGFloat
+  @objc public var toolbarInputMaximumHeight: CoreGraphics.CGFloat
+  @objc public var toolbarInputTextColor: UIKit.UIColor
+  @objc public var toolbarInputCursorColor: UIKit.UIColor
+  @objc public var toolbarInputBackgroundColor: UIKit.UIColor
+  @objc public var showWaitingForSpecialistProgress: Swift.Bool
+  @objc public var waitingSpecialistSpinnerColor: UIKit.UIColor
+  @objc public var waitingSpecialistBgColor: UIKit.UIColor
+  @objc public var waitingSpecialistBorderColor: UIKit.UIColor
+  @objc public var waitingSpecialistBorderWidth: CoreGraphics.CGFloat
+  @objc public var bubbleMessageFont: UIKit.UIFont
+  @objc public var bubbleTimeFont: UIKit.UIFont
+  @objc public var failedMessageFont: UIKit.UIFont
+  @objc public var messageHeaderFont: UIKit.UIFont
+  @objc public var quoteAuthorFont: UIKit.UIFont
+  @objc public var quoteMessageFont: UIKit.UIFont
+  @objc public var quoteTimeFont: UIKit.UIFont
+  @objc public var quoteFilesizeFont: UIKit.UIFont
+  @objc public var messageBubbleFilledMaskImage: UIKit.UIImage?
+  @objc public var messageBubbleStrokedMaskImage: UIKit.UIImage?
+  @objc public var messageBubbleFilledMaskInsets: UIKit.UIEdgeInsets
+  @objc public var messageBubbleStrokedMaskInsets: UIKit.UIEdgeInsets
+  @objc public var messageContainerRightOffset: CoreGraphics.CGFloat
+  @objc public var messageContainerLeftOffset: CoreGraphics.CGFloat
+  @objc public var messageBubbleTextViewFrameInsets: UIKit.UIEdgeInsets
+  @objc public var messageBubbleTextViewTextContainerInsets: UIKit.UIEdgeInsets
+  @objc public var messageBubbleOppositeMargin: CoreGraphics.CGFloat
+  @objc public var emptyImageColor: UIKit.UIColor
+  @objc public var timeAndStatusBackgroundColor: UIKit.UIColor
+  @objc public var specialisConnectTitleFont: UIKit.UIFont
+  @objc public var specialisConnectSubtitleFont: UIKit.UIFont
+  @objc public var specialisConnectTitleColor: UIKit.UIColor
+  @objc public var specialisConnectSubtitleColor: UIKit.UIColor
+  @objc public var typingTextFont: UIKit.UIFont
+  @objc public var typingTextColor: UIKit.UIColor
+  @objc public var typingText: Swift.String?
+  @objc public var typingIndicatorEllipsisColor: UIKit.UIColor?
+  @objc public var scheduleIcon: UIKit.UIImage?
+  @objc public var scheduleAlertColor: UIKit.UIColor
+  @objc public var scheduleAlertFont: UIKit.UIFont
+  @objc public var scheduleIconBackgroundColor: UIKit.UIColor
+  @objc public var scrollToBottomImage: UIKit.UIImage?
+  @objc public var scrollToBottomBadgeColor: UIKit.UIColor
+  @objc public var scrollToBottomBadgeTextColor: UIKit.UIColor
+  @objc public var incomingBubbleStroked: Swift.Bool
+  @objc public var incomingBubbleColor: UIKit.UIColor
+  @objc public var incomingBubbleTextColor: UIKit.UIColor
+  @objc public var incomingBubbleLinkColor: UIKit.UIColor
+  @objc public var incomingTimeColor: UIKit.UIColor
+  @objc public var showIncomingAvatar: Swift.Bool
+  @objc public var incomingQuoteSeparatorColor: UIKit.UIColor
+  @objc public var incomingQuoteAuthorColor: UIKit.UIColor
+  @objc public var incomingQuoteMessageColor: UIKit.UIColor
+  @objc public var incomingQuoteTimeColor: UIKit.UIColor
+  @objc public var incomingQuoteFilesizeColor: UIKit.UIColor
+  @objc public var incomingFileIconTintColor: UIKit.UIColor
+  @objc public var incomingFileIconBgColor: UIKit.UIColor
+  @objc public var incomingMediaTimeColor: UIKit.UIColor
+  @objc public var commonMessageAvatarSize: CoreGraphics.CGFloat
+  @objc public var systemMessageAvatarSize: CoreGraphics.CGFloat
+  @objc public var failedBubbleStroked: Swift.Bool
+  @objc public var failedBubbleColor: UIKit.UIColor
+  @objc public var outgoingBubbleStroked: Swift.Bool
+  @objc public var outgoingBubbleColor: UIKit.UIColor
+  @objc public var outgoingBubbleTextColor: UIKit.UIColor
+  @objc public var outgoingBubbleLinkColor: UIKit.UIColor
+  @objc public var outgoingTimeColor: UIKit.UIColor
+  @objc public var outgoingPendingStatusColor: UIKit.UIColor
+  @objc public var outgoingDeliveredStatusColor: UIKit.UIColor
+  @objc public var outgoingReadStatusColor: UIKit.UIColor
+  @objc public var outgoingPendingStatusImage: UIKit.UIImage?
+  @objc public var outgoingDeliveredStatusImage: UIKit.UIImage?
+  @objc public var outgoingReadStatusImage: UIKit.UIImage?
+  @objc public var showOutgoingAvatar: Swift.Bool
+  @objc public var avatarPlaceholderImage: UIKit.UIImage?
+  @objc public var outgoingQuoteSeparatorColor: UIKit.UIColor
+  @objc public var outgoingQuoteAuthorColor: UIKit.UIColor
+  @objc public var outgoingQuoteMessageColor: UIKit.UIColor
+  @objc public var outgoingQuoteTimeColor: UIKit.UIColor
+  @objc public var outgoingQuoteFilesizeColor: UIKit.UIColor
+  @objc public var outgoingFileIconTintColor: UIKit.UIColor
+  @objc public var outgoingFileIconBgColor: UIKit.UIColor
+  @objc public var outgoingMediaTimeColor: UIKit.UIColor
+  @objc public var outgoingMediaPendingStatusColor: UIKit.UIColor
+  @objc public var outgoingMediaDeliveredStatusColor: UIKit.UIColor
+  @objc public var outgoingMediaReadStatusColor: UIKit.UIColor
+  @objc public var searchScopeBarTintColor: UIKit.UIColor
+  @objc public var searchBarTextColor: UIKit.UIColor
+  @objc public var searchBarTintColor: UIKit.UIColor
+  @objc public var searchScopeBarFont: UIKit.UIFont
+  @objc public var searchBarTextFont: UIKit.UIFont
+  @objc public var searchIconDisabled: Swift.Bool
+  @objc public var clearSearchIcon: UIKit.UIImage?
+  @objc public var findedMessageHeaderTextColor: UIKit.UIColor
+  @objc public var findedMessageHeaderBackgroundColor: UIKit.UIColor
+  @objc public var findedMessageHeaderTextFont: UIKit.UIFont
+  @objc public var findMoreMessageTextColor: UIKit.UIColor
+  @objc public var findMoreMessageTextFont: UIKit.UIFont
+  @objc public var searchMessageAuthorTextColor: UIKit.UIColor
+  @objc public var searchMessageTextColor: UIKit.UIColor
+  @objc public var searchMessageDateTextColor: UIKit.UIColor
+  @objc public var searchMessageFileTextColor: UIKit.UIColor
+  @objc public var searchMessageMatchTextColor: UIKit.UIColor
+  @objc public var searchMessageAuthorTextFont: UIKit.UIFont
+  @objc public var searchMessageMatchTextFont: UIKit.UIFont
+  @objc public var searchMessageTextFont: UIKit.UIFont
+  @objc public var searchMessageFileTextFont: UIKit.UIFont
+  @objc public var searchMessageDateTextFont: UIKit.UIFont
+  @objc public var photoPickerSelfieEnabled: Swift.Bool
+  @objc public var photoPickerToolbarTintColor: UIKit.UIColor
+  @objc public var photoPickerToolbarButtonFont: UIKit.UIFont
+  @objc public var photoPickerCheckmarkIcon: UIKit.UIImage?
+  @objc public var photoPickerEmptyCheckmarkIcon: UIKit.UIImage?
+  @objc public var photoPickerSheetTextColor: UIKit.UIColor
+  @objc public var photoPickerSheetTextFont: UIKit.UIFont
+  @objc public var photoPickerMaxImagesCount: Swift.UInt {
     @objc get
-    @objc set(value)
+    @objc set(newValue)
   }
-  @objc public func connect(to url: Foundation.URL)
-  @objc public func disconnect()
-  @objc public func reconnect()
-  @objc public func send(data: Foundation.Data, completion: ((SocketConnectionError?) -> ())?)
-  @objc override dynamic public init()
+  @objc public var fileViewerTitleColor: UIKit.UIColor?
+  @objc public var fileViewerNavBarBackgroundColor: UIKit.UIColor?
+  @objc public var fileViewerNavBarTintColor: UIKit.UIColor?
+  @objc public var fileViewerBackgroundColor: UIKit.UIColor
+  @objc public var fileViewerTitleFont: UIKit.UIFont
+  @objc public var canShowSpecialistInfo: Swift.Bool
+  @objc public var starRatingColorEnabled: UIKit.UIColor
+  @objc public var likeRatingColorEnabled: UIKit.UIColor
+  @objc public var starRatingColorDisabled: UIKit.UIColor
+  @objc public var likeRatingColorDisabled: UIKit.UIColor
+  @objc public var starRatingColorCompleted: UIKit.UIColor
+  @objc public var likeRatingColorCompleted: UIKit.UIColor
+  @objc public var likeLabelOnStarColor: UIKit.UIColor
+  @objc public var likeLabelUnderStarColor: UIKit.UIColor
+  @objc public var surveyTextColor: UIKit.UIColor
+  @objc public var surveyTextFont: UIKit.UIFont
+  @objc public var surveyCompletionColor: UIKit.UIColor
+  @objc public var surveyCompletionFont: UIKit.UIFont
+  @objc public var surveyCompletionDelay: Swift.Int
+  @objc public var iconStarRatingEmty: UIKit.UIImage?
+  @objc public var iconStarRatingFull: UIKit.UIImage?
+  @objc public var iconLikeEmpty: UIKit.UIImage?
+  @objc public var iconDislikeEmpty: UIKit.UIImage?
+  @objc public var iconLikeFull: UIKit.UIImage?
+  @objc public var iconDislikeFull: UIKit.UIImage?
+  @objc public var quickReplyPresentationMode: THRQuickReplyPresentationMode
+  @objc public var quickReplyFont: UIKit.UIFont
+  @objc public var quickReplyBorderCornerRadius: Foundation.NSNumber
+  @objc public var quickReplyBorderColor: UIKit.UIColor
+  @objc public var quickReplyBackgroundColor: UIKit.UIColor
+  @objc public var quickReplyTextColor: UIKit.UIColor
+  @objc public var quickReplyBackgroundColorHighlighted: UIKit.UIColor
+  @objc public var quickReplyTextColorHighLighted: UIKit.UIColor
+  @objc public var quickReplyButtonHeight: CoreGraphics.CGFloat
+  @objc public var quickReplyBorderWidth: CoreGraphics.CGFloat
+  @objc public var voiceRecordingAllowed: Swift.Bool
+  @objc public var voiceMessageRecordButtonImage: UIKit.UIImage?
+  @objc public var voiceMessageSendButtonImage: UIKit.UIImage?
+  @objc public var voiceMessageRecordSendButtonColor: UIKit.UIColor
+  @objc public var voiceMessagePlayImage: UIKit.UIImage?
+  @objc public var voiceMessagePauseImage: UIKit.UIImage?
+  @objc public var incomingVoiceMessagePlayPauseColor: UIKit.UIColor
+  @objc public var outgoingVoiceMessagePlayPauseColor: UIKit.UIColor
+  @objc public var previewVoiceMessagePlayPauseColor: UIKit.UIColor
+  @objc public var incomingVoiceMessageProgressColor: UIKit.UIColor
+  @objc public var outgoingVoiceMessageProgressColor: UIKit.UIColor
+  @objc public var previewVoiceMessageProgressColor: UIKit.UIColor
+  @objc public var showCloseButton: Swift.Bool
+  @objc public var closeButtonColor: UIKit.UIColor?
+  @objc public var closeButtonImage: UIKit.UIImage?
+  @objc public var newChatCenterApi: Swift.Bool
+  @objc public var customHTTPHeadersForDataStore: Swift.Dictionary<Swift.String, Swift.String>?
+  @objc public var historyLoadingCount: Foundation.NSNumber
+  @objc public var clientIdIgnoreEnabled: Swift.Bool
+  @objc public static func defaultAttributes() -> THRAttributes
+  @objc public var callReceiveResponseEnabled: Swift.Bool
+  @objc public var clearChatHistoryIfSocketReconnect: Swift.Bool
+  @objc public var allowUntrustedSSLCertificate: Swift.Bool
+  @objc public var trustedCertificates: [THRCert]
   @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Emphasis : BaseNode {
-  @objc deinit
-}
-extension Emphasis : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
 }
 @objc @_hasMissingDesignatedInitializers public class WaitForNetwork : ObjectiveC.NSObject {
+  @objc deinit
   public enum ConnectionType {
-    case None
-    case WiFi
-    case Cellular
+    case unavailable
+    case wiFi
+    case cellular
     public static func == (a: WaitForNetwork.ConnectionType, b: WaitForNetwork.ConnectionType) -> Swift.Bool
     public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
   }
-  @objc deinit
 }
 extension Swift.Double {
   public var minutes: Foundation.TimeInterval {
@@ -1222,81 +955,26 @@ extension Foundation.NSNumber {
   @objc dynamic public class func months(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
   @objc dynamic public class func years(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
 }
-@objc @_inheritsConvenienceInitializers public class DownLayoutManager : UIKit.NSLayoutManager {
-  @objc override dynamic public func drawGlyphs(forGlyphRange glyphsToShow: Foundation.NSRange, at origin: CoreGraphics.CGPoint)
-  @objc override dynamic public init()
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class BaseNode : Node {
-  final public let cmarkNode: CMarkNode
-  public var children: [Node] {
-    get
-  }
-  public var nestDepth: Swift.Int {
-    get
-  }
-  @objc deinit
-}
-public protocol ParagraphStyleCollection {
-  var heading1: UIKit.NSParagraphStyle { get set }
-  var heading2: UIKit.NSParagraphStyle { get set }
-  var heading3: UIKit.NSParagraphStyle { get set }
-  var heading4: UIKit.NSParagraphStyle { get set }
-  var heading5: UIKit.NSParagraphStyle { get set }
-  var heading6: UIKit.NSParagraphStyle { get set }
-  var body: UIKit.NSParagraphStyle { get set }
-  var code: UIKit.NSParagraphStyle { get set }
-}
-public struct StaticParagraphStyleCollection : ParagraphStyleCollection {
-  public var heading1: UIKit.NSParagraphStyle
-  public var heading2: UIKit.NSParagraphStyle
-  public var heading3: UIKit.NSParagraphStyle
-  public var heading4: UIKit.NSParagraphStyle
-  public var heading5: UIKit.NSParagraphStyle
-  public var heading6: UIKit.NSParagraphStyle
-  public var body: UIKit.NSParagraphStyle
-  public var code: UIKit.NSParagraphStyle
-  public init()
-}
-public protocol DownCommonMarkRenderable : DownRenderable {
-  func toCommonMark(_ options: DownOptions, width: Swift.Int32) throws -> Swift.String
-}
-extension DownCommonMarkRenderable {
-  public func toCommonMark(_ options: DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
-}
-public struct DownCommonMarkRenderer {
-  public static func astToCommonMark(_ ast: Swift.UnsafeMutablePointer<cmark_node>, options: DownOptions = .default, width: Swift.Int32 = 0) throws -> Swift.String
-}
 public protocol CompressionHandler {
   func load(headers: [Swift.String : Swift.String])
   func decompress(data: Foundation.Data, isFinal: Swift.Bool) -> Foundation.Data?
   func compress(data: Foundation.Data) -> Foundation.Data?
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class HtmlBlock : BaseNode {
-  public var literal: Swift.String? {
+@objc(THRMessageRecieveStateOld) public enum THRMessageRecieveStateOld : Swift.Int {
+  case accepted
+  case notAccepted
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
+}
+@_hasMissingDesignatedInitializers @objc public class THRMessageInfo : ObjectiveC.NSObject {
+  final public let senderName: Swift.String
+  final public let text: Swift.String?
+  final public let hasAttachment: Swift.Bool
+  @objc public init(text: Swift.String?, senderName: Swift.String, hasAttachment: Swift.Bool)
   @objc deinit
-}
-extension HtmlBlock : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Image : BaseNode {
-  public var title: Swift.String? {
-    get
-  }
-  public var url: Swift.String? {
-    get
-  }
-  @objc deinit
-}
-extension Image : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
 }
 extension Swift.String {
   public func md5() -> Swift.String
@@ -1314,41 +992,10 @@ public class FoundationSecurity {
   @objc deinit
 }
 extension FoundationSecurity : CertificatePinning {
-  public func evaluateTrust(trust: Security.SecTrust, domain: Swift.String?, completion: ((PinningState) -> ()))
+  public func evaluateTrust(trust: Security.SecTrust, domain: Swift.String?, completion: ((PinningState) -> Swift.Void))
 }
 extension FoundationSecurity : HeaderValidator {
   public func validate(headers: [Swift.String : Swift.String], key: Swift.String) -> Swift.Error?
-}
-public protocol Styler {
-  func style(document str: Foundation.NSMutableAttributedString)
-  func style(blockQuote str: Foundation.NSMutableAttributedString, nestDepth: Swift.Int)
-  func style(list str: Foundation.NSMutableAttributedString, nestDepth: Swift.Int)
-  func style(listItemPrefix str: Foundation.NSMutableAttributedString)
-  func style(item str: Foundation.NSMutableAttributedString, prefixLength: Swift.Int)
-  func style(codeBlock str: Foundation.NSMutableAttributedString, fenceInfo: Swift.String?)
-  func style(htmlBlock str: Foundation.NSMutableAttributedString)
-  func style(customBlock str: Foundation.NSMutableAttributedString)
-  func style(paragraph str: Foundation.NSMutableAttributedString)
-  func style(heading str: Foundation.NSMutableAttributedString, level: Swift.Int)
-  func style(thematicBreak str: Foundation.NSMutableAttributedString)
-  func style(text str: Foundation.NSMutableAttributedString)
-  func style(softBreak str: Foundation.NSMutableAttributedString)
-  func style(lineBreak str: Foundation.NSMutableAttributedString)
-  func style(code str: Foundation.NSMutableAttributedString)
-  func style(htmlInline str: Foundation.NSMutableAttributedString)
-  func style(customInline str: Foundation.NSMutableAttributedString)
-  func style(emphasis str: Foundation.NSMutableAttributedString)
-  func style(strong str: Foundation.NSMutableAttributedString)
-  func style(link str: Foundation.NSMutableAttributedString, title: Swift.String?, url: Swift.String?)
-  func style(image str: Foundation.NSMutableAttributedString, title: Swift.String?, url: Swift.String?)
-}
-public protocol DownAttributedStringRenderable : DownASTRenderable, DownHTMLRenderable {
-  func toAttributedString(_ options: DownOptions, stylesheet: Swift.String?) throws -> Foundation.NSAttributedString
-  func toAttributedString(_ options: DownOptions, styler: Styler) throws -> Foundation.NSAttributedString
-}
-extension DownAttributedStringRenderable {
-  public func toAttributedString(_ options: DownOptions = .default, stylesheet: Swift.String? = nil) throws -> Foundation.NSAttributedString
-  public func toAttributedString(_ options: DownOptions = .default, styler: Styler) throws -> Foundation.NSAttributedString
 }
 public class StringHTTPHandler : HTTPHandler {
   public init()
@@ -1356,17 +1003,6 @@ public class StringHTTPHandler : HTTPHandler {
   public func parse(data: Foundation.Data) -> Swift.Int
   public func register(delegate: HTTPHandlerDelegate)
   @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class HtmlInline : BaseNode {
-  public var literal: Swift.String? {
-    get
-  }
-  @objc deinit
-}
-extension HtmlInline : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
-  }
 }
 public enum URLEmbeddedViewError : Swift.Error {
   case invalidURLString(Swift.String)
@@ -1381,9 +1017,6 @@ public enum Result<T> {
     get
   }
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class Task : ObjectiveC.NSObject {
-  @objc deinit
-}
 public enum ReachabilityError : Swift.Error {
   case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
   case failedToCreateWithHostname(Swift.String, Swift.Int32)
@@ -1397,8 +1030,12 @@ extension Foundation.NSNotification.Name {
   public static var reachabilityChanged: Foundation.Notification.Name
 }
 public class Reachability {
-  public typealias NetworkReachable = (Reachability) -> ()
-  public typealias NetworkUnreachable = (Reachability) -> ()
+  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
+  public convenience init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  public convenience init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  @objc deinit
+  public typealias NetworkReachable = (Reachability) -> Swift.Void
+  public typealias NetworkUnreachable = (Reachability) -> Swift.Void
   @available(*, unavailable, renamed: "Connection")
   public enum NetworkStatus : Swift.CustomStringConvertible {
     case notReachable
@@ -1445,10 +1082,6 @@ public class Reachability {
   public var connection: Reachability.Connection {
     get
   }
-  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
-  public convenience init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
-  public convenience init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
-  @objc deinit
 }
 extension Reachability {
   public func startNotifier() throws
@@ -1469,9 +1102,6 @@ extension Reachability {
     get
   }
 }
-public protocol DownRenderable {
-  var markdownString: Swift.String { get set }
-}
 extension Foundation.URLRequest {
   public enum HTTPMethod : Swift.String {
     case GET
@@ -1491,59 +1121,5 @@ extension Foundation.URLRequest {
   public var method: Foundation.URLRequest.HTTPMethod? {
     get
     set(newValue)
-  }
-}
-@objc @_inheritsConvenienceInitializers public class DownDebugLayoutManager : DownLayoutManager {
-  @objc override dynamic public func drawGlyphs(forGlyphRange glyphsToShow: Foundation.NSRange, at origin: CoreGraphics.CGPoint)
-  @objc override dynamic public init()
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-open class DownStyler : Styler {
-  final public let fonts: FontCollection
-  final public let colors: ColorCollection
-  final public let paragraphStyles: ParagraphStyleCollection
-  final public let quoteStripeOptions: QuoteStripeOptions
-  final public let thematicBreakOptions: ThematicBreakOptions
-  final public let codeBlockOptions: CodeBlockOptions
-  public init(configuration: DownStylerConfiguration = DownStylerConfiguration())
-  open func style(document str: Foundation.NSMutableAttributedString)
-  open func style(blockQuote str: Foundation.NSMutableAttributedString, nestDepth: Swift.Int)
-  open func style(list str: Foundation.NSMutableAttributedString, nestDepth: Swift.Int)
-  open func style(listItemPrefix str: Foundation.NSMutableAttributedString)
-  open func style(item str: Foundation.NSMutableAttributedString, prefixLength: Swift.Int)
-  open func style(codeBlock str: Foundation.NSMutableAttributedString, fenceInfo: Swift.String?)
-  open func style(htmlBlock str: Foundation.NSMutableAttributedString)
-  open func style(customBlock str: Foundation.NSMutableAttributedString)
-  open func style(paragraph str: Foundation.NSMutableAttributedString)
-  open func style(heading str: Foundation.NSMutableAttributedString, level: Swift.Int)
-  open func style(thematicBreak str: Foundation.NSMutableAttributedString)
-  open func style(text str: Foundation.NSMutableAttributedString)
-  open func style(softBreak str: Foundation.NSMutableAttributedString)
-  open func style(lineBreak str: Foundation.NSMutableAttributedString)
-  open func style(code str: Foundation.NSMutableAttributedString)
-  open func style(htmlInline str: Foundation.NSMutableAttributedString)
-  open func style(customInline str: Foundation.NSMutableAttributedString)
-  open func style(emphasis str: Foundation.NSMutableAttributedString)
-  open func style(strong str: Foundation.NSMutableAttributedString)
-  open func style(link str: Foundation.NSMutableAttributedString, title: Swift.String?, url: Swift.String?)
-  open func style(image str: Foundation.NSMutableAttributedString, title: Swift.String?, url: Swift.String?)
-  @objc deinit
-}
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DownDebugTextView : DownTextView {
-  @_Concurrency.MainActor(unsafe) public init(frame: CoreGraphics.CGRect, styler: Styler = DownStyler())
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-public typealias DownFontDescriptor = UIKit.UIFontDescriptor
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Text : BaseNode {
-  public var literal: Swift.String? {
-    get
-  }
-  @objc deinit
-}
-extension Text : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
-    get
   }
 }

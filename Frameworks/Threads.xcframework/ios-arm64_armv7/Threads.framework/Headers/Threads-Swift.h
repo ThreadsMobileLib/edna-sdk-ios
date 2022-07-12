@@ -194,7 +194,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
-@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -212,79 +211,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class NSCoder;
-
-/// A layout manager capable of drawing the custom attributes set by the <code>DownStyler</code>.
-/// Insert this into a TextKit stack manually, or use the provided <code>DownTextView</code>.
-SWIFT_CLASS("_TtC7Threads17DownLayoutManager")
-@interface DownLayoutManager : NSLayoutManager
-- (void)drawGlyphsForGlyphRange:(NSRange)glyphsToShow atPoint:(CGPoint)origin;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-/// A layout manager that draws the line fragments.
-/// Line fragments are the areas with a document that contain lines of text. There
-/// are two types.
-/// <ol>
-///   <li>
-///     A <em>line rect</em> (drawn in red) indicates the maximum rect enclosing the line.
-///     This inlcudes not only the textual content, but also the padding (if any) around that text.
-///   </li>
-///   <li>
-///     A <em>line used rect</em> (drawn in blue) is the smallest rect enclosing the textual content.
-///   </li>
-/// </ol>
-/// The visualization of these rects is useful when determining the paragraph styles
-/// of a <code>DownStyler</code>.
-/// Insert this into a TextKit stack manually, or use the provided <code>DownDebugTextView</code>.
-SWIFT_CLASS("_TtC7Threads22DownDebugLayoutManager")
-@interface DownDebugLayoutManager : DownLayoutManager
-- (void)drawGlyphsForGlyphRange:(NSRange)glyphsToShow atPoint:(CGPoint)origin;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSString;
-@class NSTextContainer;
-
-/// A text view capable of parsing and rendering markdown via the AST.
-SWIFT_CLASS("_TtC7Threads12DownTextView")
-@interface DownTextView : UITextView
-@property (nonatomic, copy) NSString * _Null_unspecified text;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer * _Nullable)textContainer SWIFT_UNAVAILABLE;
-@end
-
-
-/// A text view capable of parsing and rendering markdown via the AST, as well as line fragments.
-/// See <code>DownDebugLayoutManager</code>.
-SWIFT_CLASS("_TtC7Threads17DownDebugTextView")
-@interface DownDebugTextView : DownTextView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-
-@class WKWebViewConfiguration;
-
-SWIFT_CLASS("_TtC7Threads8DownView")
-@interface DownView : WKWebView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration SWIFT_UNAVAILABLE;
-@end
-
-
-@class WKNavigationResponse;
-@class WKNavigationAction;
-@class WKNavigation;
-
-@interface DownView (SWIFT_EXTENSION(Threads)) <WKNavigationDelegate>
-- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationResponse:(WKNavigationResponse * _Nonnull)navigationResponse decisionHandler:(void (^ _Nonnull)(WKNavigationResponsePolicy))decisionHandler;
-- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
-- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
-@end
 
 
 @class NSStream;
@@ -308,6 +234,7 @@ SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @property (nonatomic) NSTimeInterval uploadTimeoutSec;
 @end
 
+@class NSString;
 
 SWIFT_CLASS("_TtC7Threads12Localization")
 @interface Localization : NSObject
@@ -320,9 +247,9 @@ SWIFT_CLASS("_TtC7Threads12Localization")
 
 SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 @interface LocalizationConfig : NSObject
+- (nonnull instancetype)initWithBundle:(NSBundle * _Nonnull)bundle tableName:(NSString * _Nonnull)tableName OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, readonly, strong) NSBundle * _Nonnull bundle;
 @property (nonatomic, readonly, copy) NSString * _Nonnull tableName;
-- (nonnull instancetype)initWithBundle:(NSBundle * _Nonnull)bundle tableName:(NSString * _Nonnull)tableName OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -355,111 +282,10 @@ SWIFT_CLASS("_TtC7Threads12NativeEngine") SWIFT_AVAILABILITY(tvos,introduced=13.
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSDate;
-
-/// OGP cache object
-SWIFT_CLASS("_TtC7Threads11OGCacheData")
-@interface OGCacheData : NSObject
-@property (nonatomic, readonly, copy) NSDate * _Nullable createDate;
-@property (nonatomic, readonly, copy) NSDate * _Nullable updateDate;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// Protocol of OGP cache manager
-/// If define OGP Cahce manage class with this protocol, be able to set OGDataProvider.cacheManager.
-SWIFT_PROTOCOL("_TtP7Threads26OGDataCacheManagerProtocol_")
-@protocol OGDataCacheManagerProtocol <NSObject>
-@property (nonatomic) NSTimeInterval updateInterval;
-- (void)fetchOrInsertOGCacheDataWithUrl:(NSString * _Nonnull)url completion:(void (^ _Nonnull)(OGCacheData * _Nonnull))completion;
-- (void)fetchOGCacheDataWithUrl:(NSString * _Nonnull)url completion:(void (^ _Nonnull)(OGCacheData * _Nullable))completion;
-- (void)updateIfNeededWithCache:(OGCacheData * _Nonnull)cache;
-- (void)deleteOGCacheDateWithCache:(OGCacheData * _Nonnull)cache completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-@end
-
-
-/// Non cached feature class
-/// Has no OGP cache
-SWIFT_CLASS("_TtC7Threads20OGDataNoCacheManager")
-@interface OGDataNoCacheManager : NSObject <OGDataCacheManagerProtocol>
-@property (nonatomic) NSTimeInterval updateInterval;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (void)fetchOrInsertOGCacheDataWithUrl:(NSString * _Nonnull)url completion:(void (^ _Nonnull)(OGCacheData * _Nonnull))completion;
-- (void)fetchOGCacheDataWithUrl:(NSString * _Nonnull)url completion:(void (^ _Nonnull)(OGCacheData * _Nullable))completion;
-- (void)updateIfNeededWithCache:(OGCacheData * _Nonnull)cache;
-- (void)deleteOGCacheDateWithCache:(OGCacheData * _Nonnull)cache completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-@end
-
-@class OpenGraphData;
-@class Task;
-
-/// Provides OGP object from cache or API
-SWIFT_CLASS("_TtC7Threads14OGDataProvider")
-@interface OGDataProvider : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OGDataProvider * _Nonnull sharedInstance;)
-+ (OGDataProvider * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
-/// Represents cache feature
-/// Default cache feature is using Core Data
-/// seealso:
-/// OGDataCacheManagerProtocol
-@property (nonatomic, strong) id <OGDataCacheManagerProtocol> _Nonnull cacheManager;
-@property (nonatomic) NSTimeInterval updateInterval;
-- (Task * _Nonnull)fetchOGDataWithURLString:(NSString * _Nonnull)urlString completion:(void (^ _Nullable)(OpenGraphData * _Nonnull, NSError * _Nullable))completion;
-- (void)deleteOGDataWithUrlString:(NSString * _Nonnull)urlString completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-- (void)deleteOGData:(OpenGraphData * _Nonnull)ogData completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-- (void)cancelLoading:(Task * _Nonnull)task shouldContinueDownloading:(BOOL)shouldContinueDownloading;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class UIImage;
-
-/// Provides Image from cache or API
-SWIFT_CLASS("_TtC7Threads15OGImageProvider")
-@interface OGImageProvider : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OGImageProvider * _Nonnull sharedInstance;)
-+ (OGImageProvider * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
-- (Task * _Nullable)loadImageWithURLString:(NSString * _Nonnull)urlString completion:(void (^ _Nullable)(UIImage * _Nullable, NSError * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
-- (void)clearMemoryCache;
-- (void)clearAllCache;
-- (void)cancelLoading:(Task * _Nonnull)task shouldContinueDownloading:(BOOL)shouldContinueDownloading;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class NSURL;
-
-/// OGP object for Objective-C
-SWIFT_CLASS("_TtC7Threads13OpenGraphData")
-@interface OpenGraphData : NSObject
-@property (nonatomic, readonly, copy) NSURL * _Nullable imageUrl;
-@property (nonatomic, readonly, copy) NSString * _Nullable pageDescription;
-@property (nonatomic, readonly, copy) NSString * _Nullable pageTitle;
-@property (nonatomic, readonly, copy) NSString * _Nullable pageType;
-@property (nonatomic, readonly, copy) NSString * _Nullable siteName;
-@property (nonatomic, readonly, copy) NSURL * _Nullable sourceUrl;
-@property (nonatomic, readonly, copy) NSURL * _Nullable url;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// OGP object downloader
-SWIFT_CLASS("_TtC7Threads23OpenGraphDataDownloader")
-@interface OpenGraphDataDownloader : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OpenGraphDataDownloader * _Nonnull sharedInstance;)
-+ (OpenGraphDataDownloader * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
-- (Task * _Nonnull)fetchOGDataWithURLString:(NSString * _Nonnull)urlString completion:(void (^ _Nullable)(OpenGraphData * _Nullable, NSError * _Nullable))completion;
-- (void)cancelLoading:(Task * _Nonnull)task shouldContinueDownloading:(BOOL)shouldContinueDownloading;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 
 SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 @interface PushUserInfo : NSObject
+- (nullable instancetype)initFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, readonly, copy) NSString * _Nonnull alert;
 @property (nonatomic, readonly) NSInteger skillId;
 @property (nonatomic, readonly, copy) NSString * _Nonnull expiredAt;
@@ -468,7 +294,6 @@ SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 @property (nonatomic, readonly) NSInteger priority;
 @property (nonatomic, readonly, copy) NSString * _Nonnull senderName;
 @property (nonatomic, readonly, copy) NSString * _Nullable chatMessageId;
-- (nullable instancetype)initFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -487,13 +312,14 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 @class UINib;
 @protocol QuickReplyCellDelegate;
 @class UITraitCollection;
+@class NSCoder;
 
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Null_unspecified sizingCell;)
-+ (QuickReplyCell * _Null_unspecified)sizingCell SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified cellWidth;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified actionButton;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
++ (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint * _Null_unspecified cellWidth;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified actionButton;
 + (NSString * _Nonnull)cellIdentifier SWIFT_WARN_UNUSED_RESULT;
 + (UINib * _Nonnull)nib SWIFT_WARN_UNUSED_RESULT;
 - (void)awakeFromNib;
@@ -506,63 +332,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCe
 @end
 
 
+///
 SWIFT_PROTOCOL("_TtP7Threads22QuickReplyCellDelegate_")
 @protocol QuickReplyCellDelegate
+/// \param quickReply 
+///
 - (void)didSelectQuickReply:(QuickReply * _Nonnull)quickReply;
-@end
-
-enum Connection : NSInteger;
-
-SWIFT_CLASS("_TtC7Threads16ReachabilityObjC")
-@interface ReachabilityObjC : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ReachabilityObjC * _Nonnull shared;)
-+ (ReachabilityObjC * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-+ (void)startNotifying:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))listener;
-+ (void)startNotifying;
-+ (void)stopNotifying;
-+ (void)whenReachable:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))reachable;
-+ (void)whenUnreachable:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))unreachable;
-+ (BOOL)isConnected SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)isConnected SWIFT_WARN_UNUSED_RESULT;
-- (enum Connection)getConnection SWIFT_WARN_UNUSED_RESULT;
-@end
-
-typedef SWIFT_ENUM(NSInteger, Connection, open) {
-  ConnectionUnavailable = 0,
-  ConnectionWifi = 1,
-  ConnectionCellular = 2,
-};
-
-@protocol SocketConnectionDelegate;
-@class SocketConnectionError;
-
-SWIFT_CLASS("_TtC7Threads16SocketConnection")
-@interface SocketConnection : NSObject
-@property (nonatomic, weak) id <SocketConnectionDelegate> _Nullable delegate;
-@property (nonatomic) BOOL autoReconnect;
-- (void)connectTo:(NSURL * _Nonnull)url;
-- (void)disconnect;
-- (void)reconnect;
-- (void)sendWithData:(NSData * _Nonnull)data completion:(void (^ _Nullable)(SocketConnectionError * _Nullable))completion;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-
-SWIFT_PROTOCOL("_TtP7Threads24SocketConnectionDelegate_")
-@protocol SocketConnectionDelegate
-- (void)didReceiveData:(NSData * _Nonnull)data;
-- (void)didConnected:(BOOL)isConnected;
-@end
-
-
-SWIFT_CLASS("_TtC7Threads21SocketConnectionError")
-@interface SocketConnectionError : NSObject
-@property (nonatomic) NSError * _Nullable error;
-@property (nonatomic, copy) NSString * _Nullable stringError;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -581,6 +356,279 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @property (nonatomic) NSTimeInterval writeTimeoutSec;
 @end
 
+@class UIColor;
+@class UIFont;
+@class UIImage;
+enum THRQuickReplyPresentationMode : NSUInteger;
+@class THRCert;
+
+SWIFT_CLASS("_TtC7Threads13THRAttributes")
+@interface THRAttributes : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// mark - General
+@property (nonatomic) BOOL canShowDebugScreen;
+/// mark - Localization
+@property (nonatomic, strong) LocalizationConfig * _Nullable localizationConfig;
+/// Works properly for non view controller based status bar appearance
+@property (nonatomic) UIStatusBarStyle statusBarStyle;
+@property (nonatomic, strong) UIColor * _Nonnull refreshColor;
+/// mark - Navigation bar
+@property (nonatomic) BOOL navigationBarVisible;
+@property (nonatomic) BOOL navigationBarCustomizeTitle;
+@property (nonatomic, copy) NSString * _Nullable navigationBarTitle;
+@property (nonatomic, strong) UIColor * _Nonnull navigationBarTitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull navigationBarTitleFont;
+@property (nonatomic, strong) UIFont * _Nonnull navigationBarSubtitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull navigationBarSubtitleColor;
+@property (nonatomic) BOOL navigationBarSubtitleShowOrgUnit;
+@property (nonatomic) BOOL navigationBarSubtitleVisible;
+@property (nonatomic) BOOL navigationBarLarge;
+@property (nonatomic) BOOL navigationBarKeyboardControlVisible;
+@property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardShowImage;
+@property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardHideImage;
+/// mark - LaunchView
+@property (nonatomic) BOOL launchViewEnable;
+@property (nonatomic, strong) UIColor * _Nonnull launchActivityViewColor;
+@property (nonatomic, strong) UIColor * _Nonnull launchViewBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull launchViewInnerBoxBackgroundColor;
+@property (nonatomic) CGFloat launchViewInnerBoxCornerRadius;
+@property (nonatomic) CGSize launchViewInnerBoxSize;
+@property (nonatomic, strong) UIColor * _Nonnull launchViewTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull launchViewTextFont;
+/// mark - Placeholder
+@property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
+@property (nonatomic, strong) UIImage * _Nullable placeholderImage;
+@property (nonatomic, strong) UIColor * _Nonnull placeholderTitleColor;
+@property (nonatomic, strong) UIColor * _Nonnull placeholderSubtitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull placeholderTitleFont;
+@property (nonatomic, strong) UIFont * _Nonnull placeholderSubtitleFont;
+/// mark - Toolbar
+@property (nonatomic, strong) UIColor * _Nonnull toolbarbackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarTintColor;
+@property (nonatomic, strong) UIImage * _Nullable attachButtonImage;
+@property (nonatomic, strong) UIColor * _Nonnull attachButtonColor;
+@property (nonatomic, strong) UIColor * _Nonnull attachButtonHighlightColor;
+@property (nonatomic) BOOL showAttachButton;
+@property (nonatomic, strong) UIColor * _Nonnull sendButtonColor;
+@property (nonatomic, strong) UIColor * _Nonnull sendButtonHighlightColor;
+@property (nonatomic, strong) UIColor * _Nonnull sendButtonDisabledColor;
+@property (nonatomic, strong) UIFont * _Nonnull sendButtonFont;
+@property (nonatomic, strong) UIImage * _Nullable sendButtonImage;
+@property (nonatomic, strong) UIFont * _Nonnull myMessageFont;
+@property (nonatomic, strong) UIFont * _Nonnull toolbarQuotedMessageAuthorFont;
+@property (nonatomic, strong) UIFont * _Nonnull toolbarQuotedMessageFont;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarQuotedMessageAuthorColor;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarQuotedMessageColor;
+@property (nonatomic) BOOL toolbarInputHasBorder;
+@property (nonatomic) CGFloat toolbarInputCornerRadius;
+@property (nonatomic) CGFloat toolbarInputMinimumHeight;
+@property (nonatomic) CGFloat toolbarInputMaximumHeight;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarInputTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarInputCursorColor;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarInputBackgroundColor;
+/// mark - Waiting for specialist
+@property (nonatomic) BOOL showWaitingForSpecialistProgress;
+@property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistSpinnerColor;
+@property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistBgColor;
+@property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistBorderColor;
+@property (nonatomic) CGFloat waitingSpecialistBorderWidth;
+/// mark - Messages
+@property (nonatomic, strong) UIFont * _Nonnull bubbleMessageFont;
+@property (nonatomic, strong) UIFont * _Nonnull bubbleTimeFont;
+@property (nonatomic, strong) UIFont * _Nonnull failedMessageFont;
+@property (nonatomic, strong) UIFont * _Nonnull messageHeaderFont;
+@property (nonatomic, strong) UIFont * _Nonnull quoteAuthorFont;
+@property (nonatomic, strong) UIFont * _Nonnull quoteMessageFont;
+@property (nonatomic, strong) UIFont * _Nonnull quoteTimeFont;
+@property (nonatomic, strong) UIFont * _Nonnull quoteFilesizeFont;
+@property (nonatomic, strong) UIImage * _Nullable messageBubbleFilledMaskImage;
+@property (nonatomic, strong) UIImage * _Nullable messageBubbleStrokedMaskImage;
+@property (nonatomic) UIEdgeInsets messageBubbleFilledMaskInsets;
+@property (nonatomic) UIEdgeInsets messageBubbleStrokedMaskInsets;
+@property (nonatomic) CGFloat messageContainerRightOffset;
+@property (nonatomic) CGFloat messageContainerLeftOffset;
+/// Right value sets margin to the avatar image
+/// Left value sets margin on the side opposite the avatar image
+@property (nonatomic) UIEdgeInsets messageBubbleTextViewFrameInsets;
+@property (nonatomic) UIEdgeInsets messageBubbleTextViewTextContainerInsets;
+@property (nonatomic) CGFloat messageBubbleOppositeMargin;
+@property (nonatomic, strong) UIColor * _Nonnull emptyImageColor;
+@property (nonatomic, strong) UIColor * _Nonnull timeAndStatusBackgroundColor;
+/// mark - System messages
+@property (nonatomic, strong) UIFont * _Nonnull specialisConnectTitleFont;
+@property (nonatomic, strong) UIFont * _Nonnull specialisConnectSubtitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull specialisConnectTitleColor;
+@property (nonatomic, strong) UIColor * _Nonnull specialisConnectSubtitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull typingTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull typingTextColor;
+@property (nonatomic, copy) NSString * _Nullable typingText;
+@property (nonatomic, strong) UIColor * _Nullable typingIndicatorEllipsisColor;
+@property (nonatomic, strong) UIImage * _Nullable scheduleIcon;
+@property (nonatomic, strong) UIColor * _Nonnull scheduleAlertColor;
+@property (nonatomic, strong) UIFont * _Nonnull scheduleAlertFont;
+@property (nonatomic, strong) UIColor * _Nonnull scheduleIconBackgroundColor;
+/// mark - Scroll down button
+@property (nonatomic, strong) UIImage * _Nullable scrollToBottomImage;
+@property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeColor;
+@property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeTextColor;
+/// mark - Incoming message
+@property (nonatomic) BOOL incomingBubbleStroked;
+@property (nonatomic, strong) UIColor * _Nonnull incomingBubbleColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingBubbleTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingBubbleLinkColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingTimeColor;
+@property (nonatomic) BOOL showIncomingAvatar;
+@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteSeparatorColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteAuthorColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteMessageColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteTimeColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteFilesizeColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingFileIconTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingFileIconBgColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingMediaTimeColor;
+@property (nonatomic) CGFloat commonMessageAvatarSize;
+@property (nonatomic) CGFloat systemMessageAvatarSize;
+/// mark - Outgoing message
+@property (nonatomic) BOOL failedBubbleStroked;
+@property (nonatomic, strong) UIColor * _Nonnull failedBubbleColor;
+@property (nonatomic) BOOL outgoingBubbleStroked;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingBubbleColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingBubbleTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingBubbleLinkColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingTimeColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingPendingStatusColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingDeliveredStatusColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingReadStatusColor;
+@property (nonatomic, strong) UIImage * _Nullable outgoingPendingStatusImage;
+@property (nonatomic, strong) UIImage * _Nullable outgoingDeliveredStatusImage;
+@property (nonatomic, strong) UIImage * _Nullable outgoingReadStatusImage;
+@property (nonatomic) BOOL showOutgoingAvatar;
+@property (nonatomic, strong) UIImage * _Nullable avatarPlaceholderImage;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteSeparatorColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteAuthorColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteMessageColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteTimeColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteFilesizeColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingFileIconTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingFileIconBgColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingMediaTimeColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingMediaPendingStatusColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingMediaDeliveredStatusColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingMediaReadStatusColor;
+/// mark - Search controller
+@property (nonatomic, strong) UIColor * _Nonnull searchScopeBarTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchBarTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchBarTintColor;
+@property (nonatomic, strong) UIFont * _Nonnull searchScopeBarFont;
+@property (nonatomic, strong) UIFont * _Nonnull searchBarTextFont;
+/// mark - Search message
+@property (nonatomic) BOOL searchIconDisabled;
+@property (nonatomic, strong) UIImage * _Nullable clearSearchIcon;
+@property (nonatomic, strong) UIColor * _Nonnull findedMessageHeaderTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull findedMessageHeaderBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull findedMessageHeaderTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull findMoreMessageTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull findMoreMessageTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull searchMessageAuthorTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchMessageTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchMessageDateTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchMessageFileTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchMessageMatchTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull searchMessageAuthorTextFont;
+@property (nonatomic, strong) UIFont * _Nonnull searchMessageMatchTextFont;
+@property (nonatomic, strong) UIFont * _Nonnull searchMessageTextFont;
+@property (nonatomic, strong) UIFont * _Nonnull searchMessageFileTextFont;
+@property (nonatomic, strong) UIFont * _Nonnull searchMessageDateTextFont;
+/// mark - Photopicker
+@property (nonatomic) BOOL photoPickerSelfieEnabled;
+@property (nonatomic, strong) UIColor * _Nonnull photoPickerToolbarTintColor;
+@property (nonatomic, strong) UIFont * _Nonnull photoPickerToolbarButtonFont;
+@property (nonatomic, strong) UIImage * _Nullable photoPickerCheckmarkIcon;
+@property (nonatomic, strong) UIImage * _Nullable photoPickerEmptyCheckmarkIcon;
+@property (nonatomic, strong) UIColor * _Nonnull photoPickerSheetTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull photoPickerSheetTextFont;
+@property (nonatomic) NSUInteger photoPickerMaxImagesCount;
+/// mark - FileViewer
+@property (nonatomic, strong) UIColor * _Nullable fileViewerTitleColor;
+@property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull fileViewerBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull fileViewerTitleFont;
+/// mark - Specialist Info
+@property (nonatomic) BOOL canShowSpecialistInfo;
+/// mark - Survey
+@property (nonatomic, strong) UIColor * _Nonnull starRatingColorEnabled;
+@property (nonatomic, strong) UIColor * _Nonnull likeRatingColorEnabled;
+@property (nonatomic, strong) UIColor * _Nonnull starRatingColorDisabled;
+@property (nonatomic, strong) UIColor * _Nonnull likeRatingColorDisabled;
+@property (nonatomic, strong) UIColor * _Nonnull starRatingColorCompleted;
+@property (nonatomic, strong) UIColor * _Nonnull likeRatingColorCompleted;
+@property (nonatomic, strong) UIColor * _Nonnull likeLabelOnStarColor;
+@property (nonatomic, strong) UIColor * _Nonnull likeLabelUnderStarColor;
+@property (nonatomic, strong) UIColor * _Nonnull surveyTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull surveyTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull surveyCompletionColor;
+@property (nonatomic, strong) UIFont * _Nonnull surveyCompletionFont;
+@property (nonatomic) NSInteger surveyCompletionDelay;
+@property (nonatomic, strong) UIImage * _Nullable iconStarRatingEmty;
+@property (nonatomic, strong) UIImage * _Nullable iconStarRatingFull;
+@property (nonatomic, strong) UIImage * _Nullable iconLikeEmpty;
+@property (nonatomic, strong) UIImage * _Nullable iconDislikeEmpty;
+@property (nonatomic, strong) UIImage * _Nullable iconLikeFull;
+@property (nonatomic, strong) UIImage * _Nullable iconDislikeFull;
+@property (nonatomic) enum THRQuickReplyPresentationMode quickReplyPresentationMode;
+/// < Шрифт для кнопок быстрых ответов
+@property (nonatomic, strong) UIFont * _Nonnull quickReplyFont;
+/// < Радиус закругления кнопок быстрых ответов
+@property (nonatomic, strong) NSNumber * _Nonnull quickReplyBorderCornerRadius;
+/// < Цвет границы кнопок быстрых ответов
+@property (nonatomic, strong) UIColor * _Nonnull quickReplyBorderColor;
+/// < Цвет кнопок быстрых ответов
+@property (nonatomic, strong) UIColor * _Nonnull quickReplyBackgroundColor;
+/// < Цвет текста на кнопках быстрых ответов
+@property (nonatomic, strong) UIColor * _Nonnull quickReplyTextColor;
+/// <  Цвет подсветки кнопок быстрых ответов
+@property (nonatomic, strong) UIColor * _Nonnull quickReplyBackgroundColorHighlighted;
+/// < Цвет подстветки кнопок быстрых ответов
+@property (nonatomic, strong) UIColor * _Nonnull quickReplyTextColorHighLighted;
+/// < Высота кнопки быстрого ответа (в режиме embed)
+@property (nonatomic) CGFloat quickReplyButtonHeight;
+/// < Толщина границы кнопки быстрого ответа
+@property (nonatomic) CGFloat quickReplyBorderWidth;
+/// mark - Voice Recording Allowed
+@property (nonatomic) BOOL voiceRecordingAllowed;
+@property (nonatomic, strong) UIImage * _Nullable voiceMessageRecordButtonImage;
+@property (nonatomic, strong) UIImage * _Nullable voiceMessageSendButtonImage;
+@property (nonatomic, strong) UIColor * _Nonnull voiceMessageRecordSendButtonColor;
+@property (nonatomic, strong) UIImage * _Nullable voiceMessagePlayImage;
+@property (nonatomic, strong) UIImage * _Nullable voiceMessagePauseImage;
+@property (nonatomic, strong) UIColor * _Nonnull incomingVoiceMessagePlayPauseColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingVoiceMessagePlayPauseColor;
+@property (nonatomic, strong) UIColor * _Nonnull previewVoiceMessagePlayPauseColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingVoiceMessageProgressColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingVoiceMessageProgressColor;
+@property (nonatomic, strong) UIColor * _Nonnull previewVoiceMessageProgressColor;
+/// mark - Show close button
+@property (nonatomic) BOOL showCloseButton;
+@property (nonatomic, strong) UIColor * _Nullable closeButtonColor;
+@property (nonatomic, strong) UIImage * _Nullable closeButtonImage;
+/// mark - New API
+@property (nonatomic) BOOL newChatCenterApi;
+/// mark - DataStore
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable customHTTPHeadersForDataStore;
+@property (nonatomic, strong) NSNumber * _Nonnull historyLoadingCount;
+/// mark - Client validity
+@property (nonatomic) BOOL clientIdIgnoreEnabled;
++ (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
+/// pragma mark - Access call didReceiveResponse in delegate
+@property (nonatomic) BOOL callReceiveResponseEnabled;
+@property (nonatomic) BOOL clearChatHistoryIfSocketReconnect;
+/// mark - Networking TLS
+@property (nonatomic) BOOL allowUntrustedSSLCertificate;
+@property (nonatomic, copy) NSArray<THRCert *> * _Nonnull trustedCertificates;
+@end
+
+@class NSURL;
 
 SWIFT_CLASS_NAMED("THRCert")
 @interface THRCert : NSObject
@@ -597,12 +645,63 @@ SWIFT_CLASS_NAMED("THRCert")
 @end
 
 
+SWIFT_CLASS("_TtC7Threads13THRClientInfo")
+@interface THRClientInfo : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSString * _Nullable data;
+@property (nonatomic, copy) NSString * _Nullable appMarker;
+@property (nonatomic, copy) NSString * _Nullable signature;
+@property (nonatomic, copy) NSString * _Nullable authToken;
+@property (nonatomic, copy) NSString * _Nullable authSchema;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+enum THRSysColor : NSInteger;
+
+SWIFT_CLASS("_TtC7Threads8THRColor")
+@interface THRColor : NSObject
++ (UIColor * _Nonnull)colorBy:(NSString * _Nonnull)name colorType:(enum THRSysColor)colorType SWIFT_WARN_UNUSED_RESULT;
++ (UIColor * _Nonnull)colorBy:(NSString * _Nonnull)name defColor:(UIColor * _Nonnull)defColor SWIFT_WARN_UNUSED_RESULT;
++ (UIColor * _Nonnull)colorBy:(enum THRSysColor)sysColor SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads11THRControls")
 @interface THRControls : NSObject
 @property (nonatomic, strong) UIButton * _Nullable sendButton;
 @property (nonatomic, strong) UIButton * _Nullable attachButton;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+SWIFT_CLASS("_TtC7Threads14THRMessageInfo")
+@interface THRMessageInfo : NSObject
+- (nonnull instancetype)initWithText:(NSString * _Nullable)text senderName:(NSString * _Nonnull)senderName hasAttachment:(BOOL)hasAttachment OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, THRMessageRecieveState, open) {
+  THRMessageRecieveStateAccepted = 0,
+  THRMessageRecieveStateNotAccepted = 1,
+};
+
+typedef SWIFT_ENUM_NAMED(NSInteger, THRMessageRecieveStateOld, "THRMessageRecieveStateOld", open) {
+  THRMessageRecieveStateOldAccepted = 0,
+  THRMessageRecieveStateOldNotAccepted = 1,
+};
+
+/// Режимы отображения быстрых ответов
+typedef SWIFT_ENUM(NSUInteger, THRQuickReplyPresentationMode, open) {
+/// < Показ кнопок быстрых ответов в всплывающей панели
+  THRQuickReplyPresentationModeToolbar = 0,
+/// < Показ кнопок быстрых ответов в потоке сообщений
+  THRQuickReplyPresentationModeEmbed = 1,
+};
 
 
 SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
@@ -613,36 +712,136 @@ SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
 @end
 
 
-SWIFT_CLASS("_TtC7Threads4Task")
-@interface Task : NSObject
+SWIFT_CLASS("_TtC7Threads16THRRoutingParams")
+@interface THRRoutingParams : NSObject
+- (nonnull instancetype)initWithPriority:(NSInteger)priority skillId:(NSInteger)skillId expiredAt:(NSString * _Nullable)expiredAt OBJC_DESIGNATED_INITIALIZER;
+- (NSDictionary<NSString *, id> * _Nonnull)toDictionary SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class THRMessage;
+typedef SWIFT_ENUM(NSInteger, THRSysColor, open) {
+  THRSysColorDarkGreen = 0,
+  THRSysColorLightGreen = 1,
+  THRSysColorGray = 2,
+  THRSysColorLightGray = 3,
+  THRSysColorMiddleGray = 4,
+  THRSysColorDarkGray = 5,
+  THRSysColorDarkerGray = 6,
+  THRSysColorBlackTransparent50 = 7,
+  THRSysColorLightCyan = 8,
+  THRSysColorBlue = 9,
+  THRSysColorRed = 10,
+  THRSysColorOrange = 11,
+  THRSysColorDarkOrange = 12,
+  THRSysColorGold = 13,
+  THRSysColorLabel = 14,
+  THRSysColorSecondaryLabel = 15,
+  THRSysColorTertiaryLabel = 16,
+  THRSysColorQuaternaryLabel = 17,
+  THRSysColorSystemFill = 18,
+  THRSysColorSecondarySystemFill = 19,
+  THRSysColorTertiarySystemFill = 20,
+  THRSysColorQuaternarySystemFill = 21,
+  THRSysColorPlaceholderText = 22,
+  THRSysColorSystemBackground = 23,
+  THRSysColorSecondarySystemBackground = 24,
+  THRSysColorTertiarySystemBackground = 25,
+  THRSysColorSystemGroupedBackground = 26,
+  THRSysColorSecondarySystemGroupedBackground = 27,
+  THRSysColorTertiarySystemGroupedBackground = 28,
+  THRSysColorSeparator = 29,
+  THRSysColorOpaqueSeparator = 30,
+  THRSysColorLink = 31,
+  THRSysColorDarkText = 32,
+  THRSysColorLightText = 33,
+  THRSysColorSystemBlue = 34,
+  THRSysColorSystemGreen = 35,
+  THRSysColorSystemIndigo = 36,
+  THRSysColorSystemOrange = 37,
+  THRSysColorSystemPink = 38,
+  THRSysColorSystemPurple = 39,
+  THRSysColorSystemRed = 40,
+  THRSysColorSystemTeal = 41,
+  THRSysColorSystemYellow = 42,
+  THRSysColorSystemGray = 43,
+  THRSysColorSystemGray2 = 44,
+  THRSysColorSystemGray3 = 45,
+  THRSysColorSystemGray4 = 46,
+  THRSysColorSystemGray5 = 47,
+  THRSysColorSystemGray6 = 48,
+};
 
-SWIFT_CLASS("_TtC7Threads16ThreadsServerAPI")
-@interface ThreadsServerAPI : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull chatApiVersion;)
-+ (NSString * _Nonnull)chatApiVersion SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugLoggingEnabled;)
-+ (BOOL)isDebugLoggingEnabled SWIFT_WARN_UNUSED_RESULT;
-+ (void)setIsDebugLoggingEnabled:(BOOL)value;
-+ (void)setServerWithBaseUrl:(NSURL * _Nonnull)baseUrl;
-+ (void)markMessagesRead:(NSArray<THRMessage *> * _Nonnull)messages completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
-+ (void)getHistoryMessagesWithClientId:(NSString * _Nonnull)clientId count:(NSInteger)count beforeMessage:(THRMessage * _Nullable)beforeMessage completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@protocol ThreadsDelegate;
+@class UIViewController;
+
+SWIFT_CLASS("_TtC7Threads7Threads")
+@interface Threads : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@property (nonatomic) BOOL isClientIdEncrypted;
+@property (nonatomic) BOOL isDebugLoggingEnabled;
+@property (nonatomic) BOOL isSocketAdditionalDebugLoggingEnabled;
+@property (nonatomic) BOOL registrationAtStartupDisable;
+@property (nonatomic) BOOL isShowsNetworkActivity;
+@property (nonatomic, readonly, copy) NSString * _Nullable clientId;
+@property (nonatomic, readonly, copy) NSString * _Nullable clientName;
+@property (nonatomic, readonly, copy) NSString * _Nullable appMarker;
+@property (nonatomic, readonly, copy) NSString * _Nullable clientSignature;
+@property (nonatomic, readonly, copy) NSString * _Nullable clientAuthToken;
+@property (nonatomic, readonly, copy) NSString * _Nullable clientAuthSchema;
+@property (nonatomic, readonly) BOOL isClientSet;
+@property (nonatomic, readonly, copy) NSString * _Nullable data;
+@property (nonatomic, readonly) NSInteger fileSizeLimit;
+@property (nonatomic, readonly, strong) THRAttributes * _Nonnull attributes;
+@property (nonatomic, readonly, strong) THRControls * _Nonnull controls;
+@property (nonatomic, copy) NSURL * _Nullable historyURL;
+@property (nonatomic, copy) NSURL * _Nullable fileUploadingURL;
+- (void)configureThreadsGateTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid historyURL:(NSURL * _Nonnull)historyURL fileUploadingURL:(NSURL * _Nonnull)fileUploadingURL;
+- (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
+- (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
+- (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
+- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo;
+- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo fetchCompletionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(enum THRMessageRecieveState))completionHandler;
+- (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
+- (void)logout;
+- (void)logoutWithClientId:(NSString * _Nonnull)clientId;
+- (void)handlePushNotificationUserInfo:(NSDictionary * _Nonnull)userInfo;
+- (NSString * _Nonnull)version SWIFT_WARN_UNUSED_RESULT;
+- (NSUInteger)unreadMessagesCount SWIFT_WARN_UNUSED_RESULT;
+- (void)clearCachedFiles;
+- (BOOL)isThreadsOriginPushUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getAppMarkerFromPushUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
+- (void)sendMessageWithText:(NSString * _Nonnull)withText completion:(void (^ _Nullable)(NSError * _Nullable))completion;
+- (void)registerUserWith:(THRClientInfo * _Nonnull)clientInfo messageWithText:(NSString * _Nonnull)text;
+- (void)sendMessageWith:(UIImage * _Nonnull)image completion:(void (^ _Nullable)(NSError * _Nullable))completion;
+@property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
+- (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
+- (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;
+- (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes pushUserInfo:(NSDictionary * _Nonnull)pushUserInfo completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;
 @end
 
-@class THRAttributes;
-@class NSAttributedString;
+@protocol ThreadsPreloadView;
 
-SWIFT_CLASS("_TtC7Threads23TransportMessagesParser")
-@interface TransportMessagesParser : NSObject
-+ (NSArray<QuickReply *> * _Nullable)getQuickRepliesFromDict:(NSDictionary<NSString *, id> * _Nonnull)dict SWIFT_WARN_UNUSED_RESULT;
-+ (NSAttributedString * _Nonnull)getAttrStringFromMarkdown:(NSString * _Nonnull)string withAttributes:(THRAttributes * _Nonnull)attributes isOutgoing:(BOOL)isOutgoing SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+SWIFT_PROTOCOL("_TtP7Threads15ThreadsDelegate_")
+@protocol ThreadsDelegate
+- (void)threads:(Threads * _Nonnull)threads didReceiveError:(NSError * _Nonnull)error;
+- (void)threads:(Threads * _Nonnull)threads unreadMessagesCount:(NSUInteger)unreadMessagesCount;
+- (void)threads:(Threads * _Nonnull)threads didChangeDeviceAddress:(NSString * _Nonnull)deviceAddress;
+@optional
+- (BOOL)threads:(Threads * _Nonnull)threads allowOpenUrl:(NSURL * _Nonnull)allowOpenUrl SWIFT_WARN_UNUSED_RESULT;
+- (id <ThreadsPreloadView> _Null_unspecified)customPreloadView SWIFT_WARN_UNUSED_RESULT;
 @end
+
+@class UIView;
+
+SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
+@protocol ThreadsPreloadView
+- (void)startAnimation;
+- (void)stopAnimation;
+- (UIView * _Null_unspecified)getView SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 
 
@@ -858,7 +1057,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
-@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -876,79 +1074,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class NSCoder;
-
-/// A layout manager capable of drawing the custom attributes set by the <code>DownStyler</code>.
-/// Insert this into a TextKit stack manually, or use the provided <code>DownTextView</code>.
-SWIFT_CLASS("_TtC7Threads17DownLayoutManager")
-@interface DownLayoutManager : NSLayoutManager
-- (void)drawGlyphsForGlyphRange:(NSRange)glyphsToShow atPoint:(CGPoint)origin;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-/// A layout manager that draws the line fragments.
-/// Line fragments are the areas with a document that contain lines of text. There
-/// are two types.
-/// <ol>
-///   <li>
-///     A <em>line rect</em> (drawn in red) indicates the maximum rect enclosing the line.
-///     This inlcudes not only the textual content, but also the padding (if any) around that text.
-///   </li>
-///   <li>
-///     A <em>line used rect</em> (drawn in blue) is the smallest rect enclosing the textual content.
-///   </li>
-/// </ol>
-/// The visualization of these rects is useful when determining the paragraph styles
-/// of a <code>DownStyler</code>.
-/// Insert this into a TextKit stack manually, or use the provided <code>DownDebugTextView</code>.
-SWIFT_CLASS("_TtC7Threads22DownDebugLayoutManager")
-@interface DownDebugLayoutManager : DownLayoutManager
-- (void)drawGlyphsForGlyphRange:(NSRange)glyphsToShow atPoint:(CGPoint)origin;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSString;
-@class NSTextContainer;
-
-/// A text view capable of parsing and rendering markdown via the AST.
-SWIFT_CLASS("_TtC7Threads12DownTextView")
-@interface DownTextView : UITextView
-@property (nonatomic, copy) NSString * _Null_unspecified text;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer * _Nullable)textContainer SWIFT_UNAVAILABLE;
-@end
-
-
-/// A text view capable of parsing and rendering markdown via the AST, as well as line fragments.
-/// See <code>DownDebugLayoutManager</code>.
-SWIFT_CLASS("_TtC7Threads17DownDebugTextView")
-@interface DownDebugTextView : DownTextView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-
-@class WKWebViewConfiguration;
-
-SWIFT_CLASS("_TtC7Threads8DownView")
-@interface DownView : WKWebView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration SWIFT_UNAVAILABLE;
-@end
-
-
-@class WKNavigationResponse;
-@class WKNavigationAction;
-@class WKNavigation;
-
-@interface DownView (SWIFT_EXTENSION(Threads)) <WKNavigationDelegate>
-- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationResponse:(WKNavigationResponse * _Nonnull)navigationResponse decisionHandler:(void (^ _Nonnull)(WKNavigationResponsePolicy))decisionHandler;
-- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
-- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
-@end
 
 
 @class NSStream;
@@ -972,6 +1097,7 @@ SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @property (nonatomic) NSTimeInterval uploadTimeoutSec;
 @end
 
+@class NSString;
 
 SWIFT_CLASS("_TtC7Threads12Localization")
 @interface Localization : NSObject
@@ -984,9 +1110,9 @@ SWIFT_CLASS("_TtC7Threads12Localization")
 
 SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 @interface LocalizationConfig : NSObject
+- (nonnull instancetype)initWithBundle:(NSBundle * _Nonnull)bundle tableName:(NSString * _Nonnull)tableName OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, readonly, strong) NSBundle * _Nonnull bundle;
 @property (nonatomic, readonly, copy) NSString * _Nonnull tableName;
-- (nonnull instancetype)initWithBundle:(NSBundle * _Nonnull)bundle tableName:(NSString * _Nonnull)tableName OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1019,111 +1145,10 @@ SWIFT_CLASS("_TtC7Threads12NativeEngine") SWIFT_AVAILABILITY(tvos,introduced=13.
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSDate;
-
-/// OGP cache object
-SWIFT_CLASS("_TtC7Threads11OGCacheData")
-@interface OGCacheData : NSObject
-@property (nonatomic, readonly, copy) NSDate * _Nullable createDate;
-@property (nonatomic, readonly, copy) NSDate * _Nullable updateDate;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// Protocol of OGP cache manager
-/// If define OGP Cahce manage class with this protocol, be able to set OGDataProvider.cacheManager.
-SWIFT_PROTOCOL("_TtP7Threads26OGDataCacheManagerProtocol_")
-@protocol OGDataCacheManagerProtocol <NSObject>
-@property (nonatomic) NSTimeInterval updateInterval;
-- (void)fetchOrInsertOGCacheDataWithUrl:(NSString * _Nonnull)url completion:(void (^ _Nonnull)(OGCacheData * _Nonnull))completion;
-- (void)fetchOGCacheDataWithUrl:(NSString * _Nonnull)url completion:(void (^ _Nonnull)(OGCacheData * _Nullable))completion;
-- (void)updateIfNeededWithCache:(OGCacheData * _Nonnull)cache;
-- (void)deleteOGCacheDateWithCache:(OGCacheData * _Nonnull)cache completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-@end
-
-
-/// Non cached feature class
-/// Has no OGP cache
-SWIFT_CLASS("_TtC7Threads20OGDataNoCacheManager")
-@interface OGDataNoCacheManager : NSObject <OGDataCacheManagerProtocol>
-@property (nonatomic) NSTimeInterval updateInterval;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (void)fetchOrInsertOGCacheDataWithUrl:(NSString * _Nonnull)url completion:(void (^ _Nonnull)(OGCacheData * _Nonnull))completion;
-- (void)fetchOGCacheDataWithUrl:(NSString * _Nonnull)url completion:(void (^ _Nonnull)(OGCacheData * _Nullable))completion;
-- (void)updateIfNeededWithCache:(OGCacheData * _Nonnull)cache;
-- (void)deleteOGCacheDateWithCache:(OGCacheData * _Nonnull)cache completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-@end
-
-@class OpenGraphData;
-@class Task;
-
-/// Provides OGP object from cache or API
-SWIFT_CLASS("_TtC7Threads14OGDataProvider")
-@interface OGDataProvider : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OGDataProvider * _Nonnull sharedInstance;)
-+ (OGDataProvider * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
-/// Represents cache feature
-/// Default cache feature is using Core Data
-/// seealso:
-/// OGDataCacheManagerProtocol
-@property (nonatomic, strong) id <OGDataCacheManagerProtocol> _Nonnull cacheManager;
-@property (nonatomic) NSTimeInterval updateInterval;
-- (Task * _Nonnull)fetchOGDataWithURLString:(NSString * _Nonnull)urlString completion:(void (^ _Nullable)(OpenGraphData * _Nonnull, NSError * _Nullable))completion;
-- (void)deleteOGDataWithUrlString:(NSString * _Nonnull)urlString completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-- (void)deleteOGData:(OpenGraphData * _Nonnull)ogData completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-- (void)cancelLoading:(Task * _Nonnull)task shouldContinueDownloading:(BOOL)shouldContinueDownloading;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class UIImage;
-
-/// Provides Image from cache or API
-SWIFT_CLASS("_TtC7Threads15OGImageProvider")
-@interface OGImageProvider : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OGImageProvider * _Nonnull sharedInstance;)
-+ (OGImageProvider * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
-- (Task * _Nullable)loadImageWithURLString:(NSString * _Nonnull)urlString completion:(void (^ _Nullable)(UIImage * _Nullable, NSError * _Nullable))completion SWIFT_WARN_UNUSED_RESULT;
-- (void)clearMemoryCache;
-- (void)clearAllCache;
-- (void)cancelLoading:(Task * _Nonnull)task shouldContinueDownloading:(BOOL)shouldContinueDownloading;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class NSURL;
-
-/// OGP object for Objective-C
-SWIFT_CLASS("_TtC7Threads13OpenGraphData")
-@interface OpenGraphData : NSObject
-@property (nonatomic, readonly, copy) NSURL * _Nullable imageUrl;
-@property (nonatomic, readonly, copy) NSString * _Nullable pageDescription;
-@property (nonatomic, readonly, copy) NSString * _Nullable pageTitle;
-@property (nonatomic, readonly, copy) NSString * _Nullable pageType;
-@property (nonatomic, readonly, copy) NSString * _Nullable siteName;
-@property (nonatomic, readonly, copy) NSURL * _Nullable sourceUrl;
-@property (nonatomic, readonly, copy) NSURL * _Nullable url;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// OGP object downloader
-SWIFT_CLASS("_TtC7Threads23OpenGraphDataDownloader")
-@interface OpenGraphDataDownloader : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OpenGraphDataDownloader * _Nonnull sharedInstance;)
-+ (OpenGraphDataDownloader * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
-- (Task * _Nonnull)fetchOGDataWithURLString:(NSString * _Nonnull)urlString completion:(void (^ _Nullable)(OpenGraphData * _Nullable, NSError * _Nullable))completion;
-- (void)cancelLoading:(Task * _Nonnull)task shouldContinueDownloading:(BOOL)shouldContinueDownloading;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 
 SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 @interface PushUserInfo : NSObject
+- (nullable instancetype)initFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, readonly, copy) NSString * _Nonnull alert;
 @property (nonatomic, readonly) NSInteger skillId;
 @property (nonatomic, readonly, copy) NSString * _Nonnull expiredAt;
@@ -1132,7 +1157,6 @@ SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 @property (nonatomic, readonly) NSInteger priority;
 @property (nonatomic, readonly, copy) NSString * _Nonnull senderName;
 @property (nonatomic, readonly, copy) NSString * _Nullable chatMessageId;
-- (nullable instancetype)initFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1151,13 +1175,14 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 @class UINib;
 @protocol QuickReplyCellDelegate;
 @class UITraitCollection;
+@class NSCoder;
 
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Null_unspecified sizingCell;)
-+ (QuickReplyCell * _Null_unspecified)sizingCell SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified cellWidth;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified actionButton;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
++ (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint * _Null_unspecified cellWidth;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified actionButton;
 + (NSString * _Nonnull)cellIdentifier SWIFT_WARN_UNUSED_RESULT;
 + (UINib * _Nonnull)nib SWIFT_WARN_UNUSED_RESULT;
 - (void)awakeFromNib;
@@ -1170,63 +1195,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCe
 @end
 
 
+///
 SWIFT_PROTOCOL("_TtP7Threads22QuickReplyCellDelegate_")
 @protocol QuickReplyCellDelegate
+/// \param quickReply 
+///
 - (void)didSelectQuickReply:(QuickReply * _Nonnull)quickReply;
-@end
-
-enum Connection : NSInteger;
-
-SWIFT_CLASS("_TtC7Threads16ReachabilityObjC")
-@interface ReachabilityObjC : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ReachabilityObjC * _Nonnull shared;)
-+ (ReachabilityObjC * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-+ (void)startNotifying:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))listener;
-+ (void)startNotifying;
-+ (void)stopNotifying;
-+ (void)whenReachable:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))reachable;
-+ (void)whenUnreachable:(void (^ _Nonnull)(ReachabilityObjC * _Nonnull))unreachable;
-+ (BOOL)isConnected SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)isConnected SWIFT_WARN_UNUSED_RESULT;
-- (enum Connection)getConnection SWIFT_WARN_UNUSED_RESULT;
-@end
-
-typedef SWIFT_ENUM(NSInteger, Connection, open) {
-  ConnectionUnavailable = 0,
-  ConnectionWifi = 1,
-  ConnectionCellular = 2,
-};
-
-@protocol SocketConnectionDelegate;
-@class SocketConnectionError;
-
-SWIFT_CLASS("_TtC7Threads16SocketConnection")
-@interface SocketConnection : NSObject
-@property (nonatomic, weak) id <SocketConnectionDelegate> _Nullable delegate;
-@property (nonatomic) BOOL autoReconnect;
-- (void)connectTo:(NSURL * _Nonnull)url;
-- (void)disconnect;
-- (void)reconnect;
-- (void)sendWithData:(NSData * _Nonnull)data completion:(void (^ _Nullable)(SocketConnectionError * _Nullable))completion;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-
-SWIFT_PROTOCOL("_TtP7Threads24SocketConnectionDelegate_")
-@protocol SocketConnectionDelegate
-- (void)didReceiveData:(NSData * _Nonnull)data;
-- (void)didConnected:(BOOL)isConnected;
-@end
-
-
-SWIFT_CLASS("_TtC7Threads21SocketConnectionError")
-@interface SocketConnectionError : NSObject
-@property (nonatomic) NSError * _Nullable error;
-@property (nonatomic, copy) NSString * _Nullable stringError;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1245,6 +1219,279 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @property (nonatomic) NSTimeInterval writeTimeoutSec;
 @end
 
+@class UIColor;
+@class UIFont;
+@class UIImage;
+enum THRQuickReplyPresentationMode : NSUInteger;
+@class THRCert;
+
+SWIFT_CLASS("_TtC7Threads13THRAttributes")
+@interface THRAttributes : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// mark - General
+@property (nonatomic) BOOL canShowDebugScreen;
+/// mark - Localization
+@property (nonatomic, strong) LocalizationConfig * _Nullable localizationConfig;
+/// Works properly for non view controller based status bar appearance
+@property (nonatomic) UIStatusBarStyle statusBarStyle;
+@property (nonatomic, strong) UIColor * _Nonnull refreshColor;
+/// mark - Navigation bar
+@property (nonatomic) BOOL navigationBarVisible;
+@property (nonatomic) BOOL navigationBarCustomizeTitle;
+@property (nonatomic, copy) NSString * _Nullable navigationBarTitle;
+@property (nonatomic, strong) UIColor * _Nonnull navigationBarTitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull navigationBarTitleFont;
+@property (nonatomic, strong) UIFont * _Nonnull navigationBarSubtitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull navigationBarSubtitleColor;
+@property (nonatomic) BOOL navigationBarSubtitleShowOrgUnit;
+@property (nonatomic) BOOL navigationBarSubtitleVisible;
+@property (nonatomic) BOOL navigationBarLarge;
+@property (nonatomic) BOOL navigationBarKeyboardControlVisible;
+@property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardShowImage;
+@property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardHideImage;
+/// mark - LaunchView
+@property (nonatomic) BOOL launchViewEnable;
+@property (nonatomic, strong) UIColor * _Nonnull launchActivityViewColor;
+@property (nonatomic, strong) UIColor * _Nonnull launchViewBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull launchViewInnerBoxBackgroundColor;
+@property (nonatomic) CGFloat launchViewInnerBoxCornerRadius;
+@property (nonatomic) CGSize launchViewInnerBoxSize;
+@property (nonatomic, strong) UIColor * _Nonnull launchViewTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull launchViewTextFont;
+/// mark - Placeholder
+@property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
+@property (nonatomic, strong) UIImage * _Nullable placeholderImage;
+@property (nonatomic, strong) UIColor * _Nonnull placeholderTitleColor;
+@property (nonatomic, strong) UIColor * _Nonnull placeholderSubtitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull placeholderTitleFont;
+@property (nonatomic, strong) UIFont * _Nonnull placeholderSubtitleFont;
+/// mark - Toolbar
+@property (nonatomic, strong) UIColor * _Nonnull toolbarbackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarTintColor;
+@property (nonatomic, strong) UIImage * _Nullable attachButtonImage;
+@property (nonatomic, strong) UIColor * _Nonnull attachButtonColor;
+@property (nonatomic, strong) UIColor * _Nonnull attachButtonHighlightColor;
+@property (nonatomic) BOOL showAttachButton;
+@property (nonatomic, strong) UIColor * _Nonnull sendButtonColor;
+@property (nonatomic, strong) UIColor * _Nonnull sendButtonHighlightColor;
+@property (nonatomic, strong) UIColor * _Nonnull sendButtonDisabledColor;
+@property (nonatomic, strong) UIFont * _Nonnull sendButtonFont;
+@property (nonatomic, strong) UIImage * _Nullable sendButtonImage;
+@property (nonatomic, strong) UIFont * _Nonnull myMessageFont;
+@property (nonatomic, strong) UIFont * _Nonnull toolbarQuotedMessageAuthorFont;
+@property (nonatomic, strong) UIFont * _Nonnull toolbarQuotedMessageFont;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarQuotedMessageAuthorColor;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarQuotedMessageColor;
+@property (nonatomic) BOOL toolbarInputHasBorder;
+@property (nonatomic) CGFloat toolbarInputCornerRadius;
+@property (nonatomic) CGFloat toolbarInputMinimumHeight;
+@property (nonatomic) CGFloat toolbarInputMaximumHeight;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarInputTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarInputCursorColor;
+@property (nonatomic, strong) UIColor * _Nonnull toolbarInputBackgroundColor;
+/// mark - Waiting for specialist
+@property (nonatomic) BOOL showWaitingForSpecialistProgress;
+@property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistSpinnerColor;
+@property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistBgColor;
+@property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistBorderColor;
+@property (nonatomic) CGFloat waitingSpecialistBorderWidth;
+/// mark - Messages
+@property (nonatomic, strong) UIFont * _Nonnull bubbleMessageFont;
+@property (nonatomic, strong) UIFont * _Nonnull bubbleTimeFont;
+@property (nonatomic, strong) UIFont * _Nonnull failedMessageFont;
+@property (nonatomic, strong) UIFont * _Nonnull messageHeaderFont;
+@property (nonatomic, strong) UIFont * _Nonnull quoteAuthorFont;
+@property (nonatomic, strong) UIFont * _Nonnull quoteMessageFont;
+@property (nonatomic, strong) UIFont * _Nonnull quoteTimeFont;
+@property (nonatomic, strong) UIFont * _Nonnull quoteFilesizeFont;
+@property (nonatomic, strong) UIImage * _Nullable messageBubbleFilledMaskImage;
+@property (nonatomic, strong) UIImage * _Nullable messageBubbleStrokedMaskImage;
+@property (nonatomic) UIEdgeInsets messageBubbleFilledMaskInsets;
+@property (nonatomic) UIEdgeInsets messageBubbleStrokedMaskInsets;
+@property (nonatomic) CGFloat messageContainerRightOffset;
+@property (nonatomic) CGFloat messageContainerLeftOffset;
+/// Right value sets margin to the avatar image
+/// Left value sets margin on the side opposite the avatar image
+@property (nonatomic) UIEdgeInsets messageBubbleTextViewFrameInsets;
+@property (nonatomic) UIEdgeInsets messageBubbleTextViewTextContainerInsets;
+@property (nonatomic) CGFloat messageBubbleOppositeMargin;
+@property (nonatomic, strong) UIColor * _Nonnull emptyImageColor;
+@property (nonatomic, strong) UIColor * _Nonnull timeAndStatusBackgroundColor;
+/// mark - System messages
+@property (nonatomic, strong) UIFont * _Nonnull specialisConnectTitleFont;
+@property (nonatomic, strong) UIFont * _Nonnull specialisConnectSubtitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull specialisConnectTitleColor;
+@property (nonatomic, strong) UIColor * _Nonnull specialisConnectSubtitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull typingTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull typingTextColor;
+@property (nonatomic, copy) NSString * _Nullable typingText;
+@property (nonatomic, strong) UIColor * _Nullable typingIndicatorEllipsisColor;
+@property (nonatomic, strong) UIImage * _Nullable scheduleIcon;
+@property (nonatomic, strong) UIColor * _Nonnull scheduleAlertColor;
+@property (nonatomic, strong) UIFont * _Nonnull scheduleAlertFont;
+@property (nonatomic, strong) UIColor * _Nonnull scheduleIconBackgroundColor;
+/// mark - Scroll down button
+@property (nonatomic, strong) UIImage * _Nullable scrollToBottomImage;
+@property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeColor;
+@property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeTextColor;
+/// mark - Incoming message
+@property (nonatomic) BOOL incomingBubbleStroked;
+@property (nonatomic, strong) UIColor * _Nonnull incomingBubbleColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingBubbleTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingBubbleLinkColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingTimeColor;
+@property (nonatomic) BOOL showIncomingAvatar;
+@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteSeparatorColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteAuthorColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteMessageColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteTimeColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteFilesizeColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingFileIconTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingFileIconBgColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingMediaTimeColor;
+@property (nonatomic) CGFloat commonMessageAvatarSize;
+@property (nonatomic) CGFloat systemMessageAvatarSize;
+/// mark - Outgoing message
+@property (nonatomic) BOOL failedBubbleStroked;
+@property (nonatomic, strong) UIColor * _Nonnull failedBubbleColor;
+@property (nonatomic) BOOL outgoingBubbleStroked;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingBubbleColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingBubbleTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingBubbleLinkColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingTimeColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingPendingStatusColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingDeliveredStatusColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingReadStatusColor;
+@property (nonatomic, strong) UIImage * _Nullable outgoingPendingStatusImage;
+@property (nonatomic, strong) UIImage * _Nullable outgoingDeliveredStatusImage;
+@property (nonatomic, strong) UIImage * _Nullable outgoingReadStatusImage;
+@property (nonatomic) BOOL showOutgoingAvatar;
+@property (nonatomic, strong) UIImage * _Nullable avatarPlaceholderImage;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteSeparatorColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteAuthorColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteMessageColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteTimeColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteFilesizeColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingFileIconTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingFileIconBgColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingMediaTimeColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingMediaPendingStatusColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingMediaDeliveredStatusColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingMediaReadStatusColor;
+/// mark - Search controller
+@property (nonatomic, strong) UIColor * _Nonnull searchScopeBarTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchBarTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchBarTintColor;
+@property (nonatomic, strong) UIFont * _Nonnull searchScopeBarFont;
+@property (nonatomic, strong) UIFont * _Nonnull searchBarTextFont;
+/// mark - Search message
+@property (nonatomic) BOOL searchIconDisabled;
+@property (nonatomic, strong) UIImage * _Nullable clearSearchIcon;
+@property (nonatomic, strong) UIColor * _Nonnull findedMessageHeaderTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull findedMessageHeaderBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull findedMessageHeaderTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull findMoreMessageTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull findMoreMessageTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull searchMessageAuthorTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchMessageTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchMessageDateTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchMessageFileTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull searchMessageMatchTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull searchMessageAuthorTextFont;
+@property (nonatomic, strong) UIFont * _Nonnull searchMessageMatchTextFont;
+@property (nonatomic, strong) UIFont * _Nonnull searchMessageTextFont;
+@property (nonatomic, strong) UIFont * _Nonnull searchMessageFileTextFont;
+@property (nonatomic, strong) UIFont * _Nonnull searchMessageDateTextFont;
+/// mark - Photopicker
+@property (nonatomic) BOOL photoPickerSelfieEnabled;
+@property (nonatomic, strong) UIColor * _Nonnull photoPickerToolbarTintColor;
+@property (nonatomic, strong) UIFont * _Nonnull photoPickerToolbarButtonFont;
+@property (nonatomic, strong) UIImage * _Nullable photoPickerCheckmarkIcon;
+@property (nonatomic, strong) UIImage * _Nullable photoPickerEmptyCheckmarkIcon;
+@property (nonatomic, strong) UIColor * _Nonnull photoPickerSheetTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull photoPickerSheetTextFont;
+@property (nonatomic) NSUInteger photoPickerMaxImagesCount;
+/// mark - FileViewer
+@property (nonatomic, strong) UIColor * _Nullable fileViewerTitleColor;
+@property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarTintColor;
+@property (nonatomic, strong) UIColor * _Nonnull fileViewerBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull fileViewerTitleFont;
+/// mark - Specialist Info
+@property (nonatomic) BOOL canShowSpecialistInfo;
+/// mark - Survey
+@property (nonatomic, strong) UIColor * _Nonnull starRatingColorEnabled;
+@property (nonatomic, strong) UIColor * _Nonnull likeRatingColorEnabled;
+@property (nonatomic, strong) UIColor * _Nonnull starRatingColorDisabled;
+@property (nonatomic, strong) UIColor * _Nonnull likeRatingColorDisabled;
+@property (nonatomic, strong) UIColor * _Nonnull starRatingColorCompleted;
+@property (nonatomic, strong) UIColor * _Nonnull likeRatingColorCompleted;
+@property (nonatomic, strong) UIColor * _Nonnull likeLabelOnStarColor;
+@property (nonatomic, strong) UIColor * _Nonnull likeLabelUnderStarColor;
+@property (nonatomic, strong) UIColor * _Nonnull surveyTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull surveyTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull surveyCompletionColor;
+@property (nonatomic, strong) UIFont * _Nonnull surveyCompletionFont;
+@property (nonatomic) NSInteger surveyCompletionDelay;
+@property (nonatomic, strong) UIImage * _Nullable iconStarRatingEmty;
+@property (nonatomic, strong) UIImage * _Nullable iconStarRatingFull;
+@property (nonatomic, strong) UIImage * _Nullable iconLikeEmpty;
+@property (nonatomic, strong) UIImage * _Nullable iconDislikeEmpty;
+@property (nonatomic, strong) UIImage * _Nullable iconLikeFull;
+@property (nonatomic, strong) UIImage * _Nullable iconDislikeFull;
+@property (nonatomic) enum THRQuickReplyPresentationMode quickReplyPresentationMode;
+/// < Шрифт для кнопок быстрых ответов
+@property (nonatomic, strong) UIFont * _Nonnull quickReplyFont;
+/// < Радиус закругления кнопок быстрых ответов
+@property (nonatomic, strong) NSNumber * _Nonnull quickReplyBorderCornerRadius;
+/// < Цвет границы кнопок быстрых ответов
+@property (nonatomic, strong) UIColor * _Nonnull quickReplyBorderColor;
+/// < Цвет кнопок быстрых ответов
+@property (nonatomic, strong) UIColor * _Nonnull quickReplyBackgroundColor;
+/// < Цвет текста на кнопках быстрых ответов
+@property (nonatomic, strong) UIColor * _Nonnull quickReplyTextColor;
+/// <  Цвет подсветки кнопок быстрых ответов
+@property (nonatomic, strong) UIColor * _Nonnull quickReplyBackgroundColorHighlighted;
+/// < Цвет подстветки кнопок быстрых ответов
+@property (nonatomic, strong) UIColor * _Nonnull quickReplyTextColorHighLighted;
+/// < Высота кнопки быстрого ответа (в режиме embed)
+@property (nonatomic) CGFloat quickReplyButtonHeight;
+/// < Толщина границы кнопки быстрого ответа
+@property (nonatomic) CGFloat quickReplyBorderWidth;
+/// mark - Voice Recording Allowed
+@property (nonatomic) BOOL voiceRecordingAllowed;
+@property (nonatomic, strong) UIImage * _Nullable voiceMessageRecordButtonImage;
+@property (nonatomic, strong) UIImage * _Nullable voiceMessageSendButtonImage;
+@property (nonatomic, strong) UIColor * _Nonnull voiceMessageRecordSendButtonColor;
+@property (nonatomic, strong) UIImage * _Nullable voiceMessagePlayImage;
+@property (nonatomic, strong) UIImage * _Nullable voiceMessagePauseImage;
+@property (nonatomic, strong) UIColor * _Nonnull incomingVoiceMessagePlayPauseColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingVoiceMessagePlayPauseColor;
+@property (nonatomic, strong) UIColor * _Nonnull previewVoiceMessagePlayPauseColor;
+@property (nonatomic, strong) UIColor * _Nonnull incomingVoiceMessageProgressColor;
+@property (nonatomic, strong) UIColor * _Nonnull outgoingVoiceMessageProgressColor;
+@property (nonatomic, strong) UIColor * _Nonnull previewVoiceMessageProgressColor;
+/// mark - Show close button
+@property (nonatomic) BOOL showCloseButton;
+@property (nonatomic, strong) UIColor * _Nullable closeButtonColor;
+@property (nonatomic, strong) UIImage * _Nullable closeButtonImage;
+/// mark - New API
+@property (nonatomic) BOOL newChatCenterApi;
+/// mark - DataStore
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable customHTTPHeadersForDataStore;
+@property (nonatomic, strong) NSNumber * _Nonnull historyLoadingCount;
+/// mark - Client validity
+@property (nonatomic) BOOL clientIdIgnoreEnabled;
++ (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
+/// pragma mark - Access call didReceiveResponse in delegate
+@property (nonatomic) BOOL callReceiveResponseEnabled;
+@property (nonatomic) BOOL clearChatHistoryIfSocketReconnect;
+/// mark - Networking TLS
+@property (nonatomic) BOOL allowUntrustedSSLCertificate;
+@property (nonatomic, copy) NSArray<THRCert *> * _Nonnull trustedCertificates;
+@end
+
+@class NSURL;
 
 SWIFT_CLASS_NAMED("THRCert")
 @interface THRCert : NSObject
@@ -1261,12 +1508,63 @@ SWIFT_CLASS_NAMED("THRCert")
 @end
 
 
+SWIFT_CLASS("_TtC7Threads13THRClientInfo")
+@interface THRClientInfo : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSString * _Nullable data;
+@property (nonatomic, copy) NSString * _Nullable appMarker;
+@property (nonatomic, copy) NSString * _Nullable signature;
+@property (nonatomic, copy) NSString * _Nullable authToken;
+@property (nonatomic, copy) NSString * _Nullable authSchema;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+enum THRSysColor : NSInteger;
+
+SWIFT_CLASS("_TtC7Threads8THRColor")
+@interface THRColor : NSObject
++ (UIColor * _Nonnull)colorBy:(NSString * _Nonnull)name colorType:(enum THRSysColor)colorType SWIFT_WARN_UNUSED_RESULT;
++ (UIColor * _Nonnull)colorBy:(NSString * _Nonnull)name defColor:(UIColor * _Nonnull)defColor SWIFT_WARN_UNUSED_RESULT;
++ (UIColor * _Nonnull)colorBy:(enum THRSysColor)sysColor SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads11THRControls")
 @interface THRControls : NSObject
 @property (nonatomic, strong) UIButton * _Nullable sendButton;
 @property (nonatomic, strong) UIButton * _Nullable attachButton;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+SWIFT_CLASS("_TtC7Threads14THRMessageInfo")
+@interface THRMessageInfo : NSObject
+- (nonnull instancetype)initWithText:(NSString * _Nullable)text senderName:(NSString * _Nonnull)senderName hasAttachment:(BOOL)hasAttachment OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, THRMessageRecieveState, open) {
+  THRMessageRecieveStateAccepted = 0,
+  THRMessageRecieveStateNotAccepted = 1,
+};
+
+typedef SWIFT_ENUM_NAMED(NSInteger, THRMessageRecieveStateOld, "THRMessageRecieveStateOld", open) {
+  THRMessageRecieveStateOldAccepted = 0,
+  THRMessageRecieveStateOldNotAccepted = 1,
+};
+
+/// Режимы отображения быстрых ответов
+typedef SWIFT_ENUM(NSUInteger, THRQuickReplyPresentationMode, open) {
+/// < Показ кнопок быстрых ответов в всплывающей панели
+  THRQuickReplyPresentationModeToolbar = 0,
+/// < Показ кнопок быстрых ответов в потоке сообщений
+  THRQuickReplyPresentationModeEmbed = 1,
+};
 
 
 SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
@@ -1277,36 +1575,136 @@ SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
 @end
 
 
-SWIFT_CLASS("_TtC7Threads4Task")
-@interface Task : NSObject
+SWIFT_CLASS("_TtC7Threads16THRRoutingParams")
+@interface THRRoutingParams : NSObject
+- (nonnull instancetype)initWithPriority:(NSInteger)priority skillId:(NSInteger)skillId expiredAt:(NSString * _Nullable)expiredAt OBJC_DESIGNATED_INITIALIZER;
+- (NSDictionary<NSString *, id> * _Nonnull)toDictionary SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class THRMessage;
+typedef SWIFT_ENUM(NSInteger, THRSysColor, open) {
+  THRSysColorDarkGreen = 0,
+  THRSysColorLightGreen = 1,
+  THRSysColorGray = 2,
+  THRSysColorLightGray = 3,
+  THRSysColorMiddleGray = 4,
+  THRSysColorDarkGray = 5,
+  THRSysColorDarkerGray = 6,
+  THRSysColorBlackTransparent50 = 7,
+  THRSysColorLightCyan = 8,
+  THRSysColorBlue = 9,
+  THRSysColorRed = 10,
+  THRSysColorOrange = 11,
+  THRSysColorDarkOrange = 12,
+  THRSysColorGold = 13,
+  THRSysColorLabel = 14,
+  THRSysColorSecondaryLabel = 15,
+  THRSysColorTertiaryLabel = 16,
+  THRSysColorQuaternaryLabel = 17,
+  THRSysColorSystemFill = 18,
+  THRSysColorSecondarySystemFill = 19,
+  THRSysColorTertiarySystemFill = 20,
+  THRSysColorQuaternarySystemFill = 21,
+  THRSysColorPlaceholderText = 22,
+  THRSysColorSystemBackground = 23,
+  THRSysColorSecondarySystemBackground = 24,
+  THRSysColorTertiarySystemBackground = 25,
+  THRSysColorSystemGroupedBackground = 26,
+  THRSysColorSecondarySystemGroupedBackground = 27,
+  THRSysColorTertiarySystemGroupedBackground = 28,
+  THRSysColorSeparator = 29,
+  THRSysColorOpaqueSeparator = 30,
+  THRSysColorLink = 31,
+  THRSysColorDarkText = 32,
+  THRSysColorLightText = 33,
+  THRSysColorSystemBlue = 34,
+  THRSysColorSystemGreen = 35,
+  THRSysColorSystemIndigo = 36,
+  THRSysColorSystemOrange = 37,
+  THRSysColorSystemPink = 38,
+  THRSysColorSystemPurple = 39,
+  THRSysColorSystemRed = 40,
+  THRSysColorSystemTeal = 41,
+  THRSysColorSystemYellow = 42,
+  THRSysColorSystemGray = 43,
+  THRSysColorSystemGray2 = 44,
+  THRSysColorSystemGray3 = 45,
+  THRSysColorSystemGray4 = 46,
+  THRSysColorSystemGray5 = 47,
+  THRSysColorSystemGray6 = 48,
+};
 
-SWIFT_CLASS("_TtC7Threads16ThreadsServerAPI")
-@interface ThreadsServerAPI : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull chatApiVersion;)
-+ (NSString * _Nonnull)chatApiVersion SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugLoggingEnabled;)
-+ (BOOL)isDebugLoggingEnabled SWIFT_WARN_UNUSED_RESULT;
-+ (void)setIsDebugLoggingEnabled:(BOOL)value;
-+ (void)setServerWithBaseUrl:(NSURL * _Nonnull)baseUrl;
-+ (void)markMessagesRead:(NSArray<THRMessage *> * _Nonnull)messages completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
-+ (void)getHistoryMessagesWithClientId:(NSString * _Nonnull)clientId count:(NSInteger)count beforeMessage:(THRMessage * _Nullable)beforeMessage completion:(void (^ _Nonnull)(NSArray<THRMessage *> * _Nullable, NSError * _Nullable))completion;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@protocol ThreadsDelegate;
+@class UIViewController;
+
+SWIFT_CLASS("_TtC7Threads7Threads")
+@interface Threads : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@property (nonatomic) BOOL isClientIdEncrypted;
+@property (nonatomic) BOOL isDebugLoggingEnabled;
+@property (nonatomic) BOOL isSocketAdditionalDebugLoggingEnabled;
+@property (nonatomic) BOOL registrationAtStartupDisable;
+@property (nonatomic) BOOL isShowsNetworkActivity;
+@property (nonatomic, readonly, copy) NSString * _Nullable clientId;
+@property (nonatomic, readonly, copy) NSString * _Nullable clientName;
+@property (nonatomic, readonly, copy) NSString * _Nullable appMarker;
+@property (nonatomic, readonly, copy) NSString * _Nullable clientSignature;
+@property (nonatomic, readonly, copy) NSString * _Nullable clientAuthToken;
+@property (nonatomic, readonly, copy) NSString * _Nullable clientAuthSchema;
+@property (nonatomic, readonly) BOOL isClientSet;
+@property (nonatomic, readonly, copy) NSString * _Nullable data;
+@property (nonatomic, readonly) NSInteger fileSizeLimit;
+@property (nonatomic, readonly, strong) THRAttributes * _Nonnull attributes;
+@property (nonatomic, readonly, strong) THRControls * _Nonnull controls;
+@property (nonatomic, copy) NSURL * _Nullable historyURL;
+@property (nonatomic, copy) NSURL * _Nullable fileUploadingURL;
+- (void)configureThreadsGateTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid historyURL:(NSURL * _Nonnull)historyURL fileUploadingURL:(NSURL * _Nonnull)fileUploadingURL;
+- (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
+- (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
+- (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
+- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo;
+- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo fetchCompletionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(enum THRMessageRecieveState))completionHandler;
+- (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
+- (void)logout;
+- (void)logoutWithClientId:(NSString * _Nonnull)clientId;
+- (void)handlePushNotificationUserInfo:(NSDictionary * _Nonnull)userInfo;
+- (NSString * _Nonnull)version SWIFT_WARN_UNUSED_RESULT;
+- (NSUInteger)unreadMessagesCount SWIFT_WARN_UNUSED_RESULT;
+- (void)clearCachedFiles;
+- (BOOL)isThreadsOriginPushUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getAppMarkerFromPushUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
+- (void)sendMessageWithText:(NSString * _Nonnull)withText completion:(void (^ _Nullable)(NSError * _Nullable))completion;
+- (void)registerUserWith:(THRClientInfo * _Nonnull)clientInfo messageWithText:(NSString * _Nonnull)text;
+- (void)sendMessageWith:(UIImage * _Nonnull)image completion:(void (^ _Nullable)(NSError * _Nullable))completion;
+@property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
+- (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
+- (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;
+- (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes pushUserInfo:(NSDictionary * _Nonnull)pushUserInfo completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;
 @end
 
-@class THRAttributes;
-@class NSAttributedString;
+@protocol ThreadsPreloadView;
 
-SWIFT_CLASS("_TtC7Threads23TransportMessagesParser")
-@interface TransportMessagesParser : NSObject
-+ (NSArray<QuickReply *> * _Nullable)getQuickRepliesFromDict:(NSDictionary<NSString *, id> * _Nonnull)dict SWIFT_WARN_UNUSED_RESULT;
-+ (NSAttributedString * _Nonnull)getAttrStringFromMarkdown:(NSString * _Nonnull)string withAttributes:(THRAttributes * _Nonnull)attributes isOutgoing:(BOOL)isOutgoing SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+SWIFT_PROTOCOL("_TtP7Threads15ThreadsDelegate_")
+@protocol ThreadsDelegate
+- (void)threads:(Threads * _Nonnull)threads didReceiveError:(NSError * _Nonnull)error;
+- (void)threads:(Threads * _Nonnull)threads unreadMessagesCount:(NSUInteger)unreadMessagesCount;
+- (void)threads:(Threads * _Nonnull)threads didChangeDeviceAddress:(NSString * _Nonnull)deviceAddress;
+@optional
+- (BOOL)threads:(Threads * _Nonnull)threads allowOpenUrl:(NSURL * _Nonnull)allowOpenUrl SWIFT_WARN_UNUSED_RESULT;
+- (id <ThreadsPreloadView> _Null_unspecified)customPreloadView SWIFT_WARN_UNUSED_RESULT;
 @end
+
+@class UIView;
+
+SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
+@protocol ThreadsPreloadView
+- (void)startAnimation;
+- (void)stopAnimation;
+- (UIView * _Null_unspecified)getView SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 
 

@@ -8,13 +8,3 @@
 
 // Headers exposed to Swift via module Threads.Private
 
-#import "THRMessage.h"
-#import "THRSpecialist.h"
-#import "THRPushService.h"
-#import "THRPersistentStorage.h"
-#import "NSDate+THR.h"
-
-#import "THROpenUrlUtils.h"
-#import "THRDelegateHelper.h"
-
-#import "node.h"

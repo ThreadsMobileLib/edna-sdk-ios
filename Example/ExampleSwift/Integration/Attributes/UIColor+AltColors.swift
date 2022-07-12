@@ -38,6 +38,10 @@ extension UIColor {
     public class func alt_outgoingBubble() -> UIColor {
         return UIColor.named( "alt_outgoingBubbleColor", fallback: UIColor.alt_green())
     }
+    
+    public class func alt_navigationBarColor() -> UIColor {
+        return UIColor.named( "alt_navigationBarColor", fallback: UIColor.alt_green())
+    }
 
     public class func alt_outgoingBubbleText() -> UIColor {
         return UIColor.named( "alt_outgoingBubbleTextColor", fallback: UIColor.white)

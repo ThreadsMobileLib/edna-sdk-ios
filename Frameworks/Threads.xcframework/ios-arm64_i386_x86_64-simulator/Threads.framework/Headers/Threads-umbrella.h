@@ -10,8 +10,6 @@
 #endif
 #endif
 
-#import "Threads.h"
-#import "THRAttributes.h"
 
 FOUNDATION_EXPORT double ThreadsVersionNumber;
 FOUNDATION_EXPORT const unsigned char ThreadsVersionString[];
