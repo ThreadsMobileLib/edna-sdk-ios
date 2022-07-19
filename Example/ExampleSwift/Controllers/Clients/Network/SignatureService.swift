@@ -20,7 +20,7 @@ class SignatureService: NSObject {
     
     typealias THRClientIdSignatureCompletion = (String?, Error?) -> Void
     
-    var serverURL: URL?
+    var restServerURL: URL?
     
     private override init() {
         
@@ -29,7 +29,7 @@ class SignatureService: NSObject {
     public func getSignature(for clientId: String, completion: @escaping THRClientIdSignatureCompletion) {
         
         guard let url = URL(string: SignatureService.kAPI + "/" + SignatureService.kSignaturePath + "?clientId=" + clientId,
-                            relativeTo: serverURL)
+                            relativeTo: restServerURL)
             else {
                 let error = self.error(localizedDescription: NSLocalizedString("Signature URL is invalid", comment: ""))
                 completion(nil, error)

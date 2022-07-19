@@ -365,14 +365,11 @@ enum THRQuickReplyPresentationMode : NSUInteger;
 SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @interface THRAttributes : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-/// mark - General
 @property (nonatomic) BOOL canShowDebugScreen;
-/// mark - Localization
 @property (nonatomic, strong) LocalizationConfig * _Nullable localizationConfig;
 /// Works properly for non view controller based status bar appearance
 @property (nonatomic) UIStatusBarStyle statusBarStyle;
 @property (nonatomic, strong) UIColor * _Nonnull refreshColor;
-/// mark - Navigation bar
 @property (nonatomic) BOOL navigationBarVisible;
 @property (nonatomic) BOOL navigationBarCustomizeTitle;
 @property (nonatomic, copy) NSString * _Nullable navigationBarTitle;
@@ -386,7 +383,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) BOOL navigationBarKeyboardControlVisible;
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardShowImage;
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardHideImage;
-/// mark - LaunchView
 @property (nonatomic) BOOL launchViewEnable;
 @property (nonatomic, strong) UIColor * _Nonnull launchActivityViewColor;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewBackgroundColor;
@@ -395,14 +391,12 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) CGSize launchViewInnerBoxSize;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewTextColor;
 @property (nonatomic, strong) UIFont * _Nonnull launchViewTextFont;
-/// mark - Placeholder
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
 @property (nonatomic, strong) UIImage * _Nullable placeholderImage;
 @property (nonatomic, strong) UIColor * _Nonnull placeholderTitleColor;
 @property (nonatomic, strong) UIColor * _Nonnull placeholderSubtitleColor;
 @property (nonatomic, strong) UIFont * _Nonnull placeholderTitleFont;
 @property (nonatomic, strong) UIFont * _Nonnull placeholderSubtitleFont;
-/// mark - Toolbar
 @property (nonatomic, strong) UIColor * _Nonnull toolbarbackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarTintColor;
 @property (nonatomic, strong) UIImage * _Nullable attachButtonImage;
@@ -426,13 +420,11 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull toolbarInputTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarInputCursorColor;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarInputBackgroundColor;
-/// mark - Waiting for specialist
 @property (nonatomic) BOOL showWaitingForSpecialistProgress;
 @property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistSpinnerColor;
 @property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistBgColor;
 @property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistBorderColor;
 @property (nonatomic) CGFloat waitingSpecialistBorderWidth;
-/// mark - Messages
 @property (nonatomic, strong) UIFont * _Nonnull bubbleMessageFont;
 @property (nonatomic, strong) UIFont * _Nonnull bubbleTimeFont;
 @property (nonatomic, strong) UIFont * _Nonnull failedMessageFont;
@@ -454,7 +446,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) CGFloat messageBubbleOppositeMargin;
 @property (nonatomic, strong) UIColor * _Nonnull emptyImageColor;
 @property (nonatomic, strong) UIColor * _Nonnull timeAndStatusBackgroundColor;
-/// mark - System messages
 @property (nonatomic, strong) UIFont * _Nonnull specialisConnectTitleFont;
 @property (nonatomic, strong) UIFont * _Nonnull specialisConnectSubtitleFont;
 @property (nonatomic, strong) UIColor * _Nonnull specialisConnectTitleColor;
@@ -467,11 +458,9 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull scheduleAlertColor;
 @property (nonatomic, strong) UIFont * _Nonnull scheduleAlertFont;
 @property (nonatomic, strong) UIColor * _Nonnull scheduleIconBackgroundColor;
-/// mark - Scroll down button
 @property (nonatomic, strong) UIImage * _Nullable scrollToBottomImage;
 @property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeColor;
 @property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeTextColor;
-/// mark - Incoming message
 @property (nonatomic) BOOL incomingBubbleStroked;
 @property (nonatomic, strong) UIColor * _Nonnull incomingBubbleColor;
 @property (nonatomic, strong) UIColor * _Nonnull incomingBubbleTextColor;
@@ -488,7 +477,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull incomingMediaTimeColor;
 @property (nonatomic) CGFloat commonMessageAvatarSize;
 @property (nonatomic) CGFloat systemMessageAvatarSize;
-/// mark - Outgoing message
 @property (nonatomic) BOOL failedBubbleStroked;
 @property (nonatomic, strong) UIColor * _Nonnull failedBubbleColor;
 @property (nonatomic) BOOL outgoingBubbleStroked;
@@ -515,13 +503,11 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull outgoingMediaPendingStatusColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingMediaDeliveredStatusColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingMediaReadStatusColor;
-/// mark - Search controller
 @property (nonatomic, strong) UIColor * _Nonnull searchScopeBarTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull searchBarTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull searchBarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull searchScopeBarFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchBarTextFont;
-/// mark - Search message
 @property (nonatomic) BOOL searchIconDisabled;
 @property (nonatomic, strong) UIImage * _Nullable clearSearchIcon;
 @property (nonatomic, strong) UIColor * _Nonnull findedMessageHeaderTextColor;
@@ -539,7 +525,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageTextFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageFileTextFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageDateTextFont;
-/// mark - Photopicker
 @property (nonatomic) BOOL photoPickerSelfieEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerToolbarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull photoPickerToolbarButtonFont;
@@ -547,16 +532,12 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable photoPickerEmptyCheckmarkIcon;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerSheetTextColor;
 @property (nonatomic, strong) UIFont * _Nonnull photoPickerSheetTextFont;
-@property (nonatomic) NSUInteger photoPickerMaxImagesCount;
-/// mark - FileViewer
 @property (nonatomic, strong) UIColor * _Nullable fileViewerTitleColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull fileViewerBackgroundColor;
 @property (nonatomic, strong) UIFont * _Nonnull fileViewerTitleFont;
-/// mark - Specialist Info
 @property (nonatomic) BOOL canShowSpecialistInfo;
-/// mark - Survey
 @property (nonatomic, strong) UIColor * _Nonnull starRatingColorEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull likeRatingColorEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull starRatingColorDisabled;
@@ -595,7 +576,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) CGFloat quickReplyButtonHeight;
 /// < Толщина границы кнопки быстрого ответа
 @property (nonatomic) CGFloat quickReplyBorderWidth;
-/// mark - Voice Recording Allowed
 @property (nonatomic) BOOL voiceRecordingAllowed;
 @property (nonatomic, strong) UIImage * _Nullable voiceMessageRecordButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable voiceMessageSendButtonImage;
@@ -608,24 +588,20 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull incomingVoiceMessageProgressColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingVoiceMessageProgressColor;
 @property (nonatomic, strong) UIColor * _Nonnull previewVoiceMessageProgressColor;
-/// mark - Show close button
 @property (nonatomic) BOOL showCloseButton;
 @property (nonatomic, strong) UIColor * _Nullable closeButtonColor;
 @property (nonatomic, strong) UIImage * _Nullable closeButtonImage;
-/// mark - New API
 @property (nonatomic) BOOL newChatCenterApi;
-/// mark - DataStore
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable customHTTPHeadersForDataStore;
 @property (nonatomic, strong) NSNumber * _Nonnull historyLoadingCount;
-/// mark - Client validity
 @property (nonatomic) BOOL clientIdIgnoreEnabled;
-+ (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 /// pragma mark - Access call didReceiveResponse in delegate
 @property (nonatomic) BOOL callReceiveResponseEnabled;
 @property (nonatomic) BOOL clearChatHistoryIfSocketReconnect;
-/// mark - Networking TLS
 @property (nonatomic) BOOL allowUntrustedSSLCertificate;
 @property (nonatomic, copy) NSArray<THRCert *> * _Nonnull trustedCertificates;
+@property (nonatomic) NSUInteger photoPickerMaxImagesCount;
++ (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class NSURL;
@@ -647,8 +623,8 @@ SWIFT_CLASS_NAMED("THRCert")
 
 SWIFT_CLASS("_TtC7Threads13THRClientInfo")
 @interface THRClientInfo : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
 - (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
 @property (nonatomic, copy) NSString * _Nullable name;
 @property (nonatomic, copy) NSString * _Nullable data;
 @property (nonatomic, copy) NSString * _Nullable appMarker;
@@ -795,14 +771,15 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 @property (nonatomic, readonly) NSInteger fileSizeLimit;
 @property (nonatomic, readonly, strong) THRAttributes * _Nonnull attributes;
 @property (nonatomic, readonly, strong) THRControls * _Nonnull controls;
-@property (nonatomic, copy) NSURL * _Nullable historyURL;
-@property (nonatomic, copy) NSURL * _Nullable fileUploadingURL;
-- (void)configureThreadsGateTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid historyURL:(NSURL * _Nonnull)historyURL fileUploadingURL:(NSURL * _Nonnull)fileUploadingURL;
+@property (nonatomic, copy) NSURL * _Nullable restURL;
+@property (nonatomic, copy) NSURL * _Nullable dataStoreURL;
+@property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
+- (void)configureThreadsGateTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
 - (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo;
-- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo fetchCompletionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(enum THRMessageRecieveState))completionHandler;
+- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo fetchCompletionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(enum THRMessageRecieveState))_;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)logout;
 - (void)logoutWithClientId:(NSString * _Nonnull)clientId;
@@ -815,7 +792,6 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (void)sendMessageWithText:(NSString * _Nonnull)withText completion:(void (^ _Nullable)(NSError * _Nullable))completion;
 - (void)registerUserWith:(THRClientInfo * _Nonnull)clientInfo messageWithText:(NSString * _Nonnull)text;
 - (void)sendMessageWith:(UIImage * _Nonnull)image completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-@property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes pushUserInfo:(NSDictionary * _Nonnull)pushUserInfo completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;
@@ -1228,14 +1204,11 @@ enum THRQuickReplyPresentationMode : NSUInteger;
 SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @interface THRAttributes : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-/// mark - General
 @property (nonatomic) BOOL canShowDebugScreen;
-/// mark - Localization
 @property (nonatomic, strong) LocalizationConfig * _Nullable localizationConfig;
 /// Works properly for non view controller based status bar appearance
 @property (nonatomic) UIStatusBarStyle statusBarStyle;
 @property (nonatomic, strong) UIColor * _Nonnull refreshColor;
-/// mark - Navigation bar
 @property (nonatomic) BOOL navigationBarVisible;
 @property (nonatomic) BOOL navigationBarCustomizeTitle;
 @property (nonatomic, copy) NSString * _Nullable navigationBarTitle;
@@ -1249,7 +1222,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) BOOL navigationBarKeyboardControlVisible;
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardShowImage;
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardHideImage;
-/// mark - LaunchView
 @property (nonatomic) BOOL launchViewEnable;
 @property (nonatomic, strong) UIColor * _Nonnull launchActivityViewColor;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewBackgroundColor;
@@ -1258,14 +1230,12 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) CGSize launchViewInnerBoxSize;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewTextColor;
 @property (nonatomic, strong) UIFont * _Nonnull launchViewTextFont;
-/// mark - Placeholder
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
 @property (nonatomic, strong) UIImage * _Nullable placeholderImage;
 @property (nonatomic, strong) UIColor * _Nonnull placeholderTitleColor;
 @property (nonatomic, strong) UIColor * _Nonnull placeholderSubtitleColor;
 @property (nonatomic, strong) UIFont * _Nonnull placeholderTitleFont;
 @property (nonatomic, strong) UIFont * _Nonnull placeholderSubtitleFont;
-/// mark - Toolbar
 @property (nonatomic, strong) UIColor * _Nonnull toolbarbackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarTintColor;
 @property (nonatomic, strong) UIImage * _Nullable attachButtonImage;
@@ -1289,13 +1259,11 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull toolbarInputTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarInputCursorColor;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarInputBackgroundColor;
-/// mark - Waiting for specialist
 @property (nonatomic) BOOL showWaitingForSpecialistProgress;
 @property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistSpinnerColor;
 @property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistBgColor;
 @property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistBorderColor;
 @property (nonatomic) CGFloat waitingSpecialistBorderWidth;
-/// mark - Messages
 @property (nonatomic, strong) UIFont * _Nonnull bubbleMessageFont;
 @property (nonatomic, strong) UIFont * _Nonnull bubbleTimeFont;
 @property (nonatomic, strong) UIFont * _Nonnull failedMessageFont;
@@ -1317,7 +1285,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) CGFloat messageBubbleOppositeMargin;
 @property (nonatomic, strong) UIColor * _Nonnull emptyImageColor;
 @property (nonatomic, strong) UIColor * _Nonnull timeAndStatusBackgroundColor;
-/// mark - System messages
 @property (nonatomic, strong) UIFont * _Nonnull specialisConnectTitleFont;
 @property (nonatomic, strong) UIFont * _Nonnull specialisConnectSubtitleFont;
 @property (nonatomic, strong) UIColor * _Nonnull specialisConnectTitleColor;
@@ -1330,11 +1297,9 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull scheduleAlertColor;
 @property (nonatomic, strong) UIFont * _Nonnull scheduleAlertFont;
 @property (nonatomic, strong) UIColor * _Nonnull scheduleIconBackgroundColor;
-/// mark - Scroll down button
 @property (nonatomic, strong) UIImage * _Nullable scrollToBottomImage;
 @property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeColor;
 @property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeTextColor;
-/// mark - Incoming message
 @property (nonatomic) BOOL incomingBubbleStroked;
 @property (nonatomic, strong) UIColor * _Nonnull incomingBubbleColor;
 @property (nonatomic, strong) UIColor * _Nonnull incomingBubbleTextColor;
@@ -1351,7 +1316,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull incomingMediaTimeColor;
 @property (nonatomic) CGFloat commonMessageAvatarSize;
 @property (nonatomic) CGFloat systemMessageAvatarSize;
-/// mark - Outgoing message
 @property (nonatomic) BOOL failedBubbleStroked;
 @property (nonatomic, strong) UIColor * _Nonnull failedBubbleColor;
 @property (nonatomic) BOOL outgoingBubbleStroked;
@@ -1378,13 +1342,11 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull outgoingMediaPendingStatusColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingMediaDeliveredStatusColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingMediaReadStatusColor;
-/// mark - Search controller
 @property (nonatomic, strong) UIColor * _Nonnull searchScopeBarTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull searchBarTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull searchBarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull searchScopeBarFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchBarTextFont;
-/// mark - Search message
 @property (nonatomic) BOOL searchIconDisabled;
 @property (nonatomic, strong) UIImage * _Nullable clearSearchIcon;
 @property (nonatomic, strong) UIColor * _Nonnull findedMessageHeaderTextColor;
@@ -1402,7 +1364,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageTextFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageFileTextFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageDateTextFont;
-/// mark - Photopicker
 @property (nonatomic) BOOL photoPickerSelfieEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerToolbarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull photoPickerToolbarButtonFont;
@@ -1410,16 +1371,12 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable photoPickerEmptyCheckmarkIcon;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerSheetTextColor;
 @property (nonatomic, strong) UIFont * _Nonnull photoPickerSheetTextFont;
-@property (nonatomic) NSUInteger photoPickerMaxImagesCount;
-/// mark - FileViewer
 @property (nonatomic, strong) UIColor * _Nullable fileViewerTitleColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull fileViewerBackgroundColor;
 @property (nonatomic, strong) UIFont * _Nonnull fileViewerTitleFont;
-/// mark - Specialist Info
 @property (nonatomic) BOOL canShowSpecialistInfo;
-/// mark - Survey
 @property (nonatomic, strong) UIColor * _Nonnull starRatingColorEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull likeRatingColorEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull starRatingColorDisabled;
@@ -1458,7 +1415,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) CGFloat quickReplyButtonHeight;
 /// < Толщина границы кнопки быстрого ответа
 @property (nonatomic) CGFloat quickReplyBorderWidth;
-/// mark - Voice Recording Allowed
 @property (nonatomic) BOOL voiceRecordingAllowed;
 @property (nonatomic, strong) UIImage * _Nullable voiceMessageRecordButtonImage;
 @property (nonatomic, strong) UIImage * _Nullable voiceMessageSendButtonImage;
@@ -1471,24 +1427,20 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull incomingVoiceMessageProgressColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingVoiceMessageProgressColor;
 @property (nonatomic, strong) UIColor * _Nonnull previewVoiceMessageProgressColor;
-/// mark - Show close button
 @property (nonatomic) BOOL showCloseButton;
 @property (nonatomic, strong) UIColor * _Nullable closeButtonColor;
 @property (nonatomic, strong) UIImage * _Nullable closeButtonImage;
-/// mark - New API
 @property (nonatomic) BOOL newChatCenterApi;
-/// mark - DataStore
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable customHTTPHeadersForDataStore;
 @property (nonatomic, strong) NSNumber * _Nonnull historyLoadingCount;
-/// mark - Client validity
 @property (nonatomic) BOOL clientIdIgnoreEnabled;
-+ (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 /// pragma mark - Access call didReceiveResponse in delegate
 @property (nonatomic) BOOL callReceiveResponseEnabled;
 @property (nonatomic) BOOL clearChatHistoryIfSocketReconnect;
-/// mark - Networking TLS
 @property (nonatomic) BOOL allowUntrustedSSLCertificate;
 @property (nonatomic, copy) NSArray<THRCert *> * _Nonnull trustedCertificates;
+@property (nonatomic) NSUInteger photoPickerMaxImagesCount;
++ (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class NSURL;
@@ -1510,8 +1462,8 @@ SWIFT_CLASS_NAMED("THRCert")
 
 SWIFT_CLASS("_TtC7Threads13THRClientInfo")
 @interface THRClientInfo : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
 - (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
 @property (nonatomic, copy) NSString * _Nullable name;
 @property (nonatomic, copy) NSString * _Nullable data;
 @property (nonatomic, copy) NSString * _Nullable appMarker;
@@ -1658,14 +1610,15 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 @property (nonatomic, readonly) NSInteger fileSizeLimit;
 @property (nonatomic, readonly, strong) THRAttributes * _Nonnull attributes;
 @property (nonatomic, readonly, strong) THRControls * _Nonnull controls;
-@property (nonatomic, copy) NSURL * _Nullable historyURL;
-@property (nonatomic, copy) NSURL * _Nullable fileUploadingURL;
-- (void)configureThreadsGateTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid historyURL:(NSURL * _Nonnull)historyURL fileUploadingURL:(NSURL * _Nonnull)fileUploadingURL;
+@property (nonatomic, copy) NSURL * _Nullable restURL;
+@property (nonatomic, copy) NSURL * _Nullable dataStoreURL;
+@property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
+- (void)configureThreadsGateTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
 - (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo;
-- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo fetchCompletionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(enum THRMessageRecieveState))completionHandler;
+- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo fetchCompletionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(enum THRMessageRecieveState))_;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)logout;
 - (void)logoutWithClientId:(NSString * _Nonnull)clientId;
@@ -1678,7 +1631,6 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (void)sendMessageWithText:(NSString * _Nonnull)withText completion:(void (^ _Nullable)(NSError * _Nullable))completion;
 - (void)registerUserWith:(THRClientInfo * _Nonnull)clientInfo messageWithText:(NSString * _Nonnull)text;
 - (void)sendMessageWith:(UIImage * _Nonnull)image completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-@property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes pushUserInfo:(NSDictionary * _Nonnull)pushUserInfo completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;

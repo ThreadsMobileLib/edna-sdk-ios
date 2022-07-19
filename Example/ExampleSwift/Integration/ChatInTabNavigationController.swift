@@ -22,7 +22,7 @@ class ChatInTabNavigationController: UINavigationController {
     func getAttributes() -> THRAttributes {
         switch design {
         case .default:
-            return AttributesHelper.getDefaultAttributes()
+            return Threads.threads().attributes
         case .alternative:
             return AttributesHelper.getAltAttributes()
         }

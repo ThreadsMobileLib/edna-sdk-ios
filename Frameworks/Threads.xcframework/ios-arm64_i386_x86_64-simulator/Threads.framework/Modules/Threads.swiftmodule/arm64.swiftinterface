@@ -143,8 +143,8 @@ public protocol HeaderValidator : AnyObject {
   @objc deinit
 }
 @objc @objcMembers public class THRClientInfo : ObjectiveC.NSObject {
-  @objc final public let clientId: Swift.String
   @objc public init(clientId: Swift.String)
+  @objc final public let clientId: Swift.String
   @objc public var name: Swift.String?
   @objc public var data: Swift.String?
   @objc public var appMarker: Swift.String?
@@ -462,7 +462,6 @@ extension Foundation.URL {
   @objc optional func customPreloadView() -> ThreadsPreloadView!
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class Threads : ObjectiveC.NSObject {
-  public static func threads() -> Threads
   @objc final public var isClientIdEncrypted: Swift.Bool {
     @objc get
     @objc set(newValue)
@@ -516,20 +515,24 @@ extension Foundation.URL {
   @objc final public var controls: THRControls {
     @objc get
   }
-  @objc final public var historyURL: Foundation.URL? {
+  @objc final public var restURL: Foundation.URL? {
     @objc get
     @objc set(newValue)
   }
-  @objc final public var fileUploadingURL: Foundation.URL? {
+  @objc final public var dataStoreURL: Foundation.URL? {
     @objc get
     @objc set(newValue)
   }
-  @objc final public func configureThreadsGateTransportProtocol(with delegate: ThreadsDelegate?, webSocketURL: Foundation.URL, providerUid: Swift.String, historyURL: Foundation.URL, fileUploadingURL: Foundation.URL)
+  @objc final public var lastActivitySeconds: Foundation.TimeInterval {
+    @objc get
+  }
+  public static func threads() -> Threads
+  @objc final public func configureThreadsGateTransportProtocol(with delegate: ThreadsDelegate?, webSocketURL: Foundation.URL, providerUid: Swift.String, restURL: Foundation.URL, dataStoreURL: Foundation.URL)
   @objc final public func registerApplicationForRemoteNotificationsStandartOptions(authorizationStatusDenied: (() -> Swift.Void)?, completionHandler: @escaping ((_ deviceToken: Foundation.Data?) -> Swift.Void))
   @objc final public func applicationDidRegisterForRemoteNotifications(withDeviceToken deviceToken: Foundation.Data)
   @objc final public func applicationDidFailToRegisterForRemoteNotificationsWithError(_ error: Swift.Error)
   @objc final public func applicationDidReceiveRemoteNotification(_ withUserInfo: [Swift.AnyHashable : Any])
-  @objc final public func applicationDidReceiveRemoteNotification(_ withUserInfo: [Swift.AnyHashable : Any], fetchCompletionHandler completionHandler: ((_ state: THRMessageRecieveState) -> Swift.Void))
+  @objc final public func applicationDidReceiveRemoteNotification(_ withUserInfo: [Swift.AnyHashable : Any], fetchCompletionHandler _: (_ state: THRMessageRecieveState) -> Swift.Void)
   @objc final public func setClientInfo(_ clientInfo: THRClientInfo)
   @objc final public func logout()
   @objc final public func logout(withClientId clientId: Swift.String)
@@ -542,9 +545,6 @@ extension Foundation.URL {
   @objc final public func sendMessage(withText: Swift.String, completion: ((_ error: Swift.Error?) -> Swift.Void)?)
   @objc final public func registerUser(with clientInfo: THRClientInfo, messageWithText text: Swift.String)
   @objc final public func sendMessage(with image: UIKit.UIImage, completion: ((_ error: Swift.Error?) -> Swift.Void)?)
-  @objc final public var lastActivitySeconds: Foundation.TimeInterval {
-    @objc get
-  }
   @objc final public func chatViewController(with attributes: THRAttributes) -> UIKit.UIViewController
   @objc final public func chatViewController(with attributes: THRAttributes, completionHandler: ((_ error: Swift.Error?) -> Swift.Void)?) -> UIKit.UIViewController
   @objc final public func chatViewController(with attributes: THRAttributes, pushUserInfo: [Swift.AnyHashable : Any], completionHandler: ((_ error: Swift.Error?) -> Swift.Void)?) -> UIKit.UIViewController
@@ -849,10 +849,6 @@ public protocol FrameCollectorDelegate : AnyObject {
   @objc public var photoPickerEmptyCheckmarkIcon: UIKit.UIImage?
   @objc public var photoPickerSheetTextColor: UIKit.UIColor
   @objc public var photoPickerSheetTextFont: UIKit.UIFont
-  @objc public var photoPickerMaxImagesCount: Swift.UInt {
-    @objc get
-    @objc set(newValue)
-  }
   @objc public var fileViewerTitleColor: UIKit.UIColor?
   @objc public var fileViewerNavBarBackgroundColor: UIKit.UIColor?
   @objc public var fileViewerNavBarTintColor: UIKit.UIColor?
@@ -904,14 +900,18 @@ public protocol FrameCollectorDelegate : AnyObject {
   @objc public var closeButtonColor: UIKit.UIColor?
   @objc public var closeButtonImage: UIKit.UIImage?
   @objc public var newChatCenterApi: Swift.Bool
-  @objc public var customHTTPHeadersForDataStore: Swift.Dictionary<Swift.String, Swift.String>?
+  @objc public var customHTTPHeadersForDataStore: [Swift.String : Swift.String]?
   @objc public var historyLoadingCount: Foundation.NSNumber
   @objc public var clientIdIgnoreEnabled: Swift.Bool
-  @objc public static func defaultAttributes() -> THRAttributes
   @objc public var callReceiveResponseEnabled: Swift.Bool
   @objc public var clearChatHistoryIfSocketReconnect: Swift.Bool
   @objc public var allowUntrustedSSLCertificate: Swift.Bool
   @objc public var trustedCertificates: [THRCert]
+  @objc public var photoPickerMaxImagesCount: Swift.UInt {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public static func defaultAttributes() -> THRAttributes
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class WaitForNetwork : ObjectiveC.NSObject {
@@ -970,10 +970,10 @@ public protocol CompressionHandler {
   }
 }
 @_hasMissingDesignatedInitializers @objc public class THRMessageInfo : ObjectiveC.NSObject {
+  @objc public init(text: Swift.String?, senderName: Swift.String, hasAttachment: Swift.Bool)
   final public let senderName: Swift.String
   final public let text: Swift.String?
   final public let hasAttachment: Swift.Bool
-  @objc public init(text: Swift.String?, senderName: Swift.String, hasAttachment: Swift.Bool)
   @objc deinit
 }
 extension Swift.String {

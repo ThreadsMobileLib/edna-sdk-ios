@@ -48,8 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             with: self,
             webSocketURL: URL(string: "WEBSOCKET_URL")!,
             providerUid: "PROVIDER_UID",
-            historyURL: URL(string: "HISTORY_URL")!,
-            fileUploadingURL: URL(string: "FILE_UPLOADING_URL")!)
+            restURL: URL(string: "REST_URL")!,
+            dataStoreURL: URL(string: "DATASTORE_URL")!)
 
     }
     
@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Application launched from Threads notification
             if let appMarker = Threads.threads().getAppMarker(fromPushUserInfo: userInfo) {
                 let vc = self.window?.rootViewController as? MainViewController
-                vc?.showChat(forAppMarker: appMarker)
+                vc?.showChat(forAppMarker: appMarker, pushUserInfo: [:])
             }
         } else {
             // Application launched from other notifications
@@ -115,7 +115,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         // Check for application launched from notification
         if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
             let userInfo = response.notification.request.content.userInfo
-            handleOpeningFromPush(with: response.notification.request.content.userInfo)
+            handleOpeningFromPush(with: userInfo)
         }
         completionHandler()
     }

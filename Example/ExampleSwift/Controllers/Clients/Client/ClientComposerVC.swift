@@ -20,6 +20,12 @@ class ClientComposerVC: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var signatureInput: UITextField!
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var dataInput: UITextField!
+
+    @IBOutlet weak var authTokenLabel: UILabel!
+    @IBOutlet weak var authTokenInput: UITextField!
+    @IBOutlet weak var authSchemaLabel: UILabel!
+    @IBOutlet weak var authSchemaInput: UITextField!
+    
     @IBOutlet var activityView: UIActivityIndicatorView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -41,6 +47,8 @@ class ClientComposerVC: UITableViewController, UITextFieldDelegate {
                 .replacingOccurrences(of: "„", with: "\"")
             
             let client = Client.init(id: clientId,
+                                     authToken: authTokenInput.text,
+                                     authSchema: authSchemaInput.text,
                                      name: clientNameInput.text,
                                      appMarker: appMarkerInput.text,
                                      signature: signatureInput.text,
@@ -101,7 +109,7 @@ class ClientComposerVC: UITableViewController, UITextFieldDelegate {
         startAnimating()
         
         weak var weakSelf = self
-        SignatureService.instance.serverURL = URL(string: "")
+        SignatureService.instance.restServerURL = URL(string: Configuration.restServerURL())
         SignatureService.instance.getSignature(for: client.id) { (signature, error) in
             
             DispatchQueue.main.async {
@@ -168,10 +176,19 @@ class ClientComposerVC: UITableViewController, UITextFieldDelegate {
             signatureInput.becomeFirstResponder()
             break
         case 3:
-            signatureInput.resignFirstResponder()
+            dataInput.becomeFirstResponder()
+            break
+        case 4:
+            authTokenInput.becomeFirstResponder()
+            break
+        case 5:
+            authSchemaInput.becomeFirstResponder()
+            break
+        case 6:
+            authSchemaInput.becomeFirstResponder()
             break
         default:
-            signatureInput.resignFirstResponder()
+            authSchemaInput.resignFirstResponder()
         }
         return true
     }

@@ -23,6 +23,9 @@ class IntegrationsViewController: UITableViewController, IntegrationsProtocol {
         super.viewDidLoad()
 
         segmentedControl.selectedSegmentIndex = design.rawValue
+        if let navigationController = self.navigationController{
+            setColor(navController: navigationController)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,15 +38,22 @@ class IntegrationsViewController: UITableViewController, IntegrationsProtocol {
     func getAttributes() -> THRAttributes {
         switch design {
         case .default:
-            return AttributesHelper.getDefaultAttributes()
+            return Threads.threads().attributes
         case .alternative:
             return AttributesHelper.getAltAttributes()
         }
     }
     
-    func getChatViewController() -> UIViewController {
+    func getChatViewController(pushUserInfo: Dictionary<String, Any>? = nil) -> UIViewController {
         let attributes = getAttributes()
-        let chatViewController = Threads.threads().chatViewController(with: attributes)
+        let chatViewController: UIViewController
+        if let pushUserInfo = pushUserInfo {
+            chatViewController = Threads.threads().chatViewController(with: attributes,
+                                                                      pushUserInfo: pushUserInfo,
+                                                                      completionHandler: nil)
+        } else {
+            chatViewController = Threads.threads().chatViewController(with: attributes)
+        }
         return chatViewController
     }
 
@@ -75,8 +85,22 @@ class IntegrationsViewController: UITableViewController, IntegrationsProtocol {
     func presentChatInUINavigationController() {
         let chatViewController = getChatViewController()
         let nc = UINavigationController(rootViewController: chatViewController)
+        setColor(navController: nc)
         nc.modalPresentationStyle = .fullScreen
         present(nc, animated: true, completion: nil)
+    }
+    
+    private func setColor(navController: UINavigationController){
+        
+        
+        if #available(iOS 13.0, *) {
+            let coloredAppearance = UINavigationBarAppearance()
+            coloredAppearance.configureWithOpaqueBackground()
+            coloredAppearance.backgroundColor = UIColor.alt_navigationBarColor()
+                   
+            navController.navigationBar.standardAppearance = coloredAppearance
+            navController.navigationBar.scrollEdgeAppearance = coloredAppearance
+        }
     }
     
     /**
@@ -84,7 +108,6 @@ class IntegrationsViewController: UITableViewController, IntegrationsProtocol {
      */
     func presentChatUINavigationControllerAsTabInTabBarControllerInitializatedFromCode() {
         let chatViewController = getChatViewController()
-        
         let nc = UINavigationController(rootViewController: chatViewController)
         nc.tabBarItem = UITabBarItem(title: NSLocalizedString("Chat", comment: ""), image: UIImage(named: "tabBarItemChat"), tag: 0)
         
@@ -114,11 +137,14 @@ class IntegrationsViewController: UITableViewController, IntegrationsProtocol {
         }
     }
     
-    @objc func presentFromPush(withDesign design: Int) {
+    @objc func presentFromPush(withDesign design: Int, pushUserInfo: [String: Any]) {
         if navigationController!.viewControllers.count > 1 || navigationController?.presentedViewController != nil { return }
         self.design = Design(rawValue: design)!
-        let chatViewController = getChatViewController()
+        let chatViewController = getChatViewController(pushUserInfo: pushUserInfo)
         navigationController?.viewControllers.append(chatViewController)
+        if let nc = navigationController {
+            setColor(navController: nc)
+        }
     }
     
     @IBAction func designDidChange() {

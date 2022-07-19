@@ -9,7 +9,7 @@
 import UIKit
 
 protocol IntegrationsProtocol {
-    func presentFromPush(withDesign design: Int)
+    func presentFromPush(withDesign design: Int, pushUserInfo: [String: Any])
 }
 
 enum MainViewControllerTab: Int {
@@ -47,12 +47,12 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         }
     }
 
-    func showChat(forAppMarker appMarker: String) {
+    func showChat(forAppMarker appMarker: String, pushUserInfo: [String: Any]) {
         self.selectedIndex = 1;
         let nvc = self.viewControllers?[1] as? UINavigationController
         let vc = nvc?.viewControllers[0] as? IntegrationsProtocol
         let design = appMarker.hasSuffix("CRG") ? 1 : 0;
-        vc?.presentFromPush(withDesign: design)
+        vc?.presentFromPush(withDesign: design, pushUserInfo: pushUserInfo)
     }
 
     func tabBarController(_ tabBarController : UITabBarController, didSelect didSelectViewController: UIViewController) {
