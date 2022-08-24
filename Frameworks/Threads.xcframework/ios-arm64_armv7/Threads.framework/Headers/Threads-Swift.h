@@ -594,7 +594,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) BOOL newChatCenterApi;
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable customHTTPHeadersForDataStore;
 @property (nonatomic, strong) NSNumber * _Nonnull historyLoadingCount;
-@property (nonatomic) BOOL clientIdIgnoreEnabled;
 /// pragma mark - Access call didReceiveResponse in delegate
 @property (nonatomic) BOOL callReceiveResponseEnabled;
 @property (nonatomic) BOOL clearChatHistoryIfSocketReconnect;
@@ -624,6 +623,12 @@ SWIFT_CLASS_NAMED("THRCert")
 SWIFT_CLASS("_TtC7Threads13THRClientInfo")
 @interface THRClientInfo : NSObject
 - (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId OBJC_DESIGNATED_INITIALIZER;
+/// Client configuration
+/// @param id Unique client identifier, required parameter. For example, you can use the user’s phone number.
+/// @param name Name of user
+/// @param data custom data, json key-value pairs string
+/// @param appMarker hreads support connecting multiple apps to a single server. Configure the appMarker identifier on the server and in app. As appMarker can be any unique string. appMarker should be the same for corresponding Android and iOS applications.
+/// @param signature The clientId authorization signature, the signature should be generated on your server based on the clientId using the RSA private key, then encrypted in Base64. Under the general scheme of work with the signature, see the documentation for Threads-API.
 @property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
 @property (nonatomic, copy) NSString * _Nullable name;
 @property (nonatomic, copy) NSString * _Nullable data;
@@ -774,12 +779,14 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 @property (nonatomic, copy) NSURL * _Nullable restURL;
 @property (nonatomic, copy) NSURL * _Nullable dataStoreURL;
 @property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
-- (void)configureThreadsGateTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
++ (Threads * _Nonnull)threads SWIFT_WARN_UNUSED_RESULT;
+- (void)configureTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
 - (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo;
 - (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo fetchCompletionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(enum THRMessageRecieveState))_;
+- (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longtitude:(NSNumber * _Nonnull)longtitude;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)logout;
 - (void)logoutWithClientId:(NSString * _Nonnull)clientId;
@@ -1433,7 +1440,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) BOOL newChatCenterApi;
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable customHTTPHeadersForDataStore;
 @property (nonatomic, strong) NSNumber * _Nonnull historyLoadingCount;
-@property (nonatomic) BOOL clientIdIgnoreEnabled;
 /// pragma mark - Access call didReceiveResponse in delegate
 @property (nonatomic) BOOL callReceiveResponseEnabled;
 @property (nonatomic) BOOL clearChatHistoryIfSocketReconnect;
@@ -1463,6 +1469,12 @@ SWIFT_CLASS_NAMED("THRCert")
 SWIFT_CLASS("_TtC7Threads13THRClientInfo")
 @interface THRClientInfo : NSObject
 - (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId OBJC_DESIGNATED_INITIALIZER;
+/// Client configuration
+/// @param id Unique client identifier, required parameter. For example, you can use the user’s phone number.
+/// @param name Name of user
+/// @param data custom data, json key-value pairs string
+/// @param appMarker hreads support connecting multiple apps to a single server. Configure the appMarker identifier on the server and in app. As appMarker can be any unique string. appMarker should be the same for corresponding Android and iOS applications.
+/// @param signature The clientId authorization signature, the signature should be generated on your server based on the clientId using the RSA private key, then encrypted in Base64. Under the general scheme of work with the signature, see the documentation for Threads-API.
 @property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
 @property (nonatomic, copy) NSString * _Nullable name;
 @property (nonatomic, copy) NSString * _Nullable data;
@@ -1613,12 +1625,14 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 @property (nonatomic, copy) NSURL * _Nullable restURL;
 @property (nonatomic, copy) NSURL * _Nullable dataStoreURL;
 @property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
-- (void)configureThreadsGateTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
++ (Threads * _Nonnull)threads SWIFT_WARN_UNUSED_RESULT;
+- (void)configureTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
 - (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo;
 - (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo fetchCompletionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(enum THRMessageRecieveState))_;
+- (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longtitude:(NSNumber * _Nonnull)longtitude;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)logout;
 - (void)logoutWithClientId:(NSString * _Nonnull)clientId;

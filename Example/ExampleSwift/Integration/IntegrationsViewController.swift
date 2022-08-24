@@ -38,7 +38,7 @@ class IntegrationsViewController: UITableViewController, IntegrationsProtocol {
     func getAttributes() -> THRAttributes {
         switch design {
         case .default:
-            return Threads.threads().attributes
+            return AttributesHelper.getDefaultAttributes()
         case .alternative:
             return AttributesHelper.getAltAttributes()
         }

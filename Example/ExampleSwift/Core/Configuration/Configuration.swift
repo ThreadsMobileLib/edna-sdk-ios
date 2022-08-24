@@ -9,11 +9,6 @@
 import UIKit
 import Threads
 
-enum TransportProtocol: String {
-    case EDNAPush
-    case ThreadsGate
-}
-
 @objc
 class Configuration: NSObject {
     
@@ -29,22 +24,12 @@ class Configuration: NSObject {
         return self.bool(forKey: "THR_CLIENTID_IS_ENCRYPTED")
     }
 
-    public class func transportProtocol() -> TransportProtocol {
-        
-        return TransportProtocol.init(rawValue: self.string(forKey: "THR_TRANSPORT_PROTOCOL"))
-            ?? TransportProtocol.ThreadsGate
-    }
-
-    public class func webSocketURL() -> String? {
+    public class func webSocketURL() -> String {
         return self.string(forKey: "THR_WEBSOCKET_URL")
     }
 
     public class func providerUid() -> String? {
         return self.string(forKey: "THR_PROVIDER_UID")
-    }
-
-    public class func historyURL() -> String {
-        return self.string(forKey: "THR_HISTORY_URL")
     }
 
     public class func dataStoreURL() -> String {
@@ -66,18 +51,12 @@ class Configuration: NSObject {
     class func int(forKey key: String) -> Int {
         return Int(self.string(forKey: key)) ?? 0
     }
-
-    class func `protocol`() -> String {
-        return self.transportProtocol().rawValue
-    }
         
     @objc
     public class func summary() -> String {
         
         let array = [NSLocalizedString("Configuration:", comment: ""),
                      "",
-                     String.localizedStringWithFormat("Protocol: %@", self.transportProtocol().rawValue),
-                     String.localizedStringWithFormat("Language: %@", self.string(forKey:"THR_LANGUAGE")),
                      String.localizedStringWithFormat("Bundle Identifier: %@", self.string(forKey:"CFBundleIdentifier")),
                      String.localizedStringWithFormat("App Name: %@", self.string(forKey:"CFBundleName")),
                      String.localizedStringWithFormat("App Version: %@", self.string(forKey:"CFBundleShortVersionString")),
@@ -87,12 +66,10 @@ class Configuration: NSObject {
                      String.init(format: "productionMSMFServerEnabled: %@", self.productionMSMFServerEnabled() ? "YES" : "NO"),
                      String.init(format: "clientIdEncrypted: %@", self.clientIdEncrypted() ? "YES" : "NO"),
                      "",
-                     String.init(format: "historyURL: %@", self.historyURL()),
                      String.init(format: "dataStoreURL: %@", self.dataStoreURL()),
                      String.init(format: "restServerURL: %@", self.restServerURL())
         ];
         
         return array.joined(separator: "\n")
     }
-
 }

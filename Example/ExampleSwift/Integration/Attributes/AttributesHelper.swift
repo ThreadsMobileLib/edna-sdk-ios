@@ -187,7 +187,6 @@ fileprivate class AlternativeAttributes{
         attributes.outgoingVoiceMessageProgressColor = UIColor.purple;
         attributes.previewVoiceMessageProgressColor = UIColor.red;
         
-        attributes.clientIdIgnoreEnabled = true;
         attributes.newChatCenterApi = true;
         
         attributes.navigationBarCustomizeTitle = false;

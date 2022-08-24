@@ -39,6 +39,8 @@ class ClientsViewController: UIViewController, ClientsDataSourceDelegate {
         clientInfo.authSchema = client.authSchema
         
         Threads.threads().setClientInfo(clientInfo)
+
+        registerUserIfNeed(clientInfo: clientInfo)
     }
     
     func registerUserIfNeed(clientInfo: THRClientInfo){

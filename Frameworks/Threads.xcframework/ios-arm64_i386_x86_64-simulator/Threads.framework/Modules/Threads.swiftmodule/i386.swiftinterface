@@ -526,13 +526,14 @@ extension Foundation.URL {
   @objc final public var lastActivitySeconds: Foundation.TimeInterval {
     @objc get
   }
-  public static func threads() -> Threads
-  @objc final public func configureThreadsGateTransportProtocol(with delegate: ThreadsDelegate?, webSocketURL: Foundation.URL, providerUid: Swift.String, restURL: Foundation.URL, dataStoreURL: Foundation.URL)
+  @objc public static func threads() -> Threads
+  @objc final public func configureTransportProtocol(with delegate: ThreadsDelegate?, webSocketURL: Foundation.URL, providerUid: Swift.String, restURL: Foundation.URL, dataStoreURL: Foundation.URL)
   @objc final public func registerApplicationForRemoteNotificationsStandartOptions(authorizationStatusDenied: (() -> Swift.Void)?, completionHandler: @escaping ((_ deviceToken: Foundation.Data?) -> Swift.Void))
   @objc final public func applicationDidRegisterForRemoteNotifications(withDeviceToken deviceToken: Foundation.Data)
   @objc final public func applicationDidFailToRegisterForRemoteNotificationsWithError(_ error: Swift.Error)
   @objc final public func applicationDidReceiveRemoteNotification(_ withUserInfo: [Swift.AnyHashable : Any])
   @objc final public func applicationDidReceiveRemoteNotification(_ withUserInfo: [Swift.AnyHashable : Any], fetchCompletionHandler _: (_ state: THRMessageRecieveState) -> Swift.Void)
+  @objc final public func updateLocation(latitude: Foundation.NSNumber, longtitude: Foundation.NSNumber)
   @objc final public func setClientInfo(_ clientInfo: THRClientInfo)
   @objc final public func logout()
   @objc final public func logout(withClientId clientId: Swift.String)
@@ -902,7 +903,6 @@ public protocol FrameCollectorDelegate : AnyObject {
   @objc public var newChatCenterApi: Swift.Bool
   @objc public var customHTTPHeadersForDataStore: [Swift.String : Swift.String]?
   @objc public var historyLoadingCount: Foundation.NSNumber
-  @objc public var clientIdIgnoreEnabled: Swift.Bool
   @objc public var callReceiveResponseEnabled: Swift.Bool
   @objc public var clearChatHistoryIfSocketReconnect: Swift.Bool
   @objc public var allowUntrustedSSLCertificate: Swift.Bool

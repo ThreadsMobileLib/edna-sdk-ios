@@ -34,29 +34,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         threads.isDebugLoggingEnabled = true
         threads.isClientIdEncrypted = false
         threads.isShowsNetworkActivity = true
-        
 
-        //MFMSPushTransport
-//        threads.configurePushTransportProtocol(
-//            with: self,
-//            productionMFMSServer: true,
-//            historyURL: URL(string: "HISTORY_URL")!,
-//            fileUploadingURL: URL(string: "FILE_UPLOADING_URL")!)
-        
-        //ThreadsGateTransport
-        threads.configureThreadsGateTransportProtocol(
+        threads.configureTransportProtocol(
             with: self,
             webSocketURL: URL(string: "WEBSOCKET_URL")!,
             providerUid: "PROVIDER_UID",
             restURL: URL(string: "REST_URL")!,
             dataStoreURL: URL(string: "DATASTORE_URL")!)
-
     }
     
     func registerForRemoteNotifications() {
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().delegate = self
-        }
+        UNUserNotificationCenter.current().delegate = self
+
         Threads.threads().registerApplicationForRemoteNotificationsStandartOptions(authorizationStatusDenied: {
             print("Remote notifications denied")
         }) { deviceToken in
@@ -74,18 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Threads.threads().applicationDidFailToRegisterForRemoteNotificationsWithError(error)
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        //MFMSPushTransport only
-        Threads.threads().applicationDidReceiveRemoteNotification(userInfo)
-    }
-    
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        //MFMSPushTransport only
-        Threads.threads().applicationDidReceiveRemoteNotification(userInfo) { state in
-            completionHandler(.newData)
-        }
-    }
-    
     func handleOpeningFromPush(with userInfo: [AnyHashable: Any]) {
         if Threads.threads().isThreadsOriginPushUserInfo(userInfo) {
             // Application launched from Threads notification
@@ -101,16 +78,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-    
-    @available(iOS 10.0, *)
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        //MFMSPushTransport only
-        Threads.threads().applicationDidReceiveRemoteNotification(notification.request.content.userInfo) { state in
-            completionHandler([])
-        }
-    }
-    
-    @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // Check for application launched from notification
         if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
@@ -119,11 +86,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
         completionHandler()
     }
-    
 }
 
 extension AppDelegate: ThreadsDelegate {
-    
     func threads(_ threads: Threads, unreadMessagesCount: UInt) {
         let vc = self.window?.rootViewController as? MainViewController
         vc?.setUnreadMessagesCount(unreadMessagesCount)
