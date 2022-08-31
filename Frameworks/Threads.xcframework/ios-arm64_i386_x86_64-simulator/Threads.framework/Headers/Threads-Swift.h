@@ -213,15 +213,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-@class NSStream;
-
-SWIFT_CLASS("_TtC7Threads19FoundationTransport")
-@interface FoundationTransport : NSObject <NSStreamDelegate>
-- (void)stream:(NSStream * _Nonnull)aStream handleEvent:(NSStreamEvent)eventCode;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 
 SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @interface HttpSettings : NSObject
@@ -270,17 +261,6 @@ SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 + (NSTimeInterval)years:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 @end
 
-
-@class NSURLSession;
-@class NSURLSessionWebSocketTask;
-@class NSData;
-
-SWIFT_CLASS("_TtC7Threads12NativeEngine") SWIFT_AVAILABILITY(tvos,introduced=13.0) SWIFT_AVAILABILITY(watchos,introduced=6.0) SWIFT_AVAILABILITY(ios,introduced=13.0) SWIFT_AVAILABILITY(macos,introduced=10.15)
-@interface NativeEngine : NSObject <NSURLSessionDataDelegate, NSURLSessionWebSocketDelegate>
-- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didOpenWithProtocol:(NSString * _Nullable)protocol;
-- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didCloseWithCode:(NSURLSessionWebSocketCloseCode)closeCode reason:(NSData * _Nullable)reason;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
 
 
 SWIFT_CLASS("_TtC7Threads12PushUserInfo")
@@ -659,6 +639,40 @@ SWIFT_CLASS("_TtC7Threads11THRControls")
 @end
 
 
+/// The <code>JSQMessageAvatarImageDataSource</code> protocol defines the common interface through which
+/// a <code>JSQMessagesViewController</code> and <code>JSQMessagesCollectionView</code> interact with avatar image model objects.
+/// It declares the required and optional methods that a class must implement so that instances
+/// of that class can be display properly within a <code>JSQMessagesCollectionViewCell</code>.
+/// A concrete class that conforms to this protocol is provided in the library. See <code>JSQMessagesAvatarImage</code>.
+/// seealso:
+/// JSQMessagesAvatarImage.
+SWIFT_PROTOCOL("_TtP7Threads34THRJSQMessageAvatarImageDataSource_")
+@protocol THRJSQMessageAvatarImageDataSource <NSObject>
+/// remark:
+/// You may return <code>nil</code> from this method while the image is being downloaded.
+///
+/// returns:
+/// The avatar image for a regular display state.
+@property (nonatomic, strong) UIImage * _Nullable avatarImage;
+/// remark:
+/// You may return <code>nil</code> from this method if this does not apply.
+///
+/// returns:
+/// The avatar image for a highlighted display state.
+@property (nonatomic, strong) UIImage * _Nullable avatarHighlightedImage;
+/// remark:
+/// If you do not need support for a placeholder image, that is, your images
+/// are stored locally on the device, then you may simply return the same value as avatarImage here.
+/// @warning You must not return <code>nil</code> from this method.
+///
+/// returns:
+/// A placeholder avatar image to be displayed if avatarImage is not yet available, or <code>nil</code>.
+/// For example, if avatarImage needs to be downloaded, this placeholder image
+/// will be used until avatarImage is not <code>nil</code>.
+@property (nonatomic, readonly, strong) UIImage * _Nonnull avatarPlaceholderImage;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads14THRMessageInfo")
 @interface THRMessageInfo : NSObject
 - (nonnull instancetype)initWithText:(NSString * _Nullable)text senderName:(NSString * _Nonnull)senderName hasAttachment:(BOOL)hasAttachment OBJC_DESIGNATED_INITIALIZER;
@@ -754,6 +768,7 @@ typedef SWIFT_ENUM(NSInteger, THRSysColor, open) {
 };
 
 @protocol ThreadsDelegate;
+@class NSData;
 @class UIViewController;
 
 SWIFT_CLASS("_TtC7Threads7Threads")
@@ -832,12 +847,6 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 
 
-
-SWIFT_CLASS("_TtC7Threads14WaitForNetwork")
-@interface WaitForNetwork : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -1059,15 +1068,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-@class NSStream;
-
-SWIFT_CLASS("_TtC7Threads19FoundationTransport")
-@interface FoundationTransport : NSObject <NSStreamDelegate>
-- (void)stream:(NSStream * _Nonnull)aStream handleEvent:(NSStreamEvent)eventCode;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 
 SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @interface HttpSettings : NSObject
@@ -1116,17 +1116,6 @@ SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 + (NSTimeInterval)years:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 @end
 
-
-@class NSURLSession;
-@class NSURLSessionWebSocketTask;
-@class NSData;
-
-SWIFT_CLASS("_TtC7Threads12NativeEngine") SWIFT_AVAILABILITY(tvos,introduced=13.0) SWIFT_AVAILABILITY(watchos,introduced=6.0) SWIFT_AVAILABILITY(ios,introduced=13.0) SWIFT_AVAILABILITY(macos,introduced=10.15)
-@interface NativeEngine : NSObject <NSURLSessionDataDelegate, NSURLSessionWebSocketDelegate>
-- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didOpenWithProtocol:(NSString * _Nullable)protocol;
-- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didCloseWithCode:(NSURLSessionWebSocketCloseCode)closeCode reason:(NSData * _Nullable)reason;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
 
 
 SWIFT_CLASS("_TtC7Threads12PushUserInfo")
@@ -1505,6 +1494,40 @@ SWIFT_CLASS("_TtC7Threads11THRControls")
 @end
 
 
+/// The <code>JSQMessageAvatarImageDataSource</code> protocol defines the common interface through which
+/// a <code>JSQMessagesViewController</code> and <code>JSQMessagesCollectionView</code> interact with avatar image model objects.
+/// It declares the required and optional methods that a class must implement so that instances
+/// of that class can be display properly within a <code>JSQMessagesCollectionViewCell</code>.
+/// A concrete class that conforms to this protocol is provided in the library. See <code>JSQMessagesAvatarImage</code>.
+/// seealso:
+/// JSQMessagesAvatarImage.
+SWIFT_PROTOCOL("_TtP7Threads34THRJSQMessageAvatarImageDataSource_")
+@protocol THRJSQMessageAvatarImageDataSource <NSObject>
+/// remark:
+/// You may return <code>nil</code> from this method while the image is being downloaded.
+///
+/// returns:
+/// The avatar image for a regular display state.
+@property (nonatomic, strong) UIImage * _Nullable avatarImage;
+/// remark:
+/// You may return <code>nil</code> from this method if this does not apply.
+///
+/// returns:
+/// The avatar image for a highlighted display state.
+@property (nonatomic, strong) UIImage * _Nullable avatarHighlightedImage;
+/// remark:
+/// If you do not need support for a placeholder image, that is, your images
+/// are stored locally on the device, then you may simply return the same value as avatarImage here.
+/// @warning You must not return <code>nil</code> from this method.
+///
+/// returns:
+/// A placeholder avatar image to be displayed if avatarImage is not yet available, or <code>nil</code>.
+/// For example, if avatarImage needs to be downloaded, this placeholder image
+/// will be used until avatarImage is not <code>nil</code>.
+@property (nonatomic, readonly, strong) UIImage * _Nonnull avatarPlaceholderImage;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads14THRMessageInfo")
 @interface THRMessageInfo : NSObject
 - (nonnull instancetype)initWithText:(NSString * _Nullable)text senderName:(NSString * _Nonnull)senderName hasAttachment:(BOOL)hasAttachment OBJC_DESIGNATED_INITIALIZER;
@@ -1600,6 +1623,7 @@ typedef SWIFT_ENUM(NSInteger, THRSysColor, open) {
 };
 
 @protocol ThreadsDelegate;
+@class NSData;
 @class UIViewController;
 
 SWIFT_CLASS("_TtC7Threads7Threads")
@@ -1678,12 +1702,6 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 
 
-
-SWIFT_CLASS("_TtC7Threads14WaitForNetwork")
-@interface WaitForNetwork : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -1905,15 +1923,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-@class NSStream;
-
-SWIFT_CLASS("_TtC7Threads19FoundationTransport")
-@interface FoundationTransport : NSObject <NSStreamDelegate>
-- (void)stream:(NSStream * _Nonnull)aStream handleEvent:(NSStreamEvent)eventCode;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 
 SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @interface HttpSettings : NSObject
@@ -1962,17 +1971,6 @@ SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 + (NSTimeInterval)years:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
 @end
 
-
-@class NSURLSession;
-@class NSURLSessionWebSocketTask;
-@class NSData;
-
-SWIFT_CLASS("_TtC7Threads12NativeEngine") SWIFT_AVAILABILITY(tvos,introduced=13.0) SWIFT_AVAILABILITY(watchos,introduced=6.0) SWIFT_AVAILABILITY(ios,introduced=13.0) SWIFT_AVAILABILITY(macos,introduced=10.15)
-@interface NativeEngine : NSObject <NSURLSessionDataDelegate, NSURLSessionWebSocketDelegate>
-- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didOpenWithProtocol:(NSString * _Nullable)protocol;
-- (void)URLSession:(NSURLSession * _Nonnull)session webSocketTask:(NSURLSessionWebSocketTask * _Nonnull)webSocketTask didCloseWithCode:(NSURLSessionWebSocketCloseCode)closeCode reason:(NSData * _Nullable)reason;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
 
 
 SWIFT_CLASS("_TtC7Threads12PushUserInfo")
@@ -2351,6 +2349,40 @@ SWIFT_CLASS("_TtC7Threads11THRControls")
 @end
 
 
+/// The <code>JSQMessageAvatarImageDataSource</code> protocol defines the common interface through which
+/// a <code>JSQMessagesViewController</code> and <code>JSQMessagesCollectionView</code> interact with avatar image model objects.
+/// It declares the required and optional methods that a class must implement so that instances
+/// of that class can be display properly within a <code>JSQMessagesCollectionViewCell</code>.
+/// A concrete class that conforms to this protocol is provided in the library. See <code>JSQMessagesAvatarImage</code>.
+/// seealso:
+/// JSQMessagesAvatarImage.
+SWIFT_PROTOCOL("_TtP7Threads34THRJSQMessageAvatarImageDataSource_")
+@protocol THRJSQMessageAvatarImageDataSource <NSObject>
+/// remark:
+/// You may return <code>nil</code> from this method while the image is being downloaded.
+///
+/// returns:
+/// The avatar image for a regular display state.
+@property (nonatomic, strong) UIImage * _Nullable avatarImage;
+/// remark:
+/// You may return <code>nil</code> from this method if this does not apply.
+///
+/// returns:
+/// The avatar image for a highlighted display state.
+@property (nonatomic, strong) UIImage * _Nullable avatarHighlightedImage;
+/// remark:
+/// If you do not need support for a placeholder image, that is, your images
+/// are stored locally on the device, then you may simply return the same value as avatarImage here.
+/// @warning You must not return <code>nil</code> from this method.
+///
+/// returns:
+/// A placeholder avatar image to be displayed if avatarImage is not yet available, or <code>nil</code>.
+/// For example, if avatarImage needs to be downloaded, this placeholder image
+/// will be used until avatarImage is not <code>nil</code>.
+@property (nonatomic, readonly, strong) UIImage * _Nonnull avatarPlaceholderImage;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads14THRMessageInfo")
 @interface THRMessageInfo : NSObject
 - (nonnull instancetype)initWithText:(NSString * _Nullable)text senderName:(NSString * _Nonnull)senderName hasAttachment:(BOOL)hasAttachment OBJC_DESIGNATED_INITIALIZER;
@@ -2446,6 +2478,7 @@ typedef SWIFT_ENUM(NSInteger, THRSysColor, open) {
 };
 
 @protocol ThreadsDelegate;
+@class NSData;
 @class UIViewController;
 
 SWIFT_CLASS("_TtC7Threads7Threads")
@@ -2524,12 +2557,6 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 
 
-
-SWIFT_CLASS("_TtC7Threads14WaitForNetwork")
-@interface WaitForNetwork : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
