@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		lquTzH8XkBl3gxwbWV8lJI7QJzY=
+		roJcdepGSRZpM4C2hka33gFrZOs=
 		</data>
 		<key>COPYING</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		uH7+WhKN3F/5QvIcazx7ECs7uIE=
+		Dm03IiJH4MNzRw6+6kNg2+0ZRCw=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5nDXdv/6ayhcMU7hpd9/XhxU3bc=
+		ipYLMvILwuI1r4mVIhaKq7zq4Pw=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		5nDXdv/6ayhcMU7hpd9/XhxU3bc=
+		ipYLMvILwuI1r4mVIhaKq7zq4Pw=
 		</data>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		n1bVqsvNFBTBTMhQY4P971szUj0=
+		y3rSr+YX7tp0FrzhUHBEVXSqHDY=
 		</data>
 		<key>Modules/Threads.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/i386.swiftmodule</key>
 		<data>
-		n1bVqsvNFBTBTMhQY4P971szUj0=
+		y3rSr+YX7tp0FrzhUHBEVXSqHDY=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		9IqqCNEHsDlE+pqlfyPFOlOFLm4=
+		UuBSjmjqllajSW49h6/OzOZiefo=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		9IqqCNEHsDlE+pqlfyPFOlOFLm4=
+		UuBSjmjqllajSW49h6/OzOZiefo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -789,11 +789,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lquTzH8XkBl3gxwbWV8lJI7QJzY=
+			roJcdepGSRZpM4C2hka33gFrZOs=
 			</data>
 			<key>hash2</key>
 			<data>
-			2MD6yBQcRcsuODtHmvlq3xoFQvPSdq59GlCTZrksbjI=
+			FFhMr6jImMiPYwYmr4gXblkIe8JrJ6e+MR+Yevlu1zM=
 			</data>
 		</dict>
 		<key>COPYING</key>
@@ -888,11 +888,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5nDXdv/6ayhcMU7hpd9/XhxU3bc=
+			ipYLMvILwuI1r4mVIhaKq7zq4Pw=
 			</data>
 			<key>hash2</key>
 			<data>
-			GyTJLC4VcPMiH9rCACVwIgkaoTZNvthT7zNoOB5DWMU=
+			bNs+Vtgoso0y1Ngic+HrFnG+Ke03L66Cxb7z26348TY=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/arm64.swiftdoc</key>
@@ -921,11 +921,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5nDXdv/6ayhcMU7hpd9/XhxU3bc=
+			ipYLMvILwuI1r4mVIhaKq7zq4Pw=
 			</data>
 			<key>hash2</key>
 			<data>
-			GyTJLC4VcPMiH9rCACVwIgkaoTZNvthT7zNoOB5DWMU=
+			bNs+Vtgoso0y1Ngic+HrFnG+Ke03L66Cxb7z26348TY=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -954,11 +954,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			n1bVqsvNFBTBTMhQY4P971szUj0=
+			y3rSr+YX7tp0FrzhUHBEVXSqHDY=
 			</data>
 			<key>hash2</key>
 			<data>
-			6SkDCYADI/WGAjAY83WU1SGBsDytmv8jXlfGAiWXrnw=
+			CadSvKXHZ7T6ldS3fB9Hitnqe5joz5VlUeIXTgRd5J4=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/i386.swiftdoc</key>
@@ -987,11 +987,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			n1bVqsvNFBTBTMhQY4P971szUj0=
+			y3rSr+YX7tp0FrzhUHBEVXSqHDY=
 			</data>
 			<key>hash2</key>
 			<data>
-			6SkDCYADI/WGAjAY83WU1SGBsDytmv8jXlfGAiWXrnw=
+			CadSvKXHZ7T6ldS3fB9Hitnqe5joz5VlUeIXTgRd5J4=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -1020,11 +1020,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9IqqCNEHsDlE+pqlfyPFOlOFLm4=
+			UuBSjmjqllajSW49h6/OzOZiefo=
 			</data>
 			<key>hash2</key>
 			<data>
-			oVAu2TJd4eaZw3hdLLzHy2D3XSXASFBncea1psSKWOw=
+			/q49bvb2TNaHKz2rx+rg0hZruAZ9lYcQXwjqjKTF/0U=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftdoc</key>
@@ -1053,11 +1053,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9IqqCNEHsDlE+pqlfyPFOlOFLm4=
+			UuBSjmjqllajSW49h6/OzOZiefo=
 			</data>
 			<key>hash2</key>
 			<data>
-			oVAu2TJd4eaZw3hdLLzHy2D3XSXASFBncea1psSKWOw=
+			/q49bvb2TNaHKz2rx+rg0hZruAZ9lYcQXwjqjKTF/0U=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
