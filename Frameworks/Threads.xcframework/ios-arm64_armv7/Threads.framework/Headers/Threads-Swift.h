@@ -245,6 +245,42 @@ SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSNumber;
+
+SWIFT_CLASS_NAMED("LogLevel")
+@interface LogLevel : NSObject
+/// LogValue main init
+/// \param rawValue Integer as OptionSet (NS_OPTIONS)
+///
+- (nonnull instancetype)initWithRawValue:(NSInteger)rawValue OBJC_DESIGNATED_INITIALIZER;
+/// Off all logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull off;)
++ (LogLevel * _Nonnull)off SWIFT_WARN_UNUSED_RESULT;
+/// INFO level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull info;)
++ (LogLevel * _Nonnull)info SWIFT_WARN_UNUSED_RESULT;
+/// NETWORK level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull network;)
++ (LogLevel * _Nonnull)network SWIFT_WARN_UNUSED_RESULT;
+/// NETWORK-SOCK level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull networkSock;)
++ (LogLevel * _Nonnull)networkSock SWIFT_WARN_UNUSED_RESULT;
+/// USER-INTERFACE level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull userInterface;)
++ (LogLevel * _Nonnull)userInterface SWIFT_WARN_UNUSED_RESULT;
+/// ERROR level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull error;)
++ (LogLevel * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
+/// All levels of logging are On
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull all;)
++ (LogLevel * _Nonnull)all SWIFT_WARN_UNUSED_RESULT;
+/// LogLevel primitive value
+@property (nonatomic, readonly) NSInteger rawValue;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 
 
@@ -287,28 +323,25 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSLayoutConstraint;
-@class UIButton;
-@class UINib;
+@class UICollectionView;
+@class NSCoder;
 @protocol QuickReplyCellDelegate;
 @class UITraitCollection;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
+@property (nonatomic, strong) UICollectionView * _Nullable colView;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
 + (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, strong) IBOutlet NSLayoutConstraint * _Null_unspecified cellWidth;
-@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified actionButton;
 + (NSString * _Nonnull)cellIdentifier SWIFT_WARN_UNUSED_RESULT;
-+ (UINib * _Nonnull)nib SWIFT_WARN_UNUSED_RESULT;
-- (void)awakeFromNib;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)configureWithQuickReply:(QuickReply * _Nonnull)quickReply delegate:(id <QuickReplyCellDelegate> _Nonnull)delegate;
 - (void)setWidth:(CGFloat)width;
 - (void)prepareForReuse;
+- (void)layoutSubviews;
+- (CGSize)getSizeWithWidth:(CGFloat)width SWIFT_WARN_UNUSED_RESULT;
 - (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -339,7 +372,9 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @class UIColor;
 @class UIFont;
 @class UIImage;
+@class THRSettingsShadow;
 enum THRQuickReplyPresentationMode : NSUInteger;
+enum THRQuickReplyAlignment : NSUInteger;
 @class THRCert;
 
 SWIFT_CLASS("_TtC7Threads13THRAttributes")
@@ -363,6 +398,8 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) BOOL navigationBarKeyboardControlVisible;
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardShowImage;
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardHideImage;
+@property (nonatomic) BOOL navigationBarShadow;
+@property (nonatomic, strong) THRSettingsShadow * _Nonnull navigationBarShadowSettings;
 @property (nonatomic) BOOL launchViewEnable;
 @property (nonatomic, strong) UIColor * _Nonnull launchActivityViewColor;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewBackgroundColor;
@@ -505,7 +542,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageTextFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageFileTextFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageDateTextFont;
-@property (nonatomic) BOOL photoPickerSelfieEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerToolbarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull photoPickerToolbarButtonFont;
 @property (nonatomic, strong) UIImage * _Nullable photoPickerCheckmarkIcon;
@@ -538,6 +574,8 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable iconLikeFull;
 @property (nonatomic, strong) UIImage * _Nullable iconDislikeFull;
 @property (nonatomic) enum THRQuickReplyPresentationMode quickReplyPresentationMode;
+/// < Выравнивание по горизонтали
+@property (nonatomic) enum THRQuickReplyAlignment quickReplyAlignment;
 /// < Шрифт для кнопок быстрых ответов
 @property (nonatomic, strong) UIFont * _Nonnull quickReplyFont;
 /// < Радиус закругления кнопок быстрых ответов
@@ -579,6 +617,19 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) BOOL clearChatHistoryIfSocketReconnect;
 @property (nonatomic) BOOL allowUntrustedSSLCertificate;
 @property (nonatomic, copy) NSArray<THRCert *> * _Nonnull trustedCertificates;
+/// < Включение категорий записи в лог [.off, .info, .network, .networkSock, .userInterface, .error, .all]
+/// <ul>
+///   <li>
+///     Integer as OptionSet (NS_OPTIONS)
+///   </li>
+/// </ul>
+@property (nonatomic, strong) LogLevel * _Nonnull logLevels;
+/// < Имя файла логгирования, если задать nil, то в файл писать не будет, только в Console через OSLog
+@property (nonatomic, copy) NSString * _Nullable logFileName;
+/// < Размер лог файлов в Мб
+@property (nonatomic) NSInteger logFileSizeMb;
+/// < Максимальное количество лог файлов в ротации
+@property (nonatomic) NSInteger logFileMaxCount;
 @property (nonatomic) NSUInteger photoPickerMaxImagesCount;
 + (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -630,6 +681,7 @@ SWIFT_CLASS("_TtC7Threads8THRColor")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIButton;
 
 SWIFT_CLASS("_TtC7Threads11THRControls")
 @interface THRControls : NSObject
@@ -690,6 +742,16 @@ typedef SWIFT_ENUM_NAMED(NSInteger, THRMessageRecieveStateOld, "THRMessageReciev
   THRMessageRecieveStateOldNotAccepted = 1,
 };
 
+/// Выравнивание по горизонтали быстрых ответов
+typedef SWIFT_ENUM(NSUInteger, THRQuickReplyAlignment, open) {
+/// < Выравнивание по центру
+  THRQuickReplyAlignmentCenter = 0,
+/// < Выравнивание по левому краю
+  THRQuickReplyAlignmentLeft = 1,
+/// < Выравнивание по правому краю
+  THRQuickReplyAlignmentRight = 2,
+};
+
 /// Режимы отображения быстрых ответов
 typedef SWIFT_ENUM(NSUInteger, THRQuickReplyPresentationMode, open) {
 /// < Показ кнопок быстрых ответов в всплывающей панели
@@ -711,6 +773,40 @@ SWIFT_CLASS("_TtC7Threads16THRRoutingParams")
 @interface THRRoutingParams : NSObject
 - (nonnull instancetype)initWithPriority:(NSInteger)priority skillId:(NSInteger)skillId expiredAt:(NSString * _Nullable)expiredAt OBJC_DESIGNATED_INITIALIZER;
 - (NSDictionary<NSString *, id> * _Nonnull)toDictionary SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC7Threads17THRSettingsShadow")
+@interface THRSettingsShadow : NSObject
+/// init Settings for shadow
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     opacity: CGFloat, Shadow opacity (default: 1.0)
+///   </li>
+///   <li>
+///     radius:  CGFloat, Shadow radius (default: 2.0)
+///   </li>
+///   <li>
+///     offset: CGSize, Shadow offset (default: CGSize(width: 2.0, height: 2.0)
+///   </li>
+///   <li>
+///     color: UIColor, Shadow color (default: black)
+///   </li>
+/// </ul>
+- (nonnull instancetype)initWithOpacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset color:(UIColor * _Nonnull)color OBJC_DESIGNATED_INITIALIZER;
+/// Shadow opacity
+@property (nonatomic, readonly) CGFloat opacity;
+/// Shadow radius
+@property (nonatomic, readonly) CGFloat radius;
+/// Shadow offset
+@property (nonatomic, readonly) CGSize offset;
+/// Shadow color
+@property (nonatomic, readonly, strong) UIColor * _Nonnull color;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -776,8 +872,6 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @property (nonatomic) BOOL isClientIdEncrypted;
-@property (nonatomic) BOOL isDebugLoggingEnabled;
-@property (nonatomic) BOOL isSocketAdditionalDebugLoggingEnabled;
 @property (nonatomic) BOOL registrationAtStartupDisable;
 @property (nonatomic) BOOL isShowsNetworkActivity;
 @property (nonatomic, readonly, copy) NSString * _Nullable clientId;
@@ -799,8 +893,6 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
-- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo;
-- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo fetchCompletionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(enum THRMessageRecieveState))_;
 - (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longtitude:(NSNumber * _Nonnull)longtitude;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)logout;
@@ -1100,6 +1192,42 @@ SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSNumber;
+
+SWIFT_CLASS_NAMED("LogLevel")
+@interface LogLevel : NSObject
+/// LogValue main init
+/// \param rawValue Integer as OptionSet (NS_OPTIONS)
+///
+- (nonnull instancetype)initWithRawValue:(NSInteger)rawValue OBJC_DESIGNATED_INITIALIZER;
+/// Off all logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull off;)
++ (LogLevel * _Nonnull)off SWIFT_WARN_UNUSED_RESULT;
+/// INFO level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull info;)
++ (LogLevel * _Nonnull)info SWIFT_WARN_UNUSED_RESULT;
+/// NETWORK level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull network;)
++ (LogLevel * _Nonnull)network SWIFT_WARN_UNUSED_RESULT;
+/// NETWORK-SOCK level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull networkSock;)
++ (LogLevel * _Nonnull)networkSock SWIFT_WARN_UNUSED_RESULT;
+/// USER-INTERFACE level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull userInterface;)
++ (LogLevel * _Nonnull)userInterface SWIFT_WARN_UNUSED_RESULT;
+/// ERROR level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull error;)
++ (LogLevel * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
+/// All levels of logging are On
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull all;)
++ (LogLevel * _Nonnull)all SWIFT_WARN_UNUSED_RESULT;
+/// LogLevel primitive value
+@property (nonatomic, readonly) NSInteger rawValue;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 
 
@@ -1142,28 +1270,25 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSLayoutConstraint;
-@class UIButton;
-@class UINib;
+@class UICollectionView;
+@class NSCoder;
 @protocol QuickReplyCellDelegate;
 @class UITraitCollection;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
+@property (nonatomic, strong) UICollectionView * _Nullable colView;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
 + (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, strong) IBOutlet NSLayoutConstraint * _Null_unspecified cellWidth;
-@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified actionButton;
 + (NSString * _Nonnull)cellIdentifier SWIFT_WARN_UNUSED_RESULT;
-+ (UINib * _Nonnull)nib SWIFT_WARN_UNUSED_RESULT;
-- (void)awakeFromNib;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)configureWithQuickReply:(QuickReply * _Nonnull)quickReply delegate:(id <QuickReplyCellDelegate> _Nonnull)delegate;
 - (void)setWidth:(CGFloat)width;
 - (void)prepareForReuse;
+- (void)layoutSubviews;
+- (CGSize)getSizeWithWidth:(CGFloat)width SWIFT_WARN_UNUSED_RESULT;
 - (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1194,7 +1319,9 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @class UIColor;
 @class UIFont;
 @class UIImage;
+@class THRSettingsShadow;
 enum THRQuickReplyPresentationMode : NSUInteger;
+enum THRQuickReplyAlignment : NSUInteger;
 @class THRCert;
 
 SWIFT_CLASS("_TtC7Threads13THRAttributes")
@@ -1218,6 +1345,8 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) BOOL navigationBarKeyboardControlVisible;
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardShowImage;
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardHideImage;
+@property (nonatomic) BOOL navigationBarShadow;
+@property (nonatomic, strong) THRSettingsShadow * _Nonnull navigationBarShadowSettings;
 @property (nonatomic) BOOL launchViewEnable;
 @property (nonatomic, strong) UIColor * _Nonnull launchActivityViewColor;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewBackgroundColor;
@@ -1360,7 +1489,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageTextFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageFileTextFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageDateTextFont;
-@property (nonatomic) BOOL photoPickerSelfieEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerToolbarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull photoPickerToolbarButtonFont;
 @property (nonatomic, strong) UIImage * _Nullable photoPickerCheckmarkIcon;
@@ -1393,6 +1521,8 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable iconLikeFull;
 @property (nonatomic, strong) UIImage * _Nullable iconDislikeFull;
 @property (nonatomic) enum THRQuickReplyPresentationMode quickReplyPresentationMode;
+/// < Выравнивание по горизонтали
+@property (nonatomic) enum THRQuickReplyAlignment quickReplyAlignment;
 /// < Шрифт для кнопок быстрых ответов
 @property (nonatomic, strong) UIFont * _Nonnull quickReplyFont;
 /// < Радиус закругления кнопок быстрых ответов
@@ -1434,6 +1564,19 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) BOOL clearChatHistoryIfSocketReconnect;
 @property (nonatomic) BOOL allowUntrustedSSLCertificate;
 @property (nonatomic, copy) NSArray<THRCert *> * _Nonnull trustedCertificates;
+/// < Включение категорий записи в лог [.off, .info, .network, .networkSock, .userInterface, .error, .all]
+/// <ul>
+///   <li>
+///     Integer as OptionSet (NS_OPTIONS)
+///   </li>
+/// </ul>
+@property (nonatomic, strong) LogLevel * _Nonnull logLevels;
+/// < Имя файла логгирования, если задать nil, то в файл писать не будет, только в Console через OSLog
+@property (nonatomic, copy) NSString * _Nullable logFileName;
+/// < Размер лог файлов в Мб
+@property (nonatomic) NSInteger logFileSizeMb;
+/// < Максимальное количество лог файлов в ротации
+@property (nonatomic) NSInteger logFileMaxCount;
 @property (nonatomic) NSUInteger photoPickerMaxImagesCount;
 + (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -1485,6 +1628,7 @@ SWIFT_CLASS("_TtC7Threads8THRColor")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIButton;
 
 SWIFT_CLASS("_TtC7Threads11THRControls")
 @interface THRControls : NSObject
@@ -1545,6 +1689,16 @@ typedef SWIFT_ENUM_NAMED(NSInteger, THRMessageRecieveStateOld, "THRMessageReciev
   THRMessageRecieveStateOldNotAccepted = 1,
 };
 
+/// Выравнивание по горизонтали быстрых ответов
+typedef SWIFT_ENUM(NSUInteger, THRQuickReplyAlignment, open) {
+/// < Выравнивание по центру
+  THRQuickReplyAlignmentCenter = 0,
+/// < Выравнивание по левому краю
+  THRQuickReplyAlignmentLeft = 1,
+/// < Выравнивание по правому краю
+  THRQuickReplyAlignmentRight = 2,
+};
+
 /// Режимы отображения быстрых ответов
 typedef SWIFT_ENUM(NSUInteger, THRQuickReplyPresentationMode, open) {
 /// < Показ кнопок быстрых ответов в всплывающей панели
@@ -1566,6 +1720,40 @@ SWIFT_CLASS("_TtC7Threads16THRRoutingParams")
 @interface THRRoutingParams : NSObject
 - (nonnull instancetype)initWithPriority:(NSInteger)priority skillId:(NSInteger)skillId expiredAt:(NSString * _Nullable)expiredAt OBJC_DESIGNATED_INITIALIZER;
 - (NSDictionary<NSString *, id> * _Nonnull)toDictionary SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC7Threads17THRSettingsShadow")
+@interface THRSettingsShadow : NSObject
+/// init Settings for shadow
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     opacity: CGFloat, Shadow opacity (default: 1.0)
+///   </li>
+///   <li>
+///     radius:  CGFloat, Shadow radius (default: 2.0)
+///   </li>
+///   <li>
+///     offset: CGSize, Shadow offset (default: CGSize(width: 2.0, height: 2.0)
+///   </li>
+///   <li>
+///     color: UIColor, Shadow color (default: black)
+///   </li>
+/// </ul>
+- (nonnull instancetype)initWithOpacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset color:(UIColor * _Nonnull)color OBJC_DESIGNATED_INITIALIZER;
+/// Shadow opacity
+@property (nonatomic, readonly) CGFloat opacity;
+/// Shadow radius
+@property (nonatomic, readonly) CGFloat radius;
+/// Shadow offset
+@property (nonatomic, readonly) CGSize offset;
+/// Shadow color
+@property (nonatomic, readonly, strong) UIColor * _Nonnull color;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1631,8 +1819,6 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @property (nonatomic) BOOL isClientIdEncrypted;
-@property (nonatomic) BOOL isDebugLoggingEnabled;
-@property (nonatomic) BOOL isSocketAdditionalDebugLoggingEnabled;
 @property (nonatomic) BOOL registrationAtStartupDisable;
 @property (nonatomic) BOOL isShowsNetworkActivity;
 @property (nonatomic, readonly, copy) NSString * _Nullable clientId;
@@ -1654,8 +1840,6 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
-- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo;
-- (void)applicationDidReceiveRemoteNotification:(NSDictionary * _Nonnull)withUserInfo fetchCompletionHandler:(SWIFT_NOESCAPE void (^ _Nonnull)(enum THRMessageRecieveState))_;
 - (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longtitude:(NSNumber * _Nonnull)longtitude;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)logout;

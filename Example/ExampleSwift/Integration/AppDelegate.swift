@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func configureThreads() {
         let threads = Threads.threads()
-        threads.isDebugLoggingEnabled = true
         threads.isClientIdEncrypted = false
         threads.isShowsNetworkActivity = true
 

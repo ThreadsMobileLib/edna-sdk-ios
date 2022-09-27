@@ -75,21 +75,19 @@ import os
 @objc public protocol QuickReplyCellDelegate {
   @objc func didSelectQuickReply(_ quickReply: QuickReply)
 }
-@objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class QuickReplyCell : UIKit.UICollectionViewCell {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class QuickReplyCell : UIKit.UICollectionViewCell {
+  @objc @_Concurrency.MainActor(unsafe) public var colView: UIKit.UICollectionView?
   @objc @_Concurrency.MainActor(unsafe) public class var sizingCell: QuickReplyCell {
     @objc get
   }
-  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var cellWidth: UIKit.NSLayoutConstraint!
-  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var actionButton: UIKit.UIButton!
   @objc @_Concurrency.MainActor(unsafe) public class func cellIdentifier() -> Swift.String
-  @objc @_Concurrency.MainActor(unsafe) public class func nib() -> UIKit.UINib
-  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc @_Concurrency.MainActor(unsafe) public func configure(quickReply: QuickReply, delegate: QuickReplyCellDelegate)
   @objc @_Concurrency.MainActor(unsafe) public func setWidth(_ width: CoreGraphics.CGFloat)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func prepareForReuse()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc @_Concurrency.MainActor(unsafe) public func getSize(width: CoreGraphics.CGFloat) -> CoreGraphics.CGSize
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 @objc public protocol ThreadsPreloadView {
@@ -115,14 +113,6 @@ import os
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class Threads : ObjectiveC.NSObject {
   @objc final public var isClientIdEncrypted: Swift.Bool {
-    @objc get
-    @objc set(newValue)
-  }
-  @objc final public var isDebugLoggingEnabled: Swift.Bool {
-    @objc get
-    @objc set(newValue)
-  }
-  @objc final public var isSocketAdditionalDebugLoggingEnabled: Swift.Bool {
     @objc get
     @objc set(newValue)
   }
@@ -183,8 +173,6 @@ import os
   @objc final public func registerApplicationForRemoteNotificationsStandartOptions(authorizationStatusDenied: (() -> Swift.Void)?, completionHandler: @escaping ((_ deviceToken: Foundation.Data?) -> Swift.Void))
   @objc final public func applicationDidRegisterForRemoteNotifications(withDeviceToken deviceToken: Foundation.Data)
   @objc final public func applicationDidFailToRegisterForRemoteNotificationsWithError(_ error: Swift.Error)
-  @objc final public func applicationDidReceiveRemoteNotification(_ withUserInfo: [Swift.AnyHashable : Any])
-  @objc final public func applicationDidReceiveRemoteNotification(_ withUserInfo: [Swift.AnyHashable : Any], fetchCompletionHandler _: (_ state: THRMessageRecieveState) -> Swift.Void)
   @objc final public func updateLocation(latitude: Foundation.NSNumber, longtitude: Foundation.NSNumber)
   @objc final public func setClientInfo(_ clientInfo: THRClientInfo)
   @objc final public func logout()
@@ -201,6 +189,14 @@ import os
   @objc final public func chatViewController(with attributes: THRAttributes) -> UIKit.UIViewController
   @objc final public func chatViewController(with attributes: THRAttributes, completionHandler: ((_ error: Swift.Error?) -> Swift.Void)?) -> UIKit.UIViewController
   @objc final public func chatViewController(with attributes: THRAttributes, pushUserInfo: [Swift.AnyHashable : Any], completionHandler: ((_ error: Swift.Error?) -> Swift.Void)?) -> UIKit.UIViewController
+  @objc deinit
+}
+@objc @objcMembers public class THRSettingsShadow : ObjectiveC.NSObject {
+  @objc required public init(opacity: CoreGraphics.CGFloat = 1.0, radius: CoreGraphics.CGFloat = 2.0, offset: CoreGraphics.CGSize = CGSize(width: 2.0, height: 2.0), color: UIKit.UIColor = .black)
+  @objc final public let opacity: CoreGraphics.CGFloat
+  @objc final public let radius: CoreGraphics.CGFloat
+  @objc final public let offset: CoreGraphics.CGSize
+  @objc final public let color: UIKit.UIColor
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class Localization : ObjectiveC.NSObject {
@@ -300,6 +296,16 @@ import os
     get
   }
 }
+@objc public enum THRQuickReplyAlignment : Swift.UInt {
+  case center
+  case left
+  case right
+  public init?(rawValue: Swift.UInt)
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @objcMembers public class THRAttributes : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc public var canShowDebugScreen: Swift.Bool
@@ -319,6 +325,8 @@ import os
   @objc public var navigationBarKeyboardControlVisible: Swift.Bool
   @objc public var navigationBarKeyboardShowImage: UIKit.UIImage?
   @objc public var navigationBarKeyboardHideImage: UIKit.UIImage?
+  @objc public var navigationBarShadow: Swift.Bool
+  @objc public var navigationBarShadowSettings: THRSettingsShadow
   @objc public var launchViewEnable: Swift.Bool
   @objc public var launchActivityViewColor: UIKit.UIColor
   @objc public var launchViewBackgroundColor: UIKit.UIColor
@@ -459,7 +467,6 @@ import os
   @objc public var searchMessageTextFont: UIKit.UIFont
   @objc public var searchMessageFileTextFont: UIKit.UIFont
   @objc public var searchMessageDateTextFont: UIKit.UIFont
-  @objc public var photoPickerSelfieEnabled: Swift.Bool
   @objc public var photoPickerToolbarTintColor: UIKit.UIColor
   @objc public var photoPickerToolbarButtonFont: UIKit.UIFont
   @objc public var photoPickerCheckmarkIcon: UIKit.UIImage?
@@ -492,6 +499,7 @@ import os
   @objc public var iconLikeFull: UIKit.UIImage?
   @objc public var iconDislikeFull: UIKit.UIImage?
   @objc public var quickReplyPresentationMode: THRQuickReplyPresentationMode
+  @objc public var quickReplyAlignment: THRQuickReplyAlignment
   @objc public var quickReplyFont: UIKit.UIFont
   @objc public var quickReplyBorderCornerRadius: Foundation.NSNumber
   @objc public var quickReplyBorderColor: UIKit.UIColor
@@ -523,6 +531,10 @@ import os
   @objc public var clearChatHistoryIfSocketReconnect: Swift.Bool
   @objc public var allowUntrustedSSLCertificate: Swift.Bool
   @objc public var trustedCertificates: [THRCert]
+  @objc public var logLevels: LogLevel
+  @objc public var logFileName: Swift.String?
+  @objc public var logFileSizeMb: Swift.Int
+  @objc public var logFileMaxCount: Swift.Int
   @objc public var photoPickerMaxImagesCount: Swift.UInt {
     @objc get
     @objc set(newValue)
@@ -703,4 +715,23 @@ extension Foundation.URLRequest {
     get
     set(newValue)
   }
+}
+@objc(LogLevel) public class LogLevel : ObjectiveC.NSObject, Swift.OptionSet {
+  @objc required public init(rawValue: Swift.Int)
+  @objc public static var off: LogLevel
+  @objc public static var info: LogLevel
+  @objc public static var network: LogLevel
+  @objc public static var networkSock: LogLevel
+  @objc public static var userInterface: LogLevel
+  @objc public static var error: LogLevel
+  @objc public static var all: LogLevel
+  @objc final public let rawValue: Swift.Int
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public func contains(_ member: LogLevel) -> Swift.Bool
+  public typealias ArrayLiteralElement = LogLevel
+  public typealias Element = LogLevel
+  public typealias RawValue = Swift.Int
+  @objc deinit
 }
