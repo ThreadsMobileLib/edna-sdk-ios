@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		+whYzY30SnftITBPL1M5GWvF++o=
+		iRZtrn6zslpxDrrkX8VEG4p6sWQ=
 		</data>
 		<key>Headers/THROpenUrlUtils.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		x9L321wCFqQsClZ0L2qxLjGLdcg=
+		PPNyTqnjTNlZ+Kd7lYFHmQzS3u4=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4oSaYJJjTpRg4a4tRAvHCx7UqLE=
+		ez13kMqwMQy93XseRlD8/vb7h+M=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		4oSaYJJjTpRg4a4tRAvHCx7UqLE=
+		ez13kMqwMQy93XseRlD8/vb7h+M=
 		</data>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		B4/dDSH+7QL2YobVHZ5ie8OnamA=
+		qawOQMMkDnUVyuu8qjEapw3jSFY=
 		</data>
 		<key>Modules/Threads.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/i386.swiftmodule</key>
 		<data>
-		B4/dDSH+7QL2YobVHZ5ie8OnamA=
+		qawOQMMkDnUVyuu8qjEapw3jSFY=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5SflPSObH+xfI/sLEIbwUW94eHA=
+		16/vnarTkCk8Pkls5iuBOHT4254=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		5SflPSObH+xfI/sLEIbwUW94eHA=
+		16/vnarTkCk8Pkls5iuBOHT4254=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -553,11 +553,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+whYzY30SnftITBPL1M5GWvF++o=
+			iRZtrn6zslpxDrrkX8VEG4p6sWQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			9EThp+L2c7oDID0DojLDvpjluh2FmoTlo8MOqWrt2sM=
+			5tJNxpeaRNWKtn7Pn+oR6rLJypDosnz6td1Xtw3eUts=
 			</data>
 		</dict>
 		<key>Headers/THROpenUrlUtils.h</key>
@@ -641,11 +641,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4oSaYJJjTpRg4a4tRAvHCx7UqLE=
+			ez13kMqwMQy93XseRlD8/vb7h+M=
 			</data>
 			<key>hash2</key>
 			<data>
-			+LGPub0Sbg4BBGqUJX8Xed7ITV13ezTPzm+N5XtkkNQ=
+			a9syOvrMtDHgFzJhzdY/sCMhkDFIO1jrXBlq7qnmYUM=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/arm64.swiftdoc</key>
@@ -674,11 +674,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4oSaYJJjTpRg4a4tRAvHCx7UqLE=
+			ez13kMqwMQy93XseRlD8/vb7h+M=
 			</data>
 			<key>hash2</key>
 			<data>
-			+LGPub0Sbg4BBGqUJX8Xed7ITV13ezTPzm+N5XtkkNQ=
+			a9syOvrMtDHgFzJhzdY/sCMhkDFIO1jrXBlq7qnmYUM=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -707,11 +707,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			B4/dDSH+7QL2YobVHZ5ie8OnamA=
+			qawOQMMkDnUVyuu8qjEapw3jSFY=
 			</data>
 			<key>hash2</key>
 			<data>
-			jvcLNbgy27M3MOKi739MrjAwgVzgwNKNmVI34xB/fJs=
+			ehoGsvnpmvwPYRdY1X+BnBdWys6gt0+ncP8Vg31RO5s=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/i386.swiftdoc</key>
@@ -740,11 +740,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			B4/dDSH+7QL2YobVHZ5ie8OnamA=
+			qawOQMMkDnUVyuu8qjEapw3jSFY=
 			</data>
 			<key>hash2</key>
 			<data>
-			jvcLNbgy27M3MOKi739MrjAwgVzgwNKNmVI34xB/fJs=
+			ehoGsvnpmvwPYRdY1X+BnBdWys6gt0+ncP8Vg31RO5s=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -773,11 +773,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5SflPSObH+xfI/sLEIbwUW94eHA=
+			16/vnarTkCk8Pkls5iuBOHT4254=
 			</data>
 			<key>hash2</key>
 			<data>
-			14AZh7yS1kViLTtp00iErot+5ZX9+szrXe86HnwIgz4=
+			NXNUNr0W+Q9zjFCwBvuQz3JTM2iEZRZ3ajVxsYvL4D8=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftdoc</key>
@@ -806,11 +806,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5SflPSObH+xfI/sLEIbwUW94eHA=
+			16/vnarTkCk8Pkls5iuBOHT4254=
 			</data>
 			<key>hash2</key>
 			<data>
-			14AZh7yS1kViLTtp00iErot+5ZX9+szrXe86HnwIgz4=
+			NXNUNr0W+Q9zjFCwBvuQz3JTM2iEZRZ3ajVxsYvL4D8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
