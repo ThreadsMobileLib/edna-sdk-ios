@@ -323,21 +323,21 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class UICollectionView;
 @class NSCoder;
+@class UICollectionView;
 @protocol QuickReplyCellDelegate;
 @class UITraitCollection;
 
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
-@property (nonatomic, strong) UICollectionView * _Nullable colView;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
-+ (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
-+ (NSString * _Nonnull)cellIdentifier SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
++ (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, strong) UICollectionView * _Nullable colView;
++ (NSString * _Nonnull)cellIdentifier SWIFT_WARN_UNUSED_RESULT;
 - (void)configureWithQuickReply:(QuickReply * _Nonnull)quickReply delegate:(id <QuickReplyCellDelegate> _Nonnull)delegate;
-- (void)setWidth:(CGFloat)width;
+- (void)setWidth:(CGFloat)_;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (CGSize)getSizeWithWidth:(CGFloat)width SWIFT_WARN_UNUSED_RESULT;
@@ -525,6 +525,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull searchBarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull searchScopeBarFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchBarTextFont;
+@property (nonatomic) BOOL searchEnabled;
 @property (nonatomic) BOOL searchIconDisabled;
 @property (nonatomic, strong) UIImage * _Nullable clearSearchIcon;
 @property (nonatomic, strong) UIColor * _Nonnull findedMessageHeaderTextColor;
@@ -630,6 +631,10 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) NSInteger logFileSizeMb;
 /// < Максимальное количество лог файлов в ротации
 @property (nonatomic) NSInteger logFileMaxCount;
+@property (nonatomic, copy) NSString * _Nonnull toastViewTextCopy;
+@property (nonatomic, strong) UIColor * _Nonnull toastViewTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull toastViewBackgroundColor;
+@property (nonatomic) CGSize toastViewSize;
 @property (nonatomic) NSUInteger photoPickerMaxImagesCount;
 + (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -1270,21 +1275,21 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class UICollectionView;
 @class NSCoder;
+@class UICollectionView;
 @protocol QuickReplyCellDelegate;
 @class UITraitCollection;
 
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
-@property (nonatomic, strong) UICollectionView * _Nullable colView;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
-+ (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
-+ (NSString * _Nonnull)cellIdentifier SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
++ (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, strong) UICollectionView * _Nullable colView;
++ (NSString * _Nonnull)cellIdentifier SWIFT_WARN_UNUSED_RESULT;
 - (void)configureWithQuickReply:(QuickReply * _Nonnull)quickReply delegate:(id <QuickReplyCellDelegate> _Nonnull)delegate;
-- (void)setWidth:(CGFloat)width;
+- (void)setWidth:(CGFloat)_;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (CGSize)getSizeWithWidth:(CGFloat)width SWIFT_WARN_UNUSED_RESULT;
@@ -1472,6 +1477,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull searchBarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull searchScopeBarFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchBarTextFont;
+@property (nonatomic) BOOL searchEnabled;
 @property (nonatomic) BOOL searchIconDisabled;
 @property (nonatomic, strong) UIImage * _Nullable clearSearchIcon;
 @property (nonatomic, strong) UIColor * _Nonnull findedMessageHeaderTextColor;
@@ -1577,6 +1583,10 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) NSInteger logFileSizeMb;
 /// < Максимальное количество лог файлов в ротации
 @property (nonatomic) NSInteger logFileMaxCount;
+@property (nonatomic, copy) NSString * _Nonnull toastViewTextCopy;
+@property (nonatomic, strong) UIColor * _Nonnull toastViewTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull toastViewBackgroundColor;
+@property (nonatomic) CGSize toastViewSize;
 @property (nonatomic) NSUInteger photoPickerMaxImagesCount;
 + (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
