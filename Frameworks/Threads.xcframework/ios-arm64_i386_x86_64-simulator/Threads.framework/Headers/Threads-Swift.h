@@ -944,7 +944,6 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 
 
-
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
 #endif
@@ -1896,7 +1895,6 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 
 
-
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
 #endif
@@ -2840,7 +2838,6 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 - (void)stopAnimation;
 - (UIView * _Null_unspecified)getView SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 
