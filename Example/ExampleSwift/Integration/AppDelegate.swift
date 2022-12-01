@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let threads = Threads.threads()
         threads.isClientIdEncrypted = false
         threads.isShowsNetworkActivity = true
+        threads.attributes.logLevels = .all
 
         threads.configureTransportProtocol(
             with: self,
@@ -100,5 +101,4 @@ extension AppDelegate: ThreadsDelegate {
     func threads(_ threads: Threads, didChangeDeviceAddress deviceAddress: String) {
         print("Threads did change deviceAddress = \(deviceAddress)")
     }
-    
 }

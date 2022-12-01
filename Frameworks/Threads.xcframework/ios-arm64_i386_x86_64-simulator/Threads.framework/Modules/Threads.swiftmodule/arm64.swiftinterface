@@ -110,6 +110,7 @@ import os
   @objc func threads(_ threads: Threads, didChangeDeviceAddress deviceAddress: Swift.String)
   @objc optional func threads(_ threads: Threads, allowOpenUrl: Foundation.URL) -> Swift.Bool
   @objc optional func customPreloadView() -> ThreadsPreloadView!
+  @objc optional func threads(_ threads: Threads, didReceiveMessage message: THRMessageInfo)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class Threads : ObjectiveC.NSObject {
   @objc final public var isClientIdEncrypted: Swift.Bool {
@@ -203,18 +204,6 @@ import os
   @objc public class func localize(key: Swift.String, value: Swift.String) -> Swift.String
   @objc public class func localize(key: Swift.String) -> Swift.String
   @objc override dynamic public init()
-  @objc deinit
-}
-@objc @objcMembers public class PushUserInfo : ObjectiveC.NSObject {
-  @objc public init?(from pushUserInfo: [Swift.String : Any])
-  @objc final public let alert: Swift.String
-  @objc final public let skillId: Swift.Int
-  @objc final public let expiredAt: Swift.String
-  @objc final public let chlSentAt: Swift.String
-  @objc final public let campaign: Swift.String
-  @objc final public let priority: Swift.Int
-  @objc final public let senderName: Swift.String
-  @objc final public let chatMessageId: Swift.String?
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class QuickReply : ObjectiveC.NSObject {
@@ -327,6 +316,7 @@ import os
   @objc public var navigationBarKeyboardHideImage: UIKit.UIImage?
   @objc public var navigationBarShadow: Swift.Bool
   @objc public var navigationBarShadowSettings: THRSettingsShadow
+  @objc public var navigationBarBackButtonColor: UIKit.UIColor
   @objc public var launchViewEnable: Swift.Bool
   @objc public var launchActivityViewColor: UIKit.UIColor
   @objc public var launchViewBackgroundColor: UIKit.UIColor
@@ -341,6 +331,9 @@ import os
   @objc public var placeholderSubtitleColor: UIKit.UIColor
   @objc public var placeholderTitleFont: UIKit.UIFont
   @objc public var placeholderSubtitleFont: UIKit.UIFont
+  @objc public var imageEdgesActived: Swift.Bool
+  @objc public var imageEdges: UIKit.UIEdgeInsets
+  @objc public var imageCornerRadius: CoreGraphics.CGFloat
   @objc public var toolbarbackgroundColor: UIKit.UIColor
   @objc public var toolbarTintColor: UIKit.UIColor
   @objc public var attachButtonImage: UIKit.UIImage?
@@ -450,6 +443,7 @@ import os
   @objc public var searchBarTintColor: UIKit.UIColor
   @objc public var searchScopeBarFont: UIKit.UIFont
   @objc public var searchBarTextFont: UIKit.UIFont
+  @objc public var searchBarIconTintColor: UIKit.UIColor
   @objc public var searchEnabled: Swift.Bool
   @objc public var searchIconDisabled: Swift.Bool
   @objc public var clearSearchIcon: UIKit.UIImage?
@@ -720,6 +714,18 @@ extension Foundation.URLRequest {
     get
     set(newValue)
   }
+}
+@objc @objcMembers public class PushUserInfo : ObjectiveC.NSObject {
+  @objc public init?(from pushUserInfo: [Swift.String : Any])
+  @objc final public let alert: Swift.String
+  @objc final public let skillId: Swift.Int
+  @objc final public let expiredAt: Swift.String
+  @objc final public let chlSentAt: Swift.String
+  @objc final public let campaign: Swift.String
+  @objc final public let priority: Swift.Int
+  @objc final public let senderName: Swift.String
+  @objc final public let chatMessageId: Swift.String?
+  @objc deinit
 }
 @objc(LogLevel) public class LogLevel : ObjectiveC.NSObject, Swift.OptionSet {
   @objc required public init(rawValue: Swift.Int)

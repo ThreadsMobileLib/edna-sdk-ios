@@ -400,6 +400,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardHideImage;
 @property (nonatomic) BOOL navigationBarShadow;
 @property (nonatomic, strong) THRSettingsShadow * _Nonnull navigationBarShadowSettings;
+@property (nonatomic, strong) UIColor * _Nonnull navigationBarBackButtonColor;
 @property (nonatomic) BOOL launchViewEnable;
 @property (nonatomic, strong) UIColor * _Nonnull launchActivityViewColor;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewBackgroundColor;
@@ -414,6 +415,9 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull placeholderSubtitleColor;
 @property (nonatomic, strong) UIFont * _Nonnull placeholderTitleFont;
 @property (nonatomic, strong) UIFont * _Nonnull placeholderSubtitleFont;
+@property (nonatomic) BOOL imageEdgesActived;
+@property (nonatomic) UIEdgeInsets imageEdges;
+@property (nonatomic) CGFloat imageCornerRadius;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarbackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarTintColor;
 @property (nonatomic, strong) UIImage * _Nullable attachButtonImage;
@@ -525,6 +529,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull searchBarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull searchScopeBarFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchBarTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull searchBarIconTintColor;
 @property (nonatomic) BOOL searchEnabled;
 @property (nonatomic) BOOL searchIconDisabled;
 @property (nonatomic, strong) UIImage * _Nullable clearSearchIcon;
@@ -926,6 +931,7 @@ SWIFT_PROTOCOL("_TtP7Threads15ThreadsDelegate_")
 @optional
 - (BOOL)threads:(Threads * _Nonnull)threads allowOpenUrl:(NSURL * _Nonnull)allowOpenUrl SWIFT_WARN_UNUSED_RESULT;
 - (id <ThreadsPreloadView> _Null_unspecified)customPreloadView SWIFT_WARN_UNUSED_RESULT;
+- (void)threads:(Threads * _Nonnull)threads didReceiveMessage:(THRMessageInfo * _Nonnull)message;
 @end
 
 @class UIView;
@@ -1351,6 +1357,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardHideImage;
 @property (nonatomic) BOOL navigationBarShadow;
 @property (nonatomic, strong) THRSettingsShadow * _Nonnull navigationBarShadowSettings;
+@property (nonatomic, strong) UIColor * _Nonnull navigationBarBackButtonColor;
 @property (nonatomic) BOOL launchViewEnable;
 @property (nonatomic, strong) UIColor * _Nonnull launchActivityViewColor;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewBackgroundColor;
@@ -1365,6 +1372,9 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull placeholderSubtitleColor;
 @property (nonatomic, strong) UIFont * _Nonnull placeholderTitleFont;
 @property (nonatomic, strong) UIFont * _Nonnull placeholderSubtitleFont;
+@property (nonatomic) BOOL imageEdgesActived;
+@property (nonatomic) UIEdgeInsets imageEdges;
+@property (nonatomic) CGFloat imageCornerRadius;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarbackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarTintColor;
 @property (nonatomic, strong) UIImage * _Nullable attachButtonImage;
@@ -1476,6 +1486,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull searchBarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull searchScopeBarFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchBarTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull searchBarIconTintColor;
 @property (nonatomic) BOOL searchEnabled;
 @property (nonatomic) BOOL searchIconDisabled;
 @property (nonatomic, strong) UIImage * _Nullable clearSearchIcon;
@@ -1877,6 +1888,7 @@ SWIFT_PROTOCOL("_TtP7Threads15ThreadsDelegate_")
 @optional
 - (BOOL)threads:(Threads * _Nonnull)threads allowOpenUrl:(NSURL * _Nonnull)allowOpenUrl SWIFT_WARN_UNUSED_RESULT;
 - (id <ThreadsPreloadView> _Null_unspecified)customPreloadView SWIFT_WARN_UNUSED_RESULT;
+- (void)threads:(Threads * _Nonnull)threads didReceiveMessage:(THRMessageInfo * _Nonnull)message;
 @end
 
 @class UIView;
@@ -2302,6 +2314,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable navigationBarKeyboardHideImage;
 @property (nonatomic) BOOL navigationBarShadow;
 @property (nonatomic, strong) THRSettingsShadow * _Nonnull navigationBarShadowSettings;
+@property (nonatomic, strong) UIColor * _Nonnull navigationBarBackButtonColor;
 @property (nonatomic) BOOL launchViewEnable;
 @property (nonatomic, strong) UIColor * _Nonnull launchActivityViewColor;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewBackgroundColor;
@@ -2316,6 +2329,9 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull placeholderSubtitleColor;
 @property (nonatomic, strong) UIFont * _Nonnull placeholderTitleFont;
 @property (nonatomic, strong) UIFont * _Nonnull placeholderSubtitleFont;
+@property (nonatomic) BOOL imageEdgesActived;
+@property (nonatomic) UIEdgeInsets imageEdges;
+@property (nonatomic) CGFloat imageCornerRadius;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarbackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull toolbarTintColor;
 @property (nonatomic, strong) UIImage * _Nullable attachButtonImage;
@@ -2427,6 +2443,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull searchBarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull searchScopeBarFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchBarTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull searchBarIconTintColor;
 @property (nonatomic) BOOL searchEnabled;
 @property (nonatomic) BOOL searchIconDisabled;
 @property (nonatomic, strong) UIImage * _Nullable clearSearchIcon;
@@ -2828,6 +2845,7 @@ SWIFT_PROTOCOL("_TtP7Threads15ThreadsDelegate_")
 @optional
 - (BOOL)threads:(Threads * _Nonnull)threads allowOpenUrl:(NSURL * _Nonnull)allowOpenUrl SWIFT_WARN_UNUSED_RESULT;
 - (id <ThreadsPreloadView> _Null_unspecified)customPreloadView SWIFT_WARN_UNUSED_RESULT;
+- (void)threads:(Threads * _Nonnull)threads didReceiveMessage:(THRMessageInfo * _Nonnull)message;
 @end
 
 @class UIView;
