@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		GFtzu88eiyPsM4VAjqrMciE5dJA=
+		TXGZtttYWd4lF0C1K8yUoAtSfsw=
 		</data>
 		<key>Headers/THROpenUrlUtils.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		LHaQz9GBfjfDLCE4OvSYwzunIn0=
+		1NHafG13mU8ZPGWw7ZYRWH84nUs=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		0uV6QnNxfDxPsvWVebr+G4eIAtw=
+		/B3lnVjSIaZVjveesxk8vZVeFj0=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		0uV6QnNxfDxPsvWVebr+G4eIAtw=
+		/B3lnVjSIaZVjveesxk8vZVeFj0=
 		</data>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		l4V7cEOHOhxSJhMdv+bv23DpTZg=
+		kw2lin6p/SpUu3mFtJIZ/aGn+K4=
 		</data>
 		<key>Modules/Threads.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/i386.swiftmodule</key>
 		<data>
-		l4V7cEOHOhxSJhMdv+bv23DpTZg=
+		kw2lin6p/SpUu3mFtJIZ/aGn+K4=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Cek0EeRqJRGn6Z6p8xg5Q0y6tIQ=
+		tag4NmycU5HB5KQG4NBFFPnTjCQ=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Cek0EeRqJRGn6Z6p8xg5Q0y6tIQ=
+		tag4NmycU5HB5KQG4NBFFPnTjCQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -178,15 +178,15 @@
 		</data>
 		<key>THRJSQAudioCell.nib</key>
 		<data>
-		Bas8IEn0BqANYxJrhYVJowbIjcs=
+		UxuFEPP1YWD3MCGnF+OPTU04I2M=
 		</data>
 		<key>THRJSQFileCell.nib/objects-12.3+.nib</key>
 		<data>
-		Hwbzb1qVYjZhRCn5glDJPC5OCEc=
+		Ejpas/HQwg2hzJ5RQjmhkyG3xtg=
 		</data>
 		<key>THRJSQFileCell.nib/runtime.nib</key>
 		<data>
-		nk3L7tZfiC56g8w5W3bn2S+oprQ=
+		m680QhOh9YXSgLFc34pgnAiqDr0=
 		</data>
 		<key>THRJSQImageCell.nib/objects-12.3+.nib</key>
 		<data>
@@ -198,11 +198,11 @@
 		</data>
 		<key>THRJSQImageWithTextCell.nib/objects-12.3+.nib</key>
 		<data>
-		czaNbWuG3bJTyazNzfR3QgXhpCQ=
+		Wyot8fUxBTlStsWKXcJyG6mY4bg=
 		</data>
 		<key>THRJSQImageWithTextCell.nib/runtime.nib</key>
 		<data>
-		Lsk69unsdFFVy88eMiSMqO3+qDw=
+		18E2IK8VohB5uhNvxWcJ6h0/Rn0=
 		</data>
 		<key>THRJSQMediaInProgressCell.nib</key>
 		<data>
@@ -384,14 +384,6 @@
 		<data>
 		KYlMWWJN5q0+oLzm/0W5xf1uAYo=
 		</data>
-		<key>THRJSQQuoteCell.nib/objects-12.3+.nib</key>
-		<data>
-		A6+ntpxFesO0CQAL8qseEKNYrxQ=
-		</data>
-		<key>THRJSQQuoteCell.nib/runtime.nib</key>
-		<data>
-		GpZ0t/8hrXDD1uVRpgUQMIKtIhg=
-		</data>
 		<key>THRJSQSystemCell.nib/objects-12.3+.nib</key>
 		<data>
 		hYc9ueABCIm/fpxL9p4v1RNyVh0=
@@ -402,11 +394,11 @@
 		</data>
 		<key>THRJSQTextCell.nib/objects-12.3+.nib</key>
 		<data>
-		dyuqIjsIyKS/QE0Wjw/CfPSwRWI=
+		OkEHb9g//Y0yoiqLwPNSisjAMoQ=
 		</data>
 		<key>THRJSQTextCell.nib/runtime.nib</key>
 		<data>
-		Uuazfh3BzVq1Z1Vtmwga9+Aju9k=
+		VNYjjjEZrSPBhLfWWmDRu7XaVaE=
 		</data>
 		<key>THRLaunchView.nib/objects-11.0+.nib</key>
 		<data>
@@ -505,11 +497,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GFtzu88eiyPsM4VAjqrMciE5dJA=
+			TXGZtttYWd4lF0C1K8yUoAtSfsw=
 			</data>
 			<key>hash2</key>
 			<data>
-			a1uUO/1G5fawUfbKyPNrSb3y+ZBJx0BVahB6D1LBw3E=
+			YccYJB3laI4XFaTK8x0v5OzRdDKTSZsTemYiHzCRakk=
 			</data>
 		</dict>
 		<key>Headers/THROpenUrlUtils.h</key>
@@ -593,11 +585,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0uV6QnNxfDxPsvWVebr+G4eIAtw=
+			/B3lnVjSIaZVjveesxk8vZVeFj0=
 			</data>
 			<key>hash2</key>
 			<data>
-			gG8vwADs0fFzxitHJnjFVRTmBvNjwdCdhxDgnhY9cEQ=
+			tBwRRz3T/vtA9QvWd76V4zlMmmjo/ZRRLyYXFl1A7Y4=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/arm64.swiftdoc</key>
@@ -626,11 +618,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0uV6QnNxfDxPsvWVebr+G4eIAtw=
+			/B3lnVjSIaZVjveesxk8vZVeFj0=
 			</data>
 			<key>hash2</key>
 			<data>
-			gG8vwADs0fFzxitHJnjFVRTmBvNjwdCdhxDgnhY9cEQ=
+			tBwRRz3T/vtA9QvWd76V4zlMmmjo/ZRRLyYXFl1A7Y4=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -659,11 +651,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			l4V7cEOHOhxSJhMdv+bv23DpTZg=
+			kw2lin6p/SpUu3mFtJIZ/aGn+K4=
 			</data>
 			<key>hash2</key>
 			<data>
-			LXTXujwW+WuANWMrbsrJxLZakOyGgwM7Hkg5P2E+wPU=
+			FD8/lngHCwYlkzPgfNZLqbjExcc4PjWnOqc/uZZYgTs=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/i386.swiftdoc</key>
@@ -692,11 +684,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			l4V7cEOHOhxSJhMdv+bv23DpTZg=
+			kw2lin6p/SpUu3mFtJIZ/aGn+K4=
 			</data>
 			<key>hash2</key>
 			<data>
-			LXTXujwW+WuANWMrbsrJxLZakOyGgwM7Hkg5P2E+wPU=
+			FD8/lngHCwYlkzPgfNZLqbjExcc4PjWnOqc/uZZYgTs=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -725,11 +717,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Cek0EeRqJRGn6Z6p8xg5Q0y6tIQ=
+			tag4NmycU5HB5KQG4NBFFPnTjCQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			bGeyj/Tx/vMhARDni26n4+Vd27LGAya/rizm45KmdGA=
+			qokf5KwZrmBys09HfXOLhm76NgVY5j+AqtgR505BXQg=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64.swiftdoc</key>
@@ -758,11 +750,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Cek0EeRqJRGn6Z6p8xg5Q0y6tIQ=
+			tag4NmycU5HB5KQG4NBFFPnTjCQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			bGeyj/Tx/vMhARDni26n4+Vd27LGAya/rizm45KmdGA=
+			qokf5KwZrmBys09HfXOLhm76NgVY5j+AqtgR505BXQg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -967,33 +959,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Bas8IEn0BqANYxJrhYVJowbIjcs=
+			UxuFEPP1YWD3MCGnF+OPTU04I2M=
 			</data>
 			<key>hash2</key>
 			<data>
-			wZWyGzw6nkaBhV/A8QhOiDBZ2y3RyV+GPqWRMknzbuE=
+			eVzez06wUEk1wDM6nAzqyDLXBqTiyCE6wFG5Tj/6rbU=
 			</data>
 		</dict>
 		<key>THRJSQFileCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Hwbzb1qVYjZhRCn5glDJPC5OCEc=
+			Ejpas/HQwg2hzJ5RQjmhkyG3xtg=
 			</data>
 			<key>hash2</key>
 			<data>
-			fv3ItWOWV4aMMYb1uV9IKNsyzTIq8mTE4+t+4mk6juA=
+			T7uUcDQPN8XnYxET2Zz2XGKrC5LyxNye/bvlcJejmto=
 			</data>
 		</dict>
 		<key>THRJSQFileCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nk3L7tZfiC56g8w5W3bn2S+oprQ=
+			m680QhOh9YXSgLFc34pgnAiqDr0=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZsikTY1cRs09/8GgSxbqf/5NCFzjiMGfA6Bv5C/brjY=
+			xVl5h6Ijk6EXaL+EbYp9I3KC/JB3/A+BQ7QsggZr2wI=
 			</data>
 		</dict>
 		<key>THRJSQImageCell.nib/objects-12.3+.nib</key>
@@ -1022,22 +1014,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			czaNbWuG3bJTyazNzfR3QgXhpCQ=
+			Wyot8fUxBTlStsWKXcJyG6mY4bg=
 			</data>
 			<key>hash2</key>
 			<data>
-			pvWQzChYUQ2KeeBPs7EUdLrCwEiCzS1MRYbQi1RWUpw=
+			oIvFX0dkY0tIqoPSrsEal3z+CNiYFkBTborkssS4ySM=
 			</data>
 		</dict>
 		<key>THRJSQImageWithTextCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Lsk69unsdFFVy88eMiSMqO3+qDw=
+			18E2IK8VohB5uhNvxWcJ6h0/Rn0=
 			</data>
 			<key>hash2</key>
 			<data>
-			MtBGbJ0XzQi3wJZNxaWpuSSqXeOvBsBehx5sxVy9AjE=
+			LcNP7Z9F5yo9mEeqd1ezSnDJMwMzmUpETiguuEjSIdo=
 			</data>
 		</dict>
 		<key>THRJSQMediaInProgressCell.nib</key>
@@ -1535,28 +1527,6 @@
 			oaa2ro5N2hVAGuNBhLBr56RvC0Ns5qrMN1nnqgH8QFI=
 			</data>
 		</dict>
-		<key>THRJSQQuoteCell.nib/objects-12.3+.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			A6+ntpxFesO0CQAL8qseEKNYrxQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			qwoihcdDYyQUSfrM08VARMMQpyChm6GLWlPKKeiGWo4=
-			</data>
-		</dict>
-		<key>THRJSQQuoteCell.nib/runtime.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			GpZ0t/8hrXDD1uVRpgUQMIKtIhg=
-			</data>
-			<key>hash2</key>
-			<data>
-			ZA183FCpy1UIr/mnZnildCLLHlbK5xphIreDm4HKhys=
-			</data>
-		</dict>
 		<key>THRJSQSystemCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash</key>
@@ -1583,22 +1553,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dyuqIjsIyKS/QE0Wjw/CfPSwRWI=
+			OkEHb9g//Y0yoiqLwPNSisjAMoQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			gnGLIRfTjUu0C7tCXajGmgOYTL8GAeWyZgr5OAiBqCk=
+			6kGhCrVtGcbH83oRBzGxSm2LUT2AZyIok3te+5wblvo=
 			</data>
 		</dict>
 		<key>THRJSQTextCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Uuazfh3BzVq1Z1Vtmwga9+Aju9k=
+			VNYjjjEZrSPBhLfWWmDRu7XaVaE=
 			</data>
 			<key>hash2</key>
 			<data>
-			OZ8GWK6RswpkUwASGzfXzKKj7em9Go+cC9TgmLxIY5w=
+			IMQjidiHCsXnM2az34e1Xvn0LSgl8m3OBNUCqn6Gf24=
 			</data>
 		</dict>
 		<key>THRLaunchView.nib/objects-11.0+.nib</key>
