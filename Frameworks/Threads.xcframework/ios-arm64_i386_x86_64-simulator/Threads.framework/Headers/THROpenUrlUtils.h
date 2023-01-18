@@ -2,8 +2,7 @@
 //  THROpenUrlUtils.h
 //  Threads
 //
-//  Created by Алексей Химунин on 11.12.2020.
-//  Copyright © 2020 Threads. All rights reserved.
+//  Copyright © 2020 edna. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

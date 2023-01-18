@@ -2,8 +2,7 @@
 //  Threads.h
 //  Threads
 //
-//  Created by Anton Bulankin on 20.04.2022.
-//  Copyright © 2022 Threads. All rights reserved.
+//  Copyright © 2022 edna. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -380,7 +380,6 @@ enum THRQuickReplyAlignment : NSUInteger;
 SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @interface THRAttributes : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@property (nonatomic) BOOL canShowDebugScreen;
 @property (nonatomic, strong) LocalizationConfig * _Nullable localizationConfig;
 /// Works properly for non view controller based status bar appearance
 @property (nonatomic) UIStatusBarStyle statusBarStyle;
@@ -903,7 +902,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
-- (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longtitude:(NSNumber * _Nonnull)longtitude;
+- (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longitude:(NSNumber * _Nonnull)longitude;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)logout;
 - (void)logoutWithClientId:(NSString * _Nonnull)clientId;
@@ -1337,7 +1336,6 @@ enum THRQuickReplyAlignment : NSUInteger;
 SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @interface THRAttributes : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@property (nonatomic) BOOL canShowDebugScreen;
 @property (nonatomic, strong) LocalizationConfig * _Nullable localizationConfig;
 /// Works properly for non view controller based status bar appearance
 @property (nonatomic) UIStatusBarStyle statusBarStyle;
@@ -1860,7 +1858,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
-- (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longtitude:(NSNumber * _Nonnull)longtitude;
+- (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longitude:(NSNumber * _Nonnull)longitude;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)logout;
 - (void)logoutWithClientId:(NSString * _Nonnull)clientId;

@@ -174,7 +174,7 @@ import os
   @objc final public func registerApplicationForRemoteNotificationsStandartOptions(authorizationStatusDenied: (() -> Swift.Void)?, completionHandler: @escaping ((_ deviceToken: Foundation.Data?) -> Swift.Void))
   @objc final public func applicationDidRegisterForRemoteNotifications(withDeviceToken deviceToken: Foundation.Data)
   @objc final public func applicationDidFailToRegisterForRemoteNotificationsWithError(_ error: Swift.Error)
-  @objc final public func updateLocation(latitude: Foundation.NSNumber, longtitude: Foundation.NSNumber)
+  @objc final public func updateLocation(latitude: Foundation.NSNumber, longitude: Foundation.NSNumber)
   @objc final public func setClientInfo(_ clientInfo: THRClientInfo)
   @objc final public func logout()
   @objc final public func logout(withClientId clientId: Swift.String)
@@ -297,7 +297,6 @@ import os
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class THRAttributes : ObjectiveC.NSObject {
   @objc override dynamic public init()
-  @objc public var canShowDebugScreen: Swift.Bool
   @objc public var localizationConfig: LocalizationConfig?
   @objc public var statusBarStyle: UIKit.UIStatusBarStyle
   @objc public var refreshColor: UIKit.UIColor
