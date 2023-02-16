@@ -746,11 +746,6 @@ typedef SWIFT_ENUM(NSInteger, THRMessageRecieveState, open) {
   THRMessageRecieveStateNotAccepted = 1,
 };
 
-typedef SWIFT_ENUM_NAMED(NSInteger, THRMessageRecieveStateOld, "THRMessageRecieveStateOld", open) {
-  THRMessageRecieveStateOldAccepted = 0,
-  THRMessageRecieveStateOldNotAccepted = 1,
-};
-
 /// Выравнивание по горизонтали быстрых ответов
 typedef SWIFT_ENUM(NSUInteger, THRQuickReplyAlignment, open) {
 /// < Выравнивание по центру
@@ -1700,11 +1695,6 @@ SWIFT_CLASS("_TtC7Threads14THRMessageInfo")
 typedef SWIFT_ENUM(NSInteger, THRMessageRecieveState, open) {
   THRMessageRecieveStateAccepted = 0,
   THRMessageRecieveStateNotAccepted = 1,
-};
-
-typedef SWIFT_ENUM_NAMED(NSInteger, THRMessageRecieveStateOld, "THRMessageRecieveStateOld", open) {
-  THRMessageRecieveStateOldAccepted = 0,
-  THRMessageRecieveStateOldNotAccepted = 1,
 };
 
 /// Выравнивание по горизонтали быстрых ответов

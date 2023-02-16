@@ -568,15 +568,6 @@ extension Foundation.NSNumber {
   @objc dynamic public class func months(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
   @objc dynamic public class func years(_ time: Foundation.TimeInterval) -> Foundation.TimeInterval
 }
-@objc(THRMessageRecieveStateOld) public enum THRMessageRecieveStateOld : Swift.Int {
-  case accepted
-  case notAccepted
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 @_hasMissingDesignatedInitializers @objc public class THRMessageInfo : ObjectiveC.NSObject {
   @objc public init(text: Swift.String?, senderName: Swift.String, hasAttachment: Swift.Bool)
   final public let senderName: Swift.String
