@@ -281,21 +281,35 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSCoder;
+@protocol MessagesLoadEarlierHeaderViewDelegate;
+@class UIButton;
+@class UIColor;
 
-
-
-
-
-
-
-@interface NSNumber (SWIFT_EXTENSION(Threads))
-+ (NSTimeInterval)minutes:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
-+ (NSTimeInterval)hours:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
-+ (NSTimeInterval)days:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
-+ (NSTimeInterval)weeks:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
-+ (NSTimeInterval)months:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
-+ (NSTimeInterval)years:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS("_TtC7Threads29MessagesLoadEarlierHeaderView")
+@interface MessagesLoadEarlierHeaderView : UICollectionReusableView
+- (nonnull instancetype)initWithFrame:(CGRect)_ SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) CGFloat kTHRJSQMessagesLoadEarlierHeaderViewHeight;)
++ (CGFloat)kTHRJSQMessagesLoadEarlierHeaderViewHeight SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull headerReuseIdentifier;)
++ (NSString * _Nonnull)headerReuseIdentifier SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, weak) id <MessagesLoadEarlierHeaderViewDelegate> _Nullable delegate;
+@property (nonatomic, readonly, strong) UIButton * _Nonnull loadButton;
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
 @end
+
+
+SWIFT_PROTOCOL("_TtP7Threads37MessagesLoadEarlierHeaderViewDelegate_")
+@protocol MessagesLoadEarlierHeaderViewDelegate <NSObject>
+- (void)headerView:(MessagesLoadEarlierHeaderView * _Nonnull)headerView didPressLoadButton:(UIButton * _Nonnull)sender;
+@end
+
+
+
+
+
+
 
 
 
@@ -310,6 +324,7 @@ SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 @property (nonatomic, readonly) NSInteger priority;
 @property (nonatomic, readonly, copy) NSString * _Nonnull senderName;
 @property (nonatomic, readonly, copy) NSString * _Nullable chatMessageId;
++ (BOOL)checkMinimumPushFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -323,7 +338,6 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSCoder;
 @class UICollectionView;
 @protocol QuickReplyCellDelegate;
 @class UITraitCollection;
@@ -354,6 +368,67 @@ SWIFT_PROTOCOL("_TtP7Threads22QuickReplyCellDelegate_")
 @end
 
 
+SWIFT_CLASS("_TtC7Threads12SQActionCell")
+@interface SQActionCell : UICollectionViewCell
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (void)configureWithActionString:(NSString * _Nonnull)actionString;
+@end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC7Threads11SQAlbumCell")
+@interface SQAlbumCell : UITableViewCell
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (void)startLoading;
+- (void)stopLoading;
+- (void)updateImage:(UIImage * _Nullable)image;
+- (void)configureWithAlbumName:(NSString * _Nonnull)albumName photosCount:(NSInteger)photosCount;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads18SQPhotoPreviewCell")
+@interface SQPhotoPreviewCell : UICollectionViewCell
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads13SQPreviewCell")
+@interface SQPreviewCell : UICollectionViewCell
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+@end
+
+/// Настройка поиска
+typedef SWIFT_ENUM(NSUInteger, SearchScope, open) {
+  SearchScopeAll = 0,
+  SearchScopeImages = 1,
+  SearchScopeFiles = 2,
+  SearchScopeCount = 3,
+};
+
+/// Состояние для кнопки
+typedef SWIFT_ENUM(NSUInteger, SearchState, open) {
+  SearchStateIdle = 0,
+  SearchStateLoading = 1,
+};
+
+
+SWIFT_CLASS("_TtC7Threads41SearchingForSpecialistIndicatorFooterView")
+@interface SearchingForSpecialistIndicatorFooterView : UICollectionReusableView
+- (nonnull instancetype)initWithFrame:(CGRect)_ SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) CGFloat kSearchingForSpecialistIndicatorFooterViewHeight;)
++ (CGFloat)kSearchingForSpecialistIndicatorFooterViewHeight SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull footerReuseIdentifier;)
++ (NSString * _Nonnull)footerReuseIdentifier SWIFT_WARN_UNUSED_RESULT;
++ (void)setFooterReuseIdentifier:(NSString * _Nonnull)value;
+- (void)configureWithDefaultSettingsforCollectionView:(UICollectionView * _Nonnull)collectionView;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @interface SocketSettings : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -369,9 +444,7 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @property (nonatomic) NSTimeInterval writeTimeoutSec;
 @end
 
-@class UIColor;
 @class UIFont;
-@class UIImage;
 @class THRSettingsShadow;
 enum THRQuickReplyPresentationMode : NSUInteger;
 enum THRQuickReplyAlignment : NSUInteger;
@@ -497,6 +570,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull incomingMediaTimeColor;
 @property (nonatomic) CGFloat commonMessageAvatarSize;
 @property (nonatomic) CGFloat systemMessageAvatarSize;
+@property (nonatomic) CGFloat messageAvatarToBubbleOffset;
 @property (nonatomic) BOOL failedBubbleStroked;
 @property (nonatomic, strong) UIColor * _Nonnull failedBubbleColor;
 @property (nonatomic) BOOL outgoingBubbleStroked;
@@ -643,6 +717,14 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 + (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
 
+/// Метод аутентификации
+typedef SWIFT_ENUM(NSInteger, THRAuthMethod, open) {
+/// < Аутентификация передается в headers
+  THRAuthMethodHeaders = 0,
+/// < Аутентификация передается в cookies
+  THRAuthMethodCookies = 1,
+};
+
 @class NSURL;
 
 SWIFT_CLASS_NAMED("THRCert")
@@ -661,14 +743,8 @@ SWIFT_CLASS_NAMED("THRCert")
 
 
 SWIFT_CLASS("_TtC7Threads13THRClientInfo")
-@interface THRClientInfo : NSObject
+@interface THRClientInfo : NSObject <NSCopying>
 - (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId OBJC_DESIGNATED_INITIALIZER;
-/// Client configuration
-/// @param id Unique client identifier, required parameter. For example, you can use the user’s phone number.
-/// @param name Name of user
-/// @param data custom data, json key-value pairs string
-/// @param appMarker hreads support connecting multiple apps to a single server. Configure the appMarker identifier on the server and in app. As appMarker can be any unique string. appMarker should be the same for corresponding Android and iOS applications.
-/// @param signature The clientId authorization signature, the signature should be generated on your server based on the clientId using the RSA private key, then encrypted in Base64. Under the general scheme of work with the signature, see the documentation for Threads-API.
 @property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
 @property (nonatomic, copy) NSString * _Nullable name;
 @property (nonatomic, copy) NSString * _Nullable data;
@@ -676,6 +752,8 @@ SWIFT_CLASS("_TtC7Threads13THRClientInfo")
 @property (nonatomic, copy) NSString * _Nullable signature;
 @property (nonatomic, copy) NSString * _Nullable authToken;
 @property (nonatomic, copy) NSString * _Nullable authSchema;
+@property (nonatomic) enum THRAuthMethod authMethod;
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)_ SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -690,7 +768,6 @@ SWIFT_CLASS("_TtC7Threads8THRColor")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIButton;
 
 SWIFT_CLASS("_TtC7Threads11THRControls")
 @interface THRControls : NSObject
@@ -740,11 +817,6 @@ SWIFT_CLASS("_TtC7Threads14THRMessageInfo")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-typedef SWIFT_ENUM(NSInteger, THRMessageRecieveState, open) {
-  THRMessageRecieveStateAccepted = 0,
-  THRMessageRecieveStateNotAccepted = 1,
-};
 
 /// Выравнивание по горизонтали быстрых ответов
 typedef SWIFT_ENUM(NSUInteger, THRQuickReplyAlignment, open) {
@@ -876,7 +948,6 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @property (nonatomic) BOOL isClientIdEncrypted;
-@property (nonatomic) BOOL registrationAtStartupDisable;
 @property (nonatomic) BOOL isShowsNetworkActivity;
 @property (nonatomic, readonly, copy) NSString * _Nullable clientId;
 @property (nonatomic, readonly, copy) NSString * _Nullable clientName;
@@ -886,12 +957,12 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 @property (nonatomic, readonly, copy) NSString * _Nullable clientAuthSchema;
 @property (nonatomic, readonly) BOOL isClientSet;
 @property (nonatomic, readonly, copy) NSString * _Nullable data;
-@property (nonatomic, readonly) NSInteger fileSizeLimit;
 @property (nonatomic, readonly, strong) THRAttributes * _Nonnull attributes;
 @property (nonatomic, readonly, strong) THRControls * _Nonnull controls;
 @property (nonatomic, copy) NSURL * _Nullable restURL;
 @property (nonatomic, copy) NSURL * _Nullable dataStoreURL;
 @property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
+@property (nonatomic) BOOL keepSocketActive;
 + (Threads * _Nonnull)threads SWIFT_WARN_UNUSED_RESULT;
 - (void)configureTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
@@ -899,6 +970,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
 - (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longitude:(NSNumber * _Nonnull)longitude;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
+- (void)updateClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)logout;
 - (void)logoutWithClientId:(NSString * _Nonnull)clientId;
 - (void)handlePushNotificationUserInfo:(NSDictionary * _Nonnull)userInfo;
@@ -1232,21 +1304,35 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSCoder;
+@protocol MessagesLoadEarlierHeaderViewDelegate;
+@class UIButton;
+@class UIColor;
 
-
-
-
-
-
-
-@interface NSNumber (SWIFT_EXTENSION(Threads))
-+ (NSTimeInterval)minutes:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
-+ (NSTimeInterval)hours:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
-+ (NSTimeInterval)days:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
-+ (NSTimeInterval)weeks:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
-+ (NSTimeInterval)months:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
-+ (NSTimeInterval)years:(NSTimeInterval)time SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS("_TtC7Threads29MessagesLoadEarlierHeaderView")
+@interface MessagesLoadEarlierHeaderView : UICollectionReusableView
+- (nonnull instancetype)initWithFrame:(CGRect)_ SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) CGFloat kTHRJSQMessagesLoadEarlierHeaderViewHeight;)
++ (CGFloat)kTHRJSQMessagesLoadEarlierHeaderViewHeight SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull headerReuseIdentifier;)
++ (NSString * _Nonnull)headerReuseIdentifier SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, weak) id <MessagesLoadEarlierHeaderViewDelegate> _Nullable delegate;
+@property (nonatomic, readonly, strong) UIButton * _Nonnull loadButton;
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
 @end
+
+
+SWIFT_PROTOCOL("_TtP7Threads37MessagesLoadEarlierHeaderViewDelegate_")
+@protocol MessagesLoadEarlierHeaderViewDelegate <NSObject>
+- (void)headerView:(MessagesLoadEarlierHeaderView * _Nonnull)headerView didPressLoadButton:(UIButton * _Nonnull)sender;
+@end
+
+
+
+
+
+
 
 
 
@@ -1261,6 +1347,7 @@ SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 @property (nonatomic, readonly) NSInteger priority;
 @property (nonatomic, readonly, copy) NSString * _Nonnull senderName;
 @property (nonatomic, readonly, copy) NSString * _Nullable chatMessageId;
++ (BOOL)checkMinimumPushFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1274,7 +1361,6 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSCoder;
 @class UICollectionView;
 @protocol QuickReplyCellDelegate;
 @class UITraitCollection;
@@ -1305,6 +1391,67 @@ SWIFT_PROTOCOL("_TtP7Threads22QuickReplyCellDelegate_")
 @end
 
 
+SWIFT_CLASS("_TtC7Threads12SQActionCell")
+@interface SQActionCell : UICollectionViewCell
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (void)configureWithActionString:(NSString * _Nonnull)actionString;
+@end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC7Threads11SQAlbumCell")
+@interface SQAlbumCell : UITableViewCell
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (void)startLoading;
+- (void)stopLoading;
+- (void)updateImage:(UIImage * _Nullable)image;
+- (void)configureWithAlbumName:(NSString * _Nonnull)albumName photosCount:(NSInteger)photosCount;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads18SQPhotoPreviewCell")
+@interface SQPhotoPreviewCell : UICollectionViewCell
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads13SQPreviewCell")
+@interface SQPreviewCell : UICollectionViewCell
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+@end
+
+/// Настройка поиска
+typedef SWIFT_ENUM(NSUInteger, SearchScope, open) {
+  SearchScopeAll = 0,
+  SearchScopeImages = 1,
+  SearchScopeFiles = 2,
+  SearchScopeCount = 3,
+};
+
+/// Состояние для кнопки
+typedef SWIFT_ENUM(NSUInteger, SearchState, open) {
+  SearchStateIdle = 0,
+  SearchStateLoading = 1,
+};
+
+
+SWIFT_CLASS("_TtC7Threads41SearchingForSpecialistIndicatorFooterView")
+@interface SearchingForSpecialistIndicatorFooterView : UICollectionReusableView
+- (nonnull instancetype)initWithFrame:(CGRect)_ SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) CGFloat kSearchingForSpecialistIndicatorFooterViewHeight;)
++ (CGFloat)kSearchingForSpecialistIndicatorFooterViewHeight SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull footerReuseIdentifier;)
++ (NSString * _Nonnull)footerReuseIdentifier SWIFT_WARN_UNUSED_RESULT;
++ (void)setFooterReuseIdentifier:(NSString * _Nonnull)value;
+- (void)configureWithDefaultSettingsforCollectionView:(UICollectionView * _Nonnull)collectionView;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @interface SocketSettings : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1320,9 +1467,7 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @property (nonatomic) NSTimeInterval writeTimeoutSec;
 @end
 
-@class UIColor;
 @class UIFont;
-@class UIImage;
 @class THRSettingsShadow;
 enum THRQuickReplyPresentationMode : NSUInteger;
 enum THRQuickReplyAlignment : NSUInteger;
@@ -1448,6 +1593,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull incomingMediaTimeColor;
 @property (nonatomic) CGFloat commonMessageAvatarSize;
 @property (nonatomic) CGFloat systemMessageAvatarSize;
+@property (nonatomic) CGFloat messageAvatarToBubbleOffset;
 @property (nonatomic) BOOL failedBubbleStroked;
 @property (nonatomic, strong) UIColor * _Nonnull failedBubbleColor;
 @property (nonatomic) BOOL outgoingBubbleStroked;
@@ -1594,6 +1740,14 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 + (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
 
+/// Метод аутентификации
+typedef SWIFT_ENUM(NSInteger, THRAuthMethod, open) {
+/// < Аутентификация передается в headers
+  THRAuthMethodHeaders = 0,
+/// < Аутентификация передается в cookies
+  THRAuthMethodCookies = 1,
+};
+
 @class NSURL;
 
 SWIFT_CLASS_NAMED("THRCert")
@@ -1612,14 +1766,8 @@ SWIFT_CLASS_NAMED("THRCert")
 
 
 SWIFT_CLASS("_TtC7Threads13THRClientInfo")
-@interface THRClientInfo : NSObject
+@interface THRClientInfo : NSObject <NSCopying>
 - (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId OBJC_DESIGNATED_INITIALIZER;
-/// Client configuration
-/// @param id Unique client identifier, required parameter. For example, you can use the user’s phone number.
-/// @param name Name of user
-/// @param data custom data, json key-value pairs string
-/// @param appMarker hreads support connecting multiple apps to a single server. Configure the appMarker identifier on the server and in app. As appMarker can be any unique string. appMarker should be the same for corresponding Android and iOS applications.
-/// @param signature The clientId authorization signature, the signature should be generated on your server based on the clientId using the RSA private key, then encrypted in Base64. Under the general scheme of work with the signature, see the documentation for Threads-API.
 @property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
 @property (nonatomic, copy) NSString * _Nullable name;
 @property (nonatomic, copy) NSString * _Nullable data;
@@ -1627,6 +1775,8 @@ SWIFT_CLASS("_TtC7Threads13THRClientInfo")
 @property (nonatomic, copy) NSString * _Nullable signature;
 @property (nonatomic, copy) NSString * _Nullable authToken;
 @property (nonatomic, copy) NSString * _Nullable authSchema;
+@property (nonatomic) enum THRAuthMethod authMethod;
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)_ SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1641,7 +1791,6 @@ SWIFT_CLASS("_TtC7Threads8THRColor")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIButton;
 
 SWIFT_CLASS("_TtC7Threads11THRControls")
 @interface THRControls : NSObject
@@ -1691,11 +1840,6 @@ SWIFT_CLASS("_TtC7Threads14THRMessageInfo")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-typedef SWIFT_ENUM(NSInteger, THRMessageRecieveState, open) {
-  THRMessageRecieveStateAccepted = 0,
-  THRMessageRecieveStateNotAccepted = 1,
-};
 
 /// Выравнивание по горизонтали быстрых ответов
 typedef SWIFT_ENUM(NSUInteger, THRQuickReplyAlignment, open) {
@@ -1827,7 +1971,6 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @property (nonatomic) BOOL isClientIdEncrypted;
-@property (nonatomic) BOOL registrationAtStartupDisable;
 @property (nonatomic) BOOL isShowsNetworkActivity;
 @property (nonatomic, readonly, copy) NSString * _Nullable clientId;
 @property (nonatomic, readonly, copy) NSString * _Nullable clientName;
@@ -1837,12 +1980,12 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 @property (nonatomic, readonly, copy) NSString * _Nullable clientAuthSchema;
 @property (nonatomic, readonly) BOOL isClientSet;
 @property (nonatomic, readonly, copy) NSString * _Nullable data;
-@property (nonatomic, readonly) NSInteger fileSizeLimit;
 @property (nonatomic, readonly, strong) THRAttributes * _Nonnull attributes;
 @property (nonatomic, readonly, strong) THRControls * _Nonnull controls;
 @property (nonatomic, copy) NSURL * _Nullable restURL;
 @property (nonatomic, copy) NSURL * _Nullable dataStoreURL;
 @property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
+@property (nonatomic) BOOL keepSocketActive;
 + (Threads * _Nonnull)threads SWIFT_WARN_UNUSED_RESULT;
 - (void)configureTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
@@ -1850,6 +1993,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
 - (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longitude:(NSNumber * _Nonnull)longitude;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
+- (void)updateClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)logout;
 - (void)logoutWithClientId:(NSString * _Nonnull)clientId;
 - (void)handlePushNotificationUserInfo:(NSDictionary * _Nonnull)userInfo;
