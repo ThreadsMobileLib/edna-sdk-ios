@@ -208,7 +208,6 @@ import os
   @objc final public func configureTransportProtocol(with delegate: ThreadsDelegate?, webSocketURL: Foundation.URL, providerUid: Swift.String, restURL: Foundation.URL, dataStoreURL: Foundation.URL)
   @objc final public func registerApplicationForRemoteNotificationsStandartOptions(authorizationStatusDenied: (() -> Swift.Void)?, completionHandler: @escaping ((_ deviceToken: Foundation.Data?) -> Swift.Void))
   @objc final public func applicationDidRegisterForRemoteNotifications(withDeviceToken deviceToken: Foundation.Data)
-  @objc final public func applicationDidFailToRegisterForRemoteNotificationsWithError(_ error: Swift.Error)
   @objc final public func updateLocation(latitude: Foundation.NSNumber, longitude: Foundation.NSNumber)
   @objc final public func setClientInfo(_ clientInfo: THRClientInfo)
   @objc final public func updateClientInfo(_ clientInfo: THRClientInfo)
@@ -221,7 +220,7 @@ import os
   @objc final public func isThreadsOriginPushUserInfo(_ userInfo: [Swift.AnyHashable : Any]) -> Swift.Bool
   @objc final public func getAppMarker(fromPushUserInfo userInfo: [Swift.AnyHashable : Any]) -> Swift.String?
   @objc final public func sendMessage(withText: Swift.String, completion: ((_ error: Swift.Error?) -> Swift.Void)?)
-  @objc final public func registerUser(with clientInfo: THRClientInfo, messageWithText text: Swift.String)
+  @objc final public func registerUser(with clientInfo: THRClientInfo, messageWithText text: Swift.String? = nil)
   @objc final public func sendMessage(with image: UIKit.UIImage, completion: ((_ error: Swift.Error?) -> Swift.Void)?)
   @objc final public func chatViewController(with attributes: THRAttributes) -> UIKit.UIViewController
   @objc final public func chatViewController(with attributes: THRAttributes, completionHandler: ((_ error: Swift.Error?) -> Swift.Void)?) -> UIKit.UIViewController

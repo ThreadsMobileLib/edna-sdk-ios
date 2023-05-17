@@ -969,7 +969,6 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (void)configureTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
-- (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
 - (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longitude:(NSNumber * _Nonnull)longitude;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)updateClientInfo:(THRClientInfo * _Nonnull)clientInfo;
@@ -982,7 +981,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (BOOL)isThreadsOriginPushUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getAppMarkerFromPushUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (void)sendMessageWithText:(NSString * _Nonnull)withText completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-- (void)registerUserWith:(THRClientInfo * _Nonnull)clientInfo messageWithText:(NSString * _Nonnull)text;
+- (void)registerUserWith:(THRClientInfo * _Nonnull)clientInfo messageWithText:(NSString * _Nullable)text;
 - (void)sendMessageWith:(UIImage * _Nonnull)image completion:(void (^ _Nullable)(NSError * _Nullable))completion;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;
@@ -1994,7 +1993,6 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (void)configureTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
-- (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
 - (void)updateLocationWithLatitude:(NSNumber * _Nonnull)latitude longitude:(NSNumber * _Nonnull)longitude;
 - (void)setClientInfo:(THRClientInfo * _Nonnull)clientInfo;
 - (void)updateClientInfo:(THRClientInfo * _Nonnull)clientInfo;
@@ -2007,7 +2005,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (BOOL)isThreadsOriginPushUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getAppMarkerFromPushUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (void)sendMessageWithText:(NSString * _Nonnull)withText completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-- (void)registerUserWith:(THRClientInfo * _Nonnull)clientInfo messageWithText:(NSString * _Nonnull)text;
+- (void)registerUserWith:(THRClientInfo * _Nonnull)clientInfo messageWithText:(NSString * _Nullable)text;
 - (void)sendMessageWith:(UIImage * _Nonnull)image completion:(void (^ _Nullable)(NSError * _Nullable))completion;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;

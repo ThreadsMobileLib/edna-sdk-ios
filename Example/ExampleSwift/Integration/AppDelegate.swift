@@ -52,15 +52,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Application registered for remote notifications \(deviceToken?.description ?? "nil")")
         }
     }
+
+    func application(_: UIApplication, open url: URL, options _: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
+        print(url.absoluteString)
+        return true
+    }
     
     // MARK: - Remote Notifications
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Threads.threads().applicationDidRegisterForRemoteNotifications(withDeviceToken: deviceToken)
-    }
-    
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        Threads.threads().applicationDidFailToRegisterForRemoteNotificationsWithError(error)
     }
     
     func handleOpeningFromPush(with userInfo: [AnyHashable: Any]) {
