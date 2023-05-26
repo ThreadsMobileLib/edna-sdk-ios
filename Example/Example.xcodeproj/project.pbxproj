@@ -10,7 +10,7 @@
 		3AF8EEFB260249D600F631D9 /* Threads.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8EEF9260249D600F631D9 /* Threads.xcframework */; };
 		3AF8EEFC260249D600F631D9 /* Threads.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8EEF9260249D600F631D9 /* Threads.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		79CC699F2355B5D8007A94A1 /* MainSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC699D2355B5D8007A94A1 /* MainSwift.storyboard */; };
-		79CC6A692355B664007A94A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A372355B664007A94A1 /* Localizable.strings */; };
+		79CC6A692355B664007A94A1 /* ThreadsLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A372355B664007A94A1 /* ThreadsLocalizable.strings */; };
 		79CC6A6B2355B664007A94A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A392355B664007A94A1 /* Assets.xcassets */; };
 		79CC6A6D2355B664007A94A1 /* AlternateAttributes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A3A2355B664007A94A1 /* AlternateAttributes.xcassets */; };
 		79CC6A6F2355B664007A94A1 /* lato-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6A3D2355B664007A94A1 /* lato-regular.ttf */; };
@@ -62,10 +62,10 @@
 		3AF8EEF9260249D600F631D9 /* Threads.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Threads.xcframework; path = ../Frameworks/Threads.xcframework; sourceTree = "<group>"; };
 		79CC69952355B5D8007A94A1 /* ExampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CC699E2355B5D8007A94A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainSwift.storyboard; sourceTree = "<group>"; };
-		79CC6A382355B664007A94A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		79CC6A382355B664007A94A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ThreadsLocalizable.strings; sourceTree = "<group>"; };
 		79CC6A392355B664007A94A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79CC6A3A2355B664007A94A1 /* AlternateAttributes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AlternateAttributes.xcassets; sourceTree = "<group>"; };
-		79CC6A3B2355B664007A94A1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		79CC6A3B2355B664007A94A1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ThreadsLocalizable.strings; sourceTree = "<group>"; };
 		79CC6A3D2355B664007A94A1 /* lato-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-regular.ttf"; sourceTree = "<group>"; };
 		79CC6A3E2355B664007A94A1 /* lato-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-semibold.ttf"; sourceTree = "<group>"; };
 		79CC6A3F2355B664007A94A1 /* lato-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-light.ttf"; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		79CC6A362355B664007A94A1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6A372355B664007A94A1 /* Localizable.strings */,
+				79CC6A372355B664007A94A1 /* ThreadsLocalizable.strings */,
 				79CC6A392355B664007A94A1 /* Assets.xcassets */,
 				79CC6A3A2355B664007A94A1 /* AlternateAttributes.xcassets */,
 				79CC6A3C2355B664007A94A1 /* Fonts */,
@@ -354,7 +354,7 @@
 				79CC6A752355B664007A94A1 /* lato-medium.ttf in Resources */,
 				79CC6A712355B664007A94A1 /* lato-semibold.ttf in Resources */,
 				79CC6A732355B664007A94A1 /* lato-light.ttf in Resources */,
-				79CC6A692355B664007A94A1 /* Localizable.strings in Resources */,
+				79CC6A692355B664007A94A1 /* ThreadsLocalizable.strings in Resources */,
 				79CC6A6D2355B664007A94A1 /* AlternateAttributes.xcassets in Resources */,
 				79CC699F2355B5D8007A94A1 /* MainSwift.storyboard in Resources */,
 				AA605B702382ECB1000FFD16 /* LaunchScreenSwift.storyboard in Resources */,
@@ -409,13 +409,13 @@
 			name = MainSwift.storyboard;
 			sourceTree = "<group>";
 		};
-		79CC6A372355B664007A94A1 /* Localizable.strings */ = {
+		79CC6A372355B664007A94A1 /* ThreadsLocalizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				79CC6A382355B664007A94A1 /* en */,
 				79CC6A3B2355B664007A94A1 /* ru */,
 			);
-			name = Localizable.strings;
+			name = ThreadsLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

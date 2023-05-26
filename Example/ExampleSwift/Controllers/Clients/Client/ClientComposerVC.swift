@@ -22,9 +22,9 @@ class ClientComposerVC: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var dataInput: UITextField!
 
     @IBOutlet weak var authTokenLabel: UILabel!
-    @IBOutlet weak var authTokenInput: UITextField!
+    @IBOutlet weak var authTokenInput: UITextField?
     @IBOutlet weak var authSchemaLabel: UILabel!
-    @IBOutlet weak var authSchemaInput: UITextField!
+    @IBOutlet weak var authSchemaInput: UITextField?
     
     @IBOutlet var activityView: UIActivityIndicatorView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -47,8 +47,8 @@ class ClientComposerVC: UITableViewController, UITextFieldDelegate {
                 .replacingOccurrences(of: "„", with: "\"")
             
             let client = Client.init(id: clientId,
-                                     authToken: authTokenInput.text,
-                                     authSchema: authSchemaInput.text,
+                                     authToken: authTokenInput?.text,
+                                     authSchema: authSchemaInput?.text,
                                      name: clientNameInput.text,
                                      appMarker: appMarkerInput.text,
                                      signature: signatureInput.text,
@@ -179,16 +179,16 @@ class ClientComposerVC: UITableViewController, UITextFieldDelegate {
             dataInput.becomeFirstResponder()
             break
         case 4:
-            authTokenInput.becomeFirstResponder()
+            authTokenInput?.becomeFirstResponder()
             break
         case 5:
-            authSchemaInput.becomeFirstResponder()
+            authSchemaInput?.becomeFirstResponder()
             break
         case 6:
-            authSchemaInput.becomeFirstResponder()
+            authSchemaInput?.becomeFirstResponder()
             break
         default:
-            authSchemaInput.resignFirstResponder()
+            authSchemaInput?.resignFirstResponder()
         }
         return true
     }
