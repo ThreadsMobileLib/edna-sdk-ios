@@ -432,6 +432,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull foot
 SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @interface SocketSettings : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// интервал ожидания отправки сообщения
+@property (nonatomic) NSInteger sendIntervalSec;
 /// интервал повторной попытки отправки сообщения
 @property (nonatomic) NSTimeInterval resendIntervalSec;
 /// интервал запросов поддержания активной соединения
@@ -552,6 +554,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull scheduleAlertColor;
 @property (nonatomic, strong) UIFont * _Nonnull scheduleAlertFont;
 @property (nonatomic, strong) UIColor * _Nonnull scheduleIconBackgroundColor;
+@property (nonatomic) BOOL scrollToLatest;
 @property (nonatomic, strong) UIImage * _Nullable scrollToBottomImage;
 @property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeColor;
 @property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeTextColor;
@@ -775,6 +778,14 @@ SWIFT_CLASS("_TtC7Threads11THRControls")
 @interface THRControls : NSObject
 @property (nonatomic, strong) UIButton * _Nullable sendButton;
 @property (nonatomic, strong) UIButton * _Nullable attachButton;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads24THRHistoryLoadingOptions")
+@interface THRHistoryLoadingOptions : NSObject
+@property (nonatomic) BOOL firstLoading;
+@property (nonatomic) BOOL keepContentOffset;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1456,6 +1467,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull foot
 SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @interface SocketSettings : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// интервал ожидания отправки сообщения
+@property (nonatomic) NSInteger sendIntervalSec;
 /// интервал повторной попытки отправки сообщения
 @property (nonatomic) NSTimeInterval resendIntervalSec;
 /// интервал запросов поддержания активной соединения
@@ -1576,6 +1589,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull scheduleAlertColor;
 @property (nonatomic, strong) UIFont * _Nonnull scheduleAlertFont;
 @property (nonatomic, strong) UIColor * _Nonnull scheduleIconBackgroundColor;
+@property (nonatomic) BOOL scrollToLatest;
 @property (nonatomic, strong) UIImage * _Nullable scrollToBottomImage;
 @property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeColor;
 @property (nonatomic, strong) UIColor * _Nonnull scrollToBottomBadgeTextColor;
@@ -1799,6 +1813,14 @@ SWIFT_CLASS("_TtC7Threads11THRControls")
 @interface THRControls : NSObject
 @property (nonatomic, strong) UIButton * _Nullable sendButton;
 @property (nonatomic, strong) UIButton * _Nullable attachButton;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads24THRHistoryLoadingOptions")
+@interface THRHistoryLoadingOptions : NSObject
+@property (nonatomic) BOOL firstLoading;
+@property (nonatomic) BOOL keepContentOffset;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

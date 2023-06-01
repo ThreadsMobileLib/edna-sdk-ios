@@ -86,8 +86,15 @@ import os
   }
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @objcMembers public class THRHistoryLoadingOptions : ObjectiveC.NSObject {
+  @objc public var firstLoading: Swift.Bool
+  @objc public var keepContentOffset: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @objcMembers public class SocketSettings : ObjectiveC.NSObject {
   @objc override dynamic public init()
+  @objc public var sendIntervalSec: Swift.Int
   @objc public var resendIntervalSec: Swift.Double
   @objc public var resendPingIntervalSec: Swift.Double
   @objc public var connectTimeoutSec: Swift.Double
@@ -428,6 +435,7 @@ import os
   @objc public var scheduleAlertColor: UIKit.UIColor
   @objc public var scheduleAlertFont: UIKit.UIFont
   @objc public var scheduleIconBackgroundColor: UIKit.UIColor
+  @objc public var scrollToLatest: Swift.Bool
   @objc public var scrollToBottomImage: UIKit.UIImage?
   @objc public var scrollToBottomBadgeColor: UIKit.UIColor
   @objc public var scrollToBottomBadgeTextColor: UIKit.UIColor
