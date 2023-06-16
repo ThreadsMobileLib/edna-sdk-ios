@@ -60,6 +60,41 @@ import os
     get
   }
 }
+@objc public protocol LoadingChatViewControllerDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func preloadChatStateDidChange()
+  @objc func preloadChatTimeOut()
+  @objc func repeatInitChat()
+}
+@objc public enum PreloadChatTasks : Swift.Int {
+  case socketInitChat
+  case socketSchedule
+  case socketAttachment
+  case restHistory
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class LoadingChatViewController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public init(state: Swift.Int)
+  @objc dynamic public init()
+  @objc @_Concurrency.MainActor(unsafe) weak final public var delegate: LoadingChatViewControllerDelegate?
+  @objc @_Concurrency.MainActor(unsafe) final public var error: Swift.Error? {
+    @objc get
+    @objc set(value)
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var isSocketDidLoadSuccess: Swift.Bool {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public var isRestDidLoadSuccess: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public func loadView()
+  @objc @_Concurrency.MainActor(unsafe) final public func startTimer()
+  @objc(changeStateByTask:error:) @_Concurrency.MainActor(unsafe) final public func change(stateByTask: PreloadChatTasks, error: Swift.Error?)
+  @objc deinit
+}
 @objc public protocol THRJSQMessageAvatarImageDataSource : ObjectiveC.NSObjectProtocol {
   @objc var avatarImage: UIKit.UIImage? { get set }
   @objc var avatarHighlightedImage: UIKit.UIImage? { get set }
@@ -312,6 +347,7 @@ import os
   case systemGray4
   case systemGray5
   case systemGray6
+  case accent
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {

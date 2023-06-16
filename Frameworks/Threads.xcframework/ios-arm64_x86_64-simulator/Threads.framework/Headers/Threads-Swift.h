@@ -225,7 +225,36 @@ SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @property (nonatomic) NSTimeInterval uploadTimeoutSec;
 @end
 
+@class NSNumber;
+@class NSCoder;
+@protocol LoadingChatViewControllerDelegate;
+enum PreloadChatTasks : NSInteger;
 @class NSString;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC7Threads25LoadingChatViewController")
+@interface LoadingChatViewController : UIViewController
+- (nonnull instancetype)initWithState:(NSInteger)state OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+@property (nonatomic, weak) id <LoadingChatViewControllerDelegate> _Nullable delegate;
+@property (nonatomic) NSError * _Nullable error;
+@property (nonatomic, readonly) BOOL isSocketDidLoadSuccess;
+@property (nonatomic, readonly) BOOL isRestDidLoadSuccess;
+- (void)loadView;
+- (void)startTimer;
+- (void)changeStateByTask:(enum PreloadChatTasks)stateByTask error:(NSError * _Nullable)error;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_PROTOCOL("_TtP7Threads33LoadingChatViewControllerDelegate_")
+@protocol LoadingChatViewControllerDelegate <NSObject>
+- (void)preloadChatStateDidChange;
+- (void)preloadChatTimeOut;
+- (void)repeatInitChat;
+@end
+
 
 SWIFT_CLASS("_TtC7Threads12Localization")
 @interface Localization : NSObject
@@ -234,7 +263,6 @@ SWIFT_CLASS("_TtC7Threads12Localization")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
 
 SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 @interface LocalizationConfig : NSObject
@@ -245,7 +273,6 @@ SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSNumber;
 
 SWIFT_CLASS_NAMED("LogLevel")
 @interface LogLevel : NSObject
@@ -281,7 +308,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSCoder;
 @protocol MessagesLoadEarlierHeaderViewDelegate;
 @class UIButton;
 @class UIColor;
@@ -311,6 +337,13 @@ SWIFT_PROTOCOL("_TtP7Threads37MessagesLoadEarlierHeaderViewDelegate_")
 
 
 
+
+typedef SWIFT_ENUM(NSInteger, PreloadChatTasks, open) {
+  PreloadChatTasksSocketInitChat = 0,
+  PreloadChatTasksSocketSchedule = 1,
+  PreloadChatTasksSocketAttachment = 2,
+  PreloadChatTasksRestHistory = 3,
+};
 
 
 SWIFT_CLASS("_TtC7Threads12PushUserInfo")
@@ -950,11 +983,11 @@ typedef SWIFT_ENUM(NSInteger, THRSysColor, open) {
   THRSysColorSystemGray4 = 46,
   THRSysColorSystemGray5 = 47,
   THRSysColorSystemGray6 = 48,
+  THRSysColorAccent = 49,
 };
 
 @protocol ThreadsDelegate;
 @class NSData;
-@class UIViewController;
 
 SWIFT_CLASS("_TtC7Threads7Threads")
 @interface Threads : NSObject
@@ -1260,7 +1293,36 @@ SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @property (nonatomic) NSTimeInterval uploadTimeoutSec;
 @end
 
+@class NSNumber;
+@class NSCoder;
+@protocol LoadingChatViewControllerDelegate;
+enum PreloadChatTasks : NSInteger;
 @class NSString;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC7Threads25LoadingChatViewController")
+@interface LoadingChatViewController : UIViewController
+- (nonnull instancetype)initWithState:(NSInteger)state OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+@property (nonatomic, weak) id <LoadingChatViewControllerDelegate> _Nullable delegate;
+@property (nonatomic) NSError * _Nullable error;
+@property (nonatomic, readonly) BOOL isSocketDidLoadSuccess;
+@property (nonatomic, readonly) BOOL isRestDidLoadSuccess;
+- (void)loadView;
+- (void)startTimer;
+- (void)changeStateByTask:(enum PreloadChatTasks)stateByTask error:(NSError * _Nullable)error;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_PROTOCOL("_TtP7Threads33LoadingChatViewControllerDelegate_")
+@protocol LoadingChatViewControllerDelegate <NSObject>
+- (void)preloadChatStateDidChange;
+- (void)preloadChatTimeOut;
+- (void)repeatInitChat;
+@end
+
 
 SWIFT_CLASS("_TtC7Threads12Localization")
 @interface Localization : NSObject
@@ -1269,7 +1331,6 @@ SWIFT_CLASS("_TtC7Threads12Localization")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
 
 SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 @interface LocalizationConfig : NSObject
@@ -1280,7 +1341,6 @@ SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSNumber;
 
 SWIFT_CLASS_NAMED("LogLevel")
 @interface LogLevel : NSObject
@@ -1316,7 +1376,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSCoder;
 @protocol MessagesLoadEarlierHeaderViewDelegate;
 @class UIButton;
 @class UIColor;
@@ -1346,6 +1405,13 @@ SWIFT_PROTOCOL("_TtP7Threads37MessagesLoadEarlierHeaderViewDelegate_")
 
 
 
+
+typedef SWIFT_ENUM(NSInteger, PreloadChatTasks, open) {
+  PreloadChatTasksSocketInitChat = 0,
+  PreloadChatTasksSocketSchedule = 1,
+  PreloadChatTasksSocketAttachment = 2,
+  PreloadChatTasksRestHistory = 3,
+};
 
 
 SWIFT_CLASS("_TtC7Threads12PushUserInfo")
@@ -1985,11 +2051,11 @@ typedef SWIFT_ENUM(NSInteger, THRSysColor, open) {
   THRSysColorSystemGray4 = 46,
   THRSysColorSystemGray5 = 47,
   THRSysColorSystemGray6 = 48,
+  THRSysColorAccent = 49,
 };
 
 @protocol ThreadsDelegate;
 @class NSData;
-@class UIViewController;
 
 SWIFT_CLASS("_TtC7Threads7Threads")
 @interface Threads : NSObject
