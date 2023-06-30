@@ -479,6 +479,36 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @property (nonatomic) NSTimeInterval writeTimeoutSec;
 @end
 
+@protocol StarRateViewDelegate;
+
+SWIFT_CLASS("_TtC7Threads12StarRateView")
+@interface StarRateView : UIView
+- (nonnull instancetype)init;
+- (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue;
+- (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue value:(NSUInteger)value spacing:(CGFloat)spacing emptyStarImage:(UIImage * _Nullable)emptyStarImage emptyStarColor:(UIColor * _Nonnull)emptyStarColor filledStarImage:(UIImage * _Nullable)filledStarImage fullStarColor:(UIColor * _Nonnull)fullStarColor OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@property (nonatomic, weak) id <StarRateViewDelegate> _Nullable delegate;
+@property (nonatomic) NSUInteger maximumValue;
+@property (nonatomic) NSUInteger minimumValue;
+@property (nonatomic) CGFloat spacing;
+@property (nonatomic, strong) UIImage * _Nullable emptyStarImage;
+@property (nonatomic, strong) UIColor * _Nonnull emptyStarColor;
+@property (nonatomic, strong) UIImage * _Nullable filledStarImage;
+@property (nonatomic, strong) UIColor * _Nonnull fullStarColor;
+@property (nonatomic) NSUInteger value;
+@property (nonatomic, strong) UIColor * _Null_unspecified backgroundColor;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (void)drawRect:(CGRect)rect;
+- (void)setNeedsLayout;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_PROTOCOL("_TtP7Threads20StarRateViewDelegate_")
+@protocol StarRateViewDelegate <NSObject>
+- (void)valueDidChangeWithSender:(StarRateView * _Nonnull)sender;
+@end
+
 @class UIFont;
 @class THRSettingsShadow;
 enum THRQuickReplyPresentationMode : NSUInteger;
@@ -665,6 +695,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable photoPickerEmptyCheckmarkIcon;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerSheetTextColor;
 @property (nonatomic, strong) UIFont * _Nonnull photoPickerSheetTextFont;
+@property (nonatomic) BOOL useSystemFilePicker;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerTitleColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarTintColor;
@@ -1045,7 +1076,6 @@ SWIFT_PROTOCOL("_TtP7Threads15ThreadsDelegate_")
 - (void)threads:(Threads * _Nonnull)threads didReceiveMessage:(THRMessageInfo * _Nonnull)message;
 @end
 
-@class UIView;
 
 SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 @protocol ThreadsPreloadView
@@ -1053,6 +1083,7 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 - (void)stopAnimation;
 - (UIView * _Null_unspecified)getView SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 
@@ -1547,6 +1578,36 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @property (nonatomic) NSTimeInterval writeTimeoutSec;
 @end
 
+@protocol StarRateViewDelegate;
+
+SWIFT_CLASS("_TtC7Threads12StarRateView")
+@interface StarRateView : UIView
+- (nonnull instancetype)init;
+- (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue;
+- (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue value:(NSUInteger)value spacing:(CGFloat)spacing emptyStarImage:(UIImage * _Nullable)emptyStarImage emptyStarColor:(UIColor * _Nonnull)emptyStarColor filledStarImage:(UIImage * _Nullable)filledStarImage fullStarColor:(UIColor * _Nonnull)fullStarColor OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@property (nonatomic, weak) id <StarRateViewDelegate> _Nullable delegate;
+@property (nonatomic) NSUInteger maximumValue;
+@property (nonatomic) NSUInteger minimumValue;
+@property (nonatomic) CGFloat spacing;
+@property (nonatomic, strong) UIImage * _Nullable emptyStarImage;
+@property (nonatomic, strong) UIColor * _Nonnull emptyStarColor;
+@property (nonatomic, strong) UIImage * _Nullable filledStarImage;
+@property (nonatomic, strong) UIColor * _Nonnull fullStarColor;
+@property (nonatomic) NSUInteger value;
+@property (nonatomic, strong) UIColor * _Null_unspecified backgroundColor;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (void)drawRect:(CGRect)rect;
+- (void)setNeedsLayout;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_PROTOCOL("_TtP7Threads20StarRateViewDelegate_")
+@protocol StarRateViewDelegate <NSObject>
+- (void)valueDidChangeWithSender:(StarRateView * _Nonnull)sender;
+@end
+
 @class UIFont;
 @class THRSettingsShadow;
 enum THRQuickReplyPresentationMode : NSUInteger;
@@ -1733,6 +1794,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable photoPickerEmptyCheckmarkIcon;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerSheetTextColor;
 @property (nonatomic, strong) UIFont * _Nonnull photoPickerSheetTextFont;
+@property (nonatomic) BOOL useSystemFilePicker;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerTitleColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarTintColor;
@@ -2113,7 +2175,6 @@ SWIFT_PROTOCOL("_TtP7Threads15ThreadsDelegate_")
 - (void)threads:(Threads * _Nonnull)threads didReceiveMessage:(THRMessageInfo * _Nonnull)message;
 @end
 
-@class UIView;
 
 SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 @protocol ThreadsPreloadView
@@ -2121,6 +2182,7 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 - (void)stopAnimation;
 - (UIView * _Null_unspecified)getView SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 

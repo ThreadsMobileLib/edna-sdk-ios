@@ -4,6 +4,8 @@
 import CommonCrypto
 import CoreData
 import Foundation
+import Photos
+import PhotosUI
 import Swift
 import SystemConfiguration
 @_exported import Threads
@@ -549,6 +551,7 @@ import os
   @objc public var photoPickerEmptyCheckmarkIcon: UIKit.UIImage?
   @objc public var photoPickerSheetTextColor: UIKit.UIColor
   @objc public var photoPickerSheetTextFont: UIKit.UIFont
+  @objc public var useSystemFilePicker: Swift.Bool
   @objc public var fileViewerTitleColor: UIKit.UIColor?
   @objc public var fileViewerNavBarBackgroundColor: UIKit.UIColor?
   @objc public var fileViewerNavBarTintColor: UIKit.UIColor?
@@ -793,6 +796,36 @@ extension Foundation.URLRequest {
   @objc final public let senderName: Swift.String
   @objc final public let chatMessageId: Swift.String?
   @objc public class func checkMinimumPush(from pushUserInfo: [Swift.String : Any]) -> Swift.Bool
+  @objc deinit
+}
+@objc public protocol StarRateViewDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func valueDidChange(sender: StarRateView)
+}
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class StarRateView : UIKit.UIView {
+  @objc dynamic public convenience init()
+  @objc(initWithMinimumValue:maximumValue:) @_Concurrency.MainActor(unsafe) public convenience init(minimumValue: Swift.UInt, maximumValue: Swift.UInt)
+  @objc @_Concurrency.MainActor(unsafe) public init(minimumValue: Swift.UInt, maximumValue: Swift.UInt, value: Swift.UInt, spacing: CoreGraphics.CGFloat, emptyStarImage: UIKit.UIImage?, emptyStarColor: UIKit.UIColor, filledStarImage: UIKit.UIImage?, fullStarColor: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: StarRateViewDelegate?
+  @objc @_Concurrency.MainActor(unsafe) public var maximumValue: Swift.UInt
+  @objc @_Concurrency.MainActor(unsafe) public var minimumValue: Swift.UInt
+  @objc @_Concurrency.MainActor(unsafe) public var spacing: CoreGraphics.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) public var emptyStarImage: UIKit.UIImage?
+  @objc @_Concurrency.MainActor(unsafe) public var emptyStarColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) public var filledStarImage: UIKit.UIImage?
+  @objc @_Concurrency.MainActor(unsafe) public var fullStarColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) public var value: Swift.UInt {
+    @objc get
+    @objc set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var backgroundColor: UIKit.UIColor! {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func setNeedsLayout()
   @objc deinit
 }
 @objc(LogLevel) public class LogLevel : ObjectiveC.NSObject, Swift.OptionSet {
