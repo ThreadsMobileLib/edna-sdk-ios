@@ -486,7 +486,7 @@ SWIFT_CLASS("_TtC7Threads12StarRateView")
 - (nonnull instancetype)init;
 - (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue;
 - (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue value:(NSUInteger)value spacing:(CGFloat)spacing emptyStarImage:(UIImage * _Nullable)emptyStarImage emptyStarColor:(UIColor * _Nonnull)emptyStarColor filledStarImage:(UIImage * _Nullable)filledStarImage fullStarColor:(UIColor * _Nonnull)fullStarColor OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 @property (nonatomic, weak) id <StarRateViewDelegate> _Nullable delegate;
 @property (nonatomic) NSUInteger maximumValue;
 @property (nonatomic) NSUInteger minimumValue;
@@ -1585,7 +1585,7 @@ SWIFT_CLASS("_TtC7Threads12StarRateView")
 - (nonnull instancetype)init;
 - (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue;
 - (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue value:(NSUInteger)value spacing:(CGFloat)spacing emptyStarImage:(UIImage * _Nullable)emptyStarImage emptyStarColor:(UIColor * _Nonnull)emptyStarColor filledStarImage:(UIImage * _Nullable)filledStarImage fullStarColor:(UIColor * _Nonnull)fullStarColor OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 @property (nonatomic, weak) id <StarRateViewDelegate> _Nullable delegate;
 @property (nonatomic) NSUInteger maximumValue;
 @property (nonatomic) NSUInteger minimumValue;

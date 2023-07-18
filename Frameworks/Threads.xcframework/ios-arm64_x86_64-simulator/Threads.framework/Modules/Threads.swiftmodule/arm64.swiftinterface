@@ -12,7 +12,6 @@ import SystemConfiguration
 import UIKit
 import WebKit
 import _Concurrency
-import os.log
 import os
 @objc public enum SearchScope : Swift.UInt {
   case all
