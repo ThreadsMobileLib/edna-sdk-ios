@@ -544,6 +544,14 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) CGSize launchViewInnerBoxSize;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewTextColor;
 @property (nonatomic, strong) UIFont * _Nonnull launchViewTextFont;
+@property (nonatomic, strong) UIImage * _Nullable loadingChatErrorImage;
+@property (nonatomic, strong) UIFont * _Nonnull loadingChatTitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull loadingChatTitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull loadingChatSubtitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull loadingChatSubtitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull loadingChatRepeatButtonTitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull loadingChatRepeatButtonTitleColor;
+@property (nonatomic, strong) UIColor * _Nonnull loadingChatRepeatButtonBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull backgroundColor;
 @property (nonatomic, strong) UIImage * _Nullable placeholderImage;
 @property (nonatomic, strong) UIColor * _Nonnull placeholderTitleColor;
@@ -586,6 +594,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIFont * _Nonnull bubbleTimeFont;
 @property (nonatomic, strong) UIFont * _Nonnull failedMessageFont;
 @property (nonatomic, strong) UIFont * _Nonnull messageHeaderFont;
+@property (nonatomic, strong) UIColor * _Nonnull messageHeaderTextColor;
 @property (nonatomic, strong) UIFont * _Nonnull quoteAuthorFont;
 @property (nonatomic, strong) UIFont * _Nonnull quoteMessageFont;
 @property (nonatomic, strong) UIFont * _Nonnull quoteTimeFont;
@@ -686,6 +695,8 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageTextFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageFileTextFont;
 @property (nonatomic, strong) UIFont * _Nonnull searchMessageDateTextFont;
+/// Включает | Выключает загрузку  ссылок как превью
+@property (nonatomic) BOOL linkPreviewEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerToolbarTintColor;
 @property (nonatomic, strong) UIFont * _Nonnull photoPickerToolbarButtonFont;

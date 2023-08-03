@@ -247,6 +247,13 @@ import os
     @objc get
     @objc set(newValue)
   }
+  weak final public var delegate: ThreadsDelegate? {
+    get
+    set(value)
+  }
+  final public var requestConfig: THRRequestConfigs {
+    get
+  }
   @objc public static func threads() -> Threads
   @objc final public func configureTransportProtocol(with delegate: ThreadsDelegate?, webSocketURL: Foundation.URL, providerUid: Swift.String, restURL: Foundation.URL, dataStoreURL: Foundation.URL)
   @objc final public func registerApplicationForRemoteNotificationsStandartOptions(authorizationStatusDenied: (() -> Swift.Void)?, completionHandler: @escaping ((_ deviceToken: Foundation.Data?) -> Swift.Void))
@@ -403,6 +410,14 @@ import os
   @objc public var launchViewInnerBoxSize: CoreGraphics.CGSize
   @objc public var launchViewTextColor: UIKit.UIColor
   @objc public var launchViewTextFont: UIKit.UIFont
+  @objc public var loadingChatErrorImage: UIKit.UIImage?
+  @objc public var loadingChatTitleFont: UIKit.UIFont
+  @objc public var loadingChatTitleColor: UIKit.UIColor
+  @objc public var loadingChatSubtitleFont: UIKit.UIFont
+  @objc public var loadingChatSubtitleColor: UIKit.UIColor
+  @objc public var loadingChatRepeatButtonTitleFont: UIKit.UIFont
+  @objc public var loadingChatRepeatButtonTitleColor: UIKit.UIColor
+  @objc public var loadingChatRepeatButtonBackgroundColor: UIKit.UIColor
   @objc public var backgroundColor: UIKit.UIColor
   @objc public var placeholderImage: UIKit.UIImage?
   @objc public var placeholderTitleColor: UIKit.UIColor
@@ -445,6 +460,7 @@ import os
   @objc public var bubbleTimeFont: UIKit.UIFont
   @objc public var failedMessageFont: UIKit.UIFont
   @objc public var messageHeaderFont: UIKit.UIFont
+  @objc public var messageHeaderTextColor: UIKit.UIColor
   @objc public var quoteAuthorFont: UIKit.UIFont
   @objc public var quoteMessageFont: UIKit.UIFont
   @objc public var quoteTimeFont: UIKit.UIFont
@@ -543,6 +559,7 @@ import os
   @objc public var searchMessageTextFont: UIKit.UIFont
   @objc public var searchMessageFileTextFont: UIKit.UIFont
   @objc public var searchMessageDateTextFont: UIKit.UIFont
+  @objc public var linkPreviewEnabled: Swift.Bool
   @objc public var photoPickerBackgroundColor: UIKit.UIColor
   @objc public var photoPickerToolbarTintColor: UIKit.UIColor
   @objc public var photoPickerToolbarButtonFont: UIKit.UIFont
