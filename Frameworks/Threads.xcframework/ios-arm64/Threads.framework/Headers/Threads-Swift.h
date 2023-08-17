@@ -211,6 +211,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+@class NSString;
 
 SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @interface HttpSettings : NSObject
@@ -221,13 +222,13 @@ SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @property (nonatomic) NSTimeInterval downloadTimeoutSec;
 /// таймаут операций выгрузки
 @property (nonatomic) NSTimeInterval uploadTimeoutSec;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @end
 
 @class NSNumber;
 @class NSCoder;
 @protocol LoadingChatViewControllerDelegate;
 enum PreloadChatTasks : NSInteger;
-@class NSString;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC7Threads25LoadingChatViewController")
@@ -475,6 +476,7 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @property (nonatomic) NSTimeInterval readTimeoutSec;
 /// таймаут операций записи для нового соединения
 @property (nonatomic) NSTimeInterval writeTimeoutSec;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @end
 
 @protocol StarRateViewDelegate;
@@ -792,6 +794,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull toastViewBackgroundColor;
 @property (nonatomic) CGSize toastViewSize;
 @property (nonatomic) NSUInteger photoPickerMaxImagesCount;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 + (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -928,6 +931,7 @@ SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, strong) SocketSettings * _Nonnull socket;
 @property (nonatomic, strong) HttpSettings * _Nonnull http;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @end
 
 

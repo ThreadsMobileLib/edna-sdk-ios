@@ -136,6 +136,9 @@ import os
   @objc public var connectTimeoutSec: Swift.Double
   @objc public var readTimeoutSec: Swift.Double
   @objc public var writeTimeoutSec: Swift.Double
+  @objc override dynamic public var debugDescription: Swift.String {
+    @objc get
+  }
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class HttpSettings : ObjectiveC.NSObject {
@@ -143,12 +146,18 @@ import os
   @objc public var connectTimeoutSec: Swift.Double
   @objc public var downloadTimeoutSec: Swift.Double
   @objc public var uploadTimeoutSec: Swift.Double
+  @objc override dynamic public var debugDescription: Swift.String {
+    @objc get
+  }
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class THRRequestConfigs : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc public var socket: SocketSettings
   @objc public var http: HttpSettings
+  @objc override dynamic public var debugDescription: Swift.String {
+    @objc get
+  }
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers final public class THRControls : ObjectiveC.NSObject {
@@ -637,6 +646,9 @@ import os
   @objc public var photoPickerMaxImagesCount: Swift.UInt {
     @objc get
     @objc set(newValue)
+  }
+  @objc override dynamic public var debugDescription: Swift.String {
+    @objc get
   }
   @objc public static func defaultAttributes() -> THRAttributes
   @objc deinit
