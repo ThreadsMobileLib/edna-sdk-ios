@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Threads
 import CommonCrypto
 import CoreData
@@ -66,34 +66,16 @@ import os
   @objc func preloadChatTimeOut()
   @objc func repeatInitChat()
 }
-@objc public enum PreloadChatTasks : Swift.Int {
-  case socketInitChat
-  case socketSchedule
-  case socketAttachment
-  case restHistory
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class LoadingChatViewController : UIKit.UIViewController {
-  @objc @_Concurrency.MainActor(unsafe) public init(state: Swift.Int)
   @objc dynamic public init()
   @objc @_Concurrency.MainActor(unsafe) weak final public var delegate: LoadingChatViewControllerDelegate?
   @objc @_Concurrency.MainActor(unsafe) final public var error: Swift.Error? {
     @objc get
-    @objc set(value)
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var isSocketDidLoadSuccess: Swift.Bool {
-    @objc get
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var isRestDidLoadSuccess: Swift.Bool {
-    @objc get
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override final public func loadView()
   @objc @_Concurrency.MainActor(unsafe) final public func startTimer()
-  @objc(changeStateByTask:error:) @_Concurrency.MainActor(unsafe) final public func change(stateByTask: PreloadChatTasks, error: Swift.Error?)
+  @objc @_Concurrency.MainActor(unsafe) final public func stopTimer()
   @objc deinit
 }
 @objc public protocol THRJSQMessageAvatarImageDataSource : ObjectiveC.NSObjectProtocol {
@@ -110,15 +92,15 @@ import os
   @objc(headerView:didPressLoadButton:) func headerView(headerView: MessagesLoadEarlierHeaderView, sender: UIKit.UIButton)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class MessagesLoadEarlierHeaderView : UIKit.UICollectionReusableView {
-  @objc @_Concurrency.MainActor(unsafe) public static var kTHRJSQMessagesLoadEarlierHeaderViewHeight: CoreGraphics.CGFloat
-  @objc @_Concurrency.MainActor(unsafe) public static var headerReuseIdentifier: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public static let kTHRJSQMessagesLoadEarlierHeaderViewHeight: CoreGraphics.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) public static let headerReuseIdentifier: Swift.String
   @objc @_Concurrency.MainActor(unsafe) weak public var delegate: MessagesLoadEarlierHeaderViewDelegate?
   @objc @_Concurrency.MainActor(unsafe) public var loadButton: UIKit.UIButton {
     get
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var backgroundColor: UIKit.UIColor? {
     @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set(value)
+    @_Concurrency.MainActor(unsafe) @objc set
   }
   @objc deinit
 }
@@ -168,7 +150,7 @@ import os
 }
 @objc(THRCert) final public class THRCert : ObjectiveC.NSObject {
   @objc public init(contentsOf url: Foundation.URL?)
-  @objc public convenience init(contentsOfFile fileName: Swift.String)
+  @objc convenience public init(contentsOfFile fileName: Swift.String)
   @objc deinit
 }
 @objc public protocol QuickReplyCellDelegate {
@@ -205,11 +187,11 @@ import os
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class Threads : ObjectiveC.NSObject {
   @objc final public var isClientIdEncrypted: Swift.Bool {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @objc final public var isShowsNetworkActivity: Swift.Bool {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @objc final public var clientId: Swift.String? {
     @objc get
@@ -243,22 +225,22 @@ import os
   }
   @objc final public var restURL: Foundation.URL? {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @objc final public var dataStoreURL: Foundation.URL? {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @objc final public var lastActivitySeconds: Foundation.TimeInterval {
     @objc get
   }
   @objc final public var keepSocketActive: Swift.Bool {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   weak final public var delegate: ThreadsDelegate? {
     get
-    set(value)
+    set
   }
   final public var requestConfig: THRRequestConfigs {
     get
@@ -622,6 +604,7 @@ import os
   @objc public var incomingVoiceMessagePlayPauseColor: UIKit.UIColor
   @objc public var outgoingVoiceMessagePlayPauseColor: UIKit.UIColor
   @objc public var previewVoiceMessagePlayPauseColor: UIKit.UIColor
+  @objc public var previewVoiceMessageBackgroundColor: UIKit.UIColor
   @objc public var incomingVoiceMessageProgressColor: UIKit.UIColor
   @objc public var outgoingVoiceMessageProgressColor: UIKit.UIColor
   @objc public var previewVoiceMessageProgressColor: UIKit.UIColor
@@ -675,7 +658,7 @@ extension Swift.String {
   public func md5() -> Swift.String
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class SearchingForSpecialistFooterView : UIKit.UICollectionReusableView {
-  @objc @_Concurrency.MainActor(unsafe) public static var footerViewHeight: CoreGraphics.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) public static let footerViewHeight: CoreGraphics.CGFloat
   @objc @_Concurrency.MainActor(unsafe) public static var footerReuseIdentifier: Swift.String
   @objc(configureWithDefaultSettingsforCollectionView:) @_Concurrency.MainActor(unsafe) public func configureDefaultSettings(collectionView: UIKit.UICollectionView)
   @objc deinit
@@ -714,14 +697,14 @@ public enum ReachabilityError : Swift.Error {
   case unableToGetFlags(Swift.Int32)
 }
 @available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
-public var ReachabilityChangedNotification: Foundation.NSNotification.Name
+public let ReachabilityChangedNotification: Foundation.NSNotification.Name
 extension Foundation.NSNotification.Name {
-  public static var reachabilityChanged: Foundation.Notification.Name
+  public static let reachabilityChanged: Foundation.Notification.Name
 }
 public class Reachability {
   required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
-  public convenience init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
-  public convenience init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  convenience public init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  convenience public init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
   @objc deinit
   public typealias NetworkReachable = (Reachability) -> Swift.Void
   public typealias NetworkUnreachable = (Reachability) -> Swift.Void
@@ -807,7 +790,7 @@ extension Foundation.URLRequest {
   }
   public var method: Foundation.URLRequest.HTTPMethod? {
     get
-    set(newValue)
+    set
   }
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class SQPhotoPreviewCell : UIKit.UICollectionViewCell {
@@ -830,8 +813,8 @@ extension Foundation.URLRequest {
   @objc func valueDidChange(sender: StarRateView)
 }
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class StarRateView : UIKit.UIView {
-  @objc dynamic public convenience init()
-  @objc(initWithMinimumValue:maximumValue:) @_Concurrency.MainActor(unsafe) public convenience init(minimumValue: Swift.UInt, maximumValue: Swift.UInt)
+  @objc convenience dynamic public init()
+  @objc(initWithMinimumValue:maximumValue:) @_Concurrency.MainActor(unsafe) convenience public init(minimumValue: Swift.UInt, maximumValue: Swift.UInt)
   @objc @_Concurrency.MainActor(unsafe) public init(minimumValue: Swift.UInt, maximumValue: Swift.UInt, value: Swift.UInt, spacing: CoreGraphics.CGFloat, emptyStarImage: UIKit.UIImage?, emptyStarColor: UIKit.UIColor, filledStarImage: UIKit.UIImage?, fullStarColor: UIKit.UIColor)
   @objc @_Concurrency.MainActor(unsafe) weak public var delegate: StarRateViewDelegate?
   @objc @_Concurrency.MainActor(unsafe) public var maximumValue: Swift.UInt
@@ -843,11 +826,11 @@ extension Foundation.URLRequest {
   @objc @_Concurrency.MainActor(unsafe) public var fullStarColor: UIKit.UIColor
   @objc @_Concurrency.MainActor(unsafe) public var value: Swift.UInt {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var backgroundColor: UIKit.UIColor! {
     @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set(newValue)
+    @_Concurrency.MainActor(unsafe) @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
     @_Concurrency.MainActor(unsafe) @objc get
@@ -858,13 +841,13 @@ extension Foundation.URLRequest {
 }
 @objc(LogLevel) public class LogLevel : ObjectiveC.NSObject, Swift.OptionSet {
   @objc required public init(rawValue: Swift.Int)
-  @objc public static var off: LogLevel
-  @objc public static var info: LogLevel
-  @objc public static var network: LogLevel
-  @objc public static var networkSock: LogLevel
-  @objc public static var userInterface: LogLevel
-  @objc public static var error: LogLevel
-  @objc public static var all: LogLevel
+  @objc public static let off: LogLevel
+  @objc public static let info: LogLevel
+  @objc public static let network: LogLevel
+  @objc public static let networkSock: LogLevel
+  @objc public static let userInterface: LogLevel
+  @objc public static let error: LogLevel
+  @objc public static let all: LogLevel
   @objc final public let rawValue: Swift.Int
   @objc override dynamic public var description: Swift.String {
     @objc get
@@ -875,3 +858,30 @@ extension Foundation.URLRequest {
   public typealias RawValue = Swift.Int
   @objc deinit
 }
+extension SearchScope : Swift.Equatable {}
+extension SearchScope : Swift.Hashable {}
+extension SearchScope : Swift.RawRepresentable {}
+extension THRAuthMethod : Swift.Equatable {}
+extension THRAuthMethod : Swift.Hashable {}
+extension THRAuthMethod : Swift.RawRepresentable {}
+extension SearchState : Swift.Equatable {}
+extension SearchState : Swift.Hashable {}
+extension SearchState : Swift.RawRepresentable {}
+extension THRSysColor : Swift.Equatable {}
+extension THRSysColor : Swift.Hashable {}
+extension THRSysColor : Swift.RawRepresentable {}
+extension THRQuickReplyPresentationMode : Swift.Equatable {}
+extension THRQuickReplyPresentationMode : Swift.Hashable {}
+extension THRQuickReplyPresentationMode : Swift.RawRepresentable {}
+extension THRQuickReplyAlignment : Swift.Equatable {}
+extension THRQuickReplyAlignment : Swift.Hashable {}
+extension THRQuickReplyAlignment : Swift.RawRepresentable {}
+@available(*, unavailable, renamed: "Connection")
+extension Reachability.NetworkStatus : Swift.Equatable {}
+@available(*, unavailable, renamed: "Connection")
+extension Reachability.NetworkStatus : Swift.Hashable {}
+extension Reachability.Connection : Swift.Equatable {}
+extension Reachability.Connection : Swift.Hashable {}
+extension Foundation.URLRequest.HTTPMethod : Swift.Equatable {}
+extension Foundation.URLRequest.HTTPMethod : Swift.Hashable {}
+extension Foundation.URLRequest.HTTPMethod : Swift.RawRepresentable {}
