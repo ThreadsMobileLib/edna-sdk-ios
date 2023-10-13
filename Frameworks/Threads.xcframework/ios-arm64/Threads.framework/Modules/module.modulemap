@@ -1,13 +1,16 @@
 framework module Threads {
   umbrella header "Threads-umbrella.h"
 
+  private header "Localizable.h"
+
   export *
   module * { export * }
    
-  explicit module Private [system] {
-      private header "Threads-private.h"
-      export *
-  }
+//  explicit module Private [system] {
+//      private header "Threads-private.h"
+//
+//      export *
+//  }
 }
 
 module Threads.Swift {

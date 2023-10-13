@@ -219,8 +219,51 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+@class NSURL;
+@class UIImage;
+@class NSData;
+@class NSError;
+
+SWIFT_CLASS_NAMED("DownloadDataRequest")
+@interface THRDownloadDataRequest : NSObject
+- (void)downloadAndSaveFileFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(NSURL * _Nullable, NSError * _Nullable))completionHandler progressHandler:(void (^ _Nullable)(CGFloat))progressHandler;
+- (void)downloadImageFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
+- (void)downloadDataFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler progressHandler:(void (^ _Nullable)(CGFloat))progressHandler;
+- (void)cancelDownload;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 @class NSString;
+
+@interface NSFileManager (SWIFT_EXTENSION(Threads))
+/// Метод для сохранения данных в локальный кеш
+/// \param data Данные для сохранения
+///
+/// \param name Имя файла <em>Название файла и ресурса в ДС могут отличаться!!!!</em>
+///
+///
+/// returns:
+/// Путь до сохраненного файла или nil при ошибке
+- (NSURL * _Nullable)saveDataWithData:(NSData * _Nonnull)data toCacheFile:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
+/// Метод для получения ссылкииз кеша  до указанного файла
+/// \param name Имя файла для поиска
+///
+///
+/// returns:
+/// Ссылка или nil если такого файла нет
+- (NSURL * _Nullable)getURLForCachedFile:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
+/// Метод для получения данных из кеша по имени файла
+/// \param name Имя файла для поиска в кеше
+///
+///
+/// returns:
+/// Данные файла или nil
+- (NSData * _Nullable)getDataForCachedFile:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
+/// Метод для удаления временных папок
+- (void)deleteCache;
+@end
+
 
 SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @interface HttpSettings : NSObject
@@ -339,6 +382,26 @@ SWIFT_PROTOCOL("_TtP7Threads37MessagesLoadEarlierHeaderViewDelegate_")
 
 
 
+@interface NSError (SWIFT_EXTENSION(Threads))
+/// Метод для создания ошибки СДК с описанием (с дефолтным кодом -1000)
+/// \param description Описание ошибки
+///
+///
+/// returns:
+/// Ошибка
++ (NSError * _Nonnull)applicationErrorWith:(NSString * _Nonnull)description SWIFT_WARN_UNUSED_RESULT;
+/// Метод для создания ошибки СДК с ее кодом описанием
+/// \param code Код ошибки
+///
+/// \param description Описание ошибки
+///
+///
+/// returns:
+/// Ошибка
++ (NSError * _Nonnull)applicationErrorWith:(NSInteger)code and:(NSString * _Nonnull)description SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 
 
 
@@ -404,7 +467,6 @@ SWIFT_CLASS("_TtC7Threads12SQActionCell")
 - (void)configureWithActionString:(NSString * _Nonnull)actionString;
 @end
 
-@class UIImage;
 
 SWIFT_CLASS("_TtC7Threads11SQAlbumCell")
 @interface SQAlbumCell : UITableViewCell
@@ -806,7 +868,6 @@ typedef SWIFT_ENUM(NSInteger, THRAuthMethod, open) {
   THRAuthMethodCookies = 1,
 };
 
-@class NSURL;
 
 SWIFT_CLASS_NAMED("THRCert")
 @interface THRCert : NSObject
@@ -1031,7 +1092,6 @@ typedef SWIFT_ENUM(NSInteger, THRSysColor, open) {
 };
 
 @protocol ThreadsDelegate;
-@class NSData;
 
 SWIFT_CLASS("_TtC7Threads7Threads")
 @interface Threads : NSObject
@@ -1104,6 +1164,12 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 
 
+
+SWIFT_CLASS_NAMED("UploadDataRequest")
+@interface THRUploadDataRequest : NSObject
+- (void)uploadWithFile:(NSString * _Nonnull)name with:(NSData * _Nonnull)data completionHandler:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSError * _Nullable))completionHandler;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -1331,8 +1397,51 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+@class NSURL;
+@class UIImage;
+@class NSData;
+@class NSError;
+
+SWIFT_CLASS_NAMED("DownloadDataRequest")
+@interface THRDownloadDataRequest : NSObject
+- (void)downloadAndSaveFileFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(NSURL * _Nullable, NSError * _Nullable))completionHandler progressHandler:(void (^ _Nullable)(CGFloat))progressHandler;
+- (void)downloadImageFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
+- (void)downloadDataFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler progressHandler:(void (^ _Nullable)(CGFloat))progressHandler;
+- (void)cancelDownload;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 @class NSString;
+
+@interface NSFileManager (SWIFT_EXTENSION(Threads))
+/// Метод для сохранения данных в локальный кеш
+/// \param data Данные для сохранения
+///
+/// \param name Имя файла <em>Название файла и ресурса в ДС могут отличаться!!!!</em>
+///
+///
+/// returns:
+/// Путь до сохраненного файла или nil при ошибке
+- (NSURL * _Nullable)saveDataWithData:(NSData * _Nonnull)data toCacheFile:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
+/// Метод для получения ссылкииз кеша  до указанного файла
+/// \param name Имя файла для поиска
+///
+///
+/// returns:
+/// Ссылка или nil если такого файла нет
+- (NSURL * _Nullable)getURLForCachedFile:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
+/// Метод для получения данных из кеша по имени файла
+/// \param name Имя файла для поиска в кеше
+///
+///
+/// returns:
+/// Данные файла или nil
+- (NSData * _Nullable)getDataForCachedFile:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
+/// Метод для удаления временных папок
+- (void)deleteCache;
+@end
+
 
 SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @interface HttpSettings : NSObject
@@ -1451,6 +1560,26 @@ SWIFT_PROTOCOL("_TtP7Threads37MessagesLoadEarlierHeaderViewDelegate_")
 
 
 
+@interface NSError (SWIFT_EXTENSION(Threads))
+/// Метод для создания ошибки СДК с описанием (с дефолтным кодом -1000)
+/// \param description Описание ошибки
+///
+///
+/// returns:
+/// Ошибка
++ (NSError * _Nonnull)applicationErrorWith:(NSString * _Nonnull)description SWIFT_WARN_UNUSED_RESULT;
+/// Метод для создания ошибки СДК с ее кодом описанием
+/// \param code Код ошибки
+///
+/// \param description Описание ошибки
+///
+///
+/// returns:
+/// Ошибка
++ (NSError * _Nonnull)applicationErrorWith:(NSInteger)code and:(NSString * _Nonnull)description SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 
 
 
@@ -1516,7 +1645,6 @@ SWIFT_CLASS("_TtC7Threads12SQActionCell")
 - (void)configureWithActionString:(NSString * _Nonnull)actionString;
 @end
 
-@class UIImage;
 
 SWIFT_CLASS("_TtC7Threads11SQAlbumCell")
 @interface SQAlbumCell : UITableViewCell
@@ -1918,7 +2046,6 @@ typedef SWIFT_ENUM(NSInteger, THRAuthMethod, open) {
   THRAuthMethodCookies = 1,
 };
 
-@class NSURL;
 
 SWIFT_CLASS_NAMED("THRCert")
 @interface THRCert : NSObject
@@ -2143,7 +2270,6 @@ typedef SWIFT_ENUM(NSInteger, THRSysColor, open) {
 };
 
 @protocol ThreadsDelegate;
-@class NSData;
 
 SWIFT_CLASS("_TtC7Threads7Threads")
 @interface Threads : NSObject
@@ -2216,6 +2342,12 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 
 
+
+SWIFT_CLASS_NAMED("UploadDataRequest")
+@interface THRUploadDataRequest : NSObject
+- (void)uploadWithFile:(NSString * _Nonnull)name with:(NSData * _Nonnull)data completionHandler:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSError * _Nullable))completionHandler;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

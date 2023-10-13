@@ -4,6 +4,7 @@
 import CommonCrypto
 import CoreData
 import Foundation
+import MobileCoreServices
 import Photos
 import PhotosUI
 import Swift
@@ -13,6 +14,20 @@ import UIKit
 import WebKit
 import _Concurrency
 import os
+@_inheritsConvenienceInitializers @objc(THRDownloadDataRequest) final public class DownloadDataRequest : ObjectiveC.NSObject {
+  @objc deinit
+  @objc(downloadAndSaveFileFromURL:completionHandler:progressHandler:) final public func downloadAndSaveFile(url: Foundation.URL, completionHandler: @escaping (Foundation.URL?, Swift.Error?) -> Swift.Void, progressHandler: ((CoreGraphics.CGFloat) -> Swift.Void)? = nil)
+  @objc(downloadImageFromURL:completionHandler:) final public func downloadImage(url: Foundation.URL, completionHandler: @escaping (UIKit.UIImage?, Swift.Error?) -> Swift.Void)
+  @objc(downloadDataFromURL:completionHandler:progressHandler:) final public func downloadData(url: Foundation.URL, completionHandler: @escaping (Foundation.NSData?, Foundation.NSError?) -> Swift.Void, progressHandler: ((CoreGraphics.CGFloat) -> Swift.Void)? = nil)
+  @objc final public func cancelDownload()
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class Localization : ObjectiveC.NSObject {
+  @objc public class func localize(key: Swift.String, value: Swift.String) -> Swift.String
+  @objc public class func localize(key: Swift.String) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc public enum SearchScope : Swift.UInt {
   case all
   case images
@@ -23,12 +38,6 @@ import os
   public var rawValue: Swift.UInt {
     get
   }
-}
-@objc @objcMembers public class LocalizationConfig : ObjectiveC.NSObject {
-  @objc public init(bundle: Foundation.Bundle, tableName: Swift.String)
-  @objc final public let bundle: Foundation.Bundle
-  @objc final public let tableName: Swift.String
-  @objc deinit
 }
 @objc public enum THRAuthMethod : Swift.Int {
   case headers
@@ -82,6 +91,18 @@ import os
   @objc var avatarImage: UIKit.UIImage? { get set }
   @objc var avatarHighlightedImage: UIKit.UIImage? { get set }
   @objc var avatarPlaceholderImage: UIKit.UIImage { get }
+}
+public struct MultipartFormData {
+  public init(file name: Swift.String, data: Foundation.Data)
+  public let boundary: Swift.String
+  public var httpContentTypeHeadeValue: Swift.String {
+    get
+  }
+  public var httpBody: Foundation.Data {
+    get
+  }
+  public mutating func add(key: Swift.String, value: Swift.String)
+  public mutating func add(key: Swift.String, fileName: Swift.String, fileMimeType: Swift.String, fileData: Foundation.Data)
 }
 @objc @objcMembers public class THRRoutingParams : ObjectiveC.NSObject {
   @objc public init(priority: Swift.Int, skillId: Swift.Int, expiredAt: Swift.String?)
@@ -142,6 +163,11 @@ import os
   }
   @objc deinit
 }
+@_inheritsConvenienceInitializers @objc(THRUploadDataRequest) final public class UploadDataRequest : ObjectiveC.NSObject {
+  @objc final public func upload(file name: Swift.String, with data: Foundation.Data, completionHandler: @escaping (Swift.String?, Swift.String?, Swift.Error?) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @objcMembers final public class THRControls : ObjectiveC.NSObject {
   @objc final public var sendButton: UIKit.UIButton?
   @objc final public var attachButton: UIKit.UIButton?
@@ -170,6 +196,10 @@ import os
   @objc @_Concurrency.MainActor(unsafe) public func getSize(width: CoreGraphics.CGFloat) -> CoreGraphics.CGSize
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
   @objc deinit
+}
+@objc extension Foundation.NSError {
+  @objc dynamic public class func applicationError(with description: Swift.String) -> Foundation.NSError
+  @objc dynamic public class func applicationError(with code: Swift.Int, and description: Swift.String) -> Foundation.NSError
 }
 @objc public protocol ThreadsPreloadView {
   @objc func startAnimation()
@@ -274,12 +304,6 @@ import os
   @objc final public let radius: CoreGraphics.CGFloat
   @objc final public let offset: CoreGraphics.CGSize
   @objc final public let color: UIKit.UIColor
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @objc public class Localization : ObjectiveC.NSObject {
-  @objc public class func localize(key: Swift.String, value: Swift.String) -> Swift.String
-  @objc public class func localize(key: Swift.String) -> Swift.String
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class QuickReply : ObjectiveC.NSObject {
@@ -696,8 +720,6 @@ public enum ReachabilityError : Swift.Error {
   case unableToSetDispatchQueue(Swift.Int32)
   case unableToGetFlags(Swift.Int32)
 }
-@available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
-public let ReachabilityChangedNotification: Foundation.NSNotification.Name
 extension Foundation.NSNotification.Name {
   public static let reachabilityChanged: Foundation.Notification.Name
 }
@@ -796,6 +818,12 @@ extension Foundation.URLRequest {
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class SQPhotoPreviewCell : UIKit.UICollectionViewCell {
   @objc deinit
 }
+@objc @objcMembers public class LocalizationConfig : ObjectiveC.NSObject {
+  @objc public init(bundle: Foundation.Bundle, tableName: Swift.String)
+  @objc final public let bundle: Foundation.Bundle
+  @objc final public let tableName: Swift.String
+  @objc deinit
+}
 @objc @objcMembers public class PushUserInfo : ObjectiveC.NSObject {
   @objc public init?(from pushUserInfo: [Swift.String : Any])
   @objc final public let alert: Swift.String
@@ -857,6 +885,12 @@ extension Foundation.URLRequest {
   public typealias Element = LogLevel
   public typealias RawValue = Swift.Int
   @objc deinit
+}
+@objc extension Foundation.FileManager {
+  @objc dynamic public func saveData(data: Foundation.Data, toCacheFile name: Swift.String) -> Foundation.URL?
+  @objc dynamic public func getURL(forCachedFile name: Swift.String) -> Foundation.URL?
+  @objc dynamic public func getData(forCachedFile name: Swift.String) -> Foundation.Data?
+  @objc dynamic public func deleteCache()
 }
 extension SearchScope : Swift.Equatable {}
 extension SearchScope : Swift.Hashable {}
