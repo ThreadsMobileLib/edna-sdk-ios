@@ -93,6 +93,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)menuQuoteTitle;
 /// Ответить
 + (NSString*)menuResponseTitle;
+/// Сообщение удалено
++ (NSString*)messageDeleted;
 /// Мои альбомы
 + (NSString*)myAlbums;
 /// Сообщение

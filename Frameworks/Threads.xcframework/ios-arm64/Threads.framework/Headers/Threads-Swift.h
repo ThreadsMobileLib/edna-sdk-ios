@@ -217,6 +217,261 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+@class UIColor;
+
+SWIFT_CLASS("_TtC7Threads10ColorAsset")
+@interface ColorAsset : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull accent;)
++ (UIColor * _Nonnull)accent SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull darkTextColor;)
++ (UIColor * _Nonnull)darkTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull labelColor;)
++ (UIColor * _Nonnull)labelColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull lightTextColor;)
++ (UIColor * _Nonnull)lightTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull linkColor;)
++ (UIColor * _Nonnull)linkColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull opaqueSeparatorColor;)
++ (UIColor * _Nonnull)opaqueSeparatorColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull placeholderTextColor;)
++ (UIColor * _Nonnull)placeholderTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull quaternaryLabelColor;)
++ (UIColor * _Nonnull)quaternaryLabelColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull quaternarySystemFillColor;)
++ (UIColor * _Nonnull)quaternarySystemFillColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull secondaryLabelColor;)
++ (UIColor * _Nonnull)secondaryLabelColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull secondarySystemBackgroundColor;)
++ (UIColor * _Nonnull)secondarySystemBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull secondarySystemFillColor;)
++ (UIColor * _Nonnull)secondarySystemFillColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull secondarySystemGroupedBackgroundColor;)
++ (UIColor * _Nonnull)secondarySystemGroupedBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull separatorColor;)
++ (UIColor * _Nonnull)separatorColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemBackgroundColor;)
++ (UIColor * _Nonnull)systemBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemBlueColor;)
++ (UIColor * _Nonnull)systemBlueColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemFillColor;)
++ (UIColor * _Nonnull)systemFillColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemGray2Color;)
++ (UIColor * _Nonnull)systemGray2Color SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemGray3Color;)
++ (UIColor * _Nonnull)systemGray3Color SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemGray4Color;)
++ (UIColor * _Nonnull)systemGray4Color SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemGray5Color;)
++ (UIColor * _Nonnull)systemGray5Color SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemGray6Color;)
++ (UIColor * _Nonnull)systemGray6Color SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemGrayColor;)
++ (UIColor * _Nonnull)systemGrayColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemGreenColor;)
++ (UIColor * _Nonnull)systemGreenColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemGroupedBackgroundColor;)
++ (UIColor * _Nonnull)systemGroupedBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemIndigoColor;)
++ (UIColor * _Nonnull)systemIndigoColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemOrangeColor;)
++ (UIColor * _Nonnull)systemOrangeColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemPinkColor;)
++ (UIColor * _Nonnull)systemPinkColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemPurpleColor;)
++ (UIColor * _Nonnull)systemPurpleColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemRedColor;)
++ (UIColor * _Nonnull)systemRedColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemTealColor;)
++ (UIColor * _Nonnull)systemTealColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull systemYellowColor;)
++ (UIColor * _Nonnull)systemYellowColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull tertiaryLabelColor;)
++ (UIColor * _Nonnull)tertiaryLabelColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull tertiarySystemBackgroundColor;)
++ (UIColor * _Nonnull)tertiarySystemBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull tertiarySystemFillColor;)
++ (UIColor * _Nonnull)tertiarySystemFillColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull tertiarySystemGroupedBackgroundColor;)
++ (UIColor * _Nonnull)tertiarySystemGroupedBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrAttachButtonColor;)
++ (UIColor * _Nonnull)thrAttachButtonColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrAttachButtonHighlightColor;)
++ (UIColor * _Nonnull)thrAttachButtonHighlightColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrDeletedMessageTextColor;)
++ (UIColor * _Nonnull)thrDeletedMessageTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrEmptyImageColor;)
++ (UIColor * _Nonnull)thrEmptyImageColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrFailedBubbleColor;)
++ (UIColor * _Nonnull)thrFailedBubbleColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrFindMoreMessageTextColor;)
++ (UIColor * _Nonnull)thrFindMoreMessageTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrFindedMessageHeaderBackgroundColor;)
++ (UIColor * _Nonnull)thrFindedMessageHeaderBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrFindedMessageHeaderTextColor;)
++ (UIColor * _Nonnull)thrFindedMessageHeaderTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingBubbleColor;)
++ (UIColor * _Nonnull)thrIncomingBubbleColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingBubbleLinkColor;)
++ (UIColor * _Nonnull)thrIncomingBubbleLinkColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingBubbleTextColor;)
++ (UIColor * _Nonnull)thrIncomingBubbleTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingFileIconTintColor;)
++ (UIColor * _Nonnull)thrIncomingFileIconTintColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingMediaTimeColor;)
++ (UIColor * _Nonnull)thrIncomingMediaTimeColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingQuoteAuthorColor;)
++ (UIColor * _Nonnull)thrIncomingQuoteAuthorColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingQuoteFilesizeColor;)
++ (UIColor * _Nonnull)thrIncomingQuoteFilesizeColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingQuoteMessageColor;)
++ (UIColor * _Nonnull)thrIncomingQuoteMessageColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingQuoteSeparatorColor;)
++ (UIColor * _Nonnull)thrIncomingQuoteSeparatorColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingQuoteTimeColor;)
++ (UIColor * _Nonnull)thrIncomingQuoteTimeColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingTimeColor;)
++ (UIColor * _Nonnull)thrIncomingTimeColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrLikeLabelOnStarColor;)
++ (UIColor * _Nonnull)thrLikeLabelOnStarColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrLikeLabelUnderStarColor;)
++ (UIColor * _Nonnull)thrLikeLabelUnderStarColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrLikeRatingColorCompleted;)
++ (UIColor * _Nonnull)thrLikeRatingColorCompleted SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrLikeRatingColorDisabled;)
++ (UIColor * _Nonnull)thrLikeRatingColorDisabled SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrLikeRatingColorEnabled;)
++ (UIColor * _Nonnull)thrLikeRatingColorEnabled SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingBubbleColor;)
++ (UIColor * _Nonnull)thrOutgoingBubbleColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingBubbleLinkColor;)
++ (UIColor * _Nonnull)thrOutgoingBubbleLinkColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingBubbleTextColor;)
++ (UIColor * _Nonnull)thrOutgoingBubbleTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingDeliveredStatusColor;)
++ (UIColor * _Nonnull)thrOutgoingDeliveredStatusColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingFileIconTintColor;)
++ (UIColor * _Nonnull)thrOutgoingFileIconTintColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingMediaDeliveredStatusColor;)
++ (UIColor * _Nonnull)thrOutgoingMediaDeliveredStatusColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingMediaPendingStatusColor;)
++ (UIColor * _Nonnull)thrOutgoingMediaPendingStatusColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingMediaReadStatusColor;)
++ (UIColor * _Nonnull)thrOutgoingMediaReadStatusColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingMediaTimeColor;)
++ (UIColor * _Nonnull)thrOutgoingMediaTimeColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingPendingStatusColor;)
++ (UIColor * _Nonnull)thrOutgoingPendingStatusColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingQuoteAuthorColor;)
++ (UIColor * _Nonnull)thrOutgoingQuoteAuthorColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingQuoteFilesizeColor;)
++ (UIColor * _Nonnull)thrOutgoingQuoteFilesizeColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingQuoteMessageColor;)
++ (UIColor * _Nonnull)thrOutgoingQuoteMessageColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingQuoteSeparatorColor;)
++ (UIColor * _Nonnull)thrOutgoingQuoteSeparatorColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingQuoteTimeColor;)
++ (UIColor * _Nonnull)thrOutgoingQuoteTimeColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingReadStatusColor;)
++ (UIColor * _Nonnull)thrOutgoingReadStatusColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingTimeColor;)
++ (UIColor * _Nonnull)thrOutgoingTimeColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPhotoPickerSheetTextColor;)
++ (UIColor * _Nonnull)thrPhotoPickerSheetTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPhotoPickerToolbarTintColor;)
++ (UIColor * _Nonnull)thrPhotoPickerToolbarTintColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPlaceholderSubtitleColor;)
++ (UIColor * _Nonnull)thrPlaceholderSubtitleColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPlaceholderTitleColor;)
++ (UIColor * _Nonnull)thrPlaceholderTitleColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrQuickReplyBackgroundColor;)
++ (UIColor * _Nonnull)thrQuickReplyBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrQuickReplyBackgroundColorHighlighted;)
++ (UIColor * _Nonnull)thrQuickReplyBackgroundColorHighlighted SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrQuickReplyBorder;)
++ (UIColor * _Nonnull)thrQuickReplyBorder SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrQuickReplyTextColor;)
++ (UIColor * _Nonnull)thrQuickReplyTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrQuickReplyTextColorHighLighted;)
++ (UIColor * _Nonnull)thrQuickReplyTextColorHighLighted SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrRefreshColor;)
++ (UIColor * _Nonnull)thrRefreshColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrScheduleAlertColor;)
++ (UIColor * _Nonnull)thrScheduleAlertColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrScheduleIconBackgroundColor;)
++ (UIColor * _Nonnull)thrScheduleIconBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrScrollToBottomBadgeColor;)
++ (UIColor * _Nonnull)thrScrollToBottomBadgeColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrScrollToBottomBadgeTextColor;)
++ (UIColor * _Nonnull)thrScrollToBottomBadgeTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSearchBarTextColor;)
++ (UIColor * _Nonnull)thrSearchBarTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSearchBarTintColor;)
++ (UIColor * _Nonnull)thrSearchBarTintColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSearchMessageAuthorTextColor;)
++ (UIColor * _Nonnull)thrSearchMessageAuthorTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSearchMessageDateTextColor;)
++ (UIColor * _Nonnull)thrSearchMessageDateTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSearchMessageFileTextColor;)
++ (UIColor * _Nonnull)thrSearchMessageFileTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSearchMessageMatchTextColor;)
++ (UIColor * _Nonnull)thrSearchMessageMatchTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSearchMessageTextColor;)
++ (UIColor * _Nonnull)thrSearchMessageTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSearchScopeBarTintColor;)
++ (UIColor * _Nonnull)thrSearchScopeBarTintColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSendButtonColor;)
++ (UIColor * _Nonnull)thrSendButtonColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSendButtonDisabledColor;)
++ (UIColor * _Nonnull)thrSendButtonDisabledColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSendButtonHighlightColor;)
++ (UIColor * _Nonnull)thrSendButtonHighlightColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSpecialisConnectSubtitleColor;)
++ (UIColor * _Nonnull)thrSpecialisConnectSubtitleColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSpecialisConnectTitleColor;)
++ (UIColor * _Nonnull)thrSpecialisConnectTitleColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrStarRatingColorCompleted;)
++ (UIColor * _Nonnull)thrStarRatingColorCompleted SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrStarRatingColorDisabled;)
++ (UIColor * _Nonnull)thrStarRatingColorDisabled SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrStarRatingColorEnabled;)
++ (UIColor * _Nonnull)thrStarRatingColorEnabled SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyCompletionColor;)
++ (UIColor * _Nonnull)thrSurveyCompletionColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyTextColor;)
++ (UIColor * _Nonnull)thrSurveyTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrTimeAndStatusBackgroundColor;)
++ (UIColor * _Nonnull)thrTimeAndStatusBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrToolbarQuotedMessageAuthorColor;)
++ (UIColor * _Nonnull)thrToolbarQuotedMessageAuthorColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrToolbarQuotedMessageColor;)
++ (UIColor * _Nonnull)thrToolbarQuotedMessageColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrToolbarTintColor;)
++ (UIColor * _Nonnull)thrToolbarTintColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrTypingTextColor;)
++ (UIColor * _Nonnull)thrTypingTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrWaitingSpecialistBgColor;)
++ (UIColor * _Nonnull)thrWaitingSpecialistBgColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrWaitingSpecialistBorderColor;)
++ (UIColor * _Nonnull)thrWaitingSpecialistBorderColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrWaitingSpecialistSpinnerColor;)
++ (UIColor * _Nonnull)thrWaitingSpecialistSpinnerColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrjsqFileViewerColor;)
++ (UIColor * _Nonnull)thrjsqFileViewerColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrjsqMessageBubbleBlueColor;)
++ (UIColor * _Nonnull)thrjsqMessageBubbleBlueColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrjsqMessageBubbleGreenColor;)
++ (UIColor * _Nonnull)thrjsqMessageBubbleGreenColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrjsqMessageBubbleLightGrayColor;)
++ (UIColor * _Nonnull)thrjsqMessageBubbleLightGrayColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrjsqMessageBubbleRedColor;)
++ (UIColor * _Nonnull)thrjsqMessageBubbleRedColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrjsqNavigationBarColor;)
++ (UIColor * _Nonnull)thrjsqNavigationBarColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrjsqTypingIndicatorBubbleColor;)
++ (UIColor * _Nonnull)thrjsqTypingIndicatorBubbleColor SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class NSURL;
 @class UIImage;
 @class NSData;
@@ -229,6 +484,17 @@ SWIFT_CLASS_NAMED("DownloadDataRequest")
 - (void)downloadDataFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler progressHandler:(void (^ _Nullable)(CGFloat))progressHandler;
 - (void)cancelDownload;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSCoder;
+
+SWIFT_CLASS("_TtC7Threads15EDNAPreloadView")
+@interface EDNAPreloadView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)startAnimating;
+- (void)stopAnimating;
 @end
 
 
@@ -275,7 +541,102 @@ SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @end
 
-@class NSCoder;
+
+SWIFT_CLASS("_TtC7Threads10ImageAsset")
+@interface ImageAsset : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull arrowUp;)
++ (UIImage * _Nonnull)arrowUp SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull searchButton;)
++ (UIImage * _Nonnull)searchButton SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull backButton;)
++ (UIImage * _Nonnull)backButton SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull bubbleMin;)
++ (UIImage * _Nonnull)bubbleMin SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull bubbleStroked;)
++ (UIImage * _Nonnull)bubbleStroked SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull chatPlaceholder;)
++ (UIImage * _Nonnull)chatPlaceholder SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull checkmark;)
++ (UIImage * _Nonnull)checkmark SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull closeButton;)
++ (UIImage * _Nonnull)closeButton SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull defaultProfile;)
++ (UIImage * _Nonnull)defaultProfile SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull doubleCheckmark;)
++ (UIImage * _Nonnull)doubleCheckmark SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull emptyCheckmark;)
++ (UIImage * _Nonnull)emptyCheckmark SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull forward;)
++ (UIImage * _Nonnull)forward SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icClip;)
++ (UIImage * _Nonnull)icClip SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icDislikeEmpty;)
++ (UIImage * _Nonnull)icDislikeEmpty SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icDislikeFull;)
++ (UIImage * _Nonnull)icDislikeFull SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icEditied;)
++ (UIImage * _Nonnull)icEditied SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icFile;)
++ (UIImage * _Nonnull)icFile SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icKeyboardHide;)
++ (UIImage * _Nonnull)icKeyboardHide SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icKeyboardShow;)
++ (UIImage * _Nonnull)icKeyboardShow SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icLikeEmpty;)
++ (UIImage * _Nonnull)icLikeEmpty SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icLikeFull;)
++ (UIImage * _Nonnull)icLikeFull SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icStarRatingEmpty;)
++ (UIImage * _Nonnull)icStarRatingEmpty SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull icStarRatingFull;)
++ (UIImage * _Nonnull)icStarRatingFull SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull notFound;)
++ (UIImage * _Nonnull)notFound SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull pendingMark;)
++ (UIImage * _Nonnull)pendingMark SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull prechatError;)
++ (UIImage * _Nonnull)prechatError SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull scheduleAlert;)
++ (UIImage * _Nonnull)scheduleAlert SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull scrollDownButton;)
++ (UIImage * _Nonnull)scrollDownButton SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull sentCheckmark;)
++ (UIImage * _Nonnull)sentCheckmark SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqAlert;)
++ (UIImage * _Nonnull)thrjsqAlert SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqArrowDown;)
++ (UIImage * _Nonnull)thrjsqArrowDown SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqArrowUp;)
++ (UIImage * _Nonnull)thrjsqArrowUp SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqBubbleMin;)
++ (UIImage * _Nonnull)thrjsqBubbleMin SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqBubbleStroked;)
++ (UIImage * _Nonnull)thrjsqBubbleStroked SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqClip;)
++ (UIImage * _Nonnull)thrjsqClip SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqFile;)
++ (UIImage * _Nonnull)thrjsqFile SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqGroup2;)
++ (UIImage * _Nonnull)thrjsqGroup2 SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqGroup4;)
++ (UIImage * _Nonnull)thrjsqGroup4 SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqLoading;)
++ (UIImage * _Nonnull)thrjsqLoading SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqMicrophone;)
++ (UIImage * _Nonnull)thrjsqMicrophone SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqPause;)
++ (UIImage * _Nonnull)thrjsqPause SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqPlay;)
++ (UIImage * _Nonnull)thrjsqPlay SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqPlay1;)
++ (UIImage * _Nonnull)thrjsqPlay1 SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqShield;)
++ (UIImage * _Nonnull)thrjsqShield SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqTyping;)
++ (UIImage * _Nonnull)thrjsqTyping SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @protocol LoadingChatViewControllerDelegate;
 @class NSBundle;
 
@@ -354,7 +715,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _
 
 @protocol MessagesLoadEarlierHeaderViewDelegate;
 @class UIButton;
-@class UIColor;
 
 SWIFT_CLASS("_TtC7Threads29MessagesLoadEarlierHeaderView")
 @interface MessagesLoadEarlierHeaderView : UICollectionReusableView
@@ -601,7 +961,8 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull launchViewBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewInnerBoxBackgroundColor;
 @property (nonatomic) CGFloat launchViewInnerBoxCornerRadius;
-@property (nonatomic) CGSize launchViewInnerBoxSize;
+@property (nonatomic) CGSize launchViewInnerBoxSize SWIFT_DEPRECATED_MSG("Используйте для задания минимального размера launchViewMinSize");
+@property (nonatomic) CGSize launchViewMinSize;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewTextColor;
 @property (nonatomic, strong) UIFont * _Nonnull launchViewTextFont;
 @property (nonatomic, strong) UIImage * _Nullable loadingChatErrorImage;
@@ -655,6 +1016,8 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIFont * _Nonnull failedMessageFont;
 @property (nonatomic, strong) UIFont * _Nonnull messageHeaderFont;
 @property (nonatomic, strong) UIColor * _Nonnull messageHeaderTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull messageDeletedTextColor;
+@property (nonatomic, strong) UIImage * _Nullable messageEditedStatusImage;
 @property (nonatomic, strong) UIFont * _Nonnull quoteAuthorFont;
 @property (nonatomic, strong) UIFont * _Nonnull quoteMessageFont;
 @property (nonatomic, strong) UIFont * _Nonnull quoteTimeFont;
@@ -738,6 +1101,9 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIFont * _Nonnull searchBarTextFont;
 @property (nonatomic, strong) UIColor * _Nonnull searchBarIconTintColor;
 @property (nonatomic) BOOL searchEnabled;
+@property (nonatomic, strong) UIImage * _Nullable searchImageNotFound;
+@property (nonatomic, strong) UIColor * _Nonnull searchTextColorNotFound;
+@property (nonatomic, strong) UIFont * _Nonnull searchTextFontColorNotFound;
 @property (nonatomic) BOOL searchIconDisabled;
 @property (nonatomic, strong) UIImage * _Nullable clearSearchIcon;
 @property (nonatomic, strong) UIColor * _Nonnull findedMessageHeaderTextColor;
@@ -898,16 +1264,6 @@ SWIFT_CLASS("_TtC7Threads13THRClientInfo")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-enum THRSysColor : NSInteger;
-
-SWIFT_CLASS("_TtC7Threads8THRColor")
-@interface THRColor : NSObject
-+ (UIColor * _Nonnull)colorBy:(NSString * _Nonnull)name colorType:(enum THRSysColor)colorType SWIFT_WARN_UNUSED_RESULT;
-+ (UIColor * _Nonnull)colorBy:(NSString * _Nonnull)name defColor:(UIColor * _Nonnull)defColor SWIFT_WARN_UNUSED_RESULT;
-+ (UIColor * _Nonnull)colorBy:(enum THRSysColor)sysColor SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 
 SWIFT_CLASS("_TtC7Threads11THRControls")
 @interface THRControls : NSObject
@@ -1035,59 +1391,6 @@ SWIFT_CLASS("_TtC7Threads17THRSettingsShadow")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-typedef SWIFT_ENUM(NSInteger, THRSysColor, open) {
-  THRSysColorDarkGreen = 0,
-  THRSysColorLightGreen = 1,
-  THRSysColorGray = 2,
-  THRSysColorLightGray = 3,
-  THRSysColorMiddleGray = 4,
-  THRSysColorDarkGray = 5,
-  THRSysColorDarkerGray = 6,
-  THRSysColorBlackTransparent50 = 7,
-  THRSysColorLightCyan = 8,
-  THRSysColorBlue = 9,
-  THRSysColorRed = 10,
-  THRSysColorOrange = 11,
-  THRSysColorDarkOrange = 12,
-  THRSysColorGold = 13,
-  THRSysColorLabel = 14,
-  THRSysColorSecondaryLabel = 15,
-  THRSysColorTertiaryLabel = 16,
-  THRSysColorQuaternaryLabel = 17,
-  THRSysColorSystemFill = 18,
-  THRSysColorSecondarySystemFill = 19,
-  THRSysColorTertiarySystemFill = 20,
-  THRSysColorQuaternarySystemFill = 21,
-  THRSysColorPlaceholderText = 22,
-  THRSysColorSystemBackground = 23,
-  THRSysColorSecondarySystemBackground = 24,
-  THRSysColorTertiarySystemBackground = 25,
-  THRSysColorSystemGroupedBackground = 26,
-  THRSysColorSecondarySystemGroupedBackground = 27,
-  THRSysColorTertiarySystemGroupedBackground = 28,
-  THRSysColorSeparator = 29,
-  THRSysColorOpaqueSeparator = 30,
-  THRSysColorLink = 31,
-  THRSysColorDarkText = 32,
-  THRSysColorLightText = 33,
-  THRSysColorSystemBlue = 34,
-  THRSysColorSystemGreen = 35,
-  THRSysColorSystemIndigo = 36,
-  THRSysColorSystemOrange = 37,
-  THRSysColorSystemPink = 38,
-  THRSysColorSystemPurple = 39,
-  THRSysColorSystemRed = 40,
-  THRSysColorSystemTeal = 41,
-  THRSysColorSystemYellow = 42,
-  THRSysColorSystemGray = 43,
-  THRSysColorSystemGray2 = 44,
-  THRSysColorSystemGray3 = 45,
-  THRSysColorSystemGray4 = 46,
-  THRSysColorSystemGray5 = 47,
-  THRSysColorSystemGray6 = 48,
-  THRSysColorAccent = 49,
-};
 
 @protocol ThreadsDelegate;
 

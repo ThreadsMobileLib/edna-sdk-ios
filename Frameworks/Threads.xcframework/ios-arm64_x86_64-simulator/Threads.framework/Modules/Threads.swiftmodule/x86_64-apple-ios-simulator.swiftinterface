@@ -10,6 +10,7 @@ import PhotosUI
 import Swift
 import SystemConfiguration
 @_exported import Threads
+import UIKit.UIImage
 import UIKit
 import WebKit
 import _Concurrency
@@ -91,6 +92,145 @@ import os
   @objc var avatarImage: UIKit.UIImage? { get set }
   @objc var avatarHighlightedImage: UIKit.UIImage? { get set }
   @objc var avatarPlaceholderImage: UIKit.UIImage { get }
+}
+@_inheritsConvenienceInitializers @objc public class ImageAsset : ObjectiveC.NSObject {
+  @objc public static var arrowUp: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var searchButton: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var backButton: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var bubbleMin: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var bubbleStroked: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var chatPlaceholder: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var checkmark: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var closeButton: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var defaultProfile: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var doubleCheckmark: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var emptyCheckmark: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var forward: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icClip: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icDislikeEmpty: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icDislikeFull: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icEditied: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icFile: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icKeyboardHide: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icKeyboardShow: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icLikeEmpty: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icLikeFull: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icStarRatingEmpty: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var icStarRatingFull: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var notFound: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var pendingMark: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var prechatError: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var scheduleAlert: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var scrollDownButton: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var sentCheckmark: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqAlert: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqArrowDown: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqArrowUp: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqBubbleMin: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqBubbleStroked: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqClip: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqFile: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqGroup2: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqGroup4: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqLoading: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqMicrophone: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqPause: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqPlay: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqPlay1: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqShield: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var thrjsqTyping: UIKit.UIImage {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
 }
 public struct MultipartFormData {
   public init(file name: Swift.String, data: Foundation.Data)
@@ -298,6 +438,13 @@ public struct MultipartFormData {
   @objc final public func chatViewController(with attributes: THRAttributes, pushUserInfo: [Swift.AnyHashable : Any], completionHandler: ((_ error: Swift.Error?) -> Swift.Void)?) -> UIKit.UIViewController
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class EDNAPreloadView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc @_Concurrency.MainActor(unsafe) public func startAnimating()
+  @objc @_Concurrency.MainActor(unsafe) public func stopAnimating()
+  @objc deinit
+}
 @objc @objcMembers public class THRSettingsShadow : ObjectiveC.NSObject {
   @objc required public init(opacity: CoreGraphics.CGFloat = 1.0, radius: CoreGraphics.CGFloat = 2.0, offset: CoreGraphics.CGSize = CGSize(width: 2.0, height: 2.0), color: UIKit.UIColor = .black)
   @objc final public let opacity: CoreGraphics.CGFloat
@@ -306,76 +453,388 @@ public struct MultipartFormData {
   @objc final public let color: UIKit.UIColor
   @objc deinit
 }
+@_inheritsConvenienceInitializers @objc public class ColorAsset : ObjectiveC.NSObject {
+  @objc public static var accent: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var darkTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var labelColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var lightTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var linkColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var opaqueSeparatorColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var placeholderTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var quaternaryLabelColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var quaternarySystemFillColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var secondaryLabelColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var secondarySystemBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var secondarySystemFillColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var secondarySystemGroupedBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var separatorColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemBlueColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemFillColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemGray2Color: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemGray3Color: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemGray4Color: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemGray5Color: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemGray6Color: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemGrayColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemGreenColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemGroupedBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemIndigoColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemOrangeColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemPinkColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemPurpleColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemRedColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemTealColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var systemYellowColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var tertiaryLabelColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var tertiarySystemBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var tertiarySystemFillColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var tertiarySystemGroupedBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrAttachButtonColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrAttachButtonHighlightColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrDeletedMessageTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrEmptyImageColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrFailedBubbleColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrFindMoreMessageTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrFindedMessageHeaderBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrFindedMessageHeaderTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingBubbleColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingBubbleLinkColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingBubbleTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingFileIconTintColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingMediaTimeColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingQuoteAuthorColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingQuoteFilesizeColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingQuoteMessageColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingQuoteSeparatorColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingQuoteTimeColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrIncomingTimeColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrLikeLabelOnStarColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrLikeLabelUnderStarColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrLikeRatingColorCompleted: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrLikeRatingColorDisabled: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrLikeRatingColorEnabled: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingBubbleColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingBubbleLinkColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingBubbleTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingDeliveredStatusColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingFileIconTintColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingMediaDeliveredStatusColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingMediaPendingStatusColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingMediaReadStatusColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingMediaTimeColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingPendingStatusColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingQuoteAuthorColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingQuoteFilesizeColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingQuoteMessageColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingQuoteSeparatorColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingQuoteTimeColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingReadStatusColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrOutgoingTimeColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrPhotoPickerSheetTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrPhotoPickerToolbarTintColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrPlaceholderSubtitleColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrPlaceholderTitleColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrQuickReplyBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrQuickReplyBackgroundColorHighlighted: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrQuickReplyBorder: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrQuickReplyTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrQuickReplyTextColorHighLighted: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrRefreshColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrScheduleAlertColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrScheduleIconBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrScrollToBottomBadgeColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrScrollToBottomBadgeTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSearchBarTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSearchBarTintColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSearchMessageAuthorTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSearchMessageDateTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSearchMessageFileTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSearchMessageMatchTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSearchMessageTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSearchScopeBarTintColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSendButtonColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSendButtonDisabledColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSendButtonHighlightColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSpecialisConnectSubtitleColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSpecialisConnectTitleColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrStarRatingColorCompleted: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrStarRatingColorDisabled: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrStarRatingColorEnabled: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSurveyCompletionColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSurveyTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrTimeAndStatusBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrToolbarQuotedMessageAuthorColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrToolbarQuotedMessageColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrToolbarTintColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrTypingTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrWaitingSpecialistBgColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrWaitingSpecialistBorderColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrWaitingSpecialistSpinnerColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrjsqFileViewerColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrjsqMessageBubbleBlueColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrjsqMessageBubbleGreenColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrjsqMessageBubbleLightGrayColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrjsqMessageBubbleRedColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrjsqNavigationBarColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrjsqTypingIndicatorBubbleColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc @_hasMissingDesignatedInitializers @objcMembers public class QuickReply : ObjectiveC.NSObject {
   @objc final public let text: Swift.String
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
   @objc deinit
-}
-@_inheritsConvenienceInitializers @objc public class THRColor : ObjectiveC.NSObject {
-  @objc public static func color(by name: Swift.String, colorType: THRSysColor) -> UIKit.UIColor
-  @objc public static func color(by name: Swift.String, defColor: UIKit.UIColor) -> UIKit.UIColor
-  @objc public static func color(by sysColor: THRSysColor) -> UIKit.UIColor
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc public enum THRSysColor : Swift.Int {
-  case darkGreen
-  case lightGreen
-  case gray
-  case lightGray
-  case middleGray
-  case darkGray
-  case darkerGray
-  case blackTransparent50
-  case lightCyan
-  case blue
-  case red
-  case orange
-  case darkOrange
-  case gold
-  case label
-  case secondaryLabel
-  case tertiaryLabel
-  case quaternaryLabel
-  case systemFill
-  case secondarySystemFill
-  case tertiarySystemFill
-  case quaternarySystemFill
-  case placeholderText
-  case systemBackground
-  case secondarySystemBackground
-  case tertiarySystemBackground
-  case systemGroupedBackground
-  case secondarySystemGroupedBackground
-  case tertiarySystemGroupedBackground
-  case separator
-  case opaqueSeparator
-  case link
-  case darkText
-  case lightText
-  case systemBlue
-  case systemGreen
-  case systemIndigo
-  case systemOrange
-  case systemPink
-  case systemPurple
-  case systemRed
-  case systemTeal
-  case systemYellow
-  case systemGray
-  case systemGray2
-  case systemGray3
-  case systemGray4
-  case systemGray5
-  case systemGray6
-  case accent
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
 }
 @objc public enum THRQuickReplyPresentationMode : Swift.UInt {
   case toolbar
@@ -422,7 +881,9 @@ public struct MultipartFormData {
   @objc public var launchViewBackgroundColor: UIKit.UIColor
   @objc public var launchViewInnerBoxBackgroundColor: UIKit.UIColor
   @objc public var launchViewInnerBoxCornerRadius: CoreGraphics.CGFloat
-  @objc public var launchViewInnerBoxSize: CoreGraphics.CGSize
+  @objc @available(*, deprecated, message: "Используйте для задания минимального размера launchViewMinSize")
+  public var launchViewInnerBoxSize: CoreGraphics.CGSize
+  @objc public var launchViewMinSize: CoreGraphics.CGSize
   @objc public var launchViewTextColor: UIKit.UIColor
   @objc public var launchViewTextFont: UIKit.UIFont
   @objc public var loadingChatErrorImage: UIKit.UIImage?
@@ -476,6 +937,8 @@ public struct MultipartFormData {
   @objc public var failedMessageFont: UIKit.UIFont
   @objc public var messageHeaderFont: UIKit.UIFont
   @objc public var messageHeaderTextColor: UIKit.UIColor
+  @objc public var messageDeletedTextColor: UIKit.UIColor
+  @objc public var messageEditedStatusImage: UIKit.UIImage?
   @objc public var quoteAuthorFont: UIKit.UIFont
   @objc public var quoteMessageFont: UIKit.UIFont
   @objc public var quoteTimeFont: UIKit.UIFont
@@ -557,6 +1020,9 @@ public struct MultipartFormData {
   @objc public var searchBarTextFont: UIKit.UIFont
   @objc public var searchBarIconTintColor: UIKit.UIColor
   @objc public var searchEnabled: Swift.Bool
+  @objc public var searchImageNotFound: UIKit.UIImage?
+  @objc public var searchTextColorNotFound: UIKit.UIColor
+  @objc public var searchTextFontColorNotFound: UIKit.UIFont
   @objc public var searchIconDisabled: Swift.Bool
   @objc public var clearSearchIcon: UIKit.UIImage?
   @objc public var findedMessageHeaderTextColor: UIKit.UIColor
@@ -901,9 +1367,6 @@ extension THRAuthMethod : Swift.RawRepresentable {}
 extension SearchState : Swift.Equatable {}
 extension SearchState : Swift.Hashable {}
 extension SearchState : Swift.RawRepresentable {}
-extension THRSysColor : Swift.Equatable {}
-extension THRSysColor : Swift.Hashable {}
-extension THRSysColor : Swift.RawRepresentable {}
 extension THRQuickReplyPresentationMode : Swift.Equatable {}
 extension THRQuickReplyPresentationMode : Swift.Hashable {}
 extension THRQuickReplyPresentationMode : Swift.RawRepresentable {}
