@@ -492,7 +492,7 @@ SWIFT_CLASS_NAMED("DownloadDataRequest")
 
 SWIFT_CLASS("_TtC7Threads15EDNAPreloadView")
 @interface EDNAPreloadView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)_ OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 - (void)startAnimating;
@@ -546,8 +546,6 @@ SWIFT_CLASS("_TtC7Threads12HttpSettings")
 
 SWIFT_CLASS("_TtC7Threads10ImageAsset")
 @interface ImageAsset : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull arrowUp;)
-+ (UIImage * _Nonnull)arrowUp SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull searchButton;)
 + (UIImage * _Nonnull)searchButton SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull backButton;)
@@ -657,8 +655,8 @@ SWIFT_CLASS("_TtC7Threads25LoadingChatViewController")
 
 SWIFT_PROTOCOL("_TtP7Threads33LoadingChatViewControllerDelegate_")
 @protocol LoadingChatViewControllerDelegate <NSObject>
-- (void)preloadChatStateDidChange;
-- (void)preloadChatTimeOut;
+/// Метод для проверки наличия ошибки при загрузке и ее отображения
+- (void)checkLoadingError;
 - (void)repeatInitChat;
 @end
 
@@ -927,6 +925,12 @@ SWIFT_PROTOCOL("_TtP7Threads20StarRateViewDelegate_")
 @protocol StarRateViewDelegate <NSObject>
 - (void)valueDidChangeWithSender:(StarRateView * _Nonnull)sender;
 @end
+
+typedef SWIFT_ENUM(NSUInteger, THRAPIVersion, open) {
+  THRAPIVersionApi15 = 15,
+  THRAPIVersionApi17 = 17,
+  THRAPIVersionApi18 = 18,
+};
 
 @class UIFont;
 @class THRSettingsShadow;
@@ -1400,6 +1404,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 @interface Threads : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@property (nonatomic) enum THRAPIVersion apiVersion;
 @property (nonatomic) BOOL isClientIdEncrypted;
 @property (nonatomic) BOOL isShowsNetworkActivity;
 @property (nonatomic, readonly, copy) NSString * _Nullable clientId;
@@ -1973,7 +1978,7 @@ SWIFT_CLASS_NAMED("DownloadDataRequest")
 
 SWIFT_CLASS("_TtC7Threads15EDNAPreloadView")
 @interface EDNAPreloadView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)_ OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 - (void)startAnimating;
@@ -2027,8 +2032,6 @@ SWIFT_CLASS("_TtC7Threads12HttpSettings")
 
 SWIFT_CLASS("_TtC7Threads10ImageAsset")
 @interface ImageAsset : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull arrowUp;)
-+ (UIImage * _Nonnull)arrowUp SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull searchButton;)
 + (UIImage * _Nonnull)searchButton SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull backButton;)
@@ -2138,8 +2141,8 @@ SWIFT_CLASS("_TtC7Threads25LoadingChatViewController")
 
 SWIFT_PROTOCOL("_TtP7Threads33LoadingChatViewControllerDelegate_")
 @protocol LoadingChatViewControllerDelegate <NSObject>
-- (void)preloadChatStateDidChange;
-- (void)preloadChatTimeOut;
+/// Метод для проверки наличия ошибки при загрузке и ее отображения
+- (void)checkLoadingError;
 - (void)repeatInitChat;
 @end
 
@@ -2408,6 +2411,12 @@ SWIFT_PROTOCOL("_TtP7Threads20StarRateViewDelegate_")
 @protocol StarRateViewDelegate <NSObject>
 - (void)valueDidChangeWithSender:(StarRateView * _Nonnull)sender;
 @end
+
+typedef SWIFT_ENUM(NSUInteger, THRAPIVersion, open) {
+  THRAPIVersionApi15 = 15,
+  THRAPIVersionApi17 = 17,
+  THRAPIVersionApi18 = 18,
+};
 
 @class UIFont;
 @class THRSettingsShadow;
@@ -2881,6 +2890,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 @interface Threads : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@property (nonatomic) enum THRAPIVersion apiVersion;
 @property (nonatomic) BOOL isClientIdEncrypted;
 @property (nonatomic) BOOL isShowsNetworkActivity;
 @property (nonatomic, readonly, copy) NSString * _Nullable clientId;

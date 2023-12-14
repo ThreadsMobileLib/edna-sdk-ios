@@ -72,8 +72,7 @@ import os
   }
 }
 @objc public protocol LoadingChatViewControllerDelegate : ObjectiveC.NSObjectProtocol {
-  @objc func preloadChatStateDidChange()
-  @objc func preloadChatTimeOut()
+  @objc func checkLoadingError()
   @objc func repeatInitChat()
 }
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class LoadingChatViewController : UIKit.UIViewController {
@@ -94,9 +93,6 @@ import os
   @objc var avatarPlaceholderImage: UIKit.UIImage { get }
 }
 @_inheritsConvenienceInitializers @objc public class ImageAsset : ObjectiveC.NSObject {
-  @objc public static var arrowUp: UIKit.UIImage {
-    @objc get
-  }
   @objc public static var searchButton: UIKit.UIImage {
     @objc get
   }
@@ -355,6 +351,10 @@ public struct MultipartFormData {
   @objc optional func threads(_ threads: Threads, didReceiveMessage message: THRMessageInfo)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class Threads : ObjectiveC.NSObject {
+  @objc final public var apiVersion: THRAPIVersion {
+    @objc get
+    @objc set
+  }
   @objc final public var isClientIdEncrypted: Swift.Bool {
     @objc get
     @objc set
@@ -439,7 +439,7 @@ public struct MultipartFormData {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class EDNAPreloadView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame _: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @objc @_Concurrency.MainActor(unsafe) public func startAnimating()
   @objc @_Concurrency.MainActor(unsafe) public func stopAnimating()
@@ -849,6 +849,16 @@ public struct MultipartFormData {
   case center
   case left
   case right
+  public init?(rawValue: Swift.UInt)
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+@objc public enum THRAPIVersion : Swift.UInt {
+  case api15 = 15
+  case api17 = 17
+  case api18 = 18
   public init?(rawValue: Swift.UInt)
   public typealias RawValue = Swift.UInt
   public var rawValue: Swift.UInt {
@@ -1373,6 +1383,9 @@ extension THRQuickReplyPresentationMode : Swift.RawRepresentable {}
 extension THRQuickReplyAlignment : Swift.Equatable {}
 extension THRQuickReplyAlignment : Swift.Hashable {}
 extension THRQuickReplyAlignment : Swift.RawRepresentable {}
+extension THRAPIVersion : Swift.Equatable {}
+extension THRAPIVersion : Swift.Hashable {}
+extension THRAPIVersion : Swift.RawRepresentable {}
 @available(*, unavailable, renamed: "Connection")
 extension Reachability.NetworkStatus : Swift.Equatable {}
 @available(*, unavailable, renamed: "Connection")

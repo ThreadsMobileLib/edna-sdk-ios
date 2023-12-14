@@ -34,9 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// Я
 + (NSString*)clientName;
 /// Не удалось загрузить настройки чата
-+ (NSString*)connectionToServerAttachmentError;
-/// Не удалось загрузить настройки расписания
-+ (NSString*)connectionToServerScheduleError;
++ (NSString*)connectionToServerConfigError;
 /// Истекло время ожидания подключения к серверу
 + (NSString*)connectionToServerTimeoutError;
 /// Не удалось распарсить client data
