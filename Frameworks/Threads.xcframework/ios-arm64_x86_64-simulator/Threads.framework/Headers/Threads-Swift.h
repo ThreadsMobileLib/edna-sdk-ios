@@ -1421,6 +1421,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 @property (nonatomic, copy) NSURL * _Nullable dataStoreURL;
 @property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
 @property (nonatomic) BOOL keepSocketActive;
+@property (nonatomic) BOOL disableUserInput;
 + (Threads * _Nonnull)threads SWIFT_WARN_UNUSED_RESULT;
 - (void)configureTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
@@ -1471,6 +1472,10 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 
 
+
+@interface UIView (SWIFT_EXTENSION(Threads))
+- (void)addContainedView:(UIView * _Nonnull)inSubView;
+@end
 
 
 SWIFT_CLASS_NAMED("UploadDataRequest")
@@ -2907,6 +2912,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 @property (nonatomic, copy) NSURL * _Nullable dataStoreURL;
 @property (nonatomic, readonly) NSTimeInterval lastActivitySeconds;
 @property (nonatomic) BOOL keepSocketActive;
+@property (nonatomic) BOOL disableUserInput;
 + (Threads * _Nonnull)threads SWIFT_WARN_UNUSED_RESULT;
 - (void)configureTransportProtocolWith:(id <ThreadsDelegate> _Nullable)delegate webSocketURL:(NSURL * _Nonnull)webSocketURL providerUid:(NSString * _Nonnull)providerUid restURL:(NSURL * _Nonnull)restURL dataStoreURL:(NSURL * _Nonnull)dataStoreURL;
 - (void)registerApplicationForRemoteNotificationsStandartOptionsWithAuthorizationStatusDenied:(void (^ _Nullable)(void))authorizationStatusDenied completionHandler:(void (^ _Nonnull)(NSData * _Nullable))completionHandler;
@@ -2957,6 +2963,10 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 
 
+
+@interface UIView (SWIFT_EXTENSION(Threads))
+- (void)addContainedView:(UIView * _Nonnull)inSubView;
+@end
 
 
 SWIFT_CLASS_NAMED("UploadDataRequest")

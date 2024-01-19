@@ -408,6 +408,10 @@ public struct MultipartFormData {
     @objc get
     @objc set
   }
+  @objc final public var disableUserInput: Swift.Bool {
+    @objc get
+    @objc set
+  }
   weak final public var delegate: ThreadsDelegate? {
     get
     set
@@ -1184,6 +1188,7 @@ extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func anchorCenterYToSuperview(constant: CoreGraphics.CGFloat = 0)
   @_Concurrency.MainActor(unsafe) public func anchorCenterSuperview()
   @_Concurrency.MainActor(unsafe) public func thrjsqImage() -> UIKit.UIImage?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addContainedView(_ inSubView: UIKit.UIView)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class SQActionCell : UIKit.UICollectionViewCell {
   @objc @_Concurrency.MainActor(unsafe) public func configure(actionString: Swift.String)

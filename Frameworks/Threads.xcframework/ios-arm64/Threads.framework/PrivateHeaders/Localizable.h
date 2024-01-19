@@ -205,6 +205,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)textCopiedToClipboard;
 /// %@: %@
 + (NSString*)textMessageAccessibilityLabelWithValues:(id)p1 :(id)p2;
+/// Данный чат доступен только для просмотра
++ (NSString*)thisChatIsViewableOnly;
 /// Загрузка файла не выполнена.
 /// Не удалось проверить файл
 + (NSString*)threadsDisallowedErrorDuringLoadFile;
