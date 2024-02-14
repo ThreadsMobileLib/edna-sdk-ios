@@ -105,11 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)noErrors;
 /// Не доставлено
 + (NSString*)notDelivered;
-/// Localizable.strings
-///  Threads
-///  
-///  Created by Nikolay Kagala on 30/05/16.
-///  Copyright © 2016 edna. All rights reserved.
+/// OK
 + (NSString*)ok;
 /// новое сообщение
 + (NSString*)oneUnreadMessage;
