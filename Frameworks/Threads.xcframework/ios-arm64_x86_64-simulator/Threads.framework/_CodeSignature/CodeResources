@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		ZRW+4BnnkXBl4NnYIL0Zx/n78Hc=
+		xVpHddVteek3kJVe8iGExGwTZ8M=
 		</data>
 		<key>Headers/Threads-Swift.h</key>
 		<data>
-		ezRBaaz60Dvaf3Ep0b2huqn08xI=
+		S6VROYQqCSKPEUslxJH84RuD91I=
 		</data>
 		<key>Headers/Threads-umbrella.h</key>
 		<data>
@@ -22,31 +22,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1fUe5+BMLBdLCzmWBLr4lICnB74=
+		2QXgqQUSqXJNJZ0kiP2NvLqC0Fk=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		wEXcrySGzEk/t1qSw+1TpRmTMv8=
+		K6y53fyrRLraq1/V+gwL1SMEGQ4=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		K0wuy2b/1jgWYezKmLhoVV2VgNM=
+		C6037xZ786M1a05h0niIkpKigpc=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		6RmC4BYDhaQGEoFlMcZZxHS5Sg4=
+		dqKIRj9QnXqEhFMTO3L+TSfanWQ=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		JGiIR06YbB+f6c/3s95f2UysMjE=
+		umJ1SprJnc3cALnzqvNWJFrpOxs=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		NcXZ4lPmMsJ4Nwa2j2Y3sC52RoY=
+		ZKanvvXj/Y8vL5FcgR+19bMtFUk=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		7y7UM6oCI/3qaN6dI+DqPvE/yIs=
+		vuw2OeW9adktYy5NqRyv1Jit8N0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>PrivateHeaders/Localizable.h</key>
 		<data>
-		SUOAZ+tPnAniQXYHkg6bQbjgQkA=
+		FDkwf0Gj6YgDnf4K3eKPivk7OR8=
 		</data>
 		<key>PrivateHeaders/Threads-private.h</key>
 		<data>
@@ -72,7 +72,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YGUlyX8/fQ4MY0Rwp8Pbd6emeLI=
+			EIwptM7+acom7RTg9IC3cUV3Fmc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TRqw08Y8Y2ULcA2osLgfsjg2RM0=
+			HwgCzh1M7yLtjSbLUdxC0GrdaPU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -93,14 +93,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q76jDKwYtZ0P0OoVZbLm3IBuQIMPD7QbGQWKz0armtU=
+			/axBxE4i83EwQ64fWLpShGkEedyM9JmrAyYETVl7X/g=
 			</data>
 		</dict>
 		<key>Headers/Threads-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gS2NeSmobZNV5wFVZuTWBpHm30CqUoiq3L54toxSXOA=
+			2RtJyepwTWW+Y2y96nigK81ne2MjUE4xGk6oTKyV8do=
 			</data>
 		</dict>
 		<key>Headers/Threads-umbrella.h</key>
@@ -121,42 +121,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zDvzklr3P8PWwu0jcBfG1x/BP99uIKCaaaccjr6EHNU=
+			rfRvQhK2J4Vt7KjrIwekxFYYhbg0eTI8zrvPUS1Eu0Y=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QBVWghi0n1QXsVkwAqPr80KNX5v+lLqwnEpKmaQ4pDE=
+			AEID17FMpgL9yK06q7KuLD0SWJjoghFBU4jy8Xrz6U4=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			of41nBF+ctIp6cAKHH3nJ+mdbJKYVo2yfVC4cYCXQpg=
+			9D1/QfDSoFXa8SECAq3oasHxSsSwCiIj2kSwos9Wphg=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TROOhkdsxHAQVEmc5699ydyxHSBYWLkSTCF9ftIqy8I=
+			h9Pi334oAmi57kIMrraWtCOa6NtZ712ruNNEH2oyRfA=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pgvxw0AoXZP0g28hIQO8rj9epn8fzsm51T2Aus/iJmQ=
+			ns3aFt78A/UuTLFnoXVt7lukU5Gj0fiik2ypQejFjU4=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oDWBIgCgjtJLJ8CH86DeEIOJy+7Z/lcOPg48ENuPDC0=
+			IbMfASRi4rq2zFOtxl6sJEw5xFuqUFXjuxjLiXBp13g=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -170,7 +170,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5zkqdwhOAk+Jk+c8GuA95iAc1O+eZQCzkft+mS7eWGc=
+			/QuefawNzyxsy5okifu1ufmqh8IAXgpyJHYHIuQYvRg=
 			</data>
 		</dict>
 		<key>PrivateHeaders/Threads-private.h</key>
@@ -198,7 +198,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7vWeP11QZTSsg+IMrh5e+VSaVG8YM+65LCrNxbO1xmc=
+			27vRYZfFipX/Gg+VfVlaJM1dvGxQraWX+iqy3JwQFGg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -207,7 +207,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4SWzJOXiadVhPB+MKlxifeLflHJEhvRvzwhc9dNFRDA=
+			U01Hwra8yKW8Ddx3kCgn2IVVde1GgXEdVOYEoeG2r/o=
 			</data>
 			<key>optional</key>
 			<true/>

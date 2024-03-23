@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)cancelPick;
 /// Не могу сфотографировать
 + (NSString*)cantTakePhoto;
-/// Я
+/// Вы
 + (NSString*)clientName;
 /// Не удалось загрузить настройки чата
 + (NSString*)connectionToServerConfigError;
@@ -177,6 +177,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)stateWaitingForSpecialist;
 /// Оператор
 + (NSString*)stateWorking;
+/// 
++ (NSString*)subTitleErrorCodeFrom400To500;
 /// Оператор
 + (NSString*)supervisor;
 /// Спасибо за вашу оценку
@@ -225,12 +227,18 @@ NS_ASSUME_NONNULL_BEGIN
 /// Не удалось завершить загрузку файла.
 /// Попробуйте отправить файл позже
 + (NSString*)threadsUnexpectedErrorDuringLoadFile;
+/// Подключиться
++ (NSString*)titleButtonErrorView;
+/// Извините за неудобства, чат в данный момент недоступен. Пожалуйста, попробуйте позднее.
++ (NSString*)titleErrorCodeFrom400To500;
 /// новых сообщения
 + (NSString*)twoFourUnreadMessages;
 /// Разблокируйте доступ к камере в настройках приложения, чтобы продолжить
 + (NSString*)unlockCameraAccess;
 /// Разблокируйте доступ к фотографиям в настройках приложения, чтобы продолжить
 + (NSString*)unlockPhotosAccess;
+/// Голосовое сообщение
++ (NSString*)voiceMessage;
 /// Запись не читается
 + (NSString*)voicePlayError;
 /// Доступ к микрофону запрещен, для записи голосовых сообщений разрешите доступ в настройках

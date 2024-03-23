@@ -716,6 +716,18 @@ public struct MultipartFormData {
   @objc public static var thrQuickReplyTextColorHighLighted: UIKit.UIColor {
     @objc get
   }
+  @objc public static var thrQuoteAccentColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrQuoteAuthorColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrQuoteBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrQuoteMessageColor: UIKit.UIColor {
+    @objc get
+  }
   @objc public static var thrRefreshColor: UIKit.UIColor {
     @objc get
   }
@@ -860,7 +872,7 @@ public struct MultipartFormData {
   }
 }
 @objc public enum THRAPIVersion : Swift.UInt {
-  case api15 = 15
+  case api15 = 16
   case api17 = 17
   case api18 = 18
   public init?(rawValue: Swift.UInt)
@@ -900,6 +912,7 @@ public struct MultipartFormData {
   @objc public var launchViewMinSize: CoreGraphics.CGSize
   @objc public var launchViewTextColor: UIKit.UIColor
   @objc public var launchViewTextFont: UIKit.UIFont
+  @objc public var loadingChatErrorImageWithCodeFrom400to599: UIKit.UIImage?
   @objc public var loadingChatErrorImage: UIKit.UIImage?
   @objc public var loadingChatTitleFont: UIKit.UIFont
   @objc public var loadingChatTitleColor: UIKit.UIColor
@@ -957,6 +970,10 @@ public struct MultipartFormData {
   @objc public var quoteMessageFont: UIKit.UIFont
   @objc public var quoteTimeFont: UIKit.UIFont
   @objc public var quoteFilesizeFont: UIKit.UIFont
+  @objc public var quoteAuthorColor: UIKit.UIColor
+  @objc public var quoteMessageColor: UIKit.UIColor
+  @objc public var quoteBackgroundColor: UIKit.UIColor
+  @objc public var quoteAccentColor: UIKit.UIColor
   @objc public var messageBubbleFilledMaskImage: UIKit.UIImage?
   @objc public var messageBubbleStrokedMaskImage: UIKit.UIImage?
   @objc public var messageBubbleFilledMaskInsets: UIKit.UIEdgeInsets
@@ -1122,7 +1139,7 @@ public struct MultipartFormData {
   @objc public var clearChatHistoryIfSocketReconnect: Swift.Bool
   @objc public var allowUntrustedSSLCertificate: Swift.Bool
   @objc public var trustedCertificates: [THRCert]
-  @objc public var logLevels: LogLevel
+  @objc public var logLevels: ThreadsLogLevel
   @objc public var logFileName: Swift.String?
   @objc public var logFileSizeMb: Swift.Int
   @objc public var logFileMaxCount: Swift.Int
@@ -1348,22 +1365,22 @@ extension Foundation.URLRequest {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func setNeedsLayout()
   @objc deinit
 }
-@objc(LogLevel) public class LogLevel : ObjectiveC.NSObject, Swift.OptionSet {
+@objc(ThreadsLogLevel) public class ThreadsLogLevel : ObjectiveC.NSObject, Swift.OptionSet {
   @objc required public init(rawValue: Swift.Int)
-  @objc public static let off: LogLevel
-  @objc public static let info: LogLevel
-  @objc public static let network: LogLevel
-  @objc public static let networkSock: LogLevel
-  @objc public static let userInterface: LogLevel
-  @objc public static let error: LogLevel
-  @objc public static let all: LogLevel
+  @objc public static let off: ThreadsLogLevel
+  @objc public static let info: ThreadsLogLevel
+  @objc public static let network: ThreadsLogLevel
+  @objc public static let networkSock: ThreadsLogLevel
+  @objc public static let userInterface: ThreadsLogLevel
+  @objc public static let error: ThreadsLogLevel
+  @objc public static let all: ThreadsLogLevel
   @objc final public let rawValue: Swift.Int
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
-  public func contains(_ member: LogLevel) -> Swift.Bool
-  public typealias ArrayLiteralElement = LogLevel
-  public typealias Element = LogLevel
+  public func contains(_ member: ThreadsLogLevel) -> Swift.Bool
+  public typealias ArrayLiteralElement = ThreadsLogLevel
+  public typealias Element = ThreadsLogLevel
   public typealias RawValue = Swift.Int
   @objc deinit
 }

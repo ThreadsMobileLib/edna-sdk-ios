@@ -393,6 +393,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)thrQuickReplyTextColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrQuickReplyTextColorHighLighted;)
 + (UIColor * _Nonnull)thrQuickReplyTextColorHighLighted SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrQuoteAccentColor;)
++ (UIColor * _Nonnull)thrQuoteAccentColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrQuoteAuthorColor;)
++ (UIColor * _Nonnull)thrQuoteAuthorColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrQuoteBackgroundColor;)
++ (UIColor * _Nonnull)thrQuoteBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrQuoteMessageColor;)
++ (UIColor * _Nonnull)thrQuoteMessageColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrRefreshColor;)
 + (UIColor * _Nonnull)thrRefreshColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrScheduleAlertColor;)
@@ -676,41 +684,6 @@ SWIFT_CLASS("_TtC7Threads18LocalizationConfig")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-
-SWIFT_CLASS_NAMED("LogLevel")
-@interface LogLevel : NSObject
-/// LogValue main init
-/// \param rawValue Integer as OptionSet (NS_OPTIONS)
-///
-- (nonnull instancetype)initWithRawValue:(NSInteger)rawValue OBJC_DESIGNATED_INITIALIZER;
-/// Off all logging
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull off;)
-+ (LogLevel * _Nonnull)off SWIFT_WARN_UNUSED_RESULT;
-/// INFO level logging
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull info;)
-+ (LogLevel * _Nonnull)info SWIFT_WARN_UNUSED_RESULT;
-/// NETWORK level logging
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull network;)
-+ (LogLevel * _Nonnull)network SWIFT_WARN_UNUSED_RESULT;
-/// NETWORK-SOCK level logging
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull networkSock;)
-+ (LogLevel * _Nonnull)networkSock SWIFT_WARN_UNUSED_RESULT;
-/// USER-INTERFACE level logging
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull userInterface;)
-+ (LogLevel * _Nonnull)userInterface SWIFT_WARN_UNUSED_RESULT;
-/// ERROR level logging
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull error;)
-+ (LogLevel * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
-/// All levels of logging are On
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LogLevel * _Nonnull all;)
-+ (LogLevel * _Nonnull)all SWIFT_WARN_UNUSED_RESULT;
-/// LogLevel primitive value
-@property (nonatomic, readonly) NSInteger rawValue;
-@property (nonatomic, readonly, copy) NSString * _Nonnull description;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 @protocol MessagesLoadEarlierHeaderViewDelegate;
 @class UIButton;
 
@@ -925,7 +898,7 @@ SWIFT_PROTOCOL("_TtP7Threads20StarRateViewDelegate_")
 @end
 
 typedef SWIFT_ENUM(NSUInteger, THRAPIVersion, open) {
-  THRAPIVersionApi15 = 15,
+  THRAPIVersionApi15 = 16,
   THRAPIVersionApi17 = 17,
   THRAPIVersionApi18 = 18,
 };
@@ -936,6 +909,7 @@ enum THRQuickReplyPresentationMode : NSUInteger;
 enum THRQuickReplyAlignment : NSUInteger;
 @class NSNumber;
 @class THRCert;
+@class ThreadsLogLevel;
 
 SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @interface THRAttributes : NSObject
@@ -969,6 +943,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic) CGSize launchViewMinSize;
 @property (nonatomic, strong) UIColor * _Nonnull launchViewTextColor;
 @property (nonatomic, strong) UIFont * _Nonnull launchViewTextFont;
+@property (nonatomic, strong) UIImage * _Nullable loadingChatErrorImageWithCodeFrom400to599;
 @property (nonatomic, strong) UIImage * _Nullable loadingChatErrorImage;
 @property (nonatomic, strong) UIFont * _Nonnull loadingChatTitleFont;
 @property (nonatomic, strong) UIColor * _Nonnull loadingChatTitleColor;
@@ -1026,6 +1001,10 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIFont * _Nonnull quoteMessageFont;
 @property (nonatomic, strong) UIFont * _Nonnull quoteTimeFont;
 @property (nonatomic, strong) UIFont * _Nonnull quoteFilesizeFont;
+@property (nonatomic, strong) UIColor * _Nonnull quoteAuthorColor;
+@property (nonatomic, strong) UIColor * _Nonnull quoteMessageColor;
+@property (nonatomic, strong) UIColor * _Nonnull quoteBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull quoteAccentColor;
 @property (nonatomic, strong) UIImage * _Nullable messageBubbleFilledMaskImage;
 @property (nonatomic, strong) UIImage * _Nullable messageBubbleStrokedMaskImage;
 @property (nonatomic) UIEdgeInsets messageBubbleFilledMaskInsets;
@@ -1212,7 +1191,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 ///     Integer as OptionSet (NS_OPTIONS)
 ///   </li>
 /// </ul>
-@property (nonatomic, strong) LogLevel * _Nonnull logLevels;
+@property (nonatomic, strong) ThreadsLogLevel * _Nonnull logLevels;
 /// < Имя файла логгирования, если задать nil, то в файл писать не будет, только в Console через OSLog
 @property (nonatomic, copy) NSString * _Nullable logFileName;
 /// < Размер лог файлов в Мб
@@ -1454,6 +1433,41 @@ SWIFT_PROTOCOL("_TtP7Threads15ThreadsDelegate_")
 - (BOOL)threads:(Threads * _Nonnull)threads allowOpenUrl:(NSURL * _Nonnull)allowOpenUrl SWIFT_WARN_UNUSED_RESULT;
 - (id <ThreadsPreloadView> _Null_unspecified)customPreloadView SWIFT_WARN_UNUSED_RESULT;
 - (void)threads:(Threads * _Nonnull)threads didReceiveMessage:(THRMessageInfo * _Nonnull)message;
+@end
+
+
+SWIFT_CLASS_NAMED("ThreadsLogLevel")
+@interface ThreadsLogLevel : NSObject
+/// LogValue main init
+/// \param rawValue Integer as OptionSet (NS_OPTIONS)
+///
+- (nonnull instancetype)initWithRawValue:(NSInteger)rawValue OBJC_DESIGNATED_INITIALIZER;
+/// Off all logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLevel * _Nonnull off;)
++ (ThreadsLogLevel * _Nonnull)off SWIFT_WARN_UNUSED_RESULT;
+/// INFO level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLevel * _Nonnull info;)
++ (ThreadsLogLevel * _Nonnull)info SWIFT_WARN_UNUSED_RESULT;
+/// NETWORK level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLevel * _Nonnull network;)
++ (ThreadsLogLevel * _Nonnull)network SWIFT_WARN_UNUSED_RESULT;
+/// NETWORK-SOCK level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLevel * _Nonnull networkSock;)
++ (ThreadsLogLevel * _Nonnull)networkSock SWIFT_WARN_UNUSED_RESULT;
+/// USER-INTERFACE level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLevel * _Nonnull userInterface;)
++ (ThreadsLogLevel * _Nonnull)userInterface SWIFT_WARN_UNUSED_RESULT;
+/// ERROR level logging
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLevel * _Nonnull error;)
++ (ThreadsLogLevel * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
+/// All levels of logging are On
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLevel * _Nonnull all;)
++ (ThreadsLogLevel * _Nonnull)all SWIFT_WARN_UNUSED_RESULT;
+/// LogLevel primitive value
+@property (nonatomic, readonly) NSInteger rawValue;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
