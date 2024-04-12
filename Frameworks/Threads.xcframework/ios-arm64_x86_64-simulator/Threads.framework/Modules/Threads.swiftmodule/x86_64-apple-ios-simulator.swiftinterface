@@ -267,6 +267,17 @@ public struct MultipartFormData {
   @objc override dynamic public init()
   @objc deinit
 }
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) public class UnselectableTextView : UIKit.UITextView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var selectedTextRange: UIKit.UITextRange? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @available(iOS 7.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @objcMembers public class SocketSettings : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc public var sendIntervalSec: Swift.Int
@@ -960,6 +971,7 @@ public struct MultipartFormData {
   @objc public var waitingSpecialistBorderColor: UIKit.UIColor
   @objc public var waitingSpecialistBorderWidth: CoreGraphics.CGFloat
   @objc public var bubbleMessageFont: UIKit.UIFont
+  @objc public var bubbleMessageAudioFont: UIKit.UIFont
   @objc public var bubbleTimeFont: UIKit.UIFont
   @objc public var failedMessageFont: UIKit.UIFont
   @objc public var messageHeaderFont: UIKit.UIFont

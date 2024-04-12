@@ -9,16 +9,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)accessDenied;
 /// Поделиться
 + (NSString*)accessoryButtonAccessibilityLabel;
-/// Выбранный альбом не найден или не содержит изображений
-+ (NSString*)albumNotFound;
-/// Альбомы
-+ (NSString*)albums;
-/// Загрузка файла не выполнена. Не удалось проверить файл
-+ (NSString*)attachmentErrorDisallowed;
 /// Не удалось завершить загрузку файла. Проверьте подключение к интернету
 + (NSString*)attachmentErrorTimeout;
-/// Не удалось завершить загрузку файла. Попробуйте отправить файл позже
-+ (NSString*)attachmentErrorUnexpected;
 /// Назад
 + (NSString*)back;
 /// Бот
@@ -37,16 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)connectionToServerConfigError;
 /// Истекло время ожидания подключения к серверу
 + (NSString*)connectionToServerTimeoutError;
-/// Не удалось распарсить client data
-+ (NSString*)dataNotParsed;
 /// Отменить
 + (NSString*)doCancel;
 /// Отправить
 + (NSString*)doSend;
-/// Client id не указан
+/// Идентификатор клиента не указан
 + (NSString*)emptyClientIdError;
-/// Client name не указано
-+ (NSString*)emptyClientNameError;
 /// Бот
 + (NSString*)externalBot;
 /// Удалить
@@ -61,14 +49,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)fileLimitAlertMessageWithValue:(float)p1;
 /// Размер файла
 + (NSString*)fileLimitAlertTitle;
-/// Отправка файлов запрещена
+/// Отправка файлов запрещена на сервере
 + (NSString*)fileSendingDenied;
 /// Файлы
 + (NSString*)files;
 /// изображение
 + (NSString*)imageAttachmentTitle;
-/// Изображение не должно быть nil
-+ (NSString*)imageIsNil;
 /// Не удалось открыть ссылку
 + (NSString*)incorrectUrlForOpening;
 /// Оператор
@@ -101,8 +87,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)newMessageReceivedAccessibilityAnnouncement;
 /// Нет
 + (NSString*)no;
-/// Нет ошибок
-+ (NSString*)noErrors;
 /// Не доставлено
 + (NSString*)notDelivered;
 /// OK
@@ -129,24 +113,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)registrationFailedAlert;
 /// Повторить
 + (NSString*)repeat;
-/// Ответить
-+ (NSString*)reply;
-/// Переснять
-+ (NSString*)retakePhoto;
 /// Поиск
 + (NSString*)search;
-/// сообщений найдено:
-+ (NSString*)searchMessagesFound;
 /// Результатов не найдено
 + (NSString*)searchNotFound;
-/// Все
-+ (NSString*)searchScopeAll;
-/// Файлы
-+ (NSString*)searchScopeFiles;
-/// Изображения
-+ (NSString*)searchScopeImages;
-/// Вы
-+ (NSString*)searchSentByYou;
 /// Искать еще
 + (NSString*)searchYetAnother;
 /// Отправить
@@ -159,8 +129,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)sentLabelWithValue:(id)p1;
 /// Настройки
 + (NSString*)settings;
-/// Чат в симуляторе недоступен
-+ (NSString*)simulatorUnavailable;
 /// Подключение...
 + (NSString*)stateConnecting;
 /// Отключен

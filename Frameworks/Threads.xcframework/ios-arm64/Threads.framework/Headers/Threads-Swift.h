@@ -766,7 +766,7 @@ SWIFT_CLASS("_TtC7Threads10QuickReply")
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
 + (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, strong) UICollectionView * _Nullable colView;
@@ -991,6 +991,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull waitingSpecialistBorderColor;
 @property (nonatomic) CGFloat waitingSpecialistBorderWidth;
 @property (nonatomic, strong) UIFont * _Nonnull bubbleMessageFont;
+@property (nonatomic, strong) UIFont * _Nonnull bubbleMessageAudioFont;
 @property (nonatomic, strong) UIFont * _Nonnull bubbleTimeFont;
 @property (nonatomic, strong) UIFont * _Nonnull failedMessageFont;
 @property (nonatomic, strong) UIFont * _Nonnull messageHeaderFont;
@@ -1487,6 +1488,21 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 @interface UIView (SWIFT_EXTENSION(Threads))
 - (void)addContainedView:(UIView * _Nonnull)inSubView;
+@end
+
+@class UITextRange;
+@class UIGestureRecognizer;
+@class NSTextContainer;
+
+/// UITextView без возможности выделять текст, но с открытием ссылок
+/// Basically, it disables unwanted UIGestureRecognizer from UITextView.
+/// https://stackoverflow.com/a/49428307/1033581
+SWIFT_CLASS("_TtC7Threads20UnselectableTextView")
+@interface UnselectableTextView : UITextView
+@property (nonatomic, strong) UITextRange * _Nullable selectedTextRange;
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer * _Nullable)textContainer OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=7.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
