@@ -736,6 +736,15 @@ SWIFT_PROTOCOL("_TtP7Threads37MessagesLoadEarlierHeaderViewDelegate_")
 
 
 
+@interface NSPredicate (SWIFT_EXTENSION(Threads))
+/// Метод для поиска количества непрочитанных сообщений
+///
+/// returns:
+/// Предикат
++ (NSPredicate * _Nonnull)unreadMessages SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 @interface PushUserInfo : NSObject
 - (nullable instancetype)initFrom:(NSDictionary<NSString *, id> * _Nonnull)pushUserInfo OBJC_DESIGNATED_INITIALIZER;
@@ -2255,6 +2264,15 @@ SWIFT_PROTOCOL("_TtP7Threads37MessagesLoadEarlierHeaderViewDelegate_")
 
 
 
+
+
+@interface NSPredicate (SWIFT_EXTENSION(Threads))
+/// Метод для поиска количества непрочитанных сообщений
+///
+/// returns:
+/// Предикат
++ (NSPredicate * _Nonnull)unreadMessages SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 SWIFT_CLASS("_TtC7Threads12PushUserInfo")

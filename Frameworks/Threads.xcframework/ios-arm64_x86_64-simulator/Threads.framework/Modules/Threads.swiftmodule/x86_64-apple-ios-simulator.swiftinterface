@@ -1169,6 +1169,9 @@ public struct MultipartFormData {
   @objc public static func defaultAttributes() -> THRAttributes
   @objc deinit
 }
+@objc extension Foundation.NSPredicate {
+  @objc dynamic public class func unreadMessages() -> Foundation.NSPredicate
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class SQPreviewCell : UIKit.UICollectionViewCell {
   @objc deinit
 }
@@ -1189,6 +1192,7 @@ public struct MultipartFormData {
 }
 extension Swift.String {
   public func md5() -> Swift.String
+  public func urlEncoded() -> Swift.String?
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class SearchingForSpecialistFooterView : UIKit.UICollectionReusableView {
   @objc @_Concurrency.MainActor(unsafe) public static let footerViewHeight: CoreGraphics.CGFloat
