@@ -29,6 +29,17 @@ import os
   @objc override dynamic public init()
   @objc deinit
 }
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) public class LoadingLabel : UIKit.UILabel {
+  @objc deinit
+  @objc @_Concurrency.MainActor(unsafe) public func setText(_ text: Swift.String, animated: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) public func stopAnimatation()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func fadeIn(duration: CoreGraphics.CGFloat = 1.0)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func fadeOut(duration: CoreGraphics.CGFloat = 1.0, completion: @escaping () -> Swift.Void)
+}
 @objc public enum SearchScope : Swift.UInt {
   case all
   case images
@@ -220,9 +231,6 @@ import os
     @objc get
   }
   @objc public static var thrjsqShield: UIKit.UIImage {
-    @objc get
-  }
-  @objc public static var thrjsqTyping: UIKit.UIImage {
     @objc get
   }
   @objc override dynamic public init()
@@ -820,9 +828,6 @@ public struct MultipartFormData {
   @objc public static var thrToolbarTintColor: UIKit.UIColor {
     @objc get
   }
-  @objc public static var thrTypingTextColor: UIKit.UIColor {
-    @objc get
-  }
   @objc public static var thrWaitingSpecialistBgColor: UIKit.UIColor {
     @objc get
   }
@@ -848,9 +853,6 @@ public struct MultipartFormData {
     @objc get
   }
   @objc public static var thrjsqNavigationBarColor: UIKit.UIColor {
-    @objc get
-  }
-  @objc public static var thrjsqTypingIndicatorBubbleColor: UIKit.UIColor {
     @objc get
   }
   @objc override dynamic public init()
@@ -1001,10 +1003,7 @@ public struct MultipartFormData {
   @objc public var specialisConnectSubtitleFont: UIKit.UIFont
   @objc public var specialisConnectTitleColor: UIKit.UIColor
   @objc public var specialisConnectSubtitleColor: UIKit.UIColor
-  @objc public var typingTextFont: UIKit.UIFont
-  @objc public var typingTextColor: UIKit.UIColor
   @objc public var typingText: Swift.String?
-  @objc public var typingIndicatorEllipsisColor: UIKit.UIColor?
   @objc public var scheduleIcon: UIKit.UIImage?
   @objc public var scheduleAlertColor: UIKit.UIColor
   @objc public var scheduleAlertFont: UIKit.UIFont

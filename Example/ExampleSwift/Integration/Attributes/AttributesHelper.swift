@@ -128,8 +128,6 @@ fileprivate class AlternativeAttributes{
         attributes.messageBubbleStrokedMaskImage = #imageLiteral(resourceName: "rect_bubble_stroked.png")
         
         attributes.typingText = NSLocalizedString("typing...", comment: "");
-        attributes.typingTextColor = UIColor.alt_typingText()
-        attributes.typingTextFont = .latoMedium(ofSize: 13)
         
         attributes.scheduleIcon = #imageLiteral(resourceName:"schedule_alert")
         attributes.scheduleAlertFont = .latoSemibold(ofSize: 17)

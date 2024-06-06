@@ -95,6 +95,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)oneUnreadMessage;
 /// Оператор
 + (NSString*)operator;
+/// оператор набирает
++ (NSString*)operatorTyping;
 /// Сообщение не может быть пустое
 + (NSString*)outsideTextIsEmpty;
 /// Превышен предел длины текста. Максимум %lu символов

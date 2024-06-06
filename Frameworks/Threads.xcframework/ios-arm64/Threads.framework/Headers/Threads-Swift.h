@@ -455,8 +455,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)thrToolbarQuotedMessageColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrToolbarTintColor;)
 + (UIColor * _Nonnull)thrToolbarTintColor SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrTypingTextColor;)
-+ (UIColor * _Nonnull)thrTypingTextColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrWaitingSpecialistBgColor;)
 + (UIColor * _Nonnull)thrWaitingSpecialistBgColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrWaitingSpecialistBorderColor;)
@@ -475,8 +473,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)thrjsqMessageBubbleRedColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrjsqNavigationBarColor;)
 + (UIColor * _Nonnull)thrjsqNavigationBarColor SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrjsqTypingIndicatorBubbleColor;)
-+ (UIColor * _Nonnull)thrjsqTypingIndicatorBubbleColor SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -638,8 +634,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _N
 + (UIImage * _Nonnull)thrjsqPlay1 SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqShield;)
 + (UIImage * _Nonnull)thrjsqShield SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull thrjsqTyping;)
-+ (UIImage * _Nonnull)thrjsqTyping SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -664,6 +658,15 @@ SWIFT_PROTOCOL("_TtP7Threads33LoadingChatViewControllerDelegate_")
 /// Метод для проверки наличия ошибки при загрузке и ее отображения
 - (void)checkLoadingError;
 - (void)repeatInitChat;
+@end
+
+
+SWIFT_CLASS("_TtC7Threads12LoadingLabel")
+@interface LoadingLabel : UILabel
+- (void)setText:(NSString * _Nonnull)text animated:(BOOL)animated;
+- (void)stopAnimatation;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1032,10 +1035,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIFont * _Nonnull specialisConnectSubtitleFont;
 @property (nonatomic, strong) UIColor * _Nonnull specialisConnectTitleColor;
 @property (nonatomic, strong) UIColor * _Nonnull specialisConnectSubtitleColor;
-@property (nonatomic, strong) UIFont * _Nonnull typingTextFont;
-@property (nonatomic, strong) UIColor * _Nonnull typingTextColor;
 @property (nonatomic, copy) NSString * _Nullable typingText;
-@property (nonatomic, strong) UIColor * _Nullable typingIndicatorEllipsisColor;
 @property (nonatomic, strong) UIImage * _Nullable scheduleIcon;
 @property (nonatomic, strong) UIColor * _Nonnull scheduleAlertColor;
 @property (nonatomic, strong) UIFont * _Nonnull scheduleAlertFont;
@@ -1493,6 +1493,12 @@ SWIFT_PROTOCOL("_TtP7Threads18ThreadsPreloadView_")
 
 
 
+
+
+@interface UIView (SWIFT_EXTENSION(Threads))
+- (void)fadeInDuration:(CGFloat)duration;
+- (void)fadeOutWithDuration:(CGFloat)duration completion:(void (^ _Nonnull)(void))completion;
+@end
 
 
 @interface UIView (SWIFT_EXTENSION(Threads))
