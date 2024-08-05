@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)accessoryButtonAccessibilityLabel;
 /// Не удалось завершить загрузку файла. Проверьте подключение к интернету
 + (NSString*)attachmentErrorTimeout;
+/// аудио файл
++ (NSString*)audioAttachmentTitle;
 /// Назад
 + (NSString*)back;
 /// Бот

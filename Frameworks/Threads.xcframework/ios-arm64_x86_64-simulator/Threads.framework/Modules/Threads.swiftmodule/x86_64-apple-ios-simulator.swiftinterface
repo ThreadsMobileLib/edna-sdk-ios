@@ -636,9 +636,6 @@ public struct MultipartFormData {
   @objc public static var thrIncomingQuoteSeparatorColor: UIKit.UIColor {
     @objc get
   }
-  @objc public static var thrIncomingQuoteTimeColor: UIKit.UIColor {
-    @objc get
-  }
   @objc public static var thrIncomingTimeColor: UIKit.UIColor {
     @objc get
   }
@@ -697,9 +694,6 @@ public struct MultipartFormData {
     @objc get
   }
   @objc public static var thrOutgoingQuoteSeparatorColor: UIKit.UIColor {
-    @objc get
-  }
-  @objc public static var thrOutgoingQuoteTimeColor: UIKit.UIColor {
     @objc get
   }
   @objc public static var thrOutgoingReadStatusColor: UIKit.UIColor {
@@ -885,7 +879,7 @@ public struct MultipartFormData {
   }
 }
 @objc public enum THRAPIVersion : Swift.UInt {
-  case api15 = 16
+  case api16 = 16
   case api17 = 17
   case api18 = 18
   public init?(rawValue: Swift.UInt)
@@ -980,6 +974,7 @@ public struct MultipartFormData {
   @objc public var messageHeaderTextColor: UIKit.UIColor
   @objc public var messageDeletedTextColor: UIKit.UIColor
   @objc public var messageEditedStatusImage: UIKit.UIImage?
+  @objc public var isShowClientFullNameInMessage: Swift.Bool
   @objc public var quoteAuthorFont: UIKit.UIFont
   @objc public var quoteMessageFont: UIKit.UIFont
   @objc public var quoteTimeFont: UIKit.UIFont
@@ -1021,7 +1016,6 @@ public struct MultipartFormData {
   @objc public var incomingQuoteSeparatorColor: UIKit.UIColor
   @objc public var incomingQuoteAuthorColor: UIKit.UIColor
   @objc public var incomingQuoteMessageColor: UIKit.UIColor
-  @objc public var incomingQuoteTimeColor: UIKit.UIColor
   @objc public var incomingQuoteFilesizeColor: UIKit.UIColor
   @objc public var incomingFileIconTintColor: UIKit.UIColor
   @objc public var incomingFileIconBgColor: UIKit.UIColor
@@ -1047,7 +1041,6 @@ public struct MultipartFormData {
   @objc public var outgoingQuoteSeparatorColor: UIKit.UIColor
   @objc public var outgoingQuoteAuthorColor: UIKit.UIColor
   @objc public var outgoingQuoteMessageColor: UIKit.UIColor
-  @objc public var outgoingQuoteTimeColor: UIKit.UIColor
   @objc public var outgoingQuoteFilesizeColor: UIKit.UIColor
   @objc public var outgoingFileIconTintColor: UIKit.UIColor
   @objc public var outgoingFileIconBgColor: UIKit.UIColor

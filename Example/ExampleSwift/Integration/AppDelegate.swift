@@ -80,10 +80,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        // Check for application launched from notification
+
         if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
+            // вывести userInfo
             let userInfo = response.notification.request.content.userInfo
-            handleOpeningFromPush(with: userInfo)
         }
         completionHandler()
     }

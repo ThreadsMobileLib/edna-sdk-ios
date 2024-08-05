@@ -327,8 +327,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)thrIncomingQuoteMessageColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingQuoteSeparatorColor;)
 + (UIColor * _Nonnull)thrIncomingQuoteSeparatorColor SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingQuoteTimeColor;)
-+ (UIColor * _Nonnull)thrIncomingQuoteTimeColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrIncomingTimeColor;)
 + (UIColor * _Nonnull)thrIncomingTimeColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrLikeLabelOnStarColor;)
@@ -369,8 +367,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)thrOutgoingQuoteMessageColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingQuoteSeparatorColor;)
 + (UIColor * _Nonnull)thrOutgoingQuoteSeparatorColor SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingQuoteTimeColor;)
-+ (UIColor * _Nonnull)thrOutgoingQuoteTimeColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingReadStatusColor;)
 + (UIColor * _Nonnull)thrOutgoingReadStatusColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrOutgoingTimeColor;)
@@ -910,7 +906,7 @@ SWIFT_PROTOCOL("_TtP7Threads20StarRateViewDelegate_")
 @end
 
 typedef SWIFT_ENUM(NSUInteger, THRAPIVersion, open) {
-  THRAPIVersionApi15 = 16,
+  THRAPIVersionApi16 = 16,
   THRAPIVersionApi17 = 17,
   THRAPIVersionApi18 = 18,
 };
@@ -1010,6 +1006,8 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull messageHeaderTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull messageDeletedTextColor;
 @property (nonatomic, strong) UIImage * _Nullable messageEditedStatusImage;
+/// Отображение имени клиента при цитировании
+@property (nonatomic) BOOL isShowClientFullNameInMessage;
 @property (nonatomic, strong) UIFont * _Nonnull quoteAuthorFont;
 @property (nonatomic, strong) UIFont * _Nonnull quoteMessageFont;
 @property (nonatomic, strong) UIFont * _Nonnull quoteTimeFont;
@@ -1053,7 +1051,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull incomingQuoteSeparatorColor;
 @property (nonatomic, strong) UIColor * _Nonnull incomingQuoteAuthorColor;
 @property (nonatomic, strong) UIColor * _Nonnull incomingQuoteMessageColor;
-@property (nonatomic, strong) UIColor * _Nonnull incomingQuoteTimeColor;
 @property (nonatomic, strong) UIColor * _Nonnull incomingQuoteFilesizeColor;
 @property (nonatomic, strong) UIColor * _Nonnull incomingFileIconTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull incomingFileIconBgColor;
@@ -1079,7 +1076,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteSeparatorColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteAuthorColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteMessageColor;
-@property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteTimeColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingQuoteFilesizeColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingFileIconTintColor;
 @property (nonatomic, strong) UIColor * _Nonnull outgoingFileIconBgColor;
