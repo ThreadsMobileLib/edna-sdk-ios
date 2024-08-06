@@ -79,14 +79,10 @@ fileprivate class AlternativeAttributes{
         attributes.outgoingQuoteSeparatorColor = UIColor.alt_outgoingQuoteSeparator()
         attributes.outgoingQuoteAuthorColor = UIColor.alt_outgoingQuoteAuthor()
         attributes.outgoingQuoteMessageColor = UIColor.alt_outgoingQuoteMessage()
-        attributes.outgoingQuoteTimeColor = UIColor.alt_outgoingQuoteTime()
-        attributes.outgoingQuoteFilesizeColor = UIColor.alt_outgoingQuoteFilesize()
         
         attributes.incomingQuoteSeparatorColor = UIColor.alt_incomingQuoteSeparator()
         attributes.incomingQuoteAuthorColor = UIColor.alt_incomingQuoteAuthor()
         attributes.incomingQuoteMessageColor = UIColor.alt_incomingQuoteMessage()
-        attributes.incomingQuoteTimeColor = UIColor.alt_incomingQuoteTime()
-        attributes.incomingQuoteFilesizeColor = UIColor.alt_incomingQuoteFilesize()
         attributes.incomingFileIconTintColor = UIColor.alt_incomingFileIconTint()
         attributes.incomingFileIconBgColor = UIColor.alt_incomingFileIconBg()
         
