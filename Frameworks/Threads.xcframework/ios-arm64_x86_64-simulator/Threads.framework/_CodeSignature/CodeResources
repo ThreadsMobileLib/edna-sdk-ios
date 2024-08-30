@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		Jwy+gqJJvZW0v+pKxZCl24Sbvd4=
+		B98C0quUfJuC+rgTs+sEO2w65gQ=
 		</data>
 		<key>Headers/Threads-Swift.h</key>
 		<data>
-		nIZ4H+oTEgOOAnXP61WevSuup2k=
+		O3vKo9JcDo1PDnFu4SMltx7d5h4=
 		</data>
 		<key>Headers/Threads-umbrella.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3fvbdzkfnzgUW+g38v0XSRBtrRs=
+		+S+jgBZBHUPOoI2xYwKrzFsV9lw=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		I1Cziu2cxuEM2nexRTMTwu8ECaM=
+		Gxk1+9RLYiuzSrhs5wwWz1IQX1w=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		BbOz013UeoDW3jMDOf06mw1JgGo=
+		6FUOvdt+lH66xKIm+GRcHYNI5GM=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		xBEx6/1OdJfHLNL7pTrW1Yc1PMo=
+		XKhk1EQZM+Dy9bp7lae/rskl5AQ=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		SUrxyaFJ3f6Vhoq0buE1aoeZiGQ=
+		FxzNE0atcP4CWR+JWx9927uIEpA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -97,14 +97,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w01Y8NHYLfeK3U8aycVBJp02OV2uxHdH1ye1mujFcFg=
+			c782UElZBRUz3DNCHs2LolNOhbxX5d378ZV0yUTu3Js=
 			</data>
 		</dict>
 		<key>Headers/Threads-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5RUZfOLlyPPp1HYE3Zkjh0APXACw8xuXMYQCv1LwMcg=
+			/qDI5NcAnNPOkk5b7P136sSmZLyyHNQCSExJtdFo+JY=
 			</data>
 		</dict>
 		<key>Headers/Threads-umbrella.h</key>
@@ -132,14 +132,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EAiTlHQ9UrS3pTWtm1y/jYQ6r5gmYekWJXnj/imp72Y=
+			ESn0/Y6n4sa9F++AMEy4mNzOuq8kZQayvaXY9E5lU7s=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U3jC6MgbqBpHx7S30a5Ma6pyotLTHbW1DPg1gYg3CbQ=
+			CJ2XxlVL7ikqCr8Tgikt15MU8+NKD9Zm/1BRxbsKPvw=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -153,14 +153,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1yxNyReENd+5pw9x9feCxJWQ1mwd/x5pJB949t7mxAs=
+			pu0zm0pBnjVCgnyPBNHvtKBZ1BiLNLCX4pWdjtTTelY=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+jV3Y8KVHVPT6F8LmDy5PbvTTZ5iqAr1iMaRaaBkquc=
+			tITkfVFPkf1XGruuWg1hgTF1swO5E/4Y/wEMBFGHy70=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

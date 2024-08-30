@@ -375,8 +375,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)thrOutgoingTimeColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPhotoPickerSheetTextColor;)
 + (UIColor * _Nonnull)thrPhotoPickerSheetTextColor SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPhotoPickerToolbarTintColor;)
-+ (UIColor * _Nonnull)thrPhotoPickerToolbarTintColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPlaceholderSubtitleColor;)
 + (UIColor * _Nonnull)thrPlaceholderSubtitleColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPlaceholderTitleColor;)
@@ -798,39 +796,6 @@ SWIFT_PROTOCOL("_TtP7Threads22QuickReplyCellDelegate_")
 - (void)didSelectQuickReply:(QuickReply * _Nonnull)quickReply;
 @end
 
-
-SWIFT_CLASS("_TtC7Threads12SQActionCell")
-@interface SQActionCell : UICollectionViewCell
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
-- (void)configureWithActionString:(NSString * _Nonnull)actionString;
-@end
-
-
-SWIFT_CLASS("_TtC7Threads11SQAlbumCell")
-@interface SQAlbumCell : UITableViewCell
-- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
-- (void)startLoading;
-- (void)stopLoading;
-- (void)updateImage:(UIImage * _Nullable)image;
-- (void)configureWithAlbumName:(NSString * _Nonnull)albumName photosCount:(NSInteger)photosCount;
-@end
-
-
-SWIFT_CLASS("_TtC7Threads18SQPhotoPreviewCell")
-@interface SQPhotoPreviewCell : UICollectionViewCell
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_CLASS("_TtC7Threads13SQPreviewCell")
-@interface SQPreviewCell : UICollectionViewCell
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
-@end
-
 /// Настройка поиска
 typedef SWIFT_ENUM(NSUInteger, SearchScope, open) {
   SearchScopeAll = 0,
@@ -1115,13 +1080,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 /// Включает | Выключает загрузку  ссылок как превью
 @property (nonatomic) BOOL linkPreviewEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerBackgroundColor;
-@property (nonatomic, strong) UIColor * _Nonnull photoPickerToolbarTintColor;
-@property (nonatomic, strong) UIFont * _Nonnull photoPickerToolbarButtonFont;
-@property (nonatomic, strong) UIImage * _Nullable photoPickerCheckmarkIcon;
-@property (nonatomic, strong) UIImage * _Nullable photoPickerEmptyCheckmarkIcon;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerSheetTextColor;
-@property (nonatomic, strong) UIFont * _Nonnull photoPickerSheetTextFont;
-@property (nonatomic) BOOL useSystemFilePicker;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerTitleColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarTintColor;
@@ -1907,8 +1866,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)thrOutgoingTimeColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPhotoPickerSheetTextColor;)
 + (UIColor * _Nonnull)thrPhotoPickerSheetTextColor SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPhotoPickerToolbarTintColor;)
-+ (UIColor * _Nonnull)thrPhotoPickerToolbarTintColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPlaceholderSubtitleColor;)
 + (UIColor * _Nonnull)thrPlaceholderSubtitleColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrPlaceholderTitleColor;)
@@ -2330,39 +2287,6 @@ SWIFT_PROTOCOL("_TtP7Threads22QuickReplyCellDelegate_")
 - (void)didSelectQuickReply:(QuickReply * _Nonnull)quickReply;
 @end
 
-
-SWIFT_CLASS("_TtC7Threads12SQActionCell")
-@interface SQActionCell : UICollectionViewCell
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
-- (void)configureWithActionString:(NSString * _Nonnull)actionString;
-@end
-
-
-SWIFT_CLASS("_TtC7Threads11SQAlbumCell")
-@interface SQAlbumCell : UITableViewCell
-- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
-- (void)startLoading;
-- (void)stopLoading;
-- (void)updateImage:(UIImage * _Nullable)image;
-- (void)configureWithAlbumName:(NSString * _Nonnull)albumName photosCount:(NSInteger)photosCount;
-@end
-
-
-SWIFT_CLASS("_TtC7Threads18SQPhotoPreviewCell")
-@interface SQPhotoPreviewCell : UICollectionViewCell
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_CLASS("_TtC7Threads13SQPreviewCell")
-@interface SQPreviewCell : UICollectionViewCell
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
-@end
-
 /// Настройка поиска
 typedef SWIFT_ENUM(NSUInteger, SearchScope, open) {
   SearchScopeAll = 0,
@@ -2647,13 +2571,7 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 /// Включает | Выключает загрузку  ссылок как превью
 @property (nonatomic) BOOL linkPreviewEnabled;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerBackgroundColor;
-@property (nonatomic, strong) UIColor * _Nonnull photoPickerToolbarTintColor;
-@property (nonatomic, strong) UIFont * _Nonnull photoPickerToolbarButtonFont;
-@property (nonatomic, strong) UIImage * _Nullable photoPickerCheckmarkIcon;
-@property (nonatomic, strong) UIImage * _Nullable photoPickerEmptyCheckmarkIcon;
 @property (nonatomic, strong) UIColor * _Nonnull photoPickerSheetTextColor;
-@property (nonatomic, strong) UIFont * _Nonnull photoPickerSheetTextFont;
-@property (nonatomic) BOOL useSystemFilePicker;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerTitleColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nullable fileViewerNavBarTintColor;

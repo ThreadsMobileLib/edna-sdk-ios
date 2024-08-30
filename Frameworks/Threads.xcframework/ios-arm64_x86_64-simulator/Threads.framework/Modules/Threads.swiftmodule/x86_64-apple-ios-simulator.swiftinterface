@@ -705,9 +705,6 @@ public struct MultipartFormData {
   @objc public static var thrPhotoPickerSheetTextColor: UIKit.UIColor {
     @objc get
   }
-  @objc public static var thrPhotoPickerToolbarTintColor: UIKit.UIColor {
-    @objc get
-  }
   @objc public static var thrPlaceholderSubtitleColor: UIKit.UIColor {
     @objc get
   }
@@ -1077,13 +1074,7 @@ public struct MultipartFormData {
   @objc public var searchMessageDateTextFont: UIKit.UIFont
   @objc public var linkPreviewEnabled: Swift.Bool
   @objc public var photoPickerBackgroundColor: UIKit.UIColor
-  @objc public var photoPickerToolbarTintColor: UIKit.UIColor
-  @objc public var photoPickerToolbarButtonFont: UIKit.UIFont
-  @objc public var photoPickerCheckmarkIcon: UIKit.UIImage?
-  @objc public var photoPickerEmptyCheckmarkIcon: UIKit.UIImage?
   @objc public var photoPickerSheetTextColor: UIKit.UIColor
-  @objc public var photoPickerSheetTextFont: UIKit.UIFont
-  @objc public var useSystemFilePicker: Swift.Bool
   @objc public var fileViewerTitleColor: UIKit.UIColor?
   @objc public var fileViewerNavBarBackgroundColor: UIKit.UIColor?
   @objc public var fileViewerNavBarTintColor: UIKit.UIColor?
@@ -1164,17 +1155,6 @@ public struct MultipartFormData {
 @objc extension Foundation.NSPredicate {
   @objc dynamic public class func unreadMessages() -> Foundation.NSPredicate
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class SQPreviewCell : UIKit.UICollectionViewCell {
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class SQAlbumCell : UIKit.UITableViewCell {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
-  @objc @_Concurrency.MainActor(unsafe) public func startLoading()
-  @objc @_Concurrency.MainActor(unsafe) public func stopLoading()
-  @objc @_Concurrency.MainActor(unsafe) public func updateImage(_ image: UIKit.UIImage?)
-  @objc @_Concurrency.MainActor(unsafe) public func configure(albumName: Swift.String, photosCount: Swift.Int)
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers @objc public class THRMessageInfo : ObjectiveC.NSObject {
   @objc public init(text: Swift.String?, senderName: Swift.String, hasAttachment: Swift.Bool)
   final public let senderName: Swift.String
@@ -1214,10 +1194,6 @@ extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func anchorCenterSuperview()
   @_Concurrency.MainActor(unsafe) public func thrjsqImage() -> UIKit.UIImage?
   @objc @_Concurrency.MainActor(unsafe) dynamic public func addContainedView(_ inSubView: UIKit.UIView)
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class SQActionCell : UIKit.UICollectionViewCell {
-  @objc @_Concurrency.MainActor(unsafe) public func configure(actionString: Swift.String)
-  @objc deinit
 }
 public enum ReachabilityError : Swift.Error {
   case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
@@ -1320,9 +1296,6 @@ extension Foundation.URLRequest {
     get
     set
   }
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class SQPhotoPreviewCell : UIKit.UICollectionViewCell {
-  @objc deinit
 }
 @objc @objcMembers public class LocalizationConfig : ObjectiveC.NSObject {
   @objc public init(bundle: Foundation.Bundle, tableName: Swift.String)

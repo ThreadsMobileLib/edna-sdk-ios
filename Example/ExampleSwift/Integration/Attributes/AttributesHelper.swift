@@ -110,11 +110,7 @@ fileprivate class AlternativeAttributes{
         attributes.searchMessageDateTextFont = .latoRegular(ofSize: 13)
         attributes.searchMessageMatchTextFont = .latoRegular(ofSize: 13)
         
-        attributes.photoPickerCheckmarkIcon = #imageLiteral(resourceName: "ic_checkmark.png")
-        attributes.photoPickerToolbarTintColor = UIColor.alt_photoPickerToolbarTint()
-        attributes.photoPickerToolbarButtonFont = .latoRegular(ofSize: 17)
         attributes.photoPickerSheetTextColor = UIColor.alt_photoPickerSheetText()
-        attributes.photoPickerSheetTextFont = .latoRegular(ofSize: 17)
         
         attributes.fileViewerTitleFont = attributes.navigationBarTitleFont;
         
