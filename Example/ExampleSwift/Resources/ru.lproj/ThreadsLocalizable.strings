@@ -1,3 +1,134 @@
-"OPERATOR" = "operator";
+"ok" = "OK";
+"yes" = "Да";
+"no" = "Нет";
+"cancel" = "Отмена";
+"repeat" = "Повторить";
+"search" = "Поиск";
+"state_wait" = "Пожалуйста, подождите...";
+"state_not_connected" = "Контакт центр";
+"state_connecting" = "Подключение...";
 "state_ready" = "Контакт центр";
-"state_not_connected" = "Нет подключения к серверу";
+"state_waiting_for_specialist" = "Поиск оператора...";
+"state_working" = "Оператор";
+"state_disconnected" = "Отключен";
+"state_loading_history" = "Загрузка...";
+"placeholder_header" = "Добро пожаловать в контакт центр";
+"placeholder_content" = "Отправьте ваш вопрос, первый освободившийся оператор на него ответит.";
+"failed_message" = "Сообщение не было отправлено. Нажмите «повторить отправку», чтобы отправить";
+"failed_title" = "";
+"failed_retry" = "Повторить отправку";
+"failed_delete" = "Удалить";
+"not_delivered" = "Не доставлено";
+"menu_quote_title" = "Цитировать";
+"menu_response_title" = "Ответить";
+"menu_copy_title" = "Копировать";
+
+"search_yet_another" = "Искать еще";
+"search_not_found" = "Результатов не найдено";
+"system_message_join_chat_unknown" = "подключился(-ась) к диалогу в %@";
+"system_message_join_chat_male" = "подключился к диалогу в %@";
+"system_message_join_chat_female" = "подключилась к диалогу в %@";
+"system_message_leave_chat_unknown" = "покинул(а) диалог в %@";
+"system_message_leave_chat_male" = "покинул диалог в %@";
+"system_message_leave_chat_female" = "покинула диалог в %@";
+"image_attachment_title" = "изображение";
+"audio_attachment_title" = "аудио файл";
+"sent_label" = "отправлено в %@";
+"this_chat_is_viewable_only" = "Данный чат доступен только для просмотра";
+
+"one_unread_message" = "новое сообщение";
+"two_four_unread_messages" = "новых сообщения";
+"many_unread_messages" = "новых сообщений";
+
+"client_name" = "Вы";
+"survey_vote_from" = "из";
+"survey_thanks" = "Спасибо за вашу оценку";
+"message_deleted" = "Сообщение удалено";
+
+"access_denied" = "Нет доступа";
+"unlock_photos_access" = "Разблокируйте доступ к фотографиям в настройках приложения, чтобы продолжить";
+"file_sending_denied" = "Отправка файлов запрещена на сервере";
+
+"threads_request_close_thread_text" = "Специалист ответил на все ваши вопросы, продолжить консультацию?";
+
+"file_limit_alert_title" = "Размер файла";
+"file_limit_alert_message" = "Превышен лимит размера файла. Максимальный размер %.2f мб";
+
+"operator_typing" = "оператор набирает";
+
+    // Ошибки
+"empty_client_id_error" = "Идентификатор клиента не указан";
+"outside_text_limit_exceed" = "Превышен предел длины текста. Максимум %lu символов";
+"outside_text_is_empty" = "Сообщение не может быть пустое";
+"back" = "Назад";
+"registration_failed_alert" = "Возникла проблема во время инициализации чата:";
+"please_check_your_internet_connection" = "Проверьте подключение к сети интернет";
+"connection_to_server_timeout_error" = "Истекло время ожидания подключения к серверу";
+"connection_to_server_config_error" = "Не удалось загрузить настройки чата";
+"attachment_error_timeout" = "Не удалось завершить загрузку файла. Проверьте подключение к интернету";
+
+"incorrect_url_for_opening" = "Не удалось открыть ссылку";
+
+"title_error_code_from_400_to_500" = "Извините за неудобства, чат в данный момент недоступен. Пожалуйста, попробуйте позднее.";
+"sub_title_error_code_from_400_to_500" = "";
+"title_button_error_view" = "Подключиться";
+
+"cant_take_photo" = "Не могу сфотографировать";
+"camera_not_found" = "На Вашем устройстве не найдена камера";
+"unlock_camera_access" = "Разблокируйте доступ к камере в настройках приложения, чтобы продолжить";
+
+"my_albums" = "Мои альбомы";
+"pick_photo" = "Сделать снимок";
+"send_photos" = "Отправить";
+"cancel_pick" = "Отмена";
+
+"photo" = "фото";
+
+"limit_reached" = "Лимит достигнут!";
+"limit_desc" = "Вы можете загрузить не более ";
+
+"do_cancel" = "Отменить";
+"do_send" = "Отправить";
+
+"voice_message" = "Голосовое сообщение";
+"voice_recording_hint" = "Удерживайте, чтобы начать запись";
+"voice_play_error" = "Запись не читается";
+"voice_recording_denied" = "Доступ к микрофону запрещен, для записи голосовых сообщений разрешите доступ в настройках";
+"settings" = "Настройки";
+
+"files" = "Файлы";
+"send_selected_file_to_chat_alert" = "Отправить выбранный файл \"%@\" в чат?";
+
+"load_earlier_messages" = "Предыдущие сообщения";
+"send" = "Отправить";
+"new_message" = "Сообщение";
+"text_message_accessibility_label" = "%@: %@";
+"media_message_accessibility_label" = "%@: медиа сообщение";
+"accessory_button_accessibility_label" = "Поделиться";
+"new_message_received_accessibility_announcement" = "Получено новое сообщение";
+
+"loading_placeholder" = "Загрузка";
+
+    // Заголовок специалиста (Роль)
+"BOT" = "Бот";
+"EXTERNAL_BOT" = "Бот";
+"OPERATOR" = "Оператор";
+"SUPERVISOR" = "Оператор";
+"SYSTEM" = "Оператор";
+"INTEGRATION" = "Оператор";
+
+    // Загрузка файлов
+"threads_disallowed_error_during_load_file" = "Загрузка файла не выполнена.\nНе удалось проверить файл";
+"threads_timeout_error_during_load_file" = "Не удалось завершить загрузку файла, истек таймаут.\nПопробуйте загрузить файл позже";
+"threads_unexpected_error_during_load_file" = "Не удалось завершить загрузку файла.\nПопробуйте отправить файл позже";
+"threads_some_error_during_load_file" = "Произошла ошибка при загрузке\nили проверке файла";
+"threads_file_restricted_type_error_during_load_file" = "Файл с таким расширением запрещен к загрузке";
+"threads_file_restricted_size_error_during_load_file" = "Размер файла превышает допустимое значение";
+"threads_file_not_found_error_during_load_file" = "Файл для загрузки не найден";
+"threads_file_unsupported_format" = "Неподдерживаемый формат";
+
+    // Toast Notification View
+"Text copied to clipboard" = "Текст скопирован в буфер обмена";
+
+    // Серверные ошибки
+"VALIDATION_ERROR" = "Не доставлено";

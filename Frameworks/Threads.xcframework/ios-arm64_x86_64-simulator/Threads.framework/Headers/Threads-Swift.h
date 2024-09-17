@@ -443,6 +443,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)thrSurveyCompletionColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyTextColor;)
 + (UIColor * _Nonnull)thrSurveyTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsBackgroundColor;)
++ (UIColor * _Nonnull)thrSurveyButtonsBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsTextColor;)
++ (UIColor * _Nonnull)thrSurveyButtonsTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsCompletedColor;)
++ (UIColor * _Nonnull)thrSurveyButtonsCompletedColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrTimeAndStatusBackgroundColor;)
 + (UIColor * _Nonnull)thrTimeAndStatusBackgroundColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrToolbarQuotedMessageAuthorColor;)
@@ -876,6 +882,7 @@ typedef SWIFT_ENUM(NSUInteger, THRAPIVersion, open) {
   THRAPIVersionApi16 = 16,
   THRAPIVersionApi17 = 17,
   THRAPIVersionApi18 = 18,
+  THRAPIVersionApi19 = 19,
 };
 
 @class UIFont;
@@ -1106,6 +1113,9 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable iconDislikeEmpty;
 @property (nonatomic, strong) UIImage * _Nullable iconLikeFull;
 @property (nonatomic, strong) UIImage * _Nullable iconDislikeFull;
+@property (nonatomic, strong) UIColor * _Nonnull surveyButtonsBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull surveyButtonsTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull surveyButtonsCompletedColor;
 /// < Режим отображения
 @property (nonatomic) enum THRQuickReplyPresentationMode quickReplyPresentationMode;
 /// < Выравнивание по горизонтали
@@ -1934,6 +1944,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)thrSurveyCompletionColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyTextColor;)
 + (UIColor * _Nonnull)thrSurveyTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsBackgroundColor;)
++ (UIColor * _Nonnull)thrSurveyButtonsBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsTextColor;)
++ (UIColor * _Nonnull)thrSurveyButtonsTextColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsCompletedColor;)
++ (UIColor * _Nonnull)thrSurveyButtonsCompletedColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrTimeAndStatusBackgroundColor;)
 + (UIColor * _Nonnull)thrTimeAndStatusBackgroundColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrToolbarQuotedMessageAuthorColor;)
@@ -2367,6 +2383,7 @@ typedef SWIFT_ENUM(NSUInteger, THRAPIVersion, open) {
   THRAPIVersionApi16 = 16,
   THRAPIVersionApi17 = 17,
   THRAPIVersionApi18 = 18,
+  THRAPIVersionApi19 = 19,
 };
 
 @class UIFont;
@@ -2597,6 +2614,9 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIImage * _Nullable iconDislikeEmpty;
 @property (nonatomic, strong) UIImage * _Nullable iconLikeFull;
 @property (nonatomic, strong) UIImage * _Nullable iconDislikeFull;
+@property (nonatomic, strong) UIColor * _Nonnull surveyButtonsBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull surveyButtonsTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull surveyButtonsCompletedColor;
 /// < Режим отображения
 @property (nonatomic) enum THRQuickReplyPresentationMode quickReplyPresentationMode;
 /// < Выравнивание по горизонтали

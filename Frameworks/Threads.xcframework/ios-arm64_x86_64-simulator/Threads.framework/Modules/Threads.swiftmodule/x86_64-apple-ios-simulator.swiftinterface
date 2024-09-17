@@ -807,6 +807,15 @@ public struct MultipartFormData {
   @objc public static var thrSurveyTextColor: UIKit.UIColor {
     @objc get
   }
+  @objc public static var thrSurveyButtonsBackgroundColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSurveyButtonsTextColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var thrSurveyButtonsCompletedColor: UIKit.UIColor {
+    @objc get
+  }
   @objc public static var thrTimeAndStatusBackgroundColor: UIKit.UIColor {
     @objc get
   }
@@ -879,6 +888,7 @@ public struct MultipartFormData {
   case api16 = 16
   case api17 = 17
   case api18 = 18
+  case api19 = 19
   public init?(rawValue: Swift.UInt)
   public typealias RawValue = Swift.UInt
   public var rawValue: Swift.UInt {
@@ -1100,6 +1110,9 @@ public struct MultipartFormData {
   @objc public var iconDislikeEmpty: UIKit.UIImage?
   @objc public var iconLikeFull: UIKit.UIImage?
   @objc public var iconDislikeFull: UIKit.UIImage?
+  @objc public var surveyButtonsBackgroundColor: UIKit.UIColor
+  @objc public var surveyButtonsTextColor: UIKit.UIColor
+  @objc public var surveyButtonsCompletedColor: UIKit.UIColor
   @objc public var quickReplyPresentationMode: THRQuickReplyPresentationMode
   @objc public var quickReplyAlignment: THRQuickReplyAlignment
   @objc public var quickReplyFont: UIKit.UIFont

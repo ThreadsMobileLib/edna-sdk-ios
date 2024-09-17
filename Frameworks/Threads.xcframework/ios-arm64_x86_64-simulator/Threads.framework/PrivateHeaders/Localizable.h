@@ -209,6 +209,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)unlockCameraAccess;
 /// Разблокируйте доступ к фотографиям в настройках приложения, чтобы продолжить
 + (NSString*)unlockPhotosAccess;
+/// Не доставлено
++ (NSString*)validationError;
 /// Голосовое сообщение
 + (NSString*)voiceMessage;
 /// Запись не читается
