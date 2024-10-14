@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/Threads-Swift.h</key>
 		<data>
-		JRGirMPnLM+SIQ8Yix/DonvSBaM=
+		nG/yq7SoUu+w2IikvEFH3Qy7zvo=
 		</data>
 		<key>Headers/Threads-umbrella.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		6XrS1aXIuku9wKuXgGYBeeJDPgg=
+		sqoKZB736bR4M2DhTPUPmvawtpk=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		J37zCsQF+67bl6moq0EmhIEvwpk=
+		8R1JmFxqOrAyNf3ldjwBVzCgdW4=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		wajH45gOppqwbwWAvBo0a9Lu2Qg=
+		SUnWqCVSeIloX18hkj5YWqfGhEc=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Yv8u5OL5XwcxAm6yRnyd5fWLi44=
+		rG2NEpanJLSkvjP/W8VZ6tk5i68=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		x2OJ/R/i0HJwu+ukAKpYcdarVl0=
+		4LBRHTn6bMCHhmyVwRM8r4nhWnE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,14 +63,6 @@
 		<key>PrivateHeaders/Threads-private.h</key>
 		<data>
 		hMZx4WyGSmOpUI0NtehC3dxD2m8=
-		</data>
-		<key>THRJSQMessagesAssets.bundle/Sounds/message_received.aiff</key>
-		<data>
-		TKTS59zgmHZAL3xG3uaz4KJtsdY=
-		</data>
-		<key>THRJSQMessagesAssets.bundle/Sounds/message_sent.aiff</key>
-		<data>
-		3yBHdhgUhcBRF70yxBx3/vIkDv8=
 		</data>
 		<key>en.lproj/THRLocalizable.strings</key>
 		<dict>
@@ -104,7 +96,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8njhDTdz8VYsB2Mqfx63YGp9JnUwcFAIG4U/R5dT8ig=
+			W2M7k31iBsl6boMvDk0hbhoo7P3AuoByKoU3kNfR2I8=
 			</data>
 		</dict>
 		<key>Headers/Threads-umbrella.h</key>
@@ -132,14 +124,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			g/B3G2G8fRnthTUxSW32yHoayrMb0fppujh8QYsfGF8=
+			YHGbrKM0ScHL/+j4vYNodeIavM7pd8WVXTM7HqSr7cs=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uJvpUKOKuiztlsU+6oT7VRjEjn9MWGBmfJe+TTuXjbk=
+			EzSpElhNmJMWKM0N7q9S8pklxgUymBAK3Dw8fFmVp/0=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -153,14 +145,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8rE+qqoyYmF/JW7xIoVL5LtfaVqBdaJQ6qRRNoX/CCE=
+			6+YAyfO1mTNTEKLjuJ1SU1+1GzQK6cfXNDvzRHXbgNs=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fmkwMmgOgw48xczU/YlECGEaw8t+47B8rSvCE2G6+HI=
+			41nzQF88pOG9xX7ddNz9kfdmOpB0Utr6pp4CZmEoRoM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -189,20 +181,6 @@
 			<key>hash2</key>
 			<data>
 			RP+Yza5fj98weaXkU6bnlYaQCesWUsGem76LjsKJAAk=
-			</data>
-		</dict>
-		<key>THRJSQMessagesAssets.bundle/Sounds/message_received.aiff</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			bLOplum4dpkjCFQ7mq/aB183CICUuxMf+rN4pyhOz7U=
-			</data>
-		</dict>
-		<key>THRJSQMessagesAssets.bundle/Sounds/message_sent.aiff</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			cPLDKnxAdzBP4dLunBI1N2PFnu8SGzpEzx4OV2wnIH8=
 			</data>
 		</dict>
 		<key>en.lproj/THRLocalizable.strings</key>

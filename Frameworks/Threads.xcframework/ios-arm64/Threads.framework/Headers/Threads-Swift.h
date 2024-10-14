@@ -437,16 +437,16 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)thrStarRatingColorDisabled SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrStarRatingColorEnabled;)
 + (UIColor * _Nonnull)thrStarRatingColorEnabled SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsBackgroundColor;)
++ (UIColor * _Nonnull)thrSurveyButtonsBackgroundColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsCompletedColor;)
++ (UIColor * _Nonnull)thrSurveyButtonsCompletedColor SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsTextColor;)
++ (UIColor * _Nonnull)thrSurveyButtonsTextColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyCompletionColor;)
 + (UIColor * _Nonnull)thrSurveyCompletionColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyTextColor;)
 + (UIColor * _Nonnull)thrSurveyTextColor SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsBackgroundColor;)
-+ (UIColor * _Nonnull)thrSurveyButtonsBackgroundColor SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsTextColor;)
-+ (UIColor * _Nonnull)thrSurveyButtonsTextColor SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrSurveyButtonsCompletedColor;)
-+ (UIColor * _Nonnull)thrSurveyButtonsCompletedColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrTimeAndStatusBackgroundColor;)
 + (UIColor * _Nonnull)thrTimeAndStatusBackgroundColor SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull thrToolbarQuotedMessageAuthorColor;)
@@ -1390,7 +1390,7 @@ SWIFT_CLASS("_TtC7Threads7Threads")
 - (BOOL)isThreadsOriginPushUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getAppMarkerFromPushUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (void)sendMessageWithText:(NSString * _Nonnull)withText completion:(void (^ _Nullable)(NSError * _Nullable))completion;
-- (void)registerUserWith:(THRClientInfo * _Nonnull)clientInfo messageWithText:(NSString * _Nullable)text;
+- (void)registerUserWith:(THRClientInfo * _Nonnull)clientInfo messageWithText:(NSString * _Nullable)text SWIFT_DEPRECATED_MSG("Будет удален в следующих релизах, рекомендуется перейти на серверный конфиг");
 - (void)sendMessageWith:(UIImage * _Nonnull)image completion:(void (^ _Nullable)(NSError * _Nullable))completion;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 - (UIViewController * _Nonnull)chatViewControllerWith:(THRAttributes * _Nonnull)attributes completionHandler:(void (^ _Nullable)(NSError * _Nullable))completionHandler SWIFT_WARN_UNUSED_RESULT;
