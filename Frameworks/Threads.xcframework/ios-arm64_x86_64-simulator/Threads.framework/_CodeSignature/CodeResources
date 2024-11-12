@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		kqHfJGCq9HQJ5JX/bGyWPGX+Jkg=
+		kWDLAuJ6Td2UiBYGP8jmk8rKXOg=
 		</data>
 		<key>Headers/Threads-Swift.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		sqoKZB736bR4M2DhTPUPmvawtpk=
+		fkEQVMgMrQ7FTi26QDPSK1f2D7c=
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		SUnWqCVSeIloX18hkj5YWqfGhEc=
+		UvIkfbmnnWoanIcoCEHy/ButJSk=
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4LBRHTn6bMCHhmyVwRM8r4nhWnE=
+		D8jYkUur1GrcLIvhRK5PRFurs94=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -89,7 +89,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fD2UUGHUPonTcr9GSXxBm3vZQN6+6ESxM154zq7FgZ0=
+			L3qt2xFMwQfWnoGY1JHj49PNN0UvFlw3L5+TUedgo2I=
 			</data>
 		</dict>
 		<key>Headers/Threads-Swift.h</key>
@@ -131,7 +131,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EzSpElhNmJMWKM0N7q9S8pklxgUymBAK3Dw8fFmVp/0=
+			v2Lt+J/cGYYOavTrZL9wR23+PmQIkC0iE3SnZOwysVQ=
 			</data>
 		</dict>
 		<key>Modules/Threads.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -152,7 +152,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			41nzQF88pOG9xX7ddNz9kfdmOpB0Utr6pp4CZmEoRoM=
+			JcY0YeeHXjlS8E4G25U0UPlWUg+ukTuXLqNmJFZ+q1U=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
