@@ -212,7 +212,8 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -315,7 +316,8 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -337,7 +339,8 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -6906,6 +6909,114 @@
           },
           {
             "kind": "Var",
+            "name": "backgroundColor",
+            "printedName": "backgroundColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Threads@objc(cs)MessagesLoadEarlierHeaderView(py)backgroundColor",
+            "mangledName": "$s7Threads29MessagesLoadEarlierHeaderViewC15backgroundColorSo7UIColorCSgvp",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "backgroundColor",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)MessagesLoadEarlierHeaderView(im)backgroundColor",
+                "mangledName": "$s7Threads29MessagesLoadEarlierHeaderViewC15backgroundColorSo7UIColorCSgvg",
+                "moduleName": "Threads",
+                "overriding": true,
+                "implicit": true,
+                "objc_name": "backgroundColor",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)MessagesLoadEarlierHeaderView(im)setBackgroundColor:",
+                "mangledName": "$s7Threads29MessagesLoadEarlierHeaderViewC15backgroundColorSo7UIColorCSgvs",
+                "moduleName": "Threads",
+                "overriding": true,
+                "implicit": true,
+                "objc_name": "setBackgroundColor:",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "delegate",
             "printedName": "delegate",
             "children": [
@@ -7064,114 +7175,6 @@
                   "ObjC"
                 ],
                 "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "backgroundColor",
-            "printedName": "backgroundColor",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "UIKit.UIColor?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UIColor",
-                    "printedName": "UIKit.UIColor",
-                    "usr": "c:objc(cs)UIColor"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Threads@objc(cs)MessagesLoadEarlierHeaderView(py)backgroundColor",
-            "mangledName": "$s7Threads29MessagesLoadEarlierHeaderViewC15backgroundColorSo7UIColorCSgvp",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "backgroundColor",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "Override"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "UIKit.UIColor?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "UIColor",
-                        "printedName": "UIKit.UIColor",
-                        "usr": "c:objc(cs)UIColor"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)MessagesLoadEarlierHeaderView(im)backgroundColor",
-                "mangledName": "$s7Threads29MessagesLoadEarlierHeaderViewC15backgroundColorSo7UIColorCSgvg",
-                "moduleName": "Threads",
-                "overriding": true,
-                "implicit": true,
-                "objc_name": "backgroundColor",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "UIKit.UIColor?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "UIColor",
-                        "printedName": "UIKit.UIColor",
-                        "usr": "c:objc(cs)UIColor"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)MessagesLoadEarlierHeaderView(im)setBackgroundColor:",
-                "mangledName": "$s7Threads29MessagesLoadEarlierHeaderViewC15backgroundColorSo7UIColorCSgvs",
-                "moduleName": "Threads",
-                "overriding": true,
-                "implicit": true,
-                "objc_name": "setBackgroundColor:",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "set"
               }
             ]
           }
@@ -8142,6 +8145,58 @@
           },
           {
             "kind": "Var",
+            "name": "debugDescription",
+            "printedName": "debugDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Threads@objc(cs)SocketSettings(py)debugDescription",
+            "mangledName": "$s7Threads14SocketSettingsC16debugDescriptionSSvp",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "debugDescription",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)SocketSettings(im)debugDescription",
+                "mangledName": "$s7Threads14SocketSettingsC16debugDescriptionSSvg",
+                "moduleName": "Threads",
+                "overriding": true,
+                "objc_name": "debugDescription",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "sendIntervalSec",
             "printedName": "sendIntervalSec",
             "children": [
@@ -8703,57 +8758,6 @@
                 "accessorKind": "_modify"
               }
             ]
-          },
-          {
-            "kind": "Var",
-            "name": "debugDescription",
-            "printedName": "debugDescription",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Threads@objc(cs)SocketSettings(py)debugDescription",
-            "mangledName": "$s7Threads14SocketSettingsC16debugDescriptionSSvp",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "debugDescription",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl",
-              "Override"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)SocketSettings(im)debugDescription",
-                "mangledName": "$s7Threads14SocketSettingsC16debugDescriptionSSvg",
-                "moduleName": "Threads",
-                "overriding": true,
-                "objc_name": "debugDescription",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
           }
         ],
         "declKind": "Class",
@@ -8868,6 +8872,58 @@
               "RawDocComment"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "debugDescription",
+            "printedName": "debugDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Threads@objc(cs)HttpSettings(py)debugDescription",
+            "mangledName": "$s7Threads12HttpSettingsC16debugDescriptionSSvp",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "debugDescription",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)HttpSettings(im)debugDescription",
+                "mangledName": "$s7Threads12HttpSettingsC16debugDescriptionSSvg",
+                "moduleName": "Threads",
+                "overriding": true,
+                "objc_name": "debugDescription",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
           },
           {
             "kind": "Var",
@@ -9150,57 +9206,6 @@
                 "accessorKind": "_modify"
               }
             ]
-          },
-          {
-            "kind": "Var",
-            "name": "debugDescription",
-            "printedName": "debugDescription",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Threads@objc(cs)HttpSettings(py)debugDescription",
-            "mangledName": "$s7Threads12HttpSettingsC16debugDescriptionSSvp",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "debugDescription",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl",
-              "Override"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)HttpSettings(im)debugDescription",
-                "mangledName": "$s7Threads12HttpSettingsC16debugDescriptionSSvg",
-                "moduleName": "Threads",
-                "overriding": true,
-                "objc_name": "debugDescription",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
           }
         ],
         "declKind": "Class",
@@ -9317,6 +9322,58 @@
           },
           {
             "kind": "Var",
+            "name": "debugDescription",
+            "printedName": "debugDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Threads@objc(cs)THRRequestConfigs(py)debugDescription",
+            "mangledName": "$s7Threads17THRRequestConfigsC16debugDescriptionSSvp",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "debugDescription",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)THRRequestConfigs(im)debugDescription",
+                "mangledName": "$s7Threads17THRRequestConfigsC16debugDescriptionSSvg",
+                "moduleName": "Threads",
+                "overriding": true,
+                "objc_name": "debugDescription",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "socket",
             "printedName": "socket",
             "children": [
@@ -9335,7 +9392,6 @@
               "HasInitialValue",
               "HasStorage",
               "AccessControl",
-              "RawDocComment",
               "ObjC"
             ],
             "hasStorage": true,
@@ -9499,57 +9555,6 @@
                 "moduleName": "Threads",
                 "implicit": true,
                 "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "debugDescription",
-            "printedName": "debugDescription",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Threads@objc(cs)THRRequestConfigs(py)debugDescription",
-            "mangledName": "$s7Threads17THRRequestConfigsC16debugDescriptionSSvp",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "debugDescription",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl",
-              "Override"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)THRRequestConfigs(im)debugDescription",
-                "mangledName": "$s7Threads17THRRequestConfigsC16debugDescriptionSSvg",
-                "moduleName": "Threads",
-                "overriding": true,
-                "objc_name": "debugDescription",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
               }
             ]
           }
@@ -9781,7 +9786,8 @@
         "declAttributes": [
           "Final",
           "AccessControl",
-          "ObjC"
+          "ObjC",
+          "RawDocComment"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
         "inheritsConvenienceInitializers": true,
@@ -10342,7 +10348,8 @@
         "declAttributes": [
           "Final",
           "AccessControl",
-          "ObjC"
+          "ObjC",
+          "RawDocComment"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
         "superclassNames": [
@@ -10719,6 +10726,101 @@
           },
           {
             "kind": "Function",
+            "name": "prepareForReuse",
+            "printedName": "prepareForReuse()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Threads@objc(cs)QuickReplyCell(im)prepareForReuse",
+            "mangledName": "$s7Threads14QuickReplyCellC15prepareForReuseyyF",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "prepareForReuse",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "layoutSubviews",
+            "printedName": "layoutSubviews()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Threads@objc(cs)QuickReplyCell(im)layoutSubviews",
+            "mangledName": "$s7Threads14QuickReplyCellC14layoutSubviewsyyF",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "layoutSubviews",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "traitCollectionDidChange",
+            "printedName": "traitCollectionDidChange(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UITraitCollection?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UITraitCollection",
+                    "printedName": "UIKit.UITraitCollection",
+                    "usr": "c:objc(cs)UITraitCollection"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Threads@objc(cs)QuickReplyCell(im)traitCollectionDidChange:",
+            "mangledName": "$s7Threads14QuickReplyCellC24traitCollectionDidChangeyySo07UITraitF0CSgF",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "traitCollectionDidChange:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "cellIdentifier",
             "printedName": "cellIdentifier()",
             "children": [
@@ -10808,60 +10910,6 @@
           },
           {
             "kind": "Function",
-            "name": "prepareForReuse",
-            "printedName": "prepareForReuse()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@Threads@objc(cs)QuickReplyCell(im)prepareForReuse",
-            "mangledName": "$s7Threads14QuickReplyCellC15prepareForReuseyyF",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "prepareForReuse",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "Override"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "layoutSubviews",
-            "printedName": "layoutSubviews()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@Threads@objc(cs)QuickReplyCell(im)layoutSubviews",
-            "mangledName": "$s7Threads14QuickReplyCellC14layoutSubviewsyyF",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "layoutSubviews",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "Override"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "getSize",
             "printedName": "getSize(width:)",
             "children": [
@@ -10887,47 +10935,6 @@
               "Custom",
               "AccessControl",
               "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "traitCollectionDidChange",
-            "printedName": "traitCollectionDidChange(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "UIKit.UITraitCollection?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UITraitCollection",
-                    "printedName": "UIKit.UITraitCollection",
-                    "usr": "c:objc(cs)UITraitCollection"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@Threads@objc(cs)QuickReplyCell(im)traitCollectionDidChange:",
-            "mangledName": "$s7Threads14QuickReplyCellC24traitCollectionDidChangeyySo07UITraitF0CSgF",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "traitCollectionDidChange:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "Override"
             ],
             "funcSelfKind": "NonMutating"
           }
@@ -20994,6 +21001,58 @@
         "children": [
           {
             "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Threads@objc(cs)QuickReply(py)description",
+            "mangledName": "$s7Threads10QuickReplyC11descriptionSSvp",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "description",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)QuickReply(im)description",
+                "mangledName": "$s7Threads10QuickReplyC11descriptionSSvg",
+                "moduleName": "Threads",
+                "overriding": true,
+                "objc_name": "description",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "text",
             "printedName": "text",
             "children": [
@@ -21012,7 +21071,6 @@
               "Final",
               "HasStorage",
               "AccessControl",
-              "RawDocComment",
               "ObjC"
             ],
             "isLet": true,
@@ -21037,57 +21095,6 @@
                 "implicit": true,
                 "declAttributes": [
                   "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "description",
-            "printedName": "description",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Threads@objc(cs)QuickReply(py)description",
-            "mangledName": "$s7Threads10QuickReplyC11descriptionSSvp",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "description",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl",
-              "Override"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)QuickReply(im)description",
-                "mangledName": "$s7Threads10QuickReplyC11descriptionSSvg",
-                "moduleName": "Threads",
-                "overriding": true,
-                "objc_name": "description",
-                "declAttributes": [
-                  "Dynamic",
                   "ObjC"
                 ],
                 "accessorKind": "get"
@@ -22225,6 +22232,58 @@
               "RawDocComment"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "debugDescription",
+            "printedName": "debugDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Threads@objc(cs)THRAttributes(py)debugDescription",
+            "mangledName": "$s7Threads13THRAttributesC16debugDescriptionSSvp",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "debugDescription",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)THRAttributes(im)debugDescription",
+                "mangledName": "$s7Threads13THRAttributesC16debugDescriptionSSvg",
+                "moduleName": "Threads",
+                "overriding": true,
+                "objc_name": "debugDescription",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
           },
           {
             "kind": "Var",
@@ -47246,57 +47305,6 @@
             ]
           },
           {
-            "kind": "Var",
-            "name": "debugDescription",
-            "printedName": "debugDescription",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Threads@objc(cs)THRAttributes(py)debugDescription",
-            "mangledName": "$s7Threads13THRAttributesC16debugDescriptionSSvp",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "debugDescription",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl",
-              "Override"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)THRAttributes(im)debugDescription",
-                "mangledName": "$s7Threads13THRAttributesC16debugDescriptionSSvg",
-                "moduleName": "Threads",
-                "overriding": true,
-                "objc_name": "debugDescription",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
             "kind": "Function",
             "name": "defaultAttributes",
             "printedName": "defaultAttributes()",
@@ -51638,6 +51646,166 @@
           },
           {
             "kind": "Var",
+            "name": "backgroundColor",
+            "printedName": "backgroundColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Threads@objc(cs)StarRateView(py)backgroundColor",
+            "mangledName": "$s7Threads12StarRateViewC15backgroundColorSo7UIColorCSgvp",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "backgroundColor",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)StarRateView(im)backgroundColor",
+                "mangledName": "$s7Threads12StarRateViewC15backgroundColorSo7UIColorCSgvg",
+                "moduleName": "Threads",
+                "overriding": true,
+                "objc_name": "backgroundColor",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)StarRateView(im)setBackgroundColor:",
+                "mangledName": "$s7Threads12StarRateViewC15backgroundColorSo7UIColorCSgvs",
+                "moduleName": "Threads",
+                "overriding": true,
+                "objc_name": "setBackgroundColor:",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "intrinsicContentSize",
+            "printedName": "intrinsicContentSize",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Threads@objc(cs)StarRateView(py)intrinsicContentSize",
+            "mangledName": "$s7Threads12StarRateViewC20intrinsicContentSizeSo6CGSizeVvp",
+            "moduleName": "Threads",
+            "overriding": true,
+            "objc_name": "intrinsicContentSize",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGSize",
+                    "printedName": "CoreFoundation.CGSize",
+                    "usr": "c:@S@CGSize"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)StarRateView(im)intrinsicContentSize",
+                "mangledName": "$s7Threads12StarRateViewC20intrinsicContentSizeSo6CGSizeVvg",
+                "moduleName": "Threads",
+                "overriding": true,
+                "objc_name": "intrinsicContentSize",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "delegate",
             "printedName": "delegate",
             "children": [
@@ -51658,8 +51826,7 @@
               "HasStorage",
               "ReferenceOwnership",
               "AccessControl",
-              "ObjC",
-              "RawDocComment"
+              "ObjC"
             ],
             "ownership": 1,
             "hasStorage": true,
@@ -52548,165 +52715,6 @@
             ]
           },
           {
-            "kind": "Var",
-            "name": "backgroundColor",
-            "printedName": "backgroundColor",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "ImplicitlyUnwrappedOptional",
-                "printedName": "UIKit.UIColor?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UIColor",
-                    "printedName": "UIKit.UIColor",
-                    "usr": "c:objc(cs)UIColor"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Threads@objc(cs)StarRateView(py)backgroundColor",
-            "mangledName": "$s7Threads12StarRateViewC15backgroundColorSo7UIColorCSgvp",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "backgroundColor",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "Override"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ImplicitlyUnwrappedOptional",
-                    "printedName": "UIKit.UIColor?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "UIColor",
-                        "printedName": "UIKit.UIColor",
-                        "usr": "c:objc(cs)UIColor"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)StarRateView(im)backgroundColor",
-                "mangledName": "$s7Threads12StarRateViewC15backgroundColorSo7UIColorCSgvg",
-                "moduleName": "Threads",
-                "overriding": true,
-                "objc_name": "backgroundColor",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ImplicitlyUnwrappedOptional",
-                    "printedName": "UIKit.UIColor?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "UIColor",
-                        "printedName": "UIKit.UIColor",
-                        "usr": "c:objc(cs)UIColor"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)StarRateView(im)setBackgroundColor:",
-                "mangledName": "$s7Threads12StarRateViewC15backgroundColorSo7UIColorCSgvs",
-                "moduleName": "Threads",
-                "overriding": true,
-                "objc_name": "setBackgroundColor:",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "intrinsicContentSize",
-            "printedName": "intrinsicContentSize",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CGSize",
-                "printedName": "CoreFoundation.CGSize",
-                "usr": "c:@S@CGSize"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Threads@objc(cs)StarRateView(py)intrinsicContentSize",
-            "mangledName": "$s7Threads12StarRateViewC20intrinsicContentSizeSo6CGSizeVvp",
-            "moduleName": "Threads",
-            "overriding": true,
-            "objc_name": "intrinsicContentSize",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "Override"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CGSize",
-                    "printedName": "CoreFoundation.CGSize",
-                    "usr": "c:@S@CGSize"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)StarRateView(im)intrinsicContentSize",
-                "mangledName": "$s7Threads12StarRateViewC20intrinsicContentSizeSo6CGSizeVvg",
-                "moduleName": "Threads",
-                "overriding": true,
-                "objc_name": "intrinsicContentSize",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
             "kind": "Function",
             "name": "draw",
             "printedName": "draw(_:)",
@@ -53339,57 +53347,6 @@
           },
           {
             "kind": "Var",
-            "name": "rawValue",
-            "printedName": "rawValue",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Threads@objc(cs)ThreadsLogLevel(py)rawValue",
-            "mangledName": "$s7Threads0A8LogLevelC8rawValueSivp",
-            "moduleName": "Threads",
-            "declAttributes": [
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Threads@objc(cs)ThreadsLogLevel(im)rawValue",
-                "mangledName": "$s7Threads0A8LogLevelC8rawValueSivg",
-                "moduleName": "Threads",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "description",
             "printedName": "description",
             "children": [
@@ -53433,6 +53390,57 @@
                 "objc_name": "description",
                 "declAttributes": [
                   "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Threads@objc(cs)ThreadsLogLevel(py)rawValue",
+            "mangledName": "$s7Threads0A8LogLevelC8rawValueSivp",
+            "moduleName": "Threads",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Threads@objc(cs)ThreadsLogLevel(im)rawValue",
+                "mangledName": "$s7Threads0A8LogLevelC8rawValueSivg",
+                "moduleName": "Threads",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
                   "ObjC"
                 ],
                 "accessorKind": "get"
@@ -57685,7 +57693,7 @@
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Search Controller\/SearchViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5475,
+      "offset": 5474,
       "length": 1,
       "value": "0"
     },
@@ -57741,28 +57749,28 @@
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Cells\/MessagesLoadEarlierHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 1417,
+      "offset": 1612,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Cells\/MessagesLoadEarlierHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 1429,
+      "offset": 1624,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Cells\/MessagesLoadEarlierHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 1440,
+      "offset": 1635,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Cells\/MessagesLoadEarlierHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1452,
+      "offset": 1647,
       "length": 1,
       "value": "1"
     },
@@ -57824,136 +57832,136 @@
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
+      "kind": "StringLiteral",
+      "offset": 433,
+      "length": 40,
+      "value": "\"'\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
+      "kind": "StringLiteral",
+      "offset": 452,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
+      "kind": "StringLiteral",
+      "offset": 455,
+      "length": 2,
+      "value": "\"''\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
+      "kind": "StringLiteral",
+      "offset": 471,
+      "length": 2,
+      "value": "\"'\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
+      "kind": "StringLiteral",
+      "offset": 502,
+      "length": 4,
+      "value": "\" |\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "IntegerLiteral",
-      "offset": 417,
+      "offset": 626,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "IntegerLiteral",
-      "offset": 564,
+      "offset": 773,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "IntegerLiteral",
-      "offset": 722,
+      "offset": 931,
       "length": 2,
       "value": "64"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "IntegerLiteral",
-      "offset": 856,
+      "offset": 1065,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "IntegerLiteral",
-      "offset": 999,
+      "offset": 1208,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "IntegerLiteral",
-      "offset": 1142,
+      "offset": 1351,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "StringLiteral",
-      "offset": 1272,
+      "offset": 1636,
       "length": 40,
       "value": "\"'\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "StringLiteral",
-      "offset": 1291,
+      "offset": 1655,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "StringLiteral",
-      "offset": 1294,
+      "offset": 1658,
       "length": 2,
       "value": "\"''\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "StringLiteral",
-      "offset": 1310,
+      "offset": 1674,
       "length": 2,
       "value": "\"'\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "StringLiteral",
-      "offset": 1341,
+      "offset": 1705,
       "length": 4,
       "value": "\" |\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "IntegerLiteral",
-      "offset": 1640,
+      "offset": 1849,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "IntegerLiteral",
-      "offset": 1750,
+      "offset": 1959,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
       "kind": "IntegerLiteral",
-      "offset": 1858,
+      "offset": 2067,
       "length": 3,
       "value": "120"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 1990,
-      "length": 40,
-      "value": "\"'\""
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 2009,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 2012,
-      "length": 2,
-      "value": "\"''\""
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 2028,
-      "length": 2,
-      "value": "\"'\""
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Settings\/Network\/SocketSettings.swift",
-      "kind": "StringLiteral",
-      "offset": 2059,
-      "length": 4,
-      "value": "\" |\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Networking\/UploadDataRequest.swift",
@@ -58063,42 +58071,42 @@
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Model\/THRJSQMessagesAvatarImage.swift",
       "kind": "StringLiteral",
-      "offset": 1242,
+      "offset": 806,
       "length": 86,
       "value": "\"<\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Model\/THRJSQMessagesAvatarImage.swift",
       "kind": "StringLiteral",
-      "offset": 1277,
+      "offset": 841,
       "length": 1,
       "value": "\": avatarImage=\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Model\/THRJSQMessagesAvatarImage.swift",
       "kind": "StringLiteral",
-      "offset": 1325,
+      "offset": 889,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Model\/THRJSQMessagesAvatarImage.swift",
       "kind": "StringLiteral",
-      "offset": 1343,
+      "offset": 907,
       "length": 121,
       "value": "\"avatarHighlightedImage=\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Model\/THRJSQMessagesAvatarImage.swift",
       "kind": "StringLiteral",
-      "offset": 1412,
+      "offset": 976,
       "length": 1,
       "value": "\", avatarPlaceholderImage=\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Model\/THRJSQMessagesAvatarImage.swift",
       "kind": "StringLiteral",
-      "offset": 1462,
+      "offset": 1026,
       "length": 1,
       "value": "\">\""
     },
@@ -58280,7 +58288,7 @@
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Toast\/ToastView.swift",
       "kind": "FloatLiteral",
-      "offset": 7551,
+      "offset": 7526,
       "length": 3,
       "value": "0.0"
     },
@@ -59281,42 +59289,42 @@
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Models\/QuickReplies\/QuickReply.swift",
       "kind": "StringLiteral",
-      "offset": 530,
+      "offset": 501,
       "length": 122,
       "value": "\"id = \""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Models\/QuickReplies\/QuickReply.swift",
       "kind": "StringLiteral",
-      "offset": 541,
+      "offset": 512,
       "length": 1,
       "value": "\", type = \""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Models\/QuickReplies\/QuickReply.swift",
       "kind": "StringLiteral",
-      "offset": 557,
+      "offset": 528,
       "length": 1,
       "value": "\", text = \""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Models\/QuickReplies\/QuickReply.swift",
       "kind": "StringLiteral",
-      "offset": 573,
+      "offset": 544,
       "length": 1,
       "value": "\", imageUrl = \""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Models\/QuickReplies\/QuickReply.swift",
       "kind": "StringLiteral",
-      "offset": 617,
+      "offset": 588,
       "length": 1,
       "value": "\", url = \""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Models\/QuickReplies\/QuickReply.swift",
       "kind": "StringLiteral",
-      "offset": 651,
+      "offset": 622,
       "length": 1,
       "value": "\"\""
     },
@@ -59504,570 +59512,570 @@
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1603,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1659,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2100,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2158,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2205,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2270,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2487,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2742,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3018,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3227,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3240,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3301,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3314,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3689,
-      "length": 2,
-      "value": "15"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3817,
-      "length": 2,
-      "value": "15"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3957,
-      "length": 2,
-      "value": "15"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4727,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4786,
-      "length": 1,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4795,
-      "length": 1,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4806,
-      "length": 1,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4816,
-      "length": 1,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4863,
-      "length": 2,
-      "value": "16"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 5376,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 6301,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6357,
-      "length": 1,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6411,
-      "length": 2,
-      "value": "30"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6466,
-      "length": 3,
-      "value": "150"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 6795,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7144,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 7964,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8939,
-      "length": 1,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9029,
-      "length": 1,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "FloatLiteral",
-      "offset": 9279,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "FloatLiteral",
-      "offset": 9290,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "FloatLiteral",
-      "offset": 9303,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "FloatLiteral",
-      "offset": 9315,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "FloatLiteral",
-      "offset": 9403,
-      "length": 4,
-      "value": "12.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "FloatLiteral",
-      "offset": 9415,
-      "length": 4,
-      "value": "14.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "FloatLiteral",
-      "offset": 9429,
-      "length": 4,
-      "value": "12.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "FloatLiteral",
-      "offset": 9442,
-      "length": 4,
-      "value": "14.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "FloatLiteral",
-      "offset": 9626,
-      "length": 5,
-      "value": "240.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "FloatLiteral",
-      "offset": 9678,
-      "length": 4,
-      "value": "50.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10574,
-      "length": 2,
-      "value": "15"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10704,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 11160,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 11541,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 12225,
-      "length": 2,
-      "value": "40"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 12278,
-      "length": 2,
-      "value": "40"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 12335,
-      "length": 1,
-      "value": "8"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 12414,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 12542,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 13357,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 14936,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 15183,
-      "length": 2,
-      "value": "17"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 15261,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 16931,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 17582,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 18442,
-      "length": 2,
-      "value": "15"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 18568,
-      "length": 2,
-      "value": "15"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 18616,
-      "length": 4,
-      "value": "3000"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 19914,
-      "length": 2,
-      "value": "15"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 20063,
-      "length": 2,
-      "value": "12"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 21058,
-      "length": 2,
-      "value": "44"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 21192,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 21280,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 22333,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 22487,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 22630,
-      "length": 2,
-      "value": "50"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 22781,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 22844,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 22933,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "StringLiteral",
-      "offset": 23490,
-      "length": 9,
-      "value": "\"Threads\""
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 23587,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 23721,
-      "length": 1,
-      "value": "7"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "StringLiteral",
-      "offset": 23801,
-      "length": 26,
-      "value": "\"Text copied to clipboard\""
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 24072,
-      "length": 2,
-      "value": "40"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
       "kind": "Array",
-      "offset": 24508,
+      "offset": 1301,
       "length": 42,
       "value": "[\"Color\", \"Image\", \"Font\", \"icon\", \"Icon\"]"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 24578,
+      "offset": 1371,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 24770,
+      "offset": 1563,
       "length": 29,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 24780,
+      "offset": 1573,
       "length": 1,
       "value": "\": \""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 24796,
+      "offset": 1589,
       "length": 1,
       "value": "\" |\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2034,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2090,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2531,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2589,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2636,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2701,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2918,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3173,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3449,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3658,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3671,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3732,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3745,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4120,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4248,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4388,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5158,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5217,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5226,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5237,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5247,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5294,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5807,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6732,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6788,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6842,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6897,
+      "length": 3,
+      "value": "150"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7226,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7575,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8395,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9370,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9460,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "FloatLiteral",
+      "offset": 9710,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "FloatLiteral",
+      "offset": 9721,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "FloatLiteral",
+      "offset": 9734,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "FloatLiteral",
+      "offset": 9746,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "FloatLiteral",
+      "offset": 9834,
+      "length": 4,
+      "value": "12.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "FloatLiteral",
+      "offset": 9846,
+      "length": 4,
+      "value": "14.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "FloatLiteral",
+      "offset": 9860,
+      "length": 4,
+      "value": "12.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "FloatLiteral",
+      "offset": 9873,
+      "length": 4,
+      "value": "14.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "FloatLiteral",
+      "offset": 10057,
+      "length": 5,
+      "value": "240.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "FloatLiteral",
+      "offset": 10109,
+      "length": 4,
+      "value": "50.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11005,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11135,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11591,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11972,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 12656,
+      "length": 2,
+      "value": "40"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 12709,
+      "length": 2,
+      "value": "40"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 12766,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12845,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12973,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13788,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15367,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15614,
+      "length": 2,
+      "value": "17"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15692,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 17362,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 18013,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 18873,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 18999,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 19047,
+      "length": 4,
+      "value": "3000"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 20345,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 20494,
+      "length": 2,
+      "value": "12"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 21489,
+      "length": 2,
+      "value": "44"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 21623,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 21711,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 22764,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 22918,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 23061,
+      "length": 2,
+      "value": "50"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 23212,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 23275,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 23364,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "StringLiteral",
+      "offset": 23921,
+      "length": 9,
+      "value": "\"Threads\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 24018,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 24152,
+      "length": 1,
+      "value": "7"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "StringLiteral",
+      "offset": 24232,
+      "length": 26,
+      "value": "\"Text copied to clipboard\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 24503,
+      "length": 2,
+      "value": "40"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/ThreadsPublic\/THRAttributes.swift",
@@ -60142,44 +60150,30 @@
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 603,
+      "offset": 706,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 839,
+      "offset": 942,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1185,
+      "offset": 1288,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1224,
+      "offset": 1327,
       "length": 1,
       "value": "1"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
-      "kind": "FloatLiteral",
-      "offset": 1403,
-      "length": 3,
-      "value": "2.0"
-    },
-    {
-      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
-      "kind": "FloatLiteral",
-      "offset": 1448,
-      "length": 3,
-      "value": "1.0"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
@@ -60191,133 +60185,147 @@
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 1519,
+      "offset": 1551,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 1609,
+      "length": 3,
+      "value": "2.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 1622,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1565,
+      "offset": 1668,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1739,
+      "offset": 1842,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1749,
+      "offset": 1852,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1761,
+      "offset": 1864,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1772,
+      "offset": 1875,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1863,
+      "offset": 1966,
       "length": 2,
       "value": "17"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1956,
+      "offset": 2059,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2132,
+      "offset": 2235,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2138,
+      "offset": 2241,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2148,
+      "offset": 2251,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 2161,
+      "offset": 2264,
       "length": 4,
       "value": "44.0"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2226,
+      "offset": 2329,
       "length": 13,
       "value": "\"back_button\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2480,
+      "offset": 2583,
       "length": 2,
       "value": "18"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 2535,
+      "offset": 2638,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 2546,
+      "offset": 2649,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 2560,
+      "offset": 2663,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 2572,
+      "offset": 2675,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Controllers\/Participant Controller\/THRSpecialistViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2912,
+      "offset": 3015,
       "length": 2,
       "value": "16"
     },
@@ -60562,14 +60570,14 @@
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Cells\/Survey\/StarRateView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2897,
+      "offset": 2280,
       "length": 2,
       "value": "44"
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/UI\/Libraries\/JSQMessages\/Cells\/Survey\/StarRateView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2985,
+      "offset": 2368,
       "length": 1,
       "value": "1"
     },
@@ -60681,56 +60689,56 @@
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Logs\/LoggerLib\/ThreadsLogLevel.swift",
       "kind": "StringLiteral",
-      "offset": 1360,
+      "offset": 1266,
       "length": 5,
       "value": "\"Off\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Logs\/LoggerLib\/ThreadsLogLevel.swift",
       "kind": "StringLiteral",
-      "offset": 1420,
+      "offset": 1326,
       "length": 6,
       "value": "\"Info\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Logs\/LoggerLib\/ThreadsLogLevel.swift",
       "kind": "StringLiteral",
-      "offset": 1484,
+      "offset": 1390,
       "length": 6,
       "value": "\"REST\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Logs\/LoggerLib\/ThreadsLogLevel.swift",
       "kind": "StringLiteral",
-      "offset": 1552,
+      "offset": 1458,
       "length": 4,
       "value": "\"TG\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Logs\/LoggerLib\/ThreadsLogLevel.swift",
       "kind": "StringLiteral",
-      "offset": 1620,
+      "offset": 1526,
       "length": 4,
       "value": "\"UI\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Logs\/LoggerLib\/ThreadsLogLevel.swift",
       "kind": "StringLiteral",
-      "offset": 1680,
+      "offset": 1586,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Logs\/LoggerLib\/ThreadsLogLevel.swift",
       "kind": "StringLiteral",
-      "offset": 1741,
+      "offset": 1647,
       "length": 5,
       "value": "\"All\""
     },
     {
       "filePath": "\/Users\/jenkins\/jenkins\/workspace\/ios\/ChatCenter\/Steps\/Build_Lib\/repos\/chatcenter-ios\/ThreadsLib\/Threads\/Core\/Logs\/LoggerLib\/ThreadsLogLevel.swift",
       "kind": "StringLiteral",
-      "offset": 1783,
+      "offset": 1689,
       "length": 9,
       "value": "\"Unknown\""
     },

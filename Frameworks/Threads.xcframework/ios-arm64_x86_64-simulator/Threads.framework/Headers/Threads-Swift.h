@@ -572,9 +572,29 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 
 SWIFT_CLASS_NAMED("DownloadDataRequest")
 @interface THRDownloadDataRequest : NSObject
+/// Метод для скачивания файла по ссылке и его сохранения в кеш, с оповещениием об изменениии прогресса (используется при просмотре файлов)
+/// \param url Ссылка для скачивания изображения
+///
+/// \param completion Замыкание вызываемое по завершению скачивания
+///
+/// \param closure Замыкание об изменении прогресса скачивания
+///
 - (void)downloadAndSaveFileFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(NSURL * _Nullable, NSError * _Nullable))completionHandler progressHandler:(void (^ _Nullable)(CGFloat))progressHandler;
+/// Метод для загрузки изображения по ссылке
+/// \param url Ссылка для скачивания изображения
+///
+/// \param completion Замыкание вызываемое по завершению скачивания
+///
 - (void)downloadImageFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
+/// Метод для загрузки данных по указанной ссылке с получением прогресса скачивания
+/// \param url Ссылка для скачивания файла
+///
+/// \param completion Замыкание вызываемое по завершению скачивания
+///
+/// \param progress Замыкание об изменении прогресса скачивания
+///
 - (void)downloadDataFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler progressHandler:(void (^ _Nullable)(CGFloat))progressHandler;
+/// Отмена загрузки
 - (void)cancelDownload;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -625,13 +645,13 @@ SWIFT_CLASS("_TtC7Threads15EDNAPreloadView")
 SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @interface HttpSettings : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 /// таймаут установления нового соединения
 @property (nonatomic) NSTimeInterval connectTimeoutSec;
 /// таймаут операций загрузки
 @property (nonatomic) NSTimeInterval downloadTimeoutSec;
 /// таймаут операций выгрузки
 @property (nonatomic) NSTimeInterval uploadTimeoutSec;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @end
 
 
@@ -787,9 +807,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) CGFloat kTHRJSQMessa
 + (CGFloat)kTHRJSQMessagesLoadEarlierHeaderViewHeight SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull headerReuseIdentifier;)
 + (NSString * _Nonnull)headerReuseIdentifier SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
 @property (nonatomic, weak) id <MessagesLoadEarlierHeaderViewDelegate> _Nullable delegate;
 @property (nonatomic, readonly, strong) UIButton * _Nonnull loadButton;
-@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
 @end
 
 
@@ -854,15 +874,15 @@ SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 
 SWIFT_CLASS("_TtC7Threads10QuickReply")
 @interface QuickReply : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull text;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
+@property (nonatomic, readonly, copy) NSString * _Nonnull text;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 @class UICollectionView;
-@protocol QuickReplyCellDelegate;
 @class UITraitCollection;
+@protocol QuickReplyCellDelegate;
 
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
@@ -871,13 +891,13 @@ SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
 + (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, strong) UICollectionView * _Nullable colView;
+- (void)prepareForReuse;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 + (NSString * _Nonnull)cellIdentifier SWIFT_WARN_UNUSED_RESULT;
 - (void)configureWithQuickReply:(QuickReply * _Nonnull)quickReply delegate:(id <QuickReplyCellDelegate> _Nonnull)delegate;
 - (void)setWidth:(CGFloat)_;
-- (void)prepareForReuse;
-- (void)layoutSubviews;
 - (CGSize)getSizeWithWidth:(CGFloat)width SWIFT_WARN_UNUSED_RESULT;
-- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 @end
 
 
@@ -920,6 +940,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull foot
 SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @interface SocketSettings : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 /// интервал ожидания отправки сообщения
 @property (nonatomic) NSInteger sendIntervalSec;
 /// интервал повторной попытки отправки сообщения
@@ -932,7 +953,6 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @property (nonatomic) NSTimeInterval readTimeoutSec;
 /// таймаут операций записи для нового соединения
 @property (nonatomic) NSTimeInterval writeTimeoutSec;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @end
 
 @protocol StarRateViewDelegate;
@@ -943,6 +963,8 @@ SWIFT_CLASS("_TtC7Threads12StarRateView")
 - (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue;
 - (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue value:(NSUInteger)value spacing:(CGFloat)spacing emptyStarImage:(UIImage * _Nullable)emptyStarImage emptyStarColor:(UIColor * _Nonnull)emptyStarColor filledStarImage:(UIImage * _Nullable)filledStarImage fullStarColor:(UIColor * _Nonnull)fullStarColor OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+@property (nonatomic, strong) UIColor * _Null_unspecified backgroundColor;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
 @property (nonatomic, weak) id <StarRateViewDelegate> _Nullable delegate;
 @property (nonatomic) NSUInteger maximumValue;
 @property (nonatomic) NSUInteger minimumValue;
@@ -952,8 +974,6 @@ SWIFT_CLASS("_TtC7Threads12StarRateView")
 @property (nonatomic, strong) UIImage * _Nullable filledStarImage;
 @property (nonatomic, strong) UIColor * _Nonnull fullStarColor;
 @property (nonatomic) NSUInteger value;
-@property (nonatomic, strong) UIColor * _Null_unspecified backgroundColor;
-@property (nonatomic, readonly) CGSize intrinsicContentSize;
 - (void)drawRect:(CGRect)rect;
 - (void)setNeedsLayout;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -983,6 +1003,7 @@ enum THRQuickReplyAlignment : NSUInteger;
 SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @interface THRAttributes : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @property (nonatomic, strong) LocalizationConfig * _Nullable localizationConfig;
 /// Works properly for non view controller based status bar appearance
 @property (nonatomic) UIStatusBarStyle statusBarStyle;
@@ -1267,7 +1288,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull toastViewBackgroundColor;
 @property (nonatomic) CGSize toastViewSize;
 @property (nonatomic) NSUInteger photoPickerMaxImagesCount;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 + (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -1280,6 +1300,7 @@ typedef SWIFT_ENUM(NSInteger, THRAuthMethod, open) {
 };
 
 
+/// Class wrapper for working with SSL certificates
 SWIFT_CLASS_NAMED("THRCert")
 @interface THRCert : NSObject
 /// Initialization certificate if it is in any place, main bundle or other bundles
@@ -1392,9 +1413,9 @@ typedef SWIFT_ENUM(NSUInteger, THRQuickReplyPresentationMode, open) {
 SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
 @interface THRRequestConfigs : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @property (nonatomic, strong) SocketSettings * _Nonnull socket;
 @property (nonatomic, strong) HttpSettings * _Nonnull http;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @end
 
 
@@ -1528,9 +1549,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLe
 /// All levels of logging are On
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLevel * _Nonnull all;)
 + (ThreadsLogLevel * _Nonnull)all SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
 /// LogLevel primitive value
 @property (nonatomic, readonly) NSInteger rawValue;
-@property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1578,8 +1599,16 @@ SWIFT_CLASS("_TtC7Threads20UnselectableTextView")
 @end
 
 
+/// Сервис для выгрузки файлов на сервер
 SWIFT_CLASS_NAMED("UploadDataRequest")
 @interface THRUploadDataRequest : NSObject
+/// Метод для выгрузки данных на сервер
+/// \param name Имя фаайла
+///
+/// \param data Данные файла
+///
+/// \param completionHandler Замыкание вызываемое по завершению (на главном потоке)
+///
 - (void)uploadWithFile:(NSString * _Nonnull)name with:(NSData * _Nonnull)data completionHandler:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSError * _Nullable))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2166,9 +2195,29 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 
 SWIFT_CLASS_NAMED("DownloadDataRequest")
 @interface THRDownloadDataRequest : NSObject
+/// Метод для скачивания файла по ссылке и его сохранения в кеш, с оповещениием об изменениии прогресса (используется при просмотре файлов)
+/// \param url Ссылка для скачивания изображения
+///
+/// \param completion Замыкание вызываемое по завершению скачивания
+///
+/// \param closure Замыкание об изменении прогресса скачивания
+///
 - (void)downloadAndSaveFileFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(NSURL * _Nullable, NSError * _Nullable))completionHandler progressHandler:(void (^ _Nullable)(CGFloat))progressHandler;
+/// Метод для загрузки изображения по ссылке
+/// \param url Ссылка для скачивания изображения
+///
+/// \param completion Замыкание вызываемое по завершению скачивания
+///
 - (void)downloadImageFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
+/// Метод для загрузки данных по указанной ссылке с получением прогресса скачивания
+/// \param url Ссылка для скачивания файла
+///
+/// \param completion Замыкание вызываемое по завершению скачивания
+///
+/// \param progress Замыкание об изменении прогресса скачивания
+///
 - (void)downloadDataFromURL:(NSURL * _Nonnull)url completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler progressHandler:(void (^ _Nullable)(CGFloat))progressHandler;
+/// Отмена загрузки
 - (void)cancelDownload;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2219,13 +2268,13 @@ SWIFT_CLASS("_TtC7Threads15EDNAPreloadView")
 SWIFT_CLASS("_TtC7Threads12HttpSettings")
 @interface HttpSettings : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 /// таймаут установления нового соединения
 @property (nonatomic) NSTimeInterval connectTimeoutSec;
 /// таймаут операций загрузки
 @property (nonatomic) NSTimeInterval downloadTimeoutSec;
 /// таймаут операций выгрузки
 @property (nonatomic) NSTimeInterval uploadTimeoutSec;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @end
 
 
@@ -2381,9 +2430,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) CGFloat kTHRJSQMessa
 + (CGFloat)kTHRJSQMessagesLoadEarlierHeaderViewHeight SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull headerReuseIdentifier;)
 + (NSString * _Nonnull)headerReuseIdentifier SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
 @property (nonatomic, weak) id <MessagesLoadEarlierHeaderViewDelegate> _Nullable delegate;
 @property (nonatomic, readonly, strong) UIButton * _Nonnull loadButton;
-@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
 @end
 
 
@@ -2448,15 +2497,15 @@ SWIFT_CLASS("_TtC7Threads12PushUserInfo")
 
 SWIFT_CLASS("_TtC7Threads10QuickReply")
 @interface QuickReply : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull text;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
+@property (nonatomic, readonly, copy) NSString * _Nonnull text;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 @class UICollectionView;
-@protocol QuickReplyCellDelegate;
 @class UITraitCollection;
+@protocol QuickReplyCellDelegate;
 
 SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 @interface QuickReplyCell : UICollectionViewCell
@@ -2465,13 +2514,13 @@ SWIFT_CLASS("_TtC7Threads14QuickReplyCell")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QuickReplyCell * _Nonnull sizingCell;)
 + (QuickReplyCell * _Nonnull)sizingCell SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, strong) UICollectionView * _Nullable colView;
+- (void)prepareForReuse;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 + (NSString * _Nonnull)cellIdentifier SWIFT_WARN_UNUSED_RESULT;
 - (void)configureWithQuickReply:(QuickReply * _Nonnull)quickReply delegate:(id <QuickReplyCellDelegate> _Nonnull)delegate;
 - (void)setWidth:(CGFloat)_;
-- (void)prepareForReuse;
-- (void)layoutSubviews;
 - (CGSize)getSizeWithWidth:(CGFloat)width SWIFT_WARN_UNUSED_RESULT;
-- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 @end
 
 
@@ -2514,6 +2563,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull foot
 SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @interface SocketSettings : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 /// интервал ожидания отправки сообщения
 @property (nonatomic) NSInteger sendIntervalSec;
 /// интервал повторной попытки отправки сообщения
@@ -2526,7 +2576,6 @@ SWIFT_CLASS("_TtC7Threads14SocketSettings")
 @property (nonatomic) NSTimeInterval readTimeoutSec;
 /// таймаут операций записи для нового соединения
 @property (nonatomic) NSTimeInterval writeTimeoutSec;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @end
 
 @protocol StarRateViewDelegate;
@@ -2537,6 +2586,8 @@ SWIFT_CLASS("_TtC7Threads12StarRateView")
 - (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue;
 - (nonnull instancetype)initWithMinimumValue:(NSUInteger)minimumValue maximumValue:(NSUInteger)maximumValue value:(NSUInteger)value spacing:(CGFloat)spacing emptyStarImage:(UIImage * _Nullable)emptyStarImage emptyStarColor:(UIColor * _Nonnull)emptyStarColor filledStarImage:(UIImage * _Nullable)filledStarImage fullStarColor:(UIColor * _Nonnull)fullStarColor OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+@property (nonatomic, strong) UIColor * _Null_unspecified backgroundColor;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
 @property (nonatomic, weak) id <StarRateViewDelegate> _Nullable delegate;
 @property (nonatomic) NSUInteger maximumValue;
 @property (nonatomic) NSUInteger minimumValue;
@@ -2546,8 +2597,6 @@ SWIFT_CLASS("_TtC7Threads12StarRateView")
 @property (nonatomic, strong) UIImage * _Nullable filledStarImage;
 @property (nonatomic, strong) UIColor * _Nonnull fullStarColor;
 @property (nonatomic) NSUInteger value;
-@property (nonatomic, strong) UIColor * _Null_unspecified backgroundColor;
-@property (nonatomic, readonly) CGSize intrinsicContentSize;
 - (void)drawRect:(CGRect)rect;
 - (void)setNeedsLayout;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -2577,6 +2626,7 @@ enum THRQuickReplyAlignment : NSUInteger;
 SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @interface THRAttributes : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @property (nonatomic, strong) LocalizationConfig * _Nullable localizationConfig;
 /// Works properly for non view controller based status bar appearance
 @property (nonatomic) UIStatusBarStyle statusBarStyle;
@@ -2861,7 +2911,6 @@ SWIFT_CLASS("_TtC7Threads13THRAttributes")
 @property (nonatomic, strong) UIColor * _Nonnull toastViewBackgroundColor;
 @property (nonatomic) CGSize toastViewSize;
 @property (nonatomic) NSUInteger photoPickerMaxImagesCount;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 + (THRAttributes * _Nonnull)defaultAttributes SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -2874,6 +2923,7 @@ typedef SWIFT_ENUM(NSInteger, THRAuthMethod, open) {
 };
 
 
+/// Class wrapper for working with SSL certificates
 SWIFT_CLASS_NAMED("THRCert")
 @interface THRCert : NSObject
 /// Initialization certificate if it is in any place, main bundle or other bundles
@@ -2986,9 +3036,9 @@ typedef SWIFT_ENUM(NSUInteger, THRQuickReplyPresentationMode, open) {
 SWIFT_CLASS("_TtC7Threads17THRRequestConfigs")
 @interface THRRequestConfigs : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @property (nonatomic, strong) SocketSettings * _Nonnull socket;
 @property (nonatomic, strong) HttpSettings * _Nonnull http;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 @end
 
 
@@ -3122,9 +3172,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLe
 /// All levels of logging are On
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ThreadsLogLevel * _Nonnull all;)
 + (ThreadsLogLevel * _Nonnull)all SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
 /// LogLevel primitive value
 @property (nonatomic, readonly) NSInteger rawValue;
-@property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -3172,8 +3222,16 @@ SWIFT_CLASS("_TtC7Threads20UnselectableTextView")
 @end
 
 
+/// Сервис для выгрузки файлов на сервер
 SWIFT_CLASS_NAMED("UploadDataRequest")
 @interface THRUploadDataRequest : NSObject
+/// Метод для выгрузки данных на сервер
+/// \param name Имя фаайла
+///
+/// \param data Данные файла
+///
+/// \param completionHandler Замыкание вызываемое по завершению (на главном потоке)
+///
 - (void)uploadWithFile:(NSString * _Nonnull)name with:(NSData * _Nonnull)data completionHandler:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSError * _Nullable))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end

@@ -264,13 +264,13 @@ public struct MultipartFormData {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor @preconcurrency public class MessagesLoadEarlierHeaderView : UIKit.UICollectionReusableView {
   @objc @_Concurrency.MainActor @preconcurrency public static let kTHRJSQMessagesLoadEarlierHeaderViewHeight: CoreFoundation.CGFloat
   @objc @_Concurrency.MainActor @preconcurrency public static let headerReuseIdentifier: Swift.String
-  @objc @_Concurrency.MainActor @preconcurrency weak public var delegate: (any MessagesLoadEarlierHeaderViewDelegate)?
-  @objc @_Concurrency.MainActor @preconcurrency public var loadButton: UIKit.UIButton {
-    get
-  }
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var backgroundColor: UIKit.UIColor? {
     @objc get
     @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency weak public var delegate: (any MessagesLoadEarlierHeaderViewDelegate)?
+  @objc @_Concurrency.MainActor @preconcurrency public var loadButton: UIKit.UIButton {
+    get
   }
   @objc deinit
 }
@@ -293,34 +293,34 @@ public struct MultipartFormData {
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class SocketSettings : ObjectiveC.NSObject {
   @objc override dynamic public init()
+  @objc override dynamic public var debugDescription: Swift.String {
+    @objc get
+  }
   @objc public var sendIntervalSec: Swift.Int
   @objc public var resendIntervalSec: Swift.Double
   @objc public var resendPingIntervalSec: Swift.Double
   @objc public var connectTimeoutSec: Swift.Double
   @objc public var readTimeoutSec: Swift.Double
   @objc public var writeTimeoutSec: Swift.Double
-  @objc override dynamic public var debugDescription: Swift.String {
-    @objc get
-  }
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class HttpSettings : ObjectiveC.NSObject {
   @objc override dynamic public init()
-  @objc public var connectTimeoutSec: Swift.Double
-  @objc public var downloadTimeoutSec: Swift.Double
-  @objc public var uploadTimeoutSec: Swift.Double
   @objc override dynamic public var debugDescription: Swift.String {
     @objc get
   }
+  @objc public var connectTimeoutSec: Swift.Double
+  @objc public var downloadTimeoutSec: Swift.Double
+  @objc public var uploadTimeoutSec: Swift.Double
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class THRRequestConfigs : ObjectiveC.NSObject {
   @objc override dynamic public init()
-  @objc public var socket: SocketSettings
-  @objc public var http: HttpSettings
   @objc override dynamic public var debugDescription: Swift.String {
     @objc get
   }
+  @objc public var socket: SocketSettings
+  @objc public var http: HttpSettings
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(THRUploadDataRequest) final public class UploadDataRequest : ObjectiveC.NSObject {
@@ -348,13 +348,13 @@ public struct MultipartFormData {
     @objc get
   }
   @objc @_Concurrency.MainActor @preconcurrency public var colView: UIKit.UICollectionView?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func prepareForReuse()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
   @objc @_Concurrency.MainActor @preconcurrency public class func cellIdentifier() -> Swift.String
   @objc @_Concurrency.MainActor @preconcurrency public func configure(quickReply: QuickReply, delegate: any QuickReplyCellDelegate)
   @objc @_Concurrency.MainActor @preconcurrency public func setWidth(_: CoreFoundation.CGFloat)
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func prepareForReuse()
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @objc @_Concurrency.MainActor @preconcurrency public func getSize(width: CoreFoundation.CGFloat) -> CoreFoundation.CGSize
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
   @objc deinit
 }
 @objc extension Foundation.NSError {
@@ -865,10 +865,10 @@ public struct MultipartFormData {
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class QuickReply : ObjectiveC.NSObject {
-  @objc final public let text: Swift.String
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
+  @objc final public let text: Swift.String
   @objc deinit
 }
 @objc public enum THRQuickReplyPresentationMode : Swift.UInt {
@@ -903,6 +903,9 @@ public struct MultipartFormData {
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class THRAttributes : ObjectiveC.NSObject {
   @objc override dynamic public init()
+  @objc override dynamic public var debugDescription: Swift.String {
+    @objc get
+  }
   @objc public var localizationConfig: LocalizationConfig?
   @objc public var statusBarStyle: UIKit.UIStatusBarStyle
   @objc public var refreshColor: UIKit.UIColor
@@ -1165,9 +1168,6 @@ public struct MultipartFormData {
     @objc get
     @objc set(newValue)
   }
-  @objc override dynamic public var debugDescription: Swift.String {
-    @objc get
-  }
   @objc public static func defaultAttributes() -> THRAttributes
   @objc deinit
 }
@@ -1343,6 +1343,13 @@ extension Foundation.URLRequest {
   @_Concurrency.MainActor @preconcurrency @objc convenience dynamic public init()
   @objc(initWithMinimumValue:maximumValue:) @_Concurrency.MainActor @preconcurrency convenience public init(minimumValue: Swift.UInt, maximumValue: Swift.UInt)
   @objc @_Concurrency.MainActor @preconcurrency public init(minimumValue: Swift.UInt, maximumValue: Swift.UInt, value: Swift.UInt, spacing: CoreFoundation.CGFloat, emptyStarImage: UIKit.UIImage?, emptyStarColor: UIKit.UIColor, filledStarImage: UIKit.UIImage?, fullStarColor: UIKit.UIColor)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var backgroundColor: UIKit.UIColor! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
   @objc @_Concurrency.MainActor @preconcurrency weak public var delegate: (any StarRateViewDelegate)?
   @objc @_Concurrency.MainActor @preconcurrency public var maximumValue: Swift.UInt
   @objc @_Concurrency.MainActor @preconcurrency public var minimumValue: Swift.UInt
@@ -1354,13 +1361,6 @@ extension Foundation.URLRequest {
   @objc @_Concurrency.MainActor @preconcurrency public var value: Swift.UInt {
     @objc get
     @objc set
-  }
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var backgroundColor: UIKit.UIColor! {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
-    @objc get
   }
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func setNeedsLayout()
@@ -1375,10 +1375,10 @@ extension Foundation.URLRequest {
   @objc public static let userInterface: ThreadsLogLevel
   @objc public static let error: ThreadsLogLevel
   @objc public static let all: ThreadsLogLevel
-  @objc final public let rawValue: Swift.Int
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
+  @objc final public let rawValue: Swift.Int
   public func contains(_ member: ThreadsLogLevel) -> Swift.Bool
   public typealias ArrayLiteralElement = ThreadsLogLevel
   public typealias Element = ThreadsLogLevel
